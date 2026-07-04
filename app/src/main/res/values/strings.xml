@@ -37,7 +37,7 @@
     <string name="open_play_page">Open Play Store page</string>
     <string name="my_status">My beta status</string>
     <string name="watch_app">Watch this app</string>
-    <string name="watch_hint">Reminders to re-check the beta status will be added in an upcoming version.</string>
+    <string name="watch_hint">BetaScout reminds you to re-check this app\'s beta status at the chosen interval.</string>
     <string name="reminder_interval">Reminder interval</string>
     <string name="days_count">%1$d days</string>
     <string name="last_checked">Last checked: %1$s</string>

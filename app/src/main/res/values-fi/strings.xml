@@ -35,7 +35,7 @@
     <string name="open_play_page">Avaa Play Kaupan sivu</string>
     <string name="my_status">Oma beta-tila</string>
     <string name="watch_app">Seuraa tätä sovellusta</string>
-    <string name="watch_hint">Muistutukset beta-tilan tarkistamisesta lisätään tulevassa versiossa.</string>
+    <string name="watch_hint">BetaScout muistuttaa tarkistamaan tämän sovelluksen beta-tilan valitsemallasi välillä.</string>
     <string name="reminder_interval">Muistutusväli</string>
     <string name="days_count">%1$d päivää</string>
     <string name="last_checked">Viimeksi tarkistettu: %1$s</string>
