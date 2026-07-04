@@ -4,11 +4,11 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Kilpi -->
+    <!-- Shield -->
     <path
         android:fillColor="#FFFFFF"
         android:pathData="M54,26 L76,34 L76,54 C76,68 67,77 54,82 C41,77 32,68 32,54 L32,34 Z" />
-    <!-- Vihreä valintamerkki kilven sisällä -->
+    <!-- Green check mark inside the shield -->
     <path
         android:fillColor="#0B6E4F"
         android:pathData="M48.5,63.5 L39.5,54.5 L43.7,50.3 L48.5,55.1 L62.3,41.3 L66.5,45.5 Z" />

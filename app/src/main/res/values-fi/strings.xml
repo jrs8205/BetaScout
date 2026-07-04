@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Sovelluslista -->
+    <!-- App list -->
     <string name="search_hint">Hae sovelluksia</string>
     <string name="filter_only_beta">Beta löytyy</string>
     <string name="filter_only_watched">Seuratut</string>
@@ -11,21 +11,21 @@
     <string name="error_scan">Sovellusten skannaus epäonnistui.</string>
     <string name="retry">Yritä uudelleen</string>
 
-    <!-- Oma beta-tila -->
+    <!-- User beta states -->
     <string name="state_unknown">Tuntematon</string>
     <string name="state_joined">Mukana</string>
     <string name="state_not_joined">En ole mukana</string>
     <string name="state_full">Täynnä</string>
     <string name="state_no_program">Ei beta-ohjelmaa</string>
 
-    <!-- Tunnettu beta-tieto (mukana tulevasta tietokannasta) -->
+    <!-- Known beta status (from bundled database) -->
     <string name="known_beta_title">Tunnettu beta-tieto</string>
     <string name="known_unknown">Tila tuntematon</string>
     <string name="known_often_open">Yleensä auki</string>
     <string name="known_often_full">Yleensä täynnä</string>
     <string name="known_no_program">Ei ohjelmaa</string>
 
-    <!-- Sovelluksen tiedot -->
+    <!-- App detail -->
     <string name="back">Takaisin</string>
     <string name="app_not_found">Sovellusta ei löytynyt.</string>
     <string name="version_line">Versio %1$s (%2$d)</string>

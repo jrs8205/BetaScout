@@ -2,18 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Jakelu GitHubissa (ei Play Kauppaa), joten QUERY_ALL_PACKAGES on hyväksytty valinta. -->
+    <!-- Distributed on GitHub (not Play Store), so QUERY_ALL_PACKAGES is an accepted choice. -->
     <uses-permission
         android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
 
     <application
-        android:name=".BetaVahtiApp"
+        android:name=".BetaScoutApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BetaVahti">
+        android:theme="@style/Theme.BetaScout">
 
         <activity
             android:name=".MainActivity"

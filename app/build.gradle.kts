@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "org.jarsi.betavahti"
+    namespace = "org.jarsi.betascout"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "org.jarsi.betavahti"
+        applicationId = "org.jarsi.betascout"
         minSdk = 26
         targetSdk = 36
         versionCode = 1

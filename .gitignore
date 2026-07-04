@@ -13,3 +13,4 @@ captures/
 *.keystore
 !debug.keystore
 .remember/
+HANDOFF.md

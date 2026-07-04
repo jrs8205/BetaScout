@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">BetaVahti</string>
+    <string name="app_name" translatable="false">BetaScout</string>
 
     <!-- App list -->
     <string name="search_hint">Search apps</string>

@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BetaVahti"
+rootProject.name = "BetaScout"
 include(":app")
