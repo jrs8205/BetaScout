@@ -1,8 +1,5 @@
 package org.jarsi.betascout.ui.appdetail
 
-import android.content.ActivityNotFoundException
-import android.content.Context
-import android.content.Intent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -39,7 +36,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.core.net.toUri
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -54,6 +50,8 @@ import org.jarsi.betascout.domain.KnownBetaStatus
 import org.jarsi.betascout.domain.UserBetaState
 import org.jarsi.betascout.ui.applist.labelRes
 import org.jarsi.betascout.ui.components.AppIcon
+import org.jarsi.betascout.ui.components.openPlayPage
+import org.jarsi.betascout.ui.components.openUrl
 
 @Composable
 fun AppDetailScreen(
@@ -296,20 +294,4 @@ private fun KnownBetaStatus.labelRes(): Int = when (this) {
     KnownBetaStatus.OFTEN_OPEN -> R.string.known_often_open
     KnownBetaStatus.OFTEN_FULL -> R.string.known_often_full
     KnownBetaStatus.NO_PROGRAM -> R.string.known_no_program
-}
-
-private fun openUrl(context: Context, url: String) {
-    try {
-        context.startActivity(Intent(Intent.ACTION_VIEW, url.toUri()))
-    } catch (e: ActivityNotFoundException) {
-        // No browser available — don't crash; the button is a no-op.
-    }
-}
-
-private fun openPlayPage(context: Context, packageName: String) {
-    try {
-        context.startActivity(Intent(Intent.ACTION_VIEW, BetaLinkBuilder.playStoreUri(packageName).toUri()))
-    } catch (e: ActivityNotFoundException) {
-        openUrl(context, BetaLinkBuilder.playStoreWebUrl(packageName))
-    }
 }

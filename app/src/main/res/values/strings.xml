@@ -46,6 +46,16 @@
     <string name="note_label">Note</string>
     <string name="save_note">Save note</string>
 
+    <!-- Navigation tabs -->
+    <string name="tab_apps">Apps</string>
+    <string name="tab_watchlist">Watchlist</string>
+
+    <!-- Watchlist -->
+    <string name="watchlist_title">Watchlist</string>
+    <string name="watchlist_empty">No watched apps yet. Open an app\'s details and enable watching.</string>
+    <string name="check_now">Check now</string>
+    <string name="interval_line">Reminder every %1$d days</string>
+
     <!-- Onboarding -->
     <string name="onboarding_title">Welcome to BetaScout</string>
     <string name="onboarding_what">BetaScout scans your installed apps, shows which ones are known to have a Google Play beta program, opens the opt-in page for you and reminds you to re-check watched apps.</string>

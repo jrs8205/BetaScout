@@ -44,6 +44,16 @@
     <string name="note_label">Muistiinpano</string>
     <string name="save_note">Tallenna muistiinpano</string>
 
+    <!-- Navigation tabs -->
+    <string name="tab_apps">Sovellukset</string>
+    <string name="tab_watchlist">Vahti</string>
+
+    <!-- Watchlist -->
+    <string name="watchlist_title">Vahti</string>
+    <string name="watchlist_empty">Ei vielä seurattuja sovelluksia. Avaa sovelluksen tiedot ja kytke seuranta päälle.</string>
+    <string name="check_now">Tarkista nyt</string>
+    <string name="interval_line">Muistutus %1$d päivän välein</string>
+
     <!-- Onboarding -->
     <string name="onboarding_title">Tervetuloa BetaScoutiin</string>
     <string name="onboarding_what">BetaScout skannaa asennetut sovelluksesi, kertoo mille tiedetään Google Playn beta-ohjelma, avaa liittymissivun puolestasi ja muistuttaa tarkistamaan seurattujen sovellusten tilan.</string>
