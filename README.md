@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/jrs8205/BetaScout/actions/workflows/ci.yml/badge.svg)](https://github.com/jrs8205/BetaScout/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/jrs8205/BetaScout/total?label=Downloads)](https://github.com/jrs8205/BetaScout/releases)
 
 **Find and track Google Play beta programs for the apps on your device.**
 
