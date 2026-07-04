@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "programs": [
+    { "packageName": "com.google.android.gms", "appName": "Google Play services", "knownStatus": "OFTEN_OPEN" },
+    { "packageName": "com.google.android.apps.maps", "appName": "Google Maps", "knownStatus": "OFTEN_OPEN" },
+    { "packageName": "com.android.chrome", "appName": "Google Chrome", "knownStatus": "OFTEN_OPEN" },
+    { "packageName": "com.google.android.gm", "appName": "Gmail", "knownStatus": "OFTEN_OPEN" },
+    { "packageName": "com.google.android.youtube", "appName": "YouTube", "knownStatus": "OFTEN_FULL" },
+    { "packageName": "com.google.android.googlequicksearchbox", "appName": "Google", "knownStatus": "OFTEN_OPEN" },
+    { "packageName": "com.google.android.apps.photos", "appName": "Google Photos", "knownStatus": "OFTEN_OPEN" },
+    { "packageName": "com.whatsapp", "appName": "WhatsApp Messenger", "knownStatus": "OFTEN_FULL", "notes": "Beta program is usually full; slots open occasionally." },
+    { "packageName": "org.telegram.messenger", "appName": "Telegram", "knownStatus": "UNKNOWN" },
+    { "packageName": "com.instagram.android", "appName": "Instagram", "knownStatus": "OFTEN_OPEN" },
+    { "packageName": "com.spotify.music", "appName": "Spotify", "knownStatus": "OFTEN_FULL" },
+    { "packageName": "com.duolingo", "appName": "Duolingo", "knownStatus": "OFTEN_OPEN" }
+  ]
+}
