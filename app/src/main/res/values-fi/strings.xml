@@ -43,4 +43,10 @@
     <string name="mark_checked">Merkitse tarkistetuksi</string>
     <string name="note_label">Muistiinpano</string>
     <string name="save_note">Tallenna muistiinpano</string>
+
+    <!-- Reminders -->
+    <string name="reminder_channel_name">Beta-muistutukset</string>
+    <string name="reminder_channel_description">Muistutukset seurattujen sovellusten beta-tilan tarkistamisesta</string>
+    <string name="reminder_title">Tarkista beta-tila: %1$s</string>
+    <string name="reminder_text">Avaa beta-sivu ja katso onko ohjelma auki.</string>
 </resources>

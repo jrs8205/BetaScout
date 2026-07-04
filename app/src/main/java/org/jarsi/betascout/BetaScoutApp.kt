@@ -5,6 +5,7 @@ import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
+import org.jarsi.betascout.work.ReminderScheduler
 
 @HiltAndroidApp
 class BetaScoutApp : Application(), Configuration.Provider {
@@ -16,4 +17,9 @@ class BetaScoutApp : Application(), Configuration.Provider {
         get() = Configuration.Builder()
             .setWorkerFactory(workerFactory)
             .build()
+
+    override fun onCreate() {
+        super.onCreate()
+        ReminderScheduler.schedule(this)
+    }
 }

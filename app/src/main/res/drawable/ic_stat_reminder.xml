@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Monochrome status-bar icon: shield with a check mark cut-out. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,14 L86,26 L86,54 C86,74 72,88 54,94 C36,88 22,74 22,54 L22,26 Z M48.5,63.5 L39.5,54.5 L43.7,50.3 L48.5,55.1 L62.3,41.3 L66.5,45.5 Z"
+        android:fillType="evenOdd" />
+</vector>

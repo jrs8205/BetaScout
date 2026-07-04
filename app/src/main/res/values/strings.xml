@@ -45,4 +45,10 @@
     <string name="mark_checked">Mark checked</string>
     <string name="note_label">Note</string>
     <string name="save_note">Save note</string>
+
+    <!-- Reminders -->
+    <string name="reminder_channel_name">Beta reminders</string>
+    <string name="reminder_channel_description">Reminders to re-check the beta status of watched apps</string>
+    <string name="reminder_title">Check beta status: %1$s</string>
+    <string name="reminder_text">Open the beta page and check whether the program is open.</string>
 </resources>
