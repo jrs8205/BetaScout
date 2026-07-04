@@ -1,3 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Sovelluslista -->
+    <string name="search_hint">Hae sovelluksia</string>
+    <string name="filter_only_beta">Beta löytyy</string>
+    <string name="filter_only_watched">Seuratut</string>
+    <string name="filter_show_system">Järjestelmäsovellukset</string>
+    <string name="badge_beta">Beta</string>
+    <string name="refresh">Päivitä</string>
+    <string name="empty_list">Mikään sovellus ei vastaa suodattimia.</string>
+    <string name="error_scan">Sovellusten skannaus epäonnistui.</string>
+    <string name="retry">Yritä uudelleen</string>
+
+    <!-- Oma beta-tila -->
+    <string name="state_unknown">Tuntematon</string>
+    <string name="state_joined">Mukana</string>
+    <string name="state_not_joined">En ole mukana</string>
+    <string name="state_full">Täynnä</string>
+    <string name="state_no_program">Ei beta-ohjelmaa</string>
+
+    <!-- Tunnettu beta-tieto (mukana tulevasta tietokannasta) -->
+    <string name="known_beta_title">Tunnettu beta-tieto</string>
+    <string name="known_unknown">Tila tuntematon</string>
+    <string name="known_often_open">Yleensä auki</string>
+    <string name="known_often_full">Yleensä täynnä</string>
+    <string name="known_no_program">Ei ohjelmaa</string>
+
+    <!-- Sovelluksen tiedot -->
+    <string name="back">Takaisin</string>
+    <string name="app_not_found">Sovellusta ei löytynyt.</string>
+    <string name="version_line">Versio %1$s (%2$d)</string>
+    <string name="installer_line">Asennuslähde: %1$s</string>
+    <string name="system_app">Järjestelmäsovellus</string>
+    <string name="open_beta_page">Avaa beta-sivu</string>
+    <string name="open_play_page">Avaa Play Kaupan sivu</string>
+    <string name="my_status">Oma beta-tila</string>
+    <string name="watch_app">Seuraa tätä sovellusta</string>
+    <string name="watch_hint">Muistutukset beta-tilan tarkistamisesta lisätään tulevassa versiossa.</string>
+    <string name="reminder_interval">Muistutusväli</string>
+    <string name="days_count">%1$d päivää</string>
+    <string name="last_checked">Viimeksi tarkistettu: %1$s</string>
+    <string name="never_checked">Ei vielä tarkistettu</string>
+    <string name="mark_checked">Merkitse tarkistetuksi</string>
+    <string name="note_label">Muistiinpano</string>
+    <string name="save_note">Tallenna muistiinpano</string>
 </resources>

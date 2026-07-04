@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">BetaVahti</string>
+
+    <!-- App list -->
+    <string name="search_hint">Search apps</string>
+    <string name="filter_only_beta">Beta available</string>
+    <string name="filter_only_watched">Watched</string>
+    <string name="filter_show_system">System apps</string>
+    <string name="badge_beta">Beta</string>
+    <string name="refresh">Refresh</string>
+    <string name="empty_list">No apps match the filters.</string>
+    <string name="error_scan">Scanning installed apps failed.</string>
+    <string name="retry">Try again</string>
+
+    <!-- User beta states -->
+    <string name="state_unknown">Unknown</string>
+    <string name="state_joined">Joined</string>
+    <string name="state_not_joined">Not joined</string>
+    <string name="state_full">Full</string>
+    <string name="state_no_program">No beta program</string>
+
+    <!-- Known beta status (from bundled database) -->
+    <string name="known_beta_title">Known beta info</string>
+    <string name="known_unknown">Status unknown</string>
+    <string name="known_often_open">Usually open</string>
+    <string name="known_often_full">Usually full</string>
+    <string name="known_no_program">No program</string>
+
+    <!-- App detail -->
+    <string name="back">Back</string>
+    <string name="app_not_found">App not found.</string>
+    <string name="version_line">Version %1$s (%2$d)</string>
+    <string name="installer_line">Installed from: %1$s</string>
+    <string name="system_app">System app</string>
+    <string name="open_beta_page">Open beta page</string>
+    <string name="open_play_page">Open Play Store page</string>
+    <string name="my_status">My beta status</string>
+    <string name="watch_app">Watch this app</string>
+    <string name="watch_hint">Reminders to re-check the beta status will be added in an upcoming version.</string>
+    <string name="reminder_interval">Reminder interval</string>
+    <string name="days_count">%1$d days</string>
+    <string name="last_checked">Last checked: %1$s</string>
+    <string name="never_checked">Not checked yet</string>
+    <string name="mark_checked">Mark checked</string>
+    <string name="note_label">Note</string>
+    <string name="save_note">Save note</string>
 </resources>
