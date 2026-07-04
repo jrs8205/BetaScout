@@ -54,6 +54,9 @@ interface UserBetaStatusDao {
     @Query("SELECT * FROM user_beta_status WHERE packageName = :packageName")
     fun observe(packageName: String): Flow<UserBetaStatusEntity?>
 
+    @Query("SELECT * FROM user_beta_status WHERE packageName = :packageName")
+    suspend fun get(packageName: String): UserBetaStatusEntity?
+
     @Upsert
     suspend fun upsert(status: UserBetaStatusEntity)
 }
