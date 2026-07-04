@@ -14,3 +14,4 @@ captures/
 !debug.keystore
 .remember/
 HANDOFF.md
+release-signing.local.txt
