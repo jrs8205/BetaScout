@@ -226,4 +226,26 @@ class DefaultAppRepositoryTest {
 
         assertTrue(result.exceptionOrNull() is DataError.Local)
     }
+
+    @Test
+    fun `enabling watch stamps lastRemindedAt so the first reminder waits a full interval`() = runTest {
+        val repo = repository(now = 500L)
+
+        repo.setWatching("com.whatsapp", watching = true)
+
+        assertEquals(500L, userDao.get("com.whatsapp")!!.lastRemindedAt)
+    }
+
+    @Test
+    fun `markReminded stamps lastRemindedAt for all given packages`() = runTest {
+        val repo = repository(now = 900L)
+        repo.setUserState("com.whatsapp", UserBetaState.JOINED)
+
+        val result = repo.markReminded(listOf("com.whatsapp", "com.other"))
+
+        assertTrue(result.isSuccess)
+        assertEquals(900L, userDao.get("com.whatsapp")!!.lastRemindedAt)
+        assertEquals(900L, userDao.get("com.other")!!.lastRemindedAt)
+        assertEquals(UserBetaState.JOINED, userDao.get("com.whatsapp")!!.state)
+    }
 }

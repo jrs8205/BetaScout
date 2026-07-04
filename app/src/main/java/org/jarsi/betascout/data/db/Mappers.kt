@@ -49,6 +49,7 @@ fun UserBetaStatusEntity.toDomain() = UserBetaStatusInfo(
     reminderIntervalDays = reminderIntervalDays,
     lastCheckedByUser = lastCheckedByUser,
     userNote = userNote,
+    lastRemindedAt = lastRemindedAt,
 )
 
 fun UserBetaStatusInfo.toEntity() = UserBetaStatusEntity(
@@ -58,4 +59,5 @@ fun UserBetaStatusInfo.toEntity() = UserBetaStatusEntity(
     reminderIntervalDays = reminderIntervalDays,
     lastCheckedByUser = lastCheckedByUser,
     userNote = userNote,
+    lastRemindedAt = lastRemindedAt,
 )

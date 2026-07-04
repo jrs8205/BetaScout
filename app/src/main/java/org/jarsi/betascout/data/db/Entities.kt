@@ -35,4 +35,5 @@ data class UserBetaStatusEntity(
     val reminderIntervalDays: Int,
     val lastCheckedByUser: Long?,
     val userNote: String?,
+    val lastRemindedAt: Long?,
 )

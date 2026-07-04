@@ -36,6 +36,8 @@ data class UserBetaStatusInfo(
     val reminderIntervalDays: Int = 7,
     val lastCheckedByUser: Long? = null,
     val userNote: String? = null,
+    /** When a reminder notification was last shown; throttles repeated reminders. */
+    val lastRemindedAt: Long? = null,
 )
 
 /** Combined row for the UI: installed app + optional beta info + user marking. */

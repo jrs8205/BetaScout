@@ -24,4 +24,7 @@ interface AppRepository {
     suspend fun setUserNote(packageName: String, note: String?): Result<Unit>
 
     suspend fun markCheckedNow(packageName: String): Result<Unit>
+
+    /** Stamps lastRemindedAt = now for the given packages (reminder throttling). */
+    suspend fun markReminded(packageNames: List<String>): Result<Unit>
 }

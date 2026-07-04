@@ -64,6 +64,9 @@ class DefaultAppRepository(
         it.copy(
             watching = watching,
             reminderIntervalDays = reminderIntervalDays ?: it.reminderIntervalDays,
+            // Enabling the watch starts the reminder clock so the first
+            // reminder arrives a full interval later, not immediately.
+            lastRemindedAt = if (watching && it.lastRemindedAt == null) clock() else it.lastRemindedAt,
         )
     }
 
@@ -72,6 +75,16 @@ class DefaultAppRepository(
 
     override suspend fun markCheckedNow(packageName: String): Result<Unit> =
         updateStatus(packageName) { it.copy(lastCheckedByUser = clock()) }
+
+    override suspend fun markReminded(packageNames: List<String>): Result<Unit> =
+        runCatchingData(::wrapLocal) {
+            val now = clock()
+            packageNames.forEach { packageName ->
+                val current = userBetaStatusDao.get(packageName)?.toDomain()
+                    ?: UserBetaStatusInfo(packageName = packageName)
+                userBetaStatusDao.upsert(current.copy(lastRemindedAt = now).toEntity())
+            }
+        }
 
     private suspend fun updateStatus(
         packageName: String,

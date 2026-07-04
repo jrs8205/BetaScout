@@ -47,6 +47,7 @@ class MappersTest {
             reminderIntervalDays = 14,
             lastCheckedByUser = 1_720_000_000_000L,
             userNote = "Joined 2026-06",
+            lastRemindedAt = 1_720_000_100_000L,
         )
         assertEquals(domain, domain.toEntity().toDomain())
     }
