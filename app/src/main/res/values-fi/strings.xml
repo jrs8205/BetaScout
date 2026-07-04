@@ -44,6 +44,14 @@
     <string name="note_label">Muistiinpano</string>
     <string name="save_note">Tallenna muistiinpano</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_title">Tervetuloa BetaScoutiin</string>
+    <string name="onboarding_what">BetaScout skannaa asennetut sovelluksesi, kertoo mille tiedetään Google Playn beta-ohjelma, avaa liittymissivun puolestasi ja muistuttaa tarkistamaan seurattujen sovellusten tilan.</string>
+    <string name="onboarding_honesty_title">Mitä BetaScout ei tee</string>
+    <string name="onboarding_honesty">Se ei koskaan liity beta-ohjelmiin puolestasi, eikä se pysty luotettavasti päättelemään onko ohjelma auki vai täynnä — se näkyy vain omalle Google-tilillesi beta-sivulla. Liityt ja tarkistat aina itse.</string>
+    <string name="onboarding_notifications">Salli ilmoitukset, jotta vahti voi muistuttaa beta-tilojen tarkistamisesta.</string>
+    <string name="onboarding_continue">Aloita</string>
+
     <!-- Reminders -->
     <string name="reminder_channel_name">Beta-muistutukset</string>
     <string name="reminder_channel_description">Muistutukset seurattujen sovellusten beta-tilan tarkistamisesta</string>
