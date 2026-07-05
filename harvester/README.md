@@ -11,16 +11,19 @@ licence does not affect the app.
 - **Runtime:** Node.js 22+, zero dependencies. Tests use the built-in runner.
 
 ```bash
-npm test                 # unit tests (pure parsing, offline fixtures)
-MAX_APPS=5 npm run harvest   # live run against APKMirror, writes catalog.json
+npm test                     # unit tests (pure parsing/merge, offline fixtures)
+MAX_APPS=5 npm run harvest   # APKMirror only -> catalog.json
+GPLAY_ENABLED=1 MAX_APPS=5 npm run harvest   # + authoritative gplayapi confirmation
 ```
 
 ## What it does today
 
-1. Reads APKMirror's public release RSS feed.
-2. Keeps beta/alpha uploads (detected from the title).
-3. Resolves each app's Play Store package name from its app page.
-4. Writes a v2 catalog with `liveStatus: UNKNOWN` (existence only).
+1. Reads APKMirror's public release RSS feed and keeps beta/alpha uploads.
+2. Resolves each app's Play Store package name from its app page.
+3. With `GPLAY_ENABLED=1`, confirms each package via the JVM gplayapi tool
+   (see `gplay/README.md`): authoritative `hasBeta` and production `versionCode`.
+4. Merges the two sources (gplayapi wins when present) and writes the v2 catalog.
+   `liveStatus` stays `UNKNOWN` — open/full still needs the opt-in checker.
 
 It reads **metadata only** — no APK downloads or redistribution — and spaces
 requests by the crawl delay APKMirror's `robots.txt` asks for (3s), capping the

@@ -1,11 +1,14 @@
-// Orchestrates a harvest: read APKMirror release feeds, keep beta uploads,
-// resolve each app's package name from its app page, and write catalog.json.
+// Harvest pipeline: discover beta apps from APKMirror, optionally confirm/enrich
+// each via the authoritative gplayapi tool, merge, and write catalog.json.
 //
-// Only metadata is read (no APK downloads). Requests are spaced by the crawl
-// delay APKMirror's robots.txt asks for, and capped per run; anything skipped
-// is logged rather than silently dropped.
+// Only metadata is read (no APK downloads). APKMirror requests are spaced by the
+// robots.txt crawl delay and capped per run; anything skipped is logged.
+//
+// Set GPLAY_ENABLED=1 (with a JDK and harvester/.gplay.local) to add the
+// authoritative Google Play data; otherwise the APKMirror signal stands alone.
 
 import { writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import {
   parseFeed,
   isBetaItem,
@@ -13,12 +16,19 @@ import {
   extractPackageName,
   appNameFromTitle,
 } from './apkmirror.js';
-import { buildCatalogEntry, buildCatalog } from './catalog.js';
+import { buildCatalog } from './catalog.js';
+import { mergeCatalogEntries } from './merge.js';
+import { runGplay } from './gplay.js';
 import { fetchText, sleep } from './fetch.js';
 
 const FEEDS = ['https://www.apkmirror.com/feed/'];
 const CRAWL_DELAY_MS = 3000; // robots.txt: Crawl-delay: 3
 const MAX_APPS = Number(process.env.MAX_APPS ?? 8);
+
+const REPO_ROOT = fileURLToPath(new URL('../../', import.meta.url)).replace(/[/\\]$/, '');
+const GPLAY_ENABLED = process.env.GPLAY_ENABLED === '1';
+const GRADLEW = process.env.GRADLEW || `${REPO_ROOT}${process.platform === 'win32' ? '/gradlew.bat' : '/gradlew'}`;
+const JAVA_HOME = process.env.GPLAY_JAVA_HOME || process.env.JAVA_HOME;
 
 async function collectBetaAppPages() {
   const betaByAppPage = new Map(); // app page URL -> feed title
@@ -36,11 +46,8 @@ async function collectBetaAppPages() {
   return betaByAppPage;
 }
 
-async function main() {
-  const betaByAppPage = await collectBetaAppPages();
-  console.log(`Beta uploads found in feeds: ${betaByAppPage.size}`);
-
-  const entries = [];
+async function discoverPackages(betaByAppPage) {
+  const discovered = [];
   let processed = 0;
   let dropped = 0;
   for (const [page, title] of betaByAppPage) {
@@ -60,17 +67,42 @@ async function main() {
       console.error(`  no package on ${page} (skipped)`);
       continue;
     }
-    const appName = appNameFromTitle(title);
-    entries.push(buildCatalogEntry({ packageName, appName }));
-    console.log(`  + ${packageName}  (${appName})`);
+    discovered.push({ packageName, appName: appNameFromTitle(title) });
+    console.log(`  discovered ${packageName}`);
   }
   if (dropped > 0) {
     console.error(`NOTE: capped at MAX_APPS=${MAX_APPS}; ${dropped} beta app(s) not processed this run.`);
   }
+  return discovered;
+}
 
+function enrichViaGplay(discovered) {
+  if (!GPLAY_ENABLED) {
+    console.error('gplay enrichment disabled (set GPLAY_ENABLED=1 to confirm via Google Play).');
+    return [];
+  }
+  const packages = discovered.map((d) => d.packageName);
+  console.error(`Confirming ${packages.length} package(s) via gplayapi...`);
+  try {
+    return runGplay(packages, { gradlew: GRADLEW, projectRoot: REPO_ROOT, javaHome: JAVA_HOME });
+  } catch (error) {
+    console.error(`gplay enrichment failed (continuing with APKMirror only): ${error.message}`);
+    return [];
+  }
+}
+
+async function main() {
+  const betaByAppPage = await collectBetaAppPages();
+  console.log(`Beta uploads found in feeds: ${betaByAppPage.size}`);
+
+  const discovered = await discoverPackages(betaByAppPage);
+  const gplayResults = enrichViaGplay(discovered);
+
+  const entries = mergeCatalogEntries(discovered, gplayResults);
+  const confirmed = entries.filter((e) => e.source === 'GPLAYAPI').length;
   const catalog = buildCatalog(entries, { generatedAt: Date.now() });
   writeFileSync(new URL('../catalog.json', import.meta.url), JSON.stringify(catalog, null, 2) + '\n');
-  console.log(`\nWrote catalog.json with ${catalog.programs.length} program(s).`);
+  console.log(`\nWrote catalog.json: ${catalog.programs.length} program(s), ${confirmed} confirmed via Google Play.`);
 }
 
 main().catch((error) => {
