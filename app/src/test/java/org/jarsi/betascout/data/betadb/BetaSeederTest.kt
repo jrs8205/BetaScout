@@ -17,6 +17,9 @@ private class FakeBetaProgramDao : BetaProgramDao {
     override suspend fun insertIgnoring(programs: List<BetaProgramEntity>) {
         inserted += programs
     }
+    override suspend fun upsertAll(programs: List<BetaProgramEntity>) {
+        inserted += programs
+    }
     override suspend fun upsert(program: BetaProgramEntity) = throw UnsupportedOperationException()
     override suspend fun count(): Int = inserted.size
 }

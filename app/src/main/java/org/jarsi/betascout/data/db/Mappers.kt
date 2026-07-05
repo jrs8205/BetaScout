@@ -29,6 +29,7 @@ fun BetaProgramEntity.toDomain() = BetaProgramInfo(
     appName = appName,
     testingUrl = testingUrl,
     knownStatus = knownStatus,
+    productionVersionCode = productionVersionCode,
     notes = notes,
     source = source,
 )
@@ -38,6 +39,7 @@ fun BetaProgramInfo.toEntity() = BetaProgramEntity(
     appName = appName,
     testingUrl = testingUrl,
     knownStatus = knownStatus,
+    productionVersionCode = productionVersionCode,
     notes = notes,
     source = source,
 )

@@ -34,9 +34,13 @@ interface BetaProgramDao {
     @Query("SELECT * FROM beta_programs")
     fun observeAll(): Flow<List<BetaProgramEntity>>
 
-    /** Seed load: never overwrites existing rows (e.g. USER-sourced ones). */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertIgnoring(programs: List<BetaProgramEntity>)
+
+    /** Catalog load: updates existing programs (e.g. productionVersionCode) and adds new ones.
+     *  beta_programs is fully derived from the catalog; user data lives in a separate table. */
+    @Upsert
+    suspend fun upsertAll(programs: List<BetaProgramEntity>)
 
     @Upsert
     suspend fun upsert(program: BetaProgramEntity)

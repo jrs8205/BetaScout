@@ -102,6 +102,13 @@ class BetaSeedParserTest {
     }
 
     @Test
+    fun `parses the production version code`() {
+        val json = """{"programs":[{"packageName":"com.a","productionVersionCode":143403975}]}"""
+
+        assertEquals(143403975L, BetaSeedParser.parse(json).single().productionVersionCode)
+    }
+
+    @Test
     fun `unknown live status value falls back to UNKNOWN`() {
         val json = """{"programs":[{"packageName":"com.example","liveStatus":"BRAND_NEW"}]}"""
 

@@ -18,9 +18,18 @@ private fun row(
     betaStatus: KnownBetaStatus? = null,
     watching: Boolean = false,
     userState: UserBetaState = UserBetaState.UNKNOWN,
+    installedVersionCode: Long = 1L,
+    productionVersionCode: Long? = null,
 ) = AppBetaOverview(
-    app = InstalledAppInfo(packageName, label, "1.0", 1L, null, isSystem, 0L),
-    betaProgram = betaStatus?.let { BetaProgramInfo(packageName = packageName, appName = label, knownStatus = it) },
+    app = InstalledAppInfo(packageName, label, "1.0", installedVersionCode, null, isSystem, 0L),
+    betaProgram = betaStatus?.let {
+        BetaProgramInfo(
+            packageName = packageName,
+            appName = label,
+            knownStatus = it,
+            productionVersionCode = productionVersionCode,
+        )
+    },
     userStatus = if (watching || userState != UserBetaState.UNKNOWN) {
         UserBetaStatusInfo(packageName = packageName, watching = watching, state = userState)
     } else {
@@ -122,6 +131,59 @@ class AppListFilterTest {
         assertEquals(
             BetaMembership.NONE,
             row("a", betaStatus = KnownBetaStatus.UNKNOWN, userState = UserBetaState.NO_PROGRAM).betaMembership(),
+        )
+    }
+
+    @Test
+    fun `installed build newer than production is auto-classified as JOINED`() {
+        assertEquals(
+            BetaMembership.JOINED,
+            row(
+                "a",
+                betaStatus = KnownBetaStatus.OFTEN_OPEN,
+                installedVersionCode = 200,
+                productionVersionCode = 100,
+            ).betaMembership(),
+        )
+    }
+
+    @Test
+    fun `installed build at or below production stays AVAILABLE`() {
+        assertEquals(
+            BetaMembership.AVAILABLE,
+            row(
+                "a",
+                betaStatus = KnownBetaStatus.OFTEN_OPEN,
+                installedVersionCode = 100,
+                productionVersionCode = 100,
+            ).betaMembership(),
+        )
+    }
+
+    @Test
+    fun `no production version code means no version-based guess`() {
+        assertEquals(
+            BetaMembership.AVAILABLE,
+            row(
+                "a",
+                betaStatus = KnownBetaStatus.OFTEN_OPEN,
+                installedVersionCode = 999,
+                productionVersionCode = null,
+            ).betaMembership(),
+        )
+    }
+
+    @Test
+    fun `manual not-joined overrides a newer installed version`() {
+        assertEquals(
+            BetaMembership.AVAILABLE,
+            row(
+                "a",
+                betaStatus = KnownBetaStatus.OFTEN_OPEN,
+                userState = UserBetaState.NOT_JOINED,
+                installedVersionCode = 200,
+                productionVersionCode = 100,
+            ).betaMembership(),
         )
     }
 }

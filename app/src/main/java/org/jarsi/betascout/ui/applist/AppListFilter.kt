@@ -33,15 +33,27 @@ fun AppBetaOverview.hasKnownBeta(): Boolean =
 enum class BetaMembership { JOINED, AVAILABLE, NONE }
 
 /**
- * Classifies an app for the Joined / Available tabs. Membership follows the
- * user's own marking, since a third-party app cannot read Google Play beta
- * enrollment; apps without a known program are excluded.
+ * Classifies an app for the Joined / Available tabs. The user's own marking wins;
+ * otherwise the version heuristic auto-guesses membership (a third-party app cannot
+ * read Google Play enrollment). Apps without a known program are excluded.
  */
 fun AppBetaOverview.betaMembership(): BetaMembership {
     if (!hasKnownBeta()) return BetaMembership.NONE
     return when (userStatus?.state) {
         UserBetaState.JOINED -> BetaMembership.JOINED
+        UserBetaState.NOT_JOINED, UserBetaState.FULL -> BetaMembership.AVAILABLE
         UserBetaState.NO_PROGRAM -> BetaMembership.NONE
-        else -> BetaMembership.AVAILABLE
+        UserBetaState.UNKNOWN, null ->
+            if (looksJoinedByVersion()) BetaMembership.JOINED else BetaMembership.AVAILABLE
     }
+}
+
+/**
+ * Guesses that the user is on the beta when their installed build is newer than
+ * the catalog's production version code. Best-effort — the honest limit of what
+ * an app can detect without the user's Google account.
+ */
+fun AppBetaOverview.looksJoinedByVersion(): Boolean {
+    val production = betaProgram?.productionVersionCode ?: return false
+    return app.versionCode > production
 }

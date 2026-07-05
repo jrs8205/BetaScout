@@ -21,6 +21,7 @@ private data class BetaSeedEntry(
     val knownStatus: KnownBetaStatus = KnownBetaStatus.UNKNOWN,
     val liveStatus: LiveBetaStatus = LiveBetaStatus.UNKNOWN,
     val statusCheckedAt: Long? = null,
+    val productionVersionCode: Long? = null,
     val notes: String? = null,
 )
 
@@ -45,6 +46,7 @@ object BetaSeedParser {
                     knownStatus = entry.knownStatus,
                     liveStatus = entry.liveStatus,
                     statusCheckedAt = entry.statusCheckedAt,
+                    productionVersionCode = entry.productionVersionCode,
                     notes = entry.notes,
                     source = source,
                 )

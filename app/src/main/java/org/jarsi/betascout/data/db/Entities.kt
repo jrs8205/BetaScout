@@ -25,6 +25,7 @@ data class BetaProgramEntity(
     val knownStatus: KnownBetaStatus,
     val notes: String?,
     val source: BetaSource,
+    val productionVersionCode: Long? = null,
 )
 
 @Entity(tableName = "user_beta_status")

@@ -49,6 +49,10 @@ private class FakeBetaProgramDao : BetaProgramDao {
         state.value = programs.associateBy { it.packageName } + state.value
     }
 
+    override suspend fun upsertAll(programs: List<BetaProgramEntity>) {
+        state.value = state.value + programs.associateBy { it.packageName }
+    }
+
     override suspend fun upsert(program: BetaProgramEntity) {
         state.value = state.value + (program.packageName to program)
     }

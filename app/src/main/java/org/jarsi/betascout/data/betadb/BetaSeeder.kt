@@ -7,9 +7,9 @@ class BetaSeeder(
     private val readSeedJson: suspend () -> String,
     private val dao: BetaProgramDao,
 ) {
-    /** Idempotent: the IGNORE strategy never overwrites existing rows. */
+    /** Loads the catalog into beta_programs, updating existing rows and adding new ones. */
     suspend fun seed() {
         val programs = BetaSeedParser.parse(readSeedJson())
-        dao.insertIgnoring(programs.map { it.toEntity() })
+        dao.upsertAll(programs.map { it.toEntity() })
     }
 }

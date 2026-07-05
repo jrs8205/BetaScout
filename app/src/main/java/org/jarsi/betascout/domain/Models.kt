@@ -32,6 +32,8 @@ data class BetaProgramInfo(
     val liveStatus: LiveBetaStatus = LiveBetaStatus.UNKNOWN,
     /** Epoch millis when liveStatus was last verified; null if never. */
     val statusCheckedAt: Long? = null,
+    /** Current production version code, used to guess if an installed build is a beta. */
+    val productionVersionCode: Long? = null,
     val notes: String? = null,
     val source: BetaSource = BetaSource.BUNDLED,
 )
