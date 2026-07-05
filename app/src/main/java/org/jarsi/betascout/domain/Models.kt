@@ -3,8 +3,11 @@ package org.jarsi.betascout.domain
 /** Known status of a beta program in the knowledge base (seed/user). */
 enum class KnownBetaStatus { UNKNOWN, OFTEN_OPEN, OFTEN_FULL, NO_PROGRAM }
 
+/** Freshly observed state of a testing program, as checked by the catalog backend. */
+enum class LiveBetaStatus { UNKNOWN, OPEN, FULL, CLOSED }
+
 /** Origin of a beta record. */
-enum class BetaSource { BUNDLED, USER }
+enum class BetaSource { BUNDLED, REMOTE, USER }
 
 /** The user's self-reported beta status. */
 enum class UserBetaState { UNKNOWN, JOINED, NOT_JOINED, FULL, NO_PROGRAM }
@@ -25,6 +28,10 @@ data class BetaProgramInfo(
     /** null = derived from the package name via BetaLinkBuilder. */
     val testingUrl: String? = null,
     val knownStatus: KnownBetaStatus = KnownBetaStatus.UNKNOWN,
+    /** Latest observed live state of the testing program (open/full/closed). */
+    val liveStatus: LiveBetaStatus = LiveBetaStatus.UNKNOWN,
+    /** Epoch millis when liveStatus was last verified; null if never. */
+    val statusCheckedAt: Long? = null,
     val notes: String? = null,
     val source: BetaSource = BetaSource.BUNDLED,
 )
