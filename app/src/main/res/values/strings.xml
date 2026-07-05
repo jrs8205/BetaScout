@@ -4,9 +4,13 @@
 
     <!-- App list -->
     <string name="search_hint">Search apps</string>
+    <string name="tab_not_joined">Not joined</string>
+    <string name="tab_joined">Joined</string>
     <string name="filter_only_beta">Beta available</string>
     <string name="filter_only_watched">Watched</string>
     <string name="filter_show_system">System apps</string>
+    <string name="empty_not_joined">No installed apps with a beta to join right now.</string>
+    <string name="empty_joined">You have not marked any app as joined yet.</string>
     <string name="badge_beta">Beta</string>
     <string name="refresh">Refresh</string>
     <string name="empty_list">No apps match the filters.</string>

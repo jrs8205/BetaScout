@@ -18,6 +18,7 @@ data class AppListUiState(
     val isRefreshing: Boolean = false,
     val hasError: Boolean = false,
     val filters: AppFilters = AppFilters(),
+    val selectedTab: BetaMembership = BetaMembership.AVAILABLE,
     val apps: List<AppBetaOverview> = emptyList(),
 )
 
@@ -27,18 +28,20 @@ class AppListViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val filters = MutableStateFlow(AppFilters())
+    private val selectedTab = MutableStateFlow(BetaMembership.AVAILABLE)
     private val refreshing = MutableStateFlow(false)
     private val failed = MutableStateFlow(false)
 
     val uiState: StateFlow<AppListUiState> = combine(
-        repository.observeApps(), filters, refreshing, failed,
-    ) { rows, currentFilters, isRefreshing, hasError ->
+        repository.observeApps(), filters, selectedTab, refreshing, failed,
+    ) { rows, currentFilters, tab, isRefreshing, hasError ->
         AppListUiState(
             isLoading = false,
             isRefreshing = isRefreshing,
             hasError = hasError,
             filters = currentFilters,
-            apps = filterApps(rows, currentFilters),
+            selectedTab = tab,
+            apps = filterApps(rows, currentFilters).filter { it.betaMembership() == tab },
         )
     }.stateIn(
         scope = viewModelScope,
@@ -48,6 +51,10 @@ class AppListViewModel @Inject constructor(
 
     init {
         refresh()
+    }
+
+    fun selectTab(tab: BetaMembership) {
+        selectedTab.value = tab
     }
 
     fun refresh() {

@@ -2,9 +2,13 @@
 <resources>
     <!-- App list -->
     <string name="search_hint">Hae sovelluksia</string>
+    <string name="tab_not_joined">Ei liittynyt</string>
+    <string name="tab_joined">Mukana</string>
     <string name="filter_only_beta">Beta löytyy</string>
     <string name="filter_only_watched">Seuratut</string>
     <string name="filter_show_system">Järjestelmäsovellukset</string>
+    <string name="empty_not_joined">Ei asennettuja sovelluksia joiden betaan voisi juuri nyt liittyä.</string>
+    <string name="empty_joined">Et ole vielä merkinnyt yhtäkään sovellusta mukana olevaksi.</string>
     <string name="badge_beta">Beta</string>
     <string name="refresh">Päivitä</string>
     <string name="empty_list">Mikään sovellus ei vastaa suodattimia.</string>

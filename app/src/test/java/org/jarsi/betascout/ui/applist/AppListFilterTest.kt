@@ -4,6 +4,7 @@ import org.jarsi.betascout.domain.AppBetaOverview
 import org.jarsi.betascout.domain.BetaProgramInfo
 import org.jarsi.betascout.domain.InstalledAppInfo
 import org.jarsi.betascout.domain.KnownBetaStatus
+import org.jarsi.betascout.domain.UserBetaState
 import org.jarsi.betascout.domain.UserBetaStatusInfo
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -16,10 +17,15 @@ private fun row(
     isSystem: Boolean = false,
     betaStatus: KnownBetaStatus? = null,
     watching: Boolean = false,
+    userState: UserBetaState = UserBetaState.UNKNOWN,
 ) = AppBetaOverview(
     app = InstalledAppInfo(packageName, label, "1.0", 1L, null, isSystem, 0L),
     betaProgram = betaStatus?.let { BetaProgramInfo(packageName = packageName, appName = label, knownStatus = it) },
-    userStatus = if (watching) UserBetaStatusInfo(packageName = packageName, watching = true) else null,
+    userStatus = if (watching || userState != UserBetaState.UNKNOWN) {
+        UserBetaStatusInfo(packageName = packageName, watching = watching, state = userState)
+    } else {
+        null
+    },
 )
 
 class AppListFilterTest {
@@ -75,5 +81,47 @@ class AppListFilterTest {
         assertTrue(row("b", betaStatus = KnownBetaStatus.OFTEN_FULL).hasKnownBeta())
         assertFalse(row("c", betaStatus = KnownBetaStatus.NO_PROGRAM).hasKnownBeta())
         assertFalse(row("d").hasKnownBeta())
+    }
+
+    @Test
+    fun `beta app the user has not joined is AVAILABLE`() {
+        assertEquals(
+            BetaMembership.AVAILABLE,
+            row("a", betaStatus = KnownBetaStatus.OFTEN_OPEN).betaMembership(),
+        )
+    }
+
+    @Test
+    fun `beta app the user marked joined is JOINED`() {
+        assertEquals(
+            BetaMembership.JOINED,
+            row("a", betaStatus = KnownBetaStatus.OFTEN_OPEN, userState = UserBetaState.JOINED).betaMembership(),
+        )
+    }
+
+    @Test
+    fun `beta app marked not-joined or full stays AVAILABLE`() {
+        assertEquals(
+            BetaMembership.AVAILABLE,
+            row("a", betaStatus = KnownBetaStatus.OFTEN_OPEN, userState = UserBetaState.NOT_JOINED).betaMembership(),
+        )
+        assertEquals(
+            BetaMembership.AVAILABLE,
+            row("b", betaStatus = KnownBetaStatus.OFTEN_FULL, userState = UserBetaState.FULL).betaMembership(),
+        )
+    }
+
+    @Test
+    fun `app with no beta program is NONE`() {
+        assertEquals(BetaMembership.NONE, row("a").betaMembership())
+        assertEquals(BetaMembership.NONE, row("b", betaStatus = KnownBetaStatus.NO_PROGRAM).betaMembership())
+    }
+
+    @Test
+    fun `beta app the user marked as having no program is NONE`() {
+        assertEquals(
+            BetaMembership.NONE,
+            row("a", betaStatus = KnownBetaStatus.UNKNOWN, userState = UserBetaState.NO_PROGRAM).betaMembership(),
+        )
     }
 }

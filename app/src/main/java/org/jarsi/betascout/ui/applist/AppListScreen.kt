@@ -26,6 +26,8 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Tab
+import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
@@ -53,6 +55,7 @@ fun AppListScreen(
         uiState = uiState,
         onAppClick = onAppClick,
         onFiltersChange = viewModel::updateFilters,
+        onSelectTab = viewModel::selectTab,
         onRefresh = viewModel::refresh,
     )
 }
@@ -63,6 +66,7 @@ private fun AppListContent(
     uiState: AppListUiState,
     onAppClick: (String) -> Unit,
     onFiltersChange: (AppFilters) -> Unit,
+    onSelectTab: (BetaMembership) -> Unit,
     onRefresh: () -> Unit,
 ) {
     Scaffold(
@@ -78,6 +82,7 @@ private fun AppListContent(
         },
     ) { padding ->
         Column(modifier = Modifier.fillMaxSize().padding(padding)) {
+            BetaTabs(selected = uiState.selectedTab, onSelectTab = onSelectTab)
             SearchAndFilters(uiState.filters, onFiltersChange)
 
             if (uiState.hasError) {
@@ -93,7 +98,11 @@ private fun AppListContent(
 
                 uiState.apps.isEmpty() -> {
                     Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        Text(stringResource(R.string.empty_list))
+                        val emptyRes = when (uiState.selectedTab) {
+                            BetaMembership.JOINED -> R.string.empty_joined
+                            else -> R.string.empty_not_joined
+                        }
+                        Text(stringResource(emptyRes))
                     }
                 }
 
@@ -106,6 +115,25 @@ private fun AppListContent(
                     }
                 }
             }
+        }
+    }
+}
+
+private val betaTabs = listOf(
+    BetaMembership.AVAILABLE to R.string.tab_not_joined,
+    BetaMembership.JOINED to R.string.tab_joined,
+)
+
+@Composable
+private fun BetaTabs(selected: BetaMembership, onSelectTab: (BetaMembership) -> Unit) {
+    val selectedIndex = betaTabs.indexOfFirst { it.first == selected }.coerceAtLeast(0)
+    TabRow(selectedTabIndex = selectedIndex) {
+        betaTabs.forEach { (membership, labelRes) ->
+            Tab(
+                selected = membership == selected,
+                onClick = { onSelectTab(membership) },
+                text = { Text(stringResource(labelRes)) },
+            )
         }
     }
 }
@@ -128,16 +156,6 @@ private fun SearchAndFilters(
             modifier = Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            FilterChip(
-                selected = filters.onlyBeta,
-                onClick = { onFiltersChange(filters.copy(onlyBeta = !filters.onlyBeta)) },
-                label = { Text(stringResource(R.string.filter_only_beta)) },
-            )
-            FilterChip(
-                selected = filters.onlyWatched,
-                onClick = { onFiltersChange(filters.copy(onlyWatched = !filters.onlyWatched)) },
-                label = { Text(stringResource(R.string.filter_only_watched)) },
-            )
             FilterChip(
                 selected = filters.showSystem,
                 onClick = { onFiltersChange(filters.copy(showSystem = !filters.showSystem)) },
