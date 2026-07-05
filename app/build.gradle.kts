@@ -17,6 +17,8 @@ android {
         targetSdk = 36
         versionCode = 2
         versionName = "0.2.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
@@ -97,4 +99,9 @@ dependencies {
 
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
+
+    // Instrumented gplayapi probe (debug/androidTest only; not shipped).
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test:runner:1.6.2")
+    androidTestImplementation("com.auroraoss:gplayapi:3.4.2")
 }
