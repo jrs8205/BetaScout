@@ -58,6 +58,18 @@ jobs:
         if: always()
         run: rm -f harvester/.gplay.local
 
+      - name: Publish catalog to KV
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "CLOUDFLARE_API_TOKEN not set; skipping KV publish (catalog is still committed)."
+            exit 0
+          fi
+          npx wrangler kv key put --remote \
+            --namespace-id 5deb2577b8524356a98468b5fb60f5df \
+            catalog --path catalog/catalog.json
+
       - name: Commit catalog
         run: |
           git config user.name 'github-actions[bot]'
