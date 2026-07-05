@@ -9,14 +9,15 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.jarsi.betascout.data.gplay.GoogleAuth
 import org.jarsi.betascout.data.settings.SettingsRepository
 import org.jarsi.betascout.domain.AppRepository
 
 data class AccountUiState(
-    val email: String = "",
-    val token: String = "",
     val signedIn: Boolean = false,
-    val syncing: Boolean = false,
+    val email: String = "",
+    val showLogin: Boolean = false,
+    val busy: Boolean = false,
     val syncedCount: Int? = null,
     val error: String? = null,
 )
@@ -40,32 +41,41 @@ class AccountViewModel @Inject constructor(
         }
     }
 
-    fun onEmailChange(value: String) = _state.update { it.copy(email = value) }
-    fun onTokenChange(value: String) = _state.update { it.copy(token = value) }
+    fun startLogin() = _state.update { it.copy(showLogin = true, error = null, syncedCount = null) }
+    fun cancelLogin() = _state.update { it.copy(showLogin = false) }
 
-    fun sync() {
+    /** Called by the login WebView once it captures the account email and oauth_token. */
+    fun onLoginCaptured(email: String, oauthToken: String) {
         viewModelScope.launch {
-            _state.update { it.copy(syncing = true, syncedCount = null, error = null) }
-            val typedToken = _state.value.token.trim()
-            val email = _state.value.email.trim()
-            val credential = if (typedToken.isNotBlank()) {
-                settings.saveGplayCredential(email, typedToken)
-                email to typedToken
-            } else {
-                settings.gplayCredential.first()
-            }
-            if (credential == null) {
-                _state.update { it.copy(syncing = false, error = "no_credential") }
+            _state.update { it.copy(showLogin = false, busy = true, error = null) }
+            val aasToken = GoogleAuth.exchangeOAuthToken(email, oauthToken).getOrElse { e ->
+                _state.update { it.copy(busy = false, error = e.message ?: "auth_failed") }
                 return@launch
             }
+            settings.saveGplayCredential(email, aasToken)
+            val result = repository.syncMembership(email, aasToken)
+            _state.update {
+                it.copy(
+                    busy = false,
+                    signedIn = true,
+                    email = email,
+                    syncedCount = result.getOrNull(),
+                    error = result.exceptionOrNull()?.message,
+                )
+            }
+        }
+    }
+
+    fun resync() {
+        viewModelScope.launch {
+            val credential = settings.gplayCredential.first() ?: return@launch
+            _state.update { it.copy(busy = true, syncedCount = null, error = null) }
             val result = repository.syncMembership(credential.first, credential.second)
             _state.update {
                 it.copy(
-                    syncing = false,
-                    signedIn = it.signedIn || result.isSuccess,
-                    token = "",
+                    busy = false,
                     syncedCount = result.getOrNull(),
-                    error = result.exceptionOrNull()?.let { e -> e.message ?: "error" },
+                    error = result.exceptionOrNull()?.message,
                 )
             }
         }
