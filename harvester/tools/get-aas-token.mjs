@@ -10,6 +10,7 @@
 // account). This uses Google's unofficial auth endpoint (against Google ToS).
 
 import { randomBytes } from 'node:crypto';
+import { writeFileSync } from 'node:fs';
 
 const email = process.env.EMAIL ?? process.argv[2];
 const oauthToken = process.env.OAUTH_TOKEN ?? process.argv[3];
@@ -63,9 +64,9 @@ const fields = Object.fromEntries(
 );
 
 if (fields.Token && fields.Token.startsWith('aas_et/')) {
-  console.log('\nAAS token (store as a SECRET — treat like a password):\n');
-  console.log(fields.Token);
-  console.log(`\nandroidId used: ${androidId}`);
+  const out = new URL('../.gplay.local', import.meta.url);
+  writeFileSync(out, `EMAIL=${email}\nAAS_TOKEN=${fields.Token}\nANDROID_ID=${androidId}\n`);
+  console.log('Success. Saved to harvester/.gplay.local (gitignored). The token is NOT printed here.');
 } else {
   console.error('Exchange failed. Full response:\n' + text);
   process.exit(1);

@@ -11,6 +11,7 @@ captures/
 *.apk
 *.apkm
 *.aab
+.gplay.local
 *.keystore
 !debug.keystore
 .remember/
