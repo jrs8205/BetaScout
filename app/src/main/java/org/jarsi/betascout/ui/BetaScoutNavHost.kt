@@ -20,6 +20,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import org.jarsi.betascout.R
+import org.jarsi.betascout.ui.account.AccountScreen
 import org.jarsi.betascout.ui.appdetail.AppDetailScreen
 import org.jarsi.betascout.ui.applist.AppListScreen
 import org.jarsi.betascout.ui.watchlist.WatchlistScreen
@@ -27,6 +28,7 @@ import org.jarsi.betascout.ui.watchlist.WatchlistScreen
 object Routes {
     const val APPS = "apps"
     const val WATCHLIST = "watchlist"
+    const val ACCOUNT = "account"
     const val APP_DETAIL = "apps/{packageName}"
     fun appDetail(packageName: String) = "apps/$packageName"
 }
@@ -79,7 +81,13 @@ fun BetaScoutNavHost() {
             modifier = Modifier.padding(padding),
         ) {
             composable(Routes.APPS) {
-                AppListScreen(onAppClick = { navController.navigate(Routes.appDetail(it)) })
+                AppListScreen(
+                    onAppClick = { navController.navigate(Routes.appDetail(it)) },
+                    onAccountClick = { navController.navigate(Routes.ACCOUNT) },
+                )
+            }
+            composable(Routes.ACCOUNT) {
+                AccountScreen(onBack = { navController.popBackStack() })
             }
             composable(Routes.WATCHLIST) {
                 WatchlistScreen(onAppClick = { navController.navigate(Routes.appDetail(it)) })

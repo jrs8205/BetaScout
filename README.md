@@ -93,4 +93,7 @@ Suggestions and bug reports are welcome in [Issues](https://github.com/jrs8205/B
 
 ## License
 
-Licensed under the [Apache License 2.0](LICENSE).
+The app source is under the [Apache License 2.0](LICENSE). Release builds link
+[gplayapi](https://gitlab.com/AuroraOSS/gplayapi) (GPL-3.0) for the optional
+Google sign-in feature, so the distributed APK is covered by GPL-3.0. The backend
+harvester (`harvester/`) is likewise GPL-3.0.

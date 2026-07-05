@@ -13,6 +13,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Star
@@ -48,6 +49,7 @@ import org.jarsi.betascout.ui.components.AppIcon
 @Composable
 fun AppListScreen(
     onAppClick: (String) -> Unit,
+    onAccountClick: () -> Unit,
     viewModel: AppListViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -57,6 +59,7 @@ fun AppListScreen(
         onFiltersChange = viewModel::updateFilters,
         onSelectTab = viewModel::selectTab,
         onRefresh = viewModel::refresh,
+        onAccountClick = onAccountClick,
     )
 }
 
@@ -68,12 +71,16 @@ private fun AppListContent(
     onFiltersChange: (AppFilters) -> Unit,
     onSelectTab: (BetaMembership) -> Unit,
     onRefresh: () -> Unit,
+    onAccountClick: () -> Unit,
 ) {
     Scaffold(
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.app_name)) },
                 actions = {
+                    IconButton(onClick = onAccountClick) {
+                        Icon(Icons.Default.AccountCircle, contentDescription = stringResource(R.string.account_open))
+                    }
                     IconButton(onClick = onRefresh, enabled = !uiState.isRefreshing) {
                         Icon(Icons.Default.Refresh, contentDescription = stringResource(R.string.refresh))
                     }

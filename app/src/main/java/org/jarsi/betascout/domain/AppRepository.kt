@@ -2,6 +2,15 @@ package org.jarsi.betascout.domain
 
 import kotlinx.coroutines.flow.Flow
 
+/** Reads which of the given packages the account is subscribed to the beta of. */
+fun interface MembershipSource {
+    suspend fun subscribedPackages(
+        email: String,
+        aasToken: String,
+        packages: List<String>,
+    ): Result<Set<String>>
+}
+
 interface AppRepository {
 
     /** Combined view: installed apps + beta info + the user's own marking. */
@@ -14,6 +23,10 @@ interface AppRepository {
     suspend fun refreshApps(): Result<Unit>
 
     suspend fun setUserState(packageName: String, state: UserBetaState): Result<Unit>
+
+    /** Reads authoritative beta membership from Google Play for the installed
+     *  beta apps and records Joined/Not joined. Returns the number found joined. */
+    suspend fun syncMembership(email: String, aasToken: String): Result<Int>
 
     suspend fun setWatching(
         packageName: String,

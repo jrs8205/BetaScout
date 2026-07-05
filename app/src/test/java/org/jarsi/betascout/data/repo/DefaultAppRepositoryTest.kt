@@ -109,6 +109,7 @@ class DefaultAppRepositoryTest {
         betaProgramDao = betaDao,
         userBetaStatusDao = userDao,
         seeder = BetaSeeder(seedJson, betaDao),
+        membership = org.jarsi.betascout.domain.MembershipSource { _, _, _ -> Result.success(emptySet()) },
         io = UnconfinedTestDispatcher(testScheduler),
         clock = { now },
     )

@@ -4,8 +4,11 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeeder
+import org.jarsi.betascout.domain.KnownBetaStatus
+import org.jarsi.betascout.domain.MembershipSource
 import org.jarsi.betascout.data.db.BetaProgramDao
 import org.jarsi.betascout.data.db.InstalledAppDao
 import org.jarsi.betascout.data.db.UserBetaStatusDao
@@ -24,6 +27,7 @@ class DefaultAppRepository(
     private val betaProgramDao: BetaProgramDao,
     private val userBetaStatusDao: UserBetaStatusDao,
     private val seeder: BetaSeeder,
+    private val membership: MembershipSource,
     private val io: CoroutineDispatcher,
     private val clock: () -> Long,
 ) : AppRepository {
@@ -55,6 +59,28 @@ class DefaultAppRepository(
 
     override suspend fun setUserState(packageName: String, state: UserBetaState): Result<Unit> =
         updateStatus(packageName) { it.copy(state = state) }
+
+    override suspend fun syncMembership(email: String, aasToken: String): Result<Int> = withContext(io) {
+        try {
+            val installed = installedAppDao.observeAll().first().map { it.packageName }.toSet()
+            val betaPackages = betaProgramDao.observeAll().first()
+                .filter { it.knownStatus != KnownBetaStatus.NO_PROGRAM }
+                .map { it.packageName }
+                .filter { it in installed }
+            val subscribed = membership.subscribedPackages(email, aasToken, betaPackages).getOrThrow()
+            betaPackages.forEach { packageName ->
+                val state = if (packageName in subscribed) UserBetaState.JOINED else UserBetaState.NOT_JOINED
+                val current = userBetaStatusDao.get(packageName)?.toDomain()
+                    ?: UserBetaStatusInfo(packageName = packageName)
+                userBetaStatusDao.upsert(current.copy(state = state).toEntity())
+            }
+            Result.success(subscribed.size)
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            Result.failure(DataError.Local(e))
+        }
+    }
 
     override suspend fun setWatching(
         packageName: String,
