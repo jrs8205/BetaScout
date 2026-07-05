@@ -9,6 +9,7 @@ captures/
 .externalNativeBuild/
 .cxx/
 *.apk
+*.apkm
 *.aab
 *.keystore
 !debug.keystore
