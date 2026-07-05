@@ -1,0 +1,12 @@
+{
+  "name": "betascout-harvester",
+  "version": "0.1.0",
+  "description": "Builds the BetaScout beta catalog from public sources (APKMirror). Separate program from the Android app; may carry a different licence.",
+  "type": "module",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "test": "node --test",
+    "harvest": "node src/run.js"
+  }
+}
