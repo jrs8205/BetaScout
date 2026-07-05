@@ -12,6 +12,7 @@ captures/
 *.apkm
 *.aab
 .gplay.local
+.wrangler/
 *.keystore
 !debug.keystore
 .remember/
