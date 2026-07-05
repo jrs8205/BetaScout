@@ -7,9 +7,14 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import java.io.File
+import java.net.HttpURLConnection
+import java.net.URL
 import javax.inject.Singleton
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeeder
+import org.jarsi.betascout.data.betadb.CatalogProvider
 import org.jarsi.betascout.data.db.AppDatabase
 import org.jarsi.betascout.data.db.BetaProgramDao
 import org.jarsi.betascout.data.db.InstalledAppDao
@@ -25,6 +30,30 @@ import org.jarsi.betascout.domain.AppRepository
 object AppModule {
 
     private const val SEED_ASSET = "beta_programs.json"
+    private const val CATALOG_URL = "https://betascout-catalog.jarsi.workers.dev"
+    private const val CATALOG_CACHE_FILE = "catalog_cache.json"
+
+    /** GET the catalog; returns null on any failure so the caller can fall back. */
+    private suspend fun fetchCatalog(url: String): String? = withContext(Dispatchers.IO) {
+        try {
+            val connection = (URL(url).openConnection() as HttpURLConnection).apply {
+                requestMethod = "GET"
+                connectTimeout = 10_000
+                readTimeout = 10_000
+            }
+            try {
+                if (connection.responseCode == 200) {
+                    connection.inputStream.bufferedReader().use { it.readText() }
+                } else {
+                    null
+                }
+            } finally {
+                connection.disconnect()
+            }
+        } catch (e: Exception) {
+            null
+        }
+    }
 
     @Provides
     @Singleton
@@ -63,9 +92,16 @@ object AppModule {
         betaProgramDao = betaProgramDao,
         userBetaStatusDao = userBetaStatusDao,
         seeder = BetaSeeder(
-            readSeedJson = {
-                context.assets.open(SEED_ASSET).bufferedReader().use { it.readText() }
-            },
+            readSeedJson = CatalogProvider(
+                fetchRemote = { fetchCatalog(CATALOG_URL) },
+                readCache = {
+                    File(context.filesDir, CATALOG_CACHE_FILE).takeIf { it.exists() }?.readText()
+                },
+                writeCache = { File(context.filesDir, CATALOG_CACHE_FILE).writeText(it) },
+                readBundled = {
+                    context.assets.open(SEED_ASSET).bufferedReader().use { it.readText() }
+                },
+            )::catalogJson,
             dao = betaProgramDao,
         ),
         io = Dispatchers.IO,

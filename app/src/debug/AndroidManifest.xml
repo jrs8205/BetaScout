@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Debug-only: INTERNET for the instrumented gplayapi probe. The release app
-     stays offline until the remote catalog feature adds this to the main manifest. -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-permission android:name="android.permission.INTERNET" />
-</manifest>

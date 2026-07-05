@@ -4,7 +4,7 @@ import org.jarsi.betascout.data.db.BetaProgramDao
 import org.jarsi.betascout.data.db.toEntity
 
 class BetaSeeder(
-    private val readSeedJson: () -> String,
+    private val readSeedJson: suspend () -> String,
     private val dao: BetaProgramDao,
 ) {
     /** Idempotent: the IGNORE strategy never overwrites existing rows. */
