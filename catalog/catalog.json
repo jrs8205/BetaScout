@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1783259951010,
+  "generatedAt": 1783275533492,
   "programs": [
     {
       "packageName": "com.adobe.reader",
@@ -15,7 +15,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 787106333,
+      "productionVersionCode": 782720033,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -31,7 +31,7 @@
     },
     {
       "packageName": "com.dropbox.android",
-      "appName": "Dropbox: Files & Cloud Storage",
+      "appName": "Dropbox: Secure Cloud Storage",
       "hasBeta": true,
       "productionVersionCode": 48020200,
       "liveStatus": "UNKNOWN",
