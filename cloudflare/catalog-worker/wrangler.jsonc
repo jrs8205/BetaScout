@@ -1,0 +1,8 @@
+{
+  "name": "betascout-catalog",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-01",
+  "kv_namespaces": [
+    { "binding": "CATALOG", "id": "5deb2577b8524356a98468b5fb60f5df" }
+  ]
+}
