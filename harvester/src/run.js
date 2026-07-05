@@ -1,5 +1,6 @@
-// Harvest pipeline: discover beta apps from APKMirror, optionally confirm/enrich
-// each via the authoritative gplayapi tool, merge, and write catalog.json.
+// Harvest pipeline: discover beta apps from APKMirror, confirm/enrich a curated
+// seed + the discoveries via the authoritative gplayapi tool, merge, accumulate
+// into the published catalog, and write catalog/catalog.json.
 //
 // Only metadata is read (no APK downloads). APKMirror requests are spaced by the
 // robots.txt crawl delay and capped per run; anything skipped is logged.
@@ -7,7 +8,7 @@
 // Set GPLAY_ENABLED=1 (with a JDK and harvester/.gplay.local) to add the
 // authoritative Google Play data; otherwise the APKMirror signal stands alone.
 
-import { writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import {
   parseFeed,
@@ -17,7 +18,7 @@ import {
   appNameFromTitle,
 } from './apkmirror.js';
 import { buildCatalog } from './catalog.js';
-import { mergeCatalogEntries } from './merge.js';
+import { mergeCatalogEntries, accumulateCatalog } from './merge.js';
 import { runGplay } from './gplay.js';
 import { fetchText, sleep } from './fetch.js';
 
@@ -26,9 +27,28 @@ const CRAWL_DELAY_MS = 3000; // robots.txt: Crawl-delay: 3
 const MAX_APPS = Number(process.env.MAX_APPS ?? 8);
 
 const REPO_ROOT = fileURLToPath(new URL('../../', import.meta.url)).replace(/[/\\]$/, '');
+const SEED_URL = new URL('../seed-packages.json', import.meta.url);
+const PUBLISHED_URL = new URL('../../catalog/catalog.json', import.meta.url);
+
 const GPLAY_ENABLED = process.env.GPLAY_ENABLED === '1';
 const GRADLEW = process.env.GRADLEW || `${REPO_ROOT}${process.platform === 'win32' ? '/gradlew.bat' : '/gradlew'}`;
 const JAVA_HOME = process.env.GPLAY_JAVA_HOME || process.env.JAVA_HOME;
+
+function loadSeedPackages() {
+  try {
+    return JSON.parse(readFileSync(SEED_URL, 'utf8')).packages ?? [];
+  } catch {
+    return [];
+  }
+}
+
+function loadExistingPrograms() {
+  try {
+    return JSON.parse(readFileSync(PUBLISHED_URL, 'utf8')).programs ?? [];
+  } catch {
+    return [];
+  }
+}
 
 async function collectBetaAppPages() {
   const betaByAppPage = new Map(); // app page URL -> feed title
@@ -76,15 +96,14 @@ async function discoverPackages(betaByAppPage) {
   return discovered;
 }
 
-function enrichViaGplay(discovered) {
+function enrichViaGplay(packageNames) {
   if (!GPLAY_ENABLED) {
     console.error('gplay enrichment disabled (set GPLAY_ENABLED=1 to confirm via Google Play).');
     return [];
   }
-  const packages = discovered.map((d) => d.packageName);
-  console.error(`Confirming ${packages.length} package(s) via gplayapi...`);
+  console.error(`Confirming ${packageNames.length} package(s) via gplayapi...`);
   try {
-    return runGplay(packages, { gradlew: GRADLEW, projectRoot: REPO_ROOT, javaHome: JAVA_HOME });
+    return runGplay(packageNames, { gradlew: GRADLEW, projectRoot: REPO_ROOT, javaHome: JAVA_HOME });
   } catch (error) {
     console.error(`gplay enrichment failed (continuing with APKMirror only): ${error.message}`);
     return [];
@@ -96,13 +115,20 @@ async function main() {
   console.log(`Beta uploads found in feeds: ${betaByAppPage.size}`);
 
   const discovered = await discoverPackages(betaByAppPage);
-  const gplayResults = enrichViaGplay(discovered);
+  const seed = loadSeedPackages();
+  const packagesToConfirm = [...new Set([...discovered.map((d) => d.packageName), ...seed])];
+  const gplayResults = enrichViaGplay(packagesToConfirm);
 
-  const entries = mergeCatalogEntries(discovered, gplayResults);
-  const confirmed = entries.filter((e) => e.source === 'GPLAYAPI').length;
-  const catalog = buildCatalog(entries, { generatedAt: Date.now() });
-  writeFileSync(new URL('../catalog.json', import.meta.url), JSON.stringify(catalog, null, 2) + '\n');
-  console.log(`\nWrote catalog.json: ${catalog.programs.length} program(s), ${confirmed} confirmed via Google Play.`);
+  const fresh = mergeCatalogEntries(discovered, gplayResults);
+  const accumulated = accumulateCatalog(loadExistingPrograms(), fresh);
+  const published = accumulated.filter((e) => e.hasBeta === true);
+
+  const catalog = buildCatalog(published, { generatedAt: Date.now() });
+  mkdirSync(fileURLToPath(new URL('.', PUBLISHED_URL)), { recursive: true });
+  writeFileSync(PUBLISHED_URL, JSON.stringify(catalog, null, 2) + '\n');
+
+  const confirmed = published.filter((e) => e.source === 'GPLAYAPI').length;
+  console.log(`\nWrote catalog/catalog.json: ${catalog.programs.length} program(s), ${confirmed} confirmed via Google Play.`);
 }
 
 main().catch((error) => {

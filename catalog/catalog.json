@@ -1,0 +1,231 @@
+{
+  "version": 2,
+  "generatedAt": 1783259951010,
+  "programs": [
+    {
+      "packageName": "com.adobe.reader",
+      "appName": "Adobe Acrobat Reader: Edit PDF",
+      "hasBeta": true,
+      "productionVersionCode": 1931845936,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.android.chrome",
+      "appName": "Google Chrome",
+      "hasBeta": true,
+      "productionVersionCode": 787106333,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.discord",
+      "appName": "Discord - Talk, Play, Hang Out",
+      "hasBeta": true,
+      "productionVersionCode": 335011,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.dropbox.android",
+      "appName": "Dropbox: Files & Cloud Storage",
+      "hasBeta": true,
+      "productionVersionCode": 48020200,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.duolingo",
+      "appName": "Duolingo: Language Lessons",
+      "hasBeta": true,
+      "productionVersionCode": 2402,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.facebook.katana",
+      "appName": "Facebook",
+      "hasBeta": true,
+      "productionVersionCode": 472527907,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.facebook.orca",
+      "appName": "Messenger",
+      "hasBeta": true,
+      "productionVersionCode": 343612311,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.apps.maps",
+      "appName": "Google Maps",
+      "hasBeta": true,
+      "productionVersionCode": 1068646115,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.youtube",
+      "appName": "YouTube",
+      "hasBeta": true,
+      "productionVersionCode": 1561182083,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.instagram.android",
+      "appName": "Instagram",
+      "hasBeta": true,
+      "productionVersionCode": 384209456,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.linkedin.android",
+      "appName": "LinkedIn: Community & Network",
+      "hasBeta": true,
+      "productionVersionCode": 212600,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.microsoft.office.powerpoint",
+      "appName": "Microsoft PowerPoint",
+      "hasBeta": true,
+      "productionVersionCode": 2005201435,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.microsoft.skydrive",
+      "appName": "Microsoft OneDrive",
+      "hasBeta": true,
+      "productionVersionCode": 2027580402,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.microsoft.teams",
+      "appName": "Microsoft Teams",
+      "hasBeta": true,
+      "productionVersionCode": 2026112725,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.netflix.mediaclient",
+      "appName": "Netflix",
+      "hasBeta": true,
+      "productionVersionCode": 64216,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.pinterest",
+      "appName": "Pinterest",
+      "hasBeta": true,
+      "productionVersionCode": 14258020,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.reddit.frontpage",
+      "appName": "Reddit",
+      "hasBeta": true,
+      "productionVersionCode": 2626160,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.snapchat.android",
+      "appName": "Snapchat",
+      "hasBeta": true,
+      "productionVersionCode": 298522,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.spotify.music",
+      "appName": "Spotify: Music and Podcasts",
+      "hasBeta": true,
+      "productionVersionCode": 143403975,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.todoist",
+      "appName": "Todoist: To Do List & Calendar",
+      "hasBeta": true,
+      "productionVersionCode": 12194,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.tumblr",
+      "appName": "Tumblr: Social Media & Art",
+      "hasBeta": true,
+      "productionVersionCode": 1450200109,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.twitter.android",
+      "appName": "X",
+      "hasBeta": true,
+      "productionVersionCode": 312050000,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.whatsapp",
+      "appName": "WhatsApp Messenger",
+      "hasBeta": true,
+      "productionVersionCode": 262307413,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "org.telegram.messenger",
+      "appName": "Telegram",
+      "hasBeta": true,
+      "productionVersionCode": 69222,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "tv.twitch.android.app",
+      "appName": "Twitch: Live Streaming",
+      "hasBeta": true,
+      "productionVersionCode": 3000006,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    }
+  ]
+}

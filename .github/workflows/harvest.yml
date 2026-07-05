@@ -1,0 +1,71 @@
+# Scheduled harvest: refresh the beta catalog from APKMirror + Google Play
+# (via gplayapi) and commit catalog/catalog.json.
+#
+# Requires two repository secrets for a THROWAWAY Google account (never a
+# personal one — this uses Google Play's unofficial API):
+#   GPLAY_EMAIL       the account email
+#   GPLAY_AAS_TOKEN   its AAS master token (from harvester/tools/get-aas-token.mjs)
+#
+# Until Cloudflare serving is set up, the catalog is published by committing it
+# here (fetchable via GitHub raw); that publish step will later target KV instead.
+
+name: Harvest beta catalog
+
+on:
+  schedule:
+    - cron: '17 4 * * *' # daily at 04:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: harvest
+  cancel-in-progress: false
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Fetch gplayapi jar
+        run: |
+          curl -sL https://repo1.maven.org/maven2/com/auroraoss/gplayapi/3.4.2/gplayapi-3.4.2.aar -o /tmp/g.aar
+          mkdir -p harvester/gplay/libs
+          unzip -o /tmp/g.aar classes.jar -d harvester/gplay/libs
+          mv harvester/gplay/libs/classes.jar harvester/gplay/libs/gplayapi-3.4.2.jar
+
+      - name: Write credentials
+        run: printf 'EMAIL=%s\nAAS_TOKEN=%s\n' "${{ secrets.GPLAY_EMAIL }}" "${{ secrets.GPLAY_AAS_TOKEN }}" > harvester/.gplay.local
+
+      - name: Harvest
+        env:
+          GPLAY_ENABLED: '1'
+          MAX_APPS: '30'
+        run: node harvester/src/run.js
+
+      - name: Remove credentials
+        if: always()
+        run: rm -f harvester/.gplay.local
+
+      - name: Commit catalog
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add catalog/catalog.json
+          if git diff --staged --quiet; then
+            echo "No catalog changes."
+          else
+            git commit -m 'Update beta catalog [skip ci]'
+            git push
+          fi

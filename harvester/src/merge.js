@@ -40,3 +40,17 @@ export function mergeCatalogEntries(discovered, gplayResults) {
   }
   return entries;
 }
+
+/**
+ * Accumulates this run's fresh entries into the previously published programs:
+ * a fresh entry replaces the existing one for the same package, packages not
+ * seen this run are kept, and new packages are added. Lets the catalog grow
+ * across runs instead of being overwritten with only the latest finds.
+ */
+export function accumulateCatalog(existingPrograms, freshEntries) {
+  const byPackage = new Map(existingPrograms.map((e) => [e.packageName, e]));
+  for (const entry of freshEntries) {
+    byPackage.set(entry.packageName, entry);
+  }
+  return [...byPackage.values()];
+}

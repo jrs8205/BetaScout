@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { mergeCatalogEntries } from '../src/merge.js';
+import { mergeCatalogEntries, accumulateCatalog } from '../src/merge.js';
 
 test('gplay data enriches a discovered app as authoritative', () => {
   const entries = mergeCatalogEntries(
@@ -50,4 +50,23 @@ test('a gplay-only package is included', () => {
   );
 
   assert.equal(entries.find((e) => e.packageName === 'com.e').source, 'GPLAYAPI');
+});
+
+test('accumulate updates existing entries, keeps unseen ones and adds new ones', () => {
+  const merged = accumulateCatalog(
+    [
+      { packageName: 'com.a', productionVersionCode: 1, source: 'APKMIRROR' },
+      { packageName: 'com.old', productionVersionCode: 7, source: 'GPLAYAPI' },
+    ],
+    [
+      { packageName: 'com.a', productionVersionCode: 2, source: 'GPLAYAPI' },
+      { packageName: 'com.new', productionVersionCode: 3, source: 'GPLAYAPI' },
+    ],
+  );
+
+  const byPackage = Object.fromEntries(merged.map((e) => [e.packageName, e]));
+  assert.equal(merged.length, 3);
+  assert.equal(byPackage['com.a'].productionVersionCode, 2); // fresh wins
+  assert.equal(byPackage['com.old'].productionVersionCode, 7); // kept
+  assert.ok(byPackage['com.new']); // added
 });
