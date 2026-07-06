@@ -6,6 +6,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.domain.BetaLinkBuilder
+import org.jarsi.betascout.domain.PlaySession
 
 /**
  * Fetches the testing page over HTTP with the user's Play web-session cookies. A

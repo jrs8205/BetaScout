@@ -15,7 +15,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeeder
 import org.jarsi.betascout.data.betadb.CatalogProvider
-import org.jarsi.betascout.data.gplay.GplayMembership
+import org.jarsi.betascout.data.scrape.BetaStatusScraper
+import org.jarsi.betascout.data.scrape.HttpTestingPageSource
 import org.jarsi.betascout.data.db.AppDatabase
 import org.jarsi.betascout.data.db.BetaObservationDao
 import org.jarsi.betascout.data.db.BetaProgramDao
@@ -115,7 +116,10 @@ object AppModule {
             )::catalogJson,
             dao = betaProgramDao,
         ),
-        membership = GplayMembership(context),
+        scraper = BetaStatusScraper(
+            source = HttpTestingPageSource(),
+            clock = System::currentTimeMillis,
+        ),
         io = Dispatchers.IO,
         clock = System::currentTimeMillis,
     )

@@ -100,10 +100,16 @@ fun AccountScreen(
                 }
             }
 
-            state.syncedCount?.let {
+            state.checked?.let { checked ->
                 Text(
-                    text = stringResource(R.string.account_synced, it),
+                    text = stringResource(R.string.account_scan_result, checked, state.joined ?: 0),
                     color = MaterialTheme.colorScheme.primary,
+                )
+            }
+            if (state.needsReLogin) {
+                Text(
+                    text = stringResource(R.string.account_relogin),
+                    color = MaterialTheme.colorScheme.error,
                 )
             }
             state.error?.let {
@@ -117,8 +123,10 @@ fun AccountScreen(
 }
 
 /**
- * Loads Google's embedded sign-in and captures the account email and short-lived
- * oauth_token once the user completes login. The token is exchanged in-app.
+ * Signs the user into their Google web session and, once play.google.com carries the
+ * session cookies, captures them (plus the account email) so BetaScout can fetch the
+ * user's own testing pages. No token exchange and no Play API — just the web session,
+ * the same mechanism the reference app uses.
  */
 @Composable
 private fun GoogleLoginWebView(onCaptured: (String, String) -> Unit) {
@@ -137,26 +145,23 @@ private fun GoogleLoginWebView(onCaptured: (String, String) -> Unit) {
                     private var handled = false
 
                     override fun onPageFinished(view: WebView, url: String?) {
-                        if (handled) return
-                        val cookieString = CookieManager.getInstance()
-                            .getCookie("https://accounts.google.com") ?: return
-                        val oauthToken = cookieString.split(";")
-                            .map { it.trim() }
-                            .firstOrNull { it.startsWith("oauth_token=") }
-                            ?.removePrefix("oauth_token=")
-                        if (oauthToken != null && oauthToken.startsWith("oauth2_4/")) {
-                            handled = true
-                            view.evaluateJavascript(
-                                "(function(){var m=document.documentElement.innerHTML" +
-                                    ".match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}/);" +
-                                    "return m?m[0]:'';})()",
-                            ) { raw ->
-                                onCaptured(raw.trim('"'), oauthToken)
-                            }
+                        if (handled || url == null || !url.contains("play.google.com")) return
+                        val cookies = CookieManager.getInstance()
+                            .getCookie("https://play.google.com") ?: return
+                        // A signed-in Google web session carries these auth cookies.
+                        val signedIn = cookies.contains("SAPISID=") || cookies.contains("SID=")
+                        if (!signedIn) return
+                        handled = true
+                        view.evaluateJavascript(
+                            "(function(){var m=document.documentElement.innerHTML" +
+                                ".match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}/);" +
+                                "return m?m[0]:'';})()",
+                        ) { raw ->
+                            onCaptured(raw.trim('"'), cookies)
                         }
                     }
                 }
-                loadUrl("https://accounts.google.com/EmbeddedSetup")
+                loadUrl("https://accounts.google.com/ServiceLogin?continue=https://play.google.com/")
             }
         },
     )

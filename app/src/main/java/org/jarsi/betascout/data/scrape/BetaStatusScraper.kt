@@ -2,6 +2,7 @@ package org.jarsi.betascout.data.scrape
 
 import kotlinx.coroutines.delay
 import org.jarsi.betascout.domain.BetaObservation
+import org.jarsi.betascout.domain.PlaySession
 
 /** Result of scraping a batch of packages. */
 data class ScrapeOutcome(

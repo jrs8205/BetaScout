@@ -31,29 +31,29 @@ class SettingsRepository @Inject constructor(
         context.dataStore.edit { it[onboardingDoneKey] = true }
     }
 
-    private val gplayEmailKey = stringPreferencesKey("gplay_email")
-    private val gplayAasTokenKey = stringPreferencesKey("gplay_aas_token")
+    private val sessionEmailKey = stringPreferencesKey("session_email")
+    private val sessionCookieKey = stringPreferencesKey("session_cookie")
 
-    /** The stored Google account credential (email to AAS token), or null if not signed in. */
-    val gplayCredential: Flow<Pair<String, String>?> = context.dataStore.data
+    /** The stored Play web session (email to cookie header), or null if not signed in. */
+    val playSession: Flow<Pair<String, String>?> = context.dataStore.data
         .catch { e -> if (e is IOException) emit(emptyPreferences()) else throw e }
         .map { prefs ->
-            val email = prefs[gplayEmailKey]
-            val token = prefs[gplayAasTokenKey]
-            if (!email.isNullOrBlank() && !token.isNullOrBlank()) email to token else null
+            val email = prefs[sessionEmailKey]
+            val cookie = prefs[sessionCookieKey]
+            if (!cookie.isNullOrBlank()) (email ?: "") to cookie else null
         }
 
-    suspend fun saveGplayCredential(email: String, aasToken: String) {
+    suspend fun savePlaySession(email: String, cookieHeader: String) {
         context.dataStore.edit {
-            it[gplayEmailKey] = email
-            it[gplayAasTokenKey] = aasToken
+            it[sessionEmailKey] = email
+            it[sessionCookieKey] = cookieHeader
         }
     }
 
-    suspend fun clearGplayCredential() {
+    suspend fun clearPlaySession() {
         context.dataStore.edit {
-            it.remove(gplayEmailKey)
-            it.remove(gplayAasTokenKey)
+            it.remove(sessionEmailKey)
+            it.remove(sessionCookieKey)
         }
     }
 }

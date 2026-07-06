@@ -7,8 +7,6 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeeder
-import org.jarsi.betascout.domain.KnownBetaStatus
-import org.jarsi.betascout.domain.MembershipSource
 import org.jarsi.betascout.data.db.BetaObservationDao
 import org.jarsi.betascout.data.db.BetaProgramDao
 import org.jarsi.betascout.data.db.InstalledAppDao
@@ -16,9 +14,16 @@ import org.jarsi.betascout.data.db.UserBetaStatusDao
 import org.jarsi.betascout.data.db.toDomain
 import org.jarsi.betascout.data.db.toEntity
 import org.jarsi.betascout.data.scanner.PackageScanner
+import org.jarsi.betascout.data.scrape.BetaStatusScraper
 import org.jarsi.betascout.domain.AppBetaOverview
 import org.jarsi.betascout.domain.AppRepository
 import org.jarsi.betascout.domain.DataError
+import org.jarsi.betascout.domain.LiveBetaStatus
+import org.jarsi.betascout.domain.ObservedMembership
+import org.jarsi.betascout.domain.PlaySession
+import org.jarsi.betascout.domain.ScanCandidate
+import org.jarsi.betascout.domain.ScanPolicy
+import org.jarsi.betascout.domain.ScanSummary
 import org.jarsi.betascout.domain.UserBetaState
 import org.jarsi.betascout.domain.UserBetaStatusInfo
 
@@ -29,7 +34,7 @@ class DefaultAppRepository(
     private val betaObservationDao: BetaObservationDao,
     private val userBetaStatusDao: UserBetaStatusDao,
     private val seeder: BetaSeeder,
-    private val membership: MembershipSource,
+    private val scraper: BetaStatusScraper,
     private val io: CoroutineDispatcher,
     private val clock: () -> Long,
 ) : AppRepository {
@@ -65,21 +70,29 @@ class DefaultAppRepository(
     override suspend fun setUserState(packageName: String, state: UserBetaState): Result<Unit> =
         updateStatus(packageName) { it.copy(state = state) }
 
-    override suspend fun syncMembership(email: String, aasToken: String): Result<Int> = withContext(io) {
+    override suspend fun refreshBetaStatus(session: PlaySession): Result<ScanSummary> = withContext(io) {
         try {
-            val installed = installedAppDao.observeAll().first().map { it.packageName }.toSet()
-            val betaPackages = betaProgramDao.observeAll().first()
-                .filter { it.knownStatus != KnownBetaStatus.NO_PROGRAM }
-                .map { it.packageName }
-                .filter { it in installed }
-            val subscribed = membership.subscribedPackages(email, aasToken, betaPackages).getOrThrow()
-            betaPackages.forEach { packageName ->
-                val state = if (packageName in subscribed) UserBetaState.JOINED else UserBetaState.NOT_JOINED
-                val current = userBetaStatusDao.get(packageName)?.toDomain()
-                    ?: UserBetaStatusInfo(packageName = packageName)
-                userBetaStatusDao.upsert(current.copy(state = state).toEntity())
+            val installed = installedAppDao.observeAll().first().filter { !it.isSystem }
+            val observed = betaObservationDao.observeAll().first().associateBy { it.packageName }
+            val candidates = installed.map { app ->
+                val previous = observed[app.packageName]
+                ScanCandidate(
+                    packageName = app.packageName,
+                    lastStatus = previous?.liveStatus ?: LiveBetaStatus.UNKNOWN,
+                    checkedAt = previous?.checkedAt,
+                )
             }
-            Result.success(subscribed.size)
+            val due = ScanPolicy.selectDue(candidates, clock(), cap = SCAN_CAP).map { it.packageName }
+            val outcome = scraper.scrape(due, session)
+            outcome.observations.forEach { betaObservationDao.upsert(it.toEntity()) }
+            val joined = outcome.observations.count { it.observedMembership == ObservedMembership.JOINED }
+            Result.success(
+                ScanSummary(
+                    checked = outcome.observations.size,
+                    joined = joined,
+                    needsLogin = outcome.needsLogin,
+                ),
+            )
         } catch (e: CancellationException) {
             throw e
         } catch (e: Exception) {
@@ -142,5 +155,10 @@ class DefaultAppRepository(
         } catch (e: Exception) {
             Result.failure(wrap(e))
         }
+    }
+
+    private companion object {
+        /** Max packages scraped per run; the rest roll to the next run (see ScanPolicy). */
+        const val SCAN_CAP = 30
     }
 }

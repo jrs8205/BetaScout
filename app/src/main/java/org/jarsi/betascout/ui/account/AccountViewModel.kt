@@ -9,16 +9,18 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import org.jarsi.betascout.data.gplay.GoogleAuth
 import org.jarsi.betascout.data.settings.SettingsRepository
 import org.jarsi.betascout.domain.AppRepository
+import org.jarsi.betascout.domain.PlaySession
 
 data class AccountUiState(
     val signedIn: Boolean = false,
     val email: String = "",
     val showLogin: Boolean = false,
     val busy: Boolean = false,
-    val syncedCount: Int? = null,
+    val checked: Int? = null,
+    val joined: Int? = null,
+    val needsReLogin: Boolean = false,
     val error: String? = null,
 )
 
@@ -33,58 +35,67 @@ class AccountViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            settings.gplayCredential.collect { credential ->
-                if (credential != null) {
-                    _state.update { it.copy(email = credential.first, signedIn = true) }
+            settings.playSession.collect { session ->
+                if (session != null) {
+                    _state.update { it.copy(email = session.first, signedIn = true) }
                 }
             }
         }
     }
 
-    fun startLogin() = _state.update { it.copy(showLogin = true, error = null, syncedCount = null) }
+    fun startLogin() = _state.update {
+        it.copy(showLogin = true, error = null, checked = null, joined = null, needsReLogin = false)
+    }
+
     fun cancelLogin() = _state.update { it.copy(showLogin = false) }
 
-    /** Called by the login WebView once it captures the account email and oauth_token. */
-    fun onLoginCaptured(email: String, oauthToken: String) {
+    /** Called by the login WebView once it captures the account email and session cookies. */
+    fun onLoginCaptured(email: String, cookieHeader: String) {
         viewModelScope.launch {
             _state.update { it.copy(showLogin = false, busy = true, error = null) }
-            val aasToken = GoogleAuth.exchangeOAuthToken(email, oauthToken).getOrElse { e ->
-                _state.update { it.copy(busy = false, error = e.message ?: "auth_failed") }
-                return@launch
-            }
-            settings.saveGplayCredential(email, aasToken)
-            val result = repository.syncMembership(email, aasToken)
-            _state.update {
-                it.copy(
-                    busy = false,
-                    signedIn = true,
-                    email = email,
-                    syncedCount = result.getOrNull(),
-                    error = result.exceptionOrNull()?.message,
-                )
-            }
+            settings.savePlaySession(email, cookieHeader)
+            scan(email, cookieHeader)
         }
     }
 
     fun resync() {
         viewModelScope.launch {
-            val credential = settings.gplayCredential.first() ?: return@launch
-            _state.update { it.copy(busy = true, syncedCount = null, error = null) }
-            val result = repository.syncMembership(credential.first, credential.second)
-            _state.update {
-                it.copy(
-                    busy = false,
-                    syncedCount = result.getOrNull(),
-                    error = result.exceptionOrNull()?.message,
-                )
-            }
+            val session = settings.playSession.first() ?: return@launch
+            _state.update { it.copy(busy = true, checked = null, joined = null, error = null) }
+            scan(session.first, session.second)
         }
     }
 
     fun signOut() {
         viewModelScope.launch {
-            settings.clearGplayCredential()
+            settings.clearPlaySession()
             _state.value = AccountUiState()
         }
+    }
+
+    private suspend fun scan(email: String, cookieHeader: String) {
+        repository.refreshBetaStatus(PlaySession(cookieHeader)).fold(
+            onSuccess = { summary ->
+                if (summary.needsLogin) {
+                    settings.clearPlaySession()
+                    _state.update {
+                        it.copy(busy = false, signedIn = false, needsReLogin = true)
+                    }
+                } else {
+                    _state.update {
+                        it.copy(
+                            busy = false,
+                            signedIn = true,
+                            email = email,
+                            checked = summary.checked,
+                            joined = summary.joined,
+                        )
+                    }
+                }
+            },
+            onFailure = { e ->
+                _state.update { it.copy(busy = false, error = e.message ?: "scan_failed") }
+            },
+        )
     }
 }

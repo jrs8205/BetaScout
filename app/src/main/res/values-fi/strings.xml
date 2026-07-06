@@ -55,10 +55,11 @@
     <!-- Account / membership sync -->
     <string name="account_title">Google-tili</string>
     <string name="account_open">Tili</string>
-    <string name="account_hint">Kirjaudu Google-tililläsi tunnistaaksesi mihin betoihin olet oikeasti liittynyt. Käyttää Google Playn epävirallista API:a — käytä vara-tiliä.</string>
+    <string name="account_hint">Kirjaudu Google-tililläsi, jotta BetaScout voi lukea omat testisivusi ja tunnistaa mihin betoihin kuulut ja onko kukin auki vai täynnä. Se ei koskaan liity puolestasi.</string>
     <string name="account_signin">Kirjaudu Googlella</string>
-    <string name="account_sync">Synkkaa jäsenyys</string>
-    <string name="account_synced">Synkronoitu: %1$d betassa</string>
+    <string name="account_sync">Skannaa nyt</string>
+    <string name="account_scan_result">Tarkistettu %1$d sovellusta · mukana %2$d betassa</string>
+    <string name="account_relogin">Istunto vanheni — kirjaudu uudelleen.</string>
     <string name="account_error">Epäonnistui: %1$s</string>
     <string name="account_signed_in">Kirjautunut: %1$s</string>
     <string name="account_signout">Kirjaudu ulos</string>

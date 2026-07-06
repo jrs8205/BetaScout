@@ -1,7 +1,6 @@
 package org.jarsi.betascout.data.scrape
 
-/** The user's Google Play web session, as a cookie header for authenticated requests. */
-data class PlaySession(val cookieHeader: String)
+import org.jarsi.betascout.domain.PlaySession
 
 /**
  * Fetches the raw HTML of `play.google.com/apps/testing/<pkg>` using the user's

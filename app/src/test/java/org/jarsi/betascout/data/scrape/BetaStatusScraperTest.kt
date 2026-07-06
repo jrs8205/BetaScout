@@ -3,6 +3,7 @@ package org.jarsi.betascout.data.scrape
 import kotlinx.coroutines.test.runTest
 import org.jarsi.betascout.domain.LiveBetaStatus
 import org.jarsi.betascout.domain.ObservedMembership
+import org.jarsi.betascout.domain.PlaySession
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue

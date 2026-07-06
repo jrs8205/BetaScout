@@ -17,7 +17,10 @@ import org.jarsi.betascout.data.db.InstalledAppEntity
 import org.jarsi.betascout.data.db.UserBetaStatusDao
 import org.jarsi.betascout.data.db.UserBetaStatusEntity
 import org.jarsi.betascout.data.scanner.PackageScanner
+import org.jarsi.betascout.data.scrape.BetaStatusScraper
+import org.jarsi.betascout.data.scrape.TestingPageSource
 import org.jarsi.betascout.domain.BetaSource
+import org.jarsi.betascout.domain.PlaySession
 import org.jarsi.betascout.domain.DataError
 import org.jarsi.betascout.domain.InstalledAppInfo
 import org.jarsi.betascout.domain.KnownBetaStatus
@@ -117,6 +120,9 @@ class DefaultAppRepositoryTest {
     private val userDao = FakeUserBetaStatusDao()
     private val scanner = FakeScanner { emptyList() }
 
+    /** HTML the fake testing-page source returns per package (empty page by default). */
+    private var pageHtml: (String) -> String = { "<html><body></body></html>" }
+
     private fun kotlinx.coroutines.test.TestScope.repository(
         seedJson: () -> String = { """{"programs":[]}""" },
         now: Long = 42L,
@@ -127,7 +133,11 @@ class DefaultAppRepositoryTest {
         betaObservationDao = observationDao,
         userBetaStatusDao = userDao,
         seeder = BetaSeeder(seedJson, betaDao),
-        membership = org.jarsi.betascout.domain.MembershipSource { _, _, _ -> Result.success(emptySet()) },
+        scraper = BetaStatusScraper(
+            source = TestingPageSource { pkg, _ -> Result.success(pageHtml(pkg)) },
+            clock = { now },
+            delayFn = {},
+        ),
         io = UnconfinedTestDispatcher(testScheduler),
         clock = { now },
     )
@@ -179,6 +189,26 @@ class DefaultAppRepositoryTest {
 
         assertEquals(LiveBetaStatus.OPEN, whatsapp.observation?.liveStatus)
         assertEquals(ObservedMembership.JOINED, whatsapp.observation?.observedMembership)
+    }
+
+    @Test
+    fun `refreshBetaStatus scrapes due installed apps and records observations`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a"), app("com.b")) }
+        repo.refreshApps()
+        pageHtml = { pkg ->
+            if (pkg == "com.a") """<html><body><form id="leaveForm"></form></body></html>"""
+            else """<html><body><form id="joinForm"></form></body></html>"""
+        }
+
+        val summary = repo.refreshBetaStatus(PlaySession("SID=abc")).getOrThrow()
+
+        assertEquals(2, summary.checked)
+        assertEquals(1, summary.joined)
+        assertEquals(false, summary.needsLogin)
+        assertEquals(ObservedMembership.JOINED, observationDao.get("com.a")!!.observedMembership)
+        assertEquals(ObservedMembership.NOT_JOINED, observationDao.get("com.b")!!.observedMembership)
+        assertEquals(LiveBetaStatus.OPEN, observationDao.get("com.b")!!.liveStatus)
     }
 
     @Test

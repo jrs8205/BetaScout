@@ -13,6 +13,12 @@ enum class ObservedMembership { UNKNOWN, JOINED, NOT_JOINED }
 /** Origin of a beta record. */
 enum class BetaSource { BUNDLED, REMOTE, USER }
 
+/** The user's Google Play web session, as a cookie header for authenticated requests. */
+data class PlaySession(val cookieHeader: String)
+
+/** Summary of one status-scan run. */
+data class ScanSummary(val checked: Int, val joined: Int, val needsLogin: Boolean)
+
 /** The user's self-reported beta status. */
 enum class UserBetaState { UNKNOWN, JOINED, NOT_JOINED, FULL, NO_PROGRAM }
 

@@ -104,10 +104,6 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
 
-    // gplayapi reads authoritative Google Play data for signed-in membership
-    // detection. It is GPL-3.0 and ships in the app (see LICENSE).
-    implementation("com.auroraoss:gplayapi:3.4.2")
-
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test:runner:1.6.2")
 }
