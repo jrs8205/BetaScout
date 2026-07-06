@@ -50,6 +50,19 @@ interface BetaProgramDao {
 }
 
 @Dao
+interface BetaObservationDao {
+
+    @Query("SELECT * FROM beta_observations")
+    fun observeAll(): Flow<List<BetaObservationEntity>>
+
+    @Query("SELECT * FROM beta_observations WHERE packageName = :packageName")
+    suspend fun get(packageName: String): BetaObservationEntity?
+
+    @Upsert
+    suspend fun upsert(observation: BetaObservationEntity)
+}
+
+@Dao
 interface UserBetaStatusDao {
 
     @Query("SELECT * FROM user_beta_status")

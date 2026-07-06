@@ -4,6 +4,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import org.jarsi.betascout.domain.BetaSource
 import org.jarsi.betascout.domain.KnownBetaStatus
+import org.jarsi.betascout.domain.LiveBetaStatus
+import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.UserBetaState
 
 @Entity(tableName = "installed_apps")
@@ -26,6 +28,15 @@ data class BetaProgramEntity(
     val notes: String?,
     val source: BetaSource,
     val productionVersionCode: Long? = null,
+)
+
+@Entity(tableName = "beta_observations")
+data class BetaObservationEntity(
+    @PrimaryKey val packageName: String,
+    val liveStatus: LiveBetaStatus,
+    val observedMembership: ObservedMembership,
+    val checkedAt: Long,
+    val lastError: String?,
 )
 
 @Entity(tableName = "user_beta_status")

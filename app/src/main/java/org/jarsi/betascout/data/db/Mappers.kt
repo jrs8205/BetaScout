@@ -1,5 +1,6 @@
 package org.jarsi.betascout.data.db
 
+import org.jarsi.betascout.domain.BetaObservation
 import org.jarsi.betascout.domain.BetaProgramInfo
 import org.jarsi.betascout.domain.InstalledAppInfo
 import org.jarsi.betascout.domain.UserBetaStatusInfo
@@ -42,6 +43,22 @@ fun BetaProgramInfo.toEntity() = BetaProgramEntity(
     productionVersionCode = productionVersionCode,
     notes = notes,
     source = source,
+)
+
+fun BetaObservationEntity.toDomain() = BetaObservation(
+    packageName = packageName,
+    liveStatus = liveStatus,
+    observedMembership = observedMembership,
+    checkedAt = checkedAt,
+    lastError = lastError,
+)
+
+fun BetaObservation.toEntity() = BetaObservationEntity(
+    packageName = packageName,
+    liveStatus = liveStatus,
+    observedMembership = observedMembership,
+    checkedAt = checkedAt,
+    lastError = lastError,
 )
 
 fun UserBetaStatusEntity.toDomain() = UserBetaStatusInfo(

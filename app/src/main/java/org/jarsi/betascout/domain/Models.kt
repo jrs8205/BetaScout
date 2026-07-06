@@ -42,6 +42,15 @@ data class BetaProgramInfo(
     val source: BetaSource = BetaSource.BUNDLED,
 )
 
+/** What the authenticated testing page reported for one app, per user/device. */
+data class BetaObservation(
+    val packageName: String,
+    val liveStatus: LiveBetaStatus = LiveBetaStatus.UNKNOWN,
+    val observedMembership: ObservedMembership = ObservedMembership.UNKNOWN,
+    val checkedAt: Long,
+    val lastError: String? = null,
+)
+
 data class UserBetaStatusInfo(
     val packageName: String,
     val state: UserBetaState = UserBetaState.UNKNOWN,
@@ -53,9 +62,10 @@ data class UserBetaStatusInfo(
     val lastRemindedAt: Long? = null,
 )
 
-/** Combined row for the UI: installed app + optional beta info + user marking. */
+/** Combined row for the UI: installed app + optional beta info + user marking + scrape. */
 data class AppBetaOverview(
     val app: InstalledAppInfo,
     val betaProgram: BetaProgramInfo? = null,
     val userStatus: UserBetaStatusInfo? = null,
+    val observation: BetaObservation? = null,
 )

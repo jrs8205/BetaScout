@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.jarsi.betascout.data.betadb.BetaSeeder
+import org.jarsi.betascout.data.db.BetaObservationDao
+import org.jarsi.betascout.data.db.BetaObservationEntity
 import org.jarsi.betascout.data.db.BetaProgramDao
 import org.jarsi.betascout.data.db.BetaProgramEntity
 import org.jarsi.betascout.data.db.InstalledAppDao
@@ -19,6 +21,8 @@ import org.jarsi.betascout.domain.BetaSource
 import org.jarsi.betascout.domain.DataError
 import org.jarsi.betascout.domain.InstalledAppInfo
 import org.jarsi.betascout.domain.KnownBetaStatus
+import org.jarsi.betascout.domain.LiveBetaStatus
+import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.UserBetaState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -60,6 +64,18 @@ private class FakeBetaProgramDao : BetaProgramDao {
     override suspend fun count(): Int = state.value.size
 }
 
+private class FakeBetaObservationDao : BetaObservationDao {
+    val state = MutableStateFlow<Map<String, BetaObservationEntity>>(emptyMap())
+
+    override fun observeAll(): Flow<List<BetaObservationEntity>> = state.map { it.values.toList() }
+
+    override suspend fun get(packageName: String): BetaObservationEntity? = state.value[packageName]
+
+    override suspend fun upsert(observation: BetaObservationEntity) {
+        state.value = state.value + (observation.packageName to observation)
+    }
+}
+
 private class FakeUserBetaStatusDao : UserBetaStatusDao {
     val state = MutableStateFlow<Map<String, UserBetaStatusEntity>>(emptyMap())
 
@@ -97,6 +113,7 @@ class DefaultAppRepositoryTest {
 
     private val installedDao = FakeInstalledAppDao()
     private val betaDao = FakeBetaProgramDao()
+    private val observationDao = FakeBetaObservationDao()
     private val userDao = FakeUserBetaStatusDao()
     private val scanner = FakeScanner { emptyList() }
 
@@ -107,6 +124,7 @@ class DefaultAppRepositoryTest {
         scanner = scanner,
         installedAppDao = installedDao,
         betaProgramDao = betaDao,
+        betaObservationDao = observationDao,
         userBetaStatusDao = userDao,
         seeder = BetaSeeder(seedJson, betaDao),
         membership = org.jarsi.betascout.domain.MembershipSource { _, _, _ -> Result.success(emptySet()) },
@@ -140,6 +158,27 @@ class DefaultAppRepositoryTest {
         val example = rows.single { it.app.packageName == "com.example" }
         assertNull(example.betaProgram)
         assertNull(example.userStatus)
+    }
+
+    @Test
+    fun `observeApps includes the scraped observation for an app`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.whatsapp", "WhatsApp")) }
+        repo.refreshApps()
+        observationDao.upsert(
+            BetaObservationEntity(
+                packageName = "com.whatsapp",
+                liveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.JOINED,
+                checkedAt = 1000L,
+                lastError = null,
+            )
+        )
+
+        val whatsapp = repo.observeApps().first().single { it.app.packageName == "com.whatsapp" }
+
+        assertEquals(LiveBetaStatus.OPEN, whatsapp.observation?.liveStatus)
+        assertEquals(ObservedMembership.JOINED, whatsapp.observation?.observedMembership)
     }
 
     @Test

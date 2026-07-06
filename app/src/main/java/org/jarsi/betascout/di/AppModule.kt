@@ -17,8 +17,10 @@ import org.jarsi.betascout.data.betadb.BetaSeeder
 import org.jarsi.betascout.data.betadb.CatalogProvider
 import org.jarsi.betascout.data.gplay.GplayMembership
 import org.jarsi.betascout.data.db.AppDatabase
+import org.jarsi.betascout.data.db.BetaObservationDao
 import org.jarsi.betascout.data.db.BetaProgramDao
 import org.jarsi.betascout.data.db.MIGRATION_1_2
+import org.jarsi.betascout.data.db.MIGRATION_2_3
 import org.jarsi.betascout.data.db.InstalledAppDao
 import org.jarsi.betascout.data.db.UserBetaStatusDao
 import org.jarsi.betascout.data.repo.DefaultAppRepository
@@ -61,7 +63,7 @@ object AppModule {
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase =
         Room.databaseBuilder(context, AppDatabase::class.java, "betascout.db")
-            .addMigrations(MIGRATION_1_2)
+            .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
             .build()
 
     @Provides
@@ -69,6 +71,9 @@ object AppModule {
 
     @Provides
     fun provideBetaProgramDao(db: AppDatabase): BetaProgramDao = db.betaProgramDao()
+
+    @Provides
+    fun provideBetaObservationDao(db: AppDatabase): BetaObservationDao = db.betaObservationDao()
 
     @Provides
     fun provideUserBetaStatusDao(db: AppDatabase): UserBetaStatusDao = db.userBetaStatusDao()
@@ -89,11 +94,13 @@ object AppModule {
         scanner: PackageScanner,
         installedAppDao: InstalledAppDao,
         betaProgramDao: BetaProgramDao,
+        betaObservationDao: BetaObservationDao,
         userBetaStatusDao: UserBetaStatusDao,
     ): AppRepository = DefaultAppRepository(
         scanner = scanner,
         installedAppDao = installedAppDao,
         betaProgramDao = betaProgramDao,
+        betaObservationDao = betaObservationDao,
         userBetaStatusDao = userBetaStatusDao,
         seeder = BetaSeeder(
             readSeedJson = CatalogProvider(

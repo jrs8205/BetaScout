@@ -9,6 +9,7 @@ import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeeder
 import org.jarsi.betascout.domain.KnownBetaStatus
 import org.jarsi.betascout.domain.MembershipSource
+import org.jarsi.betascout.data.db.BetaObservationDao
 import org.jarsi.betascout.data.db.BetaProgramDao
 import org.jarsi.betascout.data.db.InstalledAppDao
 import org.jarsi.betascout.data.db.UserBetaStatusDao
@@ -25,6 +26,7 @@ class DefaultAppRepository(
     private val scanner: PackageScanner,
     private val installedAppDao: InstalledAppDao,
     private val betaProgramDao: BetaProgramDao,
+    private val betaObservationDao: BetaObservationDao,
     private val userBetaStatusDao: UserBetaStatusDao,
     private val seeder: BetaSeeder,
     private val membership: MembershipSource,
@@ -35,15 +37,18 @@ class DefaultAppRepository(
     override fun observeApps(): Flow<List<AppBetaOverview>> = combine(
         installedAppDao.observeAll(),
         betaProgramDao.observeAll(),
+        betaObservationDao.observeAll(),
         userBetaStatusDao.observeAll(),
-    ) { apps, programs, statuses ->
+    ) { apps, programs, observations, statuses ->
         val programsByPkg = programs.associateBy { it.packageName }
+        val observationsByPkg = observations.associateBy { it.packageName }
         val statusesByPkg = statuses.associateBy { it.packageName }
         apps.map { app ->
             AppBetaOverview(
                 app = app.toDomain(),
                 betaProgram = programsByPkg[app.packageName]?.toDomain(),
                 userStatus = statusesByPkg[app.packageName]?.toDomain(),
+                observation = observationsByPkg[app.packageName]?.toDomain(),
             )
         }
     }
