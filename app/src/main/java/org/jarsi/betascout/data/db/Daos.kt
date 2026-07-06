@@ -14,6 +14,10 @@ interface InstalledAppDao {
     @Query("SELECT * FROM installed_apps ORDER BY label COLLATE NOCASE")
     fun observeAll(): Flow<List<InstalledAppEntity>>
 
+    /** One-shot read for scan runs; a direct query, not an observable flow. */
+    @Query("SELECT * FROM installed_apps ORDER BY label COLLATE NOCASE")
+    suspend fun getAll(): List<InstalledAppEntity>
+
     @Upsert
     suspend fun upsertAll(apps: List<InstalledAppEntity>)
 
@@ -54,6 +58,10 @@ interface BetaObservationDao {
 
     @Query("SELECT * FROM beta_observations")
     fun observeAll(): Flow<List<BetaObservationEntity>>
+
+    /** One-shot read for scan runs; a direct query, not an observable flow. */
+    @Query("SELECT * FROM beta_observations")
+    suspend fun getAll(): List<BetaObservationEntity>
 
     @Query("SELECT * FROM beta_observations WHERE packageName = :packageName")
     suspend fun get(packageName: String): BetaObservationEntity?

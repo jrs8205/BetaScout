@@ -69,6 +69,18 @@ class BetaStatusScraperTest {
     }
 
     @Test
+    fun `reports progress before each fetch`() = runTest {
+        val progress = mutableListOf<String>()
+        val source = TestingPageSource { _, _ -> Result.success(OPEN_HTML) }
+
+        scraper(source).scrape(listOf("com.a", "com.b"), session) { index, total, pkg ->
+            progress += "$index/$total $pkg"
+        }
+
+        assertEquals(listOf("1/2 com.a", "2/2 com.b"), progress)
+    }
+
+    @Test
     fun `applies a crawl delay between requests but not before the first`() = runTest {
         val delays = mutableListOf<Long>()
         val source = TestingPageSource { _, _ -> Result.success(OPEN_HTML) }

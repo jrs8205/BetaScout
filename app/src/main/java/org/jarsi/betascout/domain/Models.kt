@@ -19,6 +19,9 @@ data class PlaySession(val cookieHeader: String)
 /** Summary of one status-scan run. */
 data class ScanSummary(val checked: Int, val joined: Int, val needsLogin: Boolean)
 
+/** Live progress of a status-scan run: the app being checked now (1-based). */
+data class ScanProgress(val index: Int, val total: Int, val currentLabel: String)
+
 /** The user's self-reported beta status. */
 enum class UserBetaState { UNKNOWN, JOINED, NOT_JOINED, FULL, NO_PROGRAM }
 

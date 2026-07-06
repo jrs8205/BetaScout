@@ -26,6 +26,7 @@ import org.jarsi.betascout.domain.InstalledAppInfo
 import org.jarsi.betascout.domain.KnownBetaStatus
 import org.jarsi.betascout.domain.LiveBetaStatus
 import org.jarsi.betascout.domain.ObservedMembership
+import org.jarsi.betascout.domain.ScanProgress
 import org.jarsi.betascout.domain.UserBetaState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -37,6 +38,9 @@ private class FakeInstalledAppDao : InstalledAppDao {
 
     override fun observeAll(): Flow<List<InstalledAppEntity>> =
         state.map { it.values.sortedBy { e -> e.label.lowercase() } }
+
+    override suspend fun getAll(): List<InstalledAppEntity> =
+        state.value.values.sortedBy { e -> e.label.lowercase() }
 
     override suspend fun upsertAll(apps: List<InstalledAppEntity>) {
         state.value = state.value + apps.associateBy { it.packageName }
@@ -71,6 +75,8 @@ private class FakeBetaObservationDao : BetaObservationDao {
     val state = MutableStateFlow<Map<String, BetaObservationEntity>>(emptyMap())
 
     override fun observeAll(): Flow<List<BetaObservationEntity>> = state.map { it.values.toList() }
+
+    override suspend fun getAll(): List<BetaObservationEntity> = state.value.values.toList()
 
     override suspend fun get(packageName: String): BetaObservationEntity? = state.value[packageName]
 
@@ -209,6 +215,45 @@ class DefaultAppRepositoryTest {
         assertEquals(ObservedMembership.JOINED, observationDao.get("com.a")!!.observedMembership)
         assertEquals(ObservedMembership.NOT_JOINED, observationDao.get("com.b")!!.observedMembership)
         assertEquals(LiveBetaStatus.OPEN, observationDao.get("com.b")!!.liveStatus)
+    }
+
+    @Test
+    fun `refreshBetaStatus scans all due apps in one run when uncapped`() = runTest {
+        val repo = repository()
+        scanner.result = { (1..35).map { app("com.app$it") } }
+        repo.refreshApps()
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+
+        val summary = repo.refreshBetaStatus(PlaySession("SID=abc")).getOrThrow()
+
+        assertEquals(35, summary.checked)
+    }
+
+    @Test
+    fun `refreshBetaStatus caps a run when a cap is given`() = runTest {
+        val repo = repository()
+        scanner.result = { (1..35).map { app("com.app$it") } }
+        repo.refreshApps()
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+
+        val summary = repo.refreshBetaStatus(PlaySession("SID=abc"), cap = 10).getOrThrow()
+
+        assertEquals(10, summary.checked)
+    }
+
+    @Test
+    fun `refreshBetaStatus reports scan progress with app labels`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a", "Alpha"), app("com.b", "Beta")) }
+        repo.refreshApps()
+        val progress = mutableListOf<ScanProgress>()
+
+        repo.refreshBetaStatus(PlaySession("SID=abc")) { progress += it }
+
+        assertEquals(
+            listOf(ScanProgress(1, 2, "Alpha"), ScanProgress(2, 2, "Beta")),
+            progress,
+        )
     }
 
     @Test

@@ -16,8 +16,15 @@ interface AppRepository {
     suspend fun setUserState(packageName: String, state: UserBetaState): Result<Unit>
 
     /** Scrapes the authenticated testing page for the installed apps that are due a
-     *  check, recording live status and observed membership. Returns a run summary. */
-    suspend fun refreshBetaStatus(session: PlaySession): Result<ScanSummary>
+     *  check, recording live status and observed membership. Returns a run summary.
+     *  [onProgress] is invoked before each page fetch so the UI can show progress.
+     *  [cap] bounds the number of apps per run (for scheduled background scans);
+     *  null scans everything due — the crawl delay still paces the requests. */
+    suspend fun refreshBetaStatus(
+        session: PlaySession,
+        cap: Int? = null,
+        onProgress: suspend (ScanProgress) -> Unit = {},
+    ): Result<ScanSummary>
 
     suspend fun setWatching(
         packageName: String,

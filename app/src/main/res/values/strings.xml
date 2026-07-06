@@ -61,6 +61,7 @@
     <string name="account_signin">Sign in with Google</string>
     <string name="account_sync">Scan now</string>
     <string name="account_scan_result">Checked %1$d apps · in %2$d betas</string>
+    <string name="account_scan_progress">Checking %1$d/%2$d: %3$s</string>
     <string name="account_relogin">Session expired — please sign in again.</string>
     <string name="account_error">Failed: %1$s</string>
     <string name="account_signed_in">Signed in as %1$s</string>

@@ -33,7 +33,9 @@ class HttpTestingPageSource(
                     setRequestProperty("Accept-Language", "en-US,en;q=0.9")
                 }
                 try {
-                    val stream = if (connection.responseCode in 200..299) {
+                    val code = connection.responseCode
+                    android.util.Log.d("BetaScout", "fetch $packageName: http=$code url=${connection.url}")
+                    val stream = if (code in 200..299) {
                         connection.inputStream
                     } else {
                         // A 404 body is still meaningful: it is the "no testing program" page.
@@ -44,6 +46,7 @@ class HttpTestingPageSource(
                     connection.disconnect()
                 }
             } catch (e: Exception) {
+                android.util.Log.d("BetaScout", "fetch $packageName: failed $e")
                 Result.failure(e)
             }
         }

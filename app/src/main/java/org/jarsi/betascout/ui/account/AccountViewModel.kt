@@ -12,12 +12,14 @@ import kotlinx.coroutines.launch
 import org.jarsi.betascout.data.settings.SettingsRepository
 import org.jarsi.betascout.domain.AppRepository
 import org.jarsi.betascout.domain.PlaySession
+import org.jarsi.betascout.domain.ScanProgress
 
 data class AccountUiState(
     val signedIn: Boolean = false,
     val email: String = "",
     val showLogin: Boolean = false,
     val busy: Boolean = false,
+    val progress: ScanProgress? = null,
     val checked: Int? = null,
     val joined: Int? = null,
     val needsReLogin: Boolean = false,
@@ -74,17 +76,22 @@ class AccountViewModel @Inject constructor(
     }
 
     private suspend fun scan(email: String, cookieHeader: String) {
-        repository.refreshBetaStatus(PlaySession(cookieHeader)).fold(
+        android.util.Log.d("BetaScout", "scan: calling refreshBetaStatus (cookie ${cookieHeader.length} chars)")
+        repository.refreshBetaStatus(
+            PlaySession(cookieHeader),
+            onProgress = { p -> _state.update { it.copy(progress = p) } },
+        ).fold(
             onSuccess = { summary ->
                 if (summary.needsLogin) {
                     settings.clearPlaySession()
                     _state.update {
-                        it.copy(busy = false, signedIn = false, needsReLogin = true)
+                        it.copy(busy = false, progress = null, signedIn = false, needsReLogin = true)
                     }
                 } else {
                     _state.update {
                         it.copy(
                             busy = false,
+                            progress = null,
                             signedIn = true,
                             email = email,
                             checked = summary.checked,
@@ -94,7 +101,7 @@ class AccountViewModel @Inject constructor(
                 }
             },
             onFailure = { e ->
-                _state.update { it.copy(busy = false, error = e.message ?: "scan_failed") }
+                _state.update { it.copy(busy = false, progress = null, error = e.message ?: "scan_failed") }
             },
         )
     }

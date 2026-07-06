@@ -59,6 +59,7 @@
     <string name="account_signin">Kirjaudu Googlella</string>
     <string name="account_sync">Skannaa nyt</string>
     <string name="account_scan_result">Tarkistettu %1$d sovellusta · mukana %2$d betassa</string>
+    <string name="account_scan_progress">Tarkistetaan %1$d/%2$d: %3$s</string>
     <string name="account_relogin">Istunto vanheni — kirjaudu uudelleen.</string>
     <string name="account_error">Epäonnistui: %1$s</string>
     <string name="account_signed_in">Kirjautunut: %1$s</string>

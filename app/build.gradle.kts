@@ -55,6 +55,11 @@ android {
     buildFeatures {
         compose = true
     }
+
+    testOptions {
+        // Diagnostic android.util.Log calls in data classes become no-ops in JVM unit tests.
+        unitTests.isReturnDefaultValues = true
+    }
 }
 
 kotlin {

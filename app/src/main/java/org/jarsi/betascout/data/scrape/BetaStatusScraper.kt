@@ -23,14 +23,29 @@ class BetaStatusScraper(
     private val delayFn: suspend (Long) -> Unit = { delay(it) },
 ) {
 
-    suspend fun scrape(packages: List<String>, session: PlaySession): ScrapeOutcome {
+    suspend fun scrape(
+        packages: List<String>,
+        session: PlaySession,
+        onProgress: suspend (index: Int, total: Int, packageName: String) -> Unit = { _, _, _ -> },
+    ): ScrapeOutcome {
         val observations = mutableListOf<BetaObservation>()
         packages.forEachIndexed { index, packageName ->
             if (index > 0) delayFn(crawlDelayMillis)
+            onProgress(index + 1, packages.size, packageName)
+            android.util.Log.d("BetaScout", "scrape ${index + 1}/${packages.size}: $packageName fetching")
             // A failed fetch (e.g. transient network error) is skipped, leaving the
             // previous observation in place so a blip doesn't overwrite a good status.
-            val html = source.fetch(packageName, session).getOrNull() ?: return@forEachIndexed
+            val fetched = source.fetch(packageName, session)
+            android.util.Log.d(
+                "BetaScout",
+                "scrape $packageName: fetched=${fetched.getOrNull()?.length ?: "FAIL ${fetched.exceptionOrNull()}"}",
+            )
+            val html = fetched.getOrNull() ?: return@forEachIndexed
             val result = TestingPageParser.parse(html)
+            android.util.Log.d(
+                "BetaScout",
+                "scrape $packageName: status=${result.liveStatus} membership=${result.membership} needsLogin=${result.needsLogin}",
+            )
             if (result.needsLogin) {
                 return ScrapeOutcome(observations, needsLogin = true)
             }

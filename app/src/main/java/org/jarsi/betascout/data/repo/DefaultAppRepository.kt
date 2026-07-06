@@ -4,7 +4,6 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeeder
 import org.jarsi.betascout.data.db.BetaObservationDao
@@ -23,6 +22,7 @@ import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.PlaySession
 import org.jarsi.betascout.domain.ScanCandidate
 import org.jarsi.betascout.domain.ScanPolicy
+import org.jarsi.betascout.domain.ScanProgress
 import org.jarsi.betascout.domain.ScanSummary
 import org.jarsi.betascout.domain.UserBetaState
 import org.jarsi.betascout.domain.UserBetaStatusInfo
@@ -70,10 +70,20 @@ class DefaultAppRepository(
     override suspend fun setUserState(packageName: String, state: UserBetaState): Result<Unit> =
         updateStatus(packageName) { it.copy(state = state) }
 
-    override suspend fun refreshBetaStatus(session: PlaySession): Result<ScanSummary> = withContext(io) {
+    override suspend fun refreshBetaStatus(
+        session: PlaySession,
+        cap: Int?,
+        onProgress: suspend (ScanProgress) -> Unit,
+    ): Result<ScanSummary> = withContext(io) {
         try {
-            val installed = installedAppDao.observeAll().first().filter { !it.isSystem }
-            val observed = betaObservationDao.observeAll().first().associateBy { it.packageName }
+            android.util.Log.d(TAG, "refreshBetaStatus: start")
+            // One-shot suspend queries, NOT observeAll().first(): a flow's initial
+            // emission can be lost to an invalidation-tracker race, after which
+            // first() suspends forever because nothing rewrites these tables.
+            val installed = installedAppDao.getAll().filter { !it.isSystem }
+            android.util.Log.d(TAG, "refreshBetaStatus: installed=${installed.size}")
+            val observed = betaObservationDao.getAll().associateBy { it.packageName }
+            android.util.Log.d(TAG, "refreshBetaStatus: observed=${observed.size}")
             val candidates = installed.map { app ->
                 val previous = observed[app.packageName]
                 ScanCandidate(
@@ -82,8 +92,17 @@ class DefaultAppRepository(
                     checkedAt = previous?.checkedAt,
                 )
             }
-            val due = ScanPolicy.selectDue(candidates, clock(), cap = SCAN_CAP).map { it.packageName }
-            val outcome = scraper.scrape(due, session)
+            val due = ScanPolicy.selectDue(candidates, clock(), cap = cap ?: candidates.size)
+                .map { it.packageName }
+            android.util.Log.d(TAG, "refreshBetaStatus: due=${due.size} $due")
+            val labels = installed.associate { it.packageName to it.label }
+            val outcome = scraper.scrape(due, session) { index, total, packageName ->
+                onProgress(ScanProgress(index, total, labels[packageName] ?: packageName))
+            }
+            android.util.Log.d(
+                TAG,
+                "refreshBetaStatus: scraped=${outcome.observations.size} needsLogin=${outcome.needsLogin}",
+            )
             outcome.observations.forEach { betaObservationDao.upsert(it.toEntity()) }
             val joined = outcome.observations.count { it.observedMembership == ObservedMembership.JOINED }
             Result.success(
@@ -158,7 +177,6 @@ class DefaultAppRepository(
     }
 
     private companion object {
-        /** Max packages scraped per run; the rest roll to the next run (see ScanPolicy). */
-        const val SCAN_CAP = 30
+        const val TAG = "BetaScout"
     }
 }
