@@ -15,6 +15,10 @@ interface AppRepository {
 
     suspend fun setUserState(packageName: String, state: UserBetaState): Result<Unit>
 
+    /** Deletes all scrape observations recorded for the given account (used on sign-out
+     *  so a signed-out account's beta memberships do not linger on the device). */
+    suspend fun clearObservations(accountKey: String): Result<Unit>
+
     /** Scrapes the authenticated testing page for the installed apps that are due a
      *  check, recording live status and observed membership. Returns a run summary.
      *  [onProgress] is invoked before each page fetch so the UI can show progress.

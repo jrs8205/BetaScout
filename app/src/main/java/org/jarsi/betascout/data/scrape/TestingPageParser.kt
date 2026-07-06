@@ -31,6 +31,18 @@ object TestingPageParser {
         "not found", "isn't available", "is not available", "no longer available",
     )
 
+    /** Sections that only appear on the public store-listing page, never on a testing page. */
+    private val STORE_PAGE_PHRASES = listOf(
+        "about this app", "data safety", "what's new", "ratings and reviews",
+    )
+
+    /** Any of these means the page still offers a testing affordance, so it is NOT a
+     *  plain store page — used to keep the generic-page heuristic conservative. */
+    private val TESTING_PHRASES = listOf(
+        "testing program", "become a tester", "you're a tester", "you are a tester",
+        "leave the test", "join the test",
+    )
+
     fun parse(html: String): TestingPageResult {
         if (html.isBlank()) return inconclusive()
 
@@ -56,6 +68,9 @@ object TestingPageParser {
             text.containsAny(MISSING_PHRASES) ->
                 TestingPageResult(LiveBetaStatus.NO_PROGRAM, ObservedMembership.UNKNOWN, needsLogin = false)
 
+            isGenericStoreDetailsPage(doc, text) ->
+                TestingPageResult(LiveBetaStatus.NO_PROGRAM, ObservedMembership.UNKNOWN, needsLogin = false)
+
             else -> inconclusive()
         }
     }
@@ -70,6 +85,24 @@ object TestingPageParser {
             sequenceOf(el.id(), el.className(), el.attr("name"))
                 .any { it.lowercase().contains(needle) }
         }
+    }
+
+    /**
+     * True only when the page is unmistakably the public store listing: it has no
+     * join/leave/login form, no testing vocabulary, and shows at least two store-only
+     * sections under a Google Play heading. Being strict here matters — a false
+     * NO_PROGRAM hides a real beta for a full re-check TTL, and a genuine testing page
+     * also links to the store, so a store link alone is not enough evidence.
+     */
+    private fun isGenericStoreDetailsPage(doc: Document, text: String): Boolean {
+        val hasTestingAffordance = hasMarker(doc, "joinForm") ||
+            hasMarker(doc, "leaveForm") ||
+            hasMarker(doc, "gaia_loginform") ||
+            text.containsAny(TESTING_PHRASES)
+        if (hasTestingAffordance) return false
+
+        val storeSectionHits = STORE_PAGE_PHRASES.count { text.contains(it) }
+        return text.contains("google play") && storeSectionHits >= 2
     }
 
     private fun String.containsAny(phrases: List<String>): Boolean =

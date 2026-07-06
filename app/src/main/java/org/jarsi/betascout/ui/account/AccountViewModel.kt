@@ -36,10 +36,12 @@ class AccountViewModel @Inject constructor(
     val state = _state.asStateFlow()
 
     init {
+        // The plaintext-session migration now runs at app startup (BetaScoutApp), so it
+        // is not repeated here; this only reflects the stored session into the UI.
         viewModelScope.launch {
             settings.playSession.collect { session ->
                 if (session != null) {
-                    _state.update { it.copy(email = session.first, signedIn = true) }
+                    _state.update { it.copy(email = session.accountEmail, signedIn = true) }
                 }
             }
         }
@@ -55,8 +57,19 @@ class AccountViewModel @Inject constructor(
     fun onLoginCaptured(email: String, cookieHeader: String) {
         viewModelScope.launch {
             _state.update { it.copy(showLogin = false, busy = true, error = null) }
-            settings.savePlaySession(email, cookieHeader)
-            scan(email, cookieHeader)
+            val session = PlaySession(accountEmail = email, cookieHeader = cookieHeader)
+            val saved = runCatching { settings.savePlaySession(email, cookieHeader) }
+            if (saved.isFailure) {
+                _state.update {
+                    it.copy(
+                        busy = false,
+                        progress = null,
+                        error = saved.exceptionOrNull()?.message ?: "session_save_failed",
+                    )
+                }
+                return@launch
+            }
+            scan(session)
         }
     }
 
@@ -64,21 +77,24 @@ class AccountViewModel @Inject constructor(
         viewModelScope.launch {
             val session = settings.playSession.first() ?: return@launch
             _state.update { it.copy(busy = true, checked = null, joined = null, error = null) }
-            scan(session.first, session.second)
+            scan(session)
         }
     }
 
     fun signOut() {
         viewModelScope.launch {
+            // Delete the account's observations before clearing the session so a
+            // signed-out account's beta memberships do not linger on the device.
+            settings.playSession.first()?.let { repository.clearObservations(it.accountKey) }
             settings.clearPlaySession()
             _state.value = AccountUiState()
         }
     }
 
-    private suspend fun scan(email: String, cookieHeader: String) {
-        android.util.Log.d("BetaScout", "scan: calling refreshBetaStatus (cookie ${cookieHeader.length} chars)")
+    private suspend fun scan(session: PlaySession) {
+        android.util.Log.d("BetaScout", "scan: calling refreshBetaStatus (cookie ${session.cookieHeader.length} chars)")
         repository.refreshBetaStatus(
-            PlaySession(cookieHeader),
+            session,
             onProgress = { p -> _state.update { it.copy(progress = p) } },
         ).fold(
             onSuccess = { summary ->
@@ -93,7 +109,7 @@ class AccountViewModel @Inject constructor(
                             busy = false,
                             progress = null,
                             signedIn = true,
-                            email = email,
+                            email = session.accountEmail,
                             checked = summary.checked,
                             joined = summary.joined,
                         )

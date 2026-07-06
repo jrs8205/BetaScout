@@ -33,6 +33,9 @@ import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
+private const val ACCOUNT = "user@example.com"
+private const val OTHER_ACCOUNT = "other@example.com"
+
 private class FakeInstalledAppDao : InstalledAppDao {
     val state = MutableStateFlow<Map<String, InstalledAppEntity>>(emptyMap())
 
@@ -72,16 +75,26 @@ private class FakeBetaProgramDao : BetaProgramDao {
 }
 
 private class FakeBetaObservationDao : BetaObservationDao {
-    val state = MutableStateFlow<Map<String, BetaObservationEntity>>(emptyMap())
+    private data class ObservationKey(val accountKey: String, val packageName: String)
+
+    private val state = MutableStateFlow<Map<ObservationKey, BetaObservationEntity>>(emptyMap())
 
     override fun observeAll(): Flow<List<BetaObservationEntity>> = state.map { it.values.toList() }
 
     override suspend fun getAll(): List<BetaObservationEntity> = state.value.values.toList()
 
-    override suspend fun get(packageName: String): BetaObservationEntity? = state.value[packageName]
+    override suspend fun getAllForAccount(accountKey: String): List<BetaObservationEntity> =
+        state.value.values.filter { it.accountKey == accountKey }
+
+    override suspend fun get(accountKey: String, packageName: String): BetaObservationEntity? =
+        state.value[ObservationKey(accountKey, packageName)]
+
+    override suspend fun deleteForAccount(accountKey: String) {
+        state.value = state.value.filterKeys { it.accountKey != accountKey }
+    }
 
     override suspend fun upsert(observation: BetaObservationEntity) {
-        state.value = state.value + (observation.packageName to observation)
+        state.value = state.value + (ObservationKey(observation.accountKey, observation.packageName) to observation)
     }
 }
 
@@ -125,6 +138,8 @@ class DefaultAppRepositoryTest {
     private val observationDao = FakeBetaObservationDao()
     private val userDao = FakeUserBetaStatusDao()
     private val scanner = FakeScanner { emptyList() }
+    private val currentAccountKey = MutableStateFlow<String?>(ACCOUNT)
+    private val session = PlaySession(accountEmail = ACCOUNT, cookieHeader = "SID=abc")
 
     /** HTML the fake testing-page source returns per package (empty page by default). */
     private var pageHtml: (String) -> String = { "<html><body></body></html>" }
@@ -144,6 +159,7 @@ class DefaultAppRepositoryTest {
             clock = { now },
             delayFn = {},
         ),
+        currentAccountKey = currentAccountKey,
         io = UnconfinedTestDispatcher(testScheduler),
         clock = { now },
     )
@@ -183,6 +199,7 @@ class DefaultAppRepositoryTest {
         repo.refreshApps()
         observationDao.upsert(
             BetaObservationEntity(
+                accountKey = ACCOUNT,
                 packageName = "com.whatsapp",
                 liveStatus = LiveBetaStatus.OPEN,
                 observedMembership = ObservedMembership.JOINED,
@@ -198,6 +215,27 @@ class DefaultAppRepositoryTest {
     }
 
     @Test
+    fun `observeApps ignores scraped observations from another account`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.whatsapp", "WhatsApp")) }
+        repo.refreshApps()
+        observationDao.upsert(
+            BetaObservationEntity(
+                accountKey = OTHER_ACCOUNT,
+                packageName = "com.whatsapp",
+                liveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.JOINED,
+                checkedAt = 1000L,
+                lastError = null,
+            )
+        )
+
+        val whatsapp = repo.observeApps().first().single { it.app.packageName == "com.whatsapp" }
+
+        assertNull(whatsapp.observation)
+    }
+
+    @Test
     fun `refreshBetaStatus scrapes due installed apps and records observations`() = runTest {
         val repo = repository()
         scanner.result = { listOf(app("com.a"), app("com.b")) }
@@ -207,14 +245,38 @@ class DefaultAppRepositoryTest {
             else """<html><body><form id="joinForm"></form></body></html>"""
         }
 
-        val summary = repo.refreshBetaStatus(PlaySession("SID=abc")).getOrThrow()
+        val summary = repo.refreshBetaStatus(session).getOrThrow()
 
         assertEquals(2, summary.checked)
         assertEquals(1, summary.joined)
         assertEquals(false, summary.needsLogin)
-        assertEquals(ObservedMembership.JOINED, observationDao.get("com.a")!!.observedMembership)
-        assertEquals(ObservedMembership.NOT_JOINED, observationDao.get("com.b")!!.observedMembership)
-        assertEquals(LiveBetaStatus.OPEN, observationDao.get("com.b")!!.liveStatus)
+        assertEquals(ObservedMembership.JOINED, observationDao.get(ACCOUNT, "com.a")!!.observedMembership)
+        assertEquals(ObservedMembership.NOT_JOINED, observationDao.get(ACCOUNT, "com.b")!!.observedMembership)
+        assertEquals(LiveBetaStatus.OPEN, observationDao.get(ACCOUNT, "com.b")!!.liveStatus)
+    }
+
+    @Test
+    fun `refreshBetaStatus ignores another account observation when choosing due apps`() = runTest {
+        val repo = repository(now = 10_000L)
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        observationDao.upsert(
+            BetaObservationEntity(
+                accountKey = OTHER_ACCOUNT,
+                packageName = "com.a",
+                liveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.JOINED,
+                checkedAt = 10_000L,
+                lastError = null,
+            )
+        )
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+
+        val summary = repo.refreshBetaStatus(session).getOrThrow()
+
+        assertEquals(1, summary.checked)
+        assertEquals(ObservedMembership.NOT_JOINED, observationDao.get(ACCOUNT, "com.a")!!.observedMembership)
+        assertEquals(ObservedMembership.JOINED, observationDao.get(OTHER_ACCOUNT, "com.a")!!.observedMembership)
     }
 
     @Test
@@ -224,7 +286,7 @@ class DefaultAppRepositoryTest {
         repo.refreshApps()
         pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
 
-        val summary = repo.refreshBetaStatus(PlaySession("SID=abc")).getOrThrow()
+        val summary = repo.refreshBetaStatus(session).getOrThrow()
 
         assertEquals(35, summary.checked)
     }
@@ -236,7 +298,7 @@ class DefaultAppRepositoryTest {
         repo.refreshApps()
         pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
 
-        val summary = repo.refreshBetaStatus(PlaySession("SID=abc"), cap = 10).getOrThrow()
+        val summary = repo.refreshBetaStatus(session, cap = 10).getOrThrow()
 
         assertEquals(10, summary.checked)
     }
@@ -248,11 +310,45 @@ class DefaultAppRepositoryTest {
         repo.refreshApps()
         val progress = mutableListOf<ScanProgress>()
 
-        repo.refreshBetaStatus(PlaySession("SID=abc")) { progress += it }
+        repo.refreshBetaStatus(session) { progress += it }
 
         assertEquals(
             listOf(ScanProgress(1, 2, "Alpha"), ScanProgress(2, 2, "Beta")),
             progress,
+        )
+    }
+
+    @Test
+    fun `clearObservations deletes only the given account's observations`() = runTest {
+        val repo = repository()
+        observationDao.upsert(
+            BetaObservationEntity(
+                accountKey = "a@example.com",
+                packageName = "com.a",
+                liveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.JOINED,
+                checkedAt = 1L,
+                lastError = null,
+            )
+        )
+        observationDao.upsert(
+            BetaObservationEntity(
+                accountKey = "b@example.com",
+                packageName = "com.a",
+                liveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.JOINED,
+                checkedAt = 1L,
+                lastError = null,
+            )
+        )
+
+        val result = repo.clearObservations("a@example.com")
+
+        assertTrue(result.isSuccess)
+        assertNull(observationDao.get("a@example.com", "com.a"))
+        assertEquals(
+            ObservedMembership.JOINED,
+            observationDao.get("b@example.com", "com.a")!!.observedMembership,
         )
     }
 

@@ -1,9 +1,12 @@
 package org.jarsi.betascout.ui.applist
 
 import org.jarsi.betascout.domain.AppBetaOverview
+import org.jarsi.betascout.domain.BetaObservation
 import org.jarsi.betascout.domain.BetaProgramInfo
 import org.jarsi.betascout.domain.InstalledAppInfo
 import org.jarsi.betascout.domain.KnownBetaStatus
+import org.jarsi.betascout.domain.LiveBetaStatus
+import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.UserBetaState
 import org.jarsi.betascout.domain.UserBetaStatusInfo
 import org.junit.Assert.assertEquals
@@ -20,6 +23,8 @@ private fun row(
     userState: UserBetaState = UserBetaState.UNKNOWN,
     installedVersionCode: Long = 1L,
     productionVersionCode: Long? = null,
+    observedLiveStatus: LiveBetaStatus? = null,
+    observedMembership: ObservedMembership = ObservedMembership.UNKNOWN,
 ) = AppBetaOverview(
     app = InstalledAppInfo(packageName, label, "1.0", installedVersionCode, null, isSystem, 0L),
     betaProgram = betaStatus?.let {
@@ -34,6 +39,15 @@ private fun row(
         UserBetaStatusInfo(packageName = packageName, watching = watching, state = userState)
     } else {
         null
+    },
+    observation = observedLiveStatus?.let {
+        BetaObservation(
+            accountKey = "user@example.com",
+            packageName = packageName,
+            liveStatus = it,
+            observedMembership = observedMembership,
+            checkedAt = 0L,
+        )
     },
 )
 
@@ -93,6 +107,24 @@ class AppListFilterTest {
     }
 
     @Test
+    fun `hasKnownBeta accepts a scraped beta even when catalog is missing`() {
+        assertTrue(row("a", observedLiveStatus = LiveBetaStatus.OPEN).hasKnownBeta())
+        assertTrue(row("b", observedLiveStatus = LiveBetaStatus.FULL).hasKnownBeta())
+        assertTrue(row("c", observedLiveStatus = LiveBetaStatus.CLOSED).hasKnownBeta())
+    }
+
+    @Test
+    fun `hasKnownBeta lets scraped no-program override catalog`() {
+        assertFalse(
+            row(
+                "a",
+                betaStatus = KnownBetaStatus.OFTEN_OPEN,
+                observedLiveStatus = LiveBetaStatus.NO_PROGRAM,
+            ).hasKnownBeta(),
+        )
+    }
+
+    @Test
     fun `beta app the user has not joined is AVAILABLE`() {
         assertEquals(
             BetaMembership.AVAILABLE,
@@ -106,6 +138,53 @@ class AppListFilterTest {
             BetaMembership.JOINED,
             row("a", betaStatus = KnownBetaStatus.OFTEN_OPEN, userState = UserBetaState.JOINED).betaMembership(),
         )
+    }
+
+    @Test
+    fun `scraped joined membership is JOINED even without catalog`() {
+        assertEquals(
+            BetaMembership.JOINED,
+            row(
+                "a",
+                observedLiveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.JOINED,
+            ).betaMembership(),
+        )
+    }
+
+    @Test
+    fun `scraped not joined membership is AVAILABLE even without catalog`() {
+        assertEquals(
+            BetaMembership.AVAILABLE,
+            row(
+                "a",
+                observedLiveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.NOT_JOINED,
+            ).betaMembership(),
+        )
+    }
+
+    @Test
+    fun `a manual joined marking survives a scraped no-program reading`() {
+        // The user joined on the web (or with a different account); one scrape that
+        // reads NO_PROGRAM must not hide the app from the Joined tab.
+        val app = row(
+            "a",
+            userState = UserBetaState.JOINED,
+            observedLiveStatus = LiveBetaStatus.NO_PROGRAM,
+        )
+        assertTrue(app.hasKnownBeta())
+        assertEquals(BetaMembership.JOINED, app.betaMembership())
+    }
+
+    @Test
+    fun `a scraped joined membership survives a no-program live status`() {
+        val app = row(
+            "a",
+            observedLiveStatus = LiveBetaStatus.NO_PROGRAM,
+            observedMembership = ObservedMembership.JOINED,
+        )
+        assertEquals(BetaMembership.JOINED, app.betaMembership())
     }
 
     @Test

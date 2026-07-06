@@ -35,6 +35,7 @@ class DefaultAppRepository(
     private val userBetaStatusDao: UserBetaStatusDao,
     private val seeder: BetaSeeder,
     private val scraper: BetaStatusScraper,
+    private val currentAccountKey: Flow<String?>,
     private val io: CoroutineDispatcher,
     private val clock: () -> Long,
 ) : AppRepository {
@@ -44,9 +45,16 @@ class DefaultAppRepository(
         betaProgramDao.observeAll(),
         betaObservationDao.observeAll(),
         userBetaStatusDao.observeAll(),
-    ) { apps, programs, observations, statuses ->
+        currentAccountKey,
+    ) { apps, programs, observations, statuses, accountKey ->
         val programsByPkg = programs.associateBy { it.packageName }
-        val observationsByPkg = observations.associateBy { it.packageName }
+        // Only the signed-in account's observations are surfaced; when signed out
+        // (accountKey null) none are shown.
+        val observationsByPkg = if (accountKey == null) {
+            emptyMap()
+        } else {
+            observations.filter { it.accountKey == accountKey }.associateBy { it.packageName }
+        }
         val statusesByPkg = statuses.associateBy { it.packageName }
         apps.map { app ->
             AppBetaOverview(
@@ -70,6 +78,11 @@ class DefaultAppRepository(
     override suspend fun setUserState(packageName: String, state: UserBetaState): Result<Unit> =
         updateStatus(packageName) { it.copy(state = state) }
 
+    override suspend fun clearObservations(accountKey: String): Result<Unit> =
+        runCatchingData(::wrapLocal) {
+            betaObservationDao.deleteForAccount(accountKey)
+        }
+
     override suspend fun refreshBetaStatus(
         session: PlaySession,
         cap: Int?,
@@ -82,7 +95,8 @@ class DefaultAppRepository(
             // first() suspends forever because nothing rewrites these tables.
             val installed = installedAppDao.getAll().filter { !it.isSystem }
             android.util.Log.d(TAG, "refreshBetaStatus: installed=${installed.size}")
-            val observed = betaObservationDao.getAll().associateBy { it.packageName }
+            val observed = betaObservationDao.getAllForAccount(session.accountKey)
+                .associateBy { it.packageName }
             android.util.Log.d(TAG, "refreshBetaStatus: observed=${observed.size}")
             val candidates = installed.map { app ->
                 val previous = observed[app.packageName]

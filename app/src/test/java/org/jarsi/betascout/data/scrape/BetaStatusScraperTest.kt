@@ -16,7 +16,7 @@ private const val OPEN_HTML =
 private const val LOGGED_OUT_HTML =
     """<html><body><form id="gaia_loginform"></form></body></html>"""
 
-private val session = PlaySession("SID=abc")
+private val session = PlaySession(accountEmail = "user@example.com", cookieHeader = "SID=abc")
 
 class BetaStatusScraperTest {
 

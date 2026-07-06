@@ -46,6 +46,7 @@ fun BetaProgramInfo.toEntity() = BetaProgramEntity(
 )
 
 fun BetaObservationEntity.toDomain() = BetaObservation(
+    accountKey = accountKey,
     packageName = packageName,
     liveStatus = liveStatus,
     observedMembership = observedMembership,
@@ -54,6 +55,7 @@ fun BetaObservationEntity.toDomain() = BetaObservation(
 )
 
 fun BetaObservation.toEntity() = BetaObservationEntity(
+    accountKey = accountKey,
     packageName = packageName,
     liveStatus = liveStatus,
     observedMembership = observedMembership,

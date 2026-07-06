@@ -30,9 +30,10 @@ data class BetaProgramEntity(
     val productionVersionCode: Long? = null,
 )
 
-@Entity(tableName = "beta_observations")
+@Entity(tableName = "beta_observations", primaryKeys = ["accountKey", "packageName"])
 data class BetaObservationEntity(
-    @PrimaryKey val packageName: String,
+    val accountKey: String,
+    val packageName: String,
     val liveStatus: LiveBetaStatus,
     val observedMembership: ObservedMembership,
     val checkedAt: Long,

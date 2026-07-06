@@ -1,5 +1,8 @@
 package org.jarsi.betascout.domain
 
+import java.security.MessageDigest
+import java.util.Locale
+
 /** Known status of a beta program in the knowledge base (seed/user). */
 enum class KnownBetaStatus { UNKNOWN, OFTEN_OPEN, OFTEN_FULL, NO_PROGRAM }
 
@@ -14,7 +17,13 @@ enum class ObservedMembership { UNKNOWN, JOINED, NOT_JOINED }
 enum class BetaSource { BUNDLED, REMOTE, USER }
 
 /** The user's Google Play web session, as a cookie header for authenticated requests. */
-data class PlaySession(val cookieHeader: String)
+data class PlaySession(
+    val accountEmail: String,
+    val cookieHeader: String,
+) {
+    val accountKey: String =
+        accountEmail.trim().lowercase(Locale.ROOT).ifBlank { "cookie:${cookieHeader.sha256Hex()}" }
+}
 
 /** Summary of one status-scan run. */
 data class ScanSummary(val checked: Int, val joined: Int, val needsLogin: Boolean)
@@ -53,6 +62,7 @@ data class BetaProgramInfo(
 
 /** What the authenticated testing page reported for one app, per user/device. */
 data class BetaObservation(
+    val accountKey: String,
     val packageName: String,
     val liveStatus: LiveBetaStatus = LiveBetaStatus.UNKNOWN,
     val observedMembership: ObservedMembership = ObservedMembership.UNKNOWN,
@@ -78,3 +88,10 @@ data class AppBetaOverview(
     val userStatus: UserBetaStatusInfo? = null,
     val observation: BetaObservation? = null,
 )
+
+private fun String.sha256Hex(): String {
+    val bytes = MessageDigest.getInstance("SHA-256").digest(toByteArray())
+    return bytes.joinToString(separator = "") { byte ->
+        (byte.toInt() and 0xff).toString(16).padStart(2, '0')
+    }
+}

@@ -63,8 +63,14 @@ interface BetaObservationDao {
     @Query("SELECT * FROM beta_observations")
     suspend fun getAll(): List<BetaObservationEntity>
 
-    @Query("SELECT * FROM beta_observations WHERE packageName = :packageName")
-    suspend fun get(packageName: String): BetaObservationEntity?
+    @Query("SELECT * FROM beta_observations WHERE accountKey = :accountKey")
+    suspend fun getAllForAccount(accountKey: String): List<BetaObservationEntity>
+
+    @Query("SELECT * FROM beta_observations WHERE accountKey = :accountKey AND packageName = :packageName")
+    suspend fun get(accountKey: String, packageName: String): BetaObservationEntity?
+
+    @Query("DELETE FROM beta_observations WHERE accountKey = :accountKey")
+    suspend fun deleteForAccount(accountKey: String)
 
     @Upsert
     suspend fun upsert(observation: BetaObservationEntity)

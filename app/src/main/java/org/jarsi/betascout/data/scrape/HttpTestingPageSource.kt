@@ -2,6 +2,7 @@ package org.jarsi.betascout.data.scrape
 
 import java.net.HttpURLConnection
 import java.net.URL
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -45,6 +46,8 @@ class HttpTestingPageSource(
                 } finally {
                     connection.disconnect()
                 }
+            } catch (e: CancellationException) {
+                throw e
             } catch (e: Exception) {
                 android.util.Log.d("BetaScout", "fetch $packageName: failed $e")
                 Result.failure(e)

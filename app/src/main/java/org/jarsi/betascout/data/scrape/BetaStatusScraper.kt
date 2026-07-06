@@ -50,6 +50,7 @@ class BetaStatusScraper(
                 return ScrapeOutcome(observations, needsLogin = true)
             }
             observations += BetaObservation(
+                accountKey = session.accountKey,
                 packageName = packageName,
                 liveStatus = result.liveStatus,
                 observedMembership = result.membership,

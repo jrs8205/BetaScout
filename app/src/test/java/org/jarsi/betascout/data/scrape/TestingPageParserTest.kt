@@ -102,6 +102,61 @@ class TestingPageParserTest {
     }
 
     @Test
+    fun `a generic Play Store app page means the app has no testing program`() {
+        val html = """
+            <html>
+              <head>
+                <meta property="og:url" content="https://play.google.com/store/apps/details?id=com.example">
+              </head>
+              <body>
+                <div>Google Play</div>
+                <h1>Example App</h1>
+                <section>About this app</section>
+                <section>Data safety</section>
+              </body>
+            </html>
+        """.trimIndent()
+
+        val result = TestingPageParser.parse(html)
+
+        assertEquals(LiveBetaStatus.NO_PROGRAM, result.liveStatus)
+        assertEquals(ObservedMembership.UNKNOWN, result.membership)
+    }
+
+    @Test
+    fun `a testing page that also links to the store is not misread as no-program`() {
+        // Real testing pages link to the store listing; a store link plus testing
+        // vocabulary must stay inconclusive (retryable), never a hard NO_PROGRAM.
+        val html = """
+            <html>
+              <head>
+                <meta property="og:url" content="https://play.google.com/store/apps/details?id=com.example">
+              </head>
+              <body>
+                <div>Google Play</div>
+                <p>Join the testing program to become a tester of this app.</p>
+              </body>
+            </html>
+        """.trimIndent()
+
+        val result = TestingPageParser.parse(html)
+
+        assertEquals(LiveBetaStatus.UNKNOWN, result.liveStatus)
+    }
+
+    @Test
+    fun `a store page with only one store section stays inconclusive`() {
+        val html = """
+            <html><body>
+              <div>Google Play</div>
+              <section>About this app</section>
+            </body></html>
+        """.trimIndent()
+
+        assertEquals(LiveBetaStatus.UNKNOWN, TestingPageParser.parse(html).liveStatus)
+    }
+
+    @Test
     fun `being a tester takes precedence over a full message`() {
         val html = """
             <html><body>
