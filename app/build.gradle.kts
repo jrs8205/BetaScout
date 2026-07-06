@@ -97,6 +97,10 @@ dependencies {
 
     implementation(libs.kotlinx.serialization.json)
 
+    // Jsoup (MIT) parses the authenticated Play testing page HTML to read the
+    // user's beta membership and the open/full/closed status.
+    implementation(libs.jsoup)
+
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
 

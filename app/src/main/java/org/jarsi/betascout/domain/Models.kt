@@ -3,8 +3,12 @@ package org.jarsi.betascout.domain
 /** Known status of a beta program in the knowledge base (seed/user). */
 enum class KnownBetaStatus { UNKNOWN, OFTEN_OPEN, OFTEN_FULL, NO_PROGRAM }
 
-/** Freshly observed state of a testing program, as checked by the catalog backend. */
-enum class LiveBetaStatus { UNKNOWN, OPEN, FULL, CLOSED }
+/** Freshly observed state of a testing program. NO_PROGRAM means the app has no
+ *  open-testing page at all. */
+enum class LiveBetaStatus { UNKNOWN, OPEN, FULL, CLOSED, NO_PROGRAM }
+
+/** Membership as observed from the authenticated testing page (not user-declared). */
+enum class ObservedMembership { UNKNOWN, JOINED, NOT_JOINED }
 
 /** Origin of a beta record. */
 enum class BetaSource { BUNDLED, REMOTE, USER }
