@@ -18,7 +18,8 @@ private fun raw(
     versionCode: Long = 1L,
     installerPackage: String? = "com.android.vending",
     isSystem: Boolean = false,
-) = RawInstalledPackage(packageName, label, versionName, versionCode, installerPackage, isSystem)
+    hasLauncher: Boolean = true,
+) = RawInstalledPackage(packageName, label, versionName, versionCode, installerPackage, isSystem, hasLauncher)
 
 class DefaultPackageScannerTest {
 
@@ -87,5 +88,18 @@ class DefaultPackageScannerTest {
         ).scan()
 
         assertTrue(result.single().isSystem)
+    }
+
+    @Test
+    fun `passes launcher flag through`() = runTest {
+        val result = scanner(
+            packages = listOf(
+                raw("com.google.android.gm", label = "Gmail", isSystem = true, hasLauncher = true),
+                raw("com.android.providers.media", label = "Media", isSystem = true, hasLauncher = false),
+            )
+        ).scan()
+
+        assertTrue(result.single { it.packageName == "com.google.android.gm" }.hasLauncher)
+        assertTrue(!result.single { it.packageName == "com.android.providers.media" }.hasLauncher)
     }
 }

@@ -15,8 +15,8 @@ android {
         applicationId = "org.jarsi.betascout"
         minSdk = 26
         targetSdk = 36
-        versionCode = 5
-        versionName = "0.3.2"
+        versionCode = 6
+        versionName = "0.4.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -55,6 +55,14 @@ android {
     buildFeatures {
         compose = true
     }
+
+    testOptions {
+        // Diagnostic android.util.Log calls in data classes become no-ops in JVM unit tests.
+        unitTests.isReturnDefaultValues = true
+    }
+
+    // Exported Room schemas double as fixtures for the instrumented migration test.
+    sourceSets["androidTest"].assets.srcDir("$projectDir/schemas")
 }
 
 kotlin {
@@ -94,16 +102,19 @@ dependencies {
 
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.androidx.datastore.preferences)
+    // Chrome Custom Tabs for the in-app "Join the beta" web opt-in.
+    implementation(libs.androidx.browser)
 
     implementation(libs.kotlinx.serialization.json)
+
+    // Jsoup (MIT) parses the authenticated Play testing page HTML to read the
+    // user's beta membership and the open/full/closed status.
+    implementation(libs.jsoup)
 
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
 
-    // gplayapi reads authoritative Google Play data for signed-in membership
-    // detection. It is GPL-3.0 and ships in the app (see LICENSE).
-    implementation("com.auroraoss:gplayapi:3.4.2")
-
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test:runner:1.6.2")
+    androidTestImplementation(libs.androidx.room.testing)
 }

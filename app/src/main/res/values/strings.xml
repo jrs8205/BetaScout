@@ -6,11 +6,13 @@
     <string name="search_hint">Search apps</string>
     <string name="tab_not_joined">Not joined</string>
     <string name="tab_joined">Joined</string>
+    <string name="tab_no_beta">No beta</string>
     <string name="filter_only_beta">Beta available</string>
     <string name="filter_only_watched">Watched</string>
-    <string name="filter_show_system">System apps</string>
+    <string name="filter_only_system">Only system apps</string>
     <string name="empty_not_joined">No installed apps with a beta to join right now.</string>
     <string name="empty_joined">You have not marked any app as joined yet.</string>
+    <string name="empty_no_beta">No apps without a beta program.</string>
     <string name="badge_beta">Beta</string>
     <string name="refresh">Refresh</string>
     <string name="empty_list">No apps match the filters.</string>
@@ -31,6 +33,19 @@
     <string name="known_often_full">Usually full</string>
     <string name="known_no_program">No program</string>
 
+    <!-- Detected status (from the authenticated scan) -->
+    <string name="observed_title">Detected beta status</string>
+    <string name="observed_membership_joined">You are a tester</string>
+    <string name="observed_membership_not_joined">You are not a tester</string>
+    <string name="observed_membership_unknown">Membership not determined</string>
+    <string name="observed_live_status">Program status: %1$s</string>
+    <string name="observed_checked_at">Checked: %1$s</string>
+    <string name="live_unknown">Unknown</string>
+    <string name="live_open">Open</string>
+    <string name="live_full">Full</string>
+    <string name="live_closed">Closed</string>
+    <string name="live_no_program">No beta program</string>
+
     <!-- App detail -->
     <string name="back">Back</string>
     <string name="app_not_found">App not found.</string>
@@ -38,8 +53,10 @@
     <string name="installer_line">Installed from: %1$s</string>
     <string name="system_app">System app</string>
     <string name="open_beta_page">Open beta page</string>
+    <string name="join_beta">Join the beta</string>
     <string name="open_play_page">Open Play Store page</string>
-    <string name="my_status">My beta status</string>
+    <string name="my_status">My own marking</string>
+    <string name="my_status_hint">Optional manual marking. A signed-in scan fills the detected status above automatically.</string>
     <string name="watch_app">Watch this app</string>
     <string name="watch_hint">BetaScout reminds you to re-check this app\'s beta status at the chosen interval.</string>
     <string name="reminder_interval">Reminder interval</string>
@@ -57,10 +74,15 @@
     <!-- Account / membership sync -->
     <string name="account_title">Google account</string>
     <string name="account_open">Account</string>
-    <string name="account_hint">Sign in with your Google account to detect which betas you are actually in. Uses Google Play\'s unofficial API — use a spare account.</string>
+    <string name="account_hint">Sign in with your Google account so BetaScout can read your own testing pages and detect which betas you are in and whether each is open or full. It never joins on your behalf.</string>
     <string name="account_signin">Sign in with Google</string>
-    <string name="account_sync">Sync membership</string>
-    <string name="account_synced">Synced: %1$d in beta</string>
+    <string name="account_sync">Scan now</string>
+    <string name="account_no_scan_yet">No scan yet — tap Scan now.</string>
+    <string name="account_last_scan">Last scan: %1$s</string>
+    <string name="account_last_scan_counts">In %1$d betas · not in %2$d · %3$d apps checked</string>
+    <string name="account_last_scan_failed">%1$d apps could not be checked — retried on the next scan.</string>
+    <string name="account_scan_progress">Checking %1$d/%2$d: %3$s</string>
+    <string name="account_relogin">Session expired — please sign in again.</string>
     <string name="account_error">Failed: %1$s</string>
     <string name="account_signed_in">Signed in as %1$s</string>
     <string name="account_signout">Sign out</string>
@@ -75,7 +97,7 @@
     <string name="onboarding_title">Welcome to BetaScout</string>
     <string name="onboarding_what">BetaScout scans your installed apps, shows which ones are known to have a Google Play beta program, opens the opt-in page for you and reminds you to re-check watched apps.</string>
     <string name="onboarding_honesty_title">What BetaScout does not do</string>
-    <string name="onboarding_honesty">It never joins beta programs on your behalf, and it cannot reliably detect whether a program is open or full — that is only visible to your own Google account on the beta page. You always join and check yourself.</string>
+    <string name="onboarding_honesty">It never joins beta programs on your behalf. Once you sign in with Google, your memberships and each program\'s open/full status are read from your own testing pages; without signing in you check them yourself.</string>
     <string name="onboarding_notifications">Allow notifications so the watcher can remind you to check beta statuses.</string>
     <string name="onboarding_continue">Get started</string>
 
@@ -84,4 +106,12 @@
     <string name="reminder_channel_description">Reminders to re-check the beta status of watched apps</string>
     <string name="reminder_title">Check beta status: %1$s</string>
     <string name="reminder_text">Open the beta page and check whether the program is open.</string>
+
+    <!-- Beta slot openings (background scan) -->
+    <string name="slot_channel_name">Beta openings</string>
+    <string name="slot_channel_description">Notifies when a watched app\'s testing program starts accepting testers again</string>
+    <string name="slot_title">Beta open: %1$s</string>
+    <string name="slot_text">The testing program is accepting testers again. Tap to open the opt-in page.</string>
+    <string name="relogin_title">Sign in again</string>
+    <string name="relogin_text">The Google session expired — background beta scanning is paused until you sign in.</string>
 </resources>

@@ -2,15 +2,6 @@ package org.jarsi.betascout.domain
 
 import kotlinx.coroutines.flow.Flow
 
-/** Reads which of the given packages the account is subscribed to the beta of. */
-fun interface MembershipSource {
-    suspend fun subscribedPackages(
-        email: String,
-        aasToken: String,
-        packages: List<String>,
-    ): Result<Set<String>>
-}
-
 interface AppRepository {
 
     /** Combined view: installed apps + beta info + the user's own marking. */
@@ -24,9 +15,23 @@ interface AppRepository {
 
     suspend fun setUserState(packageName: String, state: UserBetaState): Result<Unit>
 
-    /** Reads authoritative beta membership from Google Play for the installed
-     *  beta apps and records Joined/Not joined. Returns the number found joined. */
-    suspend fun syncMembership(email: String, aasToken: String): Result<Int>
+    /** Deletes all scrape observations recorded for the given account (used on sign-out
+     *  so a signed-out account's beta memberships do not linger on the device). */
+    suspend fun clearObservations(accountKey: String): Result<Unit>
+
+    /** Scrapes the authenticated testing page for the installed apps that are due a
+     *  check, recording live status and observed membership. Returns a run summary.
+     *  [onProgress] is invoked before each page fetch so the UI can show progress.
+     *  [cap] bounds the number of apps per run (for scheduled background scans);
+     *  null scans everything due — the crawl delay still paces the requests.
+     *  [force] ignores the freshness TTL so a user-initiated scan always re-checks
+     *  every app (memberships can change outside the app). */
+    suspend fun refreshBetaStatus(
+        session: PlaySession,
+        cap: Int? = null,
+        force: Boolean = false,
+        onProgress: suspend (ScanProgress) -> Unit = {},
+    ): Result<ScanSummary>
 
     suspend fun setWatching(
         packageName: String,

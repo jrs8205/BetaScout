@@ -12,19 +12,27 @@ import java.net.HttpURLConnection
 import java.net.URL
 import javax.inject.Singleton
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeeder
 import org.jarsi.betascout.data.betadb.CatalogProvider
-import org.jarsi.betascout.data.gplay.GplayMembership
+import org.jarsi.betascout.data.scrape.BetaStatusScraper
+import org.jarsi.betascout.data.scrape.HttpTestingPageSource
 import org.jarsi.betascout.data.db.AppDatabase
+import org.jarsi.betascout.data.db.BetaObservationDao
 import org.jarsi.betascout.data.db.BetaProgramDao
 import org.jarsi.betascout.data.db.MIGRATION_1_2
+import org.jarsi.betascout.data.db.MIGRATION_2_3
+import org.jarsi.betascout.data.db.MIGRATION_3_4
+import org.jarsi.betascout.data.db.MIGRATION_4_5
 import org.jarsi.betascout.data.db.InstalledAppDao
 import org.jarsi.betascout.data.db.UserBetaStatusDao
 import org.jarsi.betascout.data.repo.DefaultAppRepository
 import org.jarsi.betascout.data.scanner.AndroidInstalledPackagesSource
 import org.jarsi.betascout.data.scanner.DefaultPackageScanner
 import org.jarsi.betascout.data.scanner.PackageScanner
+import org.jarsi.betascout.data.settings.SettingsRepository
 import org.jarsi.betascout.domain.AppRepository
 
 @Module
@@ -61,7 +69,7 @@ object AppModule {
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase =
         Room.databaseBuilder(context, AppDatabase::class.java, "betascout.db")
-            .addMigrations(MIGRATION_1_2)
+            .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
             .build()
 
     @Provides
@@ -69,6 +77,9 @@ object AppModule {
 
     @Provides
     fun provideBetaProgramDao(db: AppDatabase): BetaProgramDao = db.betaProgramDao()
+
+    @Provides
+    fun provideBetaObservationDao(db: AppDatabase): BetaObservationDao = db.betaObservationDao()
 
     @Provides
     fun provideUserBetaStatusDao(db: AppDatabase): UserBetaStatusDao = db.userBetaStatusDao()
@@ -89,11 +100,14 @@ object AppModule {
         scanner: PackageScanner,
         installedAppDao: InstalledAppDao,
         betaProgramDao: BetaProgramDao,
+        betaObservationDao: BetaObservationDao,
         userBetaStatusDao: UserBetaStatusDao,
+        settings: SettingsRepository,
     ): AppRepository = DefaultAppRepository(
         scanner = scanner,
         installedAppDao = installedAppDao,
         betaProgramDao = betaProgramDao,
+        betaObservationDao = betaObservationDao,
         userBetaStatusDao = userBetaStatusDao,
         seeder = BetaSeeder(
             readSeedJson = CatalogProvider(
@@ -108,7 +122,13 @@ object AppModule {
             )::catalogJson,
             dao = betaProgramDao,
         ),
-        membership = GplayMembership(context),
+        scraper = BetaStatusScraper(
+            source = HttpTestingPageSource(),
+            clock = System::currentTimeMillis,
+        ),
+        // distinctUntilChanged avoids re-decrypting the cookie and re-filtering the
+        // whole observation list on every unrelated DataStore emission.
+        currentAccountKey = settings.playSession.map { it?.accountKey }.distinctUntilChanged(),
         io = Dispatchers.IO,
         clock = System::currentTimeMillis,
     )

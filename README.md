@@ -93,7 +93,7 @@ Suggestions and bug reports are welcome in [Issues](https://github.com/jrs8205/B
 
 ## License
 
-The app source is under the [Apache License 2.0](LICENSE). Release builds link
-[gplayapi](https://gitlab.com/AuroraOSS/gplayapi) (GPL-3.0) for the optional
-Google sign-in feature, so the distributed APK is covered by GPL-3.0. The backend
-harvester (`harvester/`) is likewise GPL-3.0.
+The app is under the [Apache License 2.0](LICENSE). Beta membership and open/full/closed
+status are read by signing into your own Google account and parsing your own testing pages
+with [Jsoup](https://jsoup.org/) (MIT); no Google Play private API is used. The backend
+harvester (`harvester/`) is GPL-3.0 and runs server-side only.

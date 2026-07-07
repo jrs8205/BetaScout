@@ -47,11 +47,14 @@ import org.jarsi.betascout.R
 import org.jarsi.betascout.domain.AppBetaOverview
 import org.jarsi.betascout.domain.BetaLinkBuilder
 import org.jarsi.betascout.domain.KnownBetaStatus
+import org.jarsi.betascout.domain.LiveBetaStatus
+import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.UserBetaState
+import org.jarsi.betascout.ui.applist.canJoinBeta
 import org.jarsi.betascout.ui.applist.labelRes
 import org.jarsi.betascout.ui.components.AppIcon
+import org.jarsi.betascout.ui.components.openInCustomTab
 import org.jarsi.betascout.ui.components.openPlayPage
-import org.jarsi.betascout.ui.components.openUrl
 
 @Composable
 fun AppDetailScreen(
@@ -118,6 +121,7 @@ private fun AppDetailContent(
             ) {
                 Header(overview)
                 LinkButtons(overview)
+                ObservedStatusCard(overview)
                 KnownBetaCard(overview)
                 MyStatusSection(overview, onSetState)
                 WatchSection(overview, onSetWatching)
@@ -169,18 +173,65 @@ private fun LinkButtons(overview: AppBetaOverview) {
     val context = LocalContext.current
     val pkg = overview.app.packageName
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        // The testing page opens in a Custom Tab so the user's browser Google session
+        // can complete the join (the opt-in is a plain web form on that page).
+        val testingUrl = overview.betaProgram?.testingUrl ?: BetaLinkBuilder.testingUrl(pkg)
         Button(
-            onClick = {
-                val url = overview.betaProgram?.testingUrl ?: BetaLinkBuilder.testingUrl(pkg)
-                openUrl(context, url)
-            },
+            onClick = { openInCustomTab(context, testingUrl) },
             modifier = Modifier.fillMaxWidth(),
-        ) { Text(stringResource(R.string.open_beta_page)) }
+        ) {
+            Text(
+                stringResource(
+                    if (overview.canJoinBeta()) R.string.join_beta else R.string.open_beta_page,
+                ),
+            )
+        }
 
         OutlinedButton(
             onClick = { openPlayPage(context, pkg) },
             modifier = Modifier.fillMaxWidth(),
         ) { Text(stringResource(R.string.open_play_page)) }
+    }
+}
+
+/**
+ * What the last authenticated scan saw on this app's testing page: the user's own
+ * membership, the program's live status and when it was checked. This is the
+ * detected truth — the manual marking below is only an optional override.
+ */
+@Composable
+private fun ObservedStatusCard(overview: AppBetaOverview) {
+    val observation = overview.observation ?: return
+    val dateFormat = remember { DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT) }
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            Text(
+                stringResource(R.string.observed_title),
+                style = MaterialTheme.typography.titleMedium,
+            )
+            Text(
+                stringResource(observation.observedMembership.labelRes()),
+                color = if (observation.observedMembership == ObservedMembership.JOINED) {
+                    MaterialTheme.colorScheme.primary
+                } else {
+                    MaterialTheme.colorScheme.onSurface
+                },
+            )
+            Text(
+                stringResource(
+                    R.string.observed_live_status,
+                    stringResource(observation.liveStatus.labelRes()),
+                ),
+            )
+            Text(
+                stringResource(
+                    R.string.observed_checked_at,
+                    dateFormat.format(Date(observation.checkedAt)),
+                ),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
     }
 }
 
@@ -203,6 +254,11 @@ private fun MyStatusSection(overview: AppBetaOverview, onSetState: (UserBetaStat
     val selected = overview.userStatus?.state ?: UserBetaState.UNKNOWN
     Column {
         Text(stringResource(R.string.my_status), style = MaterialTheme.typography.titleMedium)
+        Text(
+            stringResource(R.string.my_status_hint),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
         UserBetaState.entries.forEach { state ->
             Row(
                 modifier = Modifier
@@ -294,4 +350,18 @@ private fun KnownBetaStatus.labelRes(): Int = when (this) {
     KnownBetaStatus.OFTEN_OPEN -> R.string.known_often_open
     KnownBetaStatus.OFTEN_FULL -> R.string.known_often_full
     KnownBetaStatus.NO_PROGRAM -> R.string.known_no_program
+}
+
+private fun ObservedMembership.labelRes(): Int = when (this) {
+    ObservedMembership.UNKNOWN -> R.string.observed_membership_unknown
+    ObservedMembership.JOINED -> R.string.observed_membership_joined
+    ObservedMembership.NOT_JOINED -> R.string.observed_membership_not_joined
+}
+
+private fun LiveBetaStatus.labelRes(): Int = when (this) {
+    LiveBetaStatus.UNKNOWN -> R.string.live_unknown
+    LiveBetaStatus.OPEN -> R.string.live_open
+    LiveBetaStatus.FULL -> R.string.live_full
+    LiveBetaStatus.CLOSED -> R.string.live_closed
+    LiveBetaStatus.NO_PROGRAM -> R.string.live_no_program
 }

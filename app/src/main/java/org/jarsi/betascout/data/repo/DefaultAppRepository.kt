@@ -4,20 +4,28 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeeder
-import org.jarsi.betascout.domain.KnownBetaStatus
-import org.jarsi.betascout.domain.MembershipSource
+import org.jarsi.betascout.data.db.BetaObservationDao
 import org.jarsi.betascout.data.db.BetaProgramDao
 import org.jarsi.betascout.data.db.InstalledAppDao
 import org.jarsi.betascout.data.db.UserBetaStatusDao
 import org.jarsi.betascout.data.db.toDomain
 import org.jarsi.betascout.data.db.toEntity
 import org.jarsi.betascout.data.scanner.PackageScanner
+import org.jarsi.betascout.data.scrape.BetaStatusScraper
 import org.jarsi.betascout.domain.AppBetaOverview
 import org.jarsi.betascout.domain.AppRepository
 import org.jarsi.betascout.domain.DataError
+import org.jarsi.betascout.domain.LiveBetaStatus
+import org.jarsi.betascout.domain.isRelevantApp
+import org.jarsi.betascout.domain.ObservedMembership
+import org.jarsi.betascout.domain.PlaySession
+import org.jarsi.betascout.domain.ScanCandidate
+import org.jarsi.betascout.domain.ScanPolicy
+import org.jarsi.betascout.domain.ScanProgress
+import org.jarsi.betascout.domain.ScanSummary
+import org.jarsi.betascout.domain.StatusTransition
 import org.jarsi.betascout.domain.UserBetaState
 import org.jarsi.betascout.domain.UserBetaStatusInfo
 
@@ -25,9 +33,11 @@ class DefaultAppRepository(
     private val scanner: PackageScanner,
     private val installedAppDao: InstalledAppDao,
     private val betaProgramDao: BetaProgramDao,
+    private val betaObservationDao: BetaObservationDao,
     private val userBetaStatusDao: UserBetaStatusDao,
     private val seeder: BetaSeeder,
-    private val membership: MembershipSource,
+    private val scraper: BetaStatusScraper,
+    private val currentAccountKey: Flow<String?>,
     private val io: CoroutineDispatcher,
     private val clock: () -> Long,
 ) : AppRepository {
@@ -35,15 +45,25 @@ class DefaultAppRepository(
     override fun observeApps(): Flow<List<AppBetaOverview>> = combine(
         installedAppDao.observeAll(),
         betaProgramDao.observeAll(),
+        betaObservationDao.observeAll(),
         userBetaStatusDao.observeAll(),
-    ) { apps, programs, statuses ->
+        currentAccountKey,
+    ) { apps, programs, observations, statuses, accountKey ->
         val programsByPkg = programs.associateBy { it.packageName }
+        // Only the signed-in account's observations are surfaced; when signed out
+        // (accountKey null) none are shown.
+        val observationsByPkg = if (accountKey == null) {
+            emptyMap()
+        } else {
+            observations.filter { it.accountKey == accountKey }.associateBy { it.packageName }
+        }
         val statusesByPkg = statuses.associateBy { it.packageName }
         apps.map { app ->
             AppBetaOverview(
                 app = app.toDomain(),
                 betaProgram = programsByPkg[app.packageName]?.toDomain(),
                 userStatus = statusesByPkg[app.packageName]?.toDomain(),
+                observation = observationsByPkg[app.packageName]?.toDomain(),
             )
         }
     }
@@ -60,21 +80,75 @@ class DefaultAppRepository(
     override suspend fun setUserState(packageName: String, state: UserBetaState): Result<Unit> =
         updateStatus(packageName) { it.copy(state = state) }
 
-    override suspend fun syncMembership(email: String, aasToken: String): Result<Int> = withContext(io) {
+    override suspend fun clearObservations(accountKey: String): Result<Unit> =
+        runCatchingData(::wrapLocal) {
+            betaObservationDao.deleteForAccount(accountKey)
+        }
+
+    override suspend fun refreshBetaStatus(
+        session: PlaySession,
+        cap: Int?,
+        force: Boolean,
+        onProgress: suspend (ScanProgress) -> Unit,
+    ): Result<ScanSummary> = withContext(io) {
         try {
-            val installed = installedAppDao.observeAll().first().map { it.packageName }.toSet()
-            val betaPackages = betaProgramDao.observeAll().first()
-                .filter { it.knownStatus != KnownBetaStatus.NO_PROGRAM }
-                .map { it.packageName }
-                .filter { it in installed }
-            val subscribed = membership.subscribedPackages(email, aasToken, betaPackages).getOrThrow()
-            betaPackages.forEach { packageName ->
-                val state = if (packageName in subscribed) UserBetaState.JOINED else UserBetaState.NOT_JOINED
-                val current = userBetaStatusDao.get(packageName)?.toDomain()
-                    ?: UserBetaStatusInfo(packageName = packageName)
-                userBetaStatusDao.upsert(current.copy(state = state).toEntity())
+            android.util.Log.d(TAG, "refreshBetaStatus: start force=$force")
+            // One-shot suspend queries, NOT observeAll().first(): a flow's initial
+            // emission can be lost to an invalidation-tracker race, after which
+            // first() suspends forever because nothing rewrites these tables.
+            val installed = installedAppDao.getAll().map { it.toDomain() }
+                .filter { it.isRelevantApp }
+            android.util.Log.d(TAG, "refreshBetaStatus: installed=${installed.size}")
+            val observed = betaObservationDao.getAllForAccount(session.accountKey)
+                .associateBy { it.packageName }
+            android.util.Log.d(TAG, "refreshBetaStatus: observed=${observed.size}")
+            val candidates = installed.map { app ->
+                val previous = observed[app.packageName]
+                ScanCandidate(
+                    packageName = app.packageName,
+                    lastStatus = previous?.liveStatus ?: LiveBetaStatus.UNKNOWN,
+                    checkedAt = previous?.checkedAt,
+                )
             }
-            Result.success(subscribed.size)
+            val due = ScanPolicy
+                .selectDue(candidates, clock(), cap = cap ?: candidates.size, ignoreTtl = force)
+                .map { it.packageName }
+            android.util.Log.d(TAG, "refreshBetaStatus: due=${due.size} $due")
+            val labels = installed.associate { it.packageName to it.label }
+            val outcome = scraper.scrape(due, session) { index, total, packageName ->
+                onProgress(ScanProgress(index, total, labels[packageName] ?: packageName))
+            }
+            android.util.Log.d(
+                TAG,
+                "refreshBetaStatus: scraped=${outcome.observations.size} needsLogin=${outcome.needsLogin}",
+            )
+            // A transition only exists where a previous observation is overwritten;
+            // a first sighting is not a change and must not fire notifications.
+            val transitions = outcome.observations.mapNotNull { observation ->
+                val previous = observed[observation.packageName] ?: return@mapNotNull null
+                if (previous.liveStatus == observation.liveStatus) return@mapNotNull null
+                StatusTransition(
+                    packageName = observation.packageName,
+                    from = previous.liveStatus,
+                    to = observation.liveStatus,
+                )
+            }
+            outcome.observations.forEach { betaObservationDao.upsert(it.toEntity()) }
+            val accountObservations = betaObservationDao.getAllForAccount(session.accountKey)
+            Result.success(
+                ScanSummary(
+                    checked = outcome.observations.size,
+                    joined = accountObservations
+                        .count { it.observedMembership == ObservedMembership.JOINED },
+                    notJoined = accountObservations
+                        .count { it.observedMembership == ObservedMembership.NOT_JOINED },
+                    needsLogin = outcome.needsLogin,
+                    // On an expired session the run stops early; the unattempted rest
+                    // are not fetch failures.
+                    failed = if (outcome.needsLogin) 0 else due.size - outcome.observations.size,
+                    transitions = transitions,
+                ),
+            )
         } catch (e: CancellationException) {
             throw e
         } catch (e: Exception) {
@@ -137,5 +211,9 @@ class DefaultAppRepository(
         } catch (e: Exception) {
             Result.failure(wrap(e))
         }
+    }
+
+    private companion object {
+        const val TAG = "BetaScout"
     }
 }

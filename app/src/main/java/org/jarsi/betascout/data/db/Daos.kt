@@ -14,6 +14,10 @@ interface InstalledAppDao {
     @Query("SELECT * FROM installed_apps ORDER BY label COLLATE NOCASE")
     fun observeAll(): Flow<List<InstalledAppEntity>>
 
+    /** One-shot read for scan runs; a direct query, not an observable flow. */
+    @Query("SELECT * FROM installed_apps ORDER BY label COLLATE NOCASE")
+    suspend fun getAll(): List<InstalledAppEntity>
+
     @Upsert
     suspend fun upsertAll(apps: List<InstalledAppEntity>)
 
@@ -47,6 +51,29 @@ interface BetaProgramDao {
 
     @Query("SELECT COUNT(*) FROM beta_programs")
     suspend fun count(): Int
+}
+
+@Dao
+interface BetaObservationDao {
+
+    @Query("SELECT * FROM beta_observations")
+    fun observeAll(): Flow<List<BetaObservationEntity>>
+
+    /** One-shot read for scan runs; a direct query, not an observable flow. */
+    @Query("SELECT * FROM beta_observations")
+    suspend fun getAll(): List<BetaObservationEntity>
+
+    @Query("SELECT * FROM beta_observations WHERE accountKey = :accountKey")
+    suspend fun getAllForAccount(accountKey: String): List<BetaObservationEntity>
+
+    @Query("SELECT * FROM beta_observations WHERE accountKey = :accountKey AND packageName = :packageName")
+    suspend fun get(accountKey: String, packageName: String): BetaObservationEntity?
+
+    @Query("DELETE FROM beta_observations WHERE accountKey = :accountKey")
+    suspend fun deleteForAccount(accountKey: String)
+
+    @Upsert
+    suspend fun upsert(observation: BetaObservationEntity)
 }
 
 @Dao

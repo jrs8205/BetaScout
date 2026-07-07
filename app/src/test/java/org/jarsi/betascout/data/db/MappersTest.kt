@@ -1,9 +1,12 @@
 package org.jarsi.betascout.data.db
 
+import org.jarsi.betascout.domain.BetaObservation
 import org.jarsi.betascout.domain.BetaProgramInfo
 import org.jarsi.betascout.domain.BetaSource
 import org.jarsi.betascout.domain.InstalledAppInfo
 import org.jarsi.betascout.domain.KnownBetaStatus
+import org.jarsi.betascout.domain.LiveBetaStatus
+import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.UserBetaState
 import org.jarsi.betascout.domain.UserBetaStatusInfo
 import org.junit.Assert.assertEquals
@@ -20,6 +23,7 @@ class MappersTest {
             versionCode = 261L,
             installerPackage = "com.android.vending",
             isSystem = false,
+            hasLauncher = true,
             lastScanned = 42L,
         )
         assertEquals(domain, domain.toEntity().toDomain())
@@ -34,6 +38,19 @@ class MappersTest {
             knownStatus = KnownBetaStatus.OFTEN_FULL,
             notes = "Beta fills up quickly",
             source = BetaSource.BUNDLED,
+        )
+        assertEquals(domain, domain.toEntity().toDomain())
+    }
+
+    @Test
+    fun `beta observation survives entity round trip`() {
+        val domain = BetaObservation(
+            accountKey = "user@example.com",
+            packageName = "com.whatsapp",
+            liveStatus = LiveBetaStatus.OPEN,
+            observedMembership = ObservedMembership.JOINED,
+            checkedAt = 1_720_000_000_000L,
+            lastError = null,
         )
         assertEquals(domain, domain.toEntity().toDomain())
     }

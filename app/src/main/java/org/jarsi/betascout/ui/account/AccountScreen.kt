@@ -16,12 +16,14 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -29,7 +31,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import java.text.DateFormat
+import java.util.Date
 import org.jarsi.betascout.R
+import org.jarsi.betascout.data.settings.LastScanInfo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -66,20 +71,47 @@ fun AccountScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            Text(
-                text = stringResource(R.string.account_hint),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
+            // The sign-in pitch is only for signed-out users; once signed in the
+            // screen leads with the account and its latest scan results instead.
+            if (!state.signedIn) {
+                Text(
+                    text = stringResource(R.string.account_hint),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
 
             if (state.busy) {
-                Box(Modifier.fillMaxWidth().padding(16.dp), contentAlignment = Alignment.Center) {
-                    CircularProgressIndicator()
+                val progress = state.progress
+                if (progress != null) {
+                    Column(
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        LinearProgressIndicator(
+                            progress = { progress.index / progress.total.toFloat() },
+                            modifier = Modifier.fillMaxWidth(),
+                        )
+                        Text(
+                            text = stringResource(
+                                R.string.account_scan_progress,
+                                progress.index,
+                                progress.total,
+                                progress.currentLabel,
+                            ),
+                            style = MaterialTheme.typography.bodyMedium,
+                        )
+                    }
+                } else {
+                    Box(Modifier.fillMaxWidth().padding(16.dp), contentAlignment = Alignment.Center) {
+                        CircularProgressIndicator()
+                    }
                 }
             }
 
             if (state.signedIn) {
                 Text(stringResource(R.string.account_signed_in, state.email))
+                LastScanSummary(state.lastScan)
                 Button(
                     onClick = viewModel::resync,
                     enabled = !state.busy,
@@ -99,11 +131,10 @@ fun AccountScreen(
                     Text(stringResource(R.string.account_signin))
                 }
             }
-
-            state.syncedCount?.let {
+            if (state.needsReLogin) {
                 Text(
-                    text = stringResource(R.string.account_synced, it),
-                    color = MaterialTheme.colorScheme.primary,
+                    text = stringResource(R.string.account_relogin),
+                    color = MaterialTheme.colorScheme.error,
                 )
             }
             state.error?.let {
@@ -116,9 +147,53 @@ fun AccountScreen(
     }
 }
 
+/** The persisted result of the latest scan: when it ran and what it found. */
+@Composable
+private fun LastScanSummary(lastScan: LastScanInfo?) {
+    if (lastScan == null) {
+        Text(
+            text = stringResource(R.string.account_no_scan_yet),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        return
+    }
+    val dateFormat = remember {
+        DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
+    }
+    Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+        Text(
+            text = stringResource(
+                R.string.account_last_scan,
+                dateFormat.format(Date(lastScan.at)),
+            ),
+            style = MaterialTheme.typography.bodyMedium,
+        )
+        Text(
+            text = stringResource(
+                R.string.account_last_scan_counts,
+                lastScan.joined,
+                lastScan.notJoined,
+                lastScan.checked,
+            ),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.primary,
+        )
+        if (lastScan.failed > 0) {
+            Text(
+                text = stringResource(R.string.account_last_scan_failed, lastScan.failed),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+    }
+}
+
 /**
- * Loads Google's embedded sign-in and captures the account email and short-lived
- * oauth_token once the user completes login. The token is exchanged in-app.
+ * Signs the user into their Google web session and, once play.google.com carries the
+ * session cookies, captures them (plus the account email) so BetaScout can fetch the
+ * user's own testing pages. No token exchange and no Play API — just the web session,
+ * the same mechanism the reference app uses.
  */
 @Composable
 private fun GoogleLoginWebView(onCaptured: (String, String) -> Unit) {
@@ -137,26 +212,23 @@ private fun GoogleLoginWebView(onCaptured: (String, String) -> Unit) {
                     private var handled = false
 
                     override fun onPageFinished(view: WebView, url: String?) {
-                        if (handled) return
-                        val cookieString = CookieManager.getInstance()
-                            .getCookie("https://accounts.google.com") ?: return
-                        val oauthToken = cookieString.split(";")
-                            .map { it.trim() }
-                            .firstOrNull { it.startsWith("oauth_token=") }
-                            ?.removePrefix("oauth_token=")
-                        if (oauthToken != null && oauthToken.startsWith("oauth2_4/")) {
-                            handled = true
-                            view.evaluateJavascript(
-                                "(function(){var m=document.documentElement.innerHTML" +
-                                    ".match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}/);" +
-                                    "return m?m[0]:'';})()",
-                            ) { raw ->
-                                onCaptured(raw.trim('"'), oauthToken)
-                            }
+                        if (handled || url == null || !url.contains("play.google.com")) return
+                        val cookies = CookieManager.getInstance()
+                            .getCookie("https://play.google.com") ?: return
+                        // A signed-in Google web session carries these auth cookies.
+                        val signedIn = cookies.contains("SAPISID=") || cookies.contains("SID=")
+                        if (!signedIn) return
+                        handled = true
+                        view.evaluateJavascript(
+                            "(function(){var m=document.documentElement.innerHTML" +
+                                ".match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}/);" +
+                                "return m?m[0]:'';})()",
+                        ) { raw ->
+                            onCaptured(raw.trim('"'), cookies)
                         }
                     }
                 }
-                loadUrl("https://accounts.google.com/EmbeddedSetup")
+                loadUrl("https://accounts.google.com/ServiceLogin?continue=https://play.google.com/")
             }
         },
     )

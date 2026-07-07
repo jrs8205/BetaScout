@@ -4,11 +4,13 @@
     <string name="search_hint">Hae sovelluksia</string>
     <string name="tab_not_joined">Ei liittynyt</string>
     <string name="tab_joined">Mukana</string>
+    <string name="tab_no_beta">Ei betaa</string>
     <string name="filter_only_beta">Beta löytyy</string>
     <string name="filter_only_watched">Seuratut</string>
-    <string name="filter_show_system">Järjestelmäsovellukset</string>
+    <string name="filter_only_system">Vain järjestelmäsovellukset</string>
     <string name="empty_not_joined">Ei asennettuja sovelluksia joiden betaan voisi juuri nyt liittyä.</string>
     <string name="empty_joined">Et ole vielä merkinnyt yhtäkään sovellusta mukana olevaksi.</string>
+    <string name="empty_no_beta">Ei sovelluksia, joilta puuttuisi beta-ohjelma.</string>
     <string name="badge_beta">Beta</string>
     <string name="refresh">Päivitä</string>
     <string name="empty_list">Mikään sovellus ei vastaa suodattimia.</string>
@@ -29,6 +31,19 @@
     <string name="known_often_full">Yleensä täynnä</string>
     <string name="known_no_program">Ei ohjelmaa</string>
 
+    <!-- Detected status (from the authenticated scan) -->
+    <string name="observed_title">Havaittu beta-tila</string>
+    <string name="observed_membership_joined">Olet mukana betassa</string>
+    <string name="observed_membership_not_joined">Et ole mukana betassa</string>
+    <string name="observed_membership_unknown">Jäsenyyttä ei voitu päätellä</string>
+    <string name="observed_live_status">Ohjelman tila: %1$s</string>
+    <string name="observed_checked_at">Tarkistettu: %1$s</string>
+    <string name="live_unknown">Tuntematon</string>
+    <string name="live_open">Auki</string>
+    <string name="live_full">Täynnä</string>
+    <string name="live_closed">Suljettu</string>
+    <string name="live_no_program">Ei beta-ohjelmaa</string>
+
     <!-- App detail -->
     <string name="back">Takaisin</string>
     <string name="app_not_found">Sovellusta ei löytynyt.</string>
@@ -36,8 +51,10 @@
     <string name="installer_line">Asennuslähde: %1$s</string>
     <string name="system_app">Järjestelmäsovellus</string>
     <string name="open_beta_page">Avaa beta-sivu</string>
+    <string name="join_beta">Liity betaan</string>
     <string name="open_play_page">Avaa Play Kaupan sivu</string>
-    <string name="my_status">Oma beta-tila</string>
+    <string name="my_status">Oma merkintä</string>
+    <string name="my_status_hint">Valinnainen käsimerkintä. Kirjautuneena tehty skannaus täyttää havaitun tilan automaattisesti.</string>
     <string name="watch_app">Seuraa tätä sovellusta</string>
     <string name="watch_hint">BetaScout muistuttaa tarkistamaan tämän sovelluksen beta-tilan valitsemallasi välillä.</string>
     <string name="reminder_interval">Muistutusväli</string>
@@ -55,10 +72,15 @@
     <!-- Account / membership sync -->
     <string name="account_title">Google-tili</string>
     <string name="account_open">Tili</string>
-    <string name="account_hint">Kirjaudu Google-tililläsi tunnistaaksesi mihin betoihin olet oikeasti liittynyt. Käyttää Google Playn epävirallista API:a — käytä vara-tiliä.</string>
+    <string name="account_hint">Kirjaudu Google-tililläsi, jotta BetaScout voi lukea omat testisivusi ja tunnistaa mihin betoihin kuulut ja onko kukin auki vai täynnä. Se ei koskaan liity puolestasi.</string>
     <string name="account_signin">Kirjaudu Googlella</string>
-    <string name="account_sync">Synkkaa jäsenyys</string>
-    <string name="account_synced">Synkronoitu: %1$d betassa</string>
+    <string name="account_sync">Skannaa nyt</string>
+    <string name="account_no_scan_yet">Ei vielä skannausta — paina Skannaa nyt.</string>
+    <string name="account_last_scan">Viimeisin skannaus: %1$s</string>
+    <string name="account_last_scan_counts">Mukana %1$d betassa · ei mukana %2$d · tarkistettu %3$d sovellusta</string>
+    <string name="account_last_scan_failed">%1$d sovellusta ei voitu tarkistaa — yritetään seuraavassa skannauksessa.</string>
+    <string name="account_scan_progress">Tarkistetaan %1$d/%2$d: %3$s</string>
+    <string name="account_relogin">Istunto vanheni — kirjaudu uudelleen.</string>
     <string name="account_error">Epäonnistui: %1$s</string>
     <string name="account_signed_in">Kirjautunut: %1$s</string>
     <string name="account_signout">Kirjaudu ulos</string>
@@ -73,7 +95,7 @@
     <string name="onboarding_title">Tervetuloa BetaScoutiin</string>
     <string name="onboarding_what">BetaScout skannaa asennetut sovelluksesi, kertoo mille tiedetään Google Playn beta-ohjelma, avaa liittymissivun puolestasi ja muistuttaa tarkistamaan seurattujen sovellusten tilan.</string>
     <string name="onboarding_honesty_title">Mitä BetaScout ei tee</string>
-    <string name="onboarding_honesty">Se ei koskaan liity beta-ohjelmiin puolestasi, eikä se pysty luotettavasti päättelemään onko ohjelma auki vai täynnä — se näkyy vain omalle Google-tilillesi beta-sivulla. Liityt ja tarkistat aina itse.</string>
+    <string name="onboarding_honesty">Se ei koskaan liity beta-ohjelmiin puolestasi. Kun kirjaudut Googlella, jäsenyytesi ja ohjelmien auki/täynnä-tila luetaan omilta testisivuiltasi; ilman kirjautumista tarkistat ne itse.</string>
     <string name="onboarding_notifications">Salli ilmoitukset, jotta vahti voi muistuttaa beta-tilojen tarkistamisesta.</string>
     <string name="onboarding_continue">Aloita</string>
 
@@ -82,4 +104,12 @@
     <string name="reminder_channel_description">Muistutukset seurattujen sovellusten beta-tilan tarkistamisesta</string>
     <string name="reminder_title">Tarkista beta-tila: %1$s</string>
     <string name="reminder_text">Avaa beta-sivu ja katso onko ohjelma auki.</string>
+
+    <!-- Beta slot openings (background scan) -->
+    <string name="slot_channel_name">Beta-paikat</string>
+    <string name="slot_channel_description">Ilmoittaa kun seuratun sovelluksen testiohjelmaan mahtuu taas testaajia</string>
+    <string name="slot_title">Beta aukesi: %1$s</string>
+    <string name="slot_text">Testiohjelmaan mahtuu taas testaajia. Napauta avataksesi liittymissivun.</string>
+    <string name="relogin_title">Kirjaudu uudelleen</string>
+    <string name="relogin_text">Google-istunto vanheni — taustaskannaus on tauolla kunnes kirjaudut uudelleen.</string>
 </resources>

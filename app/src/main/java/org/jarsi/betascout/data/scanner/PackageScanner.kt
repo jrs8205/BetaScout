@@ -24,6 +24,7 @@ class DefaultPackageScanner(
                     versionCode = it.versionCode,
                     installerPackage = it.installerPackage,
                     isSystem = it.isSystem,
+                    hasLauncher = it.hasLauncher,
                     lastScanned = now,
                 )
             }

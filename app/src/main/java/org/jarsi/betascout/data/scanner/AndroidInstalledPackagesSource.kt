@@ -1,5 +1,6 @@
 package org.jarsi.betascout.data.scanner
 
+import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Build
@@ -13,8 +14,9 @@ class AndroidInstalledPackagesSource(
     private val packageManager: PackageManager,
 ) : InstalledPackagesSource {
 
-    override fun installedPackages(): List<RawInstalledPackage> =
-        getInstalledPackagesCompat().map { pkg ->
+    override fun installedPackages(): List<RawInstalledPackage> {
+        val launcherPackages = launcherPackageNames()
+        return getInstalledPackagesCompat().map { pkg ->
             val appInfo = pkg.applicationInfo
             RawInstalledPackage(
                 packageName = pkg.packageName,
@@ -28,8 +30,22 @@ class AndroidInstalledPackagesSource(
                 },
                 installerPackage = installerOf(pkg.packageName),
                 isSystem = appInfo != null && (appInfo.flags and ApplicationInfo.FLAG_SYSTEM) != 0,
+                hasLauncher = pkg.packageName in launcherPackages,
             )
         }
+    }
+
+    /** Packages with a launcher activity — the apps a user would call "the apps on my phone". */
+    private fun launcherPackageNames(): Set<String> {
+        val intent = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER)
+        val activities = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            packageManager.queryIntentActivities(intent, PackageManager.ResolveInfoFlags.of(0))
+        } else {
+            @Suppress("DEPRECATION")
+            packageManager.queryIntentActivities(intent, 0)
+        }
+        return activities.mapNotNull { it.activityInfo?.packageName }.toSet()
+    }
 
     private fun getInstalledPackagesCompat() =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

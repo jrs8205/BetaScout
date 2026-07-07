@@ -1,13 +1,51 @@
 package org.jarsi.betascout.domain
 
+import java.security.MessageDigest
+import java.util.Locale
+
 /** Known status of a beta program in the knowledge base (seed/user). */
 enum class KnownBetaStatus { UNKNOWN, OFTEN_OPEN, OFTEN_FULL, NO_PROGRAM }
 
-/** Freshly observed state of a testing program, as checked by the catalog backend. */
-enum class LiveBetaStatus { UNKNOWN, OPEN, FULL, CLOSED }
+/** Freshly observed state of a testing program. NO_PROGRAM means the app has no
+ *  open-testing page at all. */
+enum class LiveBetaStatus { UNKNOWN, OPEN, FULL, CLOSED, NO_PROGRAM }
+
+/** Membership as observed from the authenticated testing page (not user-declared). */
+enum class ObservedMembership { UNKNOWN, JOINED, NOT_JOINED }
 
 /** Origin of a beta record. */
 enum class BetaSource { BUNDLED, REMOTE, USER }
+
+/** The user's Google Play web session, as a cookie header for authenticated requests. */
+data class PlaySession(
+    val accountEmail: String,
+    val cookieHeader: String,
+) {
+    val accountKey: String =
+        accountEmail.trim().lowercase(Locale.ROOT).ifBlank { "cookie:${cookieHeader.sha256Hex()}" }
+}
+
+/** One app's observed live status changing between two scan runs. */
+data class StatusTransition(
+    val packageName: String,
+    val from: LiveBetaStatus,
+    val to: LiveBetaStatus,
+)
+
+/** Summary of one status-scan run. [checked] counts pages fetched this run and
+ *  [failed] the due pages whose fetch failed (retried on the next run);
+ *  [joined]/[notJoined] are the signed-in account's totals after the run. */
+data class ScanSummary(
+    val checked: Int,
+    val joined: Int,
+    val notJoined: Int,
+    val needsLogin: Boolean,
+    val failed: Int = 0,
+    val transitions: List<StatusTransition> = emptyList(),
+)
+
+/** Live progress of a status-scan run: the app being checked now (1-based). */
+data class ScanProgress(val index: Int, val total: Int, val currentLabel: String)
 
 /** The user's self-reported beta status. */
 enum class UserBetaState { UNKNOWN, JOINED, NOT_JOINED, FULL, NO_PROGRAM }
@@ -19,6 +57,10 @@ data class InstalledAppInfo(
     val versionCode: Long,
     val installerPackage: String?,
     val isSystem: Boolean,
+    /** True if the package has a launcher activity. Preinstalled apps (Chrome, Gmail…)
+     *  carry the system flag yet have beta programs; this flag separates them from
+     *  framework packages that have no Play page at all. */
+    val hasLauncher: Boolean,
     val lastScanned: Long,
 )
 
@@ -38,6 +80,16 @@ data class BetaProgramInfo(
     val source: BetaSource = BetaSource.BUNDLED,
 )
 
+/** What the authenticated testing page reported for one app, per user/device. */
+data class BetaObservation(
+    val accountKey: String,
+    val packageName: String,
+    val liveStatus: LiveBetaStatus = LiveBetaStatus.UNKNOWN,
+    val observedMembership: ObservedMembership = ObservedMembership.UNKNOWN,
+    val checkedAt: Long,
+    val lastError: String? = null,
+)
+
 data class UserBetaStatusInfo(
     val packageName: String,
     val state: UserBetaState = UserBetaState.UNKNOWN,
@@ -49,9 +101,25 @@ data class UserBetaStatusInfo(
     val lastRemindedAt: Long? = null,
 )
 
-/** Combined row for the UI: installed app + optional beta info + user marking. */
+/** True for the packages BetaScout treats as apps: everything the user installed,
+ *  plus preinstalled packages that either have a launcher entry or receive store
+ *  updates (WebView and Play services have beta programs but no launcher icon).
+ *  Framework-only packages — no launcher, never store-updated — have no Play page
+ *  and stay out of both the list and the scan. */
+val InstalledAppInfo.isRelevantApp: Boolean
+    get() = !isSystem || hasLauncher || installerPackage != null
+
+/** Combined row for the UI: installed app + optional beta info + user marking + scrape. */
 data class AppBetaOverview(
     val app: InstalledAppInfo,
     val betaProgram: BetaProgramInfo? = null,
     val userStatus: UserBetaStatusInfo? = null,
+    val observation: BetaObservation? = null,
 )
+
+private fun String.sha256Hex(): String {
+    val bytes = MessageDigest.getInstance("SHA-256").digest(toByteArray())
+    return bytes.joinToString(separator = "") { byte ->
+        (byte.toInt() and 0xff).toString(16).padStart(2, '0')
+    }
+}
