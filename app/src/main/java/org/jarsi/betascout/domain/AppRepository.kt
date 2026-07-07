@@ -23,10 +23,13 @@ interface AppRepository {
      *  check, recording live status and observed membership. Returns a run summary.
      *  [onProgress] is invoked before each page fetch so the UI can show progress.
      *  [cap] bounds the number of apps per run (for scheduled background scans);
-     *  null scans everything due — the crawl delay still paces the requests. */
+     *  null scans everything due — the crawl delay still paces the requests.
+     *  [force] ignores the freshness TTL so a user-initiated scan always re-checks
+     *  every app (memberships can change outside the app). */
     suspend fun refreshBetaStatus(
         session: PlaySession,
         cap: Int? = null,
+        force: Boolean = false,
         onProgress: suspend (ScanProgress) -> Unit = {},
     ): Result<ScanSummary>
 

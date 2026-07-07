@@ -27,6 +27,7 @@ import org.jarsi.betascout.domain.KnownBetaStatus
 import org.jarsi.betascout.domain.LiveBetaStatus
 import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.ScanProgress
+import org.jarsi.betascout.domain.StatusTransition
 import org.jarsi.betascout.domain.UserBetaState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -120,13 +121,19 @@ private class FakeScanner(
     override suspend fun scan(): List<InstalledAppInfo> = result()
 }
 
-private fun app(packageName: String, label: String = packageName) = InstalledAppInfo(
+private fun app(
+    packageName: String,
+    label: String = packageName,
+    isSystem: Boolean = false,
+    hasLauncher: Boolean = !isSystem,
+) = InstalledAppInfo(
     packageName = packageName,
     label = label,
     versionName = "1.0",
     versionCode = 1L,
     installerPackage = "com.android.vending",
-    isSystem = false,
+    isSystem = isSystem,
+    hasLauncher = hasLauncher,
     lastScanned = 0L,
 )
 
@@ -277,6 +284,107 @@ class DefaultAppRepositoryTest {
         assertEquals(1, summary.checked)
         assertEquals(ObservedMembership.NOT_JOINED, observationDao.get(ACCOUNT, "com.a")!!.observedMembership)
         assertEquals(ObservedMembership.JOINED, observationDao.get(OTHER_ACCOUNT, "com.a")!!.observedMembership)
+    }
+
+    @Test
+    fun `refreshBetaStatus includes launchable system apps and skips framework packages`() = runTest {
+        val repo = repository()
+        scanner.result = {
+            listOf(
+                app("com.user"),
+                app("com.google.android.gm", isSystem = true, hasLauncher = true),
+                app("com.android.providers.media", isSystem = true, hasLauncher = false),
+            )
+        }
+        repo.refreshApps()
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+
+        val summary = repo.refreshBetaStatus(session).getOrThrow()
+
+        assertEquals(2, summary.checked)
+        assertNull(observationDao.get(ACCOUNT, "com.android.providers.media"))
+        assertEquals(
+            ObservedMembership.NOT_JOINED,
+            observationDao.get(ACCOUNT, "com.google.android.gm")!!.observedMembership,
+        )
+    }
+
+    @Test
+    fun `refreshBetaStatus skips fresh observations unless forced`() = runTest {
+        val repo = repository(now = 10_000L)
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        observationDao.upsert(
+            BetaObservationEntity(
+                accountKey = ACCOUNT,
+                packageName = "com.a",
+                liveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.NOT_JOINED,
+                checkedAt = 9_000L,
+                lastError = null,
+            )
+        )
+        pageHtml = { """<html><body><form id="leaveForm"></form></body></html>""" }
+
+        val throttled = repo.refreshBetaStatus(session).getOrThrow()
+        assertEquals(0, throttled.checked)
+
+        // The user may have joined or left a beta outside the app, so a manual
+        // "Scan now" must re-check even a fresh observation.
+        val forced = repo.refreshBetaStatus(session, force = true).getOrThrow()
+        assertEquals(1, forced.checked)
+        assertEquals(ObservedMembership.JOINED, observationDao.get(ACCOUNT, "com.a")!!.observedMembership)
+    }
+
+    @Test
+    fun `refreshBetaStatus reports joined and not-joined totals for the whole account`() = runTest {
+        val repo = repository(now = 10_000L)
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        // A membership observed on an earlier run still counts toward the totals.
+        observationDao.upsert(
+            BetaObservationEntity(
+                accountKey = ACCOUNT,
+                packageName = "com.earlier",
+                liveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.JOINED,
+                checkedAt = 9_999L,
+                lastError = null,
+            )
+        )
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+
+        val summary = repo.refreshBetaStatus(session, force = true).getOrThrow()
+
+        assertEquals(1, summary.checked)
+        assertEquals(1, summary.joined)
+        assertEquals(1, summary.notJoined)
+    }
+
+    @Test
+    fun `refreshBetaStatus reports a transition when a full program opens`() = runTest {
+        val repo = repository(now = 100 * 3_600_000L)
+        scanner.result = { listOf(app("com.a"), app("com.b")) }
+        repo.refreshApps()
+        observationDao.upsert(
+            BetaObservationEntity(
+                accountKey = ACCOUNT,
+                packageName = "com.a",
+                liveStatus = LiveBetaStatus.FULL,
+                observedMembership = ObservedMembership.NOT_JOINED,
+                checkedAt = 0L,
+                lastError = null,
+            )
+        )
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+
+        val summary = repo.refreshBetaStatus(session).getOrThrow()
+
+        // com.b is a first sighting, not a change, so only com.a transitions.
+        assertEquals(
+            listOf(StatusTransition("com.a", LiveBetaStatus.FULL, LiveBetaStatus.OPEN)),
+            summary.transitions,
+        )
     }
 
     @Test

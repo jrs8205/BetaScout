@@ -23,6 +23,7 @@ class MappersTest {
             versionCode = 261L,
             installerPackage = "com.android.vending",
             isSystem = false,
+            hasLauncher = true,
             lastScanned = 42L,
         )
         assertEquals(domain, domain.toEntity().toDomain())

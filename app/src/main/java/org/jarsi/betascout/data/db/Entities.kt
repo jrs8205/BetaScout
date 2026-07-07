@@ -1,5 +1,6 @@
 package org.jarsi.betascout.data.db
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import org.jarsi.betascout.domain.BetaSource
@@ -16,6 +17,9 @@ data class InstalledAppEntity(
     val versionCode: Long,
     val installerPackage: String?,
     val isSystem: Boolean,
+    // defaultValue must match MIGRATION_4_5's ALTER TABLE default or Room's
+    // schema validation rejects the migrated table.
+    @ColumnInfo(defaultValue = "0") val hasLauncher: Boolean,
     val lastScanned: Long,
 )
 

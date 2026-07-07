@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
+import androidx.datastore.preferences.core.intPreferencesKey
+import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -16,6 +18,15 @@ import kotlinx.coroutines.flow.map
 import org.jarsi.betascout.domain.PlaySession
 
 private val Context.dataStore by preferencesDataStore(name = "settings")
+
+/** Result of the most recent completed status scan, persisted so the account screen
+ *  can show it across app restarts instead of re-prompting a signed-in user. */
+data class LastScanInfo(
+    val at: Long,
+    val checked: Int,
+    val joined: Int,
+    val notJoined: Int,
+)
 
 @Singleton
 class SettingsRepository @Inject constructor(
@@ -86,6 +97,44 @@ class SettingsRepository @Inject constructor(
         context.dataStore.edit {
             it.remove(sessionEmailKey)
             it.remove(sessionCookieKey)
+        }
+    }
+
+    private val lastScanAtKey = longPreferencesKey("last_scan_at")
+    private val lastScanCheckedKey = intPreferencesKey("last_scan_checked")
+    private val lastScanJoinedKey = intPreferencesKey("last_scan_joined")
+    private val lastScanNotJoinedKey = intPreferencesKey("last_scan_not_joined")
+
+    /** The most recent completed scan, or null if no scan has finished yet. */
+    val lastScan: Flow<LastScanInfo?> = context.dataStore.data
+        .catch { e -> if (e is IOException) emit(emptyPreferences()) else throw e }
+        .map { prefs ->
+            val at = prefs[lastScanAtKey] ?: return@map null
+            LastScanInfo(
+                at = at,
+                checked = prefs[lastScanCheckedKey] ?: 0,
+                joined = prefs[lastScanJoinedKey] ?: 0,
+                notJoined = prefs[lastScanNotJoinedKey] ?: 0,
+            )
+        }
+
+    suspend fun saveLastScan(info: LastScanInfo) {
+        context.dataStore.edit {
+            it[lastScanAtKey] = info.at
+            it[lastScanCheckedKey] = info.checked
+            it[lastScanJoinedKey] = info.joined
+            it[lastScanNotJoinedKey] = info.notJoined
+        }
+    }
+
+    /** Cleared on sign-out: the counts belong to the account whose observations were
+     *  just deleted. Kept on session expiry, where the account stays the same. */
+    suspend fun clearLastScan() {
+        context.dataStore.edit {
+            it.remove(lastScanAtKey)
+            it.remove(lastScanCheckedKey)
+            it.remove(lastScanJoinedKey)
+            it.remove(lastScanNotJoinedKey)
         }
     }
 }

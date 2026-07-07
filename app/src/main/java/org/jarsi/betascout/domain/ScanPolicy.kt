@@ -32,11 +32,18 @@ object ScanPolicy {
 
     /**
      * The due packages to scan this run, never-checked first (discover new installs),
-     * then the most stale, capped so a single run stays gentle.
+     * then the most stale, capped so a single run stays gentle. [ignoreTtl] bypasses
+     * the freshness check for user-initiated scans — the user may have joined or left
+     * a beta outside the app, so "Scan now" must always re-check everything.
      */
-    fun selectDue(candidates: List<ScanCandidate>, now: Long, cap: Int): List<ScanCandidate> =
+    fun selectDue(
+        candidates: List<ScanCandidate>,
+        now: Long,
+        cap: Int,
+        ignoreTtl: Boolean = false,
+    ): List<ScanCandidate> =
         candidates
-            .filter { isDue(it.lastStatus, it.checkedAt, now) }
+            .filter { ignoreTtl || isDue(it.lastStatus, it.checkedAt, now) }
             .sortedWith(compareBy(nullsFirst()) { it.checkedAt })
             .take(cap)
 }

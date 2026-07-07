@@ -23,6 +23,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -30,7 +31,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import java.text.DateFormat
+import java.util.Date
 import org.jarsi.betascout.R
+import org.jarsi.betascout.data.settings.LastScanInfo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -67,11 +71,15 @@ fun AccountScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            Text(
-                text = stringResource(R.string.account_hint),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
+            // The sign-in pitch is only for signed-out users; once signed in the
+            // screen leads with the account and its latest scan results instead.
+            if (!state.signedIn) {
+                Text(
+                    text = stringResource(R.string.account_hint),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
 
             if (state.busy) {
                 val progress = state.progress
@@ -103,6 +111,7 @@ fun AccountScreen(
 
             if (state.signedIn) {
                 Text(stringResource(R.string.account_signed_in, state.email))
+                LastScanSummary(state.lastScan)
                 Button(
                     onClick = viewModel::resync,
                     enabled = !state.busy,
@@ -122,13 +131,6 @@ fun AccountScreen(
                     Text(stringResource(R.string.account_signin))
                 }
             }
-
-            state.checked?.let { checked ->
-                Text(
-                    text = stringResource(R.string.account_scan_result, checked, state.joined ?: 0),
-                    color = MaterialTheme.colorScheme.primary,
-                )
-            }
             if (state.needsReLogin) {
                 Text(
                     text = stringResource(R.string.account_relogin),
@@ -142,6 +144,41 @@ fun AccountScreen(
                 )
             }
         }
+    }
+}
+
+/** The persisted result of the latest scan: when it ran and what it found. */
+@Composable
+private fun LastScanSummary(lastScan: LastScanInfo?) {
+    if (lastScan == null) {
+        Text(
+            text = stringResource(R.string.account_no_scan_yet),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        return
+    }
+    val dateFormat = remember {
+        DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
+    }
+    Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+        Text(
+            text = stringResource(
+                R.string.account_last_scan,
+                dateFormat.format(Date(lastScan.at)),
+            ),
+            style = MaterialTheme.typography.bodyMedium,
+        )
+        Text(
+            text = stringResource(
+                R.string.account_last_scan_counts,
+                lastScan.joined,
+                lastScan.notJoined,
+                lastScan.checked,
+            ),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.primary,
+        )
     }
 }
 

@@ -67,6 +67,16 @@ class ScanPolicyTest {
     }
 
     @Test
+    fun `selectDue with ignoreTtl includes fresh packages for a forced rescan`() {
+        val fresh = ScanCandidate("com.fresh", LiveBetaStatus.OPEN, checkedAt = now - 1 * hour)
+        val stale = ScanCandidate("com.stale", LiveBetaStatus.OPEN, checkedAt = now - 48 * hour)
+
+        val selected = ScanPolicy.selectDue(listOf(fresh, stale), now, cap = 10, ignoreTtl = true)
+
+        assertEquals(listOf("com.stale", "com.fresh"), selected.map { it.packageName })
+    }
+
+    @Test
     fun `among checked packages selectDue takes the most stale first`() {
         val a = ScanCandidate("com.a", LiveBetaStatus.OPEN, checkedAt = now - 30 * hour)
         val b = ScanCandidate("com.b", LiveBetaStatus.OPEN, checkedAt = now - 90 * hour)

@@ -10,13 +10,16 @@ data class AppFilters(
     val query: String = "",
     val onlyBeta: Boolean = false,
     val onlyWatched: Boolean = false,
-    val showSystem: Boolean = false,
+    val onlySystem: Boolean = false,
 )
 
 fun filterApps(rows: List<AppBetaOverview>, filters: AppFilters): List<AppBetaOverview> {
     val query = filters.query.trim()
     return rows.asSequence()
-        .filter { filters.showSystem || !it.app.isSystem }
+        // Framework packages without a launcher entry (overlays, providers…) are
+        // never shown — they are not apps to the user and have no Play page.
+        .filter { !it.app.isSystem || it.app.hasLauncher }
+        .filter { !filters.onlySystem || it.app.isSystem }
         .filter { !filters.onlyBeta || it.hasKnownBeta() }
         .filter { !filters.onlyWatched || it.userStatus?.watching == true }
         .filter {

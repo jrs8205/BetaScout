@@ -25,6 +25,7 @@ import org.jarsi.betascout.data.db.BetaProgramDao
 import org.jarsi.betascout.data.db.MIGRATION_1_2
 import org.jarsi.betascout.data.db.MIGRATION_2_3
 import org.jarsi.betascout.data.db.MIGRATION_3_4
+import org.jarsi.betascout.data.db.MIGRATION_4_5
 import org.jarsi.betascout.data.db.InstalledAppDao
 import org.jarsi.betascout.data.db.UserBetaStatusDao
 import org.jarsi.betascout.data.repo.DefaultAppRepository
@@ -68,7 +69,7 @@ object AppModule {
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase =
         Room.databaseBuilder(context, AppDatabase::class.java, "betascout.db")
-            .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
+            .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
             .build()
 
     @Provides

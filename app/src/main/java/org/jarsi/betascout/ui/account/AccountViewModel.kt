@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.jarsi.betascout.data.settings.LastScanInfo
 import org.jarsi.betascout.data.settings.SettingsRepository
 import org.jarsi.betascout.domain.AppRepository
 import org.jarsi.betascout.domain.PlaySession
@@ -20,8 +21,7 @@ data class AccountUiState(
     val showLogin: Boolean = false,
     val busy: Boolean = false,
     val progress: ScanProgress? = null,
-    val checked: Int? = null,
-    val joined: Int? = null,
+    val lastScan: LastScanInfo? = null,
     val needsReLogin: Boolean = false,
     val error: String? = null,
 )
@@ -45,10 +45,15 @@ class AccountViewModel @Inject constructor(
                 }
             }
         }
+        viewModelScope.launch {
+            settings.lastScan.collect { last ->
+                _state.update { it.copy(lastScan = last) }
+            }
+        }
     }
 
     fun startLogin() = _state.update {
-        it.copy(showLogin = true, error = null, checked = null, joined = null, needsReLogin = false)
+        it.copy(showLogin = true, error = null, needsReLogin = false)
     }
 
     fun cancelLogin() = _state.update { it.copy(showLogin = false) }
@@ -76,8 +81,10 @@ class AccountViewModel @Inject constructor(
     fun resync() {
         viewModelScope.launch {
             val session = settings.playSession.first() ?: return@launch
-            _state.update { it.copy(busy = true, checked = null, joined = null, error = null) }
-            scan(session)
+            _state.update { it.copy(busy = true, error = null) }
+            // A user-initiated rescan bypasses the freshness TTL: memberships can
+            // change outside the app at any time, so "Scan now" always re-checks.
+            scan(session, force = true)
         }
     }
 
@@ -87,14 +94,16 @@ class AccountViewModel @Inject constructor(
             // signed-out account's beta memberships do not linger on the device.
             settings.playSession.first()?.let { repository.clearObservations(it.accountKey) }
             settings.clearPlaySession()
+            settings.clearLastScan()
             _state.value = AccountUiState()
         }
     }
 
-    private suspend fun scan(session: PlaySession) {
+    private suspend fun scan(session: PlaySession, force: Boolean = false) {
         android.util.Log.d("BetaScout", "scan: calling refreshBetaStatus (cookie ${session.cookieHeader.length} chars)")
         repository.refreshBetaStatus(
             session,
+            force = force,
             onProgress = { p -> _state.update { it.copy(progress = p) } },
         ).fold(
             onSuccess = { summary ->
@@ -104,14 +113,20 @@ class AccountViewModel @Inject constructor(
                         it.copy(busy = false, progress = null, signedIn = false, needsReLogin = true)
                     }
                 } else {
+                    settings.saveLastScan(
+                        LastScanInfo(
+                            at = System.currentTimeMillis(),
+                            checked = summary.checked,
+                            joined = summary.joined,
+                            notJoined = summary.notJoined,
+                        ),
+                    )
                     _state.update {
                         it.copy(
                             busy = false,
                             progress = null,
                             signedIn = true,
                             email = session.accountEmail,
-                            checked = summary.checked,
-                            joined = summary.joined,
                         )
                     }
                 }

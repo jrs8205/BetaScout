@@ -25,8 +25,22 @@ data class PlaySession(
         accountEmail.trim().lowercase(Locale.ROOT).ifBlank { "cookie:${cookieHeader.sha256Hex()}" }
 }
 
-/** Summary of one status-scan run. */
-data class ScanSummary(val checked: Int, val joined: Int, val needsLogin: Boolean)
+/** One app's observed live status changing between two scan runs. */
+data class StatusTransition(
+    val packageName: String,
+    val from: LiveBetaStatus,
+    val to: LiveBetaStatus,
+)
+
+/** Summary of one status-scan run. [checked] counts pages fetched this run;
+ *  [joined]/[notJoined] are the signed-in account's totals after the run. */
+data class ScanSummary(
+    val checked: Int,
+    val joined: Int,
+    val notJoined: Int,
+    val needsLogin: Boolean,
+    val transitions: List<StatusTransition> = emptyList(),
+)
 
 /** Live progress of a status-scan run: the app being checked now (1-based). */
 data class ScanProgress(val index: Int, val total: Int, val currentLabel: String)
@@ -41,6 +55,10 @@ data class InstalledAppInfo(
     val versionCode: Long,
     val installerPackage: String?,
     val isSystem: Boolean,
+    /** True if the package has a launcher activity. Preinstalled apps (Chrome, Gmail…)
+     *  carry the system flag yet have beta programs; this flag separates them from
+     *  framework packages that have no Play page at all. */
+    val hasLauncher: Boolean,
     val lastScanned: Long,
 )
 

@@ -107,6 +107,7 @@ private fun AppListContent(
                     Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         val emptyRes = when (uiState.selectedTab) {
                             BetaMembership.JOINED -> R.string.empty_joined
+                            BetaMembership.NONE -> R.string.empty_no_beta
                             else -> R.string.empty_not_joined
                         }
                         Text(stringResource(emptyRes))
@@ -129,6 +130,9 @@ private fun AppListContent(
 private val betaTabs = listOf(
     BetaMembership.AVAILABLE to R.string.tab_not_joined,
     BetaMembership.JOINED to R.string.tab_joined,
+    // Apps with no (known) beta program get their own tab so every scanned app is
+    // visible somewhere — hiding them made users hunt for "lost" apps.
+    BetaMembership.NONE to R.string.tab_no_beta,
 )
 
 @Composable
@@ -164,9 +168,9 @@ private fun SearchAndFilters(
             horizontalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             FilterChip(
-                selected = filters.showSystem,
-                onClick = { onFiltersChange(filters.copy(showSystem = !filters.showSystem)) },
-                label = { Text(stringResource(R.string.filter_show_system)) },
+                selected = filters.onlySystem,
+                onClick = { onFiltersChange(filters.copy(onlySystem = !filters.onlySystem)) },
+                label = { Text(stringResource(R.string.filter_only_system)) },
             )
         }
     }

@@ -12,6 +12,7 @@ fun InstalledAppEntity.toDomain() = InstalledAppInfo(
     versionCode = versionCode,
     installerPackage = installerPackage,
     isSystem = isSystem,
+    hasLauncher = hasLauncher,
     lastScanned = lastScanned,
 )
 
@@ -22,6 +23,7 @@ fun InstalledAppInfo.toEntity() = InstalledAppEntity(
     versionCode = versionCode,
     installerPackage = installerPackage,
     isSystem = isSystem,
+    hasLauncher = hasLauncher,
     lastScanned = lastScanned,
 )
 

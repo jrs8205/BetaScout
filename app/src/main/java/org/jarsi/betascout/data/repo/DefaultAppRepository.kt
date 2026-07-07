@@ -24,6 +24,7 @@ import org.jarsi.betascout.domain.ScanCandidate
 import org.jarsi.betascout.domain.ScanPolicy
 import org.jarsi.betascout.domain.ScanProgress
 import org.jarsi.betascout.domain.ScanSummary
+import org.jarsi.betascout.domain.StatusTransition
 import org.jarsi.betascout.domain.UserBetaState
 import org.jarsi.betascout.domain.UserBetaStatusInfo
 
@@ -86,14 +87,18 @@ class DefaultAppRepository(
     override suspend fun refreshBetaStatus(
         session: PlaySession,
         cap: Int?,
+        force: Boolean,
         onProgress: suspend (ScanProgress) -> Unit,
     ): Result<ScanSummary> = withContext(io) {
         try {
-            android.util.Log.d(TAG, "refreshBetaStatus: start")
+            android.util.Log.d(TAG, "refreshBetaStatus: start force=$force")
             // One-shot suspend queries, NOT observeAll().first(): a flow's initial
             // emission can be lost to an invalidation-tracker race, after which
             // first() suspends forever because nothing rewrites these tables.
-            val installed = installedAppDao.getAll().filter { !it.isSystem }
+            // Preinstalled apps carry the system flag but still have beta programs
+            // (Chrome, Gmail…), so the scope is every app with a launcher entry
+            // plus everything the user installed.
+            val installed = installedAppDao.getAll().filter { !it.isSystem || it.hasLauncher }
             android.util.Log.d(TAG, "refreshBetaStatus: installed=${installed.size}")
             val observed = betaObservationDao.getAllForAccount(session.accountKey)
                 .associateBy { it.packageName }
@@ -106,7 +111,8 @@ class DefaultAppRepository(
                     checkedAt = previous?.checkedAt,
                 )
             }
-            val due = ScanPolicy.selectDue(candidates, clock(), cap = cap ?: candidates.size)
+            val due = ScanPolicy
+                .selectDue(candidates, clock(), cap = cap ?: candidates.size, ignoreTtl = force)
                 .map { it.packageName }
             android.util.Log.d(TAG, "refreshBetaStatus: due=${due.size} $due")
             val labels = installed.associate { it.packageName to it.label }
@@ -117,13 +123,28 @@ class DefaultAppRepository(
                 TAG,
                 "refreshBetaStatus: scraped=${outcome.observations.size} needsLogin=${outcome.needsLogin}",
             )
+            // A transition only exists where a previous observation is overwritten;
+            // a first sighting is not a change and must not fire notifications.
+            val transitions = outcome.observations.mapNotNull { observation ->
+                val previous = observed[observation.packageName] ?: return@mapNotNull null
+                if (previous.liveStatus == observation.liveStatus) return@mapNotNull null
+                StatusTransition(
+                    packageName = observation.packageName,
+                    from = previous.liveStatus,
+                    to = observation.liveStatus,
+                )
+            }
             outcome.observations.forEach { betaObservationDao.upsert(it.toEntity()) }
-            val joined = outcome.observations.count { it.observedMembership == ObservedMembership.JOINED }
+            val accountObservations = betaObservationDao.getAllForAccount(session.accountKey)
             Result.success(
                 ScanSummary(
                     checked = outcome.observations.size,
-                    joined = joined,
+                    joined = accountObservations
+                        .count { it.observedMembership == ObservedMembership.JOINED },
+                    notJoined = accountObservations
+                        .count { it.observedMembership == ObservedMembership.NOT_JOINED },
                     needsLogin = outcome.needsLogin,
+                    transitions = transitions,
                 ),
             )
         } catch (e: CancellationException) {

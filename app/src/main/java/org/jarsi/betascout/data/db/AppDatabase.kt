@@ -12,7 +12,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
         BetaObservationEntity::class,
         UserBetaStatusEntity::class,
     ],
-    version = 4,
+    version = 5,
     exportSchema = true,
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -63,6 +63,17 @@ val MIGRATION_3_4 = object : Migration(3, 4) {
                 "`checkedAt` INTEGER NOT NULL, " +
                 "`lastError` TEXT, " +
                 "PRIMARY KEY(`accountKey`, `packageName`))",
+        )
+    }
+}
+
+/** Adds the launcher-activity flag used to include preinstalled (system) apps in
+ *  scans and lists. Existing rows default to 0; the next package scan — which runs
+ *  on every app start — rewrites all rows with the real value. */
+val MIGRATION_4_5 = object : Migration(4, 5) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            "ALTER TABLE installed_apps ADD COLUMN hasLauncher INTEGER NOT NULL DEFAULT 0",
         )
     }
 }
