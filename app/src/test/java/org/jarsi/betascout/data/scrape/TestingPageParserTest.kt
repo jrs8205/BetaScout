@@ -29,6 +29,27 @@ class TestingPageParserTest {
     }
 
     @Test
+    fun `the modern accounts sign-in page asks for login without the legacy marker`() {
+        // Google's current sign-in flow (accounts.google.com/v3/signin/identifier)
+        // carries no gaia_loginform element; the stable marker on that page is the
+        // identifier input field.
+        val html = """
+            <html><body>
+              <form method="post" action="https://accounts.google.com/v3/signin/identifier?flowName=GlifWebSignIn">
+                <input type="email" id="identifierId" name="identifier" autocomplete="username">
+                <button>Next</button>
+              </form>
+            </body></html>
+        """.trimIndent()
+
+        val result = TestingPageParser.parse(html)
+
+        assertTrue(result.needsLogin)
+        assertEquals(ObservedMembership.UNKNOWN, result.membership)
+        assertEquals(LiveBetaStatus.UNKNOWN, result.liveStatus)
+    }
+
+    @Test
     fun `an open program the user has not joined shows a join form`() {
         val html = """
             <html><body>

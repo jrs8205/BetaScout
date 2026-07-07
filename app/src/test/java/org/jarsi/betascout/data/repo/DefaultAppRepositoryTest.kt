@@ -18,6 +18,7 @@ import org.jarsi.betascout.data.db.UserBetaStatusDao
 import org.jarsi.betascout.data.db.UserBetaStatusEntity
 import org.jarsi.betascout.data.scanner.PackageScanner
 import org.jarsi.betascout.data.scrape.BetaStatusScraper
+import org.jarsi.betascout.data.scrape.FetchedPage
 import org.jarsi.betascout.data.scrape.TestingPageSource
 import org.jarsi.betascout.domain.BetaSource
 import org.jarsi.betascout.domain.PlaySession
@@ -170,7 +171,7 @@ class DefaultAppRepositoryTest {
                 if (pkg in failingPackages) {
                     Result.failure(RuntimeException("network error"))
                 } else {
-                    Result.success(pageHtml(pkg))
+                    Result.success(FetchedPage(pageHtml(pkg)))
                 }
             },
             clock = { now },

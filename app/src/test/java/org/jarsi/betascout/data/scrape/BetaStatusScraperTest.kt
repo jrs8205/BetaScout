@@ -26,7 +26,7 @@ class BetaStatusScraperTest {
     @Test
     fun `scrapes each package into an observation stamped with the clock`() = runTest {
         val source = TestingPageSource { pkg, _ ->
-            Result.success(if (pkg == "com.a") JOINED_HTML else OPEN_HTML)
+            Result.success(FetchedPage(if (pkg == "com.a") JOINED_HTML else OPEN_HTML))
         }
 
         val outcome = scraper(source, now = 555L).scrape(listOf("com.a", "com.b"), session)
@@ -45,7 +45,7 @@ class BetaStatusScraperTest {
         val fetched = mutableListOf<String>()
         val source = TestingPageSource { pkg, _ ->
             fetched += pkg
-            Result.success(if (pkg == "com.first") LOGGED_OUT_HTML else OPEN_HTML)
+            Result.success(FetchedPage(if (pkg == "com.first") LOGGED_OUT_HTML else OPEN_HTML))
         }
 
         val outcome = scraper(source).scrape(listOf("com.first", "com.second"), session)
@@ -56,10 +56,30 @@ class BetaStatusScraperTest {
     }
 
     @Test
+    fun `stops and flags re-login when the fetch was redirected to the accounts sign-in`() = runTest {
+        // An expired session redirects to accounts.google.com. The sign-in HTML has
+        // changed shape before, so the redirect target is the authoritative signal
+        // regardless of what the page body looks like.
+        val source = TestingPageSource { _, _ ->
+            Result.success(
+                FetchedPage(
+                    html = "<html><body><div>Some future sign-in layout.</div></body></html>",
+                    finalUrl = "https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fplay.google.com",
+                ),
+            )
+        }
+
+        val outcome = scraper(source).scrape(listOf("com.a", "com.b"), session)
+
+        assertTrue(outcome.needsLogin)
+        assertTrue(outcome.observations.isEmpty())
+    }
+
+    @Test
     fun `a fetch failure skips that package but keeps scraping the rest`() = runTest {
         val source = TestingPageSource { pkg, _ ->
             if (pkg == "com.bad") Result.failure(RuntimeException("network"))
-            else Result.success(OPEN_HTML)
+            else Result.success(FetchedPage(OPEN_HTML))
         }
 
         val outcome = scraper(source).scrape(listOf("com.bad", "com.good"), session)
@@ -71,7 +91,7 @@ class BetaStatusScraperTest {
     @Test
     fun `reports progress before each fetch`() = runTest {
         val progress = mutableListOf<String>()
-        val source = TestingPageSource { _, _ -> Result.success(OPEN_HTML) }
+        val source = TestingPageSource { _, _ -> Result.success(FetchedPage(OPEN_HTML)) }
 
         scraper(source).scrape(listOf("com.a", "com.b"), session) { index, total, pkg ->
             progress += "$index/$total $pkg"
@@ -83,7 +103,7 @@ class BetaStatusScraperTest {
     @Test
     fun `applies a crawl delay between requests but not before the first`() = runTest {
         val delays = mutableListOf<Long>()
-        val source = TestingPageSource { _, _ -> Result.success(OPEN_HTML) }
+        val source = TestingPageSource { _, _ -> Result.success(FetchedPage(OPEN_HTML)) }
         val scraper = BetaStatusScraper(
             source, clock = { 0L }, crawlDelayMillis = 2_500, delayFn = { delays += it },
         )

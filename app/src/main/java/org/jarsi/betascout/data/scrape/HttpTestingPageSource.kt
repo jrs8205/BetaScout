@@ -12,15 +12,15 @@ import org.jarsi.betascout.domain.PlaySession
 /**
  * Fetches the testing page over HTTP with the user's Play web-session cookies. A
  * browser User-Agent asks for the web opt-in page (the one carrying the join/leave
- * forms). If the session has expired, Google redirects to the sign-in page, whose
- * HTML the parser recognises as "needs login".
+ * forms). If the session has expired, Google redirects to the sign-in page; the
+ * final URL is reported so the scraper can recognise that redirect.
  */
 class HttpTestingPageSource(
     private val io: CoroutineDispatcher = Dispatchers.IO,
     private val userAgent: String = DEFAULT_USER_AGENT,
 ) : TestingPageSource {
 
-    override suspend fun fetch(packageName: String, session: PlaySession): Result<String> =
+    override suspend fun fetch(packageName: String, session: PlaySession): Result<FetchedPage> =
         withContext(io) {
             try {
                 val connection = (URL(BetaLinkBuilder.testingUrl(packageName))
@@ -42,7 +42,8 @@ class HttpTestingPageSource(
                         // A 404 body is still meaningful: it is the "no testing program" page.
                         connection.errorStream
                     }
-                    Result.success(stream?.bufferedReader()?.use { it.readText() }.orEmpty())
+                    val html = stream?.bufferedReader()?.use { it.readText() }.orEmpty()
+                    Result.success(FetchedPage(html, finalUrl = connection.url.toString()))
                 } finally {
                     connection.disconnect()
                 }

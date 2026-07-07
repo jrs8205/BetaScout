@@ -50,7 +50,9 @@ object TestingPageParser {
         val text = doc.text().lowercase()
 
         return when {
-            hasMarker(doc, "gaia_loginform") ->
+            // Legacy sign-in page marker, plus the identifier input that Google's
+            // current sign-in flow (accounts.google.com/v3/signin) renders instead.
+            hasMarker(doc, "gaia_loginform") || hasMarker(doc, "identifierId") ->
                 TestingPageResult(LiveBetaStatus.UNKNOWN, ObservedMembership.UNKNOWN, needsLogin = true)
 
             hasMarker(doc, "leaveForm") ->
@@ -98,6 +100,7 @@ object TestingPageParser {
         val hasTestingAffordance = hasMarker(doc, "joinForm") ||
             hasMarker(doc, "leaveForm") ||
             hasMarker(doc, "gaia_loginform") ||
+            hasMarker(doc, "identifierId") ||
             text.containsAny(TESTING_PHRASES)
         if (hasTestingAffordance) return false
 

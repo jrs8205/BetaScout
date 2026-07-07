@@ -38,10 +38,16 @@ class BetaStatusScraper(
             val fetched = source.fetch(packageName, session)
             android.util.Log.d(
                 "BetaScout",
-                "scrape $packageName: fetched=${fetched.getOrNull()?.length ?: "FAIL ${fetched.exceptionOrNull()}"}",
+                "scrape $packageName: fetched=${fetched.getOrNull()?.html?.length ?: "FAIL ${fetched.exceptionOrNull()}"}",
             )
-            val html = fetched.getOrNull() ?: return@forEachIndexed
-            val result = TestingPageParser.parse(html)
+            val page = fetched.getOrNull() ?: return@forEachIndexed
+            // A redirect to accounts.google.com is the authoritative signed-out signal;
+            // the sign-in page's HTML markers have changed shape before.
+            if (isSignInRedirect(page.finalUrl)) {
+                android.util.Log.d("BetaScout", "scrape $packageName: redirected to sign-in, stopping")
+                return ScrapeOutcome(observations, needsLogin = true)
+            }
+            val result = TestingPageParser.parse(page.html)
             android.util.Log.d(
                 "BetaScout",
                 "scrape $packageName: status=${result.liveStatus} membership=${result.membership} needsLogin=${result.needsLogin}",
@@ -58,5 +64,11 @@ class BetaStatusScraper(
             )
         }
         return ScrapeOutcome(observations, needsLogin = false)
+    }
+
+    private fun isSignInRedirect(finalUrl: String?): Boolean {
+        if (finalUrl == null) return false
+        val host = runCatching { java.net.URI(finalUrl).host }.getOrNull() ?: return false
+        return host.equals("accounts.google.com", ignoreCase = true)
     }
 }
