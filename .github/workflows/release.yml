@@ -34,10 +34,16 @@ jobs:
       - name: Rename APK
         run: cp app/build/outputs/apk/release/app-release.apk "BetaScout-${GITHUB_REF_NAME}.apk"
 
+      # The R8 mapping is needed to de-obfuscate crash traces from this release.
+      - name: Rename mapping file
+        run: cp app/build/outputs/mapping/release/mapping.txt "mapping-${GITHUB_REF_NAME}.txt"
+
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" "BetaScout-${GITHUB_REF_NAME}.apk" \
+          gh release create "$GITHUB_REF_NAME" \
+            "BetaScout-${GITHUB_REF_NAME}.apk" \
+            "mapping-${GITHUB_REF_NAME}.txt" \
             --title "BetaScout $GITHUB_REF_NAME" \
             --generate-notes
