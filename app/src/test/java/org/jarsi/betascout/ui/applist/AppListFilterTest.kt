@@ -251,4 +251,28 @@ class AppListFilterTest {
         )
     }
 
+    @Test
+    fun `join action is offered when a beta is available and the user is not in it`() {
+        val available = row(
+            "com.a",
+            observedLiveStatus = LiveBetaStatus.OPEN,
+            observedMembership = ObservedMembership.NOT_JOINED,
+        )
+
+        assertTrue(available.canJoinBeta())
+    }
+
+    @Test
+    fun `join action is hidden when already joined or there is no beta`() {
+        val joined = row(
+            "com.a",
+            observedLiveStatus = LiveBetaStatus.OPEN,
+            observedMembership = ObservedMembership.JOINED,
+        )
+        val noBeta = row("com.b")
+
+        assertFalse(joined.canJoinBeta())
+        assertFalse(noBeta.canJoinBeta())
+    }
+
 }

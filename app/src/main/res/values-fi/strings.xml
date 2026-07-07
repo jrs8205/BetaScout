@@ -51,6 +51,7 @@
     <string name="installer_line">Asennuslähde: %1$s</string>
     <string name="system_app">Järjestelmäsovellus</string>
     <string name="open_beta_page">Avaa beta-sivu</string>
+    <string name="join_beta">Liity betaan</string>
     <string name="open_play_page">Avaa Play Kaupan sivu</string>
     <string name="my_status">Oma merkintä</string>
     <string name="my_status_hint">Valinnainen käsimerkintä. Kirjautuneena tehty skannaus täyttää havaitun tilan automaattisesti.</string>

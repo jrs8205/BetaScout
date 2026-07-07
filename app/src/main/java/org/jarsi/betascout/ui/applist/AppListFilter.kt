@@ -61,6 +61,9 @@ enum class BetaMembership { JOINED, AVAILABLE, NONE }
  * actually joined. FULL/CLOSED programs the user is not in stay in the Available tab
  * (that is the "not joined" tab); their live status is surfaced on the detail screen.
  */
+/** Whether the detail screen should offer joining this app's testing program. */
+fun AppBetaOverview.canJoinBeta(): Boolean = betaMembership() == BetaMembership.AVAILABLE
+
 fun AppBetaOverview.betaMembership(): BetaMembership {
     if (observation?.observedMembership == ObservedMembership.JOINED) return BetaMembership.JOINED
     if (userStatus?.state == UserBetaState.JOINED) return BetaMembership.JOINED

@@ -50,10 +50,11 @@ import org.jarsi.betascout.domain.KnownBetaStatus
 import org.jarsi.betascout.domain.LiveBetaStatus
 import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.UserBetaState
+import org.jarsi.betascout.ui.applist.canJoinBeta
 import org.jarsi.betascout.ui.applist.labelRes
 import org.jarsi.betascout.ui.components.AppIcon
+import org.jarsi.betascout.ui.components.openInCustomTab
 import org.jarsi.betascout.ui.components.openPlayPage
-import org.jarsi.betascout.ui.components.openUrl
 
 @Composable
 fun AppDetailScreen(
@@ -172,13 +173,19 @@ private fun LinkButtons(overview: AppBetaOverview) {
     val context = LocalContext.current
     val pkg = overview.app.packageName
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        // The testing page opens in a Custom Tab so the user's browser Google session
+        // can complete the join (the opt-in is a plain web form on that page).
+        val testingUrl = overview.betaProgram?.testingUrl ?: BetaLinkBuilder.testingUrl(pkg)
         Button(
-            onClick = {
-                val url = overview.betaProgram?.testingUrl ?: BetaLinkBuilder.testingUrl(pkg)
-                openUrl(context, url)
-            },
+            onClick = { openInCustomTab(context, testingUrl) },
             modifier = Modifier.fillMaxWidth(),
-        ) { Text(stringResource(R.string.open_beta_page)) }
+        ) {
+            Text(
+                stringResource(
+                    if (overview.canJoinBeta()) R.string.join_beta else R.string.open_beta_page,
+                ),
+            )
+        }
 
         OutlinedButton(
             onClick = { openPlayPage(context, pkg) },

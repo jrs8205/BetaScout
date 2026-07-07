@@ -99,6 +99,8 @@ dependencies {
 
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.androidx.datastore.preferences)
+    // Chrome Custom Tabs for the in-app "Join the beta" web opt-in.
+    implementation(libs.androidx.browser)
 
     implementation(libs.kotlinx.serialization.json)
 

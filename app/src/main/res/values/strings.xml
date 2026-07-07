@@ -53,6 +53,7 @@
     <string name="installer_line">Installed from: %1$s</string>
     <string name="system_app">System app</string>
     <string name="open_beta_page">Open beta page</string>
+    <string name="join_beta">Join the beta</string>
     <string name="open_play_page">Open Play Store page</string>
     <string name="my_status">My own marking</string>
     <string name="my_status_hint">Optional manual marking. A signed-in scan fills the detected status above automatically.</string>
