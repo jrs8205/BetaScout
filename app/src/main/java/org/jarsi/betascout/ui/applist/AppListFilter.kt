@@ -5,6 +5,7 @@ import org.jarsi.betascout.domain.KnownBetaStatus
 import org.jarsi.betascout.domain.LiveBetaStatus
 import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.UserBetaState
+import org.jarsi.betascout.domain.isRelevantApp
 
 data class AppFilters(
     val query: String = "",
@@ -16,9 +17,9 @@ data class AppFilters(
 fun filterApps(rows: List<AppBetaOverview>, filters: AppFilters): List<AppBetaOverview> {
     val query = filters.query.trim()
     return rows.asSequence()
-        // Framework packages without a launcher entry (overlays, providers…) are
-        // never shown — they are not apps to the user and have no Play page.
-        .filter { !it.app.isSystem || it.app.hasLauncher }
+        // Framework packages (no launcher, never store-updated) are never shown —
+        // they are not apps to the user and have no Play page.
+        .filter { it.app.isRelevantApp }
         .filter { !filters.onlySystem || it.app.isSystem }
         .filter { !filters.onlyBeta || it.hasKnownBeta() }
         .filter { !filters.onlyWatched || it.userStatus?.watching == true }

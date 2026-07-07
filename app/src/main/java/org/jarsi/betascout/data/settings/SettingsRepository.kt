@@ -26,6 +26,7 @@ data class LastScanInfo(
     val checked: Int,
     val joined: Int,
     val notJoined: Int,
+    val failed: Int = 0,
 )
 
 @Singleton
@@ -104,6 +105,7 @@ class SettingsRepository @Inject constructor(
     private val lastScanCheckedKey = intPreferencesKey("last_scan_checked")
     private val lastScanJoinedKey = intPreferencesKey("last_scan_joined")
     private val lastScanNotJoinedKey = intPreferencesKey("last_scan_not_joined")
+    private val lastScanFailedKey = intPreferencesKey("last_scan_failed")
 
     /** The most recent completed scan, or null if no scan has finished yet. */
     val lastScan: Flow<LastScanInfo?> = context.dataStore.data
@@ -115,6 +117,7 @@ class SettingsRepository @Inject constructor(
                 checked = prefs[lastScanCheckedKey] ?: 0,
                 joined = prefs[lastScanJoinedKey] ?: 0,
                 notJoined = prefs[lastScanNotJoinedKey] ?: 0,
+                failed = prefs[lastScanFailedKey] ?: 0,
             )
         }
 
@@ -124,6 +127,7 @@ class SettingsRepository @Inject constructor(
             it[lastScanCheckedKey] = info.checked
             it[lastScanJoinedKey] = info.joined
             it[lastScanNotJoinedKey] = info.notJoined
+            it[lastScanFailedKey] = info.failed
         }
     }
 
@@ -135,6 +139,7 @@ class SettingsRepository @Inject constructor(
             it.remove(lastScanCheckedKey)
             it.remove(lastScanJoinedKey)
             it.remove(lastScanNotJoinedKey)
+            it.remove(lastScanFailedKey)
         }
     }
 }

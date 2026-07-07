@@ -79,6 +79,7 @@
     <string name="account_no_scan_yet">No scan yet — tap Scan now.</string>
     <string name="account_last_scan">Last scan: %1$s</string>
     <string name="account_last_scan_counts">In %1$d betas · not in %2$d · %3$d apps checked</string>
+    <string name="account_last_scan_failed">%1$d apps could not be checked — retried on the next scan.</string>
     <string name="account_scan_progress">Checking %1$d/%2$d: %3$s</string>
     <string name="account_relogin">Session expired — please sign in again.</string>
     <string name="account_error">Failed: %1$s</string>

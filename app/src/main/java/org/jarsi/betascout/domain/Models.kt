@@ -32,13 +32,15 @@ data class StatusTransition(
     val to: LiveBetaStatus,
 )
 
-/** Summary of one status-scan run. [checked] counts pages fetched this run;
+/** Summary of one status-scan run. [checked] counts pages fetched this run and
+ *  [failed] the due pages whose fetch failed (retried on the next run);
  *  [joined]/[notJoined] are the signed-in account's totals after the run. */
 data class ScanSummary(
     val checked: Int,
     val joined: Int,
     val notJoined: Int,
     val needsLogin: Boolean,
+    val failed: Int = 0,
     val transitions: List<StatusTransition> = emptyList(),
 )
 
@@ -98,6 +100,14 @@ data class UserBetaStatusInfo(
     /** When a reminder notification was last shown; throttles repeated reminders. */
     val lastRemindedAt: Long? = null,
 )
+
+/** True for the packages BetaScout treats as apps: everything the user installed,
+ *  plus preinstalled packages that either have a launcher entry or receive store
+ *  updates (WebView and Play services have beta programs but no launcher icon).
+ *  Framework-only packages — no launcher, never store-updated — have no Play page
+ *  and stay out of both the list and the scan. */
+val InstalledAppInfo.isRelevantApp: Boolean
+    get() = !isSystem || hasLauncher || installerPackage != null
 
 /** Combined row for the UI: installed app + optional beta info + user marking + scrape. */
 data class AppBetaOverview(

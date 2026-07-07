@@ -47,6 +47,7 @@ class BetaScanWorker @AssistedInject constructor(
                     checked = summary.checked,
                     joined = summary.joined,
                     notJoined = summary.notJoined,
+                    failed = summary.failed,
                 ),
             )
         }

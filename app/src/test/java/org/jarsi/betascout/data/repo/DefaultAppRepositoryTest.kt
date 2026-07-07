@@ -126,12 +126,13 @@ private fun app(
     label: String = packageName,
     isSystem: Boolean = false,
     hasLauncher: Boolean = !isSystem,
+    installerPackage: String? = "com.android.vending",
 ) = InstalledAppInfo(
     packageName = packageName,
     label = label,
     versionName = "1.0",
     versionCode = 1L,
-    installerPackage = "com.android.vending",
+    installerPackage = installerPackage,
     isSystem = isSystem,
     hasLauncher = hasLauncher,
     lastScanned = 0L,
@@ -151,6 +152,9 @@ class DefaultAppRepositoryTest {
     /** HTML the fake testing-page source returns per package (empty page by default). */
     private var pageHtml: (String) -> String = { "<html><body></body></html>" }
 
+    /** Packages whose page fetch fails (simulated transient network error). */
+    private val failingPackages = mutableSetOf<String>()
+
     private fun kotlinx.coroutines.test.TestScope.repository(
         seedJson: () -> String = { """{"programs":[]}""" },
         now: Long = 42L,
@@ -162,7 +166,13 @@ class DefaultAppRepositoryTest {
         userBetaStatusDao = userDao,
         seeder = BetaSeeder(seedJson, betaDao),
         scraper = BetaStatusScraper(
-            source = TestingPageSource { pkg, _ -> Result.success(pageHtml(pkg)) },
+            source = TestingPageSource { pkg, _ ->
+                if (pkg in failingPackages) {
+                    Result.failure(RuntimeException("network error"))
+                } else {
+                    Result.success(pageHtml(pkg))
+                }
+            },
             clock = { now },
             delayFn = {},
         ),
@@ -287,13 +297,25 @@ class DefaultAppRepositoryTest {
     }
 
     @Test
-    fun `refreshBetaStatus includes launchable system apps and skips framework packages`() = runTest {
+    fun `refreshBetaStatus includes launchable and store-updated system apps, skips framework packages`() = runTest {
         val repo = repository()
         scanner.result = {
             listOf(
                 app("com.user"),
                 app("com.google.android.gm", isSystem = true, hasLauncher = true),
-                app("com.android.providers.media", isSystem = true, hasLauncher = false),
+                // Store-updated but no launcher icon (WebView, Play services…).
+                app(
+                    "com.google.android.webview",
+                    isSystem = true,
+                    hasLauncher = false,
+                    installerPackage = "com.android.vending",
+                ),
+                app(
+                    "com.android.providers.media",
+                    isSystem = true,
+                    hasLauncher = false,
+                    installerPackage = null,
+                ),
             )
         }
         repo.refreshApps()
@@ -301,12 +323,32 @@ class DefaultAppRepositoryTest {
 
         val summary = repo.refreshBetaStatus(session).getOrThrow()
 
-        assertEquals(2, summary.checked)
+        assertEquals(3, summary.checked)
         assertNull(observationDao.get(ACCOUNT, "com.android.providers.media"))
         assertEquals(
             ObservedMembership.NOT_JOINED,
             observationDao.get(ACCOUNT, "com.google.android.gm")!!.observedMembership,
         )
+        assertEquals(
+            ObservedMembership.NOT_JOINED,
+            observationDao.get(ACCOUNT, "com.google.android.webview")!!.observedMembership,
+        )
+    }
+
+    @Test
+    fun `refreshBetaStatus counts pages that could not be fetched as failed`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.ok"), app("com.broken")) }
+        repo.refreshApps()
+        failingPackages += "com.broken"
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+
+        val summary = repo.refreshBetaStatus(session).getOrThrow()
+
+        assertEquals(1, summary.checked)
+        assertEquals(1, summary.failed)
+        // The failed package keeps no observation, so the next run retries it first.
+        assertNull(observationDao.get(ACCOUNT, "com.broken"))
     }
 
     @Test

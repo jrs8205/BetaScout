@@ -18,6 +18,7 @@ import org.jarsi.betascout.domain.AppBetaOverview
 import org.jarsi.betascout.domain.AppRepository
 import org.jarsi.betascout.domain.DataError
 import org.jarsi.betascout.domain.LiveBetaStatus
+import org.jarsi.betascout.domain.isRelevantApp
 import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.PlaySession
 import org.jarsi.betascout.domain.ScanCandidate
@@ -95,10 +96,8 @@ class DefaultAppRepository(
             // One-shot suspend queries, NOT observeAll().first(): a flow's initial
             // emission can be lost to an invalidation-tracker race, after which
             // first() suspends forever because nothing rewrites these tables.
-            // Preinstalled apps carry the system flag but still have beta programs
-            // (Chrome, Gmail…), so the scope is every app with a launcher entry
-            // plus everything the user installed.
-            val installed = installedAppDao.getAll().filter { !it.isSystem || it.hasLauncher }
+            val installed = installedAppDao.getAll().map { it.toDomain() }
+                .filter { it.isRelevantApp }
             android.util.Log.d(TAG, "refreshBetaStatus: installed=${installed.size}")
             val observed = betaObservationDao.getAllForAccount(session.accountKey)
                 .associateBy { it.packageName }
@@ -144,6 +143,9 @@ class DefaultAppRepository(
                     notJoined = accountObservations
                         .count { it.observedMembership == ObservedMembership.NOT_JOINED },
                     needsLogin = outcome.needsLogin,
+                    // On an expired session the run stops early; the unattempted rest
+                    // are not fetch failures.
+                    failed = if (outcome.needsLogin) 0 else due.size - outcome.observations.size,
                     transitions = transitions,
                 ),
             )

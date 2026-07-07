@@ -119,6 +119,7 @@ class AccountViewModel @Inject constructor(
                             checked = summary.checked,
                             joined = summary.joined,
                             notJoined = summary.notJoined,
+                            failed = summary.failed,
                         ),
                     )
                     _state.update {

@@ -179,6 +179,13 @@ private fun LastScanSummary(lastScan: LastScanInfo?) {
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.primary,
         )
+        if (lastScan.failed > 0) {
+            Text(
+                text = stringResource(R.string.account_last_scan_failed, lastScan.failed),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
     }
 }
 

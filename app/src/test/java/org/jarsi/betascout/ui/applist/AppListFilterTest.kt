@@ -19,6 +19,7 @@ private fun row(
     label: String = packageName,
     isSystem: Boolean = false,
     hasLauncher: Boolean = !isSystem,
+    installerPackage: String? = null,
     betaStatus: KnownBetaStatus? = null,
     watching: Boolean = false,
     userState: UserBetaState = UserBetaState.UNKNOWN,
@@ -27,7 +28,9 @@ private fun row(
     observedLiveStatus: LiveBetaStatus? = null,
     observedMembership: ObservedMembership = ObservedMembership.UNKNOWN,
 ) = AppBetaOverview(
-    app = InstalledAppInfo(packageName, label, "1.0", installedVersionCode, null, isSystem, hasLauncher, 0L),
+    app = InstalledAppInfo(
+        packageName, label, "1.0", installedVersionCode, installerPackage, isSystem, hasLauncher, 0L,
+    ),
     betaProgram = betaStatus?.let {
         BetaProgramInfo(
             packageName = packageName,
@@ -66,6 +69,21 @@ class AppListFilterTest {
             listOf("com.user.app", "com.google.android.gm"),
             filterApps(rows, AppFilters()).map { it.app.packageName },
         )
+    }
+
+    @Test
+    fun `store-updated system app without a launcher is listed`() {
+        // WebView and Play services have beta programs but no launcher icon.
+        val rows = listOf(
+            row(
+                "com.google.android.webview",
+                isSystem = true,
+                hasLauncher = false,
+                installerPackage = "com.android.vending",
+            ),
+        )
+
+        assertEquals(1, filterApps(rows, AppFilters()).size)
     }
 
     @Test
