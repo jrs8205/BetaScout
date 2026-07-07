@@ -60,6 +60,9 @@ android {
         // Diagnostic android.util.Log calls in data classes become no-ops in JVM unit tests.
         unitTests.isReturnDefaultValues = true
     }
+
+    // Exported Room schemas double as fixtures for the instrumented migration test.
+    sourceSets["androidTest"].assets.srcDir("$projectDir/schemas")
 }
 
 kotlin {
@@ -113,4 +116,5 @@ dependencies {
 
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test:runner:1.6.2")
+    androidTestImplementation(libs.androidx.room.testing)
 }
