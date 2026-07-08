@@ -231,6 +231,13 @@ private fun ObservedStatusCard(overview: AppBetaOverview) {
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
+            observation.lastError?.let {
+                Text(
+                    stringResource(R.string.observed_last_error, it),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error,
+                )
+            }
         }
     }
 }

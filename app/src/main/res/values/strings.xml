@@ -40,6 +40,7 @@
     <string name="observed_membership_unknown">Membership not determined</string>
     <string name="observed_live_status">Program status: %1$s</string>
     <string name="observed_checked_at">Checked: %1$s</string>
+    <string name="observed_last_error">Latest re-check failed: %1$s</string>
     <string name="live_unknown">Unknown</string>
     <string name="live_open">Open</string>
     <string name="live_full">Full</string>
@@ -78,9 +79,13 @@
     <string name="account_signin">Sign in with Google</string>
     <string name="account_sync">Scan now</string>
     <string name="account_no_scan_yet">No scan yet — tap Scan now.</string>
-    <string name="account_last_scan">Last scan: %1$s</string>
-    <string name="account_last_scan_counts">In %1$d betas · not in %2$d · %3$d apps checked</string>
+    <string name="account_last_scan">Last scan: %1$s · %2$s</string>
+    <string name="account_scan_type_manual">manual</string>
+    <string name="account_scan_type_background">background (small batch)</string>
+    <string name="account_scan_totals">In %1$d betas · not in %2$d · no beta program for %3$d</string>
+    <string name="account_scan_checked">%1$d apps checked in this scan</string>
     <string name="account_last_scan_failed">%1$d apps could not be checked — retried on the next scan.</string>
+    <string name="account_last_scan_failed_reason">%1$d apps could not be checked (%2$s) — retried on the next scan.</string>
     <string name="account_scan_progress">Checking %1$d/%2$d: %3$s</string>
     <string name="account_relogin">Session expired — please sign in again.</string>
     <string name="account_error">Failed: %1$s</string>
@@ -114,4 +119,9 @@
     <string name="slot_text">The testing program is accepting testers again. Tap to open the opt-in page.</string>
     <string name="relogin_title">Sign in again</string>
     <string name="relogin_text">The Google session expired — background beta scanning is paused until you sign in.</string>
+
+    <!-- Manual scan (foreground service) -->
+    <string name="scan_channel_name">Beta status scan</string>
+    <string name="scan_channel_description">Shown while a manual beta status scan is running</string>
+    <string name="scan_notification_title">Scanning beta statuses…</string>
 </resources>

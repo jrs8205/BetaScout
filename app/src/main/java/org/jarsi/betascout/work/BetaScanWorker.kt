@@ -1,23 +1,37 @@
 package org.jarsi.betascout.work
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
+import android.content.pm.ServiceInfo
+import android.os.Build
+import androidx.core.app.NotificationCompat
 import androidx.hilt.work.HiltWorker
 import androidx.work.CoroutineWorker
+import androidx.work.ForegroundInfo
 import androidx.work.WorkerParameters
+import androidx.work.workDataOf
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.flow.first
+import org.jarsi.betascout.R
 import org.jarsi.betascout.data.settings.LastScanInfo
+import org.jarsi.betascout.data.settings.ScanType
 import org.jarsi.betascout.data.settings.SettingsRepository
 import org.jarsi.betascout.domain.AppRepository
 import org.jarsi.betascout.domain.BetaLinkBuilder
+import org.jarsi.betascout.domain.ScanSummary
 import org.jarsi.betascout.domain.SlotOpenPolicy
 
 /**
- * Periodic worker: re-checks the beta statuses that are due per ScanPolicy's TTLs
- * (capped, so a run stays gentle on the account) and notifies about watched apps
- * whose testing program just started accepting testers again. Skips silently when
- * no one is signed in.
+ * Runs a beta-status scan and notifies about watched apps whose testing program just
+ * started accepting testers again. Two modes, selected via [KEY_MANUAL]:
+ *
+ * - Periodic (default): re-checks only the statuses due per ScanPolicy's TTLs, capped
+ *   so a run stays gentle on the account. Skips silently when no one is signed in.
+ * - Manual ("Scan now"): forced and uncapped. With the 3-second crawl delay a large
+ *   device takes well over ten minutes, so the run is promoted to a foreground
+ *   service — surviving the user leaving the app — and reports per-app progress.
  */
 @HiltWorker
 class BetaScanWorker @AssistedInject constructor(
@@ -28,28 +42,57 @@ class BetaScanWorker @AssistedInject constructor(
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
-        val session = settings.playSession.first() ?: return Result.success()
-        val summary = repository.refreshBetaStatus(session, cap = SCAN_CAP)
-            .getOrElse { return Result.retry() }
+        val manual = inputData.getBoolean(KEY_MANUAL, false)
+        val session = settings.playSession.first()
+            ?: return if (manual) {
+                Result.failure(workDataOf(KEY_ERROR to "not_signed_in"))
+            } else {
+                Result.success()
+            }
+
+        if (manual) {
+            // Best effort: without foreground promotion the scan still runs, it just
+            // loses the exemption from the ~10-minute background execution limit.
+            runCatching { setForeground(createForegroundInfo()) }
+        }
+
+        val result = if (manual) {
+            repository.refreshBetaStatus(session, force = true) { progress ->
+                setProgress(
+                    workDataOf(
+                        KEY_PROGRESS_INDEX to progress.index,
+                        KEY_PROGRESS_TOTAL to progress.total,
+                        KEY_PROGRESS_LABEL to progress.currentLabel,
+                    ),
+                )
+            }
+        } else {
+            repository.refreshBetaStatus(session, cap = SCAN_CAP)
+        }
+        val summary = result.getOrElse { e ->
+            // A manual run must surface its error in the UI instead of silently
+            // retrying with the button stuck on busy.
+            return if (manual) {
+                Result.failure(workDataOf(KEY_ERROR to (e.message ?: "scan_failed")))
+            } else {
+                Result.retry()
+            }
+        }
 
         if (summary.needsLogin) {
             // The session is dead: clear it so the account screen prompts a fresh
-            // sign-in, and say so once — later runs skip because the session is gone.
+            // sign-in. The account screen shows the manual run's outcome directly;
+            // a background run says so once via notification — later runs skip
+            // because the session is gone.
             settings.clearPlaySession()
-            BetaSlotNotifier(applicationContext).showReloginNeeded()
-            return Result.success()
+            if (!manual) BetaSlotNotifier(applicationContext).showReloginNeeded()
+            return Result.success(workDataOf(KEY_NEEDS_LOGIN to true))
         }
 
-        if (summary.checked > 0) {
-            settings.saveLastScan(
-                LastScanInfo(
-                    at = System.currentTimeMillis(),
-                    checked = summary.checked,
-                    joined = summary.joined,
-                    notJoined = summary.notJoined,
-                    failed = summary.failed,
-                ),
-            )
+        // A background run that found nothing due must not overwrite the last real
+        // result; a manual run always reports, even "checked 0".
+        if (manual || summary.checked > 0) {
+            settings.saveLastScan(summary.toLastScanInfo(manual))
         }
 
         val rows = repository.observeApps().first()
@@ -65,8 +108,60 @@ class BetaScanWorker @AssistedInject constructor(
         return Result.success()
     }
 
-    private companion object {
+    private fun ScanSummary.toLastScanInfo(manual: Boolean) = LastScanInfo(
+        at = System.currentTimeMillis(),
+        checked = checked,
+        joined = joined,
+        notJoined = notJoined,
+        failed = failed,
+        noProgram = noProgram,
+        failureReason = topFailureReason,
+        scanType = if (manual) ScanType.MANUAL else ScanType.BACKGROUND,
+    )
+
+    override suspend fun getForegroundInfo(): ForegroundInfo = createForegroundInfo()
+
+    private fun createForegroundInfo(): ForegroundInfo {
+        val channel = NotificationChannel(
+            SCAN_CHANNEL_ID,
+            applicationContext.getString(R.string.scan_channel_name),
+            NotificationManager.IMPORTANCE_LOW,
+        ).apply {
+            description = applicationContext.getString(R.string.scan_channel_description)
+        }
+        applicationContext.getSystemService(NotificationManager::class.java)
+            .createNotificationChannel(channel)
+
+        val notification = NotificationCompat.Builder(applicationContext, SCAN_CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_stat_reminder)
+            .setContentTitle(applicationContext.getString(R.string.scan_notification_title))
+            .setOngoing(true)
+            .setProgress(0, 0, true)
+            .build()
+
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            ForegroundInfo(
+                SCAN_NOTIFICATION_ID,
+                notification,
+                ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC,
+            )
+        } else {
+            ForegroundInfo(SCAN_NOTIFICATION_ID, notification)
+        }
+    }
+
+    companion object {
+        const val KEY_MANUAL = "manual"
+        const val KEY_NEEDS_LOGIN = "needs_login"
+        const val KEY_ERROR = "error"
+        const val KEY_PROGRESS_INDEX = "progress_index"
+        const val KEY_PROGRESS_TOTAL = "progress_total"
+        const val KEY_PROGRESS_LABEL = "progress_label"
+
+        private const val SCAN_CHANNEL_ID = "beta_scan"
+        private const val SCAN_NOTIFICATION_ID = 42
+
         /** Handoff default for background runs; manual scans stay uncapped. */
-        const val SCAN_CAP = 30
+        private const val SCAN_CAP = 30
     }
 }

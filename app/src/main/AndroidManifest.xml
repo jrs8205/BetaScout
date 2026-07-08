@@ -10,6 +10,11 @@
     <!-- Fetch the beta catalog from the hosted endpoint (falls back to the bundled copy offline). -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- A manual "Scan now" walks every installed app with a crawl delay, which takes
+         longer than the background-job execution window; it runs as a dataSync
+         foreground service so it can finish after the user leaves the app. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
 
     <application
         android:name=".BetaScoutApp"
@@ -29,6 +34,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- WorkManager's foreground-service host needs an explicit type on API 34+;
+             dataSync matches the manual scan promoted via setForeground(). -->
+        <service
+            android:name="androidx.work.impl.foreground.SystemForegroundService"
+            android:foregroundServiceType="dataSync"
+            tools:node="merge" />
 
         <!-- On-demand WorkManager initialization (required for HiltWorkerFactory). -->
         <provider

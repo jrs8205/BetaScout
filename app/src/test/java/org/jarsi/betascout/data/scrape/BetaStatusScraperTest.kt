@@ -89,6 +89,29 @@ class BetaStatusScraperTest {
     }
 
     @Test
+    fun `records the reason for each failed fetch`() = runTest {
+        val source = TestingPageSource { pkg, _ ->
+            when (pkg) {
+                "com.timeout" -> Result.failure(java.net.SocketTimeoutException("read timed out"))
+                "com.dns" -> Result.failure(java.net.UnknownHostException("play.google.com"))
+                else -> Result.success(FetchedPage(OPEN_HTML))
+            }
+        }
+
+        val outcome = scraper(source)
+            .scrape(listOf("com.timeout", "com.ok", "com.dns"), session)
+
+        assertEquals(
+            mapOf(
+                "com.timeout" to "SocketTimeoutException: read timed out",
+                "com.dns" to "UnknownHostException: play.google.com",
+            ),
+            outcome.failures,
+        )
+        assertEquals(listOf("com.ok"), outcome.observations.map { it.packageName })
+    }
+
+    @Test
     fun `reports progress before each fetch`() = runTest {
         val progress = mutableListOf<String>()
         val source = TestingPageSource { _, _ -> Result.success(FetchedPage(OPEN_HTML)) }

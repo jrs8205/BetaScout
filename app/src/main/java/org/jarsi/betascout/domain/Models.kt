@@ -33,16 +33,29 @@ data class StatusTransition(
 )
 
 /** Summary of one status-scan run. [checked] counts pages fetched this run and
- *  [failed] the due pages whose fetch failed (retried on the next run);
- *  [joined]/[notJoined] are the signed-in account's totals after the run. */
+ *  [failures] maps each due page whose fetch failed to a short reason (those are
+ *  retried on the next run); [joined]/[notJoined]/[noProgram] are the signed-in
+ *  account's totals after the run. */
 data class ScanSummary(
     val checked: Int,
     val joined: Int,
     val notJoined: Int,
     val needsLogin: Boolean,
-    val failed: Int = 0,
+    val noProgram: Int = 0,
+    val failures: Map<String, String> = emptyMap(),
     val transitions: List<StatusTransition> = emptyList(),
-)
+) {
+    val failed: Int get() = failures.size
+
+    /** The most common failure reason of the run — the one worth showing when a
+     *  scan degrades into mass failures (rate limiting, captive portal, outage). */
+    val topFailureReason: String?
+        get() = failures.values
+            .groupingBy { it }
+            .eachCount()
+            .maxByOrNull { it.value }
+            ?.key
+}
 
 /** Live progress of a status-scan run: the app being checked now (1-based). */
 data class ScanProgress(val index: Int, val total: Int, val currentLabel: String)
@@ -101,13 +114,17 @@ data class UserBetaStatusInfo(
     val lastRemindedAt: Long? = null,
 )
 
+/** The Play Store's own package name, as reported in installerPackage. */
+const val PLAY_STORE_PACKAGE = "com.android.vending"
+
 /** True for the packages BetaScout treats as apps: everything the user installed,
- *  plus preinstalled packages that either have a launcher entry or receive store
- *  updates (WebView and Play services have beta programs but no launcher icon).
- *  Framework-only packages — no launcher, never store-updated — have no Play page
- *  and stay out of both the list and the scan. */
+ *  plus preinstalled packages that either have a launcher entry or are updated by
+ *  the Play Store itself (WebView and Play services have beta programs but no
+ *  launcher icon). Requiring the Play Store as the installer — not just any
+ *  installer — keeps OEM/updater-managed system components out of the scan, where
+ *  they would only produce pointless testing-page fetches. */
 val InstalledAppInfo.isRelevantApp: Boolean
-    get() = !isSystem || hasLauncher || installerPackage != null
+    get() = !isSystem || hasLauncher || installerPackage == PLAY_STORE_PACKAGE
 
 /** Combined row for the UI: installed app + optional beta info + user marking + scrape. */
 data class AppBetaOverview(

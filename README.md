@@ -31,9 +31,13 @@ Honesty first:
 
 - It **never joins a beta program on your behalf.** Joining requires pressing the *Join*
   button on Google Play yourself.
-- It **cannot reliably detect whether a program is open or full.** That information is
-  only visible to your own signed-in Google account on the testing page, so BetaScout
-  helps you get there instead of guessing.
+- **Without signing in it cannot detect whether a program is open or full.** That
+  information is only visible to a signed-in Google account on the testing page. If you
+  sign in inside the app, BetaScout reads *your own* testing pages to detect your
+  memberships and each program's open/full status; otherwise it just takes you there.
+- The bundled/remote catalog of *known* beta programs is small and curated (a few dozen
+  apps). Most detection therefore comes from the signed-in scan of your own testing
+  pages, not from the catalog.
 - No accessibility-service automation, no APK sideloading, no Play Store bypassing.
 
 ## Screenshots
@@ -49,7 +53,8 @@ BetaScout is distributed as an APK via [GitHub Releases](https://github.com/jrs8
 
 1. Download the latest APK from the Releases page.
 2. Allow installs from unknown sources when Android asks.
-3. Done — the app works fully offline.
+3. Done. Listing and tracking work offline; the beta-catalog refresh and the
+   signed-in status scan need a network connection.
 
 > **Why not the Play Store?** BetaScout uses the `QUERY_ALL_PACKAGES` permission to list
 > everything installed on your device. That permission is heavily restricted on the Play
@@ -60,9 +65,14 @@ BetaScout is distributed as an APK via [GitHub Releases](https://github.com/jrs8
 | Permission | Why |
 |---|---|
 | `QUERY_ALL_PACKAGES` | List your installed apps — the whole point of the app |
-| `POST_NOTIFICATIONS` | Watchlist reminders (asked on first launch, Android 13+) |
+| `POST_NOTIFICATIONS` | Watchlist reminders and beta-opening alerts (asked on first launch, Android 13+) |
+| `INTERNET`, `ACCESS_NETWORK_STATE` | Fetch the beta catalog, and read your own Play testing pages once you sign in |
+| `FOREGROUND_SERVICE`, `FOREGROUND_SERVICE_DATA_SYNC` | Let a manual "Scan now" finish even if you leave the app |
 
-No internet permission. Nothing leaves your device.
+The network is used for exactly two things: downloading the beta-program catalog, and —
+only after you sign in — fetching `play.google.com/apps/testing/…` pages with your own
+session to read your memberships. There is no telemetry and no analytics; your app list
+and markings never leave the device.
 
 ## Building from source
 
@@ -86,8 +96,8 @@ WorkManager · Hilt · Navigation-Compose · kotlinx-serialization
 
 ## Roadmap
 
-- [ ] Experimental, opt-in web check of testing pages (best effort — see honesty note above)
-- [ ] Community-sourced beta-program database
+- [x] Opt-in, signed-in check of your own testing pages (membership + open/full status)
+- [ ] Community-sourced beta-program database (the current catalog is small and curated)
 
 Suggestions and bug reports are welcome in [Issues](https://github.com/jrs8205/BetaScout/issues).
 

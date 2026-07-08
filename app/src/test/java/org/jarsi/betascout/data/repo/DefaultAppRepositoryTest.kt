@@ -317,6 +317,13 @@ class DefaultAppRepositoryTest {
                     hasLauncher = false,
                     installerPackage = null,
                 ),
+                // Updated by an OEM updater, not the Play Store: no testing page.
+                app(
+                    "com.oem.component",
+                    isSystem = true,
+                    hasLauncher = false,
+                    installerPackage = "com.oem.updater",
+                ),
             )
         }
         repo.refreshApps()
@@ -326,6 +333,7 @@ class DefaultAppRepositoryTest {
 
         assertEquals(3, summary.checked)
         assertNull(observationDao.get(ACCOUNT, "com.android.providers.media"))
+        assertNull(observationDao.get(ACCOUNT, "com.oem.component"))
         assertEquals(
             ObservedMembership.NOT_JOINED,
             observationDao.get(ACCOUNT, "com.google.android.gm")!!.observedMembership,
@@ -348,8 +356,78 @@ class DefaultAppRepositoryTest {
 
         assertEquals(1, summary.checked)
         assertEquals(1, summary.failed)
+        assertEquals("RuntimeException: network error", summary.failures["com.broken"])
         // The failed package keeps no observation, so the next run retries it first.
         assertNull(observationDao.get(ACCOUNT, "com.broken"))
+    }
+
+    @Test
+    fun `a fetch failure stamps the reason on the existing observation without touching its status`() = runTest {
+        val repo = repository(now = 100 * 3_600_000L)
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        observationDao.upsert(
+            BetaObservationEntity(
+                accountKey = ACCOUNT,
+                packageName = "com.a",
+                liveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.JOINED,
+                checkedAt = 1_000L,
+                lastError = null,
+            )
+        )
+        failingPackages += "com.a"
+
+        val summary = repo.refreshBetaStatus(session, force = true).getOrThrow()
+
+        assertEquals(1, summary.failed)
+        val observation = observationDao.get(ACCOUNT, "com.a")!!
+        assertEquals("RuntimeException: network error", observation.lastError)
+        // Status and freshness stay intact: the blip must not overwrite a good
+        // status, and the stale checkedAt keeps the package due on the next run.
+        assertEquals(LiveBetaStatus.OPEN, observation.liveStatus)
+        assertEquals(ObservedMembership.JOINED, observation.observedMembership)
+        assertEquals(1_000L, observation.checkedAt)
+    }
+
+    @Test
+    fun `a successful re-check clears a previously recorded fetch error`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        observationDao.upsert(
+            BetaObservationEntity(
+                accountKey = ACCOUNT,
+                packageName = "com.a",
+                liveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.JOINED,
+                checkedAt = 0L,
+                lastError = "SocketTimeoutException: read timed out",
+            )
+        )
+        pageHtml = { """<html><body><form id="leaveForm"></form></body></html>""" }
+
+        repo.refreshBetaStatus(session, force = true).getOrThrow()
+
+        assertNull(observationDao.get(ACCOUNT, "com.a")!!.lastError)
+    }
+
+    @Test
+    fun `refreshBetaStatus counts apps without a beta program in the account totals`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a"), app("com.gone")) }
+        repo.refreshApps()
+        pageHtml = { pkg ->
+            if (pkg == "com.gone") """<html><body>The requested URL was not found.</body></html>"""
+            else """<html><body><form id="joinForm"></form></body></html>"""
+        }
+
+        val summary = repo.refreshBetaStatus(session).getOrThrow()
+
+        assertEquals(2, summary.checked)
+        assertEquals(1, summary.notJoined)
+        assertEquals(1, summary.noProgram)
+        assertEquals(LiveBetaStatus.NO_PROGRAM, observationDao.get(ACCOUNT, "com.gone")!!.liveStatus)
     }
 
     @Test

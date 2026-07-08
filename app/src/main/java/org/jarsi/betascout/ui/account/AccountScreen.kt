@@ -35,6 +35,7 @@ import java.text.DateFormat
 import java.util.Date
 import org.jarsi.betascout.R
 import org.jarsi.betascout.data.settings.LastScanInfo
+import org.jarsi.betascout.data.settings.ScanType
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -166,22 +167,37 @@ private fun LastScanSummary(lastScan: LastScanInfo?) {
             text = stringResource(
                 R.string.account_last_scan,
                 dateFormat.format(Date(lastScan.at)),
+                stringResource(
+                    when (lastScan.scanType) {
+                        ScanType.MANUAL -> R.string.account_scan_type_manual
+                        ScanType.BACKGROUND -> R.string.account_scan_type_background
+                    },
+                ),
             ),
             style = MaterialTheme.typography.bodyMedium,
         )
         Text(
             text = stringResource(
-                R.string.account_last_scan_counts,
+                R.string.account_scan_totals,
                 lastScan.joined,
                 lastScan.notJoined,
-                lastScan.checked,
+                lastScan.noProgram,
             ),
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.primary,
         )
+        Text(
+            text = stringResource(R.string.account_scan_checked, lastScan.checked),
+            style = MaterialTheme.typography.bodyMedium,
+        )
         if (lastScan.failed > 0) {
+            val reason = lastScan.failureReason
             Text(
-                text = stringResource(R.string.account_last_scan_failed, lastScan.failed),
+                text = if (reason != null) {
+                    stringResource(R.string.account_last_scan_failed_reason, lastScan.failed, reason)
+                } else {
+                    stringResource(R.string.account_last_scan_failed, lastScan.failed)
+                },
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )

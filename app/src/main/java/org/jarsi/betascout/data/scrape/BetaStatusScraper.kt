@@ -4,10 +4,13 @@ import kotlinx.coroutines.delay
 import org.jarsi.betascout.domain.BetaObservation
 import org.jarsi.betascout.domain.PlaySession
 
-/** Result of scraping a batch of packages. */
+/** Result of scraping a batch of packages. [failures] maps each package whose
+ *  page fetch failed to a short reason, so a run that degrades into mass failures
+ *  (timeouts, rate limiting) stays diagnosable per app. */
 data class ScrapeOutcome(
     val observations: List<BetaObservation>,
     val needsLogin: Boolean,
+    val failures: Map<String, String> = emptyMap(),
 )
 
 /**
@@ -29,23 +32,29 @@ class BetaStatusScraper(
         onProgress: suspend (index: Int, total: Int, packageName: String) -> Unit = { _, _, _ -> },
     ): ScrapeOutcome {
         val observations = mutableListOf<BetaObservation>()
+        val failures = linkedMapOf<String, String>()
         packages.forEachIndexed { index, packageName ->
             if (index > 0) delayFn(crawlDelayMillis)
             onProgress(index + 1, packages.size, packageName)
             android.util.Log.d("BetaScout", "scrape ${index + 1}/${packages.size}: $packageName fetching")
-            // A failed fetch (e.g. transient network error) is skipped, leaving the
-            // previous observation in place so a blip doesn't overwrite a good status.
+            // A failed fetch (e.g. transient network error) leaves the previous
+            // observation in place so a blip doesn't overwrite a good status, but the
+            // reason is recorded so mass failures stay diagnosable.
             val fetched = source.fetch(packageName, session)
             android.util.Log.d(
                 "BetaScout",
                 "scrape $packageName: fetched=${fetched.getOrNull()?.html?.length ?: "FAIL ${fetched.exceptionOrNull()}"}",
             )
-            val page = fetched.getOrNull() ?: return@forEachIndexed
+            val page = fetched.getOrNull()
+            if (page == null) {
+                failures[packageName] = fetched.exceptionOrNull().toShortReason()
+                return@forEachIndexed
+            }
             // A redirect to accounts.google.com is the authoritative signed-out signal;
             // the sign-in page's HTML markers have changed shape before.
             if (isSignInRedirect(page.finalUrl)) {
                 android.util.Log.d("BetaScout", "scrape $packageName: redirected to sign-in, stopping")
-                return ScrapeOutcome(observations, needsLogin = true)
+                return ScrapeOutcome(observations, needsLogin = true, failures = failures)
             }
             val result = TestingPageParser.parse(page.html)
             android.util.Log.d(
@@ -53,7 +62,7 @@ class BetaStatusScraper(
                 "scrape $packageName: status=${result.liveStatus} membership=${result.membership} needsLogin=${result.needsLogin}",
             )
             if (result.needsLogin) {
-                return ScrapeOutcome(observations, needsLogin = true)
+                return ScrapeOutcome(observations, needsLogin = true, failures = failures)
             }
             observations += BetaObservation(
                 accountKey = session.accountKey,
@@ -63,8 +72,17 @@ class BetaStatusScraper(
                 checkedAt = clock(),
             )
         }
-        return ScrapeOutcome(observations, needsLogin = false)
+        return ScrapeOutcome(observations, needsLogin = false, failures = failures)
     }
+
+    private fun Throwable?.toShortReason(): String =
+        if (this == null) {
+            "unknown"
+        } else {
+            listOfNotNull(javaClass.simpleName.ifBlank { null }, message)
+                .joinToString(": ")
+                .ifBlank { "unknown" }
+        }
 
     private fun isSignInRedirect(finalUrl: String?): Boolean {
         if (finalUrl == null) return false

@@ -2,6 +2,9 @@ package org.jarsi.betascout.ui.account
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.work.ExistingWorkPolicy
+import androidx.work.WorkInfo
+import androidx.work.WorkManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -12,8 +15,9 @@ import kotlinx.coroutines.launch
 import org.jarsi.betascout.data.settings.LastScanInfo
 import org.jarsi.betascout.data.settings.SettingsRepository
 import org.jarsi.betascout.domain.AppRepository
-import org.jarsi.betascout.domain.PlaySession
 import org.jarsi.betascout.domain.ScanProgress
+import org.jarsi.betascout.work.BetaScanScheduler
+import org.jarsi.betascout.work.BetaScanWorker
 
 data class AccountUiState(
     val signedIn: Boolean = false,
@@ -30,6 +34,7 @@ data class AccountUiState(
 class AccountViewModel @Inject constructor(
     private val settings: SettingsRepository,
     private val repository: AppRepository,
+    private val workManager: WorkManager,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(AccountUiState())
@@ -40,14 +45,71 @@ class AccountViewModel @Inject constructor(
         // is not repeated here; this only reflects the stored session into the UI.
         viewModelScope.launch {
             settings.playSession.collect { session ->
-                if (session != null) {
-                    _state.update { it.copy(email = session.accountEmail, signedIn = true) }
+                _state.update {
+                    it.copy(
+                        signedIn = session != null,
+                        email = session?.accountEmail ?: it.email,
+                        // A fresh session settles any earlier expiry.
+                        needsReLogin = if (session != null) false else it.needsReLogin,
+                    )
                 }
             }
         }
         viewModelScope.launch {
             settings.lastScan.collect { last ->
                 _state.update { it.copy(lastScan = last) }
+            }
+        }
+        // The scan itself runs as WorkManager work (it outlives this screen and the
+        // whole app process); the screen just mirrors that work's state.
+        viewModelScope.launch {
+            workManager.getWorkInfosForUniqueWorkFlow(BetaScanScheduler.MANUAL_WORK_NAME)
+                .collect { infos -> onScanWorkChanged(infos.firstOrNull()) }
+        }
+    }
+
+    private fun onScanWorkChanged(info: WorkInfo?) {
+        when (info?.state) {
+            WorkInfo.State.ENQUEUED, WorkInfo.State.RUNNING, WorkInfo.State.BLOCKED ->
+                _state.update {
+                    val total = info.progress.getInt(BetaScanWorker.KEY_PROGRESS_TOTAL, 0)
+                    val label = info.progress.getString(BetaScanWorker.KEY_PROGRESS_LABEL)
+                    it.copy(
+                        busy = true,
+                        error = null,
+                        progress = if (total > 0 && label != null) {
+                            ScanProgress(
+                                index = info.progress.getInt(BetaScanWorker.KEY_PROGRESS_INDEX, 0),
+                                total = total,
+                                currentLabel = label,
+                            )
+                        } else {
+                            null
+                        },
+                    )
+                }
+
+            WorkInfo.State.SUCCEEDED -> _state.update {
+                it.copy(
+                    busy = false,
+                    progress = null,
+                    // Guarded on signedIn so a stale pre-re-login result cannot
+                    // resurface the prompt once a new session is in place.
+                    needsReLogin = !it.signedIn &&
+                        info.outputData.getBoolean(BetaScanWorker.KEY_NEEDS_LOGIN, false),
+                )
+            }
+
+            WorkInfo.State.FAILED -> _state.update {
+                it.copy(
+                    busy = false,
+                    progress = null,
+                    error = info.outputData.getString(BetaScanWorker.KEY_ERROR) ?: "scan_failed",
+                )
+            }
+
+            WorkInfo.State.CANCELLED, null -> _state.update {
+                it.copy(busy = false, progress = null)
             }
         }
     }
@@ -62,7 +124,6 @@ class AccountViewModel @Inject constructor(
     fun onLoginCaptured(email: String, cookieHeader: String) {
         viewModelScope.launch {
             _state.update { it.copy(showLogin = false, busy = true, error = null) }
-            val session = PlaySession(accountEmail = email, cookieHeader = cookieHeader)
             val saved = runCatching { settings.savePlaySession(email, cookieHeader) }
             if (saved.isFailure) {
                 _state.update {
@@ -74,22 +135,18 @@ class AccountViewModel @Inject constructor(
                 }
                 return@launch
             }
-            scan(session)
+            BetaScanScheduler.scanNow(workManager, ExistingWorkPolicy.REPLACE)
         }
     }
 
     fun resync() {
-        viewModelScope.launch {
-            val session = settings.playSession.first() ?: return@launch
-            _state.update { it.copy(busy = true, error = null) }
-            // A user-initiated rescan bypasses the freshness TTL: memberships can
-            // change outside the app at any time, so "Scan now" always re-checks.
-            scan(session, force = true)
-        }
+        _state.update { it.copy(error = null) }
+        BetaScanScheduler.scanNow(workManager)
     }
 
     fun signOut() {
         viewModelScope.launch {
+            workManager.cancelUniqueWork(BetaScanScheduler.MANUAL_WORK_NAME)
             // Delete the account's observations before clearing the session so a
             // signed-out account's beta memberships do not linger on the device.
             settings.playSession.first()?.let { repository.clearObservations(it.accountKey) }
@@ -97,44 +154,5 @@ class AccountViewModel @Inject constructor(
             settings.clearLastScan()
             _state.value = AccountUiState()
         }
-    }
-
-    private suspend fun scan(session: PlaySession, force: Boolean = false) {
-        android.util.Log.d("BetaScout", "scan: calling refreshBetaStatus (cookie ${session.cookieHeader.length} chars)")
-        repository.refreshBetaStatus(
-            session,
-            force = force,
-            onProgress = { p -> _state.update { it.copy(progress = p) } },
-        ).fold(
-            onSuccess = { summary ->
-                if (summary.needsLogin) {
-                    settings.clearPlaySession()
-                    _state.update {
-                        it.copy(busy = false, progress = null, signedIn = false, needsReLogin = true)
-                    }
-                } else {
-                    settings.saveLastScan(
-                        LastScanInfo(
-                            at = System.currentTimeMillis(),
-                            checked = summary.checked,
-                            joined = summary.joined,
-                            notJoined = summary.notJoined,
-                            failed = summary.failed,
-                        ),
-                    )
-                    _state.update {
-                        it.copy(
-                            busy = false,
-                            progress = null,
-                            signedIn = true,
-                            email = session.accountEmail,
-                        )
-                    }
-                }
-            },
-            onFailure = { e ->
-                _state.update { it.copy(busy = false, progress = null, error = e.message ?: "scan_failed") }
-            },
-        )
     }
 }

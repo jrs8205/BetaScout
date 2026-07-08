@@ -134,6 +134,15 @@ class DefaultAppRepository(
                 )
             }
             outcome.observations.forEach { betaObservationDao.upsert(it.toEntity()) }
+            // Stamp the failure reason onto the app's existing observation so the
+            // detail view can explain a stale status. Its checkedAt is left untouched,
+            // keeping the observation stale so the next run retries it. Never-observed
+            // packages get no placeholder row — absence already retries them first.
+            outcome.failures.forEach { (packageName, reason) ->
+                betaObservationDao.get(session.accountKey, packageName)?.let { previous ->
+                    betaObservationDao.upsert(previous.copy(lastError = reason))
+                }
+            }
             val accountObservations = betaObservationDao.getAllForAccount(session.accountKey)
             Result.success(
                 ScanSummary(
@@ -143,9 +152,9 @@ class DefaultAppRepository(
                     notJoined = accountObservations
                         .count { it.observedMembership == ObservedMembership.NOT_JOINED },
                     needsLogin = outcome.needsLogin,
-                    // On an expired session the run stops early; the unattempted rest
-                    // are not fetch failures.
-                    failed = if (outcome.needsLogin) 0 else due.size - outcome.observations.size,
+                    noProgram = accountObservations
+                        .count { it.liveStatus == LiveBetaStatus.NO_PROGRAM },
+                    failures = outcome.failures,
                     transitions = transitions,
                 ),
             )

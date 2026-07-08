@@ -19,6 +19,10 @@ import org.jarsi.betascout.domain.PlaySession
 
 private val Context.dataStore by preferencesDataStore(name = "settings")
 
+/** How the scan that produced a [LastScanInfo] was started. A background run is
+ *  capped to a small batch, so its counts cover far fewer apps than a manual run. */
+enum class ScanType { MANUAL, BACKGROUND }
+
 /** Result of the most recent completed status scan, persisted so the account screen
  *  can show it across app restarts instead of re-prompting a signed-in user. */
 data class LastScanInfo(
@@ -27,6 +31,10 @@ data class LastScanInfo(
     val joined: Int,
     val notJoined: Int,
     val failed: Int = 0,
+    val noProgram: Int = 0,
+    /** The run's most common fetch-failure reason, or null when nothing failed. */
+    val failureReason: String? = null,
+    val scanType: ScanType = ScanType.MANUAL,
 )
 
 @Singleton
@@ -106,6 +114,9 @@ class SettingsRepository @Inject constructor(
     private val lastScanJoinedKey = intPreferencesKey("last_scan_joined")
     private val lastScanNotJoinedKey = intPreferencesKey("last_scan_not_joined")
     private val lastScanFailedKey = intPreferencesKey("last_scan_failed")
+    private val lastScanNoProgramKey = intPreferencesKey("last_scan_no_program")
+    private val lastScanFailureReasonKey = stringPreferencesKey("last_scan_failure_reason")
+    private val lastScanTypeKey = stringPreferencesKey("last_scan_type")
 
     /** The most recent completed scan, or null if no scan has finished yet. */
     val lastScan: Flow<LastScanInfo?> = context.dataStore.data
@@ -118,6 +129,12 @@ class SettingsRepository @Inject constructor(
                 joined = prefs[lastScanJoinedKey] ?: 0,
                 notJoined = prefs[lastScanNotJoinedKey] ?: 0,
                 failed = prefs[lastScanFailedKey] ?: 0,
+                noProgram = prefs[lastScanNoProgramKey] ?: 0,
+                failureReason = prefs[lastScanFailureReasonKey],
+                // Scans stored before the type existed were manual-only.
+                scanType = prefs[lastScanTypeKey]
+                    ?.let { stored -> ScanType.entries.firstOrNull { it.name == stored } }
+                    ?: ScanType.MANUAL,
             )
         }
 
@@ -128,6 +145,14 @@ class SettingsRepository @Inject constructor(
             it[lastScanJoinedKey] = info.joined
             it[lastScanNotJoinedKey] = info.notJoined
             it[lastScanFailedKey] = info.failed
+            it[lastScanNoProgramKey] = info.noProgram
+            val reason = info.failureReason
+            if (reason == null) {
+                it.remove(lastScanFailureReasonKey)
+            } else {
+                it[lastScanFailureReasonKey] = reason
+            }
+            it[lastScanTypeKey] = info.scanType.name
         }
     }
 
@@ -140,6 +165,9 @@ class SettingsRepository @Inject constructor(
             it.remove(lastScanJoinedKey)
             it.remove(lastScanNotJoinedKey)
             it.remove(lastScanFailedKey)
+            it.remove(lastScanNoProgramKey)
+            it.remove(lastScanFailureReasonKey)
+            it.remove(lastScanTypeKey)
         }
     }
 }

@@ -38,6 +38,7 @@
     <string name="observed_membership_unknown">Jäsenyyttä ei voitu päätellä</string>
     <string name="observed_live_status">Ohjelman tila: %1$s</string>
     <string name="observed_checked_at">Tarkistettu: %1$s</string>
+    <string name="observed_last_error">Viimeisin uudelleentarkistus epäonnistui: %1$s</string>
     <string name="live_unknown">Tuntematon</string>
     <string name="live_open">Auki</string>
     <string name="live_full">Täynnä</string>
@@ -76,9 +77,13 @@
     <string name="account_signin">Kirjaudu Googlella</string>
     <string name="account_sync">Skannaa nyt</string>
     <string name="account_no_scan_yet">Ei vielä skannausta — paina Skannaa nyt.</string>
-    <string name="account_last_scan">Viimeisin skannaus: %1$s</string>
-    <string name="account_last_scan_counts">Mukana %1$d betassa · ei mukana %2$d · tarkistettu %3$d sovellusta</string>
+    <string name="account_last_scan">Viimeisin skannaus: %1$s · %2$s</string>
+    <string name="account_scan_type_manual">käsin käynnistetty</string>
+    <string name="account_scan_type_background">taustaskannaus (pieni erä)</string>
+    <string name="account_scan_totals">Mukana %1$d betassa · ei mukana %2$d · ilman beta-ohjelmaa %3$d</string>
+    <string name="account_scan_checked">Tässä skannauksessa tarkistettiin %1$d sovellusta</string>
     <string name="account_last_scan_failed">%1$d sovellusta ei voitu tarkistaa — yritetään seuraavassa skannauksessa.</string>
+    <string name="account_last_scan_failed_reason">%1$d sovellusta ei voitu tarkistaa (%2$s) — yritetään seuraavassa skannauksessa.</string>
     <string name="account_scan_progress">Tarkistetaan %1$d/%2$d: %3$s</string>
     <string name="account_relogin">Istunto vanheni — kirjaudu uudelleen.</string>
     <string name="account_error">Epäonnistui: %1$s</string>
@@ -112,4 +117,9 @@
     <string name="slot_text">Testiohjelmaan mahtuu taas testaajia. Napauta avataksesi liittymissivun.</string>
     <string name="relogin_title">Kirjaudu uudelleen</string>
     <string name="relogin_text">Google-istunto vanheni — taustaskannaus on tauolla kunnes kirjaudut uudelleen.</string>
+
+    <!-- Manual scan (foreground service) -->
+    <string name="scan_channel_name">Beta-tilojen skannaus</string>
+    <string name="scan_channel_description">Näkyy kun käsin käynnistetty beta-tilojen skannaus on käynnissä</string>
+    <string name="scan_notification_title">Skannataan beta-tiloja…</string>
 </resources>
