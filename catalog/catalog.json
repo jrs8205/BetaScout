@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1783584301525,
+  "generatedAt": 1783670050249,
   "programs": [
     {
       "packageName": "com.adobe.reader",
@@ -195,7 +195,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312061000,
+      "productionVersionCode": 312071000,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
