@@ -33,6 +33,7 @@ class BetaStatusScraper(
     ): ScrapeOutcome {
         val observations = mutableListOf<BetaObservation>()
         val failures = linkedMapOf<String, String>()
+        var consecutiveFailures = 0
         packages.forEachIndexed { index, packageName ->
             if (index > 0) delayFn(crawlDelayMillis)
             onProgress(index + 1, packages.size, packageName)
@@ -47,9 +48,28 @@ class BetaStatusScraper(
             )
             val page = fetched.getOrNull()
             if (page == null) {
-                failures[packageName] = fetched.exceptionOrNull().toShortReason()
+                val cause = fetched.exceptionOrNull()
+                failures[packageName] = cause.toShortReason()
+                val status = (cause as? HttpStatusException)?.code
+                if (status == 429 || status == 403) {
+                    // Google is throttling or blocking this session: every further
+                    // request only grows the account risk. Unchecked packages stay
+                    // due and a later run retries them.
+                    android.util.Log.d("BetaScout", "scrape $packageName: HTTP $status, stopping the run")
+                    return ScrapeOutcome(observations, needsLogin = false, failures = failures)
+                }
+                if (++consecutiveFailures >= MAX_CONSECUTIVE_FAILURES) {
+                    // The network or Google is degraded: hammering through the rest
+                    // of the list would add timeouts, not observations.
+                    android.util.Log.d(
+                        "BetaScout",
+                        "scrape: $consecutiveFailures consecutive failures, aborting the run",
+                    )
+                    return ScrapeOutcome(observations, needsLogin = false, failures = failures)
+                }
                 return@forEachIndexed
             }
+            consecutiveFailures = 0
             // A redirect to accounts.google.com is the authoritative signed-out signal;
             // the sign-in page's HTML markers have changed shape before.
             if (isSignInRedirect(page.finalUrl)) {
@@ -88,5 +108,9 @@ class BetaStatusScraper(
         if (finalUrl == null) return false
         val host = runCatching { java.net.URI(finalUrl).host }.getOrNull() ?: return false
         return host.equals("accounts.google.com", ignoreCase = true)
+    }
+
+    private companion object {
+        const val MAX_CONSECUTIVE_FAILURES = 5
     }
 }

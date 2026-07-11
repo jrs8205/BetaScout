@@ -4,6 +4,7 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeeder
 import org.jarsi.betascout.data.db.BetaObservationDao
@@ -41,6 +42,11 @@ class DefaultAppRepository(
     private val io: CoroutineDispatcher,
     private val clock: () -> Long,
 ) : AppRepository {
+
+    /** The manual and the periodic worker share this singleton; a single scan lock
+     *  prevents interleaved Google requests (doubled rate-limit exposure) and two
+     *  runs racing over the same observations and last-scan summary. */
+    private val scanMutex = Mutex()
 
     override fun observeApps(): Flow<List<AppBetaOverview>> = combine(
         installedAppDao.observeAll(),
@@ -91,77 +97,85 @@ class DefaultAppRepository(
         force: Boolean,
         onProgress: suspend (ScanProgress) -> Unit,
     ): Result<ScanSummary> = withContext(io) {
+        // tryLock, not lock(): a scan queued behind a long manual run would re-hit
+        // Google right after it finishes. The loser is rejected instead — the
+        // periodic worker skips its slot and a manual tap gets told in the UI.
+        if (!scanMutex.tryLock()) return@withContext Result.failure(DataError.ScanInProgress())
         try {
-            android.util.Log.d(TAG, "refreshBetaStatus: start force=$force")
-            // One-shot suspend queries, NOT observeAll().first(): a flow's initial
-            // emission can be lost to an invalidation-tracker race, after which
-            // first() suspends forever because nothing rewrites these tables.
-            val installed = installedAppDao.getAll().map { it.toDomain() }
-                .filter { it.isRelevantApp }
-            android.util.Log.d(TAG, "refreshBetaStatus: installed=${installed.size}")
-            val observed = betaObservationDao.getAllForAccount(session.accountKey)
-                .associateBy { it.packageName }
-            android.util.Log.d(TAG, "refreshBetaStatus: observed=${observed.size}")
-            val candidates = installed.map { app ->
-                val previous = observed[app.packageName]
-                ScanCandidate(
-                    packageName = app.packageName,
-                    lastStatus = previous?.liveStatus ?: LiveBetaStatus.UNKNOWN,
-                    checkedAt = previous?.checkedAt,
-                )
-            }
-            val due = ScanPolicy
-                .selectDue(candidates, clock(), cap = cap ?: candidates.size, ignoreTtl = force)
-                .map { it.packageName }
-            android.util.Log.d(TAG, "refreshBetaStatus: due=${due.size} $due")
-            val labels = installed.associate { it.packageName to it.label }
-            val outcome = scraper.scrape(due, session) { index, total, packageName ->
-                onProgress(ScanProgress(index, total, labels[packageName] ?: packageName))
-            }
-            android.util.Log.d(
-                TAG,
-                "refreshBetaStatus: scraped=${outcome.observations.size} needsLogin=${outcome.needsLogin}",
-            )
-            // A transition only exists where a previous observation is overwritten;
-            // a first sighting is not a change and must not fire notifications.
-            val transitions = outcome.observations.mapNotNull { observation ->
-                val previous = observed[observation.packageName] ?: return@mapNotNull null
-                if (previous.liveStatus == observation.liveStatus) return@mapNotNull null
-                StatusTransition(
-                    packageName = observation.packageName,
-                    from = previous.liveStatus,
-                    to = observation.liveStatus,
-                )
-            }
-            outcome.observations.forEach { betaObservationDao.upsert(it.toEntity()) }
-            // Stamp the failure reason onto the app's existing observation so the
-            // detail view can explain a stale status. Its checkedAt is left untouched,
-            // keeping the observation stale so the next run retries it. Never-observed
-            // packages get no placeholder row — absence already retries them first.
-            outcome.failures.forEach { (packageName, reason) ->
-                betaObservationDao.get(session.accountKey, packageName)?.let { previous ->
-                    betaObservationDao.upsert(previous.copy(lastError = reason))
+            try {
+                android.util.Log.d(TAG, "refreshBetaStatus: start force=$force")
+                // One-shot suspend queries, NOT observeAll().first(): a flow's initial
+                // emission can be lost to an invalidation-tracker race, after which
+                // first() suspends forever because nothing rewrites these tables.
+                val installed = installedAppDao.getAll().map { it.toDomain() }
+                    .filter { it.isRelevantApp }
+                android.util.Log.d(TAG, "refreshBetaStatus: installed=${installed.size}")
+                val observed = betaObservationDao.getAllForAccount(session.accountKey)
+                    .associateBy { it.packageName }
+                android.util.Log.d(TAG, "refreshBetaStatus: observed=${observed.size}")
+                val candidates = installed.map { app ->
+                    val previous = observed[app.packageName]
+                    ScanCandidate(
+                        packageName = app.packageName,
+                        lastStatus = previous?.liveStatus ?: LiveBetaStatus.UNKNOWN,
+                        checkedAt = previous?.checkedAt,
+                    )
                 }
+                val due = ScanPolicy
+                    .selectDue(candidates, clock(), cap = cap ?: candidates.size, ignoreTtl = force)
+                    .map { it.packageName }
+                android.util.Log.d(TAG, "refreshBetaStatus: due=${due.size} $due")
+                val labels = installed.associate { it.packageName to it.label }
+                val outcome = scraper.scrape(due, session) { index, total, packageName ->
+                    onProgress(ScanProgress(index, total, labels[packageName] ?: packageName))
+                }
+                android.util.Log.d(
+                    TAG,
+                    "refreshBetaStatus: scraped=${outcome.observations.size} needsLogin=${outcome.needsLogin}",
+                )
+                // A transition only exists where a previous observation is overwritten;
+                // a first sighting is not a change and must not fire notifications.
+                val transitions = outcome.observations.mapNotNull { observation ->
+                    val previous = observed[observation.packageName] ?: return@mapNotNull null
+                    if (previous.liveStatus == observation.liveStatus) return@mapNotNull null
+                    StatusTransition(
+                        packageName = observation.packageName,
+                        from = previous.liveStatus,
+                        to = observation.liveStatus,
+                    )
+                }
+                outcome.observations.forEach { betaObservationDao.upsert(it.toEntity()) }
+                // Stamp the failure reason onto the app's existing observation so the
+                // detail view can explain a stale status. Its checkedAt is left untouched,
+                // keeping the observation stale so the next run retries it. Never-observed
+                // packages get no placeholder row — absence already retries them first.
+                outcome.failures.forEach { (packageName, reason) ->
+                    betaObservationDao.get(session.accountKey, packageName)?.let { previous ->
+                        betaObservationDao.upsert(previous.copy(lastError = reason))
+                    }
+                }
+                val accountObservations = betaObservationDao.getAllForAccount(session.accountKey)
+                Result.success(
+                    ScanSummary(
+                        checked = outcome.observations.size,
+                        joined = accountObservations
+                            .count { it.observedMembership == ObservedMembership.JOINED },
+                        notJoined = accountObservations
+                            .count { it.observedMembership == ObservedMembership.NOT_JOINED },
+                        needsLogin = outcome.needsLogin,
+                        noProgram = accountObservations
+                            .count { it.liveStatus == LiveBetaStatus.NO_PROGRAM },
+                        failures = outcome.failures,
+                        transitions = transitions,
+                    ),
+                )
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                Result.failure(DataError.Local(e))
             }
-            val accountObservations = betaObservationDao.getAllForAccount(session.accountKey)
-            Result.success(
-                ScanSummary(
-                    checked = outcome.observations.size,
-                    joined = accountObservations
-                        .count { it.observedMembership == ObservedMembership.JOINED },
-                    notJoined = accountObservations
-                        .count { it.observedMembership == ObservedMembership.NOT_JOINED },
-                    needsLogin = outcome.needsLogin,
-                    noProgram = accountObservations
-                        .count { it.liveStatus == LiveBetaStatus.NO_PROGRAM },
-                    failures = outcome.failures,
-                    transitions = transitions,
-                ),
-            )
-        } catch (e: CancellationException) {
-            throw e
-        } catch (e: Exception) {
-            Result.failure(DataError.Local(e))
+        } finally {
+            scanMutex.unlock()
         }
     }
 
@@ -173,9 +187,10 @@ class DefaultAppRepository(
         it.copy(
             watching = watching,
             reminderIntervalDays = reminderIntervalDays ?: it.reminderIntervalDays,
-            // Enabling the watch starts the reminder clock so the first
-            // reminder arrives a full interval later, not immediately.
-            lastRemindedAt = if (watching && it.lastRemindedAt == null) clock() else it.lastRemindedAt,
+            // Turning the watch on (also back on after a pause) restarts the reminder
+            // clock so the first reminder arrives a full interval later, not
+            // immediately. Interval changes while watching keep the running clock.
+            lastRemindedAt = if (watching && !it.watching) clock() else it.lastRemindedAt,
         )
     }
 

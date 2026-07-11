@@ -22,8 +22,10 @@ object BetaScanScheduler {
     /** Enqueues the periodic status scan; KEEP preserves the existing schedule.
      *  Six hours balances catching short-lived beta openings against request volume:
      *  with ScanPolicy's TTLs a FULL program is still re-checked at most once a day. */
-    fun schedule(context: Context) {
-        WorkManager.getInstance(context).enqueueUniquePeriodicWork(
+    fun schedule(context: Context) = schedule(WorkManager.getInstance(context))
+
+    fun schedule(workManager: WorkManager) {
+        workManager.enqueueUniquePeriodicWork(
             WORK_NAME,
             ExistingPeriodicWorkPolicy.KEEP,
             PeriodicWorkRequestBuilder<BetaScanWorker>(6, TimeUnit.HOURS)

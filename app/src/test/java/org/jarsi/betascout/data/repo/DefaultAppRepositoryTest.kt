@@ -1,6 +1,8 @@
 package org.jarsi.betascout.data.repo
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
@@ -71,6 +73,10 @@ private class FakeBetaProgramDao : BetaProgramDao {
 
     override suspend fun upsert(program: BetaProgramEntity) {
         state.value = state.value + (program.packageName to program)
+    }
+
+    override suspend fun deleteNotIn(keep: List<String>) {
+        state.value = state.value.filterKeys { it in keep }
     }
 
     override suspend fun count(): Int = state.value.size
@@ -156,6 +162,9 @@ class DefaultAppRepositoryTest {
     /** Packages whose page fetch fails (simulated transient network error). */
     private val failingPackages = mutableSetOf<String>()
 
+    /** Runs inside every fake page fetch; tests use it to observe scan concurrency. */
+    private var onFetch: suspend (String) -> Unit = {}
+
     private fun kotlinx.coroutines.test.TestScope.repository(
         seedJson: () -> String = { """{"programs":[]}""" },
         now: Long = 42L,
@@ -168,6 +177,7 @@ class DefaultAppRepositoryTest {
         seeder = BetaSeeder(seedJson, betaDao),
         scraper = BetaStatusScraper(
             source = TestingPageSource { pkg, _ ->
+                onFetch(pkg)
                 if (pkg in failingPackages) {
                     Result.failure(RuntimeException("network error"))
                 } else {
@@ -678,6 +688,58 @@ class DefaultAppRepositoryTest {
         repo.setWatching("com.whatsapp", watching = true)
 
         assertEquals(500L, userDao.get("com.whatsapp")!!.lastRemindedAt)
+    }
+
+    @Test
+    fun `re-enabling a watch restarts the reminder interval`() = runTest {
+        repository(now = 500L).setWatching("com.whatsapp", watching = true)
+        repository(now = 600L).setWatching("com.whatsapp", watching = false)
+
+        repository(now = 9_000L).setWatching("com.whatsapp", watching = true)
+
+        // The reminder clock restarts on re-activation, so the next reminder
+        // waits a full interval instead of firing on the next daily run.
+        assertEquals(9_000L, userDao.get("com.whatsapp")!!.lastRemindedAt)
+    }
+
+    @Test
+    fun `changing the interval while watching does not restart the reminder clock`() = runTest {
+        repository(now = 500L).setWatching("com.whatsapp", watching = true)
+
+        repository(now = 900L).setWatching("com.whatsapp", watching = true, reminderIntervalDays = 14)
+
+        assertEquals(500L, userDao.get("com.whatsapp")!!.lastRemindedAt)
+    }
+
+    @Test
+    fun `an overlapping scan is rejected instead of running in parallel`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a"), app("com.b")) }
+        repo.refreshApps()
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+        var active = 0
+        var maxActive = 0
+        onFetch = {
+            active++
+            maxActive = maxOf(maxActive, active)
+            // A real suspension (yield() is a no-op on an unconfined dispatcher)
+            // so the other scan gets a chance to interleave its fetches.
+            delay(1)
+            active--
+        }
+
+        // The manual and the periodic worker can fire simultaneously; both go
+        // through this shared repository instance.
+        val manual = async { repo.refreshBetaStatus(session, force = true) }
+        val periodic = async { repo.refreshBetaStatus(session, cap = 30) }
+        val manualResult = manual.await()
+        val periodicResult = periodic.await()
+
+        assertTrue(manualResult.isSuccess)
+        // The loser is rejected outright: queueing it would re-hit Google with a
+        // second full pass right after the first one finishes.
+        assertTrue(periodicResult.exceptionOrNull() is DataError.ScanInProgress)
+        assertEquals(1, maxActive)
     }
 
     @Test

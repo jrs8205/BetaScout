@@ -2,7 +2,6 @@ package org.jarsi.betascout.data.betadb
 
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNull
 import org.junit.Test
 
 class CatalogProviderTest {
@@ -15,6 +14,7 @@ class CatalogProviderTest {
             readCache = { cached },
             writeCache = { cached = it },
             readBundled = { "BUNDLED" },
+            isValid = { true },
         )
 
         assertEquals("REMOTE", provider.catalogJson())
@@ -29,6 +29,7 @@ class CatalogProviderTest {
             readCache = { "CACHED" },
             writeCache = { writes++ },
             readBundled = { "BUNDLED" },
+            isValid = { true },
         )
 
         assertEquals("CACHED", provider.catalogJson())
@@ -42,6 +43,38 @@ class CatalogProviderTest {
             readCache = { null },
             writeCache = {},
             readBundled = { "BUNDLED" },
+            isValid = { true },
+        )
+
+        assertEquals("BUNDLED", provider.catalogJson())
+    }
+
+    @Test
+    fun `an invalid remote catalog is discarded, not cached`() = runTest {
+        // The catalog Worker answers a missing KV key with HTTP 200 and an empty
+        // catalog; accepting it would leave a fresh install with zero programs
+        // and poison the cache.
+        var cached: String? = "CACHED"
+        val provider = CatalogProvider(
+            fetchRemote = { "EMPTY" },
+            readCache = { cached },
+            writeCache = { cached = it },
+            readBundled = { "BUNDLED" },
+            isValid = { it != "EMPTY" },
+        )
+
+        assertEquals("CACHED", provider.catalogJson())
+        assertEquals("CACHED", cached)
+    }
+
+    @Test
+    fun `an invalid cached catalog falls back to bundled`() = runTest {
+        val provider = CatalogProvider(
+            fetchRemote = { null },
+            readCache = { "CORRUPT" },
+            writeCache = {},
+            readBundled = { "BUNDLED" },
+            isValid = { it != "CORRUPT" },
         )
 
         assertEquals("BUNDLED", provider.catalogJson())

@@ -36,6 +36,7 @@ import java.util.Date
 import org.jarsi.betascout.R
 import org.jarsi.betascout.data.settings.LastScanInfo
 import org.jarsi.betascout.data.settings.ScanType
+import org.jarsi.betascout.work.BetaScanWorker
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -138,9 +139,13 @@ fun AccountScreen(
                     color = MaterialTheme.colorScheme.error,
                 )
             }
-            state.error?.let {
+            state.error?.let { error ->
                 Text(
-                    text = stringResource(R.string.account_error, it),
+                    text = when (error) {
+                        BetaScanWorker.ERROR_SCAN_IN_PROGRESS ->
+                            stringResource(R.string.account_scan_in_progress)
+                        else -> stringResource(R.string.account_error, error)
+                    },
                     color = MaterialTheme.colorScheme.error,
                 )
             }

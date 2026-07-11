@@ -14,7 +14,10 @@ export default {
 
     const catalog = await env.CATALOG.get('catalog');
     if (catalog === null) {
-      return new Response(JSON.stringify({ version: 2, programs: [] }), { headers: JSON_HEADERS });
+      // Without the KV entry there is no catalog to serve. A 200 with an empty
+      // catalog would look like valid data to clients and poison their caches;
+      // a 404 makes them fall back to their cached or bundled copy instead.
+      return new Response('catalog not found', { status: 404 });
     }
     return new Response(catalog, { headers: JSON_HEADERS });
   },

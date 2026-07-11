@@ -20,6 +20,7 @@ import org.jarsi.betascout.data.settings.ScanType
 import org.jarsi.betascout.data.settings.SettingsRepository
 import org.jarsi.betascout.domain.AppRepository
 import org.jarsi.betascout.domain.BetaLinkBuilder
+import org.jarsi.betascout.domain.DataError
 import org.jarsi.betascout.domain.ScanSummary
 import org.jarsi.betascout.domain.SlotOpenPolicy
 
@@ -52,8 +53,10 @@ class BetaScanWorker @AssistedInject constructor(
 
         if (manual) {
             // Best effort: without foreground promotion the scan still runs, it just
-            // loses the exemption from the ~10-minute background execution limit.
+            // loses the exemption from the ~10-minute background execution limit —
+            // logged so a long scan that later dies quietly stays diagnosable.
             runCatching { setForeground(createForegroundInfo()) }
+                .onFailure { android.util.Log.w("BetaScout", "manual scan: setForeground failed", it) }
         }
 
         val result = if (manual) {
@@ -70,6 +73,15 @@ class BetaScanWorker @AssistedInject constructor(
             repository.refreshBetaStatus(session, cap = SCAN_CAP)
         }
         val summary = result.getOrElse { e ->
+            if (e is DataError.ScanInProgress) {
+                // Another scan holds the lock: the periodic worker just skips this
+                // slot (the next period retries); a manual tap gets told in the UI.
+                return if (manual) {
+                    Result.failure(workDataOf(KEY_ERROR to ERROR_SCAN_IN_PROGRESS))
+                } else {
+                    Result.success()
+                }
+            }
             // A manual run must surface its error in the UI instead of silently
             // retrying with the button stuck on busy.
             return if (manual) {
@@ -154,6 +166,9 @@ class BetaScanWorker @AssistedInject constructor(
         const val KEY_MANUAL = "manual"
         const val KEY_NEEDS_LOGIN = "needs_login"
         const val KEY_ERROR = "error"
+
+        /** [KEY_ERROR] value for a manual scan rejected because one is already running. */
+        const val ERROR_SCAN_IN_PROGRESS = "scan_in_progress"
         const val KEY_PROGRESS_INDEX = "progress_index"
         const val KEY_PROGRESS_TOTAL = "progress_total"
         const val KEY_PROGRESS_LABEL = "progress_label"

@@ -112,6 +112,68 @@ class BetaStatusScraperTest {
     }
 
     @Test
+    fun `stops the whole run on a rate-limit response`() = runTest {
+        val fetched = mutableListOf<String>()
+        val source = TestingPageSource { pkg, _ ->
+            fetched += pkg
+            if (pkg == "com.first") Result.failure(HttpStatusException(429))
+            else Result.success(FetchedPage(OPEN_HTML))
+        }
+
+        val outcome = scraper(source).scrape(listOf("com.first", "com.second"), session)
+
+        // Continuing into a throttled session would only grow the account risk;
+        // unchecked packages stay due and a later run retries them.
+        assertEquals(listOf("com.first"), fetched)
+        assertEquals("HttpStatusException: HTTP 429", outcome.failures["com.first"])
+        assertTrue(outcome.observations.isEmpty())
+    }
+
+    @Test
+    fun `stops the whole run when Google blocks with 403`() = runTest {
+        val fetched = mutableListOf<String>()
+        val source = TestingPageSource { pkg, _ ->
+            fetched += pkg
+            Result.failure(HttpStatusException(403))
+        }
+
+        scraper(source).scrape(listOf("com.first", "com.second"), session)
+
+        assertEquals(listOf("com.first"), fetched)
+    }
+
+    @Test
+    fun `aborts the run after repeated consecutive failures`() = runTest {
+        val fetched = mutableListOf<String>()
+        val source = TestingPageSource { pkg, _ ->
+            fetched += pkg
+            Result.failure(java.net.SocketTimeoutException("read timed out"))
+        }
+
+        val outcome = scraper(source).scrape((1..10).map { "com.app$it" }, session)
+
+        // Five failures in a row mean the network or Google is degraded; the rest
+        // of the list would just pile up more timeouts without observations.
+        assertEquals(5, fetched.size)
+        assertEquals(5, outcome.failures.size)
+    }
+
+    @Test
+    fun `a success resets the consecutive-failure abort counter`() = runTest {
+        val source = TestingPageSource { pkg, _ ->
+            if (pkg.startsWith("com.bad")) Result.failure(java.net.SocketTimeoutException("t"))
+            else Result.success(FetchedPage(OPEN_HTML))
+        }
+        // Four failures, a success, then four failures: never five in a row.
+        val packages = (1..4).map { "com.bad$it" } + "com.ok" + (5..8).map { "com.bad$it" }
+
+        val outcome = scraper(source).scrape(packages, session)
+
+        assertEquals(8, outcome.failures.size)
+        assertEquals(listOf("com.ok"), outcome.observations.map { it.packageName })
+    }
+
+    @Test
     fun `reports progress before each fetch`() = runTest {
         val progress = mutableListOf<String>()
         val source = TestingPageSource { _, _ -> Result.success(FetchedPage(OPEN_HTML)) }

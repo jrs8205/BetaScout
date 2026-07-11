@@ -16,6 +16,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
+import org.jarsi.betascout.data.betadb.BetaSeedParser
 import org.jarsi.betascout.data.betadb.BetaSeeder
 import org.jarsi.betascout.data.betadb.CatalogProvider
 import org.jarsi.betascout.data.scrape.BetaStatusScraper
@@ -124,6 +125,12 @@ object AppModule {
                 writeCache = { File(context.filesDir, CATALOG_CACHE_FILE).writeText(it) },
                 readBundled = {
                     context.assets.open(SEED_ASSET).bufferedReader().use { it.readText() }
+                },
+                // The catalog Worker answers a missing KV key with HTTP 200 and an
+                // empty catalog, and the cache file can be corrupt: only a parseable,
+                // non-empty catalog may replace the bundled seed (or be cached).
+                isValid = { json ->
+                    runCatching { BetaSeedParser.parse(json).isNotEmpty() }.getOrDefault(false)
                 },
             )::catalogJson,
             dao = betaProgramDao,

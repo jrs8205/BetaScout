@@ -41,10 +41,20 @@ interface BetaProgramDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertIgnoring(programs: List<BetaProgramEntity>)
 
-    /** Catalog load: updates existing programs (e.g. productionVersionCode) and adds new ones.
-     *  beta_programs is fully derived from the catalog; user data lives in a separate table. */
     @Upsert
     suspend fun upsertAll(programs: List<BetaProgramEntity>)
+
+    @Query("DELETE FROM beta_programs WHERE packageName NOT IN (:keep)")
+    suspend fun deleteNotIn(keep: List<String>)
+
+    /** Catalog load: mirrors the catalog exactly — beta_programs is fully derived
+     *  from it, so programs the backend removed disappear here too. User data lives
+     *  in separate tables and is untouched. */
+    @Transaction
+    suspend fun replaceAll(programs: List<BetaProgramEntity>) {
+        deleteNotIn(programs.map { it.packageName })
+        upsertAll(programs)
+    }
 
     @Upsert
     suspend fun upsert(program: BetaProgramEntity)

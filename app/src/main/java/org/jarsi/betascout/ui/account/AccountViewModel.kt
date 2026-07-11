@@ -1,10 +1,12 @@
 package org.jarsi.betascout.ui.account
 
+import android.webkit.CookieManager
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
+import androidx.work.await
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -146,12 +148,27 @@ class AccountViewModel @Inject constructor(
 
     fun signOut() {
         viewModelScope.launch {
-            workManager.cancelUniqueWork(BetaScanScheduler.MANUAL_WORK_NAME)
+            // Stop BOTH scans first: a worker still holding the old session would
+            // otherwise keep fetching Google pages with its cookies and could write
+            // freshly deleted observations back. await() confirms WorkManager has
+            // processed the cancellations before anything is cleared.
+            workManager.cancelUniqueWork(BetaScanScheduler.MANUAL_WORK_NAME).await()
+            workManager.cancelUniqueWork(BetaScanScheduler.WORK_NAME).await()
+            // Cancelling the unique periodic work removed its schedule too;
+            // re-register it so background scans resume after the next sign-in
+            // without an app restart (signed-out runs are no-ops).
+            BetaScanScheduler.schedule(workManager)
             // Delete the account's observations before clearing the session so a
             // signed-out account's beta memberships do not linger on the device.
             settings.playSession.first()?.let { repository.clearObservations(it.accountKey) }
             settings.clearPlaySession()
             settings.clearLastScan()
+            // The login WebView persists its Google cookies app-wide: without
+            // clearing them the next "sign in" silently reuses the old session.
+            CookieManager.getInstance().apply {
+                removeAllCookies(null)
+                flush()
+            }
             _state.value = AccountUiState()
         }
     }

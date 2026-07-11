@@ -15,15 +15,19 @@ import org.jarsi.betascout.domain.PlaySession
  * forms). If the session has expired, Google redirects to the sign-in page; the
  * final URL is reported so the scraper can recognise that redirect.
  */
+/** A response status that carries no usable testing page (rate limiting, server errors). */
+class HttpStatusException(val code: Int) : java.io.IOException("HTTP $code")
+
 class HttpTestingPageSource(
     private val io: CoroutineDispatcher = Dispatchers.IO,
     private val userAgent: String = DEFAULT_USER_AGENT,
+    private val urlFor: (String) -> String = BetaLinkBuilder::testingUrl,
 ) : TestingPageSource {
 
     override suspend fun fetch(packageName: String, session: PlaySession): Result<FetchedPage> =
         withContext(io) {
             try {
-                val connection = (URL(BetaLinkBuilder.testingUrl(packageName))
+                val connection = (URL(urlFor(packageName))
                     .openConnection() as HttpURLConnection).apply {
                     requestMethod = "GET"
                     instanceFollowRedirects = true
@@ -36,14 +40,21 @@ class HttpTestingPageSource(
                 try {
                     val code = connection.responseCode
                     android.util.Log.d("BetaScout", "fetch $packageName: http=$code url=${connection.url}")
-                    val stream = if (code in 200..299) {
-                        connection.inputStream
+                    if (code !in 200..299 && code != 404) {
+                        // Rate limiting and server errors carry no page worth parsing;
+                        // treating them as one would fabricate an UNKNOWN observation
+                        // that overwrites a good status and skips the failure counters.
+                        Result.failure(HttpStatusException(code))
                     } else {
-                        // A 404 body is still meaningful: it is the "no testing program" page.
-                        connection.errorStream
+                        val stream = if (code in 200..299) {
+                            connection.inputStream
+                        } else {
+                            // A 404 body is still meaningful: it is the "no testing program" page.
+                            connection.errorStream
+                        }
+                        val html = stream?.bufferedReader()?.use { it.readText() }.orEmpty()
+                        Result.success(FetchedPage(html, finalUrl = connection.url.toString()))
                     }
-                    val html = stream?.bufferedReader()?.use { it.readText() }.orEmpty()
-                    Result.success(FetchedPage(html, finalUrl = connection.url.toString()))
                 } finally {
                     connection.disconnect()
                 }
