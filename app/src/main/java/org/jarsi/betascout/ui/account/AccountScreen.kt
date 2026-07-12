@@ -21,6 +21,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -109,6 +110,12 @@ fun AccountScreen(
                         CircularProgressIndicator()
                     }
                 }
+                OutlinedButton(
+                    onClick = viewModel::cancelScan,
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    Text(stringResource(R.string.account_scan_cancel))
+                }
             }
 
             if (state.signedIn) {
@@ -121,6 +128,18 @@ fun AccountScreen(
                 ) {
                     Text(stringResource(R.string.account_sync))
                 }
+                TextButton(
+                    onClick = viewModel::fullResync,
+                    enabled = !state.busy,
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    Text(stringResource(R.string.account_full_scan))
+                }
+                Text(
+                    text = stringResource(R.string.account_full_scan_hint),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
                 OutlinedButton(onClick = viewModel::signOut, modifier = Modifier.fillMaxWidth()) {
                     Text(stringResource(R.string.account_signout))
                 }

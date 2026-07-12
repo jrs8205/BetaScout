@@ -78,6 +78,9 @@
     <string name="account_hint">Sign in with your Google account so BetaScout can read your own testing pages and detect which betas you are in and whether each is open or full. It never joins on your behalf.</string>
     <string name="account_signin">Sign in with Google</string>
     <string name="account_sync">Scan now</string>
+    <string name="account_scan_cancel">Cancel scan</string>
+    <string name="account_full_scan">Re-scan everything</string>
+    <string name="account_full_scan_hint">Checks every app again — can take 10–15 minutes.</string>
     <string name="account_no_scan_yet">No scan yet — tap Scan now.</string>
     <string name="account_last_scan">Last scan: %1$s · %2$s</string>
     <string name="account_scan_type_manual">manual</string>
@@ -125,4 +128,5 @@
     <string name="scan_channel_name">Beta status scan</string>
     <string name="scan_channel_description">Shown while a manual beta status scan is running</string>
     <string name="scan_notification_title">Scanning beta statuses…</string>
+    <string name="scan_notification_cancel">Cancel</string>
 </resources>

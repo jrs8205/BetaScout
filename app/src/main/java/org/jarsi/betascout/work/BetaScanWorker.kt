@@ -9,6 +9,7 @@ import androidx.core.app.NotificationCompat
 import androidx.hilt.work.HiltWorker
 import androidx.work.CoroutineWorker
 import androidx.work.ForegroundInfo
+import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
 import dagger.assisted.Assisted
@@ -154,11 +155,21 @@ class BetaScanWorker @AssistedInject constructor(
         applicationContext.getSystemService(NotificationManager::class.java)
             .createNotificationChannel(channel)
 
+        // Lets the user stop a long scan from the shade; per-app persistence means
+        // cancelling loses nothing already checked.
+        val cancelIntent = WorkManager.getInstance(applicationContext)
+            .createCancelPendingIntent(id)
+
         val notification = NotificationCompat.Builder(applicationContext, SCAN_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_stat_reminder)
             .setContentTitle(applicationContext.getString(R.string.scan_notification_title))
             .setOngoing(true)
             .setProgress(0, 0, true)
+            .addAction(
+                R.drawable.ic_stat_reminder,
+                applicationContext.getString(R.string.scan_notification_cancel),
+                cancelIntent,
+            )
             .build()
 
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
