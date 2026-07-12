@@ -34,16 +34,26 @@ object BetaScanScheduler {
         )
     }
 
-    /** Enqueues a user-initiated full scan as unique work so it survives the user
+    /** Enqueues a user-initiated scan as unique work so it survives the user
      *  leaving the screen (or the app). KEEP means a second tap while one is running
      *  does nothing; REPLACE (after a fresh sign-in) supersedes a stale run and its
-     *  recorded outcome. */
-    fun scanNow(workManager: WorkManager, policy: ExistingWorkPolicy = ExistingWorkPolicy.KEEP) {
+     *  recorded outcome. [force] ignores the freshness TTLs (full re-scan); the
+     *  default incremental scan checks new apps and stale observations only. */
+    fun scanNow(
+        workManager: WorkManager,
+        policy: ExistingWorkPolicy = ExistingWorkPolicy.KEEP,
+        force: Boolean = false,
+    ) {
         workManager.enqueueUniqueWork(
             MANUAL_WORK_NAME,
             policy,
             OneTimeWorkRequestBuilder<BetaScanWorker>()
-                .setInputData(workDataOf(BetaScanWorker.KEY_MANUAL to true))
+                .setInputData(
+                    workDataOf(
+                        BetaScanWorker.KEY_MANUAL to true,
+                        BetaScanWorker.KEY_FORCE to force,
+                    ),
+                )
                 .setConstraints(connected)
                 .build(),
         )

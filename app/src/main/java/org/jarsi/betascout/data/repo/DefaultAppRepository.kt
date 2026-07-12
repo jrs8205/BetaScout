@@ -126,25 +126,33 @@ class DefaultAppRepository(
                     .map { it.packageName }
                 android.util.Log.d(TAG, "refreshBetaStatus: due=${due.size} $due")
                 val labels = installed.associate { it.packageName to it.label }
-                val outcome = scraper.scrape(due, session) { index, total, packageName ->
-                    onProgress(ScanProgress(index, total, labels[packageName] ?: packageName))
+                // Persisted per page, not per run: a cancelled or dying run keeps
+                // everything checked so far, and the next incremental scan continues
+                // from the remainder. A transition only exists where a previous
+                // observation is overwritten; a first sighting is not a change and
+                // must not fire notifications.
+                val transitions = mutableListOf<StatusTransition>()
+                val outcome = scraper.scrape(
+                    due,
+                    session,
+                    onProgress = { index, total, packageName ->
+                        onProgress(ScanProgress(index, total, labels[packageName] ?: packageName))
+                    },
+                ) { observation ->
+                    val previous = observed[observation.packageName]
+                    if (previous != null && previous.liveStatus != observation.liveStatus) {
+                        transitions += StatusTransition(
+                            packageName = observation.packageName,
+                            from = previous.liveStatus,
+                            to = observation.liveStatus,
+                        )
+                    }
+                    betaObservationDao.upsert(observation.toEntity())
                 }
                 android.util.Log.d(
                     TAG,
                     "refreshBetaStatus: scraped=${outcome.observations.size} needsLogin=${outcome.needsLogin}",
                 )
-                // A transition only exists where a previous observation is overwritten;
-                // a first sighting is not a change and must not fire notifications.
-                val transitions = outcome.observations.mapNotNull { observation ->
-                    val previous = observed[observation.packageName] ?: return@mapNotNull null
-                    if (previous.liveStatus == observation.liveStatus) return@mapNotNull null
-                    StatusTransition(
-                        packageName = observation.packageName,
-                        from = previous.liveStatus,
-                        to = observation.liveStatus,
-                    )
-                }
-                outcome.observations.forEach { betaObservationDao.upsert(it.toEntity()) }
                 // Stamp the failure reason onto the app's existing observation so the
                 // detail view can explain a stale status. Its checkedAt is left untouched,
                 // keeping the observation stale so the next run retries it. Never-observed

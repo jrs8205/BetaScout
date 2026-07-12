@@ -30,6 +30,7 @@ class BetaStatusScraper(
         packages: List<String>,
         session: PlaySession,
         onProgress: suspend (index: Int, total: Int, packageName: String) -> Unit = { _, _, _ -> },
+        onObservation: suspend (BetaObservation) -> Unit = {},
     ): ScrapeOutcome {
         val observations = mutableListOf<BetaObservation>()
         val failures = linkedMapOf<String, String>()
@@ -84,13 +85,17 @@ class BetaStatusScraper(
             if (result.needsLogin) {
                 return ScrapeOutcome(observations, needsLogin = true, failures = failures)
             }
-            observations += BetaObservation(
+            val observation = BetaObservation(
                 accountKey = session.accountKey,
                 packageName = packageName,
                 liveStatus = result.liveStatus,
                 observedMembership = result.membership,
                 checkedAt = clock(),
             )
+            observations += observation
+            // Delivered immediately so the caller can persist it: a run that is
+            // cancelled or dies later must not lose the pages already checked.
+            onObservation(observation)
         }
         return ScrapeOutcome(observations, needsLogin = false, failures = failures)
     }

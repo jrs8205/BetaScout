@@ -178,11 +178,50 @@ class BetaStatusScraperTest {
         val progress = mutableListOf<String>()
         val source = TestingPageSource { _, _ -> Result.success(FetchedPage(OPEN_HTML)) }
 
-        scraper(source).scrape(listOf("com.a", "com.b"), session) { index, total, pkg ->
-            progress += "$index/$total $pkg"
-        }
+        scraper(source).scrape(
+            listOf("com.a", "com.b"),
+            session,
+            onProgress = { index, total, pkg -> progress += "$index/$total $pkg" },
+        )
 
         assertEquals(listOf("1/2 com.a", "2/2 com.b"), progress)
+    }
+
+    @Test
+    fun `delivers each observation to the callback as soon as it is parsed`() = runTest {
+        val events = mutableListOf<String>()
+        val source = TestingPageSource { pkg, _ ->
+            events += "fetch $pkg"
+            Result.success(FetchedPage(OPEN_HTML))
+        }
+
+        scraper(source).scrape(
+            listOf("com.a", "com.b"),
+            session,
+            onObservation = { events += "obs ${it.packageName}" },
+        )
+
+        // Each observation must be delivered before the next fetch starts, so an
+        // interrupted run keeps everything checked so far.
+        assertEquals(listOf("fetch com.a", "obs com.a", "fetch com.b", "obs com.b"), events)
+    }
+
+    @Test
+    fun `observations delivered before a rate-limit stop are kept`() = runTest {
+        val delivered = mutableListOf<String>()
+        val source = TestingPageSource { pkg, _ ->
+            if (pkg == "com.second") Result.failure(HttpStatusException(429))
+            else Result.success(FetchedPage(OPEN_HTML))
+        }
+
+        val outcome = scraper(source).scrape(
+            listOf("com.first", "com.second", "com.third"),
+            session,
+            onObservation = { delivered += it.packageName },
+        )
+
+        assertEquals(listOf("com.first"), delivered)
+        assertEquals(listOf("com.first"), outcome.observations.map { it.packageName })
     }
 
     @Test

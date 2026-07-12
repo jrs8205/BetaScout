@@ -40,6 +40,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.jarsi.betascout.R
 import org.jarsi.betascout.domain.AppBetaOverview
@@ -53,6 +54,13 @@ fun AppListScreen(
     viewModel: AppListViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    // The installed-app mirror only updates when this screen refreshes it. Coming
+    // back from the launcher after installing an app must pick the new app up
+    // without a manual refresh tap.
+    LifecycleResumeEffect(Unit) {
+        viewModel.refresh()
+        onPauseOrDispose { }
+    }
     AppListContent(
         uiState = uiState,
         onAppClick = onAppClick,
@@ -89,7 +97,11 @@ private fun AppListContent(
         },
     ) { padding ->
         Column(modifier = Modifier.fillMaxSize().padding(padding)) {
-            BetaTabs(selected = uiState.selectedTab, onSelectTab = onSelectTab)
+            BetaTabs(
+                selected = uiState.selectedTab,
+                counts = uiState.counts,
+                onSelectTab = onSelectTab,
+            )
             SearchAndFilters(uiState.filters, onFiltersChange)
 
             if (uiState.hasError) {
@@ -136,14 +148,26 @@ private val betaTabs = listOf(
 )
 
 @Composable
-private fun BetaTabs(selected: BetaMembership, onSelectTab: (BetaMembership) -> Unit) {
+private fun BetaTabs(
+    selected: BetaMembership,
+    counts: Map<BetaMembership, Int>,
+    onSelectTab: (BetaMembership) -> Unit,
+) {
     val selectedIndex = betaTabs.indexOfFirst { it.first == selected }.coerceAtLeast(0)
     TabRow(selectedTabIndex = selectedIndex) {
         betaTabs.forEach { (membership, labelRes) ->
             Tab(
                 selected = membership == selected,
                 onClick = { onSelectTab(membership) },
-                text = { Text(stringResource(labelRes)) },
+                text = {
+                    Text(
+                        stringResource(
+                            R.string.tab_with_count,
+                            stringResource(labelRes),
+                            counts[membership] ?: 0,
+                        ),
+                    )
+                },
             )
         }
     }

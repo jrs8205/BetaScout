@@ -9,6 +9,7 @@ import androidx.core.app.NotificationCompat
 import androidx.hilt.work.HiltWorker
 import androidx.work.CoroutineWorker
 import androidx.work.ForegroundInfo
+import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
 import dagger.assisted.Assisted
@@ -30,9 +31,11 @@ import org.jarsi.betascout.domain.SlotOpenPolicy
  *
  * - Periodic (default): re-checks only the statuses due per ScanPolicy's TTLs, capped
  *   so a run stays gentle on the account. Skips silently when no one is signed in.
- * - Manual ("Scan now"): forced and uncapped. With the 3-second crawl delay a large
- *   device takes well over ten minutes, so the run is promoted to a foreground
- *   service — surviving the user leaving the app — and reports per-app progress.
+ * - Manual ("Scan now"): uncapped; incremental by default (new + stale apps),
+ *   forced to re-check everything when [KEY_FORCE] is set. With the 3-second
+ *   crawl delay a large forced run takes well over ten minutes, so the run is
+ *   promoted to a foreground service — surviving the user leaving the app —
+ *   and reports per-app progress.
  */
 @HiltWorker
 class BetaScanWorker @AssistedInject constructor(
@@ -44,6 +47,7 @@ class BetaScanWorker @AssistedInject constructor(
 
     override suspend fun doWork(): Result {
         val manual = inputData.getBoolean(KEY_MANUAL, false)
+        val force = inputData.getBoolean(KEY_FORCE, false)
         val session = settings.playSession.first()
             ?: return if (manual) {
                 Result.failure(workDataOf(KEY_ERROR to "not_signed_in"))
@@ -59,8 +63,15 @@ class BetaScanWorker @AssistedInject constructor(
                 .onFailure { android.util.Log.w("BetaScout", "manual scan: setForeground failed", it) }
         }
 
+        // The installed-app mirror is otherwise only refreshed by the list screen;
+        // an app installed since then must still join this scan's set. A failure
+        // falls back to the cached list — a slightly stale set beats no scan.
+        repository.refreshApps().onFailure {
+            android.util.Log.w("BetaScout", "scan: refreshApps failed, using cached app list", it)
+        }
+
         val result = if (manual) {
-            repository.refreshBetaStatus(session, force = true) { progress ->
+            repository.refreshBetaStatus(session, force = force) { progress ->
                 setProgress(
                     workDataOf(
                         KEY_PROGRESS_INDEX to progress.index,
@@ -144,11 +155,21 @@ class BetaScanWorker @AssistedInject constructor(
         applicationContext.getSystemService(NotificationManager::class.java)
             .createNotificationChannel(channel)
 
+        // Lets the user stop a long scan from the shade; per-app persistence means
+        // cancelling loses nothing already checked.
+        val cancelIntent = WorkManager.getInstance(applicationContext)
+            .createCancelPendingIntent(id)
+
         val notification = NotificationCompat.Builder(applicationContext, SCAN_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_stat_reminder)
             .setContentTitle(applicationContext.getString(R.string.scan_notification_title))
             .setOngoing(true)
             .setProgress(0, 0, true)
+            .addAction(
+                R.drawable.ic_stat_reminder,
+                applicationContext.getString(R.string.scan_notification_cancel),
+                cancelIntent,
+            )
             .build()
 
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -164,6 +185,7 @@ class BetaScanWorker @AssistedInject constructor(
 
     companion object {
         const val KEY_MANUAL = "manual"
+        const val KEY_FORCE = "force"
         const val KEY_NEEDS_LOGIN = "needs_login"
         const val KEY_ERROR = "error"
 

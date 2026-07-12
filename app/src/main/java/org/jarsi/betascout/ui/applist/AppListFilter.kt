@@ -31,6 +31,10 @@ fun filterApps(rows: List<AppBetaOverview>, filters: AppFilters): List<AppBetaOv
         .toList()
 }
 
+/** Per-tab totals of the already-filtered rows, shown in the tab titles. */
+fun tabCounts(filteredRows: List<AppBetaOverview>): Map<BetaMembership, Int> =
+    filteredRows.groupingBy { it.betaMembership() }.eachCount()
+
 /** Rule for the "Beta available" badge: the program is known and not marked non-existent. */
 fun AppBetaOverview.hasKnownBeta(): Boolean {
     // A positive membership signal (scrape saw a leave form, or the user manually
