@@ -65,6 +65,8 @@ private class FakeBetaProgramDao : BetaProgramDao {
 
     override fun observeAll(): Flow<List<BetaProgramEntity>> = state.map { it.values.toList() }
 
+    override suspend fun getAll(): List<BetaProgramEntity> = state.value.values.toList()
+
     override suspend fun insertIgnoring(programs: List<BetaProgramEntity>) {
         state.value = programs.associateBy { it.packageName } + state.value
     }

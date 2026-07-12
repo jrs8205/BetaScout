@@ -14,9 +14,11 @@ import java.net.URL
 import javax.inject.Singleton
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeedParser
+import org.jarsi.betascout.data.crowd.DiscoveryReporter
 import org.jarsi.betascout.data.betadb.BetaSeeder
 import org.jarsi.betascout.data.betadb.CatalogProvider
 import org.jarsi.betascout.data.scrape.BetaStatusScraper
@@ -66,6 +68,48 @@ object AppModule {
             null
         }
     }
+
+    /** POST discovery hints; true only on a 2xx answer. Package names are plain
+     *  `[A-Za-z0-9_.]` identifiers, so the JSON needs no escaping. */
+    private suspend fun postHints(urlBase: String, packages: List<String>): Boolean =
+        withContext(Dispatchers.IO) {
+            try {
+                val connection = (URL("$urlBase/hints").openConnection() as HttpURLConnection).apply {
+                    requestMethod = "POST"
+                    doOutput = true
+                    connectTimeout = 10_000
+                    readTimeout = 10_000
+                    setRequestProperty("Content-Type", "application/json; charset=utf-8")
+                }
+                try {
+                    val body = """{"version":1,"packages":[${
+                        packages.joinToString(",") { "\"$it\"" }
+                    }]}"""
+                    connection.outputStream.use { it.write(body.toByteArray()) }
+                    connection.responseCode in 200..299
+                } finally {
+                    connection.disconnect()
+                }
+            } catch (e: Exception) {
+                false
+            }
+        }
+
+    @Provides
+    @Singleton
+    fun provideDiscoveryReporter(
+        settings: SettingsRepository,
+        betaObservationDao: BetaObservationDao,
+        betaProgramDao: BetaProgramDao,
+    ): DiscoveryReporter = DiscoveryReporter(
+        shareEnabled = { settings.shareDiscoveries.first() },
+        reportedPackages = { settings.reportedPackages.first() },
+        markReported = { settings.addReportedPackages(it) },
+        betaObservationDao = betaObservationDao,
+        betaProgramDao = betaProgramDao,
+        post = { packages -> postHints(CATALOG_URL, packages) },
+        io = Dispatchers.IO,
+    )
 
     @Provides
     @Singleton

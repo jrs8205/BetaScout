@@ -74,6 +74,14 @@ only after you sign in — fetching `play.google.com/apps/testing/…` pages wit
 session to read your memberships. There is no telemetry and no analytics; your app list
 and markings never leave the device.
 
+**Optional discovery sharing (off by default):** if you enable "Share discoveries" in
+settings, BetaScout uploads the package names of apps whose scans found a testing
+program, so the shared catalog can grow with real-world finds. Only bare package names
+are ever sent — never your account, memberships, device identifiers or anything else —
+and the server stores no submitter information. Uploaded hints are only candidates:
+they enter the catalog after the daily harvester independently verifies them against
+Google Play.
+
 ## Building from source
 
 Requirements: JDK 17+ and the Android SDK (or just Android Studio).

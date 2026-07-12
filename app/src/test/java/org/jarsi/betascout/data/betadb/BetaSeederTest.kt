@@ -14,6 +14,7 @@ private class FakeBetaProgramDao : BetaProgramDao {
     val state = linkedMapOf<String, BetaProgramEntity>()
 
     override fun observeAll(): Flow<List<BetaProgramEntity>> = MutableStateFlow(emptyList())
+    override suspend fun getAll(): List<BetaProgramEntity> = state.values.toList()
     override suspend fun insertIgnoring(programs: List<BetaProgramEntity>) {
         programs.forEach { state.putIfAbsent(it.packageName, it) }
     }

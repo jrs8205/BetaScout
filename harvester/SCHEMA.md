@@ -20,7 +20,7 @@ fields are safe to include.
 
       // Provenance (ignored by the app, used by the harvester's merge step):
       "hasBeta": true,
-      "source": "APKMIRROR"                          // APKMIRROR | GPLAYAPI | OPTIN | CURATED
+      "source": "APKMIRROR"                          // APKMIRROR | GPLAYAPI | CROWD | OPTIN | CURATED
     }
   ]
 }
@@ -30,7 +30,7 @@ fields are safe to include.
 
 | Field | Filled by |
 |-------|-----------|
-| `packageName`, `appName`, `hasBeta` | APKMirror harvest, gplayapi, or curation |
+| `packageName`, `appName`, `hasBeta` | APKMirror harvest, gplayapi, crowd hints (gplayapi-verified), or curation |
 | `liveStatus`, `statusCheckedAt` | the opt-in open/full checker (authenticated) |
 | `knownStatus`, `notes` | curation |
 

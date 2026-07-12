@@ -38,6 +38,9 @@ interface BetaProgramDao {
     @Query("SELECT * FROM beta_programs")
     fun observeAll(): Flow<List<BetaProgramEntity>>
 
+    @Query("SELECT * FROM beta_programs")
+    suspend fun getAll(): List<BetaProgramEntity>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertIgnoring(programs: List<BetaProgramEntity>)
 

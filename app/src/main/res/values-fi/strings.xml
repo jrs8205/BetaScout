@@ -126,6 +126,12 @@
     <string name="account_dynamic_color">Käytä laitteen värejä (Material You)</string>
     <string name="account_dynamic_color_hint">Värit seuraavat taustakuvaa BetaScoutin oman ilmeen sijaan.</string>
     <string name="account_privacy_note">BetaScout lukee vain omia testisivujasi eikä koskaan liity betoihin puolestasi.</string>
+    <string name="share_prompt_title">Auta kasvattamaan beta-katalogia</string>
+    <string name="share_prompt_body">Jaa nimettömästi, mille sovelluksille skannauksesi löytävät testiohjelman. Vain pakettinimet lähetetään — ei koskaan tiliäsi tai jäsenyyksiäsi.</string>
+    <string name="share_prompt_enable">Ota käyttöön</string>
+    <string name="share_prompt_no">Ei kiitos</string>
+    <string name="share_toggle_title">Jaa löydöt</string>
+    <string name="share_toggle_hint">Vain nimettömät pakettinimet</string>
     <string name="account_scan_totals">Mukana %1$d betassa · ei mukana %2$d · ilman beta-ohjelmaa %3$d</string>
     <string name="account_scan_checked">Tässä skannauksessa tarkistettiin %1$d sovellusta</string>
     <string name="account_last_scan_failed">%1$d sovellusta ei voitu tarkistaa — yritetään seuraavassa skannauksessa.</string>
