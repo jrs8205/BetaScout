@@ -99,8 +99,16 @@
     <string name="account_full_scan_hint">Tarkistaa kaikki sovellukset uudelleen — voi kestää 10–15 minuuttia.</string>
     <string name="account_no_scan_yet">Ei vielä skannausta — paina Skannaa nyt.</string>
     <string name="account_last_scan">Viimeisin skannaus: %1$s · %2$s</string>
-    <string name="account_scan_type_manual">käsin käynnistetty</string>
+    <string name="account_scan_type_manual">käynnistit itse</string>
     <string name="account_scan_type_background">taustaskannaus (pieni erä)</string>
+    <string name="account_last_scan_label">Viimeisin skannaus</string>
+    <string name="account_connected">Google-tili yhdistetty</string>
+    <string name="account_background_scan_title">Automaattinen taustaskannaus</string>
+    <string name="account_background_scan_body">Tarkistaa vanhentuneet beta-tilat 6 tunnin välein, kun olet kirjautuneena — sitä ei tarvitse käynnistää itse.</string>
+    <string name="account_full_scan_button">Skannaa kaikki</string>
+    <string name="account_dynamic_color">Käytä laitteen värejä (Material You)</string>
+    <string name="account_dynamic_color_hint">Värit seuraavat taustakuvaa BetaScoutin oman ilmeen sijaan.</string>
+    <string name="account_privacy_note">BetaScout lukee vain omia testisivujasi eikä koskaan liity betoihin puolestasi.</string>
     <string name="account_scan_totals">Mukana %1$d betassa · ei mukana %2$d · ilman beta-ohjelmaa %3$d</string>
     <string name="account_scan_checked">Tässä skannauksessa tarkistettiin %1$d sovellusta</string>
     <string name="account_last_scan_failed">%1$d sovellusta ei voitu tarkistaa — yritetään seuraavassa skannauksessa.</string>
