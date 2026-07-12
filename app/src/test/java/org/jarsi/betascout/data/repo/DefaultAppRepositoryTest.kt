@@ -1,8 +1,10 @@
 package org.jarsi.betascout.data.repo
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
@@ -555,6 +557,68 @@ class DefaultAppRepositoryTest {
             listOf(ScanProgress(1, 2, "Alpha"), ScanProgress(2, 2, "Beta")),
             progress,
         )
+    }
+
+    @Test
+    fun `records each observation as soon as it is scraped`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a"), app("com.b")) }
+        repo.refreshApps()
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+        val seenDuringScan = mutableListOf<String?>()
+        onFetch = { pkg ->
+            // What com.a looks like in the DB while com.b is still being fetched.
+            if (pkg == "com.b") seenDuringScan += observationDao.get(ACCOUNT, "com.a")?.packageName
+        }
+
+        repo.refreshBetaStatus(session).getOrThrow()
+
+        assertEquals(listOf<String?>("com.a"), seenDuringScan)
+    }
+
+    @Test
+    fun `a run that dies mid-scan keeps the observations recorded so far`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a"), app("com.b")) }
+        repo.refreshApps()
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+        onFetch = { pkg -> if (pkg == "com.b") throw IllegalStateException("boom") }
+
+        val result = repo.refreshBetaStatus(session)
+
+        assertTrue(result.exceptionOrNull() is DataError.Local)
+        assertEquals(
+            ObservedMembership.NOT_JOINED,
+            observationDao.get(ACCOUNT, "com.a")!!.observedMembership,
+        )
+        assertNull(observationDao.get(ACCOUNT, "com.b"))
+    }
+
+    @Test
+    fun `a cancelled scan keeps completed observations and releases the scan lock`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a"), app("com.b")) }
+        repo.refreshApps()
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+        lateinit var job: Job
+        onFetch = { pkg ->
+            if (pkg == "com.b") {
+                job.cancel()
+                // First suspension point after the cancel → CancellationException here.
+                delay(1)
+            }
+        }
+        job = launch { repo.refreshBetaStatus(session) }
+        job.join()
+
+        assertTrue(job.isCancelled)
+        assertEquals(
+            ObservedMembership.NOT_JOINED,
+            observationDao.get(ACCOUNT, "com.a")!!.observedMembership,
+        )
+        assertNull(observationDao.get(ACCOUNT, "com.b"))
+        // The finally block released the lock: a follow-up scan must not be rejected.
+        assertTrue(repo.refreshBetaStatus(session, force = true).isSuccess)
     }
 
     @Test
