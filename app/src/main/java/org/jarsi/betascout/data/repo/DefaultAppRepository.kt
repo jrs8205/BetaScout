@@ -126,9 +126,13 @@ class DefaultAppRepository(
                     .map { it.packageName }
                 android.util.Log.d(TAG, "refreshBetaStatus: due=${due.size} $due")
                 val labels = installed.associate { it.packageName to it.label }
-                val outcome = scraper.scrape(due, session) { index, total, packageName ->
-                    onProgress(ScanProgress(index, total, labels[packageName] ?: packageName))
-                }
+                val outcome = scraper.scrape(
+                    due,
+                    session,
+                    onProgress = { index, total, packageName ->
+                        onProgress(ScanProgress(index, total, labels[packageName] ?: packageName))
+                    },
+                )
                 android.util.Log.d(
                     TAG,
                     "refreshBetaStatus: scraped=${outcome.observations.size} needsLogin=${outcome.needsLogin}",
