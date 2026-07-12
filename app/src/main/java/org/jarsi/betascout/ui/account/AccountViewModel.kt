@@ -141,9 +141,20 @@ class AccountViewModel @Inject constructor(
         }
     }
 
+    /** Incremental scan: new apps and stale observations only. */
     fun resync() {
         _state.update { it.copy(error = null) }
         BetaScanScheduler.scanNow(workManager)
+    }
+
+    /** Full re-scan: ignores freshness TTLs and re-checks every app. */
+    fun fullResync() {
+        _state.update { it.copy(error = null) }
+        BetaScanScheduler.scanNow(workManager, force = true)
+    }
+
+    fun cancelScan() {
+        workManager.cancelUniqueWork(BetaScanScheduler.MANUAL_WORK_NAME)
     }
 
     fun signOut() {
