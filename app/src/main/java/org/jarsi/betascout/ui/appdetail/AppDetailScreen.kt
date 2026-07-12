@@ -13,14 +13,16 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
@@ -36,8 +38,10 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -50,7 +54,8 @@ import org.jarsi.betascout.domain.KnownBetaStatus
 import org.jarsi.betascout.domain.LiveBetaStatus
 import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.UserBetaState
-import org.jarsi.betascout.ui.applist.canJoinBeta
+import org.jarsi.betascout.ui.applist.BetaMembership
+import org.jarsi.betascout.ui.applist.betaMembership
 import org.jarsi.betascout.ui.applist.labelRes
 import org.jarsi.betascout.ui.components.AppIcon
 import org.jarsi.betascout.ui.components.openInCustomTab
@@ -88,7 +93,7 @@ private fun AppDetailContent(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(overview?.app?.label ?: packageName) },
+                title = {},
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(
@@ -116,17 +121,14 @@ private fun AppDetailContent(
                     .fillMaxSize()
                     .padding(padding)
                     .verticalScroll(rememberScrollState())
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp),
+                    .padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 Header(overview)
-                LinkButtons(overview)
-                ObservedStatusCard(overview)
-                KnownBetaCard(overview)
-                MyStatusSection(overview, onSetState)
-                WatchSection(overview, onSetWatching)
-                CheckedSection(overview, onMarkChecked)
-                NoteSection(overview, onSaveNote)
+                HeroCard(overview, onSetWatching)
+                WatchCard(overview, onSetWatching)
+                InfoCard(overview)
+                MarkingCard(overview, onSetState, onMarkChecked, onSaveNote)
             }
         }
     }
@@ -134,133 +136,282 @@ private fun AppDetailContent(
 
 @Composable
 private fun Header(overview: AppBetaOverview) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(16.dp),
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(2.dp),
     ) {
         AppIcon(packageName = overview.app.packageName, contentDescription = null, size = 56.dp)
-        Column {
-            Text(overview.app.label, style = MaterialTheme.typography.titleLarge)
+        Text(
+            overview.app.label,
+            style = MaterialTheme.typography.headlineSmall,
+            textAlign = TextAlign.Center,
+        )
+        Text(
+            text = buildString {
+                append(overview.app.packageName)
+                append(" · ")
+                append(overview.app.versionName ?: "?")
+                if (overview.app.isSystem) {
+                    append(" · ")
+                    append(stringResource(R.string.system_app))
+                }
+            },
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            textAlign = TextAlign.Center,
+        )
+    }
+}
+
+/** One state-colored answer to "what can I do here right now". */
+@Composable
+private fun HeroCard(overview: AppBetaOverview, onSetWatching: (Boolean, Int?) -> Unit) {
+    val context = LocalContext.current
+    val observation = overview.observation
+    val membership = overview.betaMembership()
+    val live = observation?.liveStatus
+    val watching = overview.userStatus?.watching == true
+    // The testing page opens in a Custom Tab so the user's browser Google session
+    // can complete the join (the opt-in is a plain web form on that page).
+    val testingUrl = overview.betaProgram?.testingUrl
+        ?: BetaLinkBuilder.testingUrl(overview.app.packageName)
+    val openPage: () -> Unit = { openInCustomTab(context, testingUrl) }
+
+    data class Hero(
+        val titleRes: Int,
+        val subtitleRes: Int,
+        val container: Color,
+        val onContainer: Color,
+        val buttonRes: Int,
+        val onButton: () -> Unit,
+        val filledButton: Boolean,
+    )
+
+    val hero = when {
+        membership == BetaMembership.JOINED -> Hero(
+            R.string.hero_joined, R.string.hero_joined_sub,
+            MaterialTheme.colorScheme.secondaryContainer,
+            MaterialTheme.colorScheme.onSecondaryContainer,
+            R.string.open_beta_page, openPage, filledButton = false,
+        )
+
+        membership == BetaMembership.AVAILABLE && live == LiveBetaStatus.OPEN -> Hero(
+            R.string.hero_open, R.string.hero_open_sub,
+            MaterialTheme.colorScheme.primaryContainer,
+            MaterialTheme.colorScheme.onPrimaryContainer,
+            R.string.join_beta, openPage, filledButton = true,
+        )
+
+        membership == BetaMembership.AVAILABLE && live == LiveBetaStatus.FULL -> Hero(
+            R.string.hero_full, R.string.hero_full_sub,
+            MaterialTheme.colorScheme.surfaceContainerHigh,
+            MaterialTheme.colorScheme.onSurface,
+            if (watching) R.string.open_beta_page else R.string.watch_app,
+            if (watching) openPage else fun() { onSetWatching(true, null) },
+            filledButton = !watching,
+        )
+
+        membership == BetaMembership.AVAILABLE && live == LiveBetaStatus.CLOSED -> Hero(
+            R.string.hero_closed, R.string.hero_full_sub,
+            MaterialTheme.colorScheme.surfaceContainerHigh,
+            MaterialTheme.colorScheme.onSurface,
+            if (watching) R.string.open_beta_page else R.string.watch_app,
+            if (watching) openPage else fun() { onSetWatching(true, null) },
+            filledButton = !watching,
+        )
+
+        membership == BetaMembership.AVAILABLE -> Hero(
+            R.string.status_line_has_beta, R.string.hero_unknown_sub,
+            MaterialTheme.colorScheme.surfaceContainerHigh,
+            MaterialTheme.colorScheme.onSurface,
+            R.string.open_beta_page, openPage, filledButton = false,
+        )
+
+        else -> Hero(
+            R.string.hero_no_beta, R.string.hero_no_beta_sub,
+            MaterialTheme.colorScheme.surfaceContainerHigh,
+            MaterialTheme.colorScheme.onSurfaceVariant,
+            R.string.open_beta_page, openPage, filledButton = false,
+        )
+    }
+
+    val dateFormat = remember { DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT) }
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = MaterialTheme.shapes.large,
+        colors = CardDefaults.cardColors(containerColor = hero.container),
+    ) {
+        Column(
+            modifier = Modifier.fillMaxWidth().padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(4.dp),
+        ) {
             Text(
-                overview.app.packageName,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                text = stringResource(hero.titleRes),
+                style = MaterialTheme.typography.headlineSmall,
+                color = hero.onContainer,
+                textAlign = TextAlign.Center,
             )
             Text(
-                stringResource(
-                    R.string.version_line,
-                    overview.app.versionName ?: "?",
-                    overview.app.versionCode,
-                ),
-                style = MaterialTheme.typography.bodySmall,
+                text = stringResource(hero.subtitleRes),
+                style = MaterialTheme.typography.bodyMedium,
+                color = hero.onContainer,
+                textAlign = TextAlign.Center,
             )
-            overview.app.installerPackage?.let {
-                Text(stringResource(R.string.installer_line, it), style = MaterialTheme.typography.bodySmall)
-            }
-            if (overview.app.isSystem) {
+            observation?.let {
                 Text(
-                    stringResource(R.string.system_app),
+                    text = stringResource(
+                        R.string.hero_checked_at,
+                        dateFormat.format(Date(it.checkedAt)),
+                    ),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = hero.onContainer.copy(alpha = 0.7f),
+                )
+            }
+            observation?.lastError?.let {
+                Text(
+                    text = stringResource(R.string.observed_last_error, it),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error,
+                    textAlign = TextAlign.Center,
+                )
+            }
+            if (hero.filledButton) {
+                Button(
+                    onClick = hero.onButton,
+                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                ) { Text(stringResource(hero.buttonRes)) }
+            } else {
+                Button(
+                    onClick = hero.onButton,
+                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                    colors = ButtonDefaults.filledTonalButtonColors(),
+                ) { Text(stringResource(hero.buttonRes)) }
+            }
+        }
+    }
+}
+
+@Composable
+private fun DetailCard(content: @Composable () -> Unit) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = MaterialTheme.shapes.large,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainer,
+        ),
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            content()
+        }
+    }
+}
+
+@Composable
+private fun WatchCard(overview: AppBetaOverview, onSetWatching: (Boolean, Int?) -> Unit) {
+    val watching = overview.userStatus?.watching == true
+    val interval = overview.userStatus?.reminderIntervalDays ?: 7
+    DetailCard {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Column(Modifier.weight(1f)) {
+                Text(stringResource(R.string.watch_app), style = MaterialTheme.typography.titleSmall)
+                Text(
+                    stringResource(R.string.watch_hint),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            Switch(checked = watching, onCheckedChange = { onSetWatching(it, null) })
+        }
+        if (watching) {
+            Text(stringResource(R.string.reminder_interval), style = MaterialTheme.typography.bodyMedium)
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                listOf(7, 14, 30).forEach { days ->
+                    FilterChip(
+                        selected = interval == days,
+                        onClick = { onSetWatching(true, days) },
+                        shape = MaterialTheme.shapes.extraLarge,
+                        label = { Text(stringResource(R.string.days_count, days)) },
+                    )
+                }
+            }
+        }
+    }
+}
+
+/** The facts: what the last authenticated scan saw, what the catalog knows, links. */
+@Composable
+private fun InfoCard(overview: AppBetaOverview) {
+    val context = LocalContext.current
+    val observation = overview.observation
+    val program = overview.betaProgram
+    DetailCard {
+        Text(
+            text = stringResource(R.string.observed_title),
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.primary,
+        )
+        InfoRow(
+            label = stringResource(R.string.info_membership),
+            value = stringResource(
+                (observation?.observedMembership ?: ObservedMembership.UNKNOWN).labelRes(),
+            ),
+        )
+        InfoRow(
+            label = stringResource(R.string.info_live_status),
+            value = stringResource((observation?.liveStatus ?: LiveBetaStatus.UNKNOWN).labelRes()),
+        )
+        program?.let {
+            InfoRow(
+                label = stringResource(R.string.known_beta_title),
+                value = stringResource(it.knownStatus.labelRes()),
+            )
+            it.notes?.let { notes ->
+                Text(
+                    notes,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
         }
-    }
-}
-
-@Composable
-private fun LinkButtons(overview: AppBetaOverview) {
-    val context = LocalContext.current
-    val pkg = overview.app.packageName
-    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        // The testing page opens in a Custom Tab so the user's browser Google session
-        // can complete the join (the opt-in is a plain web form on that page).
-        val testingUrl = overview.betaProgram?.testingUrl ?: BetaLinkBuilder.testingUrl(pkg)
-        Button(
-            onClick = { openInCustomTab(context, testingUrl) },
-            modifier = Modifier.fillMaxWidth(),
-        ) {
-            Text(
-                stringResource(
-                    if (overview.canJoinBeta()) R.string.join_beta else R.string.open_beta_page,
-                ),
-            )
-        }
-
-        OutlinedButton(
-            onClick = { openPlayPage(context, pkg) },
-            modifier = Modifier.fillMaxWidth(),
-        ) { Text(stringResource(R.string.open_play_page)) }
-    }
-}
-
-/**
- * What the last authenticated scan saw on this app's testing page: the user's own
- * membership, the program's live status and when it was checked. This is the
- * detected truth — the manual marking below is only an optional override.
- */
-@Composable
-private fun ObservedStatusCard(overview: AppBetaOverview) {
-    val observation = overview.observation ?: return
-    val dateFormat = remember { DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT) }
-    Card(modifier = Modifier.fillMaxWidth()) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-            Text(
-                stringResource(R.string.observed_title),
-                style = MaterialTheme.typography.titleMedium,
-            )
-            Text(
-                stringResource(observation.observedMembership.labelRes()),
-                color = if (observation.observedMembership == ObservedMembership.JOINED) {
-                    MaterialTheme.colorScheme.primary
-                } else {
-                    MaterialTheme.colorScheme.onSurface
-                },
-            )
-            Text(
-                stringResource(
-                    R.string.observed_live_status,
-                    stringResource(observation.liveStatus.labelRes()),
-                ),
-            )
-            Text(
-                stringResource(
-                    R.string.observed_checked_at,
-                    dateFormat.format(Date(observation.checkedAt)),
-                ),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-            observation.lastError?.let {
-                Text(
-                    stringResource(R.string.observed_last_error, it),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.error,
-                )
-            }
+        HorizontalDivider()
+        TextButton(onClick = { openPlayPage(context, overview.app.packageName) }) {
+            Text(stringResource(R.string.open_play_page))
         }
     }
 }
 
 @Composable
-private fun KnownBetaCard(overview: AppBetaOverview) {
-    val program = overview.betaProgram ?: return
-    Card(modifier = Modifier.fillMaxWidth()) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-            Text(stringResource(R.string.known_beta_title), style = MaterialTheme.typography.titleMedium)
-            Text(stringResource(program.knownStatus.labelRes()))
-            program.notes?.let {
-                Text(it, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            }
-        }
+private fun InfoRow(label: String, value: String) {
+    Row(modifier = Modifier.fillMaxWidth()) {
+        Text(
+            text = label,
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.weight(1f),
+        )
+        Text(text = value, style = MaterialTheme.typography.bodyMedium)
     }
 }
 
+/** The user's own optional override plus their bookkeeping (checked, note). */
 @Composable
-private fun MyStatusSection(overview: AppBetaOverview, onSetState: (UserBetaState) -> Unit) {
+private fun MarkingCard(
+    overview: AppBetaOverview,
+    onSetState: (UserBetaState) -> Unit,
+    onMarkChecked: () -> Unit,
+    onSaveNote: (String) -> Unit,
+) {
     val selected = overview.userStatus?.state ?: UserBetaState.UNKNOWN
-    Column {
-        Text(stringResource(R.string.my_status), style = MaterialTheme.typography.titleMedium)
+    DetailCard {
+        Text(stringResource(R.string.my_status), style = MaterialTheme.typography.titleSmall)
         Text(
             stringResource(R.string.my_status_hint),
             style = MaterialTheme.typography.bodySmall,
@@ -277,45 +428,14 @@ private fun MyStatusSection(overview: AppBetaOverview, onSetState: (UserBetaStat
                 Text(stringResource(state.labelRes()))
             }
         }
+        HorizontalDivider()
+        CheckedRow(overview, onMarkChecked)
+        NoteSection(overview, onSaveNote)
     }
 }
 
 @Composable
-private fun WatchSection(overview: AppBetaOverview, onSetWatching: (Boolean, Int?) -> Unit) {
-    val watching = overview.userStatus?.watching == true
-    val interval = overview.userStatus?.reminderIntervalDays ?: 7
-    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Column(Modifier.weight(1f)) {
-                Text(stringResource(R.string.watch_app), style = MaterialTheme.typography.titleMedium)
-                Text(
-                    stringResource(R.string.watch_hint),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            }
-            Switch(checked = watching, onCheckedChange = { onSetWatching(it, null) })
-        }
-        if (watching) {
-            Text(stringResource(R.string.reminder_interval), style = MaterialTheme.typography.bodyMedium)
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                listOf(7, 14, 30).forEach { days ->
-                    FilterChip(
-                        selected = interval == days,
-                        onClick = { onSetWatching(true, days) },
-                        label = { Text(stringResource(R.string.days_count, days)) },
-                    )
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun CheckedSection(overview: AppBetaOverview, onMarkChecked: () -> Unit) {
+private fun CheckedRow(overview: AppBetaOverview, onMarkChecked: () -> Unit) {
     val dateFormat = remember { DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT) }
     val lastChecked = overview.userStatus?.lastCheckedByUser
     Row(
@@ -342,6 +462,7 @@ private fun NoteSection(overview: AppBetaOverview, onSaveNote: (String) -> Unit)
             onValueChange = { note = it },
             modifier = Modifier.fillMaxWidth(),
             label = { Text(stringResource(R.string.note_label)) },
+            shape = MaterialTheme.shapes.medium,
             minLines = 2,
         )
         TextButton(
