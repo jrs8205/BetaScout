@@ -2,6 +2,12 @@ package org.jarsi.betascout.data.scrape
 
 import java.net.InetAddress
 import java.net.ServerSocket
+import kotlin.system.measureTimeMillis
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
 import org.jarsi.betascout.domain.PlaySession
 import org.junit.After
@@ -19,6 +25,10 @@ private class TinyHttpServer {
     @Volatile var status = 200
     @Volatile var body = ""
 
+    /** When false the server reads the request but never answers — the client
+     *  blocks until its own read timeout, like a stalled Google endpoint. */
+    @Volatile var respond = true
+
     private val thread = Thread {
         try {
             while (true) {
@@ -27,6 +37,10 @@ private class TinyHttpServer {
                     while (true) {
                         val line = reader.readLine() ?: break
                         if (line.isEmpty()) break
+                    }
+                    if (!respond) {
+                        Thread.sleep(30_000)
+                        return@use
                     }
                     val bytes = body.toByteArray()
                     client.getOutputStream().apply {
@@ -101,6 +115,26 @@ class HttpTestingPageSourceTest {
         val error = result.exceptionOrNull()
         assertTrue("expected HttpStatusException, was $error", error is HttpStatusException)
         assertEquals("HTTP 429", error!!.message)
+    }
+
+    @Test
+    fun `cancelling aborts an in-flight fetch instead of waiting out the read timeout`() {
+        // Real time on purpose (no runTest): the blocking HttpURLConnection read is
+        // real IO, and the point is that cancellation must not be gated on its
+        // 15-second timeout — that stall keeps the scan lock held after a cancel.
+        server.respond = false
+
+        runBlocking {
+            lateinit var job: Job
+            val elapsed = measureTimeMillis {
+                job = launch(Dispatchers.IO) { source().fetch("com.example", session) }
+                delay(300)
+                job.cancel()
+                job.join()
+            }
+
+            assertTrue("cancellation waited ${elapsed}ms for the fetch", elapsed < 5_000)
+        }
     }
 
     @Test

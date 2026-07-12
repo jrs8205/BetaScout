@@ -5,6 +5,9 @@ import java.net.URL
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.awaitCancellation
+import kotlinx.coroutines.ensureActive
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.domain.BetaLinkBuilder
 import org.jarsi.betascout.domain.PlaySession
@@ -37,6 +40,17 @@ class HttpTestingPageSource(
                     setRequestProperty("User-Agent", userAgent)
                     setRequestProperty("Accept-Language", "en-US,en;q=0.9")
                 }
+                // Blocking HttpURLConnection IO cannot observe coroutine cancellation:
+                // a cancelled scan would otherwise keep holding the scan lock until the
+                // read timeout runs out. Disconnecting from a watcher coroutine aborts
+                // the blocked connect/read immediately.
+                val watcher = launch {
+                    try {
+                        awaitCancellation()
+                    } finally {
+                        connection.disconnect()
+                    }
+                }
                 try {
                     val code = connection.responseCode
                     android.util.Log.d("BetaScout", "fetch $packageName: http=$code url=${connection.url}")
@@ -56,11 +70,15 @@ class HttpTestingPageSource(
                         Result.success(FetchedPage(html, finalUrl = connection.url.toString()))
                     }
                 } finally {
+                    watcher.cancel()
                     connection.disconnect()
                 }
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
+                // The IOException a watcher-triggered disconnect provokes must surface
+                // as cancellation, not as a scan failure stamped onto the observation.
+                ensureActive()
                 android.util.Log.d("BetaScout", "fetch $packageName: failed $e")
                 Result.failure(e)
             }
