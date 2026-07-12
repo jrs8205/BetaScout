@@ -21,6 +21,13 @@ import { buildCatalog } from './catalog.js';
 import { mergeCatalogEntries, accumulateCatalog } from './merge.js';
 import { runGplay } from './gplay.js';
 import { fetchText, sleep } from './fetch.js';
+import {
+  selectHintsToVerify,
+  updateRejected,
+  crowdEntry,
+  fetchHints,
+  consumeHints,
+} from './hints.js';
 
 const FEEDS = ['https://www.apkmirror.com/feed/'];
 const CRAWL_DELAY_MS = 3000; // robots.txt: Crawl-delay: 3
@@ -31,6 +38,10 @@ const SEED_URL = new URL('../seed-packages.json', import.meta.url);
 const PUBLISHED_URL = new URL('../../catalog/catalog.json', import.meta.url);
 
 const GPLAY_ENABLED = process.env.GPLAY_ENABLED === '1';
+const HINTS_URL = process.env.HINTS_URL;
+const HINTS_TOKEN = process.env.HINTS_TOKEN;
+const GPLAY_HINTS_CAP = Number(process.env.GPLAY_HINTS_CAP ?? 25);
+const REJECTED_URL = new URL('../hints-rejected.json', import.meta.url);
 const GRADLEW = process.env.GRADLEW || `${REPO_ROOT}${process.platform === 'win32' ? '/gradlew.bat' : '/gradlew'}`;
 const JAVA_HOME = process.env.GPLAY_JAVA_HOME || process.env.JAVA_HOME;
 
@@ -110,6 +121,89 @@ function enrichViaGplay(packageNames) {
   }
 }
 
+function loadRejected() {
+  try {
+    return JSON.parse(readFileSync(REJECTED_URL, 'utf8')).rejected ?? [];
+  } catch {
+    return [];
+  }
+}
+
+function saveRejected(rejected) {
+  writeFileSync(REJECTED_URL, JSON.stringify({ rejected }, null, 2) + '\n');
+}
+
+/**
+ * Fetches crowd hints from the Worker, verifies at most GPLAY_HINTS_CAP new
+ * packages via gplayapi and returns the verified ones as CROWD catalog entries.
+ * Every failure path degrades to "skip" — the normal harvest must never depend
+ * on the hints pipeline being up.
+ */
+async function processHints(knownPrograms) {
+  if (!HINTS_URL || !HINTS_TOKEN) {
+    console.error('hints step skipped (HINTS_URL/HINTS_TOKEN not set).');
+    return [];
+  }
+  let hints;
+  try {
+    hints = await fetchHints(HINTS_URL, HINTS_TOKEN, fetch);
+  } catch (error) {
+    console.error(`hints fetch failed (skipping the step): ${error.message}`);
+    return [];
+  }
+  if (hints.length === 0) {
+    console.log('Hints: none pending.');
+    return [];
+  }
+
+  const rejected = loadRejected();
+  const { verify, alreadyInCatalog, cooling, overflow } = selectHintsToVerify(hints, {
+    catalogPackages: new Set(knownPrograms.map((p) => p.packageName)),
+    rejected,
+    now: Date.now(),
+    cap: GPLAY_HINTS_CAP,
+  });
+  console.log(
+    `Hints: ${hints.length} pending; verifying ${verify.length} ` +
+      `(in catalog ${alreadyInCatalog.length}, cooling ${cooling.length}, over cap ${overflow.length}).`,
+  );
+
+  const results = verify.length > 0 ? enrichViaGplay(verify) : [];
+  const byPackage = new Map(
+    results
+      .filter((r) => r && !r.error && r.available !== undefined)
+      .map((r) => [r.packageName, r]),
+  );
+  const entries = [];
+  const rejectedNow = [];
+  for (const packageName of verify) {
+    const result = byPackage.get(packageName);
+    // A gplayapi error leaves the hint pending for the next run.
+    if (!result) continue;
+    if (result.available) {
+      entries.push(crowdEntry(result));
+    } else {
+      rejectedNow.push(packageName);
+    }
+  }
+  if (rejectedNow.length > 0) {
+    saveRejected(updateRejected(rejected, rejectedNow, Date.now()));
+  }
+
+  // Merged, rejected and already-in-catalog hints are all settled; only
+  // pending ones (over cap, cooling, gplay errors) stay on the Worker.
+  const consumed = [...entries.map((e) => e.packageName), ...rejectedNow, ...alreadyInCatalog];
+  if (consumed.length > 0) {
+    try {
+      await consumeHints(HINTS_URL, HINTS_TOKEN, consumed, fetch);
+    } catch (error) {
+      console.error(`hints consume failed (retried next run): ${error.message}`);
+    }
+  }
+  console.log(`Hints verified: ${entries.length} added as CROWD, ${rejectedNow.length} rejected.`);
+  return entries;
+}
+
 async function main() {
   const betaByAppPage = await collectBetaAppPages();
   console.log(`Beta uploads found in feeds: ${betaByAppPage.size}`);
@@ -120,7 +214,9 @@ async function main() {
   const gplayResults = enrichViaGplay(packagesToConfirm);
 
   const fresh = mergeCatalogEntries(discovered, gplayResults);
-  const accumulated = accumulateCatalog(loadExistingPrograms(), fresh);
+  const existing = loadExistingPrograms();
+  const crowd = await processHints([...existing, ...fresh]);
+  const accumulated = accumulateCatalog(existing, [...fresh, ...crowd]);
   const published = accumulated.filter((e) => e.hasBeta === true);
 
   const catalog = buildCatalog(published, { generatedAt: Date.now() });
