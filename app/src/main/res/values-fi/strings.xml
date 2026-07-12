@@ -6,6 +6,17 @@
     <string name="tab_joined">Mukana</string>
     <string name="tab_no_beta">Ei betaa</string>
     <string name="tab_with_count">%1$s (%2$d)</string>
+    <string name="status_line_joined">Olet mukana betassa</string>
+    <string name="status_line_open">Beta auki — voit liittyä</string>
+    <string name="status_line_full">Beta on täynnä</string>
+    <string name="status_line_closed">Beta on suljettu</string>
+    <string name="status_line_has_beta">Beta-ohjelma on olemassa</string>
+    <string name="status_line_no_beta">Ei tunnettua betaa</string>
+    <string name="badge_open">Auki</string>
+    <string name="badge_full">Täynnä</string>
+    <string name="badge_closed">Suljettu</string>
+    <string name="badge_joined">Mukana ✓</string>
+    <string name="open_betas_title">Avoimet betat</string>
     <string name="filter_only_beta">Beta löytyy</string>
     <string name="filter_only_watched">Seuratut</string>
     <string name="filter_only_system">Vain järjestelmäsovellukset</string>

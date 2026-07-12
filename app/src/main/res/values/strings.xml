@@ -8,6 +8,17 @@
     <string name="tab_joined">Joined</string>
     <string name="tab_no_beta">No beta</string>
     <string name="tab_with_count">%1$s (%2$d)</string>
+    <string name="status_line_joined">You\'re in the beta</string>
+    <string name="status_line_open">Beta open — you can join</string>
+    <string name="status_line_full">Beta is full</string>
+    <string name="status_line_closed">Beta is closed</string>
+    <string name="status_line_has_beta">Has a beta program</string>
+    <string name="status_line_no_beta">No known beta</string>
+    <string name="badge_open">Open</string>
+    <string name="badge_full">Full</string>
+    <string name="badge_closed">Closed</string>
+    <string name="badge_joined">Joined ✓</string>
+    <string name="open_betas_title">Open betas</string>
     <string name="filter_only_beta">Beta available</string>
     <string name="filter_only_watched">Watched</string>
     <string name="filter_only_system">Only system apps</string>

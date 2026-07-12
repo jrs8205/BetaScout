@@ -1,5 +1,6 @@
 package org.jarsi.betascout.ui.applist
 
+import org.jarsi.betascout.R
 import org.jarsi.betascout.domain.AppBetaOverview
 import org.jarsi.betascout.domain.BetaObservation
 import org.jarsi.betascout.domain.BetaProgramInfo
@@ -27,6 +28,7 @@ private fun row(
     productionVersionCode: Long? = null,
     observedLiveStatus: LiveBetaStatus? = null,
     observedMembership: ObservedMembership = ObservedMembership.UNKNOWN,
+    checkedAt: Long = 0L,
 ) = AppBetaOverview(
     app = InstalledAppInfo(
         packageName, label, "1.0", installedVersionCode, installerPackage, isSystem, hasLauncher, 0L,
@@ -50,12 +52,83 @@ private fun row(
             packageName = packageName,
             liveStatus = it,
             observedMembership = observedMembership,
-            checkedAt = 0L,
+            checkedAt = checkedAt,
         )
     },
 )
 
 class AppListFilterTest {
+
+    @Test
+    fun `status line and badge follow membership and live status`() {
+        val joined = row(
+            "com.joined",
+            observedLiveStatus = LiveBetaStatus.OPEN,
+            observedMembership = ObservedMembership.JOINED,
+        )
+        assertEquals(R.string.status_line_joined, joined.statusLineRes())
+        assertEquals(StatusBadge.JOINED, joined.statusBadge())
+
+        val manuallyJoined = row("com.manual", userState = UserBetaState.JOINED)
+        assertEquals(R.string.status_line_joined, manuallyJoined.statusLineRes())
+        assertEquals(StatusBadge.JOINED, manuallyJoined.statusBadge())
+
+        val open = row(
+            "com.open",
+            observedLiveStatus = LiveBetaStatus.OPEN,
+            observedMembership = ObservedMembership.NOT_JOINED,
+        )
+        assertEquals(R.string.status_line_open, open.statusLineRes())
+        assertEquals(StatusBadge.OPEN, open.statusBadge())
+
+        val full = row("com.full", observedLiveStatus = LiveBetaStatus.FULL)
+        assertEquals(R.string.status_line_full, full.statusLineRes())
+        assertEquals(StatusBadge.FULL, full.statusBadge())
+
+        val closed = row("com.closed", observedLiveStatus = LiveBetaStatus.CLOSED)
+        assertEquals(R.string.status_line_closed, closed.statusLineRes())
+        assertEquals(StatusBadge.CLOSED, closed.statusBadge())
+
+        // Known from the catalog only: there is a program, but no live reading.
+        val catalogOnly = row("com.catalog", betaStatus = KnownBetaStatus.OFTEN_FULL)
+        assertEquals(R.string.status_line_has_beta, catalogOnly.statusLineRes())
+        assertEquals(StatusBadge.BETA, catalogOnly.statusBadge())
+
+        val none = row("com.none")
+        assertEquals(R.string.status_line_no_beta, none.statusLineRes())
+        assertEquals(null, none.statusBadge())
+    }
+
+    @Test
+    fun `openBetas lists open not-joined betas newest first capped at ten`() {
+        val rows = buildList {
+            add(
+                row(
+                    "com.joined",
+                    observedLiveStatus = LiveBetaStatus.OPEN,
+                    observedMembership = ObservedMembership.JOINED,
+                ),
+            )
+            add(row("com.full", observedLiveStatus = LiveBetaStatus.FULL))
+            (1..12).forEach {
+                add(
+                    row(
+                        "com.open$it",
+                        observedLiveStatus = LiveBetaStatus.OPEN,
+                        observedMembership = ObservedMembership.NOT_JOINED,
+                        checkedAt = it.toLong(),
+                    ),
+                )
+            }
+        }
+
+        val open = openBetas(rows)
+
+        assertEquals(10, open.size)
+        assertEquals("com.open12", open.first().app.packageName)
+        assertTrue(open.none { it.app.packageName == "com.joined" })
+        assertTrue(open.none { it.app.packageName == "com.full" })
+    }
 
     @Test
     fun `tabCounts groups the filtered rows by membership tab`() {
