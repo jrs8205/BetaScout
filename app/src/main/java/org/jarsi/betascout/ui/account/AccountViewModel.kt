@@ -43,6 +43,22 @@ class AccountViewModel @Inject constructor(
     val useDynamicColor: StateFlow<Boolean> = settings.useDynamicColor
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
 
+    val shareDiscoveries: StateFlow<Boolean> = settings.shareDiscoveries
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
+
+    /** Starts true so the one-time prompt only appears once DataStore confirms
+     *  it has never been answered — no flash on screen entry. */
+    val sharePromptShown: StateFlow<Boolean> = settings.sharePromptShown
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), true)
+
+    fun setShareDiscoveries(enabled: Boolean) {
+        viewModelScope.launch { settings.setShareDiscoveries(enabled) }
+    }
+
+    fun dismissSharePrompt() {
+        viewModelScope.launch { settings.setSharePromptShown() }
+    }
+
     init {
         // The plaintext-session migration runs at app startup (BetaScoutApp); this
         // only reflects the stored session into the UI.

@@ -128,6 +128,12 @@
     <string name="account_dynamic_color">Use device colors (Material You)</string>
     <string name="account_dynamic_color_hint">Colors follow your wallpaper instead of the BetaScout look.</string>
     <string name="account_privacy_note">BetaScout only reads your own testing pages and never joins a beta on your behalf.</string>
+    <string name="share_prompt_title">Help grow the beta catalog</string>
+    <string name="share_prompt_body">Anonymously share which testing programs your scans find. Only package names are sent — never your account or memberships.</string>
+    <string name="share_prompt_enable">Enable</string>
+    <string name="share_prompt_no">No thanks</string>
+    <string name="share_toggle_title">Share discoveries</string>
+    <string name="share_toggle_hint">Anonymous package names only</string>
     <string name="account_scan_totals">In %1$d betas · not in %2$d · no beta program for %3$d</string>
     <string name="account_scan_checked">%1$d apps checked in this scan</string>
     <string name="account_last_scan_failed">%1$d apps could not be checked — retried on the next scan.</string>

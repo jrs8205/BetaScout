@@ -61,6 +61,8 @@ fun AccountScreen(
     val state by viewModel.state.collectAsStateWithLifecycle()
     val scanState by scanViewModel.state.collectAsStateWithLifecycle()
     val useDynamicColor by viewModel.useDynamicColor.collectAsStateWithLifecycle()
+    val shareDiscoveries by viewModel.shareDiscoveries.collectAsStateWithLifecycle()
+    val sharePromptShown by viewModel.sharePromptShown.collectAsStateWithLifecycle()
 
     if (state.showLogin) {
         GoogleLoginWebView(onCaptured = viewModel::onLoginCaptured)
@@ -106,10 +108,20 @@ fun AccountScreen(
             )
 
             if (state.signedIn) {
+                if (scanState.lastScan != null && !sharePromptShown) {
+                    SharePromptCard(
+                        onEnable = { viewModel.setShareDiscoveries(true) },
+                        onDecline = viewModel::dismissSharePrompt,
+                    )
+                }
                 scanState.lastScan?.let { LastScanCard(it) }
                 FullScanCard(
                     enabled = !scanState.busy && !scanState.cancelling,
                     onFullScan = scanViewModel::fullScan,
+                )
+                SharingCard(
+                    enabled = shareDiscoveries,
+                    onToggle = viewModel::setShareDiscoveries,
                 )
             }
 
@@ -297,6 +309,68 @@ private fun FullScanCard(enabled: Boolean, onFullScan: () -> Unit) {
             modifier = Modifier.fillMaxWidth(),
         ) {
             Text(stringResource(R.string.account_full_scan_button))
+        }
+    }
+}
+
+/** One-time opt-in ask after the first scan; either answer dismisses it for good. */
+@Composable
+private fun SharePromptCard(onEnable: () -> Unit, onDecline: () -> Unit) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = MaterialTheme.shapes.large,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+        ),
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(6.dp),
+        ) {
+            Text(
+                text = stringResource(R.string.share_prompt_title),
+                style = MaterialTheme.typography.titleSmall,
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
+            )
+            Text(
+                text = stringResource(R.string.share_prompt_body),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
+            )
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                Button(onClick = onEnable) {
+                    Text(stringResource(R.string.share_prompt_enable))
+                }
+                TextButton(onClick = onDecline) {
+                    Text(
+                        stringResource(R.string.share_prompt_no),
+                        color = MaterialTheme.colorScheme.onPrimaryContainer,
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun SharingCard(enabled: Boolean, onToggle: (Boolean) -> Unit) {
+    SettingsCard {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = stringResource(R.string.share_toggle_title),
+                    style = MaterialTheme.typography.titleSmall,
+                )
+                Text(
+                    text = stringResource(R.string.share_toggle_hint),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            Switch(checked = enabled, onCheckedChange = onToggle)
         }
     }
 }
