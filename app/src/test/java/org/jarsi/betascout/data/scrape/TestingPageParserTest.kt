@@ -123,6 +123,34 @@ class TestingPageParserTest {
     }
 
     @Test
+    fun `the not-eligible page means the app has no joinable testing program`() {
+        // Captured from real signed-in fetches (2026-07-12, e.g. de.tutao.tutanota,
+        // fi.hsl.app): apps without a program this account can access get an
+        // "App not available" page whose helper text mentions the testing
+        // vocabulary — which is exactly why the store-page heuristic must not be
+        // the one to catch it.
+        val html = """
+            <html>
+              <head><title>App Testing - Google Play</title></head>
+              <body>
+                <div>App not available</div>
+                <div class="developerName">Your account isn't currently eligible for this app's testing program.</div>
+                <div>If you've been invited to become a tester, make sure you're signed in to the
+                account that was invited to the testing program. If you've been invited to a Google
+                Group as part of the program, make sure you've joined the Group.</div>
+                <div>© 2026 Google - Google Play Terms of Service</div>
+              </body>
+            </html>
+        """.trimIndent()
+
+        val result = TestingPageParser.parse(html)
+
+        assertEquals(LiveBetaStatus.NO_PROGRAM, result.liveStatus)
+        assertEquals(ObservedMembership.UNKNOWN, result.membership)
+        assertFalse(result.needsLogin)
+    }
+
+    @Test
     fun `a generic Play Store app page means the app has no testing program`() {
         val html = """
             <html>

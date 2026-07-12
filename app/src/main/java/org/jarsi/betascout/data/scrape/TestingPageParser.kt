@@ -31,6 +31,14 @@ object TestingPageParser {
         "not found", "isn't available", "is not available", "no longer available",
     )
 
+    /** The "App not available" testing page (signed-in): this account cannot access
+     *  any testing program for the app — none is public, or it is invite-only. The
+     *  phrase avoids the apostrophe in "isn't", which Google could typeset either
+     *  straight or curly. */
+    private val NOT_ELIGIBLE_PHRASES = listOf(
+        "currently eligible for this app",
+    )
+
     /** Sections that only appear on the public store-listing page, never on a testing page. */
     private val STORE_PAGE_PHRASES = listOf(
         "about this app", "data safety", "what's new", "ratings and reviews",
@@ -68,6 +76,13 @@ object TestingPageParser {
                 TestingPageResult(LiveBetaStatus.CLOSED, ObservedMembership.NOT_JOINED, needsLogin = false)
 
             text.containsAny(MISSING_PHRASES) ->
+                TestingPageResult(LiveBetaStatus.NO_PROGRAM, ObservedMembership.UNKNOWN, needsLogin = false)
+
+            // "App not available … not currently eligible": no joinable program for
+            // this account. Mentions testing vocabulary in its helper text, so it
+            // must be recognized here — the store-page heuristic deliberately
+            // backs off from anything that talks about testing.
+            text.containsAny(NOT_ELIGIBLE_PHRASES) ->
                 TestingPageResult(LiveBetaStatus.NO_PROGRAM, ObservedMembership.UNKNOWN, needsLogin = false)
 
             isGenericStoreDetailsPage(doc, text) ->
