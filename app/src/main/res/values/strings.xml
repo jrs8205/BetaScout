@@ -118,6 +118,7 @@
     <string name="account_scan_type_background">background scan (small batch)</string>
     <string name="account_last_scan_label">Latest scan</string>
     <string name="account_connected">Google account connected</string>
+    <string name="tab_account">Account</string>
     <string name="account_background_scan_title">Automatic background scan</string>
     <string name="account_background_scan_body">Re-checks stale beta statuses every 6 hours while you\'re signed in — you don\'t need to start it.</string>
     <string name="account_full_scan_button">Scan everything</string>

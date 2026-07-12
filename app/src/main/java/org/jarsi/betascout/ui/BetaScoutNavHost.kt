@@ -2,6 +2,7 @@ package org.jarsi.betascout.ui
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -42,6 +43,9 @@ private data class TopLevelDestination(
 private val topLevelDestinations = listOf(
     TopLevelDestination(Routes.APPS, Icons.AutoMirrored.Filled.List, R.string.tab_apps),
     TopLevelDestination(Routes.WATCHLIST, Icons.Filled.Star, R.string.tab_watchlist),
+    // The account tab also carries the scan details — one tap away keeps the
+    // scanning system visible instead of hidden behind a top-bar icon.
+    TopLevelDestination(Routes.ACCOUNT, Icons.Filled.AccountCircle, R.string.tab_account),
 )
 
 @Composable
@@ -87,7 +91,8 @@ fun BetaScoutNavHost() {
                 )
             }
             composable(Routes.ACCOUNT) {
-                AccountScreen(onBack = { navController.popBackStack() })
+                // Top-level tab: no back arrow.
+                AccountScreen(onBack = null)
             }
             composable(Routes.WATCHLIST) {
                 WatchlistScreen(onAppClick = { navController.navigate(Routes.appDetail(it)) })

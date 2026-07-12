@@ -116,6 +116,7 @@
     <string name="account_scan_type_background">taustaskannaus (pieni erä)</string>
     <string name="account_last_scan_label">Viimeisin skannaus</string>
     <string name="account_connected">Google-tili yhdistetty</string>
+    <string name="tab_account">Tili</string>
     <string name="account_background_scan_title">Automaattinen taustaskannaus</string>
     <string name="account_background_scan_body">Tarkistaa vanhentuneet beta-tilat 6 tunnin välein, kun olet kirjautuneena — sitä ei tarvitse käynnistää itse.</string>
     <string name="account_full_scan_button">Skannaa kaikki</string>
