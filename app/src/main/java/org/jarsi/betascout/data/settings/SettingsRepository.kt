@@ -7,6 +7,7 @@ import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.IOException
@@ -51,6 +52,43 @@ class SettingsRepository @Inject constructor(
 
     suspend fun setOnboardingDone() {
         context.dataStore.edit { it[onboardingDoneKey] = true }
+    }
+
+    private val shareDiscoveriesKey = booleanPreferencesKey("share_discoveries")
+    private val sharePromptShownKey = booleanPreferencesKey("share_prompt_shown")
+    private val reportedPackagesKey = stringSetPreferencesKey("reported_packages")
+
+    /** Opt-in crowd sharing: anonymous package-name hints after scans. Default off. */
+    val shareDiscoveries: Flow<Boolean> = context.dataStore.data
+        .catch { e -> if (e is IOException) emit(emptyPreferences()) else throw e }
+        .map { prefs -> prefs[shareDiscoveriesKey] ?: false }
+
+    suspend fun setShareDiscoveries(enabled: Boolean) {
+        context.dataStore.edit {
+            it[shareDiscoveriesKey] = enabled
+            // Deciding either way settles the one-time prompt.
+            it[sharePromptShownKey] = true
+        }
+    }
+
+    val sharePromptShown: Flow<Boolean> = context.dataStore.data
+        .catch { e -> if (e is IOException) emit(emptyPreferences()) else throw e }
+        .map { prefs -> prefs[sharePromptShownKey] ?: false }
+
+    suspend fun setSharePromptShown() {
+        context.dataStore.edit { it[sharePromptShownKey] = true }
+    }
+
+    /** Packages already uploaded as hints — updated only after a 2xx upload so a
+     *  failed upload retries naturally after the next scan. */
+    val reportedPackages: Flow<Set<String>> = context.dataStore.data
+        .catch { e -> if (e is IOException) emit(emptyPreferences()) else throw e }
+        .map { prefs -> prefs[reportedPackagesKey] ?: emptySet() }
+
+    suspend fun addReportedPackages(packages: Set<String>) {
+        context.dataStore.edit {
+            it[reportedPackagesKey] = (it[reportedPackagesKey] ?: emptySet()) + packages
+        }
     }
 
     private val useDynamicColorKey = booleanPreferencesKey("use_dynamic_color")

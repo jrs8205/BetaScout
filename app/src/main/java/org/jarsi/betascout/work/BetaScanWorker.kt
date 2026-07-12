@@ -16,6 +16,7 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.flow.first
 import org.jarsi.betascout.R
+import org.jarsi.betascout.data.crowd.DiscoveryReporter
 import org.jarsi.betascout.data.settings.LastScanInfo
 import org.jarsi.betascout.data.settings.ScanType
 import org.jarsi.betascout.data.settings.SettingsRepository
@@ -43,6 +44,7 @@ class BetaScanWorker @AssistedInject constructor(
     @Assisted params: WorkerParameters,
     private val repository: AppRepository,
     private val settings: SettingsRepository,
+    private val discoveryReporter: DiscoveryReporter,
 ) : CoroutineWorker(appContext, params) {
 
     override suspend fun doWork(): Result {
@@ -117,6 +119,10 @@ class BetaScanWorker @AssistedInject constructor(
         if (manual || summary.checked > 0) {
             settings.saveLastScan(summary.toLastScanInfo(manual))
         }
+
+        // Opt-in crowd hints; the reporter swallows every failure so this can
+        // never affect the scan outcome.
+        runCatching { discoveryReporter.reportAfterScan(session.accountKey) }
 
         val rows = repository.observeApps().first()
         val notifier = BetaSlotNotifier(applicationContext)
