@@ -12,6 +12,7 @@ import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -22,6 +23,69 @@ import java.text.DateFormat
 import java.util.Date
 import org.jarsi.betascout.R
 import org.jarsi.betascout.work.BetaScanWorker
+
+/** Thin progress row for the main screen: visible only while a scan runs, so an
+ *  idle front page spends no space on scanning — the controls live in settings. */
+@Composable
+fun ScanProgressStrip(
+    state: ScanUiState,
+    onCancel: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        shape = MaterialTheme.shapes.medium,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainer,
+        ),
+    ) {
+        Column(
+            modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
+            verticalArrangement = Arrangement.spacedBy(4.dp),
+        ) {
+            if (state.cancelling) {
+                Text(
+                    text = stringResource(R.string.account_scan_cancelling),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            } else {
+                val progress = state.progress
+                if (progress != null) {
+                    LinearProgressIndicator(
+                        progress = { progress.index / progress.total.toFloat() },
+                        modifier = Modifier.fillMaxWidth(),
+                    )
+                } else {
+                    LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
+                }
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    Text(
+                        text = if (progress != null) {
+                            stringResource(
+                                R.string.account_scan_progress,
+                                progress.index,
+                                progress.total,
+                                progress.currentLabel,
+                            )
+                        } else {
+                            stringResource(R.string.scan_card_starting)
+                        },
+                        style = MaterialTheme.typography.bodySmall,
+                        modifier = Modifier.weight(1f),
+                        maxLines = 1,
+                    )
+                    TextButton(onClick = onCancel) {
+                        Text(stringResource(R.string.account_scan_cancel))
+                    }
+                }
+            }
+        }
+    }
+}
 
 /**
  * The scanning system's face in the UI: what happened last, what is happening

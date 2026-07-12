@@ -103,7 +103,10 @@
     <string name="tab_watchlist">Watchlist</string>
 
     <!-- Account / membership sync -->
-    <string name="account_title">Google account</string>
+    <string name="account_title">Settings</string>
+    <string name="settings_open">Settings</string>
+    <string name="search_open">Open search</string>
+    <string name="search_close">Close search</string>
     <string name="account_open">Account</string>
     <string name="account_hint">Sign in with your Google account so BetaScout can read your own testing pages and detect which betas you are in and whether each is open or full. It never joins on your behalf.</string>
     <string name="account_signin">Sign in with Google</string>

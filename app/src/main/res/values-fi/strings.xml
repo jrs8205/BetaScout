@@ -101,7 +101,10 @@
     <string name="tab_watchlist">Vahti</string>
 
     <!-- Account / membership sync -->
-    <string name="account_title">Google-tili</string>
+    <string name="account_title">Asetukset</string>
+    <string name="settings_open">Asetukset</string>
+    <string name="search_open">Avaa haku</string>
+    <string name="search_close">Sulje haku</string>
     <string name="account_open">Tili</string>
     <string name="account_hint">Kirjaudu Google-tililläsi, jotta BetaScout voi lukea omat testisivusi ja tunnistaa mihin betoihin kuulut ja onko kukin auki vai täynnä. Se ei koskaan liity puolestasi.</string>
     <string name="account_signin">Kirjaudu Googlella</string>

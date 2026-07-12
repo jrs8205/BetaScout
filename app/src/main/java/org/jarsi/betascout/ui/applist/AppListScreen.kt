@@ -15,27 +15,34 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
@@ -46,7 +53,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.jarsi.betascout.R
 import org.jarsi.betascout.domain.AppBetaOverview
 import org.jarsi.betascout.ui.components.AppIcon
-import org.jarsi.betascout.ui.scan.ScanStatusCard
+import org.jarsi.betascout.ui.scan.ScanProgressStrip
 import org.jarsi.betascout.ui.scan.ScanStatusViewModel
 import org.jarsi.betascout.ui.scan.ScanUiState
 
@@ -73,13 +80,11 @@ fun AppListScreen(
         onFiltersChange = viewModel::updateFilters,
         onSelectTab = viewModel::selectTab,
         onRefresh = viewModel::refresh,
-        onAccountClick = onAccountClick,
-        onScanNow = scanViewModel::scanNow,
+        onSettingsClick = onAccountClick,
         onCancelScan = scanViewModel::cancel,
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun AppListContent(
     uiState: AppListUiState,
@@ -88,73 +93,117 @@ private fun AppListContent(
     onFiltersChange: (AppFilters) -> Unit,
     onSelectTab: (BetaMembership) -> Unit,
     onRefresh: () -> Unit,
-    onAccountClick: () -> Unit,
-    onScanNow: () -> Unit,
+    onSettingsClick: () -> Unit,
     onCancelScan: () -> Unit,
 ) {
-    Scaffold(
-        topBar = {
-            // Account lives in the bottom bar; the top bar is just the wordmark.
-            TopAppBar(title = { Text(stringResource(R.string.app_name)) })
-        },
-    ) { padding ->
-        Column(
-            modifier = Modifier.fillMaxSize().padding(padding),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
-            ScanStatusCard(
+    var searchOpen by rememberSaveable { mutableStateOf(false) }
+
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        HeaderRow(
+            searchOpen = searchOpen,
+            onToggleSearch = {
+                // Closing the search also clears it, so the list never stays
+                // silently filtered by an invisible query.
+                if (searchOpen) onFiltersChange(uiState.filters.copy(query = ""))
+                searchOpen = !searchOpen
+            },
+            onSettingsClick = onSettingsClick,
+        )
+
+        // Scanning surfaces here only while it actually runs; the controls and
+        // the idle summary live on the settings screen.
+        if (scanState.busy || scanState.cancelling) {
+            ScanProgressStrip(
                 state = scanState,
-                onScanNow = onScanNow,
                 onCancel = onCancelScan,
-                onSignIn = onAccountClick,
                 modifier = Modifier.padding(horizontal = 16.dp),
             )
+        }
 
-            if (uiState.openBetas.isNotEmpty() && uiState.filters.query.isBlank()) {
-                OpenBetasRail(apps = uiState.openBetas, onAppClick = onAppClick)
-            }
-
-            BetaTabs(
-                selected = uiState.selectedTab,
-                counts = uiState.counts,
-                onSelectTab = onSelectTab,
-            )
+        if (searchOpen) {
             SearchAndFilters(uiState.filters, onFiltersChange)
+        } else if (uiState.openBetas.isNotEmpty()) {
+            OpenBetasRail(apps = uiState.openBetas, onAppClick = onAppClick)
+        }
 
-            if (uiState.hasError) {
-                ErrorBanner(onRetry = onRefresh)
-            }
+        BetaTabs(
+            selected = uiState.selectedTab,
+            counts = uiState.counts,
+            onSelectTab = onSelectTab,
+        )
 
-            when {
-                uiState.isLoading || uiState.isRefreshing && uiState.apps.isEmpty() -> {
-                    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        CircularProgressIndicator()
-                    }
-                }
+        if (uiState.hasError) {
+            ErrorBanner(onRetry = onRefresh)
+        }
 
-                uiState.apps.isEmpty() -> {
-                    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        val emptyRes = when (uiState.selectedTab) {
-                            BetaMembership.JOINED -> R.string.empty_joined
-                            BetaMembership.NONE -> R.string.empty_no_beta
-                            else -> R.string.empty_not_joined
-                        }
-                        Text(stringResource(emptyRes))
-                    }
-                }
-
-                else -> {
-                    LazyColumn(
-                        modifier = Modifier.fillMaxSize(),
-                        contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 12.dp),
-                        verticalArrangement = Arrangement.spacedBy(6.dp),
-                    ) {
-                        items(uiState.apps, key = { it.app.packageName }) { row ->
-                            AppRow(row = row, onClick = { onAppClick(row.app.packageName) })
-                        }
-                    }
+        when {
+            uiState.isLoading || uiState.isRefreshing && uiState.apps.isEmpty() -> {
+                Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    CircularProgressIndicator()
                 }
             }
+
+            uiState.apps.isEmpty() -> {
+                Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    val emptyRes = when (uiState.selectedTab) {
+                        BetaMembership.JOINED -> R.string.empty_joined
+                        BetaMembership.NONE -> R.string.empty_no_beta
+                        else -> R.string.empty_not_joined
+                    }
+                    Text(stringResource(emptyRes))
+                }
+            }
+
+            else -> {
+                LazyColumn(
+                    modifier = Modifier.fillMaxSize(),
+                    contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 12.dp),
+                    verticalArrangement = Arrangement.spacedBy(6.dp),
+                ) {
+                    items(uiState.apps, key = { it.app.packageName }) { row ->
+                        AppRow(row = row, onClick = { onAppClick(row.app.packageName) })
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** Compact top row: the wordmark plus search and settings — no app bar, so the
+ *  content starts right below the status bar. */
+@Composable
+private fun HeaderRow(
+    searchOpen: Boolean,
+    onToggleSearch: () -> Unit,
+    onSettingsClick: () -> Unit,
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 16.dp, end = 4.dp, top = 4.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text(
+            text = stringResource(R.string.app_name),
+            style = MaterialTheme.typography.titleLarge,
+            modifier = Modifier.weight(1f),
+        )
+        IconButton(onClick = onToggleSearch) {
+            Icon(
+                imageVector = if (searchOpen) Icons.Default.Close else Icons.Default.Search,
+                contentDescription = stringResource(
+                    if (searchOpen) R.string.search_close else R.string.search_open,
+                ),
+            )
+        }
+        IconButton(onClick = onSettingsClick) {
+            Icon(
+                Icons.Default.Settings,
+                contentDescription = stringResource(R.string.settings_open),
+            )
         }
     }
 }
@@ -248,6 +297,8 @@ private fun SearchAndFilters(
     filters: AppFilters,
     onFiltersChange: (AppFilters) -> Unit,
 ) {
+    val focusRequester = remember { FocusRequester() }
+    LaunchedEffect(Unit) { focusRequester.requestFocus() }
     Column(
         modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.spacedBy(6.dp),
@@ -255,7 +306,7 @@ private fun SearchAndFilters(
         TextField(
             value = filters.query,
             onValueChange = { onFiltersChange(filters.copy(query = it)) },
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().focusRequester(focusRequester),
             placeholder = { Text(stringResource(R.string.search_hint)) },
             leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
             singleLine = true,
