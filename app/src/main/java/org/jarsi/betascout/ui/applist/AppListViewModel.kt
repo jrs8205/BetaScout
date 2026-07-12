@@ -21,6 +21,8 @@ data class AppListUiState(
     val selectedTab: BetaMembership = BetaMembership.AVAILABLE,
     val apps: List<AppBetaOverview> = emptyList(),
     val counts: Map<BetaMembership, Int> = emptyMap(),
+    /** Joinable-right-now apps for the rail; hidden by the UI while searching. */
+    val openBetas: List<AppBetaOverview> = emptyList(),
 )
 
 @HiltViewModel
@@ -45,6 +47,7 @@ class AppListViewModel @Inject constructor(
             selectedTab = tab,
             apps = filtered.filter { it.betaMembership() == tab },
             counts = tabCounts(filtered),
+            openBetas = openBetas(filtered),
         )
     }.stateIn(
         scope = viewModelScope,

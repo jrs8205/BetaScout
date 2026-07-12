@@ -65,6 +65,15 @@ fun AppBetaOverview.statusBadge(): StatusBadge? = when {
     else -> StatusBadge.BETA
 }
 
+/** Label for the user's own manual marking (detail screen and status chips). */
+fun UserBetaState.labelRes(): Int = when (this) {
+    UserBetaState.UNKNOWN -> R.string.state_unknown
+    UserBetaState.JOINED -> R.string.state_joined
+    UserBetaState.NOT_JOINED -> R.string.state_not_joined
+    UserBetaState.FULL -> R.string.state_full
+    UserBetaState.NO_PROGRAM -> R.string.state_no_program
+}
+
 /** The "Open betas" rail: joinable-right-now apps, freshest reading first. */
 fun openBetas(rows: List<AppBetaOverview>): List<AppBetaOverview> = rows
     .filter { it.observation?.liveStatus == LiveBetaStatus.OPEN }
