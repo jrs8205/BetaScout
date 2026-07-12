@@ -20,6 +20,7 @@ data class AppListUiState(
     val filters: AppFilters = AppFilters(),
     val selectedTab: BetaMembership = BetaMembership.AVAILABLE,
     val apps: List<AppBetaOverview> = emptyList(),
+    val counts: Map<BetaMembership, Int> = emptyMap(),
 )
 
 @HiltViewModel
@@ -35,13 +36,15 @@ class AppListViewModel @Inject constructor(
     val uiState: StateFlow<AppListUiState> = combine(
         repository.observeApps(), filters, selectedTab, refreshing, failed,
     ) { rows, currentFilters, tab, isRefreshing, hasError ->
+        val filtered = filterApps(rows, currentFilters)
         AppListUiState(
             isLoading = false,
             isRefreshing = isRefreshing,
             hasError = hasError,
             filters = currentFilters,
             selectedTab = tab,
-            apps = filterApps(rows, currentFilters).filter { it.betaMembership() == tab },
+            apps = filtered.filter { it.betaMembership() == tab },
+            counts = tabCounts(filtered),
         )
     }.stateIn(
         scope = viewModelScope,

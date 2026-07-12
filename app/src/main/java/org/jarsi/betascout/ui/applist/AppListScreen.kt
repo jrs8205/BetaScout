@@ -89,7 +89,11 @@ private fun AppListContent(
         },
     ) { padding ->
         Column(modifier = Modifier.fillMaxSize().padding(padding)) {
-            BetaTabs(selected = uiState.selectedTab, onSelectTab = onSelectTab)
+            BetaTabs(
+                selected = uiState.selectedTab,
+                counts = uiState.counts,
+                onSelectTab = onSelectTab,
+            )
             SearchAndFilters(uiState.filters, onFiltersChange)
 
             if (uiState.hasError) {
@@ -136,14 +140,26 @@ private val betaTabs = listOf(
 )
 
 @Composable
-private fun BetaTabs(selected: BetaMembership, onSelectTab: (BetaMembership) -> Unit) {
+private fun BetaTabs(
+    selected: BetaMembership,
+    counts: Map<BetaMembership, Int>,
+    onSelectTab: (BetaMembership) -> Unit,
+) {
     val selectedIndex = betaTabs.indexOfFirst { it.first == selected }.coerceAtLeast(0)
     TabRow(selectedTabIndex = selectedIndex) {
         betaTabs.forEach { (membership, labelRes) ->
             Tab(
                 selected = membership == selected,
                 onClick = { onSelectTab(membership) },
-                text = { Text(stringResource(labelRes)) },
+                text = {
+                    Text(
+                        stringResource(
+                            R.string.tab_with_count,
+                            stringResource(labelRes),
+                            counts[membership] ?: 0,
+                        ),
+                    )
+                },
             )
         }
     }

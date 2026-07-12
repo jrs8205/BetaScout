@@ -58,6 +58,39 @@ private fun row(
 class AppListFilterTest {
 
     @Test
+    fun `tabCounts groups the filtered rows by membership tab`() {
+        val rows = listOf(
+            row(
+                "com.joined",
+                observedLiveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.JOINED,
+            ),
+            row("com.available", betaStatus = KnownBetaStatus.OFTEN_FULL),
+            row("com.none"),
+            // Framework package: filtered out entirely, must not count anywhere.
+            row("com.android.providers.media", isSystem = true, hasLauncher = false),
+        )
+
+        val counts = tabCounts(filterApps(rows, AppFilters()))
+
+        assertEquals(1, counts[BetaMembership.JOINED] ?: 0)
+        assertEquals(1, counts[BetaMembership.AVAILABLE] ?: 0)
+        assertEquals(1, counts[BetaMembership.NONE] ?: 0)
+    }
+
+    @Test
+    fun `tab counts follow the active search query`() {
+        val rows = listOf(
+            row("com.whatsapp", label = "WhatsApp", betaStatus = KnownBetaStatus.OFTEN_FULL),
+            row("com.spotify", label = "Spotify"),
+        )
+
+        val counts = tabCounts(filterApps(rows, AppFilters(query = "whats")))
+
+        assertEquals(mapOf(BetaMembership.AVAILABLE to 1), counts)
+    }
+
+    @Test
     fun `launchable system apps are listed but framework packages are not`() {
         val rows = listOf(
             row("com.user.app"),
