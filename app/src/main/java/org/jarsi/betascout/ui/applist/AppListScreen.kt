@@ -40,6 +40,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.jarsi.betascout.R
 import org.jarsi.betascout.domain.AppBetaOverview
@@ -53,6 +54,13 @@ fun AppListScreen(
     viewModel: AppListViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    // The installed-app mirror only updates when this screen refreshes it. Coming
+    // back from the launcher after installing an app must pick the new app up
+    // without a manual refresh tap.
+    LifecycleResumeEffect(Unit) {
+        viewModel.refresh()
+        onPauseOrDispose { }
+    }
     AppListContent(
         uiState = uiState,
         onAppClick = onAppClick,
