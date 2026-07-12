@@ -31,6 +31,17 @@ class BetaLinkBuilderTest {
     }
 
     @Test
+    fun `the Play Store's own testing page is aliased to the Google system services program`() {
+        // com.android.vending's testing page 302-redirects to the GMS program page
+        // ("Google system services") and the direct fetch times out on-device every
+        // time; pointing at the redirect target gives the real status in one hop.
+        assertEquals(
+            "https://play.google.com/apps/testing/com.google.android.gms",
+            BetaLinkBuilder.testingUrl("com.android.vending"),
+        )
+    }
+
+    @Test
     fun `package name is trimmed before building url`() {
         assertEquals(
             "https://play.google.com/apps/testing/com.whatsapp",
