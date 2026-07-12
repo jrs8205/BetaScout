@@ -62,9 +62,13 @@ async function handleHintList(env) {
   do {
     const page = await env.CATALOG.list({ prefix: 'hint:', cursor });
     for (const key of page.keys) {
+      const raw = await env.CATALOG.get(key.name);
+      // list() is eventually consistent: a just-consumed hint can still be
+      // listed while get() already answers null — skip those ghosts.
+      if (raw === null) continue;
       let entry = {};
       try {
-        entry = JSON.parse((await env.CATALOG.get(key.name)) ?? '{}');
+        entry = JSON.parse(raw);
       } catch {
         // A corrupt entry still surfaces as a hint with zeroed metadata.
       }

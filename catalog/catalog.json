@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1783838871706,
+  "generatedAt": 1783856981562,
   "programs": [
     {
       "packageName": "com.adobe.reader",
@@ -15,7 +15,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 787106333,
+      "productionVersionCode": 787111433,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -31,7 +31,7 @@
     },
     {
       "packageName": "com.dropbox.android",
-      "appName": "Dropbox: Secure Cloud Storage",
+      "appName": "Dropbox: Files & Cloud Storage",
       "hasBeta": true,
       "productionVersionCode": 48020200,
       "liveStatus": "UNKNOWN",
@@ -51,7 +51,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 472947950,
+      "productionVersionCode": 472947912,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -60,7 +60,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 343812233,
+      "productionVersionCode": 343812216,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -87,7 +87,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384309612,
+      "productionVersionCode": 384309618,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -210,6 +210,15 @@
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "fi.supersaa",
+      "appName": "IS Supers��",
+      "hasBeta": true,
+      "productionVersionCode": 290,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
@@ -217,6 +226,15 @@
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "proton.android.pass",
+      "appName": "Proton Pass: Password Manager",
+      "hasBeta": true,
+      "productionVersionCode": 14001363,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "tv.twitch.android.app",
