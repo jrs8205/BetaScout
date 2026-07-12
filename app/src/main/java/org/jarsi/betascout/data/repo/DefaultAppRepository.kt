@@ -3,6 +3,9 @@ package org.jarsi.betascout.data.repo
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.withContext
@@ -47,6 +50,9 @@ class DefaultAppRepository(
      *  prevents interleaved Google requests (doubled rate-limit exposure) and two
      *  runs racing over the same observations and last-scan summary. */
     private val scanMutex = Mutex()
+
+    private val _scanRunning = MutableStateFlow(false)
+    override val scanRunning: StateFlow<Boolean> = _scanRunning.asStateFlow()
 
     override fun observeApps(): Flow<List<AppBetaOverview>> = combine(
         installedAppDao.observeAll(),
@@ -101,6 +107,7 @@ class DefaultAppRepository(
         // Google right after it finishes. The loser is rejected instead — the
         // periodic worker skips its slot and a manual tap gets told in the UI.
         if (!scanMutex.tryLock()) return@withContext Result.failure(DataError.ScanInProgress())
+        _scanRunning.value = true
         try {
             try {
                 android.util.Log.d(TAG, "refreshBetaStatus: start force=$force")
@@ -183,6 +190,7 @@ class DefaultAppRepository(
                 Result.failure(DataError.Local(e))
             }
         } finally {
+            _scanRunning.value = false
             scanMutex.unlock()
         }
     }

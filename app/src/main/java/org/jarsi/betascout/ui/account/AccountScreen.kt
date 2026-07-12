@@ -84,7 +84,15 @@ fun AccountScreen(
                 )
             }
 
-            if (state.busy) {
+            if (state.cancelling) {
+                // The cancelled run is still unwinding its in-flight page fetch;
+                // controls stay disabled until the scan lock is actually free.
+                Text(
+                    text = stringResource(R.string.account_scan_cancelling),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            } else if (state.busy) {
                 val progress = state.progress
                 if (progress != null) {
                     Column(

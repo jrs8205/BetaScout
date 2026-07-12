@@ -11,6 +11,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -26,6 +27,8 @@ data class AccountUiState(
     val email: String = "",
     val showLogin: Boolean = false,
     val busy: Boolean = false,
+    /** A cancelled run is still unwinding: controls stay disabled, no progress row. */
+    val cancelling: Boolean = false,
     val progress: ScanProgress? = null,
     val lastScan: LastScanInfo? = null,
     val needsReLogin: Boolean = false,
@@ -41,6 +44,9 @@ class AccountViewModel @Inject constructor(
 
     private val _state = MutableStateFlow(AccountUiState())
     val state = _state.asStateFlow()
+
+    /** WorkManager reports an active scan job; the actual lock may outlive it. */
+    private val workBusy = MutableStateFlow(false)
 
     init {
         // The plaintext-session migration now runs at app startup (BetaScoutApp), so it
@@ -68,16 +74,26 @@ class AccountViewModel @Inject constructor(
             workManager.getWorkInfosForUniqueWorkFlow(BetaScanScheduler.MANUAL_WORK_NAME)
                 .collect { infos -> onScanWorkChanged(infos.firstOrNull()) }
         }
+        // Busy must track the actual scan lock, not just WorkManager state: a
+        // cancelled worker reports CANCELLED while its run is still unwinding and
+        // holding the lock — a scan started in that window would be rejected as
+        // "already running".
+        viewModelScope.launch {
+            combine(workBusy, repository.scanRunning) { work, lock -> work to lock }
+                .collect { (work, lock) ->
+                    _state.update { it.copy(busy = work || lock, cancelling = !work && lock) }
+                }
+        }
     }
 
     private fun onScanWorkChanged(info: WorkInfo?) {
         when (info?.state) {
-            WorkInfo.State.ENQUEUED, WorkInfo.State.RUNNING, WorkInfo.State.BLOCKED ->
+            WorkInfo.State.ENQUEUED, WorkInfo.State.RUNNING, WorkInfo.State.BLOCKED -> {
+                workBusy.value = true
                 _state.update {
                     val total = info.progress.getInt(BetaScanWorker.KEY_PROGRESS_TOTAL, 0)
                     val label = info.progress.getString(BetaScanWorker.KEY_PROGRESS_LABEL)
                     it.copy(
-                        busy = true,
                         error = null,
                         progress = if (total > 0 && label != null) {
                             ScanProgress(
@@ -90,28 +106,34 @@ class AccountViewModel @Inject constructor(
                         },
                     )
                 }
-
-            WorkInfo.State.SUCCEEDED -> _state.update {
-                it.copy(
-                    busy = false,
-                    progress = null,
-                    // Guarded on signedIn so a stale pre-re-login result cannot
-                    // resurface the prompt once a new session is in place.
-                    needsReLogin = !it.signedIn &&
-                        info.outputData.getBoolean(BetaScanWorker.KEY_NEEDS_LOGIN, false),
-                )
             }
 
-            WorkInfo.State.FAILED -> _state.update {
-                it.copy(
-                    busy = false,
-                    progress = null,
-                    error = info.outputData.getString(BetaScanWorker.KEY_ERROR) ?: "scan_failed",
-                )
+            WorkInfo.State.SUCCEEDED -> {
+                workBusy.value = false
+                _state.update {
+                    it.copy(
+                        progress = null,
+                        // Guarded on signedIn so a stale pre-re-login result cannot
+                        // resurface the prompt once a new session is in place.
+                        needsReLogin = !it.signedIn &&
+                            info.outputData.getBoolean(BetaScanWorker.KEY_NEEDS_LOGIN, false),
+                    )
+                }
             }
 
-            WorkInfo.State.CANCELLED, null -> _state.update {
-                it.copy(busy = false, progress = null)
+            WorkInfo.State.FAILED -> {
+                workBusy.value = false
+                _state.update {
+                    it.copy(
+                        progress = null,
+                        error = info.outputData.getString(BetaScanWorker.KEY_ERROR) ?: "scan_failed",
+                    )
+                }
+            }
+
+            WorkInfo.State.CANCELLED, null -> {
+                workBusy.value = false
+                _state.update { it.copy(progress = null) }
             }
         }
     }

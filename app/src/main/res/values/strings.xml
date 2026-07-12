@@ -80,6 +80,7 @@
     <string name="account_signin">Sign in with Google</string>
     <string name="account_sync">Scan now</string>
     <string name="account_scan_cancel">Cancel scan</string>
+    <string name="account_scan_cancelling">Cancelling…</string>
     <string name="account_full_scan">Re-scan everything</string>
     <string name="account_full_scan_hint">Checks every app again — can take 10–15 minutes.</string>
     <string name="account_no_scan_yet">No scan yet — tap Scan now.</string>

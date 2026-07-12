@@ -622,6 +622,31 @@ class DefaultAppRepositoryTest {
     }
 
     @Test
+    fun `scanRunning reflects the scan lock across a cancelled run`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a"), app("com.b")) }
+        repo.refreshApps()
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+        assertEquals(false, repo.scanRunning.value)
+        val seenWhileScanning = mutableListOf<Boolean>()
+        lateinit var job: Job
+        onFetch = { pkg ->
+            seenWhileScanning += repo.scanRunning.value
+            if (pkg == "com.b") {
+                job.cancel()
+                delay(1)
+            }
+        }
+        job = launch { repo.refreshBetaStatus(session) }
+        job.join()
+
+        // True during the run, false again once the cancelled run has unwound —
+        // the account screen gates its scan buttons on this.
+        assertEquals(listOf(true, true), seenWhileScanning)
+        assertEquals(false, repo.scanRunning.value)
+    }
+
+    @Test
     fun `clearObservations deletes only the given account's observations`() = runTest {
         val repo = repository()
         observationDao.upsert(

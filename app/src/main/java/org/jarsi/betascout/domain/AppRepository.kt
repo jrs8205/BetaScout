@@ -1,11 +1,18 @@
 package org.jarsi.betascout.domain
 
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
 
 interface AppRepository {
 
     /** Combined view: installed apps + beta info + the user's own marking. */
     fun observeApps(): Flow<List<AppBetaOverview>>
+
+    /** True while a status scan holds the scan lock — including the tail of a
+     *  cancelled run that is still unwinding its in-flight page fetch. UIs gate
+     *  their scan controls on this, not on WorkManager state, which reports
+     *  CANCELLED before the run has actually released the lock. */
+    val scanRunning: StateFlow<Boolean>
 
     /** Loads the bundled seed database into Room (idempotent, never overwrites). */
     suspend fun ensureSeeded(): Result<Unit>

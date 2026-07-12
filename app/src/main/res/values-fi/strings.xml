@@ -78,6 +78,7 @@
     <string name="account_signin">Kirjaudu Googlella</string>
     <string name="account_sync">Skannaa nyt</string>
     <string name="account_scan_cancel">Peruuta skannaus</string>
+    <string name="account_scan_cancelling">Peruutetaan…</string>
     <string name="account_full_scan">Skannaa kaikki uudelleen</string>
     <string name="account_full_scan_hint">Tarkistaa kaikki sovellukset uudelleen — voi kestää 10–15 minuuttia.</string>
     <string name="account_no_scan_yet">Ei vielä skannausta — paina Skannaa nyt.</string>
