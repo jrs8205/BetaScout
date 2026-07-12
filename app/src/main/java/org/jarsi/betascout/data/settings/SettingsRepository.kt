@@ -53,6 +53,18 @@ class SettingsRepository @Inject constructor(
         context.dataStore.edit { it[onboardingDoneKey] = true }
     }
 
+    private val useDynamicColorKey = booleanPreferencesKey("use_dynamic_color")
+
+    /** Opt-in Material You: the brand palette is the default so the app looks the
+     *  same on every device; wallpaper-derived colors only when the user asks. */
+    val useDynamicColor: Flow<Boolean> = context.dataStore.data
+        .catch { e -> if (e is IOException) emit(emptyPreferences()) else throw e }
+        .map { prefs -> prefs[useDynamicColorKey] ?: false }
+
+    suspend fun setUseDynamicColor(enabled: Boolean) {
+        context.dataStore.edit { it[useDynamicColorKey] = enabled }
+    }
+
     private val sessionEmailKey = stringPreferencesKey("session_email")
     private val sessionCookieKey = stringPreferencesKey("session_cookie")
 
