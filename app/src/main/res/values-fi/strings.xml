@@ -17,6 +17,11 @@
     <string name="badge_closed">Suljettu</string>
     <string name="badge_joined">Mukana ✓</string>
     <string name="open_betas_title">Avoimet betat</string>
+    <string name="scan_card_title_scanned">Skannattu %1$s</string>
+    <string name="scan_card_subtitle">Mukana %1$d betassa · tausta skannaa 6 h välein</string>
+    <string name="scan_card_button">Skannaa</string>
+    <string name="scan_card_starting">Käynnistetään skannausta…</string>
+    <string name="scan_card_signed_out">Kirjaudu Googlella, niin BetaScout tunnistaa beta-jäsenyytesi.</string>
     <string name="filter_only_beta">Beta löytyy</string>
     <string name="filter_only_watched">Seuratut</string>
     <string name="filter_only_system">Vain järjestelmäsovellukset</string>

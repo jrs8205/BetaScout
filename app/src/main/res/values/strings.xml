@@ -19,6 +19,11 @@
     <string name="badge_closed">Closed</string>
     <string name="badge_joined">Joined ✓</string>
     <string name="open_betas_title">Open betas</string>
+    <string name="scan_card_title_scanned">Scanned %1$s</string>
+    <string name="scan_card_subtitle">In %1$d betas · background scan every 6 h</string>
+    <string name="scan_card_button">Scan</string>
+    <string name="scan_card_starting">Starting the scan…</string>
+    <string name="scan_card_signed_out">Sign in with Google so BetaScout can detect your beta memberships.</string>
     <string name="filter_only_beta">Beta available</string>
     <string name="filter_only_watched">Watched</string>
     <string name="filter_only_system">Only system apps</string>
