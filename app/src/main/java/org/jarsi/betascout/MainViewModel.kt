@@ -21,6 +21,11 @@ class MainViewModel @Inject constructor(
         .map { done -> done as Boolean? }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
+    /** Opt-in Material You; the brand palette (false) is the initial value so the
+     *  first frame renders on-brand instead of flashing wallpaper colors. */
+    val useDynamicColor: StateFlow<Boolean> = settings.useDynamicColor
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
+
     fun completeOnboarding() {
         viewModelScope.launch { settings.setOnboardingDone() }
     }

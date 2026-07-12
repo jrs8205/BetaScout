@@ -1,27 +1,38 @@
 package org.jarsi.betascout.ui.account
 
+import android.os.Build
 import android.webkit.CookieManager
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -37,15 +48,19 @@ import java.util.Date
 import org.jarsi.betascout.R
 import org.jarsi.betascout.data.settings.LastScanInfo
 import org.jarsi.betascout.data.settings.ScanType
-import org.jarsi.betascout.work.BetaScanWorker
+import org.jarsi.betascout.ui.scan.ScanStatusCard
+import org.jarsi.betascout.ui.scan.ScanStatusViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AccountScreen(
-    onBack: () -> Unit,
+    onBack: (() -> Unit)?,
     viewModel: AccountViewModel = hiltViewModel(),
+    scanViewModel: ScanStatusViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val scanState by scanViewModel.state.collectAsStateWithLifecycle()
+    val useDynamicColor by viewModel.useDynamicColor.collectAsStateWithLifecycle()
 
     if (state.showLogin) {
         GoogleLoginWebView(onCaptured = viewModel::onLoginCaptured)
@@ -54,14 +69,16 @@ fun AccountScreen(
 
     Scaffold(
         topBar = {
-            androidx.compose.material3.TopAppBar(
+            TopAppBar(
                 title = { Text(stringResource(R.string.account_title)) },
                 navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(
-                            Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = stringResource(R.string.back),
-                        )
+                    if (onBack != null) {
+                        IconButton(onClick = onBack) {
+                            Icon(
+                                Icons.AutoMirrored.Filled.ArrowBack,
+                                contentDescription = stringResource(R.string.back),
+                            )
+                        }
                     }
                 },
             )
@@ -71,130 +88,145 @@ fun AccountScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
+                .verticalScroll(rememberScrollState())
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            // The sign-in pitch is only for signed-out users; once signed in the
-            // screen leads with the account and its latest scan results instead.
-            if (!state.signedIn) {
-                Text(
-                    text = stringResource(R.string.account_hint),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            }
+            AccountCard(
+                state = state,
+                onSignIn = viewModel::startLogin,
+                onSignOut = viewModel::signOut,
+            )
 
-            if (state.cancelling) {
-                // The cancelled run is still unwinding its in-flight page fetch;
-                // controls stay disabled until the scan lock is actually free.
-                Text(
-                    text = stringResource(R.string.account_scan_cancelling),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-            } else if (state.busy) {
-                val progress = state.progress
-                if (progress != null) {
-                    Column(
-                        modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp),
-                    ) {
-                        LinearProgressIndicator(
-                            progress = { progress.index / progress.total.toFloat() },
-                            modifier = Modifier.fillMaxWidth(),
-                        )
-                        Text(
-                            text = stringResource(
-                                R.string.account_scan_progress,
-                                progress.index,
-                                progress.total,
-                                progress.currentLabel,
-                            ),
-                            style = MaterialTheme.typography.bodyMedium,
-                        )
-                    }
-                } else {
-                    Box(Modifier.fillMaxWidth().padding(16.dp), contentAlignment = Alignment.Center) {
-                        CircularProgressIndicator()
-                    }
-                }
-                OutlinedButton(
-                    onClick = viewModel::cancelScan,
-                    modifier = Modifier.fillMaxWidth(),
-                ) {
-                    Text(stringResource(R.string.account_scan_cancel))
-                }
-            }
+            ScanStatusCard(
+                state = scanState,
+                onScanNow = scanViewModel::scanNow,
+                onCancel = scanViewModel::cancel,
+                onSignIn = viewModel::startLogin,
+            )
 
             if (state.signedIn) {
-                Text(stringResource(R.string.account_signed_in, state.email))
-                LastScanSummary(state.lastScan)
-                Button(
-                    onClick = viewModel::resync,
-                    enabled = !state.busy,
-                    modifier = Modifier.fillMaxWidth(),
-                ) {
-                    Text(stringResource(R.string.account_sync))
-                }
-                TextButton(
-                    onClick = viewModel::fullResync,
-                    enabled = !state.busy,
-                    modifier = Modifier.fillMaxWidth(),
-                ) {
-                    Text(stringResource(R.string.account_full_scan))
-                }
-                Text(
-                    text = stringResource(R.string.account_full_scan_hint),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-                OutlinedButton(onClick = viewModel::signOut, modifier = Modifier.fillMaxWidth()) {
-                    Text(stringResource(R.string.account_signout))
-                }
-            } else {
-                Button(
-                    onClick = viewModel::startLogin,
-                    enabled = !state.busy,
-                    modifier = Modifier.fillMaxWidth(),
-                ) {
-                    Text(stringResource(R.string.account_signin))
-                }
-            }
-            if (state.needsReLogin) {
-                Text(
-                    text = stringResource(R.string.account_relogin),
-                    color = MaterialTheme.colorScheme.error,
+                scanState.lastScan?.let { LastScanCard(it) }
+                FullScanCard(
+                    enabled = !scanState.busy && !scanState.cancelling,
+                    onFullScan = scanViewModel::fullScan,
                 )
             }
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                AppearanceCard(
+                    useDynamicColor = useDynamicColor,
+                    onToggle = viewModel::setUseDynamicColor,
+                )
+            }
+
             state.error?.let { error ->
                 Text(
-                    text = when (error) {
-                        BetaScanWorker.ERROR_SCAN_IN_PROGRESS ->
-                            stringResource(R.string.account_scan_in_progress)
-                        else -> stringResource(R.string.account_error, error)
-                    },
+                    text = stringResource(R.string.account_error, error),
                     color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.bodySmall,
                 )
+            }
+
+            Text(
+                text = stringResource(R.string.account_privacy_note),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.outline,
+            )
+        }
+    }
+}
+
+@Composable
+private fun SettingsCard(content: @Composable () -> Unit) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = MaterialTheme.shapes.large,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainer,
+        ),
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(6.dp),
+        ) {
+            content()
+        }
+    }
+}
+
+@Composable
+private fun AccountCard(
+    state: AccountUiState,
+    onSignIn: () -> Unit,
+    onSignOut: () -> Unit,
+) {
+    SettingsCard {
+        if (state.signedIn) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                Surface(
+                    shape = CircleShape,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.size(40.dp),
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Text(
+                            text = state.email.firstOrNull()?.uppercase() ?: "•",
+                            style = MaterialTheme.typography.titleMedium,
+                            color = MaterialTheme.colorScheme.onPrimary,
+                        )
+                    }
+                }
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(state.email, style = MaterialTheme.typography.titleMedium)
+                    Text(
+                        text = stringResource(R.string.account_connected),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                TextButton(onClick = onSignOut) {
+                    Text(
+                        stringResource(R.string.account_signout),
+                        color = MaterialTheme.colorScheme.error,
+                    )
+                }
+            }
+        } else {
+            Text(
+                text = stringResource(R.string.account_hint),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            if (state.busy) {
+                Box(Modifier.fillMaxWidth().padding(8.dp), contentAlignment = Alignment.Center) {
+                    CircularProgressIndicator()
+                }
+            } else {
+                Button(onClick = onSignIn, modifier = Modifier.fillMaxWidth()) {
+                    Text(stringResource(R.string.account_signin))
+                }
             }
         }
     }
 }
 
-/** The persisted result of the latest scan: when it ran and what it found. */
+/** The persisted result of the latest scan plus the background-scan explainer —
+ *  the background worker is invisible everywhere else, so it is introduced here. */
 @Composable
-private fun LastScanSummary(lastScan: LastScanInfo?) {
-    if (lastScan == null) {
-        Text(
-            text = stringResource(R.string.account_no_scan_yet),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-        return
-    }
+private fun LastScanCard(lastScan: LastScanInfo) {
     val dateFormat = remember {
         DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
     }
-    Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+    SettingsCard {
+        Text(
+            text = stringResource(R.string.account_last_scan_label),
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.primary,
+        )
         Text(
             text = stringResource(
                 R.string.account_last_scan,
@@ -206,7 +238,7 @@ private fun LastScanSummary(lastScan: LastScanInfo?) {
                     },
                 ),
             ),
-            style = MaterialTheme.typography.bodyMedium,
+            style = MaterialTheme.typography.titleMedium,
         )
         Text(
             text = stringResource(
@@ -233,6 +265,61 @@ private fun LastScanSummary(lastScan: LastScanInfo?) {
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
+        }
+        HorizontalDivider(Modifier.padding(vertical = 6.dp))
+        Text(
+            text = stringResource(R.string.account_background_scan_title),
+            style = MaterialTheme.typography.titleSmall,
+        )
+        Text(
+            text = stringResource(R.string.account_background_scan_body),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+    }
+}
+
+@Composable
+private fun FullScanCard(enabled: Boolean, onFullScan: () -> Unit) {
+    SettingsCard {
+        Text(
+            text = stringResource(R.string.account_full_scan),
+            style = MaterialTheme.typography.titleSmall,
+        )
+        Text(
+            text = stringResource(R.string.account_full_scan_hint),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        OutlinedButton(
+            onClick = onFullScan,
+            enabled = enabled,
+            modifier = Modifier.fillMaxWidth(),
+        ) {
+            Text(stringResource(R.string.account_full_scan_button))
+        }
+    }
+}
+
+@Composable
+private fun AppearanceCard(useDynamicColor: Boolean, onToggle: (Boolean) -> Unit) {
+    SettingsCard {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = stringResource(R.string.account_dynamic_color),
+                    style = MaterialTheme.typography.titleSmall,
+                )
+                Text(
+                    text = stringResource(R.string.account_dynamic_color_hint),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            Switch(checked = useDynamicColor, onCheckedChange = onToggle)
         }
     }
 }

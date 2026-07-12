@@ -22,8 +22,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            BetaScoutTheme {
-                val viewModel: MainViewModel = hiltViewModel()
+            val viewModel: MainViewModel = hiltViewModel()
+            val useDynamicColor by viewModel.useDynamicColor.collectAsStateWithLifecycle()
+            BetaScoutTheme(useDynamicColor = useDynamicColor) {
                 val onboardingDone by viewModel.onboardingDone.collectAsStateWithLifecycle()
                 when (onboardingDone) {
                     null -> Surface { Box(Modifier.fillMaxSize()) }

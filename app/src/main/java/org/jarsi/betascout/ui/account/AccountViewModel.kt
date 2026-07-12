@@ -4,34 +4,29 @@ import android.webkit.CookieManager
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.work.ExistingWorkPolicy
-import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import androidx.work.await
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import org.jarsi.betascout.data.settings.LastScanInfo
 import org.jarsi.betascout.data.settings.SettingsRepository
 import org.jarsi.betascout.domain.AppRepository
-import org.jarsi.betascout.domain.ScanProgress
 import org.jarsi.betascout.work.BetaScanScheduler
-import org.jarsi.betascout.work.BetaScanWorker
 
+/** Session-only state: scanning lives in [org.jarsi.betascout.ui.scan.ScanStatusViewModel]. */
 data class AccountUiState(
     val signedIn: Boolean = false,
     val email: String = "",
     val showLogin: Boolean = false,
+    /** True only while the captured session is being persisted. */
     val busy: Boolean = false,
-    /** A cancelled run is still unwinding: controls stay disabled, no progress row. */
-    val cancelling: Boolean = false,
-    val progress: ScanProgress? = null,
-    val lastScan: LastScanInfo? = null,
-    val needsReLogin: Boolean = false,
     val error: String? = null,
 )
 
@@ -45,102 +40,25 @@ class AccountViewModel @Inject constructor(
     private val _state = MutableStateFlow(AccountUiState())
     val state = _state.asStateFlow()
 
-    /** WorkManager reports an active scan job; the actual lock may outlive it. */
-    private val workBusy = MutableStateFlow(false)
+    val useDynamicColor: StateFlow<Boolean> = settings.useDynamicColor
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
 
     init {
-        // The plaintext-session migration now runs at app startup (BetaScoutApp), so it
-        // is not repeated here; this only reflects the stored session into the UI.
+        // The plaintext-session migration runs at app startup (BetaScoutApp); this
+        // only reflects the stored session into the UI.
         viewModelScope.launch {
             settings.playSession.collect { session ->
                 _state.update {
                     it.copy(
                         signedIn = session != null,
                         email = session?.accountEmail ?: it.email,
-                        // A fresh session settles any earlier expiry.
-                        needsReLogin = if (session != null) false else it.needsReLogin,
                     )
                 }
-            }
-        }
-        viewModelScope.launch {
-            settings.lastScan.collect { last ->
-                _state.update { it.copy(lastScan = last) }
-            }
-        }
-        // The scan itself runs as WorkManager work (it outlives this screen and the
-        // whole app process); the screen just mirrors that work's state.
-        viewModelScope.launch {
-            workManager.getWorkInfosForUniqueWorkFlow(BetaScanScheduler.MANUAL_WORK_NAME)
-                .collect { infos -> onScanWorkChanged(infos.firstOrNull()) }
-        }
-        // Busy must track the actual scan lock, not just WorkManager state: a
-        // cancelled worker reports CANCELLED while its run is still unwinding and
-        // holding the lock — a scan started in that window would be rejected as
-        // "already running".
-        viewModelScope.launch {
-            combine(workBusy, repository.scanRunning) { work, lock -> work to lock }
-                .collect { (work, lock) ->
-                    _state.update { it.copy(busy = work || lock, cancelling = !work && lock) }
-                }
-        }
-    }
-
-    private fun onScanWorkChanged(info: WorkInfo?) {
-        when (info?.state) {
-            WorkInfo.State.ENQUEUED, WorkInfo.State.RUNNING, WorkInfo.State.BLOCKED -> {
-                workBusy.value = true
-                _state.update {
-                    val total = info.progress.getInt(BetaScanWorker.KEY_PROGRESS_TOTAL, 0)
-                    val label = info.progress.getString(BetaScanWorker.KEY_PROGRESS_LABEL)
-                    it.copy(
-                        error = null,
-                        progress = if (total > 0 && label != null) {
-                            ScanProgress(
-                                index = info.progress.getInt(BetaScanWorker.KEY_PROGRESS_INDEX, 0),
-                                total = total,
-                                currentLabel = label,
-                            )
-                        } else {
-                            null
-                        },
-                    )
-                }
-            }
-
-            WorkInfo.State.SUCCEEDED -> {
-                workBusy.value = false
-                _state.update {
-                    it.copy(
-                        progress = null,
-                        // Guarded on signedIn so a stale pre-re-login result cannot
-                        // resurface the prompt once a new session is in place.
-                        needsReLogin = !it.signedIn &&
-                            info.outputData.getBoolean(BetaScanWorker.KEY_NEEDS_LOGIN, false),
-                    )
-                }
-            }
-
-            WorkInfo.State.FAILED -> {
-                workBusy.value = false
-                _state.update {
-                    it.copy(
-                        progress = null,
-                        error = info.outputData.getString(BetaScanWorker.KEY_ERROR) ?: "scan_failed",
-                    )
-                }
-            }
-
-            WorkInfo.State.CANCELLED, null -> {
-                workBusy.value = false
-                _state.update { it.copy(progress = null) }
             }
         }
     }
 
-    fun startLogin() = _state.update {
-        it.copy(showLogin = true, error = null, needsReLogin = false)
-    }
+    fun startLogin() = _state.update { it.copy(showLogin = true, error = null) }
 
     fun cancelLogin() = _state.update { it.copy(showLogin = false) }
 
@@ -153,30 +71,19 @@ class AccountViewModel @Inject constructor(
                 _state.update {
                     it.copy(
                         busy = false,
-                        progress = null,
                         error = saved.exceptionOrNull()?.message ?: "session_save_failed",
                     )
                 }
                 return@launch
             }
+            // The scan card mirrors the enqueued work's state from here on.
             BetaScanScheduler.scanNow(workManager, ExistingWorkPolicy.REPLACE)
+            _state.update { it.copy(busy = false) }
         }
     }
 
-    /** Incremental scan: new apps and stale observations only. */
-    fun resync() {
-        _state.update { it.copy(error = null) }
-        BetaScanScheduler.scanNow(workManager)
-    }
-
-    /** Full re-scan: ignores freshness TTLs and re-checks every app. */
-    fun fullResync() {
-        _state.update { it.copy(error = null) }
-        BetaScanScheduler.scanNow(workManager, force = true)
-    }
-
-    fun cancelScan() {
-        workManager.cancelUniqueWork(BetaScanScheduler.MANUAL_WORK_NAME)
+    fun setUseDynamicColor(enabled: Boolean) {
+        viewModelScope.launch { settings.setUseDynamicColor(enabled) }
     }
 
     fun signOut() {
