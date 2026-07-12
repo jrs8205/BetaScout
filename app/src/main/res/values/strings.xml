@@ -156,6 +156,7 @@
     <string name="onboarding_what">BetaScout scans your installed apps, shows which ones are known to have a Google Play beta program, opens the opt-in page for you and reminds you to re-check watched apps.</string>
     <string name="onboarding_honesty_title">What BetaScout does not do</string>
     <string name="onboarding_honesty">It never joins beta programs on your behalf. Once you sign in with Google, your memberships and each program\'s open/full status are read from your own testing pages; without signing in you check them yourself.</string>
+    <string name="onboarding_risk">Signing in is optional. When signed in, BetaScout reads your own testing pages through your Google session at a gentle, rate-limited pace. Automated reading is a gray area in Google\'s terms, so a small risk to the account cannot be ruled out — the catalog and reminders work without signing in.</string>
     <string name="onboarding_notifications">Allow notifications so the watcher can remind you to check beta statuses.</string>
     <string name="onboarding_continue">Get started</string>
 

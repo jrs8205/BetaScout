@@ -73,6 +73,11 @@ fun OnboardingScreen(onDone: () -> Unit) {
                     text = stringResource(R.string.onboarding_honesty),
                     style = MaterialTheme.typography.bodyMedium,
                 )
+                Text(
+                    text = stringResource(R.string.onboarding_risk),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
             }
         }
         Text(

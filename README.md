@@ -82,6 +82,8 @@ and the server stores no submitter information. Uploaded hints are only candidat
 they enter the catalog after the daily harvester independently verifies them against
 Google Play.
 
+The full privacy policy lives in [PRIVACY.md](PRIVACY.md).
+
 ## Building from source
 
 Requirements: JDK 17+ and the Android SDK (or just Android Studio).

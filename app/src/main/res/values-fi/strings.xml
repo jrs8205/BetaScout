@@ -154,6 +154,7 @@
     <string name="onboarding_what">BetaScout skannaa asennetut sovelluksesi, kertoo mille tiedetään Google Playn beta-ohjelma, avaa liittymissivun puolestasi ja muistuttaa tarkistamaan seurattujen sovellusten tilan.</string>
     <string name="onboarding_honesty_title">Mitä BetaScout ei tee</string>
     <string name="onboarding_honesty">Se ei koskaan liity beta-ohjelmiin puolestasi. Kun kirjaudut Googlella, jäsenyytesi ja ohjelmien auki/täynnä-tila luetaan omilta testisivuiltasi; ilman kirjautumista tarkistat ne itse.</string>
+    <string name="onboarding_risk">Kirjautuminen on vapaaehtoista. Kirjautuneena BetaScout lukee omia testisivujasi Google-istunnollasi maltillisella, rajoitetulla tahdilla. Automaattinen luku on Googlen ehtojen harmaata aluetta, joten pientä tiliriskiä ei voi sulkea pois — katalogi ja muistutukset toimivat kirjautumatta.</string>
     <string name="onboarding_notifications">Salli ilmoitukset, jotta vahti voi muistuttaa beta-tilojen tarkistamisesta.</string>
     <string name="onboarding_continue">Aloita</string>
 
