@@ -1,7 +1,34 @@
 {
   "version": 2,
-  "generatedAt": 1783856981562,
+  "generatedAt": 1783928556709,
   "programs": [
+    {
+      "packageName": "aplicacion.tiempo",
+      "appName": "Weather Radar - Meteored News",
+      "hasBeta": true,
+      "productionVersionCode": 812,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ch.protonmail.android",
+      "appName": "Proton Mail: Encrypted Email",
+      "hasBeta": true,
+      "productionVersionCode": 17444,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ch.protonvpn.android",
+      "appName": "Proton VPN: Fast & Secure VPN",
+      "hasBeta": true,
+      "productionVersionCode": 605191600,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
     {
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
@@ -12,6 +39,15 @@
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.alphainventor.filemanager",
+      "appName": "File Manager",
+      "hasBeta": true,
+      "productionVersionCode": 2103082,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
@@ -19,6 +55,15 @@
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.authy.authy",
+      "appName": "Twilio Authy Authenticator",
+      "hasBeta": true,
+      "productionVersionCode": 1077,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.discord",
@@ -31,12 +76,21 @@
     },
     {
       "packageName": "com.dropbox.android",
-      "appName": "Dropbox: Files & Cloud Storage",
+      "appName": "Dropbox: Secure Cloud Storage",
       "hasBeta": true,
       "productionVersionCode": 48020200,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.duckduckgo.mobile.android",
+      "appName": "DuckDuckGo, optional Duck.ai",
+      "hasBeta": true,
+      "productionVersionCode": 52872000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.duolingo",
@@ -51,7 +105,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 472947912,
+      "productionVersionCode": 472948026,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -60,25 +114,124 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 343812216,
+      "productionVersionCode": 343812233,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.github.android",
+      "appName": "GitHub",
+      "hasBeta": true,
+      "productionVersionCode": 937,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.apps.docs",
+      "appName": "Google Drive",
+      "hasBeta": true,
+      "productionVersionCode": 214543893,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068663556,
+      "productionVersionCode": 1068670201,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.google.android.apps.messaging",
+      "appName": "Google Messages",
+      "hasBeta": true,
+      "productionVersionCode": 314045063,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.apps.nbu.files",
+      "appName": "Files by Google",
+      "hasBeta": true,
+      "productionVersionCode": 1908487,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.apps.tachyon",
+      "appName": "Google Meet",
+      "hasBeta": true,
+      "productionVersionCode": 7351531,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.apps.wellbeing",
+      "appName": "Digital Wellbeing",
+      "hasBeta": true,
+      "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.contactkeys",
+      "appName": "Android System Key Verifier",
+      "hasBeta": true,
+      "productionVersionCode": 18135,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.dialer",
+      "appName": "Phone by Google",
+      "hasBeta": true,
+      "productionVersionCode": 19864198,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.gms",
+      "appName": "Google Play services",
+      "hasBeta": true,
+      "productionVersionCode": 262532029,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.googlequicksearchbox",
+      "appName": "Google",
+      "hasBeta": true,
+      "productionVersionCode": 301773346,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.inputmethod.latin",
+      "appName": "Gboard - the Google Keyboard",
+      "hasBeta": true,
+      "productionVersionCode": 175871582,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561182083,
+      "productionVersionCode": 1561179976,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -87,7 +240,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384309618,
+      "productionVersionCode": 384309577,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
