@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.verticalScroll
@@ -44,6 +45,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import java.text.DateFormat
 import java.util.Date
@@ -67,6 +69,12 @@ fun AppDetailScreen(
     viewModel: AppDetailViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    // Coming back from the beta page (a Custom Tab): the user may have just joined
+    // or left, so the resumed screen re-checks this one app right away.
+    LifecycleResumeEffect(Unit) {
+        viewModel.onResumed()
+        onPauseOrDispose { }
+    }
     AppDetailContent(
         uiState = uiState,
         packageName = viewModel.packageName,
@@ -75,6 +83,8 @@ fun AppDetailScreen(
         onSetWatching = viewModel::setWatching,
         onSaveNote = viewModel::saveNote,
         onMarkChecked = viewModel::markCheckedNow,
+        onBetaPageOpened = viewModel::onBetaPageOpened,
+        onCheckStatusNow = viewModel::checkStatusNow,
     )
 }
 
@@ -88,6 +98,8 @@ private fun AppDetailContent(
     onSetWatching: (Boolean, Int?) -> Unit,
     onSaveNote: (String) -> Unit,
     onMarkChecked: () -> Unit,
+    onBetaPageOpened: () -> Unit,
+    onCheckStatusNow: () -> Unit,
 ) {
     val overview = uiState.overview
     Scaffold(
@@ -125,9 +137,14 @@ private fun AppDetailContent(
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 Header(overview)
-                HeroCard(overview, onSetWatching)
+                HeroCard(overview, uiState.checkingStatus, onSetWatching, onBetaPageOpened)
                 WatchCard(overview, onSetWatching)
-                InfoCard(overview)
+                InfoCard(
+                    overview = overview,
+                    signedIn = uiState.signedIn,
+                    checkingStatus = uiState.checkingStatus,
+                    onCheckStatusNow = onCheckStatusNow,
+                )
                 MarkingCard(overview, onSetState, onMarkChecked, onSaveNote)
             }
         }
@@ -166,7 +183,12 @@ private fun Header(overview: AppBetaOverview) {
 
 /** One state-colored answer to "what can I do here right now". */
 @Composable
-private fun HeroCard(overview: AppBetaOverview, onSetWatching: (Boolean, Int?) -> Unit) {
+private fun HeroCard(
+    overview: AppBetaOverview,
+    checkingStatus: Boolean,
+    onSetWatching: (Boolean, Int?) -> Unit,
+    onBetaPageOpened: () -> Unit,
+) {
     val context = LocalContext.current
     val observation = overview.observation
     val membership = overview.betaMembership()
@@ -176,7 +198,10 @@ private fun HeroCard(overview: AppBetaOverview, onSetWatching: (Boolean, Int?) -
     // can complete the join (the opt-in is a plain web form on that page).
     val testingUrl = overview.betaProgram?.testingUrl
         ?: BetaLinkBuilder.testingUrl(overview.app.packageName)
-    val openPage: () -> Unit = { openInCustomTab(context, testingUrl) }
+    val openPage: () -> Unit = {
+        onBetaPageOpened()
+        openInCustomTab(context, testingUrl)
+    }
 
     data class Hero(
         val titleRes: Int,
@@ -269,6 +294,23 @@ private fun HeroCard(overview: AppBetaOverview, onSetWatching: (Boolean, Int?) -
                     color = hero.onContainer.copy(alpha = 0.7f),
                 )
             }
+            if (checkingStatus) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(14.dp),
+                        strokeWidth = 2.dp,
+                        color = hero.onContainer,
+                    )
+                    Text(
+                        text = stringResource(R.string.detail_checking_status),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = hero.onContainer.copy(alpha = 0.7f),
+                    )
+                }
+            }
             observation?.lastError?.let {
                 Text(
                     text = stringResource(R.string.observed_last_error, it),
@@ -348,7 +390,12 @@ private fun WatchCard(overview: AppBetaOverview, onSetWatching: (Boolean, Int?) 
 
 /** The facts: what the last authenticated scan saw, what the catalog knows, links. */
 @Composable
-private fun InfoCard(overview: AppBetaOverview) {
+private fun InfoCard(
+    overview: AppBetaOverview,
+    signedIn: Boolean,
+    checkingStatus: Boolean,
+    onCheckStatusNow: () -> Unit,
+) {
     val context = LocalContext.current
     val observation = overview.observation
     val program = overview.betaProgram
@@ -382,8 +429,21 @@ private fun InfoCard(overview: AppBetaOverview) {
             }
         }
         HorizontalDivider()
-        TextButton(onClick = { openPlayPage(context, overview.app.packageName) }) {
-            Text(stringResource(R.string.open_play_page))
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            TextButton(
+                onClick = { openPlayPage(context, overview.app.packageName) },
+                modifier = Modifier.weight(1f, fill = false),
+            ) {
+                Text(stringResource(R.string.open_play_page))
+            }
+            if (signedIn) {
+                TextButton(onClick = onCheckStatusNow, enabled = !checkingStatus) {
+                    Text(stringResource(R.string.detail_check_status_now))
+                }
+            }
         }
     }
 }

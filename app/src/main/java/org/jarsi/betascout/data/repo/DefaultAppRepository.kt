@@ -195,6 +195,42 @@ class DefaultAppRepository(
         }
     }
 
+    /** Shares the scan lock with full runs but deliberately does NOT flip
+     *  [scanRunning]: this is a sub-second, detail-screen-local re-check, and
+     *  raising the global flag would flash the scan UI on the other screens. */
+    override suspend fun refreshSingleBetaStatus(
+        session: PlaySession,
+        packageName: String,
+    ): Result<Unit> = withContext(io) {
+        if (!scanMutex.tryLock()) return@withContext Result.failure(DataError.ScanInProgress())
+        try {
+            try {
+                val outcome = scraper.scrape(listOf(packageName), session) { observation ->
+                    betaObservationDao.upsert(observation.toEntity())
+                }
+                if (outcome.needsLogin) {
+                    return@withContext Result.failure(DataError.NeedsLogin())
+                }
+                val failure = outcome.failures[packageName]
+                if (failure != null) {
+                    // Same policy as the batch scan: a failed fetch keeps the previous
+                    // status but stamps the reason so the detail view can explain it.
+                    betaObservationDao.get(session.accountKey, packageName)?.let { previous ->
+                        betaObservationDao.upsert(previous.copy(lastError = failure))
+                    }
+                    return@withContext Result.failure(DataError.Local(Exception(failure)))
+                }
+                Result.success(Unit)
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                Result.failure(DataError.Local(e))
+            }
+        } finally {
+            scanMutex.unlock()
+        }
+    }
+
     override suspend fun setWatching(
         packageName: String,
         watching: Boolean,

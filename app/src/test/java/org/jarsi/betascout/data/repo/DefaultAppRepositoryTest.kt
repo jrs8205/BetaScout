@@ -472,6 +472,75 @@ class DefaultAppRepositoryTest {
     }
 
     @Test
+    fun `refreshSingleBetaStatus re-checks one app immediately even when its observation is fresh`() = runTest {
+        val repo = repository(now = 10_000L)
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        // Fresh observation, well inside the TTL — a batch scan would skip it,
+        // but the user just visited the beta page so it must be re-read now.
+        observationDao.upsert(
+            BetaObservationEntity(
+                accountKey = ACCOUNT,
+                packageName = "com.a",
+                liveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.NOT_JOINED,
+                checkedAt = 9_999L,
+                lastError = null,
+            )
+        )
+        pageHtml = { """<html><body><form id="leaveForm"></form></body></html>""" }
+
+        val result = repo.refreshSingleBetaStatus(session, "com.a")
+
+        assertTrue(result.isSuccess)
+        val observation = observationDao.get(ACCOUNT, "com.a")!!
+        assertEquals(ObservedMembership.JOINED, observation.observedMembership)
+        assertEquals(10_000L, observation.checkedAt)
+    }
+
+    @Test
+    fun `refreshSingleBetaStatus stamps a fetch failure without touching the stored status`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        observationDao.upsert(
+            BetaObservationEntity(
+                accountKey = ACCOUNT,
+                packageName = "com.a",
+                liveStatus = LiveBetaStatus.OPEN,
+                observedMembership = ObservedMembership.JOINED,
+                checkedAt = 1_000L,
+                lastError = null,
+            )
+        )
+        failingPackages += "com.a"
+
+        val result = repo.refreshSingleBetaStatus(session, "com.a")
+
+        assertTrue(result.exceptionOrNull() is DataError.Local)
+        val observation = observationDao.get(ACCOUNT, "com.a")!!
+        assertEquals("RuntimeException: network error", observation.lastError)
+        assertEquals(ObservedMembership.JOINED, observation.observedMembership)
+        assertEquals(1_000L, observation.checkedAt)
+    }
+
+    @Test
+    fun `refreshSingleBetaStatus is rejected while a full scan holds the lock`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        pageHtml = { """<html><body><form id="joinForm"></form></body></html>""" }
+        var single: Result<Unit>? = null
+        onFetch = {
+            if (single == null) single = repo.refreshSingleBetaStatus(session, "com.a")
+        }
+
+        repo.refreshBetaStatus(session).getOrThrow()
+
+        assertTrue(single!!.exceptionOrNull() is DataError.ScanInProgress)
+    }
+
+    @Test
     fun `refreshBetaStatus reports joined and not-joined totals for the whole account`() = runTest {
         val repo = repository(now = 10_000L)
         scanner.result = { listOf(app("com.a")) }

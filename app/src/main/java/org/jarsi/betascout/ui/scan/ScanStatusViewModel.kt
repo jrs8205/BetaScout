@@ -23,6 +23,8 @@ data class ScanUiState(
     val busy: Boolean = false,
     /** A cancelled run is still unwinding: controls stay disabled, no progress row. */
     val cancelling: Boolean = false,
+    /** The periodic background worker is scanning (no manual run in flight). */
+    val backgroundScanning: Boolean = false,
     val progress: ScanProgress? = null,
     val lastScan: LastScanInfo? = null,
     val error: String? = null,
@@ -49,6 +51,11 @@ class ScanStatusViewModel @Inject constructor(
     /** WorkManager reports an active scan job; the actual lock may outlive it. */
     private val workBusy = MutableStateFlow(false)
 
+    /** The periodic worker is RUNNING. It shares the scan lock with manual runs, so
+     *  without tracking it a background scan would read as "!work && lock" — the
+     *  exact signature of a cancelled manual run — and show up as "Cancelling…". */
+    private val backgroundRunning = MutableStateFlow(false)
+
     init {
         viewModelScope.launch {
             settings.playSession.collect { session ->
@@ -71,10 +78,23 @@ class ScanStatusViewModel @Inject constructor(
                 .collect { infos -> onScanWorkChanged(infos.firstOrNull()) }
         }
         viewModelScope.launch {
-            combine(workBusy, repository.scanRunning) { work, lock -> work to lock }
-                .collect { (work, lock) ->
-                    _state.update { it.copy(busy = work || lock, cancelling = !work && lock) }
+            workManager.getWorkInfosForUniqueWorkFlow(BetaScanScheduler.WORK_NAME)
+                .collect { infos ->
+                    backgroundRunning.value = infos.any { it.state == WorkInfo.State.RUNNING }
                 }
+        }
+        viewModelScope.launch {
+            combine(workBusy, backgroundRunning, repository.scanRunning) { work, bg, lock ->
+                Triple(work, bg, lock)
+            }.collect { (work, bg, lock) ->
+                _state.update {
+                    it.copy(
+                        busy = work || lock,
+                        backgroundScanning = !work && bg,
+                        cancelling = !work && !bg && lock,
+                    )
+                }
+            }
         }
     }
 

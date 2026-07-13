@@ -49,6 +49,14 @@ fun ScanProgressStrip(
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
+            } else if (state.backgroundScanning) {
+                // No cancel action: only a manual run can be cancelled from here.
+                LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
+                Text(
+                    text = stringResource(R.string.account_scan_background_running),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
             } else {
                 val progress = state.progress
                 if (progress != null) {
@@ -89,15 +97,15 @@ fun ScanProgressStrip(
 
 /**
  * The scanning system's face in the UI: what happened last, what is happening
- * now, and the one action that makes sense in that state. Shared by the main
- * screen and the account screen so scanning never feels hidden.
+ * now, and the one action that makes sense in that state. Shown on the account
+ * screen only while signed in — signed-out prompting (and its sign-in button)
+ * is the account card's job, so the two never show duplicate buttons.
  */
 @Composable
 fun ScanStatusCard(
     state: ScanUiState,
     onScanNow: () -> Unit,
     onCancel: () -> Unit,
-    onSignIn: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Card(
@@ -115,6 +123,15 @@ fun ScanStatusCard(
                 state.cancelling -> {
                     Text(
                         text = stringResource(R.string.account_scan_cancelling),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+
+                state.backgroundScanning -> {
+                    LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
+                    Text(
+                        text = stringResource(R.string.account_scan_background_running),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -145,23 +162,6 @@ fun ScanStatusCard(
                     }
                     OutlinedButton(onClick = onCancel, modifier = Modifier.fillMaxWidth()) {
                         Text(stringResource(R.string.account_scan_cancel))
-                    }
-                }
-
-                !state.signedIn -> {
-                    Text(
-                        text = stringResource(
-                            if (state.needsLogin) R.string.account_relogin else R.string.scan_card_signed_out,
-                        ),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = if (state.needsLogin) {
-                            MaterialTheme.colorScheme.error
-                        } else {
-                            MaterialTheme.colorScheme.onSurfaceVariant
-                        },
-                    )
-                    Button(onClick = onSignIn, modifier = Modifier.fillMaxWidth()) {
-                        Text(stringResource(R.string.account_signin))
                     }
                 }
 
