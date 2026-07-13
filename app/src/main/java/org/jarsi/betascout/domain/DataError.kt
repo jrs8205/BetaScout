@@ -7,4 +7,7 @@ sealed class DataError(message: String, cause: Throwable? = null) : Exception(me
 
     /** Another beta-status scan already holds the scan lock; this one was rejected. */
     class ScanInProgress : DataError("A scan is already running")
+
+    /** The Google session is signed out or expired; a fresh sign-in is required. */
+    class NeedsLogin : DataError("Sign-in required")
 }

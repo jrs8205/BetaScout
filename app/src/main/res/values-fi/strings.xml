@@ -21,7 +21,6 @@
     <string name="scan_card_subtitle">Mukana %1$d betassa · tausta skannaa 6 h välein</string>
     <string name="scan_card_button">Skannaa</string>
     <string name="scan_card_starting">Käynnistetään skannausta…</string>
-    <string name="scan_card_signed_out">Kirjaudu Googlella, niin BetaScout tunnistaa beta-jäsenyytesi.</string>
     <string name="hero_open">Beta on auki</string>
     <string name="hero_open_sub">Voit liittyä testaajaksi nyt.</string>
     <string name="hero_full">Beta on täynnä</string>
@@ -95,6 +94,8 @@
     <string name="mark_checked">Merkitse tarkistetuksi</string>
     <string name="note_label">Muistiinpano</string>
     <string name="save_note">Tallenna muistiinpano</string>
+    <string name="detail_check_status_now">Tarkista tila nyt</string>
+    <string name="detail_checking_status">Tarkistetaan tilaa…</string>
 
     <!-- Navigation tabs -->
     <string name="tab_apps">Sovellukset</string>
@@ -111,6 +112,7 @@
     <string name="account_sync">Skannaa nyt</string>
     <string name="account_scan_cancel">Peruuta skannaus</string>
     <string name="account_scan_cancelling">Peruutetaan…</string>
+    <string name="account_scan_background_running">Automaattinen taustaskannaus käynnissä…</string>
     <string name="account_full_scan">Skannaa kaikki uudelleen</string>
     <string name="account_full_scan_hint">Tarkistaa kaikki sovellukset uudelleen — voi kestää 10–15 minuuttia.</string>
     <string name="account_no_scan_yet">Ei vielä skannausta — paina Skannaa nyt.</string>
@@ -127,11 +129,11 @@
     <string name="account_dynamic_color_hint">Värit seuraavat taustakuvaa BetaScoutin oman ilmeen sijaan.</string>
     <string name="account_privacy_note">BetaScout lukee vain omia testisivujasi eikä koskaan liity betoihin puolestasi.</string>
     <string name="share_prompt_title">Auta kasvattamaan beta-katalogia</string>
-    <string name="share_prompt_body">Jaa nimettömästi, mille sovelluksille skannauksesi löytävät testiohjelman. Vain pakettinimet lähetetään — ei koskaan tiliäsi tai jäsenyyksiäsi.</string>
+    <string name="share_prompt_body">Kun tämä on päällä, BetaScout lähettää pelkät pakettinimet sovelluksista, joille skannauksesi löysi testiohjelman, jotta yhteinen katalogi kasvaa oikeilla löydöillä. Mitään muuta ei koskaan lähetetä — ei tiliäsi, jäsenyyksiäsi eikä laitetietoja — ja voit poistaa tämän käytöstä asetuksista milloin tahansa.</string>
     <string name="share_prompt_enable">Ota käyttöön</string>
     <string name="share_prompt_no">Ei kiitos</string>
     <string name="share_toggle_title">Jaa löydöt</string>
-    <string name="share_toggle_hint">Vain nimettömät pakettinimet</string>
+    <string name="share_toggle_hint">Jokaisen skannauksen jälkeen lähetetään nimettömästi vain niiden sovellusten pakettinimet, joille löytyi testiohjelma. Tiliäsi, jäsenyyksiäsi tai laitetietojasi ei koskaan lähetetä, ja löydöt tarkistetaan Google Playsta ennen kuin ne päätyvät yhteiseen katalogiin.</string>
     <string name="account_scan_totals">Mukana %1$d betassa · ei mukana %2$d · ilman beta-ohjelmaa %3$d</string>
     <string name="account_scan_checked">Tässä skannauksessa tarkistettiin %1$d sovellusta</string>
     <string name="account_last_scan_failed">%1$d sovellusta ei voitu tarkistaa — yritetään seuraavassa skannauksessa.</string>

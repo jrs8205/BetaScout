@@ -80,11 +80,16 @@ fun OnboardingScreen(onDone: () -> Unit) {
                 )
             }
         }
-        Text(
-            text = stringResource(R.string.onboarding_notifications),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
+        // Android 13+ only: older versions have no notification permission to ask
+        // for (notifications are allowed by default), so promising a prompt that
+        // never appears would just confuse.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            Text(
+                text = stringResource(R.string.onboarding_notifications),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
         Spacer(Modifier.weight(1f))
         Button(
             onClick = {

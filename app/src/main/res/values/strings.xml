@@ -23,7 +23,6 @@
     <string name="scan_card_subtitle">In %1$d betas · background scan every 6 h</string>
     <string name="scan_card_button">Scan</string>
     <string name="scan_card_starting">Starting the scan…</string>
-    <string name="scan_card_signed_out">Sign in with Google so BetaScout can detect your beta memberships.</string>
     <string name="hero_open">Beta is open</string>
     <string name="hero_open_sub">You can join as a tester right now.</string>
     <string name="hero_full">Beta is full</string>
@@ -97,6 +96,8 @@
     <string name="mark_checked">Mark checked</string>
     <string name="note_label">Note</string>
     <string name="save_note">Save note</string>
+    <string name="detail_check_status_now">Check status now</string>
+    <string name="detail_checking_status">Checking status…</string>
 
     <!-- Navigation tabs -->
     <string name="tab_apps">Apps</string>
@@ -113,6 +114,7 @@
     <string name="account_sync">Scan now</string>
     <string name="account_scan_cancel">Cancel scan</string>
     <string name="account_scan_cancelling">Cancelling…</string>
+    <string name="account_scan_background_running">Automatic background scan running…</string>
     <string name="account_full_scan">Re-scan everything</string>
     <string name="account_full_scan_hint">Checks every app again — can take 10–15 minutes.</string>
     <string name="account_no_scan_yet">No scan yet — tap Scan now.</string>
@@ -129,11 +131,11 @@
     <string name="account_dynamic_color_hint">Colors follow your wallpaper instead of the BetaScout look.</string>
     <string name="account_privacy_note">BetaScout only reads your own testing pages and never joins a beta on your behalf.</string>
     <string name="share_prompt_title">Help grow the beta catalog</string>
-    <string name="share_prompt_body">Anonymously share which testing programs your scans find. Only package names are sent — never your account or memberships.</string>
+    <string name="share_prompt_body">When enabled, BetaScout uploads the bare package names of apps whose scan found a testing program, so the shared catalog can grow with real-world finds. Nothing else is ever sent — not your account, memberships or device — and you can turn this off in settings at any time.</string>
     <string name="share_prompt_enable">Enable</string>
     <string name="share_prompt_no">No thanks</string>
     <string name="share_toggle_title">Share discoveries</string>
-    <string name="share_toggle_hint">Anonymous package names only</string>
+    <string name="share_toggle_hint">After each scan, only the bare package names of apps found to have a testing program are uploaded anonymously. Your account, memberships and device details are never sent, and finds are verified against Google Play before they enter the shared catalog.</string>
     <string name="account_scan_totals">In %1$d betas · not in %2$d · no beta program for %3$d</string>
     <string name="account_scan_checked">%1$d apps checked in this scan</string>
     <string name="account_last_scan_failed">%1$d apps could not be checked — retried on the next scan.</string>

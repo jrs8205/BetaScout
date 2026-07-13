@@ -40,6 +40,15 @@ interface AppRepository {
         onProgress: suspend (ScanProgress) -> Unit = {},
     ): Result<ScanSummary>
 
+    /** Re-checks a single app's testing page immediately, ignoring the freshness TTL —
+     *  used right after the user visits the app's beta page, where the membership has
+     *  likely just changed. Fails with [DataError.ScanInProgress] while a full scan is
+     *  running and [DataError.NeedsLogin] when the session has expired. */
+    suspend fun refreshSingleBetaStatus(
+        session: PlaySession,
+        packageName: String,
+    ): Result<Unit>
+
     suspend fun setWatching(
         packageName: String,
         watching: Boolean,

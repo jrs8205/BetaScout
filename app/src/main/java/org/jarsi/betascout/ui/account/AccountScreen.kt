@@ -96,18 +96,17 @@ fun AccountScreen(
         ) {
             AccountCard(
                 state = state,
+                needsLogin = scanState.needsLogin,
                 onSignIn = viewModel::startLogin,
                 onSignOut = viewModel::signOut,
             )
 
-            ScanStatusCard(
-                state = scanState,
-                onScanNow = scanViewModel::scanNow,
-                onCancel = scanViewModel::cancel,
-                onSignIn = viewModel::startLogin,
-            )
-
             if (state.signedIn) {
+                ScanStatusCard(
+                    state = scanState,
+                    onScanNow = scanViewModel::scanNow,
+                    onCancel = scanViewModel::cancel,
+                )
                 if (scanState.lastScan != null && !sharePromptShown) {
                     SharePromptCard(
                         onEnable = { viewModel.setShareDiscoveries(true) },
@@ -170,6 +169,7 @@ private fun SettingsCard(content: @Composable () -> Unit) {
 @Composable
 private fun AccountCard(
     state: AccountUiState,
+    needsLogin: Boolean,
     onSignIn: () -> Unit,
     onSignOut: () -> Unit,
 ) {
@@ -208,6 +208,13 @@ private fun AccountCard(
                 }
             }
         } else {
+            if (needsLogin) {
+                Text(
+                    text = stringResource(R.string.account_relogin),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.error,
+                )
+            }
             Text(
                 text = stringResource(R.string.account_hint),
                 style = MaterialTheme.typography.bodyMedium,
