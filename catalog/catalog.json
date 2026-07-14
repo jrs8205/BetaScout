@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1783928556709,
+  "generatedAt": 1784010469785,
   "programs": [
     {
       "packageName": "aplicacion.tiempo",
@@ -69,7 +69,7 @@
       "packageName": "com.discord",
       "appName": "Discord - Talk, Play, Hang Out",
       "hasBeta": true,
-      "productionVersionCode": 336010,
+      "productionVersionCode": 337010,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -228,22 +228,76 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.google.android.projection.gearhead",
+      "appName": "Android Auto",
+      "hasBeta": true,
+      "productionVersionCode": 171662414,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.safetycore",
+      "appName": "Android System SafetyCore",
+      "hasBeta": true,
+      "productionVersionCode": 20410,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.verifier",
+      "appName": "Android Developer Verifier",
+      "hasBeta": true,
+      "productionVersionCode": 65354,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.webview",
+      "appName": "Android System WebView",
+      "hasBeta": true,
+      "productionVersionCode": 787104603,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561179976,
+      "productionVersionCode": 1561182083,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.imdb.mobile",
+      "appName": "IMDb: Movies & TV Shows",
+      "hasBeta": true,
+      "productionVersionCode": 109330200,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384309577,
+      "productionVersionCode": 384309618,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.justwatch.justwatch",
+      "appName": "JustWatch - Streaming Guide",
+      "hasBeta": true,
+      "productionVersionCode": 2628002,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.linkedin.android",
@@ -253,6 +307,24 @@
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.mason.ship.clipboard",
+      "appName": "Clipboard - Copy Paste & Notes",
+      "hasBeta": true,
+      "productionVersionCode": 11897,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.microsoft.office.excel",
+      "appName": "Microsoft Excel: Spreadsheets",
+      "hasBeta": true,
+      "productionVersionCode": 2005246523,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.microsoft.office.powerpoint",
@@ -291,6 +363,24 @@
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.openai.chatgpt",
+      "appName": "ChatGPT",
+      "hasBeta": true,
+      "productionVersionCode": 2618827,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.paypal.android.p2pmobile",
+      "appName": "PayPal - Pay, Send, Save",
+      "hasBeta": true,
+      "productionVersionCode": 1160086005,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.pinterest",
       "appName": "Pinterest",
       "hasBeta": true,
@@ -307,6 +397,15 @@
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.revolut.revolut",
+      "appName": "Revolut: Spend, Save, Trade",
+      "hasBeta": true,
+      "productionVersionCode": 1013810118,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.snapchat.android",
@@ -330,7 +429,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12204,
+      "productionVersionCode": 12206,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -363,6 +462,33 @@
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.whatsapp.w4b",
+      "appName": "WhatsApp Business",
+      "hasBeta": true,
+      "productionVersionCode": 262708312,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.x8bit.bitwarden",
+      "appName": "Bitwarden Password Manager",
+      "hasBeta": true,
+      "productionVersionCode": 21686,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "fi.iltasanomat",
+      "appName": "IS – Ilta-Sanomat",
+      "hasBeta": true,
+      "productionVersionCode": 1411107067,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "fi.supersaa",
       "appName": "IS Supers��",
       "hasBeta": true,
@@ -393,7 +519,7 @@
       "packageName": "tv.twitch.android.app",
       "appName": "Twitch: Live Streaming",
       "hasBeta": true,
-      "productionVersionCode": 3002026,
+      "productionVersionCode": 3003006,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
