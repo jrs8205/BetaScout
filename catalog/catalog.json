@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1784010469785,
+  "generatedAt": 1784097022169,
   "programs": [
     {
       "packageName": "aplicacion.tiempo",
@@ -33,7 +33,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
       "hasBeta": true,
-      "productionVersionCode": 1931845936,
+      "productionVersionCode": 1931846305,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -51,7 +51,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 787111433,
+      "productionVersionCode": 787111533,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -96,7 +96,7 @@
       "packageName": "com.duolingo",
       "appName": "Duolingo: Language Lessons",
       "hasBeta": true,
-      "productionVersionCode": 2409,
+      "productionVersionCode": 2412,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -105,7 +105,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 472948026,
+      "productionVersionCode": 473134669,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -219,6 +219,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.google.android.ims",
+      "appName": "Carrier Services",
+      "hasBeta": true,
+      "productionVersionCode": 31153903,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.google.android.inputmethod.latin",
       "appName": "Gboard - the Google Keyboard",
       "hasBeta": true,
@@ -285,7 +294,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384309618,
+      "productionVersionCode": 384409749,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -303,7 +312,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 212600,
+      "productionVersionCode": 212700,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -372,6 +381,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ouraring.oura",
+      "appName": "Oura",
+      "hasBeta": true,
+      "productionVersionCode": 260708094,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ovz.carscanner",
+      "appName": "Car Scanner ELM OBD2",
+      "hasBeta": true,
+      "productionVersionCode": 42001046,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.paypal.android.p2pmobile",
       "appName": "PayPal - Pay, Send, Save",
       "hasBeta": true,
@@ -384,10 +411,19 @@
       "packageName": "com.pinterest",
       "appName": "Pinterest",
       "hasBeta": true,
-      "productionVersionCode": 14268010,
+      "productionVersionCode": 14278010,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.qwant.liberty",
+      "appName": "Qwant – Search engine",
+      "hasBeta": true,
+      "productionVersionCode": 50107010,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.reddit.frontpage",
@@ -403,6 +439,15 @@
       "appName": "Revolut: Spend, Save, Trade",
       "hasBeta": true,
       "productionVersionCode": 1013810118,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ruuvi.station",
+      "appName": "Ruuvi Station",
+      "hasBeta": true,
+      "productionVersionCode": 305015,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -429,7 +474,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12206,
+      "productionVersionCode": 12208,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -438,7 +483,7 @@
       "packageName": "com.tumblr",
       "appName": "Tumblr: Social Media & Art",
       "hasBeta": true,
-      "productionVersionCode": 1450300109,
+      "productionVersionCode": 1450400108,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -451,6 +496,15 @@
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.waze",
+      "appName": "Waze Navigation & Live Traffic",
+      "hasBeta": true,
+      "productionVersionCode": 1030711,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.whatsapp",
@@ -480,10 +534,37 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "coredevices.coreapp",
+      "appName": "Pebble",
+      "hasBeta": true,
+      "productionVersionCode": 3444,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "fi.danskebank.mobilepay",
+      "appName": "MobilePay",
+      "hasBeta": true,
+      "productionVersionCode": 4430788,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "fi.iltasanomat",
       "appName": "IS – Ilta-Sanomat",
       "hasBeta": true,
       "productionVersionCode": 1411107067,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "fi.itella.posti.android",
+      "appName": "OmaPosti",
+      "hasBeta": true,
+      "productionVersionCode": 364004,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -498,13 +579,40 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "ginlemon.flowerfree",
+      "appName": "Smart Launcher 6 ‧ Home Screen",
+      "hasBeta": true,
+      "productionVersionCode": 660130,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "me.proton.android.drive",
+      "appName": "Proton Drive: Cloud Storage",
+      "hasBeta": true,
+      "productionVersionCode": 44351,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 69222,
+      "productionVersionCode": 69662,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "org.thoughtcrime.securesms",
+      "appName": "Signal Private Messenger",
+      "hasBeta": true,
+      "productionVersionCode": 171601,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "proton.android.pass",
