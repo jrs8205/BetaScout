@@ -1,12 +1,21 @@
 {
   "version": 2,
-  "generatedAt": 1784097022169,
+  "generatedAt": 1784183620746,
   "programs": [
     {
       "packageName": "aplicacion.tiempo",
       "appName": "Weather Radar - Meteored News",
       "hasBeta": true,
       "productionVersionCode": 812,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "at.harnisch.android.planets",
+      "appName": "Sun, moon and planets",
+      "hasBeta": true,
+      "productionVersionCode": 418,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -25,6 +34,24 @@
       "appName": "Proton VPN: Fast & Secure VPN",
       "hasBeta": true,
       "productionVersionCode": 605191600,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "code.devil.gifhomewidget",
+      "appName": "GIF HOME WIDGET",
+      "hasBeta": true,
+      "productionVersionCode": 36,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.a0soft.gphone.acc.free",
+      "appName": "1Tap Cleaner (clear cache)",
+      "hasBeta": true,
+      "productionVersionCode": 240005209,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -51,7 +78,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 787111533,
+      "productionVersionCode": 787111433,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -78,10 +105,28 @@
       "packageName": "com.dropbox.android",
       "appName": "Dropbox: Secure Cloud Storage",
       "hasBeta": true,
-      "productionVersionCode": 48020200,
+      "productionVersionCode": 48220200,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.dsi.ant.plugins.antplus",
+      "appName": "ANT+ Plugins Service",
+      "hasBeta": true,
+      "productionVersionCode": 30900,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.dsi.ant.service.socket",
+      "appName": "ANT Radio Service",
+      "hasBeta": true,
+      "productionVersionCode": 41800,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.duckduckgo.mobile.android",
@@ -105,7 +150,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 473134669,
+      "productionVersionCode": 473134764,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -294,7 +339,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384409749,
+      "productionVersionCode": 384409712,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -322,6 +367,15 @@
       "appName": "Clipboard - Copy Paste & Notes",
       "hasBeta": true,
       "productionVersionCode": 11897,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.microsoft.appmanager",
+      "appName": "Link to Windows",
+      "hasBeta": true,
+      "productionVersionCode": 8020508,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -366,7 +420,7 @@
       "packageName": "com.netflix.mediaclient",
       "appName": "Netflix",
       "hasBeta": true,
-      "productionVersionCode": 64252,
+      "productionVersionCode": 64276,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -429,10 +483,19 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2627060,
+      "productionVersionCode": 2628060,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.Relmtech.Remote",
+      "appName": "Unified Remote",
+      "hasBeta": true,
+      "productionVersionCode": 324000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.revolut.revolut",
@@ -453,10 +516,19 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.sec.android.app.sbrowser",
+      "appName": "Samsung Browser",
+      "hasBeta": true,
+      "productionVersionCode": 1300067502,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.snapchat.android",
       "appName": "Snapchat",
       "hasBeta": true,
-      "productionVersionCode": 299772,
+      "productionVersionCode": 300722,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -492,7 +564,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312071000,
+      "productionVersionCode": 312080000,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -510,7 +582,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 262607310,
+      "productionVersionCode": 262708500,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
