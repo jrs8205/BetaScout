@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1784183620746,
+  "generatedAt": 1784269807097,
   "programs": [
     {
       "packageName": "aplicacion.tiempo",
@@ -57,6 +57,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.a0soft.gphone.uninstaller",
+      "appName": "App Usage - Manage/Track Usage",
+      "hasBeta": true,
+      "productionVersionCode": 240006099,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.adguard.vpn",
+      "appName": "AdGuard VPN — private proxy",
+      "hasBeta": true,
+      "productionVersionCode": 348464,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
       "hasBeta": true,
@@ -64,6 +82,24 @@
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.aktaris.chattranslator",
+      "appName": "PopLingo: Popup Dictionary",
+      "hasBeta": true,
+      "productionVersionCode": 20,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.alarmclock.xtreme.free",
+      "appName": "Alarm Clock Xtreme & Timer",
+      "hasBeta": true,
+      "productionVersionCode": 70004221,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.alphainventor.filemanager",
@@ -78,7 +114,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 787111433,
+      "productionVersionCode": 787112833,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -150,7 +186,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 473134764,
+      "productionVersionCode": 473134745,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -165,10 +201,28 @@
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.gaft.videoeraser",
+      "appName": "CutVibe: Video Editor & Eraser",
+      "hasBeta": true,
+      "productionVersionCode": 207,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.github.android",
       "appName": "GitHub",
       "hasBeta": true,
       "productionVersionCode": 937,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.glasswidgets",
+      "appName": "Glass Widgets & Theme Pro",
+      "hasBeta": true,
+      "productionVersionCode": 64,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -339,7 +393,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384409712,
+      "productionVersionCode": 384409749,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -357,7 +411,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 212700,
+      "productionVersionCode": 212900,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -546,7 +600,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12208,
+      "productionVersionCode": 12210,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
