@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1784269807097,
+  "generatedAt": 1784355765264,
   "programs": [
     {
       "packageName": "aplicacion.tiempo",
@@ -114,7 +114,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 787112833,
+      "productionVersionCode": 787112433,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -186,7 +186,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 473134745,
+      "productionVersionCode": 473134688,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -195,7 +195,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 343812233,
+      "productionVersionCode": 344010812,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -296,8 +296,8 @@
       "hasBeta": true,
       "productionVersionCode": 19864198,
       "liveStatus": "UNKNOWN",
-      "source": "CROWD",
-      "notes": "Reported by users, confirmed via Google Play"
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
     },
     {
       "packageName": "com.google.android.gms",
@@ -375,10 +375,46 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561182083,
+      "productionVersionCode": 1561185093,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.gt.guitarTab",
+      "appName": "GuitarTab - Tabs & Chords Pro",
+      "hasBeta": true,
+      "productionVersionCode": 465,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.icecoldapps.fileconverter",
+      "appName": "File Converter",
+      "hasBeta": true,
+      "productionVersionCode": 2096,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.idunnololz.summit",
+      "appName": "Summit for Lemmy and PieFed",
+      "hasBeta": true,
+      "productionVersionCode": 341,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ifttt.ifttt",
+      "appName": "IFTTT - Automate work and home",
+      "hasBeta": true,
+      "productionVersionCode": 6856,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.imdb.mobile",
@@ -393,7 +429,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384409749,
+      "productionVersionCode": 384409690,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -525,6 +561,15 @@
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.qohlo.ca",
+      "appName": "Call Log Analytics, Call Notes",
+      "hasBeta": true,
+      "productionVersionCode": 134,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.qwant.liberty",
       "appName": "Qwant – Search engine",
       "hasBeta": true,
@@ -618,7 +663,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312080000,
+      "productionVersionCode": 312090000,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
