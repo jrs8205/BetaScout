@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1784961084996,
+  "generatedAt": 1785049937551,
   "programs": [
     {
       "packageName": "aplicacion.tiempo",
@@ -186,7 +186,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 473224397,
+      "productionVersionCode": 473224378,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -921,6 +921,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.readera",
+      "appName": "ReadEra – book reader pdf epub",
+      "hasBeta": true,
+      "productionVersionCode": 2300,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
@@ -943,6 +952,15 @@
       "appName": "Proton Pass: Password Manager",
       "hasBeta": true,
       "productionVersionCode": 14001363,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "torrent.search.revolutionv2",
+      "appName": "Torrent Search Revolution",
+      "hasBeta": true,
+      "productionVersionCode": 233,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
