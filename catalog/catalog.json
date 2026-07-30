@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1785307645081,
+  "generatedAt": 1785393862965,
   "programs": [
     {
       "packageName": "aplicacion.tiempo",
@@ -141,7 +141,7 @@
       "packageName": "com.dropbox.android",
       "appName": "Dropbox: Secure Cloud Storage",
       "hasBeta": true,
-      "productionVersionCode": 48220400,
+      "productionVersionCode": 48420200,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -177,7 +177,7 @@
       "packageName": "com.duolingo",
       "appName": "Duolingo: Language Lessons",
       "hasBeta": true,
-      "productionVersionCode": 2417,
+      "productionVersionCode": 2422,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -186,7 +186,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 473224492,
+      "productionVersionCode": 473423124,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -375,7 +375,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561186612,
+      "productionVersionCode": 1561187823,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -438,7 +438,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384510833,
+      "productionVersionCode": 384611419,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -609,7 +609,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2629030,
+      "productionVersionCode": 2630060,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -723,6 +723,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.soundcloud.android",
+      "appName": "SoundCloud: The Music You Love",
+      "hasBeta": true,
+      "productionVersionCode": 365060,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
       "packageName": "com.spotify.music",
       "appName": "Spotify: Music and Podcasts",
       "hasBeta": true,
@@ -744,10 +753,19 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12224,
+      "productionVersionCode": 12226,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.truecaller",
+      "appName": "Truecaller: Spam Call Blocker",
+      "hasBeta": true,
+      "productionVersionCode": 2628005,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.tumblr",
@@ -780,7 +798,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 262708500,
+      "productionVersionCode": 262907320,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -937,6 +955,14 @@
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.mozilla.firefox_beta",
+      "appName": "Firefox Beta for Testers",
+      "hasBeta": true,
+      "liveStatus": "UNKNOWN",
+      "source": "APKMIRROR",
+      "notes": "Beta build seen on APKMirror"
     },
     {
       "packageName": "org.readera",
