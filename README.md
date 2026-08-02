@@ -1,6 +1,7 @@
 # BetaScout
 
 [![CI](https://github.com/jrs8205/BetaScout/actions/workflows/ci.yml/badge.svg)](https://github.com/jrs8205/BetaScout/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/jrs8205/BetaScout?label=Release)](https://github.com/jrs8205/BetaScout/releases/latest)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/jrs8205/BetaScout/total?label=Downloads)](https://github.com/jrs8205/BetaScout/releases)
 
@@ -15,8 +16,9 @@ The app is fully bilingual: **English** and **Finnish** (suomi).
 ## What it does
 
 - 📋 **Scans installed apps** — name, icon, version and install source, entirely on-device
-- 🔍 **Knows about beta programs** — a curated, bundled database marks apps with known
-  open-testing programs ("usually open" / "usually full")
+- 🔍 **Knows about beta programs** — a shared catalog of apps with known open-testing
+  programs, updated daily and grown by opt-in community discoveries that a server-side
+  job verifies against Google Play before they are published
 - 🔗 **One-tap deep links** — open an app's `play.google.com/apps/testing/…` opt-in page
   or its Play Store page directly
 - ✍️ **Track your own status** — mark each app as joined / not joined / full / no program,
@@ -35,9 +37,8 @@ Honesty first:
   information is only visible to a signed-in Google account on the testing page. If you
   sign in inside the app, BetaScout reads *your own* testing pages to detect your
   memberships and each program's open/full status; otherwise it just takes you there.
-- The bundled/remote catalog of *known* beta programs is small and curated (a few dozen
-  apps). Most detection therefore comes from the signed-in scan of your own testing
-  pages, not from the catalog.
+- The shared catalog only says a testing program *exists* — your live open/full status
+  still comes from the signed-in scan of your own testing pages.
 - No accessibility-service automation, no APK sideloading, no Play Store bypassing.
 
 ## Screenshots
@@ -49,7 +50,7 @@ Honesty first:
 ## Installation
 
 BetaScout is distributed as an APK via [GitHub Releases](https://github.com/jrs8205/BetaScout/releases)
-— it is **not** on the Play Store.
+and is also available on Aptoide — it is **not** on the Play Store.
 
 1. Download the latest APK from the Releases page.
 2. Allow installs from unknown sources when Android asks.
@@ -107,7 +108,8 @@ WorkManager · Hilt · Navigation-Compose · kotlinx-serialization
 ## Roadmap
 
 - [x] Opt-in, signed-in check of your own testing pages (membership + open/full status)
-- [ ] Community-sourced beta-program database (the current catalog is small and curated)
+- [x] Community-sourced beta-program catalog (opt-in discovery sharing + daily
+  server-side verification against Google Play)
 
 Suggestions and bug reports are welcome in [Issues](https://github.com/jrs8205/BetaScout/issues).
 
