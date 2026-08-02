@@ -21,9 +21,43 @@ async function catalogPackages(env) {
   }
 }
 
+// Abuse damping for the unauthenticated intake: a device reports each package
+// once, so a real user needs a handful of posts per day — sustained volume is
+// either a bug loop or deliberate flooding of the verify queue.
+const IP_HOURLY_POST_LIMIT = 30;
+const GLOBAL_DAILY_PACKAGE_LIMIT = 5000;
+
+async function readCount(env, key) {
+  const count = Number(await env.CATALOG.get(key));
+  return Number.isFinite(count) ? count : 0;
+}
+
 async function handleHintPost(request, env) {
+  // Read-modify-write counters can lose a racing increment; the limits are
+  // abuse damping, not exact accounting, so approximate counts are fine.
+  const ip = request.headers.get('cf-connecting-ip') ?? 'unknown';
+  const ipKey = `rl:ip:${ip}:${Math.floor(Date.now() / 3_600_000)}`;
+  const ipCount = await readCount(env, ipKey);
+  if (ipCount >= IP_HOURLY_POST_LIMIT) return new Response(null, { status: 429 });
+
   const result = parseHintRequest(await request.text(), await catalogPackages(env));
   if (result.status !== 204) return new Response(null, { status: result.status });
+
+  const globalKey = `rl:global:${Math.floor(Date.now() / 86_400_000)}`;
+  const globalCount = await readCount(env, globalKey);
+  if (globalCount + result.accepted.length > GLOBAL_DAILY_PACKAGE_LIMIT) {
+    return new Response(null, { status: 429 });
+  }
+
+  // Expiry outlives the bucket so a live counter is never dropped mid-window;
+  // a stale bucket key is unreachable and ages out on its own.
+  await env.CATALOG.put(ipKey, String(ipCount + 1), { expirationTtl: 7_200 });
+  if (result.accepted.length > 0) {
+    await env.CATALOG.put(globalKey, String(globalCount + result.accepted.length), {
+      expirationTtl: 172_800,
+    });
+  }
+
   const now = Date.now();
   for (const packageName of result.accepted) {
     const key = `hint:${packageName}`;

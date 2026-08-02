@@ -87,3 +87,12 @@ jobs:
             git commit -m 'Update beta catalog [skip ci]'
             git push
           fi
+
+      # Runs last on purpose: hints are consumed from the Worker only once the
+      # catalog they settled into has been durably published. If any earlier
+      # step fails, they stay pending and the next run settles them again.
+      - name: Consume settled hints
+        env:
+          HINTS_URL: https://betascout-catalog.jarsi.workers.dev/hints
+          HINTS_TOKEN: ${{ secrets.HINTS_TOKEN }}
+        run: node harvester/src/consume.js

@@ -143,3 +143,22 @@ export async function consumeHints(url, token, packages, fetchImpl) {
   });
   if (!response.ok) throw new Error(`POST ${url}/consume -> HTTP ${response.status}`);
 }
+
+/**
+ * Consumes the settled hints the harvest recorded into its pending file. Runs
+ * only after the catalog has been durably published (KV + git commit): if the
+ * publish fails, the hints stay pending and the next run settles them again —
+ * a verified candidate can never be lost with the runner.
+ * @returns the number of packages consumed (0 when there is nothing to do).
+ */
+export async function consumePendingHints({ readPending, url, token, fetchImpl }) {
+  let packages;
+  try {
+    packages = JSON.parse(readPending()).packages ?? [];
+  } catch {
+    return 0;
+  }
+  if (packages.length === 0) return 0;
+  await consumeHints(url, token, packages, fetchImpl);
+  return packages.length;
+}

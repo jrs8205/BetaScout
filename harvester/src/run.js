@@ -29,7 +29,6 @@ import {
   partitionVerifyResults,
   crowdEntry,
   fetchHints,
-  consumeHints,
 } from './hints.js';
 
 const FEEDS = ['https://www.apkmirror.com/feed/'];
@@ -46,6 +45,7 @@ const HINTS_TOKEN = process.env.HINTS_TOKEN;
 const GPLAY_HINTS_CAP = Number(process.env.GPLAY_HINTS_CAP ?? 25);
 const REJECTED_URL = new URL('../hints-rejected.json', import.meta.url);
 const ERRORED_URL = new URL('../hints-errored.json', import.meta.url);
+const CONSUME_PENDING_URL = new URL('../hints-consume-pending.json', import.meta.url);
 const GRADLEW = process.env.GRADLEW || `${REPO_ROOT}${process.platform === 'win32' ? '/gradlew.bat' : '/gradlew'}`;
 const JAVA_HOME = process.env.GPLAY_JAVA_HOME || process.env.JAVA_HOME;
 
@@ -205,14 +205,12 @@ async function processHints(knownPrograms) {
 
   // Merged, rejected and already-in-catalog hints are all settled; only
   // pending ones (over cap, cooling, gplay errors) stay on the Worker.
+  // Settled hints are NOT consumed here: the list is recorded for the
+  // workflow's final step, which consumes only after the catalog has been
+  // durably published (KV + git). A failed publish leaves them pending, and
+  // the next run settles them again instead of losing verified candidates.
   const consumed = [...entries.map((e) => e.packageName), ...rejectedNow, ...alreadyInCatalog];
-  if (consumed.length > 0) {
-    try {
-      await consumeHints(HINTS_URL, HINTS_TOKEN, consumed, fetch);
-    } catch (error) {
-      console.error(`hints consume failed (retried next run): ${error.message}`);
-    }
-  }
+  writeFileSync(CONSUME_PENDING_URL, JSON.stringify({ packages: consumed }, null, 2) + '\n');
   console.log(
     `Hints verified: ${entries.length} added as CROWD, ${rejectedNow.length} rejected, ` +
       `${errored.length} errored (stay pending).`,

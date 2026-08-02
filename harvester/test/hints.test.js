@@ -8,6 +8,7 @@ import {
   partitionVerifyResults,
   updateErrored,
   clearErrored,
+  consumePendingHints,
   REJECTED_TTL_MS,
   ERRORED_TTL_MS,
 } from '../src/hints.js';
@@ -163,6 +164,53 @@ test('clearErrored drops packages that got a definitive verify result', () => {
   assert.deepEqual(cleared, [
     { packageName: 'com.still', attempts: 1, lastError: 'y', lastErrorAt: 5 },
   ]);
+});
+
+test('consumePendingHints consumes the packages the harvest recorded', async () => {
+  const calls = [];
+  const fetchImpl = async (url, options) => {
+    calls.push({ url, body: options?.body });
+    return { ok: true };
+  };
+
+  const count = await consumePendingHints({
+    readPending: () => JSON.stringify({ packages: ['com.a', 'com.b'] }),
+    url: 'https://x/hints',
+    token: 't',
+    fetchImpl,
+  });
+
+  assert.equal(count, 2);
+  assert.equal(calls.length, 1);
+  assert.equal(calls[0].url, 'https://x/hints/consume');
+  assert.deepEqual(JSON.parse(calls[0].body).packages, ['com.a', 'com.b']);
+});
+
+test('a missing or empty pending file is a consume no-op', async () => {
+  let fetched = false;
+  const fetchImpl = async () => {
+    fetched = true;
+    return { ok: true };
+  };
+
+  const missing = await consumePendingHints({
+    readPending: () => {
+      throw new Error('ENOENT');
+    },
+    url: 'u',
+    token: 't',
+    fetchImpl,
+  });
+  const empty = await consumePendingHints({
+    readPending: () => JSON.stringify({ packages: [] }),
+    url: 'u',
+    token: 't',
+    fetchImpl,
+  });
+
+  assert.equal(missing, 0);
+  assert.equal(empty, 0);
+  assert.equal(fetched, false);
 });
 
 test('a verified hint becomes a CROWD catalog entry', () => {
