@@ -24,6 +24,15 @@ test('parses an error line as an error result', () => {
   assert.equal(result.available, undefined);
 });
 
+test('parses available=null (no testing program) as null, not undefined', () => {
+  const result = parseGplayLine(
+    'com.plain\tavailable=null\tsubscribed=null\tversionCode=5\tname=Plain App',
+  );
+
+  assert.equal(result.available, null);
+  assert.equal(result.error, undefined);
+});
+
 test('returns null for non-data lines', () => {
   assert.equal(parseGplayLine('AUTH OK: authenticated as x'), null);
   assert.equal(parseGplayLine(''), null);

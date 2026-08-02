@@ -72,7 +72,9 @@ export function partitionVerifyResults(verify, results) {
       errored.push({ packageName, error: result.error });
     } else if (result.available === true) {
       confirmed.push(result);
-    } else if (result.available === false) {
+    } else if (result.available === false || result.available === null) {
+      // false = program exists but is unavailable; null = no program at all.
+      // Both mean "no joinable beta" — reject with the 30-day cooldown.
       rejected.push(packageName);
     } else {
       errored.push({ packageName, error: 'no availability in gplayapi output' });

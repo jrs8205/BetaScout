@@ -110,6 +110,17 @@ test('verify results split into confirmed, rejected and errored', () => {
   ]);
 });
 
+test('an app with no testing program at all is rejected, not errored', () => {
+  const verify = ['com.noprogram'];
+  const results = [{ packageName: 'com.noprogram', available: null, name: 'Plain App' }];
+
+  const { confirmed, rejected, errored } = partitionVerifyResults(verify, results);
+
+  assert.deepEqual(confirmed, []);
+  assert.deepEqual(rejected, ['com.noprogram']);
+  assert.deepEqual(errored, []);
+});
+
 test('packages without a usable gplayapi result are errored, not dropped', () => {
   const verify = ['com.missing', 'com.noavail'];
   const results = [{ packageName: 'com.noavail', available: undefined, name: 'X' }];

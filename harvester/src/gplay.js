@@ -20,9 +20,18 @@ export function parseGplayLine(rawLine) {
     const eq = part.indexOf('=');
     if (eq > 0) fields[part.slice(0, eq)] = part.slice(eq + 1);
   }
+  // available: true/false = the testing program's availability; null = the app
+  // has no testing program at all; undefined = the field was missing entirely.
   return {
     packageName,
-    available: fields.available === 'true' ? true : fields.available === 'false' ? false : undefined,
+    available:
+      fields.available === 'true'
+        ? true
+        : fields.available === 'false'
+          ? false
+          : fields.available === 'null'
+            ? null
+            : undefined,
     subscribed: fields.subscribed === 'true',
     versionCode: fields.versionCode ? Number(fields.versionCode) : undefined,
     name: fields.name,
