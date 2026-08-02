@@ -4,5 +4,15 @@
   "compatibility_date": "2026-07-01",
   "kv_namespaces": [
     { "binding": "CATALOG", "id": "5deb2577b8524356a98468b5fb60f5df" }
+  ],
+  // Per-source damping for POST /hints. The key (client IP) is checked in
+  // platform memory only — nothing is persisted, honouring PRIVACY.md's
+  // "no IP logging". 10 posts/min is far above a real device's 1-3 per scan.
+  "ratelimits": [
+    {
+      "name": "HINT_LIMITER",
+      "namespace_id": "1001",
+      "simple": { "limit": 10, "period": 60 }
+    }
   ]
 }

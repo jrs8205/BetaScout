@@ -59,10 +59,8 @@ class DefaultAppRepository(
     private val _scanRunning = MutableStateFlow(false)
     override val scanRunning: StateFlow<Boolean> = _scanRunning.asStateFlow()
 
-    override suspend fun awaitScanIdle() {
-        // Momentarily acquiring the lock proves no scan holds it; new scans are
-        // not blocked because it is released immediately.
-        scanMutex.withLock { }
+    override suspend fun withScanLock(block: suspend () -> Unit) {
+        scanMutex.withLock { block() }
     }
 
     override fun observeApps(): Flow<List<AppBetaOverview>> = combine(

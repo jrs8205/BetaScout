@@ -132,8 +132,7 @@ object AppModule {
             workManager.cancelUniqueWork(BetaScanScheduler.MANUAL_WORK_NAME).await()
             workManager.cancelUniqueWork(BetaScanScheduler.WORK_NAME).await()
         },
-        awaitScanIdle = repository::awaitScanIdle,
-        rescheduleBackgroundScans = { BetaScanScheduler.schedule(workManager) },
+        withScanLock = { repository.withScanLock(it) },
         currentAccountKey = { settings.playSession.first()?.accountKey },
         clearObservations = { repository.clearObservations(it) },
         clearSession = settings::clearPlaySession,
@@ -148,6 +147,7 @@ object AppModule {
             }
             cookieManager.flush()
         },
+        rescheduleBackgroundScans = { BetaScanScheduler.schedule(workManager) },
     )
 
     @Provides

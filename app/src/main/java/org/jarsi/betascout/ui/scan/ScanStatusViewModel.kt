@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
+import java.util.UUID
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -19,9 +20,13 @@ import org.jarsi.betascout.work.BetaScanScheduler
 import org.jarsi.betascout.work.BetaScanWorker
 
 /** WorkManager returns every generation attached to the unique name in no
- *  guaranteed order; a finished older generation must not mask an active one. */
-internal fun pickRelevantScanWork(infos: List<WorkInfo>): WorkInfo? =
-    infos.firstOrNull { !it.state.isFinished } ?: infos.firstOrNull()
+ *  guaranteed order; a finished older generation must not mask an active one.
+ *  [preferredId] is the run the UI last saw active — once everything is
+ *  finished, its outcome wins over any older leftover generation. */
+internal fun pickRelevantScanWork(infos: List<WorkInfo>, preferredId: UUID? = null): WorkInfo? =
+    infos.firstOrNull { !it.state.isFinished }
+        ?: infos.firstOrNull { it.id == preferredId }
+        ?: infos.firstOrNull()
 
 data class ScanUiState(
     val signedIn: Boolean = false,
@@ -56,6 +61,10 @@ class ScanStatusViewModel @Inject constructor(
     /** WorkManager reports an active scan job; the actual lock may outlive it. */
     private val workBusy = MutableStateFlow(false)
 
+    /** The manual run last seen unfinished, so its final outcome is preferred
+     *  over stale generations WorkManager has not pruned yet. */
+    private var lastActiveScanId: UUID? = null
+
     /** The periodic worker is RUNNING. It shares the scan lock with manual runs, so
      *  without tracking it a background scan would read as "!work && lock" — the
      *  exact signature of a cancelled manual run — and show up as "Cancelling…". */
@@ -80,7 +89,11 @@ class ScanStatusViewModel @Inject constructor(
         }
         viewModelScope.launch {
             workManager.getWorkInfosForUniqueWorkFlow(BetaScanScheduler.MANUAL_WORK_NAME)
-                .collect { infos -> onScanWorkChanged(pickRelevantScanWork(infos)) }
+                .collect { infos ->
+                    val info = pickRelevantScanWork(infos, lastActiveScanId)
+                    if (info != null && !info.state.isFinished) lastActiveScanId = info.id
+                    onScanWorkChanged(info)
+                }
         }
         viewModelScope.launch {
             workManager.getWorkInfosForUniqueWorkFlow(BetaScanScheduler.WORK_NAME)

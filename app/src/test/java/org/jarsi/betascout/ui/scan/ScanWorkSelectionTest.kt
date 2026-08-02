@@ -37,6 +37,20 @@ class ScanWorkSelectionTest {
     }
 
     @Test
+    fun `the generation last seen active wins once everything is finished`() {
+        // An old FAILED run can precede the just-finished SUCCEEDED one in the
+        // unordered list; the UI must keep following the run it watched, not
+        // resurface the old failure after a success.
+        val oldFailed = info(WorkInfo.State.FAILED)
+        val justFinished = info(WorkInfo.State.SUCCEEDED)
+
+        assertEquals(
+            justFinished,
+            pickRelevantScanWork(listOf(oldFailed, justFinished), preferredId = justFinished.id),
+        )
+    }
+
+    @Test
     fun `returns null when there is no work at all`() {
         assertNull(pickRelevantScanWork(emptyList()))
     }

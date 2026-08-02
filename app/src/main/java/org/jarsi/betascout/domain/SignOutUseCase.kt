@@ -9,13 +9,13 @@ package org.jarsi.betascout.domain
  */
 class SignOutUseCase(
     private val cancelScanWork: suspend () -> Unit,
-    private val awaitScanIdle: suspend () -> Unit,
-    private val rescheduleBackgroundScans: () -> Unit,
+    private val withScanLock: suspend (suspend () -> Unit) -> Unit,
     private val currentAccountKey: suspend () -> String?,
     private val clearObservations: suspend (String) -> Unit,
     private val clearSession: suspend () -> Unit,
     private val clearLastScan: suspend () -> Unit,
     private val clearWebViewCookies: suspend () -> Unit,
+    private val rescheduleBackgroundScans: () -> Unit,
 ) {
 
     suspend fun signOut() {
@@ -23,22 +23,23 @@ class SignOutUseCase(
         // otherwise keep fetching Google pages with its cookies and could write
         // freshly deleted observations back.
         cancelScanWork()
-        // Cancellation is asynchronous; wait for the scan lock so an in-flight
-        // fetch or observation write has actually finished before anything is
-        // cleared.
-        awaitScanIdle()
-        // Cancelling the unique periodic work removed its schedule too;
-        // re-register it so background scans resume after the next sign-in
-        // without an app restart (signed-out runs are no-ops).
-        rescheduleBackgroundScans()
-        // Delete the account's observations before clearing the session so a
-        // signed-out account's beta memberships do not linger on the device.
-        currentAccountKey()?.let { clearObservations(it) }
-        clearSession()
-        clearLastScan()
+        // The wipe runs INSIDE the scan lock: acquiring it waits out a cancelled
+        // worker still unwinding an in-flight fetch, and any scan started while
+        // the cleanup runs bounces off with ScanInProgress instead of racing it.
+        withScanLock {
+            // Observations first, then the session, so a signed-out account's
+            // beta memberships cannot linger on the device.
+            currentAccountKey()?.let { clearObservations(it) }
+            clearSession()
+            clearLastScan()
+        }
         // The login WebView persists its Google cookies app-wide: without
         // clearing them the next "sign in" silently reuses the old session.
         // The lambda completes only once the cookie store confirms the removal.
         clearWebViewCookies()
+        // Last on purpose: a freshly registered periodic request may start
+        // immediately (no initial delay), and by now the session is gone, so
+        // the run is a guaranteed no-op.
+        rescheduleBackgroundScans()
     }
 }

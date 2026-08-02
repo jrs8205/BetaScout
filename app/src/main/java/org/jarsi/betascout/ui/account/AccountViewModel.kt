@@ -100,9 +100,15 @@ class AccountViewModel @Inject constructor(
     }
 
     fun signOut() {
+        if (_state.value.busy) return
         viewModelScope.launch {
-            // The full ordering (cancel scans → wait for the scan lock → wipe
-            // account data → clear cookies) lives in SignOutUseCase.
+            // Busy for the WHOLE cleanup: clearing the session flips signedIn
+            // false immediately (DataStore flow), and without busy the sign-in
+            // button would appear while the WebView cookie store is still being
+            // emptied — a login opened then could capture the old cookies.
+            _state.update { it.copy(busy = true) }
+            // The full ordering (cancel scans → wipe inside the scan lock →
+            // clear cookies → reschedule) lives in SignOutUseCase.
             signOutUseCase.signOut()
             _state.value = AccountUiState()
         }

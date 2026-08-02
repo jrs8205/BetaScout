@@ -824,23 +824,29 @@ class DefaultAppRepositoryTest {
     }
 
     @Test
-    fun `awaitScanIdle suspends until a running scan has released the lock`() = runTest {
+    fun `withScanLock waits for the running scan and rejects scans started meanwhile`() = runTest {
         val repo = repository()
         scanner.result = { listOf(app("com.a")) }
         repo.refreshApps()
-        var idleCompletedDuringScan: Boolean? = null
+        var lockCompletedDuringScan: Boolean? = null
         onFetch = {
             // Probed from inside the scan: the lock is held, so a waiter must
             // still be suspended.
-            val probe = async { repo.awaitScanIdle() }
-            idleCompletedDuringScan = probe.isCompleted
+            val probe = async { repo.withScanLock { } }
+            lockCompletedDuringScan = probe.isCompleted
             probe.cancel()
         }
 
         repo.refreshBetaStatus(session).getOrThrow()
-        repo.awaitScanIdle()
+        var scanDuringLock: Result<*>? = null
+        repo.withScanLock {
+            // A scan attempted while sign-out holds the lock must bounce off
+            // instead of running against a half-wiped account.
+            scanDuringLock = repo.refreshBetaStatus(session)
+        }
 
-        assertEquals(false, idleCompletedDuringScan)
+        assertEquals(false, lockCompletedDuringScan)
+        assertTrue(scanDuringLock!!.exceptionOrNull() is DataError.ScanInProgress)
     }
 
     @Test

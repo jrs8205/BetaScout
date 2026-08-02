@@ -62,18 +62,8 @@ jobs:
         if: always()
         run: rm -f harvester/.gplay.local
 
-      - name: Publish catalog to KV
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "CLOUDFLARE_API_TOKEN not set; skipping KV publish (catalog is still committed)."
-            exit 0
-          fi
-          npx wrangler kv key put --remote \
-            --namespace-id 5deb2577b8524356a98468b5fb60f5df \
-            catalog --path catalog/catalog.json
-
+      # Git first: the repo is the catalog's source of truth and survives a KV
+      # outage; KV can always be re-published from it.
       - name: Commit catalog
         run: |
           git config user.name 'github-actions[bot]'
@@ -88,9 +78,25 @@ jobs:
             git push
           fi
 
+      # A missing token FAILS the run on purpose: silently skipping would let
+      # the consume step below drop hints whose catalog never reached the KV
+      # the app actually serves from.
+      - name: Publish catalog to KV
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "CLOUDFLARE_API_TOKEN not set; failing so hints are not consumed." >&2
+            exit 1
+          fi
+          npx wrangler kv key put --remote \
+            --namespace-id 5deb2577b8524356a98468b5fb60f5df \
+            catalog --path catalog/catalog.json
+
       # Runs last on purpose: hints are consumed from the Worker only once the
-      # catalog they settled into has been durably published. If any earlier
-      # step fails, they stay pending and the next run settles them again.
+      # catalog they settled into has been durably published to BOTH git and
+      # KV. If any earlier step fails, they stay pending and the next run
+      # settles them again.
       - name: Consume settled hints
         env:
           HINTS_URL: https://betascout-catalog.jarsi.workers.dev/hints

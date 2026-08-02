@@ -11,28 +11,35 @@ class SignOutUseCaseTest {
 
     private fun useCase(accountKey: String? = "user@example.com") = SignOutUseCase(
         cancelScanWork = { calls += "cancelScanWork" },
-        awaitScanIdle = { calls += "awaitScanIdle" },
-        rescheduleBackgroundScans = { calls += "reschedule" },
+        withScanLock = { block ->
+            calls += "lock:acquired"
+            block()
+            calls += "lock:released"
+        },
         currentAccountKey = { accountKey },
         clearObservations = { calls += "clearObservations:$it" },
         clearSession = { calls += "clearSession" },
         clearLastScan = { calls += "clearLastScan" },
         clearWebViewCookies = { calls += "clearWebViewCookies" },
+        rescheduleBackgroundScans = { calls += "reschedule" },
     )
 
     @Test
-    fun `clears account data only after scan work is cancelled and the scan lock is free`() = runTest {
+    fun `wipes account data inside the scan lock and reschedules only at the very end`() = runTest {
         useCase().signOut()
 
         assertEquals(
             listOf(
                 "cancelScanWork",
-                "awaitScanIdle",
-                "reschedule",
+                "lock:acquired",
                 "clearObservations:user@example.com",
                 "clearSession",
                 "clearLastScan",
+                "lock:released",
                 "clearWebViewCookies",
+                // Last on purpose: a fresh periodic request can start immediately,
+                // and by now the session is gone so the run is a no-op.
+                "reschedule",
             ),
             calls,
         )
@@ -45,5 +52,6 @@ class SignOutUseCaseTest {
         assertTrue(calls.none { it.startsWith("clearObservations") })
         assertTrue("clearSession" in calls)
         assertTrue("clearWebViewCookies" in calls)
+        assertEquals("reschedule", calls.last())
     }
 }

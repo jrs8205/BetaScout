@@ -24,38 +24,53 @@ async function catalogPackages(env) {
 // Abuse damping for the unauthenticated intake: a device reports each package
 // once, so a real user needs a handful of posts per day — sustained volume is
 // either a bug loop or deliberate flooding of the verify queue.
-const IP_HOURLY_POST_LIMIT = 30;
 const GLOBAL_DAILY_PACKAGE_LIMIT = 5000;
+// Sharded so concurrent devices stay under KV's one-write-per-second-per-key
+// limit; a lost or failed increment only loosens the budget, never breaks it.
+const GLOBAL_BUDGET_SHARDS = 8;
 
-async function readCount(env, key) {
-  const count = Number(await env.CATALOG.get(key));
-  return Number.isFinite(count) ? count : 0;
+const globalBudgetKey = (day, shard) => `rl:global:${day}:${shard}`;
+
+async function globalBudgetSpent(env, day) {
+  let spent = 0;
+  for (let shard = 0; shard < GLOBAL_BUDGET_SHARDS; shard++) {
+    const count = Number(await env.CATALOG.get(globalBudgetKey(day, shard)));
+    if (Number.isFinite(count)) spent += count;
+  }
+  return spent;
 }
 
 async function handleHintPost(request, env) {
-  // Read-modify-write counters can lose a racing increment; the limits are
-  // abuse damping, not exact accounting, so approximate counts are fine.
-  const ip = request.headers.get('cf-connecting-ip') ?? 'unknown';
-  const ipKey = `rl:ip:${ip}:${Math.floor(Date.now() / 3_600_000)}`;
-  const ipCount = await readCount(env, ipKey);
-  if (ipCount >= IP_HOURLY_POST_LIMIT) return new Response(null, { status: 429 });
+  // Per-source damping through the platform's Rate Limiting binding: the key is
+  // checked in memory and never persisted anywhere we can read — PRIVACY.md
+  // promises "no IP logging on the server", so the address must not touch KV.
+  // A missing binding degrades open rather than breaking the intake.
+  const source = request.headers.get('cf-connecting-ip') ?? 'unknown';
+  const limit = await env.HINT_LIMITER?.limit({ key: source });
+  if (limit && !limit.success) return new Response(null, { status: 429 });
 
   const result = parseHintRequest(await request.text(), await catalogPackages(env));
   if (result.status !== 204) return new Response(null, { status: result.status });
 
-  const globalKey = `rl:global:${Math.floor(Date.now() / 86_400_000)}`;
-  const globalCount = await readCount(env, globalKey);
-  if (globalCount + result.accepted.length > GLOBAL_DAILY_PACKAGE_LIMIT) {
+  // The sharded read-modify-write budget is eventually consistent and can lose
+  // racing increments; it is abuse damping, not exact accounting.
+  const day = Math.floor(Date.now() / 86_400_000);
+  if ((await globalBudgetSpent(env, day)) + result.accepted.length > GLOBAL_DAILY_PACKAGE_LIMIT) {
     return new Response(null, { status: 429 });
   }
-
-  // Expiry outlives the bucket so a live counter is never dropped mid-window;
-  // a stale bucket key is unreachable and ages out on its own.
-  await env.CATALOG.put(ipKey, String(ipCount + 1), { expirationTtl: 7_200 });
   if (result.accepted.length > 0) {
-    await env.CATALOG.put(globalKey, String(globalCount + result.accepted.length), {
-      expirationTtl: 172_800,
-    });
+    const key = globalBudgetKey(day, Math.floor(Math.random() * GLOBAL_BUDGET_SHARDS));
+    try {
+      const count = Number(await env.CATALOG.get(key)) || 0;
+      // Expiry outlives the bucket so a live counter is never dropped mid-day;
+      // a stale bucket key is unreachable and ages out on its own.
+      await env.CATALOG.put(key, String(count + result.accepted.length), {
+        expirationTtl: 172_800,
+      });
+    } catch {
+      // A rejected counter write (e.g. KV's per-key write rate) must never turn
+      // a legitimate submission away — the hints below still get stored.
+    }
   }
 
   const now = Date.now();

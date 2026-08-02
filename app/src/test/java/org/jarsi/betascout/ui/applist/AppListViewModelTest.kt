@@ -31,7 +31,7 @@ private class FakeAppRepository : AppRepository {
 
     override fun observeApps(): Flow<List<AppBetaOverview>> = flowOf(emptyList())
     override val scanRunning: StateFlow<Boolean> = MutableStateFlow(false)
-    override suspend fun awaitScanIdle() = Unit
+    override suspend fun withScanLock(block: suspend () -> Unit) = block()
 
     override suspend fun ensureSeeded(): Result<Unit> {
         ensureSeededCalls++
