@@ -144,16 +144,35 @@ test('the budget is atomic per day and resets on a new day', async () => {
   assert.equal(await spend(budget, 4_999, 101), true);
 });
 
-test('missing limiter and budget bindings do not break the intake', async () => {
+test('a missing limiter binding alone does not break the intake', async () => {
   const kv = fakeKv();
 
-  const response = await worker.fetch(hintPost(['com.example.app']), { CATALOG: kv });
+  const response = await worker.fetch(hintPost(['com.example.app']), {
+    CATALOG: kv,
+    HINT_BUDGET: budgetBinding(new HintBudget(fakeDoState())),
+  });
 
   assert.equal(response.status, 204);
   assert.equal(kv.store.has('hint:com.example.app'), true);
 });
 
-test('a failing budget object degrades open instead of rejecting the post', async () => {
+test('a missing budget binding fails closed instead of accepting unbudgeted hints', async () => {
+  const kv = fakeKv();
+
+  const response = await worker.fetch(hintPost(['com.example.app']), {
+    CATALOG: kv,
+    HINT_LIMITER: fakeLimiter(),
+  });
+
+  assert.equal(response.status, 503);
+  assert.equal(kv.store.has('hint:com.example.app'), false);
+});
+
+test('a failing budget object fails closed and stores nothing', async () => {
+  // An overloaded Durable Object propagates errors to the caller; answering
+  // 503 makes the device retry after a later scan (non-2xx batches are not
+  // marked reported), while failing open would waive the whole daily budget
+  // exactly when a flood is hammering it.
   const kv = fakeKv();
 
   const response = await worker.fetch(hintPost(['com.example.app']), {
@@ -163,12 +182,26 @@ test('a failing budget object degrades open instead of rejecting the post', asyn
       idFromName: (name) => name,
       get: () => ({
         fetch: async () => {
-          throw new Error('DO unavailable');
+          throw new Error('DO overloaded');
         },
       }),
     },
   });
 
+  assert.equal(response.status, 503);
+  assert.equal(kv.store.has('hint:com.example.app'), false);
+});
+
+test('a post entirely of catalog members skips the budget and still answers 204', async () => {
+  // Nothing would be stored, so no budget is needed — and the endpoint must
+  // stay unprobeable (204 either way) even when the budget binding is absent.
+  const kv = fakeKv({ catalog: JSON.stringify({ programs: [{ packageName: 'com.known.app' }] }) });
+
+  const response = await worker.fetch(hintPost(['com.known.app']), {
+    CATALOG: kv,
+    HINT_LIMITER: fakeLimiter(),
+  });
+
   assert.equal(response.status, 204);
-  assert.equal(kv.store.has('hint:com.example.app'), true);
+  assert.equal(kv.store.has('hint:com.known.app'), false);
 });

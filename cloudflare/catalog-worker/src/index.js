@@ -61,7 +61,13 @@ async function handleHintPost(request, env) {
   const result = parseHintRequest(await request.text(), await catalogPackages(env));
   if (result.status !== 204) return new Response(null, { status: result.status });
 
-  if (result.accepted.length > 0 && env.HINT_BUDGET) {
+  if (result.accepted.length > 0) {
+    // Fail closed: a missing binding or an overloaded/unreachable budget
+    // object answers 503 instead of accepting unbudgeted hints — a flood
+    // hammering the object must not waive the very limit that stops it.
+    // Devices do not mark non-2xx batches reported, so a real submission
+    // simply retries after a later scan; nothing is lost.
+    let allowed;
     try {
       const stub = env.HINT_BUDGET.get(env.HINT_BUDGET.idFromName('global'));
       const spend = await stub.fetch('https://hint-budget/spend', {
@@ -72,11 +78,11 @@ async function handleHintPost(request, env) {
           limit: GLOBAL_DAILY_PACKAGE_LIMIT,
         }),
       });
-      if (!(await spend.json()).allowed) return new Response(null, { status: 429 });
+      allowed = (await spend.json()).allowed;
     } catch {
-      // An unavailable budget object must not take the intake down; the
-      // per-source limiter still stands.
+      return new Response(null, { status: 503 });
     }
+    if (!allowed) return new Response(null, { status: 429 });
   }
 
   const now = Date.now();
