@@ -1,0 +1,212 @@
+{
+  "rejected": [
+    {
+      "packageName": "com.google.android.apps.magazines",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.google.android.apps.youtube.music",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.google.android.deskclock",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "it.mirko.beta",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "fi.sok.skaupat",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.axelspringer.yana.zeropage",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "au.com.amaysim.android",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.ahmadltd.fluid.livewallpaper4k.magic.aesthetic",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.happyneko.stickit",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.rohangarg.minuxwalls",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.sapiens.assistant.ai",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.schibsted.iberica.tori",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.adguard.email",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.amazon.storm.lightning.client.aosp",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.blinkslabs.blinkist.android",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.ebay.mobile",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.geoguessr.app",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.google.audio.hearing.visualization.accessibility.scribe",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.wireguard.android",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.xiaomi.hm.health",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.zaneschepke.wireguardautotunnel",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.zattoo.player",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.avm.android.fritzapp",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.avm.android.myfritz2",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.avm.android.smarthome",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.avm.android.wlanapp",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.blitzer.plus",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.dhl.paket",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.ka.kamedi.heat_it",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.mwwebwork.benzinpreisblitz",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.payback.client.android",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.rewe.app.mobile",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.rtli.tvnow",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "de.tui.meinetui",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "salait.firmus",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "subsembly.banking",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.DB.playinstore",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.samsung.android.spay",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.tmobile.tuesdays",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "org.freepoc.wearinstaller2",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.digilocker.android",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.olacabs.customer",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "in.gov.uidai.pehchaan",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "in.startv.hotstar",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "in.swiggy.android",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "me.highest.aviate",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.chatroulette.android",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.fixeads.olxportugal",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.health.openscale.oss",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.wallapop",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.Dichi.ProjectPentjet",
+      "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "com.fnkgames.americanstockcarseries",
+      "rejectedAt": 1785662233651
+    }
+  ]
+}

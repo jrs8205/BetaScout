@@ -2,321 +2,87 @@
   "errored": [
     {
       "packageName": "com.android.vending",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "com.google.ambient.streaming",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.google.android.apps.magazines",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.google.android.apps.youtube.music",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "com.google.android.captiveportallogin",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.google.android.deskclock",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "com.google.android.documentsui",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "com.google.android.modulemetadata",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "com.google.android.networkstack",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "com.google.mainline.adservices",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "com.google.mainline.telemetry",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "it.mirko.beta",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "fi.sok.skaupat",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "veikkaus.app",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.axelspringer.yana.zeropage",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "au.com.amaysim.android",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "au.gov.dhs.expressplus.medicare",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "com.adilhanney.no_more_background",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.ahmadltd.fluid.livewallpaper4k.magic.aesthetic",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.happyneko.stickit",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.rohangarg.minuxwalls",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.sapiens.assistant.ai",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "com.skygo.ragdoll3ddismount",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.schibsted.iberica.tori",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.adguard.email",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.amazon.storm.lightning.client.aosp",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.blinkslabs.blinkist.android",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.ebay.mobile",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.geoguessr.app",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.google.audio.hearing.visualization.accessibility.scribe",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "com.samsung.android.soundassistant",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.wireguard.android",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.xiaomi.hm.health",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.zaneschepke.wireguardautotunnel",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.zattoo.player",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.avm.android.fritzapp",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.avm.android.myfritz2",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.avm.android.smarthome",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.avm.android.wlanapp",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.blitzer.plus",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.dhl.paket",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.ka.kamedi.heat_it",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.mwwebwork.benzinpreisblitz",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.payback.client.android",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.rewe.app.mobile",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.rtli.tvnow",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "de.tui.meinetui",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     },
     {
       "packageName": "de.wetteronline.wetterapppro",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "salait.firmus",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "subsembly.banking",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.DB.playinstore",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.samsung.android.spay",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
-    },
-    {
-      "packageName": "com.tmobile.tuesdays",
-      "attempts": 1,
-      "lastError": "no availability in gplayapi output",
-      "lastErrorAt": 1785661765360
+      "lastErrorAt": 1785662233651
     }
   ]
 }
