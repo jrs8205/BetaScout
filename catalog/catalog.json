@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1785566587416,
+  "generatedAt": 1785653398987,
   "programs": [
     {
       "packageName": "aplicacion.tiempo",
@@ -70,6 +70,15 @@
       "appName": "App Usage - Manage/Track Usage",
       "hasBeta": true,
       "productionVersionCode": 240006099,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.adguard.dnsclient",
+      "appName": "AdGuard DNS",
+      "hasBeta": true,
+      "productionVersionCode": 32011,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -195,7 +204,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 473423086,
+      "productionVersionCode": 473423067,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -204,7 +213,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 344411485,
+      "productionVersionCode": 344411468,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -392,7 +401,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561187823,
+      "productionVersionCode": 1561187837,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -455,7 +464,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384611456,
+      "productionVersionCode": 384611423,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
