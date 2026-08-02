@@ -22,11 +22,13 @@ import org.jarsi.betascout.work.BetaScanWorker
 /** WorkManager returns every generation attached to the unique name in no
  *  guaranteed order; a finished older generation must not mask an active one.
  *  [preferredId] is the run the UI last saw active — once everything is
- *  finished, its outcome wins over any older leftover generation. */
+ *  finished, only its outcome may be shown. Unknown finished leftovers (e.g.
+ *  after process death) are ignored: picking one arbitrarily could resurface
+ *  a stale FAILED outcome, and the persisted last-scan summary already covers
+ *  the real result. */
 internal fun pickRelevantScanWork(infos: List<WorkInfo>, preferredId: UUID? = null): WorkInfo? =
     infos.firstOrNull { !it.state.isFinished }
         ?: infos.firstOrNull { it.id == preferredId }
-        ?: infos.firstOrNull()
 
 data class ScanUiState(
     val signedIn: Boolean = false,

@@ -25,26 +25,35 @@ async function catalogPackages(env) {
 // once, so a real user needs a handful of posts per day — sustained volume is
 // either a bug loop or deliberate flooding of the verify queue.
 const GLOBAL_DAILY_PACKAGE_LIMIT = 5000;
-// Sharded so concurrent devices stay under KV's one-write-per-second-per-key
-// limit; a lost or failed increment only loosens the budget, never breaks it.
-const GLOBAL_BUDGET_SHARDS = 8;
 
-const globalBudgetKey = (day, shard) => `rl:global:${day}:${shard}`;
-
-async function globalBudgetSpent(env, day) {
-  let spent = 0;
-  for (let shard = 0; shard < GLOBAL_BUDGET_SHARDS; shard++) {
-    const count = Number(await env.CATALOG.get(globalBudgetKey(day, shard)));
-    if (Number.isFinite(count)) spent += count;
+/**
+ * Global daily package budget as a single Durable Object: unlike KV, one
+ * object processes its requests serially, so check-and-spend is atomic and a
+ * distributed flood cannot race past the limit. It stores only the day number
+ * and a count — never any submitter information.
+ */
+export class HintBudget {
+  constructor(state) {
+    this.state = state;
   }
-  return spent;
+
+  async fetch(request) {
+    const { day, count, limit } = await request.json();
+    let budget = (await this.state.storage.get('budget')) ?? { day, spent: 0 };
+    if (budget.day !== day) budget = { day, spent: 0 };
+    if (budget.spent + count > limit) return Response.json({ allowed: false });
+    budget.spent += count;
+    await this.state.storage.put('budget', budget);
+    return Response.json({ allowed: true });
+  }
 }
 
 async function handleHintPost(request, env) {
-  // Per-source damping through the platform's Rate Limiting binding: the key is
-  // checked in memory and never persisted anywhere we can read — PRIVACY.md
-  // promises "no IP logging on the server", so the address must not touch KV.
-  // A missing binding degrades open rather than breaking the intake.
+  // Per-source damping through the platform's Rate Limiting binding. The app
+  // neither stores nor logs the address: it is only passed as the limiter key
+  // and never written to KV, the budget object or anywhere else we read —
+  // PRIVACY.md promises "no IP logging on the server". A missing binding
+  // degrades open rather than breaking the intake.
   const source = request.headers.get('cf-connecting-ip') ?? 'unknown';
   const limit = await env.HINT_LIMITER?.limit({ key: source });
   if (limit && !limit.success) return new Response(null, { status: 429 });
@@ -52,24 +61,21 @@ async function handleHintPost(request, env) {
   const result = parseHintRequest(await request.text(), await catalogPackages(env));
   if (result.status !== 204) return new Response(null, { status: result.status });
 
-  // The sharded read-modify-write budget is eventually consistent and can lose
-  // racing increments; it is abuse damping, not exact accounting.
-  const day = Math.floor(Date.now() / 86_400_000);
-  if ((await globalBudgetSpent(env, day)) + result.accepted.length > GLOBAL_DAILY_PACKAGE_LIMIT) {
-    return new Response(null, { status: 429 });
-  }
-  if (result.accepted.length > 0) {
-    const key = globalBudgetKey(day, Math.floor(Math.random() * GLOBAL_BUDGET_SHARDS));
+  if (result.accepted.length > 0 && env.HINT_BUDGET) {
     try {
-      const count = Number(await env.CATALOG.get(key)) || 0;
-      // Expiry outlives the bucket so a live counter is never dropped mid-day;
-      // a stale bucket key is unreachable and ages out on its own.
-      await env.CATALOG.put(key, String(count + result.accepted.length), {
-        expirationTtl: 172_800,
+      const stub = env.HINT_BUDGET.get(env.HINT_BUDGET.idFromName('global'));
+      const spend = await stub.fetch('https://hint-budget/spend', {
+        method: 'POST',
+        body: JSON.stringify({
+          day: Math.floor(Date.now() / 86_400_000),
+          count: result.accepted.length,
+          limit: GLOBAL_DAILY_PACKAGE_LIMIT,
+        }),
       });
+      if (!(await spend.json()).allowed) return new Response(null, { status: 429 });
     } catch {
-      // A rejected counter write (e.g. KV's per-key write rate) must never turn
-      // a legitimate submission away — the hints below still get stored.
+      // An unavailable budget object must not take the intake down; the
+      // per-source limiter still stands.
     }
   }
 

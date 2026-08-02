@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import worker from '../src/index.js';
+import worker, { HintBudget } from '../src/index.js';
 
 function fakeKv(initial = {}) {
   const store = new Map(Object.entries(initial));
@@ -36,6 +36,31 @@ function fakeLimiter(...allowed) {
   };
 }
 
+function fakeDoState() {
+  const map = new Map();
+  return {
+    map,
+    storage: {
+      async get(key) {
+        return map.get(key);
+      },
+      async put(key, value) {
+        map.set(key, value);
+      },
+    },
+  };
+}
+
+/** Wires a real HintBudget instance behind a fake DO namespace binding. */
+function budgetBinding(budget) {
+  return {
+    idFromName: (name) => name,
+    get: () => ({
+      fetch: (url, options) => budget.fetch(new Request(url, options)),
+    }),
+  };
+}
+
 function hintPost(packages, ip = '203.0.113.7') {
   return new Request('https://worker.test/hints', {
     method: 'POST',
@@ -46,6 +71,16 @@ function hintPost(packages, ip = '203.0.113.7') {
 
 const dayBucket = () => Math.floor(Date.now() / 86_400_000);
 
+async function spend(budget, count, day = dayBucket()) {
+  const response = await budget.fetch(
+    new Request('https://hint-budget/spend', {
+      method: 'POST',
+      body: JSON.stringify({ day, count, limit: 5000 }),
+    }),
+  );
+  return (await response.json()).allowed;
+}
+
 test('a post rejected by the per-source limiter answers 429 and stores nothing', async () => {
   const kv = fakeKv();
   const limiter = fakeLimiter(false);
@@ -53,6 +88,7 @@ test('a post rejected by the per-source limiter answers 429 and stores nothing',
   const response = await worker.fetch(hintPost(['com.example.app']), {
     CATALOG: kv,
     HINT_LIMITER: limiter,
+    HINT_BUDGET: budgetBinding(new HintBudget(fakeDoState())),
   });
 
   assert.equal(response.status, 429);
@@ -60,42 +96,55 @@ test('a post rejected by the per-source limiter answers 429 and stores nothing',
   assert.deepEqual(limiter.keys, ['203.0.113.7']);
 });
 
-test('posts are rejected once the global daily package budget is spent', async () => {
-  const kv = fakeKv({ [`rl:global:${dayBucket()}:3`]: '5000' });
+test('posts are rejected once the daily budget object says no', async () => {
+  const kv = fakeKv();
+  const budget = new HintBudget(fakeDoState());
+  assert.equal(await spend(budget, 5000), true);
 
   const response = await worker.fetch(hintPost(['com.example.app']), {
     CATALOG: kv,
     HINT_LIMITER: fakeLimiter(),
+    HINT_BUDGET: budgetBinding(budget),
   });
 
   assert.equal(response.status, 429);
   assert.equal(kv.store.has('hint:com.example.app'), false);
 });
 
-test('a normal post advances the sharded budget, stores the hints and never stores the IP', async () => {
+test('a normal post spends the budget, stores the hints and never stores the IP', async () => {
   const kv = fakeKv();
+  const state = fakeDoState();
 
   const response = await worker.fetch(hintPost(['com.a.one', 'com.b.two']), {
     CATALOG: kv,
     HINT_LIMITER: fakeLimiter(),
+    HINT_BUDGET: budgetBinding(new HintBudget(state)),
   });
 
   assert.equal(response.status, 204);
   assert.equal(kv.store.has('hint:com.a.one'), true);
   assert.equal(kv.store.has('hint:com.b.two'), true);
-  const shardTotal = [...kv.store.entries()]
-    .filter(([key]) => key.startsWith('rl:global:'))
-    .reduce((sum, [, value]) => sum + Number(value), 0);
-  assert.equal(shardTotal, 2);
+  assert.equal(state.map.get('budget').spent, 2);
   // PRIVACY.md: "no IP logging on the server" — the address must never reach
-  // storage, neither as a key nor as a value.
+  // storage: not in KV keys or values, not in the budget object's state.
   for (const [key, value] of kv.store.entries()) {
-    assert.ok(!key.includes('203.0.113.7'), `IP leaked into key ${key}`);
-    assert.ok(!String(value).includes('203.0.113.7'), `IP leaked into value of ${key}`);
+    assert.ok(!key.includes('203.0.113.7'), `IP leaked into KV key ${key}`);
+    assert.ok(!String(value).includes('203.0.113.7'), `IP leaked into KV value of ${key}`);
   }
+  assert.ok(!JSON.stringify([...state.map.entries()]).includes('203.0.113.7'));
 });
 
-test('a missing rate-limiter binding does not break the intake', async () => {
+test('the budget is atomic per day and resets on a new day', async () => {
+  const budget = new HintBudget(fakeDoState());
+
+  assert.equal(await spend(budget, 4_999, 100), true);
+  assert.equal(await spend(budget, 2, 100), false);
+  assert.equal(await spend(budget, 1, 100), true);
+  // A new day starts a fresh budget.
+  assert.equal(await spend(budget, 4_999, 101), true);
+});
+
+test('missing limiter and budget bindings do not break the intake', async () => {
   const kv = fakeKv();
 
   const response = await worker.fetch(hintPost(['com.example.app']), { CATALOG: kv });
@@ -104,18 +153,20 @@ test('a missing rate-limiter binding does not break the intake', async () => {
   assert.equal(kv.store.has('hint:com.example.app'), true);
 });
 
-test('a failing budget-counter write still stores the hints', async () => {
+test('a failing budget object degrades open instead of rejecting the post', async () => {
   const kv = fakeKv();
-  const put = kv.put.bind(kv);
-  kv.put = async (key, value) => {
-    // Simulates KV's one-write-per-second-per-key rejection on the counter.
-    if (key.startsWith('rl:global:')) throw new Error('KV PUT rate limited');
-    return put(key, value);
-  };
 
   const response = await worker.fetch(hintPost(['com.example.app']), {
     CATALOG: kv,
     HINT_LIMITER: fakeLimiter(),
+    HINT_BUDGET: {
+      idFromName: (name) => name,
+      get: () => ({
+        fetch: async () => {
+          throw new Error('DO unavailable');
+        },
+      }),
+    },
   });
 
   assert.equal(response.status, 204);

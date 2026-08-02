@@ -1,5 +1,9 @@
 package org.jarsi.betascout.domain
 
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -43,6 +47,38 @@ class SignOutUseCaseTest {
             ),
             calls,
         )
+    }
+
+    @Test
+    fun `sign-out runs to completion even when its caller is cancelled mid-way`() = runTest {
+        // The account screen's ViewModel can be cleared mid-cleanup (back
+        // navigation pops the destination); the wipe must still finish, or the
+        // session would be gone while the WebView cookies survive.
+        val sessionCleared = CompletableDeferred<Unit>()
+        val useCase = SignOutUseCase(
+            cancelScanWork = { calls += "cancelScanWork" },
+            withScanLock = { block -> block() },
+            currentAccountKey = { "user@example.com" },
+            clearObservations = { calls += "clearObservations:$it" },
+            clearSession = {
+                sessionCleared.complete(Unit)
+                calls += "clearSession"
+            },
+            clearLastScan = { calls += "clearLastScan" },
+            clearWebViewCookies = {
+                delay(1)
+                calls += "clearWebViewCookies"
+            },
+            rescheduleBackgroundScans = { calls += "reschedule" },
+        )
+
+        val job = launch { useCase.signOut() }
+        sessionCleared.await()
+        job.cancel()
+        advanceUntilIdle()
+
+        assertTrue("clearWebViewCookies" in calls)
+        assertEquals("reschedule", calls.last())
     }
 
     @Test

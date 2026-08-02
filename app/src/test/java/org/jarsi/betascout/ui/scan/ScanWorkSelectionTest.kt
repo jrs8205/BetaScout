@@ -29,11 +29,15 @@ class ScanWorkSelectionTest {
     }
 
     @Test
-    fun `falls back to the first info when every generation is finished`() {
+    fun `finished history is ignored when the watched run is unknown`() {
+        // After process death lastActiveScanId is gone; picking an arbitrary
+        // finished leftover could resurface a stale FAILED outcome. The real
+        // last-scan summary is persisted separately, so showing nothing here
+        // is honest.
         val first = info(WorkInfo.State.SUCCEEDED)
         val second = info(WorkInfo.State.CANCELLED)
 
-        assertEquals(first, pickRelevantScanWork(listOf(first, second)))
+        assertNull(pickRelevantScanWork(listOf(first, second)))
     }
 
     @Test
