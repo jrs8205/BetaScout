@@ -1,23 +1,20 @@
 package org.jarsi.betascout.ui.account
 
-import android.webkit.CookieManager
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkManager
-import androidx.work.await
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.jarsi.betascout.data.settings.SettingsRepository
-import org.jarsi.betascout.domain.AppRepository
+import org.jarsi.betascout.domain.SignOutUseCase
 import org.jarsi.betascout.work.BetaScanScheduler
 
 /** Session-only state: scanning lives in [org.jarsi.betascout.ui.scan.ScanStatusViewModel]. */
@@ -33,8 +30,8 @@ data class AccountUiState(
 @HiltViewModel
 class AccountViewModel @Inject constructor(
     private val settings: SettingsRepository,
-    private val repository: AppRepository,
     private val workManager: WorkManager,
+    private val signOutUseCase: SignOutUseCase,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(AccountUiState())
@@ -104,27 +101,9 @@ class AccountViewModel @Inject constructor(
 
     fun signOut() {
         viewModelScope.launch {
-            // Stop BOTH scans first: a worker still holding the old session would
-            // otherwise keep fetching Google pages with its cookies and could write
-            // freshly deleted observations back. await() confirms WorkManager has
-            // processed the cancellations before anything is cleared.
-            workManager.cancelUniqueWork(BetaScanScheduler.MANUAL_WORK_NAME).await()
-            workManager.cancelUniqueWork(BetaScanScheduler.WORK_NAME).await()
-            // Cancelling the unique periodic work removed its schedule too;
-            // re-register it so background scans resume after the next sign-in
-            // without an app restart (signed-out runs are no-ops).
-            BetaScanScheduler.schedule(workManager)
-            // Delete the account's observations before clearing the session so a
-            // signed-out account's beta memberships do not linger on the device.
-            settings.playSession.first()?.let { repository.clearObservations(it.accountKey) }
-            settings.clearPlaySession()
-            settings.clearLastScan()
-            // The login WebView persists its Google cookies app-wide: without
-            // clearing them the next "sign in" silently reuses the old session.
-            CookieManager.getInstance().apply {
-                removeAllCookies(null)
-                flush()
-            }
+            // The full ordering (cancel scans → wait for the scan lock → wipe
+            // account data → clear cookies) lives in SignOutUseCase.
+            signOutUseCase.signOut()
             _state.value = AccountUiState()
         }
     }

@@ -143,6 +143,7 @@ private fun AppDetailContent(
                     overview = overview,
                     signedIn = uiState.signedIn,
                     checkingStatus = uiState.checkingStatus,
+                    checkError = uiState.checkError,
                     onCheckStatusNow = onCheckStatusNow,
                 )
                 MarkingCard(overview, onSetState, onMarkChecked, onSaveNote)
@@ -394,6 +395,7 @@ private fun InfoCard(
     overview: AppBetaOverview,
     signedIn: Boolean,
     checkingStatus: Boolean,
+    checkError: CheckStatusError?,
     onCheckStatusNow: () -> Unit,
 ) {
     val context = LocalContext.current
@@ -444,6 +446,19 @@ private fun InfoCard(
                     Text(stringResource(R.string.detail_check_status_now))
                 }
             }
+        }
+        checkError?.let { error ->
+            Text(
+                text = stringResource(
+                    when (error) {
+                        CheckStatusError.SCAN_IN_PROGRESS -> R.string.account_scan_in_progress
+                        CheckStatusError.SCAN_BLOCKED -> R.string.account_scan_blocked
+                        CheckStatusError.FAILED -> R.string.detail_check_failed
+                    },
+                ),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.error,
+            )
         }
     }
 }

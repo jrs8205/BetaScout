@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -63,8 +64,15 @@ class AppListViewModel @Inject constructor(
         selectedTab.value = tab
     }
 
+    private var refreshJob: Job? = null
+
     fun refresh() {
-        viewModelScope.launch {
+        // Single-flight: the screen triggers refresh from both init and its
+        // resume effect, and overlapping runs would race two catalog fetches
+        // and Room replaces while the first finisher clears the shared
+        // refreshing flag under the second.
+        if (refreshJob?.isActive == true) return
+        refreshJob = viewModelScope.launch {
             refreshing.value = true
             failed.value = false
             val seeded = repository.ensureSeeded()

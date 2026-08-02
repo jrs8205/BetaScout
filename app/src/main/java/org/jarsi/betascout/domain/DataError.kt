@@ -10,4 +10,8 @@ sealed class DataError(message: String, cause: Throwable? = null) : Exception(me
 
     /** The Google session is signed out or expired; a fresh sign-in is required. */
     class NeedsLogin : DataError("Sign-in required")
+
+    /** Google answered 429/403 recently; scans are refused until [until] so the
+     *  account is not hammered right back into the block. */
+    class ScanBlocked(val until: Long) : DataError("Google is rate limiting; retry later")
 }

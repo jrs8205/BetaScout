@@ -211,6 +211,29 @@ class DiscoveryReporterTest {
     }
 
     @Test
+    fun `revoking consent mid-run stops the remaining batches`() = runTest {
+        (1..60).forEach { observationDao.upsert(observation("com.app$it", LiveBetaStatus.OPEN)) }
+        val reporter = DiscoveryReporter(
+            shareEnabled = { shareEnabled },
+            reportedPackages = { reported.toSet() },
+            markReported = { reported += it },
+            betaObservationDao = observationDao,
+            betaProgramDao = programDao,
+            post = { packages ->
+                postedBatches += packages
+                // The user turns sharing off while the first batch is in flight.
+                shareEnabled = false
+                true
+            },
+            io = UnconfinedTestDispatcher(testScheduler),
+        )
+
+        reporter.reportAfterScan(ACCOUNT)
+
+        assertEquals(1, postedBatches.size)
+    }
+
+    @Test
     fun `a throwing transport is swallowed and marks nothing`() = runTest {
         observationDao.upsert(observation("com.open", LiveBetaStatus.OPEN))
         val throwing = DiscoveryReporter(

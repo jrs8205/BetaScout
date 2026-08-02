@@ -23,6 +23,7 @@ import org.jarsi.betascout.data.db.UserBetaStatusEntity
 import org.jarsi.betascout.data.scanner.PackageScanner
 import org.jarsi.betascout.data.scrape.BetaStatusScraper
 import org.jarsi.betascout.data.scrape.FetchedPage
+import org.jarsi.betascout.data.scrape.HttpStatusException
 import org.jarsi.betascout.data.scrape.TestingPageSource
 import org.jarsi.betascout.domain.BetaSource
 import org.jarsi.betascout.domain.PlaySession
@@ -166,12 +167,19 @@ class DefaultAppRepositoryTest {
     /** Packages whose page fetch fails (simulated transient network error). */
     private val failingPackages = mutableSetOf<String>()
 
+    /** Packages whose page fetch fails with HTTP 429 (Google throttling). */
+    private val rateLimitedPackages = mutableSetOf<String>()
+
+    /** What the repository persisted via setScanBlockedUntil, if anything. */
+    private var savedBlockedUntil: Long? = null
+
     /** Runs inside every fake page fetch; tests use it to observe scan concurrency. */
     private var onFetch: suspend (String) -> Unit = {}
 
     private fun kotlinx.coroutines.test.TestScope.repository(
         seedJson: () -> String = { """{"programs":[]}""" },
         now: Long = 42L,
+        blockedUntil: suspend () -> Long? = { null },
     ) = DefaultAppRepository(
         scanner = scanner,
         installedAppDao = installedDao,
@@ -182,10 +190,10 @@ class DefaultAppRepositoryTest {
         scraper = BetaStatusScraper(
             source = TestingPageSource { pkg, _ ->
                 onFetch(pkg)
-                if (pkg in failingPackages) {
-                    Result.failure(RuntimeException("network error"))
-                } else {
-                    Result.success(FetchedPage(pageHtml(pkg)))
+                when {
+                    pkg in rateLimitedPackages -> Result.failure(HttpStatusException(429))
+                    pkg in failingPackages -> Result.failure(RuntimeException("network error"))
+                    else -> Result.success(FetchedPage(pageHtml(pkg)))
                 }
             },
             clock = { now },
@@ -194,6 +202,8 @@ class DefaultAppRepositoryTest {
         currentAccountKey = currentAccountKey,
         io = UnconfinedTestDispatcher(testScheduler),
         clock = { now },
+        scanBlockedUntil = blockedUntil,
+        setScanBlockedUntil = { savedBlockedUntil = it },
     )
 
     @Test
@@ -749,6 +759,88 @@ class DefaultAppRepositoryTest {
             ObservedMembership.JOINED,
             observationDao.get("b@example.com", "com.a")!!.observedMembership,
         )
+    }
+
+    @Test
+    fun `an active Google-block cooldown rejects the scan without any fetch`() = runTest {
+        val fetched = mutableListOf<String>()
+        onFetch = { fetched += it }
+        val repo = repository(now = 1_000L, blockedUntil = { 2_000L })
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+
+        val result = repo.refreshBetaStatus(session)
+
+        assertTrue(result.exceptionOrNull() is DataError.ScanBlocked)
+        assertTrue(fetched.isEmpty())
+    }
+
+    @Test
+    fun `an expired block cooldown does not reject the scan`() = runTest {
+        val fetched = mutableListOf<String>()
+        onFetch = { fetched += it }
+        val repo = repository(now = 1_000L, blockedUntil = { 500L })
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+
+        val result = repo.refreshBetaStatus(session)
+
+        assertTrue(result.isSuccess)
+        assertEquals(listOf("com.a"), fetched)
+    }
+
+    @Test
+    fun `a rate-limited run persists the block cooldown`() = runTest {
+        val repo = repository(now = 1_000L)
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        rateLimitedPackages += "com.a"
+
+        repo.refreshBetaStatus(session)
+
+        assertEquals(1_000L + 60 * 60 * 1_000L, savedBlockedUntil)
+    }
+
+    @Test
+    fun `an active block cooldown rejects the single-app re-check too`() = runTest {
+        val fetched = mutableListOf<String>()
+        onFetch = { fetched += it }
+        val repo = repository(now = 1_000L, blockedUntil = { 2_000L })
+
+        val result = repo.refreshSingleBetaStatus(session, "com.a")
+
+        assertTrue(result.exceptionOrNull() is DataError.ScanBlocked)
+        assertTrue(fetched.isEmpty())
+    }
+
+    @Test
+    fun `a rate-limited single-app re-check persists the block cooldown`() = runTest {
+        val repo = repository(now = 1_000L)
+        rateLimitedPackages += "com.a"
+
+        repo.refreshSingleBetaStatus(session, "com.a")
+
+        assertEquals(1_000L + 60 * 60 * 1_000L, savedBlockedUntil)
+    }
+
+    @Test
+    fun `awaitScanIdle suspends until a running scan has released the lock`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        var idleCompletedDuringScan: Boolean? = null
+        onFetch = {
+            // Probed from inside the scan: the lock is held, so a waiter must
+            // still be suspended.
+            val probe = async { repo.awaitScanIdle() }
+            idleCompletedDuringScan = probe.isCompleted
+            probe.cancel()
+        }
+
+        repo.refreshBetaStatus(session).getOrThrow()
+        repo.awaitScanIdle()
+
+        assertEquals(false, idleCompletedDuringScan)
     }
 
     @Test

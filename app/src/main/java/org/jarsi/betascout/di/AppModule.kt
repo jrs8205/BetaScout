@@ -1,8 +1,10 @@
 package org.jarsi.betascout.di
 
 import android.content.Context
+import android.webkit.CookieManager
 import androidx.room.Room
 import androidx.work.WorkManager
+import androidx.work.await
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,10 +14,12 @@ import java.io.File
 import java.net.HttpURLConnection
 import java.net.URL
 import javax.inject.Singleton
+import kotlin.coroutines.resume
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeedParser
 import org.jarsi.betascout.data.crowd.DiscoveryReporter
@@ -38,6 +42,8 @@ import org.jarsi.betascout.data.scanner.DefaultPackageScanner
 import org.jarsi.betascout.data.scanner.PackageScanner
 import org.jarsi.betascout.data.settings.SettingsRepository
 import org.jarsi.betascout.domain.AppRepository
+import org.jarsi.betascout.domain.SignOutUseCase
+import org.jarsi.betascout.work.BetaScanScheduler
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -117,6 +123,34 @@ object AppModule {
         WorkManager.getInstance(context)
 
     @Provides
+    fun provideSignOutUseCase(
+        workManager: WorkManager,
+        settings: SettingsRepository,
+        repository: AppRepository,
+    ): SignOutUseCase = SignOutUseCase(
+        cancelScanWork = {
+            workManager.cancelUniqueWork(BetaScanScheduler.MANUAL_WORK_NAME).await()
+            workManager.cancelUniqueWork(BetaScanScheduler.WORK_NAME).await()
+        },
+        awaitScanIdle = repository::awaitScanIdle,
+        rescheduleBackgroundScans = { BetaScanScheduler.schedule(workManager) },
+        currentAccountKey = { settings.playSession.first()?.accountKey },
+        clearObservations = { repository.clearObservations(it) },
+        clearSession = settings::clearPlaySession,
+        clearLastScan = settings::clearLastScan,
+        clearWebViewCookies = {
+            val cookieManager = CookieManager.getInstance()
+            // removeAllCookies is asynchronous; resume only once the cookie store
+            // confirms the removal so a login opened right after sign-out cannot
+            // capture the old session's cookies.
+            suspendCancellableCoroutine { continuation ->
+                cookieManager.removeAllCookies { continuation.resume(Unit) }
+            }
+            cookieManager.flush()
+        },
+    )
+
+    @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase =
         Room.databaseBuilder(context, AppDatabase::class.java, "betascout.db")
@@ -188,5 +222,7 @@ object AppModule {
         currentAccountKey = settings.playSession.map { it?.accountKey }.distinctUntilChanged(),
         io = Dispatchers.IO,
         clock = System::currentTimeMillis,
+        scanBlockedUntil = { settings.scanBlockedUntil.first() },
+        setScanBlockedUntil = settings::setScanBlockedUntil,
     )
 }

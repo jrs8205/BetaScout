@@ -11,6 +11,9 @@ data class ScrapeOutcome(
     val observations: List<BetaObservation>,
     val needsLogin: Boolean,
     val failures: Map<String, String> = emptyMap(),
+    /** Google answered 429/403: the session is throttled or blocked and callers
+     *  must back off before making any further requests. */
+    val blocked: Boolean = false,
 )
 
 /**
@@ -57,7 +60,12 @@ class BetaStatusScraper(
                     // request only grows the account risk. Unchecked packages stay
                     // due and a later run retries them.
                     android.util.Log.d("BetaScout", "scrape $packageName: HTTP $status, stopping the run")
-                    return ScrapeOutcome(observations, needsLogin = false, failures = failures)
+                    return ScrapeOutcome(
+                        observations,
+                        needsLogin = false,
+                        failures = failures,
+                        blocked = true,
+                    )
                 }
                 if (++consecutiveFailures >= MAX_CONSECUTIVE_FAILURES) {
                     // The network or Google is degraded: hammering through the rest

@@ -14,6 +14,11 @@ interface AppRepository {
      *  CANCELLED before the run has actually released the lock. */
     val scanRunning: StateFlow<Boolean>
 
+    /** Suspends until no scan (full or single-app) holds the scan lock. Used by
+     *  sign-out, which must not wipe account data while a cancelled worker is
+     *  still unwinding an in-flight fetch or observation write. */
+    suspend fun awaitScanIdle()
+
     /** Loads the bundled seed database into Room (idempotent, never overwrites). */
     suspend fun ensureSeeded(): Result<Unit>
 

@@ -144,6 +144,8 @@
     <string name="account_relogin">Session expired — please sign in again.</string>
     <string name="account_error">Failed: %1$s</string>
     <string name="account_scan_in_progress">A scan is already running — try again once it finishes.</string>
+    <string name="account_scan_blocked">Google is rate limiting checks right now — scanning is paused for about an hour to protect your account.</string>
+    <string name="detail_check_failed">The status check failed — the info shown may be out of date. Try again in a moment.</string>
     <string name="account_signed_in">Signed in as %1$s</string>
     <string name="account_signout">Sign out</string>
 

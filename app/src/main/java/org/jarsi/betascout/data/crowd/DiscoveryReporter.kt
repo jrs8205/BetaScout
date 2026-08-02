@@ -64,7 +64,10 @@ class DiscoveryReporter(
             )
             // Chunked under the worker's request cap; each accepted chunk is
             // marked on its own so a failed one retries without resending the rest.
-            candidates.chunked(MAX_BATCH).forEach { batch ->
+            for (batch in candidates.chunked(MAX_BATCH)) {
+                // Re-checked before every upload: the user can revoke consent
+                // while a multi-batch report is still running.
+                if (!shareEnabled()) return@withContext
                 if (post(batch)) markReported(batch.toSet())
             }
         } catch (e: CancellationException) {

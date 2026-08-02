@@ -211,6 +211,8 @@ fun ScanStatusCard(
                     text = when (error) {
                         BetaScanWorker.ERROR_SCAN_IN_PROGRESS ->
                             stringResource(R.string.account_scan_in_progress)
+                        BetaScanWorker.ERROR_SCAN_BLOCKED ->
+                            stringResource(R.string.account_scan_blocked)
                         else -> stringResource(R.string.account_error, error)
                     },
                     style = MaterialTheme.typography.bodySmall,

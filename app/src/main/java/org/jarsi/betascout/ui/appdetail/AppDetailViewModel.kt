@@ -18,12 +18,27 @@ import org.jarsi.betascout.domain.AppRepository
 import org.jarsi.betascout.domain.DataError
 import org.jarsi.betascout.domain.UserBetaState
 
+/** Why a single-app status re-check did not produce a fresh status. */
+enum class CheckStatusError { SCAN_IN_PROGRESS, SCAN_BLOCKED, FAILED }
+
+/** Maps a re-check failure to what the detail screen should say, or null when
+ *  another surface (the sign-in prompt) already explains the situation. */
+internal fun checkStatusErrorOf(error: Throwable): CheckStatusError? = when (error) {
+    is DataError.NeedsLogin -> null
+    is DataError.ScanInProgress -> CheckStatusError.SCAN_IN_PROGRESS
+    is DataError.ScanBlocked -> CheckStatusError.SCAN_BLOCKED
+    else -> CheckStatusError.FAILED
+}
+
 data class AppDetailUiState(
     val isLoading: Boolean = false,
     val overview: AppBetaOverview? = null,
     val signedIn: Boolean = false,
     /** A single-app status re-check is in flight (automatic or user-started). */
     val checkingStatus: Boolean = false,
+    /** Set when the last re-check could not refresh the status; the screen must
+     *  say so instead of silently keeping the stale membership on display. */
+    val checkError: CheckStatusError? = null,
 )
 
 @HiltViewModel
@@ -36,6 +51,7 @@ class AppDetailViewModel @Inject constructor(
     val packageName: String = checkNotNull(savedStateHandle["packageName"])
 
     private val checking = MutableStateFlow(false)
+    private val checkError = MutableStateFlow<CheckStatusError?>(null)
 
     /** Set when the user opens the beta page: they may join or leave there, so the
      *  status is re-checked once the screen resumes. */
@@ -45,11 +61,13 @@ class AppDetailViewModel @Inject constructor(
         repository.observeApps(),
         settings.playSession,
         checking,
-    ) { rows, session, checkingNow ->
+        checkError,
+    ) { rows, session, checkingNow, error ->
         AppDetailUiState(
             overview = rows.find { it.app.packageName == packageName },
             signedIn = session != null,
             checkingStatus = checkingNow,
+            checkError = error,
         )
     }.stateIn(
         scope = viewModelScope,
@@ -74,12 +92,18 @@ class AppDetailViewModel @Inject constructor(
         viewModelScope.launch {
             val session = settings.playSession.first() ?: return@launch
             checking.value = true
+            checkError.value = null
             try {
-                repository.refreshSingleBetaStatus(session, packageName).onFailure { error ->
-                    // Same handling as the scan worker: a dead session is cleared so
-                    // every screen switches to prompting for a fresh sign-in.
-                    if (error is DataError.NeedsLogin) settings.clearPlaySession()
-                }
+                repository.refreshSingleBetaStatus(session, packageName)
+                    .onSuccess { checkError.value = null }
+                    .onFailure { error ->
+                        // Same handling as the scan worker: a dead session is cleared so
+                        // every screen switches to prompting for a fresh sign-in. Every
+                        // other failure is surfaced — the membership on screen may be
+                        // stale and the user must not mistake it for a fresh result.
+                        if (error is DataError.NeedsLogin) settings.clearPlaySession()
+                        checkError.value = checkStatusErrorOf(error)
+                    }
             } finally {
                 checking.value = false
             }

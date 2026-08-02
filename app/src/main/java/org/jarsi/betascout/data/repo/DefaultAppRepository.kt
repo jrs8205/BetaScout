@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeeder
 import org.jarsi.betascout.data.db.BetaObservationDao
@@ -44,6 +45,10 @@ class DefaultAppRepository(
     private val currentAccountKey: Flow<String?>,
     private val io: CoroutineDispatcher,
     private val clock: () -> Long,
+    /** Persisted Google-block cooldown (epoch millis), or null when not blocked.
+     *  Injected as lambdas so this class stays free of the settings store. */
+    private val scanBlockedUntil: suspend () -> Long? = { null },
+    private val setScanBlockedUntil: suspend (Long) -> Unit = {},
 ) : AppRepository {
 
     /** The manual and the periodic worker share this singleton; a single scan lock
@@ -53,6 +58,12 @@ class DefaultAppRepository(
 
     private val _scanRunning = MutableStateFlow(false)
     override val scanRunning: StateFlow<Boolean> = _scanRunning.asStateFlow()
+
+    override suspend fun awaitScanIdle() {
+        // Momentarily acquiring the lock proves no scan holds it; new scans are
+        // not blocked because it is released immediately.
+        scanMutex.withLock { }
+    }
 
     override fun observeApps(): Flow<List<AppBetaOverview>> = combine(
         installedAppDao.observeAll(),
@@ -103,6 +114,7 @@ class DefaultAppRepository(
         force: Boolean,
         onProgress: suspend (ScanProgress) -> Unit,
     ): Result<ScanSummary> = withContext(io) {
+        checkNotBlocked()?.let { return@withContext Result.failure(it) }
         // tryLock, not lock(): a scan queued behind a long manual run would re-hit
         // Google right after it finishes. The loser is rejected instead — the
         // periodic worker skips its slot and a manual tap gets told in the UI.
@@ -160,6 +172,12 @@ class DefaultAppRepository(
                     TAG,
                     "refreshBetaStatus: scraped=${outcome.observations.size} needsLogin=${outcome.needsLogin}",
                 )
+                if (outcome.blocked) {
+                    // Google throttled/blocked mid-run: freeze every scan entry point
+                    // for the cooldown so a retry cannot slam the account straight
+                    // back into the block. The pages already checked are kept.
+                    setScanBlockedUntil(clock() + BLOCK_COOLDOWN_MS)
+                }
                 // Stamp the failure reason onto the app's existing observation so the
                 // detail view can explain a stale status. Its checkedAt is left untouched,
                 // keeping the observation stale so the next run retries it. Never-observed
@@ -202,11 +220,15 @@ class DefaultAppRepository(
         session: PlaySession,
         packageName: String,
     ): Result<Unit> = withContext(io) {
+        checkNotBlocked()?.let { return@withContext Result.failure(it) }
         if (!scanMutex.tryLock()) return@withContext Result.failure(DataError.ScanInProgress())
         try {
             try {
                 val outcome = scraper.scrape(listOf(packageName), session) { observation ->
                     betaObservationDao.upsert(observation.toEntity())
+                }
+                if (outcome.blocked) {
+                    setScanBlockedUntil(clock() + BLOCK_COOLDOWN_MS)
                 }
                 if (outcome.needsLogin) {
                     return@withContext Result.failure(DataError.NeedsLogin())
@@ -289,7 +311,16 @@ class DefaultAppRepository(
         }
     }
 
+    /** Returns the active Google-block error, or null when scanning is allowed. */
+    private suspend fun checkNotBlocked(): DataError.ScanBlocked? {
+        val until = scanBlockedUntil() ?: return null
+        return if (until > clock()) DataError.ScanBlocked(until) else null
+    }
+
     private companion object {
         const val TAG = "BetaScout"
+
+        /** How long every scan entry point stays frozen after a 429/403. */
+        const val BLOCK_COOLDOWN_MS = 60 * 60 * 1_000L
     }
 }

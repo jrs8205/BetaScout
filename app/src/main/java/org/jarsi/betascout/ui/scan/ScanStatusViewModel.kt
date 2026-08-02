@@ -18,6 +18,11 @@ import org.jarsi.betascout.domain.ScanProgress
 import org.jarsi.betascout.work.BetaScanScheduler
 import org.jarsi.betascout.work.BetaScanWorker
 
+/** WorkManager returns every generation attached to the unique name in no
+ *  guaranteed order; a finished older generation must not mask an active one. */
+internal fun pickRelevantScanWork(infos: List<WorkInfo>): WorkInfo? =
+    infos.firstOrNull { !it.state.isFinished } ?: infos.firstOrNull()
+
 data class ScanUiState(
     val signedIn: Boolean = false,
     val busy: Boolean = false,
@@ -75,7 +80,7 @@ class ScanStatusViewModel @Inject constructor(
         }
         viewModelScope.launch {
             workManager.getWorkInfosForUniqueWorkFlow(BetaScanScheduler.MANUAL_WORK_NAME)
-                .collect { infos -> onScanWorkChanged(infos.firstOrNull()) }
+                .collect { infos -> onScanWorkChanged(pickRelevantScanWork(infos)) }
         }
         viewModelScope.launch {
             workManager.getWorkInfosForUniqueWorkFlow(BetaScanScheduler.WORK_NAME)

@@ -95,6 +95,16 @@ class BetaScanWorker @AssistedInject constructor(
                     Result.success()
                 }
             }
+            if (e is DataError.ScanBlocked) {
+                // Google recently answered 429/403: retrying now (or Result.retry()
+                // backoff) would hit the block again. The periodic worker skips its
+                // slot; a manual tap is told to come back later.
+                return if (manual) {
+                    Result.failure(workDataOf(KEY_ERROR to ERROR_SCAN_BLOCKED))
+                } else {
+                    Result.success()
+                }
+            }
             // A manual run must surface its error in the UI instead of silently
             // retrying with the button stuck on busy.
             return if (manual) {
@@ -197,6 +207,9 @@ class BetaScanWorker @AssistedInject constructor(
 
         /** [KEY_ERROR] value for a manual scan rejected because one is already running. */
         const val ERROR_SCAN_IN_PROGRESS = "scan_in_progress"
+
+        /** [KEY_ERROR] value for a scan rejected during the post-429/403 cooldown. */
+        const val ERROR_SCAN_BLOCKED = "scan_blocked"
         const val KEY_PROGRESS_INDEX = "progress_index"
         const val KEY_PROGRESS_TOTAL = "progress_total"
         const val KEY_PROGRESS_LABEL = "progress_label"

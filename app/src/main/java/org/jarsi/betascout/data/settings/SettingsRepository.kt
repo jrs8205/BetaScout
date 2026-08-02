@@ -159,6 +159,18 @@ class SettingsRepository @Inject constructor(
         }
     }
 
+    private val scanBlockedUntilKey = longPreferencesKey("scan_blocked_until")
+
+    /** Until when scans are frozen after Google answered 429/403, or null. The value
+     *  is epoch millis and simply expires; nothing needs to clear it. */
+    val scanBlockedUntil: Flow<Long?> = context.dataStore.data
+        .catch { e -> if (e is IOException) emit(emptyPreferences()) else throw e }
+        .map { prefs -> prefs[scanBlockedUntilKey] }
+
+    suspend fun setScanBlockedUntil(until: Long) {
+        context.dataStore.edit { it[scanBlockedUntilKey] = until }
+    }
+
     private val lastScanAtKey = longPreferencesKey("last_scan_at")
     private val lastScanCheckedKey = intPreferencesKey("last_scan_checked")
     private val lastScanJoinedKey = intPreferencesKey("last_scan_joined")

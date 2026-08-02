@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <data-extraction-rules>
-    <!-- The session cookie (settings DataStore) and the account-scoped scrape
-         observations (Room DB, keyed by the account email) must never leave the
+    <!-- The session cookie (settings DataStore), the account-scoped scrape
+         observations (Room DB, keyed by the account email) and the login
+         WebView's persisted Google cookies (app_webview/) must never leave the
          device via cloud backup or device-to-device transfer. -->
     <cloud-backup>
         <exclude
@@ -10,6 +11,9 @@
         <exclude
             domain="database"
             path="betascout.db" />
+        <exclude
+            domain="root"
+            path="app_webview" />
     </cloud-backup>
     <device-transfer>
         <exclude
@@ -18,5 +22,8 @@
         <exclude
             domain="database"
             path="betascout.db" />
+        <exclude
+            domain="root"
+            path="app_webview" />
     </device-transfer>
 </data-extraction-rules>

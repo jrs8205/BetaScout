@@ -127,6 +127,7 @@ class BetaStatusScraperTest {
         assertEquals(listOf("com.first"), fetched)
         assertEquals("HttpStatusException: HTTP 429", outcome.failures["com.first"])
         assertTrue(outcome.observations.isEmpty())
+        assertTrue(outcome.blocked)
     }
 
     @Test
@@ -137,9 +138,21 @@ class BetaStatusScraperTest {
             Result.failure(HttpStatusException(403))
         }
 
-        scraper(source).scrape(listOf("com.first", "com.second"), session)
+        val outcome = scraper(source).scrape(listOf("com.first", "com.second"), session)
 
         assertEquals(listOf("com.first"), fetched)
+        assertTrue(outcome.blocked)
+    }
+
+    @Test
+    fun `an ordinary fetch failure does not mark the outcome blocked`() = runTest {
+        val source = TestingPageSource { _, _ ->
+            Result.failure(java.net.SocketTimeoutException("read timed out"))
+        }
+
+        val outcome = scraper(source).scrape(listOf("com.a"), session)
+
+        assertFalse(outcome.blocked)
     }
 
     @Test
