@@ -5,7 +5,11 @@ import {
   selectHintsToVerify,
   updateRejected,
   crowdEntry,
+  partitionVerifyResults,
+  updateErrored,
+  clearErrored,
   REJECTED_TTL_MS,
+  ERRORED_TTL_MS,
 } from '../src/hints.js';
 
 const DAY_MS = 24 * 3600 * 1000;
@@ -51,6 +55,23 @@ test('recently rejected hints cool off and become eligible after 30 days', () =>
   assert.deepEqual(result.verify, ['com.eligible']);
 });
 
+test('repeatedly erroring hints cool off without eating cap slots and retry after 30 days', () => {
+  const errored = [
+    { packageName: 'com.jammed', attempts: 3, lastError: 'x', lastErrorAt: NOW - DAY_MS },
+    { packageName: 'com.retry', attempts: 5, lastError: 'x', lastErrorAt: NOW - ERRORED_TTL_MS - DAY_MS },
+    { packageName: 'com.twice', attempts: 2, lastError: 'x', lastErrorAt: NOW - DAY_MS },
+  ];
+
+  const result = selectHintsToVerify(
+    [hint('com.jammed', 1), hint('com.retry', 2), hint('com.twice', 3)],
+    { catalogPackages: new Set(), rejected: [], errored, now: NOW, cap: 2 },
+  );
+
+  assert.deepEqual(result.erroring, ['com.jammed']);
+  assert.deepEqual(result.verify, ['com.retry', 'com.twice']);
+  assert.deepEqual(result.overflow, []);
+});
+
 test('updateRejected stamps new failures and keeps existing entries', () => {
   const existing = [{ packageName: 'com.old', rejectedAt: 5 }];
 
@@ -68,6 +89,69 @@ test('re-rejecting refreshes the timestamp', () => {
   const updated = updateRejected(existing, ['com.again'], NOW);
 
   assert.deepEqual(updated, [{ packageName: 'com.again', rejectedAt: NOW }]);
+});
+
+test('verify results split into confirmed, rejected and errored', () => {
+  const verify = ['com.ok', 'com.gone', 'com.broken'];
+  const results = [
+    { packageName: 'com.ok', available: true, versionCode: 7, name: 'Ok App' },
+    { packageName: 'com.gone', available: false },
+    { packageName: 'com.broken', error: 'Status{code=NOT_FOUND}' },
+  ];
+
+  const { confirmed, rejected, errored } = partitionVerifyResults(verify, results);
+
+  assert.deepEqual(confirmed, [
+    { packageName: 'com.ok', available: true, versionCode: 7, name: 'Ok App' },
+  ]);
+  assert.deepEqual(rejected, ['com.gone']);
+  assert.deepEqual(errored, [
+    { packageName: 'com.broken', error: 'Status{code=NOT_FOUND}' },
+  ]);
+});
+
+test('packages without a usable gplayapi result are errored, not dropped', () => {
+  const verify = ['com.missing', 'com.noavail'];
+  const results = [{ packageName: 'com.noavail', available: undefined, name: 'X' }];
+
+  const { confirmed, rejected, errored } = partitionVerifyResults(verify, results);
+
+  assert.deepEqual(confirmed, []);
+  assert.deepEqual(rejected, []);
+  assert.deepEqual(errored, [
+    { packageName: 'com.missing', error: 'no result from gplayapi' },
+    { packageName: 'com.noavail', error: 'no availability in gplayapi output' },
+  ]);
+});
+
+test('updateErrored stamps new failures and increments repeat offenders', () => {
+  const existing = [
+    { packageName: 'com.flaky', attempts: 2, lastError: 'old', lastErrorAt: 5 },
+  ];
+  const failures = [
+    { packageName: 'com.flaky', error: 'Status{code=NOT_FOUND}' },
+    { packageName: 'com.fresh', error: 'timeout' },
+  ];
+
+  const updated = updateErrored(existing, failures, NOW);
+
+  assert.deepEqual(updated, [
+    { packageName: 'com.flaky', attempts: 3, lastError: 'Status{code=NOT_FOUND}', lastErrorAt: NOW },
+    { packageName: 'com.fresh', attempts: 1, lastError: 'timeout', lastErrorAt: NOW },
+  ]);
+});
+
+test('clearErrored drops packages that got a definitive verify result', () => {
+  const errored = [
+    { packageName: 'com.settled', attempts: 2, lastError: 'x', lastErrorAt: 5 },
+    { packageName: 'com.still', attempts: 1, lastError: 'y', lastErrorAt: 5 },
+  ];
+
+  const cleared = clearErrored(errored, ['com.settled']);
+
+  assert.deepEqual(cleared, [
+    { packageName: 'com.still', attempts: 1, lastError: 'y', lastErrorAt: 5 },
+  ]);
 });
 
 test('a verified hint becomes a CROWD catalog entry', () => {

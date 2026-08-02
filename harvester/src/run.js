@@ -24,6 +24,9 @@ import { fetchText, sleep } from './fetch.js';
 import {
   selectHintsToVerify,
   updateRejected,
+  updateErrored,
+  clearErrored,
+  partitionVerifyResults,
   crowdEntry,
   fetchHints,
   consumeHints,
@@ -42,6 +45,7 @@ const HINTS_URL = process.env.HINTS_URL;
 const HINTS_TOKEN = process.env.HINTS_TOKEN;
 const GPLAY_HINTS_CAP = Number(process.env.GPLAY_HINTS_CAP ?? 25);
 const REJECTED_URL = new URL('../hints-rejected.json', import.meta.url);
+const ERRORED_URL = new URL('../hints-errored.json', import.meta.url);
 const GRADLEW = process.env.GRADLEW || `${REPO_ROOT}${process.platform === 'win32' ? '/gradlew.bat' : '/gradlew'}`;
 const JAVA_HOME = process.env.GPLAY_JAVA_HOME || process.env.JAVA_HOME;
 
@@ -133,6 +137,18 @@ function saveRejected(rejected) {
   writeFileSync(REJECTED_URL, JSON.stringify({ rejected }, null, 2) + '\n');
 }
 
+function loadErrored() {
+  try {
+    return JSON.parse(readFileSync(ERRORED_URL, 'utf8')).errored ?? [];
+  } catch {
+    return [];
+  }
+}
+
+function saveErrored(errored) {
+  writeFileSync(ERRORED_URL, JSON.stringify({ errored }, null, 2) + '\n');
+}
+
 /**
  * Fetches crowd hints from the Worker, verifies at most GPLAY_HINTS_CAP new
  * packages via gplayapi and returns the verified ones as CROWD catalog entries.
@@ -157,37 +173,34 @@ async function processHints(knownPrograms) {
   }
 
   const rejected = loadRejected();
-  const { verify, alreadyInCatalog, cooling, overflow } = selectHintsToVerify(hints, {
+  const priorErrored = loadErrored();
+  const { verify, alreadyInCatalog, cooling, erroring, overflow } = selectHintsToVerify(hints, {
     catalogPackages: new Set(knownPrograms.map((p) => p.packageName)),
     rejected,
+    errored: priorErrored,
     now: Date.now(),
     cap: GPLAY_HINTS_CAP,
   });
   console.log(
     `Hints: ${hints.length} pending; verifying ${verify.length} ` +
-      `(in catalog ${alreadyInCatalog.length}, cooling ${cooling.length}, over cap ${overflow.length}).`,
+      `(in catalog ${alreadyInCatalog.length}, cooling ${cooling.length}, ` +
+      `error-cooldown ${erroring.length}, over cap ${overflow.length}).`,
   );
 
   const results = verify.length > 0 ? enrichViaGplay(verify) : [];
-  const byPackage = new Map(
-    results
-      .filter((r) => r && !r.error && r.available !== undefined)
-      .map((r) => [r.packageName, r]),
-  );
-  const entries = [];
-  const rejectedNow = [];
-  for (const packageName of verify) {
-    const result = byPackage.get(packageName);
-    // A gplayapi error leaves the hint pending for the next run.
-    if (!result) continue;
-    if (result.available) {
-      entries.push(crowdEntry(result));
-    } else {
-      rejectedNow.push(packageName);
-    }
+  const { confirmed, rejected: rejectedNow, errored } = partitionVerifyResults(verify, results);
+  // Errored hints stay pending on the Worker; after ERROR_COOLDOWN_ATTEMPTS
+  // failures they stop occupying verify slots (see selectHintsToVerify).
+  for (const { packageName, error } of errored) {
+    console.error(`  hint ${packageName}: ${error}`);
   }
+  const entries = confirmed.map(crowdEntry);
   if (rejectedNow.length > 0) {
     saveRejected(updateRejected(rejected, rejectedNow, Date.now()));
+  }
+  if (verify.length > 0) {
+    const settled = [...confirmed.map((r) => r.packageName), ...rejectedNow];
+    saveErrored(updateErrored(clearErrored(priorErrored, settled), errored, Date.now()));
   }
 
   // Merged, rejected and already-in-catalog hints are all settled; only
@@ -200,7 +213,10 @@ async function processHints(knownPrograms) {
       console.error(`hints consume failed (retried next run): ${error.message}`);
     }
   }
-  console.log(`Hints verified: ${entries.length} added as CROWD, ${rejectedNow.length} rejected.`);
+  console.log(
+    `Hints verified: ${entries.length} added as CROWD, ${rejectedNow.length} rejected, ` +
+      `${errored.length} errored (stay pending).`,
+  );
   return entries;
 }
 

@@ -55,6 +55,7 @@ jobs:
           # Crowd hints: the step degrades to a no-op when the token is unset.
           HINTS_URL: https://betascout-catalog.jarsi.workers.dev/hints
           HINTS_TOKEN: ${{ secrets.HINTS_TOKEN }}
+          GPLAY_HINTS_CAP: '100'
         run: node harvester/src/run.js
 
       - name: Remove credentials
@@ -79,6 +80,7 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add catalog/catalog.json
           git add harvester/hints-rejected.json 2>/dev/null || true
+          git add harvester/hints-errored.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "No catalog changes."
           else
