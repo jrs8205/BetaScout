@@ -55,7 +55,8 @@ jobs:
           # Crowd hints: the step degrades to a no-op when the token is unset.
           HINTS_URL: https://betascout-catalog.jarsi.workers.dev/hints
           HINTS_TOKEN: ${{ secrets.HINTS_TOKEN }}
-          GPLAY_HINTS_CAP: '100'
+          # Temporarily raised from 100 to drain the hint backlog; restore to 100 afterwards.
+          GPLAY_HINTS_CAP: '300'
         run: node harvester/src/run.js
 
       - name: Remove credentials
