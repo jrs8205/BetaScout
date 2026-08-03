@@ -207,6 +207,50 @@
     {
       "packageName": "com.fnkgames.americanstockcarseries",
       "rejectedAt": 1785662233651
+    },
+    {
+      "packageName": "cl.birdie.antenas",
+      "rejectedAt": 1785743648973
+    },
+    {
+      "packageName": "com.didi.global.rider",
+      "rejectedAt": 1785743648973
+    },
+    {
+      "packageName": "com.foursquare.robin",
+      "rejectedAt": 1785743648973
+    },
+    {
+      "packageName": "com.kiloo.subwaysurf",
+      "rejectedAt": 1785743648973
+    },
+    {
+      "packageName": "com.nosmk.burgerking",
+      "rejectedAt": 1785743648973
+    },
+    {
+      "packageName": "com.olioex.android",
+      "rejectedAt": 1785743648973
+    },
+    {
+      "packageName": "com.urbandroid.sleep",
+      "rejectedAt": 1785743648973
+    },
+    {
+      "packageName": "com.urbandroid.watchsleepstarter",
+      "rejectedAt": 1785743648973
+    },
+    {
+      "packageName": "net.ilucca.timmi_pwa.twa",
+      "rejectedAt": 1785743648973
+    },
+    {
+      "packageName": "com.airtel.africa.selfcare",
+      "rejectedAt": 1785743648973
+    },
+    {
+      "packageName": "com.apkmirror.helper.prod",
+      "rejectedAt": 1785743648973
     }
   ]
 }
