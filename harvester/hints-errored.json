@@ -86,21 +86,81 @@
     },
     {
       "packageName": "com.laurencedawson.reddit_sync",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785743648973
+      "lastErrorAt": 1785826074436
     },
     {
       "packageName": "com.mex.gbmmobile.containerhomebroker",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785743648973
+      "lastErrorAt": 1785826074436
     },
     {
       "packageName": "com.trianguloy.addonOIW",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785826074436
+    },
+    {
+      "packageName": "com.xiaomi.calendar",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785743648973
+      "lastErrorAt": 1785826074436
+    },
+    {
+      "packageName": "com.maxmpz.audioplayer.unlock",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785826074436
+    },
+    {
+      "packageName": "com.miui.securitycenter",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785826074436
+    },
+    {
+      "packageName": "com.mxtech.videoplayer.pro",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785826074436
+    },
+    {
+      "packageName": "com.mobile.legends",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785826074436
+    },
+    {
+      "packageName": "com.mobikwik_new",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785826074436
+    },
+    {
+      "packageName": "com.tommasoberlose.anotherwidget",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785826074436
+    },
+    {
+      "packageName": "com.zhiliaoapp.musically.go",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785826074436
+    },
+    {
+      "packageName": "com.ideashower.readitlater.pro",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785826074436
+    },
+    {
+      "packageName": "com.microsoft.office.officelens",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785826074436
     }
   ]
 }

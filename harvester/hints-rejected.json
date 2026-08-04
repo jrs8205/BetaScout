@@ -251,6 +251,298 @@
     {
       "packageName": "com.apkmirror.helper.prod",
       "rejectedAt": 1785743648973
+    },
+    {
+      "packageName": "com.bstar.intl",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.dsnl.multicall",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.instagram.lite",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.collexo.payment",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.dede.android_eggs",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.delhitransport.onedelhi",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.google.android.apps.nbu.paisa.user",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.sonyliv",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.korbitec.property24",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "za.co.pnet.andr",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "za.co.spar",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "app.lawnchair.play",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.dewmobile.kuaiya.play",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.free.vpn.super.hotspot.open",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.samsung.android.goodlock",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.nothing.gallery",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "ru.citilink",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.estmob.android.sendanywhere",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.jpl.jiomart",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.xiaomi.midrop",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.atomberg.app",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.popclub.android",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.vivo.easyshare",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.vivo.website",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "in.upstox.app",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.google.ai.edge.gallery",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "ak.alizandro.smartaudiobookplayer",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "br.com.amil.beneficiarios",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "br.com.inspell.alunoonlineapp",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "br.com.vivo.vivoeasy",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.here.app.maps",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.lookandfeel.cleanerforwhatsapp",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.miui.android.fashiongallery",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.miui.videoplayer",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.mixplorer.silver",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.polyhistor.remoteme",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.project.aimotech.printmaster",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.tap_to_translate.snap_translate",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.tippingcanoe.pelando",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "flar2.appdashboard",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "org.kde.kdeconnect_tp",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.beyachadproject",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.bnhp.payments.paymentsapp",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.channel2.mobile.ui",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.ideomobile.discount",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.ig.weapon.backpack",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.safecashapps",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "gov.telaviv.hazardreports106",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.binance.dev",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.bybit.app",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "cn.wps.moffice_i18n",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.dpkay.apps.developer_options_toggler",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.kotak811mobilebankingapp.instantsavingsupiscanandpayrecharge",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.pubg.imobile",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.urbanvpn.android",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.vivo.exhealth",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.whereismytrain.android",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "cris.org.in.prs.ima",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "org.cris.aikyam",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "tech.butterfly.app",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "co.za.oneplan",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.zs.android.apps.photos",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.dgt.midgt",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "app.storysurf.app",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "bitpit.launcher",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.ald.devs47.sam.beckman.palettesetups",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.apnamart.apnaconsumer",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.app.smytten",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.junaidgandhi.crisper",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.nextbillion.groww",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.oplus.dialer",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.rovio.baba",
+      "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "cx.indianoil.in",
+      "rejectedAt": 1785826074436
     }
   ]
 }
