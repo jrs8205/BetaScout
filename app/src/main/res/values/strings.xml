@@ -120,12 +120,12 @@
     <string name="account_no_scan_yet">No scan yet — tap Scan now.</string>
     <string name="account_last_scan">Last scan: %1$s · %2$s</string>
     <string name="account_scan_type_manual">started by you</string>
-    <string name="account_scan_type_background">background scan (small batch)</string>
+    <string name="account_scan_type_background">automatic background scan</string>
     <string name="account_last_scan_label">Latest scan</string>
     <string name="account_connected">Google account connected</string>
     <string name="tab_account">Account</string>
     <string name="account_background_scan_title">Automatic background scan</string>
-    <string name="account_background_scan_body">Re-checks stale beta statuses every 6 hours while you\'re signed in — you don\'t need to start it.</string>
+    <string name="account_background_scan_body">Re-checks stale beta statuses about every 6 hours while you\'re signed in — you don\'t need to start it. If nothing has gone stale yet, a run checks nothing and the last-scan line doesn\'t update.</string>
     <string name="account_full_scan_button">Scan everything</string>
     <string name="account_dynamic_color">Use device colors (Material You)</string>
     <string name="account_dynamic_color_hint">Colors follow your wallpaper instead of the BetaScout look.</string>

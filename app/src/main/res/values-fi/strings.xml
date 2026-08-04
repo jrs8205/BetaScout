@@ -18,7 +18,7 @@
     <string name="badge_joined">Mukana ✓</string>
     <string name="open_betas_title">Avoimet betat</string>
     <string name="scan_card_title_scanned">Skannattu %1$s</string>
-    <string name="scan_card_subtitle">Mukana %1$d betassa · tausta skannaa 6 h välein</string>
+    <string name="scan_card_subtitle">Mukana %1$d betassa · taustaskannaus 6 h välein</string>
     <string name="scan_card_button">Skannaa</string>
     <string name="scan_card_starting">Käynnistetään skannausta…</string>
     <string name="hero_open">Beta on auki</string>
@@ -118,12 +118,12 @@
     <string name="account_no_scan_yet">Ei vielä skannausta — paina Skannaa nyt.</string>
     <string name="account_last_scan">Viimeisin skannaus: %1$s · %2$s</string>
     <string name="account_scan_type_manual">käynnistit itse</string>
-    <string name="account_scan_type_background">taustaskannaus (pieni erä)</string>
+    <string name="account_scan_type_background">automaattinen taustaskannaus</string>
     <string name="account_last_scan_label">Viimeisin skannaus</string>
     <string name="account_connected">Google-tili yhdistetty</string>
     <string name="tab_account">Tili</string>
     <string name="account_background_scan_title">Automaattinen taustaskannaus</string>
-    <string name="account_background_scan_body">Tarkistaa vanhentuneet beta-tilat 6 tunnin välein, kun olet kirjautuneena — sitä ei tarvitse käynnistää itse.</string>
+    <string name="account_background_scan_body">Tarkistaa vanhentuneet beta-tilat noin 6 tunnin välein, kun olet kirjautuneena — sitä ei tarvitse käynnistää itse. Jos minkään sovelluksen tieto ei ole ehtinyt vanhentua, ajo ei tarkista mitään eikä Viimeisin skannaus -rivi päivity.</string>
     <string name="account_full_scan_button">Skannaa kaikki</string>
     <string name="account_dynamic_color">Käytä laitteen värejä (Material You)</string>
     <string name="account_dynamic_color_hint">Värit seuraavat taustakuvaa BetaScoutin oman ilmeen sijaan.</string>
