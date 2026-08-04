@@ -24,6 +24,8 @@ bottom).
 
 **fi:** Löydä, liity ja vahdi asennettujen sovellustesi Google Play -betoja.
 
+**pt-BR:** Encontre, participe e acompanhe os betas do Google Play dos seus apps.
+
 ## Full description
 
 **en:**
@@ -34,10 +36,10 @@ bottom).
 > program, and tells you in plain words what that means for you: *Beta open —
 > you can join*, *Beta is full*, or *You're in the beta*.
 >
-> - **Open betas first** — a rail on the front page lists the programs you
->   could join right now, one tap from the opt-in page.
-> - **Watch full betas** — get a notification the moment a watched program
->   starts accepting testers again.
+> - **Open betas first** — a section at the top of the front page lists the
+>   programs you could join right now, one tap from the opt-in page.
+> - **Watch full betas** — get a notification when a watched program starts
+>   accepting testers again (checked every few hours).
 > - **Sign in, optionally** — with your Google account, BetaScout reads your
 >   own testing pages to detect the memberships you already have. Gentle,
 >   rate-limited, and entirely optional.
@@ -45,12 +47,15 @@ bottom).
 >   anonymously contribute newly found programs to the shared catalog. Only
 >   bare package names are ever sent.
 > - **Private by design** — no ads, no analytics, no telemetry. Your app list
->   and memberships never leave your device. Open source under Apache 2.0.
+>   and memberships stay on your device — the only exception is the opt-in
+>   catalog sharing above, which sends bare package names only. Open source
+>   under Apache 2.0.
 >
 > Note: reading your own testing pages automatically is a gray area in
 > Google's terms; BetaScout is deliberately gentle, but a small account risk
-> cannot be ruled out. Everything except membership detection works without
-> signing in.
+> cannot be ruled out. Without signing in you can still browse found betas,
+> open their opt-in pages and set reminders — live open/full status, watch
+> notifications and membership detection need the optional sign-in.
 
 **fi:**
 
@@ -62,8 +67,8 @@ bottom).
 >
 > - **Avoimet betat ensin** — etusivun nosto listaa ohjelmat joihin voisit
 >   liittyä juuri nyt, yhden napautuksen päässä liittymissivusta.
-> - **Vahdi täysiä betoja** — saat ilmoituksen heti kun vahdittu ohjelma alkaa
->   taas ottaa testaajia.
+> - **Vahdi täysiä betoja** — saat ilmoituksen kun vahdittu ohjelma alkaa taas
+>   ottaa testaajia (tarkistus muutaman tunnin välein).
 > - **Kirjaudu halutessasi** — Google-tililläsi BetaScout lukee omat
 >   testisivusi ja tunnistaa jäsenyytesi automaattisesti. Maltillisesti,
 >   rajoitetulla tahdilla ja täysin vapaaehtoisesti.
@@ -71,13 +76,49 @@ bottom).
 >   lähettää skannaustesi löytämät uudet ohjelmat nimettömästi yhteiseen
 >   katalogiin. Vain pakettinimiä, ei koskaan mitään muuta.
 > - **Yksityinen lähtökohtaisesti** — ei mainoksia, ei analytiikkaa, ei
->   telemetriaa. Sovelluslistasi ja jäsenyytesi eivät poistu laitteeltasi.
->   Avoin lähdekoodi (Apache 2.0).
+>   telemetriaa. Sovelluslistasi ja jäsenyytesi pysyvät laitteellasi — ainoa
+>   poikkeus on yllä kuvattu vapaaehtoinen katalogijako, joka lähettää vain
+>   paljaat pakettinimet. Avoin lähdekoodi (Apache 2.0).
 >
 > Huomio: omien testisivujen automaattinen luku on Googlen ehtojen harmaata
 > aluetta; BetaScout on tarkoituksella varovainen, mutta pientä tiliriskiä ei
-> voi sulkea pois. Kaikki muu paitsi jäsenyyksien tunnistus toimii
-> kirjautumatta.
+> voi sulkea pois. Kirjautumatta voit silti selata löydettyjä betoja, avata
+> liittymissivut ja asettaa muistutuksia — live-tila (auki/täynnä),
+> vahti-ilmoitukset ja jäsenyyksien tunnistus vaativat vapaaehtoisen
+> kirjautumisen.
+
+**pt-BR:**
+
+> **O BetaScout encontra os programas beta escondidos na sua lista de apps.**
+>
+> Ele verifica seus apps instalados, mostra quais têm um programa de teste no
+> Google Play e explica em palavras simples o que isso significa para você:
+> *Beta aberto — você pode participar*, *O beta está lotado* ou *Você está no
+> beta*.
+>
+> - **Betas abertos em primeiro lugar** — uma seção no topo da página inicial
+>   lista os programas em que você poderia entrar agora mesmo, a um toque da
+>   página de inscrição.
+> - **Acompanhe betas lotados** — receba uma notificação quando um programa
+>   acompanhado voltar a aceitar testadores (conferido a cada poucas horas).
+> - **Faça login, se quiser** — com sua conta do Google, o BetaScout lê suas
+>   próprias páginas de teste para detectar as participações que você já tem.
+>   Leve, com ritmo limitado e totalmente opcional.
+> - **Amplie o catálogo em conjunto** — uma opção (desativada por padrão)
+>   permite que suas verificações contribuam anonimamente com programas
+>   recém-descobertos para o catálogo compartilhado. Apenas nomes de pacote
+>   são enviados, nada mais.
+> - **Privado por padrão** — sem anúncios, sem análises, sem telemetria. Sua
+>   lista de apps e suas participações ficam no seu dispositivo — a única
+>   exceção é o compartilhamento opcional do catálogo descrito acima, que
+>   envia somente nomes de pacote. Código aberto sob Apache 2.0.
+>
+> Observação: a leitura automática das suas próprias páginas de teste é uma
+> área cinzenta nos termos do Google; o BetaScout é deliberadamente cuidadoso,
+> mas um pequeno risco para a conta não pode ser descartado. Sem login, você
+> ainda pode explorar os betas encontrados, abrir as páginas de inscrição e
+> criar lembretes — o status ao vivo (aberto/lotado), as notificações de
+> acompanhamento e a detecção de participação exigem o login opcional.
 
 ## Screenshot checklist (`store-assets/`, 1080×2400 PNG)
 
