@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App list -->
+    <string name="search_hint">Rechercher des applis</string>
+    <string name="tab_not_joined">Hors bêta</string>
+    <string name="tab_joined">Dans la bêta</string>
+    <string name="tab_no_beta">Sans bêta</string>
+    <string name="tab_with_count">%1$s (%2$d)</string>
+    <string name="status_line_joined">Vous êtes dans la bêta</string>
+    <string name="status_line_open">Bêta ouverte — vous pouvez la rejoindre</string>
+    <string name="status_line_full">La bêta est complète</string>
+    <string name="status_line_closed">La bêta est fermée</string>
+    <string name="status_line_has_beta">Propose un programme bêta</string>
+    <string name="status_line_no_beta">Aucune bêta connue</string>
+    <string name="badge_open">Ouverte</string>
+    <string name="badge_full">Complète</string>
+    <string name="badge_closed">Fermée</string>
+    <string name="badge_joined">Membre ✓</string>
+    <string name="open_betas_title">Bêtas ouvertes</string>
+    <string name="scan_card_title_scanned">Analysé le %1$s</string>
+    <string name="scan_card_subtitle">Dans %1$d bêtas · analyse auto toutes les 6 h</string>
+    <string name="scan_card_button">Analyser</string>
+    <string name="scan_card_starting">Lancement de l\'analyse…</string>
+    <string name="hero_open">La bêta est ouverte</string>
+    <string name="hero_open_sub">Vous pouvez la rejoindre dès maintenant.</string>
+    <string name="hero_full">La bêta est complète</string>
+    <string name="hero_full_sub">Suivez-la pour recevoir une notification dès qu\'une place se libère.</string>
+    <string name="hero_closed">La bêta est fermée</string>
+    <string name="hero_joined">Vous êtes dans la bêta ✓</string>
+    <string name="hero_joined_sub">Ce compte participe au programme de test.</string>
+    <string name="hero_no_beta">Aucun programme bêta connu</string>
+    <string name="hero_no_beta_sub">Vous pouvez quand même ouvrir la page de test pour vérifier.</string>
+    <string name="hero_unknown_sub">Pas encore vérifié — lancez une analyse.</string>
+    <string name="hero_checked_at">Vérifié le %1$s</string>
+    <string name="info_membership">Participation</string>
+    <string name="info_live_status">Statut actuel</string>
+    <string name="filter_only_beta">Avec bêta</string>
+    <string name="filter_only_watched">Suivies</string>
+    <string name="filter_only_system">Applis système uniquement</string>
+    <string name="empty_not_joined">Aucune appli installée avec une bêta à rejoindre pour le moment.</string>
+    <string name="empty_joined">Vous n\'avez encore marqué aucune appli comme rejointe.</string>
+    <string name="empty_no_beta">Aucune appli sans programme bêta.</string>
+    <string name="badge_beta">Bêta</string>
+    <string name="refresh">Actualiser</string>
+    <string name="empty_list">Aucune appli ne correspond aux filtres.</string>
+    <string name="error_scan">L\'analyse des applis installées a échoué.</string>
+    <string name="retry">Réessayer</string>
+
+    <!-- User beta states -->
+    <string name="state_unknown">Inconnu</string>
+    <string name="state_joined">Dans la bêta</string>
+    <string name="state_not_joined">Hors bêta</string>
+    <string name="state_full">Complète</string>
+    <string name="state_no_program">Aucun programme bêta</string>
+
+    <!-- Known beta status (from bundled database) -->
+    <string name="known_beta_title">Infos bêta connues</string>
+    <string name="known_unknown">Statut inconnu</string>
+    <string name="known_often_open">Généralement ouverte</string>
+    <string name="known_often_full">Généralement complète</string>
+    <string name="known_no_program">Aucun programme</string>
+
+    <!-- Detected status (from the authenticated scan) -->
+    <string name="observed_title">Statut bêta détecté</string>
+    <string name="observed_membership_joined">Vous participez au programme</string>
+    <string name="observed_membership_not_joined">Vous ne participez pas au programme</string>
+    <string name="observed_membership_unknown">Participation indéterminée</string>
+    <string name="observed_live_status">Statut du programme : %1$s</string>
+    <string name="observed_checked_at">Vérifié : %1$s</string>
+    <string name="observed_last_error">La dernière vérification a échoué : %1$s</string>
+    <string name="live_unknown">Inconnu</string>
+    <string name="live_open">Ouvert</string>
+    <string name="live_full">Complet</string>
+    <string name="live_closed">Fermé</string>
+    <string name="live_no_program">Aucun programme bêta</string>
+
+    <!-- App detail -->
+    <string name="back">Retour</string>
+    <string name="app_not_found">Appli introuvable.</string>
+    <string name="version_line">Version %1$s (%2$d)</string>
+    <string name="installer_line">Installée depuis : %1$s</string>
+    <string name="system_app">Appli système</string>
+    <string name="open_beta_page">Ouvrir la page de la bêta</string>
+    <string name="join_beta">Rejoindre la bêta</string>
+    <string name="open_play_page">Ouvrir dans le Play Store</string>
+    <string name="my_status">Mon marquage</string>
+    <string name="my_status_hint">Marquage manuel facultatif. Avec un compte connecté, l\'analyse remplit automatiquement le statut détecté ci-dessus.</string>
+    <string name="watch_app">Suivre cette appli</string>
+    <string name="watch_hint">BetaScout vous rappelle de revérifier le statut bêta de cette appli à l\'intervalle choisi.</string>
+    <string name="reminder_interval">Intervalle des rappels</string>
+    <string name="days_count">%1$d jours</string>
+    <string name="last_checked">Dernière vérification : %1$s</string>
+    <string name="never_checked">Pas encore vérifié</string>
+    <string name="mark_checked">Marquer comme vérifié</string>
+    <string name="note_label">Note</string>
+    <string name="save_note">Enregistrer la note</string>
+    <string name="detail_check_status_now">Vérifier le statut maintenant</string>
+    <string name="detail_checking_status">Vérification du statut…</string>
+
+    <!-- Navigation tabs -->
+    <string name="tab_apps">Applis</string>
+    <string name="tab_watchlist">Suivies</string>
+
+    <!-- Account / membership sync -->
+    <string name="account_title">Paramètres</string>
+    <string name="settings_open">Paramètres</string>
+    <string name="search_open">Ouvrir la recherche</string>
+    <string name="search_close">Fermer la recherche</string>
+    <string name="account_open">Compte</string>
+    <string name="account_hint">Connectez-vous avec votre compte Google pour que BetaScout puisse lire vos propres pages de test et détecter dans quelles bêtas vous êtes et si chacune est ouverte ou complète. Il ne rejoint jamais une bêta à votre place.</string>
+    <string name="account_signin">Se connecter avec Google</string>
+    <string name="account_sync">Analyser maintenant</string>
+    <string name="account_scan_cancel">Annuler l\'analyse</string>
+    <string name="account_scan_cancelling">Annulation…</string>
+    <string name="account_scan_background_running">Analyse automatique en cours…</string>
+    <string name="account_full_scan">Tout réanalyser</string>
+    <string name="account_full_scan_hint">Revérifie toutes les applis — peut prendre 10 à 15 minutes.</string>
+    <string name="account_no_scan_yet">Aucune analyse pour l\'instant — touchez Analyser maintenant.</string>
+    <string name="account_last_scan">Dernière analyse : %1$s · %2$s</string>
+    <string name="account_scan_type_manual">lancée par vous</string>
+    <string name="account_scan_type_background">automatique, en arrière-plan</string>
+    <string name="account_last_scan_label">Dernière analyse</string>
+    <string name="account_connected">Compte Google connecté</string>
+    <string name="tab_account">Compte</string>
+    <string name="account_background_scan_title">Analyse automatique en arrière-plan</string>
+    <string name="account_background_scan_body">Revérifie les statuts bêta périmés environ toutes les 6 heures tant que votre compte est connecté — rien à lancer de votre côté. Si aucun statut n\'est encore périmé, l\'exécution ne vérifie rien et la ligne de la dernière analyse ne change pas.</string>
+    <string name="account_full_scan_button">Tout analyser</string>
+    <string name="account_dynamic_color">Utiliser les couleurs de l\'appareil (Material You)</string>
+    <string name="account_dynamic_color_hint">Les couleurs suivent votre fond d\'écran au lieu du style BetaScout.</string>
+    <string name="account_privacy_note">BetaScout lit uniquement vos propres pages de test et ne rejoint jamais une bêta à votre place.</string>
+    <string name="share_prompt_title">Aidez à enrichir le catalogue de bêtas</string>
+    <string name="share_prompt_body">Si vous l\'activez, BetaScout n\'envoie que les simples noms de paquet des applis où l\'analyse a trouvé un programme de test, pour que le catalogue partagé grandisse avec de vraies découvertes. Rien d\'autre n\'est jamais envoyé — ni votre compte, ni vos participations, ni votre appareil — et vous pouvez le désactiver à tout moment dans les paramètres.</string>
+    <string name="share_prompt_enable">Activer</string>
+    <string name="share_prompt_no">Pas maintenant</string>
+    <string name="share_toggle_title">Partager les découvertes</string>
+    <string name="share_toggle_hint">Après chaque analyse, seuls les simples noms de paquet des applis avec un programme de test trouvé sont envoyés anonymement. Votre compte, vos participations et les données de votre appareil ne sont jamais envoyés, et les découvertes sont vérifiées sur Google Play avant d\'entrer dans le catalogue partagé.</string>
+    <string name="account_scan_totals">Dans %1$d bêtas · hors de %2$d · aucun programme pour %3$d</string>
+    <string name="account_scan_checked">%1$d applis vérifiées lors de cette analyse</string>
+    <string name="account_last_scan_failed">%1$d applis n\'ont pas pu être vérifiées — nouvel essai à la prochaine analyse.</string>
+    <string name="account_last_scan_failed_reason">%1$d applis n\'ont pas pu être vérifiées (%2$s) — nouvel essai à la prochaine analyse.</string>
+    <string name="account_scan_progress">Vérification %1$d/%2$d : %3$s</string>
+    <string name="account_relogin">Session expirée — veuillez vous reconnecter.</string>
+    <string name="account_error">Échec : %1$s</string>
+    <string name="account_scan_in_progress">Une analyse est déjà en cours — réessayez quand elle sera terminée.</string>
+    <string name="account_scan_blocked">Google limite les requêtes en ce moment — l\'analyse est suspendue pendant environ une heure pour protéger votre compte.</string>
+    <string name="detail_check_failed">La vérification du statut a échoué — les infos affichées peuvent être obsolètes. Réessayez dans un instant.</string>
+    <string name="account_signed_in">Compte connecté : %1$s</string>
+    <string name="account_signout">Se déconnecter</string>
+
+    <!-- Watchlist -->
+    <string name="watchlist_title">Applis suivies</string>
+    <string name="watchlist_empty">Aucune appli suivie pour l\'instant. Ouvrez les détails d\'une appli et activez le suivi.</string>
+    <string name="check_now">Vérifier maintenant</string>
+    <string name="interval_line">Rappel tous les %1$d jours</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">Bienvenue dans BetaScout</string>
+    <string name="onboarding_what">BetaScout analyse vos applis installées, montre lesquelles ont un programme bêta connu sur Google Play, ouvre la page d\'inscription pour vous et vous rappelle de revérifier les applis suivies.</string>
+    <string name="onboarding_honesty_title">Ce que BetaScout ne fait pas</string>
+    <string name="onboarding_honesty">Il ne rejoint jamais de programme bêta à votre place. Une fois la connexion Google établie, vos participations et le statut ouvert/complet de chaque programme sont lus depuis vos propres pages de test ; sans connexion, vous les vérifiez vous-même.</string>
+    <string name="onboarding_risk">La connexion est facultative. Avec un compte connecté, BetaScout lit vos propres pages de test via votre session Google à un rythme doux et limité. La lecture automatisée est une zone grise dans les conditions de Google, un petit risque pour le compte ne peut donc pas être exclu — le catalogue et les rappels fonctionnent sans connexion.</string>
+    <string name="onboarding_notifications">Autorisez les notifications pour que BetaScout puisse vous rappeler de vérifier les statuts des bêtas.</string>
+    <string name="onboarding_continue">Commencer</string>
+
+    <!-- Reminders -->
+    <string name="reminder_channel_name">Rappels bêta</string>
+    <string name="reminder_channel_description">Rappels pour revérifier le statut bêta des applis suivies</string>
+    <string name="reminder_title">Vérifiez le statut bêta : %1$s</string>
+    <string name="reminder_text">Ouvrez la page de la bêta et regardez si le programme est ouvert.</string>
+
+    <!-- Beta slot openings (background scan) -->
+    <string name="slot_channel_name">Places en bêta</string>
+    <string name="slot_channel_description">Prévient quand le programme de test d\'une appli suivie accepte de nouveau des testeurs</string>
+    <string name="slot_title">Bêta ouverte : %1$s</string>
+    <string name="slot_text">Le programme de test accepte de nouveau des testeurs. Touchez pour ouvrir la page d\'inscription.</string>
+    <string name="relogin_title">Reconnectez-vous</string>
+    <string name="relogin_text">La session Google a expiré — l\'analyse automatique est en pause jusqu\'à votre reconnexion.</string>
+
+    <!-- Manual scan (foreground service) -->
+    <string name="scan_channel_name">Analyse des statuts bêta</string>
+    <string name="scan_channel_description">Affichée pendant une analyse manuelle des statuts bêta</string>
+    <string name="scan_notification_title">Analyse des statuts bêta…</string>
+    <string name="scan_notification_cancel">Annuler</string>
+</resources>
