@@ -11,7 +11,11 @@ BetaScout scans your installed apps, shows which ones are known to have a Google
 open-testing (beta) program, opens the opt-in page for you, and reminds you to re-check
 the ones you are watching — so you catch a free slot when one opens up.
 
-The app is fully bilingual: **English** and **Finnish** (suomi).
+The app is available in six languages: **English**, **Finnish** (suomi), **Spanish**
+(español), **German** (Deutsch), **French** (français) and **Brazilian Portuguese**
+(português do Brasil). It follows your device language automatically; on Android 13+
+you can also pick the language per app in system settings. Native speakers: corrections
+are very welcome — please [open an issue](https://github.com/jrs8205/BetaScout/issues).
 
 ## What it does
 
