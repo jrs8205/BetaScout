@@ -86,81 +86,99 @@
     },
     {
       "packageName": "com.laurencedawson.reddit_sync",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
+      "lastErrorAt": 1785912541385
     },
     {
       "packageName": "com.mex.gbmmobile.containerhomebroker",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
+      "lastErrorAt": 1785912541385
     },
     {
       "packageName": "com.trianguloy.addonOIW",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
+      "lastErrorAt": 1785912541385
     },
     {
       "packageName": "com.xiaomi.calendar",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
-    },
-    {
-      "packageName": "com.maxmpz.audioplayer.unlock",
-      "attempts": 1,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
+      "lastErrorAt": 1785912541385
     },
     {
       "packageName": "com.miui.securitycenter",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
+      "lastErrorAt": 1785912541385
     },
     {
       "packageName": "com.mxtech.videoplayer.pro",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
+      "lastErrorAt": 1785912541385
     },
     {
       "packageName": "com.mobile.legends",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
+      "lastErrorAt": 1785912541385
     },
     {
       "packageName": "com.mobikwik_new",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
+      "lastErrorAt": 1785912541385
     },
     {
       "packageName": "com.tommasoberlose.anotherwidget",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
+      "lastErrorAt": 1785912541385
     },
     {
       "packageName": "com.zhiliaoapp.musically.go",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
+      "lastErrorAt": 1785912541385
     },
     {
       "packageName": "com.ideashower.readitlater.pro",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
+      "lastErrorAt": 1785912541385
     },
     {
       "packageName": "com.microsoft.office.officelens",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785912541385
+    },
+    {
+      "packageName": "app.simple.peri",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785826074436
+      "lastErrorAt": 1785912541385
+    },
+    {
+      "packageName": "com.jrummyapps.rootchecker",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785912541385
+    },
+    {
+      "packageName": "com.microsoft.rdc.androidx.beta",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785912541385
+    },
+    {
+      "packageName": "com.ss.android.ugc.trill",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1785912541385
     }
   ]
 }

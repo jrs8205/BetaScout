@@ -543,6 +543,378 @@
     {
       "packageName": "cx.indianoil.in",
       "rejectedAt": 1785826074436
+    },
+    {
+      "packageName": "com.maxmpz.audioplayer.unlock",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "xyz.penpencil.physicswala",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "air.RTE.OSMF.Minimal",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.agni.dina.weather.ai",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.americanexpress.android.acctsvcs.in",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.bets.airindia.ui",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.c2info.wellnessforever",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.daamitt.walnut.app",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.global.foodpanda.android",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.intellihealth.truemeds",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.licious",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.microsoft.android.smsorganizer",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.mobond.mindicator",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.natfirst.truthin",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.urbanpiper.meatigo",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.zerofasting.zero",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "in.dmart",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "org.digiyatra.org",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "tech.fplabs.score",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "ai.holaapp",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "ai.leaaxel.axel",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "ai.mint.keyboard",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "ai.replika.app",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "app.comaps.google",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "app.ijp.callerfxid",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "app.ijp.dskmode",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "app.ijp.mechanly",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "app.ijp.medianow",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "app.ijp.viewget",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "app.mycountrydelight.in.countrydelight",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "apps.ijp.depthfx.lockscreen",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "apps.ijp.magicfx.wallpaper",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "ch.rea.app",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "cn.wps.moffice_eng",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "co.intellect.app",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.accuweather.android",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.ai.lens.camera",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.akiflow.mobile",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.alibaba.intl.android.apps.poseidon",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.amitech.allevents",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.anomapro.finndot.prd",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.apnaklub.apnaklub",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.apollo.patientapp",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.applay.overlay",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.appsgenz.controlcenter.phone.ios",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.appsgenz.dynamicisland.phone.ios",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.arohalabs.klok",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.battery.charging.animation.screen",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.bharatekkhoj.askmyguru",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.bitely.ai",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.bryancandi.android.updateassistant",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.bsbportal.music",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.bulkd.app",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.castle.sefirah",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.citrus.citruspay",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.colt",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.covve.businesscardscanner",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.customer.hungrez",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.customquicktiles",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.dailyobjects",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.dashaspeaks.astrology.online.chat",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.dealshare",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.disha.quickride",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.droid2developers.wallset",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.easydiner",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.erexstudio.spend8",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.eventbrite.attendee",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.flipkart.shopsy",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.fossor.panels",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.gb.gaadibazaar",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.gingersoftware.android.keyboard",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.google.android.apps.books",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.healthkart.healthkart",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.hiruffy.controller",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.hob.app",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.homeservices.homswag",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.hulab.mapstr",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.imagereverse.imageapp.reverse.finder.imagesearch.pro",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.imgur.mobile",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.inkitt.android.hermione",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.inscode.zerotap",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.itms_consumer.msrtc.msrtc",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.ivianuu.oneplusgestures",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.jamworks.hyper.doubletaptosleepscreenoff",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.jaystudio.expense.upi.track.ultimateaiexpenseupitracker",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.jio.jse",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.kaushalvasava.org.apps.studygharstationery",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.keepra.app",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.leapzip.animatedstickers.maker.android",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.lic.liccustomer",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.magicpin.local",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.manboker.headportrait",
+      "rejectedAt": 1785912541385
+    },
+    {
+      "packageName": "com.medium.reader",
+      "rejectedAt": 1785912541385
     }
   ]
 }
