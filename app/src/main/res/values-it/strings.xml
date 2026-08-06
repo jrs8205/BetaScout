@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App list -->
+    <string name="search_hint">Cerca app</string>
+    <string name="tab_not_joined">Fuori dalla beta</string>
+    <string name="tab_joined">Nella beta</string>
+    <string name="tab_no_beta">Senza beta</string>
+    <string name="tab_with_count">%1$s (%2$d)</string>
+    <string name="status_line_joined">Sei nella beta</string>
+    <string name="status_line_open">Beta aperta — puoi unirti</string>
+    <string name="status_line_full">La beta è al completo</string>
+    <string name="status_line_closed">La beta è chiusa</string>
+    <string name="status_line_has_beta">Ha un programma beta</string>
+    <string name="status_line_no_beta">Nessuna beta conosciuta</string>
+    <string name="badge_open">Aperta</string>
+    <string name="badge_full">Al completo</string>
+    <string name="badge_closed">Chiusa</string>
+    <string name="badge_joined">Partecipi ✓</string>
+    <string name="open_betas_title">Beta aperte</string>
+    <string name="scan_card_title_scanned">Verificato il %1$s</string>
+    <string name="scan_card_subtitle">In %1$d beta · verifica automatica ogni 6 h</string>
+    <string name="scan_card_button">Verifica</string>
+    <string name="scan_card_starting">Avvio della verifica…</string>
+    <string name="hero_open">La beta è aperta</string>
+    <string name="hero_open_sub">Puoi unirti come tester proprio adesso.</string>
+    <string name="hero_full">La beta è al completo</string>
+    <string name="hero_full_sub">Seguila per ricevere un avviso quando si libera un posto.</string>
+    <string name="hero_closed">La beta è chiusa</string>
+    <string name="hero_joined">Sei nella beta ✓</string>
+    <string name="hero_joined_sub">Questo account partecipa come tester.</string>
+    <string name="hero_no_beta">Nessun programma beta conosciuto</string>
+    <string name="hero_no_beta_sub">Puoi comunque aprire la pagina di test e controllare.</string>
+    <string name="hero_unknown_sub">Non ancora verificata — avvia una verifica.</string>
+    <string name="hero_checked_at">Verificato il %1$s</string>
+    <string name="info_membership">Partecipazione</string>
+    <string name="info_live_status">Stato attuale</string>
+    <string name="filter_only_beta">Con beta</string>
+    <string name="filter_only_watched">Seguite</string>
+    <string name="filter_only_system">Solo app di sistema</string>
+    <string name="empty_not_joined">Nessuna app installata con una beta a cui unirti in questo momento.</string>
+    <string name="empty_joined">Non hai ancora contrassegnato nessuna app come partecipante.</string>
+    <string name="empty_no_beta">Nessuna app senza programma beta.</string>
+    <string name="badge_beta">Beta</string>
+    <string name="refresh">Aggiorna</string>
+    <string name="empty_list">Nessuna app corrisponde ai filtri.</string>
+    <string name="error_scan">Impossibile esaminare le app installate.</string>
+    <string name="retry">Riprova</string>
+
+    <!-- User beta states -->
+    <string name="state_unknown">Sconosciuto</string>
+    <string name="state_joined">Partecipo</string>
+    <string name="state_not_joined">Non partecipo</string>
+    <string name="state_full">Al completo</string>
+    <string name="state_no_program">Nessun programma beta</string>
+
+    <!-- Known beta status (from bundled database) -->
+    <string name="known_beta_title">Informazioni note sulla beta</string>
+    <string name="known_unknown">Stato sconosciuto</string>
+    <string name="known_often_open">Di solito aperta</string>
+    <string name="known_often_full">Di solito al completo</string>
+    <string name="known_no_program">Nessun programma</string>
+    <string name="crowd_source_notes">Segnalato dagli utenti, confermato tramite Google Play</string>
+
+    <!-- Detected status (from the authenticated scan) -->
+    <string name="observed_title">Stato beta rilevato</string>
+    <string name="observed_membership_joined">Sei un tester</string>
+    <string name="observed_membership_not_joined">Non sei un tester</string>
+    <string name="observed_membership_unknown">Partecipazione non determinata</string>
+    <string name="observed_live_status">Stato del programma: %1$s</string>
+    <string name="observed_checked_at">Verificato: %1$s</string>
+    <string name="observed_last_error">L\'ultima verifica non è riuscita: %1$s</string>
+    <string name="live_unknown">Sconosciuto</string>
+    <string name="live_open">Aperta</string>
+    <string name="live_full">Al completo</string>
+    <string name="live_closed">Chiusa</string>
+    <string name="live_no_program">Nessun programma beta</string>
+
+    <!-- App detail -->
+    <string name="back">Indietro</string>
+    <string name="app_not_found">App non trovata.</string>
+    <string name="version_line">Versione %1$s (%2$d)</string>
+    <string name="installer_line">Installata da: %1$s</string>
+    <string name="system_app">App di sistema</string>
+    <string name="open_beta_page">Apri la pagina della beta</string>
+    <string name="join_beta">Unisciti alla beta</string>
+    <string name="open_play_page">Apri nel Play Store</string>
+    <string name="my_status">Il mio stato manuale</string>
+    <string name="my_status_hint">Contrassegno manuale facoltativo. Con l\'accesso effettuato, la verifica compila automaticamente lo stato rilevato qui sopra.</string>
+    <string name="watch_app">Segui questa app</string>
+    <string name="watch_hint">BetaScout ti ricorda di ricontrollare lo stato beta di questa app all\'intervallo scelto.</string>
+    <string name="reminder_interval">Intervallo dei promemoria</string>
+    <string name="days_count">%1$d giorni</string>
+    <string name="last_checked">Ultimo controllo: %1$s</string>
+    <string name="never_checked">Non ancora controllata</string>
+    <string name="mark_checked">Segna come controllata</string>
+    <string name="note_label">Nota</string>
+    <string name="save_note">Salva la nota</string>
+    <string name="detail_check_status_now">Verifica lo stato ora</string>
+    <string name="detail_checking_status">Verifica dello stato…</string>
+
+    <!-- Navigation tabs -->
+    <string name="tab_apps">App</string>
+    <string name="tab_watchlist">Seguite</string>
+
+    <!-- Account / membership sync -->
+    <string name="account_title">Impostazioni</string>
+    <string name="settings_open">Impostazioni</string>
+    <string name="search_open">Apri la ricerca</string>
+    <string name="search_close">Chiudi la ricerca</string>
+    <string name="account_open">Account</string>
+    <string name="account_hint">Accedi con il tuo account Google così BetaScout può leggere le tue pagine di test e rilevare in quali beta sei e se ognuna è aperta o al completo. Non si unisce mai a una beta al posto tuo.</string>
+    <string name="account_signin">Accedi con Google</string>
+    <string name="account_sync">Verifica ora</string>
+    <string name="account_scan_cancel">Annulla la verifica</string>
+    <string name="account_scan_cancelling">Annullamento…</string>
+    <string name="account_scan_background_running">Verifica automatica in corso…</string>
+    <string name="account_full_scan">Riverifica tutto</string>
+    <string name="account_full_scan_hint">Controlla di nuovo ogni app — può richiedere 10–15 minuti.</string>
+    <string name="account_no_scan_yet">Nessuna verifica ancora — tocca Verifica ora.</string>
+    <string name="account_last_scan">Ultima verifica: %1$s · %2$s</string>
+    <string name="account_scan_type_manual">avviata da te</string>
+    <string name="account_scan_type_background">automatica, in background</string>
+    <string name="account_last_scan_label">Ultima verifica</string>
+    <string name="account_connected">Account Google collegato</string>
+    <string name="tab_account">Account</string>
+    <string name="account_background_scan_title">Verifica automatica in background</string>
+    <string name="account_background_scan_body">Ricontrolla gli stati beta non aggiornati circa ogni 6 ore mentre hai l\'accesso effettuato — non devi avviarla tu. Se non c\'è ancora nulla di scaduto, l\'esecuzione non controlla niente e la riga dell\'ultima verifica non cambia.</string>
+    <string name="account_full_scan_button">Verifica tutto</string>
+    <string name="account_dynamic_color">Usa i colori del dispositivo (Material You)</string>
+    <string name="account_dynamic_color_hint">I colori seguono il tuo sfondo invece dello stile BetaScout.</string>
+    <string name="account_privacy_note">BetaScout legge solo le tue pagine di test e non si unisce mai a una beta al posto tuo.</string>
+    <string name="share_prompt_title">Aiuta a far crescere il catalogo delle beta</string>
+    <string name="share_prompt_body">Se attivata, BetaScout carica solo i nomi dei pacchetti delle app in cui la verifica ha trovato un programma di test, così il catalogo condiviso cresce con scoperte reali. Non viene mai inviato nient\'altro — né il tuo account, né le tue partecipazioni, né il tuo dispositivo — e puoi disattivarla nelle impostazioni in qualsiasi momento.</string>
+    <string name="share_prompt_enable">Attiva</string>
+    <string name="share_prompt_no">Non ora</string>
+    <string name="share_toggle_title">Condividi le scoperte</string>
+    <string name="share_toggle_hint">Dopo ogni verifica vengono caricati in forma anonima solo i nomi dei pacchetti delle app con un programma di test trovato. Il tuo account, le tue partecipazioni e i dati del dispositivo non vengono mai inviati, e le scoperte vengono verificate su Google Play prima di entrare nel catalogo condiviso.</string>
+    <string name="account_scan_totals">In %1$d beta · fuori da %2$d · %3$d senza programma beta</string>
+    <string name="account_scan_checked">%1$d app controllate in questa verifica</string>
+    <string name="account_last_scan_failed">%1$d app non sono state controllate — nuovo tentativo alla prossima verifica.</string>
+    <string name="account_last_scan_failed_reason">%1$d app non sono state controllate (%2$s) — nuovo tentativo alla prossima verifica.</string>
+    <string name="account_scan_progress">Controllo %1$d/%2$d: %3$s</string>
+    <string name="account_relogin">Sessione scaduta — accedi di nuovo.</string>
+    <string name="account_error">Errore: %1$s</string>
+    <string name="account_scan_in_progress">C\'è già una verifica in corso — riprova quando è terminata.</string>
+    <string name="account_scan_blocked">Google sta limitando le richieste in questo momento — la verifica è in pausa per circa un\'ora per proteggere il tuo account.</string>
+    <string name="detail_check_failed">La verifica dello stato non è riuscita — le informazioni mostrate potrebbero non essere aggiornate. Riprova tra un momento.</string>
+    <string name="account_signed_in">Accesso effettuato come %1$s</string>
+    <string name="account_signout">Esci</string>
+
+    <!-- Watchlist -->
+    <string name="watchlist_title">App seguite</string>
+    <string name="watchlist_empty">Non segui ancora nessuna app. Apri i dettagli di un\'app e attiva il monitoraggio.</string>
+    <string name="check_now">Controlla ora</string>
+    <string name="interval_line">Promemoria ogni %1$d giorni</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">Ti diamo il benvenuto in BetaScout</string>
+    <string name="onboarding_what">BetaScout esamina le app installate, mostra quali hanno un programma beta conosciuto su Google Play, apre la pagina di iscrizione per te e ti ricorda di ricontrollare le app che segui.</string>
+    <string name="onboarding_honesty_title">Cosa BetaScout non fa</string>
+    <string name="onboarding_honesty">Non si unisce mai ai programmi beta al posto tuo. Quando accedi con Google, le tue partecipazioni e lo stato aperto/al completo di ogni programma vengono letti dalle tue pagine di test; senza accesso li controlli tu.</string>
+    <string name="onboarding_risk">L\'accesso è facoltativo. Quando sei connesso, BetaScout legge le tue pagine di test tramite la tua sessione Google a un ritmo lento e limitato. La lettura automatica è una zona grigia nei termini di Google, quindi non si può escludere un piccolo rischio per l\'account — il catalogo e i promemoria funzionano anche senza accesso.</string>
+    <string name="onboarding_notifications">Consenti le notifiche così BetaScout può ricordarti di controllare gli stati delle beta.</string>
+    <string name="onboarding_continue">Inizia</string>
+
+    <!-- Reminders -->
+    <string name="reminder_channel_name">Promemoria beta</string>
+    <string name="reminder_channel_description">Promemoria per ricontrollare lo stato beta delle app seguite</string>
+    <string name="reminder_title">Controlla lo stato beta: %1$s</string>
+    <string name="reminder_text">Apri la pagina della beta e controlla se il programma è aperto.</string>
+
+    <!-- Beta slot openings (background scan) -->
+    <string name="slot_channel_name">Posti nelle beta</string>
+    <string name="slot_channel_description">Avvisa quando il programma di test di un\'app seguita ricomincia ad accettare tester</string>
+    <string name="slot_title">Beta aperta: %1$s</string>
+    <string name="slot_text">Il programma di test accetta di nuovo tester. Tocca per aprire la pagina di iscrizione.</string>
+    <string name="relogin_title">Accedi di nuovo</string>
+    <string name="relogin_text">La sessione Google è scaduta — la verifica automatica in background è in pausa finché non accedi.</string>
+
+    <!-- Manual scan (foreground service) -->
+    <string name="scan_channel_name">Verifica degli stati beta</string>
+    <string name="scan_channel_description">Mostrata durante una verifica manuale degli stati beta</string>
+    <string name="scan_notification_title">Verifica degli stati beta…</string>
+    <string name="scan_notification_cancel">Annulla</string>
+</resources>
