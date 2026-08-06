@@ -1,6 +1,6 @@
 # Store listing material (Aptoide and friends)
 
-Everything a store listing needs, in all six app languages. Screenshots live in
+Everything a store listing needs, in all seven app languages. Screenshots live in
 `store-assets/` (not committed — regenerate any time; see the checklist at the
 bottom).
 
@@ -32,6 +32,8 @@ bottom).
 
 **fr:** Trouvez, rejoignez et suivez les bêtas Google Play de vos applis installées.
 
+**it:** Trova, unisciti e segui le beta di Google Play delle tue app installate.
+
 ## Full description
 
 Written as console-safe plain text: CAPS section headers, • bullets, no
@@ -62,7 +64,7 @@ own and reads fine even if line breaks collapse.
 > source (Apache 2.0).
 >
 > LANGUAGES
-> English, Spanish, German, French, Brazilian Portuguese and Finnish.
+> English, Spanish, German, French, Italian, Brazilian Portuguese and Finnish.
 >
 > GOOD TO KNOW
 > Without signing in you can still browse found betas, open their opt-in pages
@@ -94,7 +96,7 @@ own and reads fine even if line breaks collapse.
 > vapaaehtoinen katalogijako. Avoin lähdekoodi (Apache 2.0).
 >
 > KIELET
-> Englanti, espanja, saksa, ranska, brasilianportugali ja suomi.
+> Englanti, espanja, saksa, ranska, italia, brasilianportugali ja suomi.
 >
 > HYVÄ TIETÄÄ
 > Kirjautumatta voit silti selata löydettyjä betoja, avata liittymissivut ja
@@ -130,7 +132,7 @@ own and reads fine even if line breaks collapse.
 > (Apache 2.0).
 >
 > IDIOMAS
-> Inglês, espanhol, alemão, francês, português do Brasil e finlandês.
+> Inglês, espanhol, alemão, francês, italiano, português do Brasil e finlandês.
 >
 > BOM SABER
 > Sem login, você ainda pode explorar os betas encontrados, abrir as páginas
@@ -167,7 +169,7 @@ own and reads fine even if line breaks collapse.
 > (Apache 2.0).
 >
 > IDIOMAS
-> Inglés, español, alemán, francés, portugués de Brasil y finés.
+> Inglés, español, alemán, francés, italiano, portugués de Brasil y finés.
 >
 > CONVIENE SABER
 > Sin iniciar sesión aún puedes explorar las betas encontradas, abrir sus
@@ -204,8 +206,8 @@ own and reads fine even if line breaks collapse.
 > Katalog-Teilen oben. Open Source (Apache 2.0).
 >
 > SPRACHEN
-> Englisch, Spanisch, Deutsch, Französisch, brasilianisches Portugiesisch und
-> Finnisch.
+> Englisch, Spanisch, Deutsch, Französisch, Italienisch, brasilianisches
+> Portugiesisch und Finnisch.
 >
 > GUT ZU WISSEN
 > Ohne Anmeldung kannst du trotzdem gefundene Betas durchstöbern, ihre
@@ -241,7 +243,8 @@ own and reads fine even if line breaks collapse.
 > partage facultatif du catalogue décrit ci-dessus. Open source (Apache 2.0).
 >
 > LANGUES
-> Anglais, espagnol, allemand, français, portugais du Brésil et finnois.
+> Anglais, espagnol, allemand, français, italien, portugais du Brésil et
+> finnois.
 >
 > BON À SAVOIR
 > Sans connexion, vous pouvez quand même parcourir les bêtas trouvées, ouvrir
@@ -249,6 +252,44 @@ own and reads fine even if line breaks collapse.
 > vos propres pages de test est une zone grise dans les conditions de
 > Google ; BetaScout est volontairement prudent, mais un petit risque pour le
 > compte ne peut pas être exclu.
+
+**it:**
+
+> BetaScout trova i programmi beta nascosti nella tua lista di app.
+>
+> Esamina le app installate e ti dice con parole semplici quali hanno un
+> programma di test su Google Play: beta aperta — puoi unirti, beta al
+> completo, o sei già dentro.
+>
+> COSA FA
+> • Prima le beta aperte — unisciti con un tocco dalla pagina di iscrizione
+> ufficiale.
+> • Segui le beta al completo — accedi e ricevi una notifica quando un
+> programma seguito ricomincia ad accettare tester (controllato ogni poche
+> ore).
+> • Rileva le tue partecipazioni — l'accesso facoltativo con Google legge le
+> tue pagine di test e mostra lo stato in tempo reale (aperta/al completo) e
+> le beta in cui sei già.
+> • Amplia il catalogo condiviso — un'opzione (disattivata per impostazione
+> predefinita) contribuisce in forma anonima con i programmi appena trovati;
+> vengono inviati solo nomi di pacchetto.
+>
+> PRIVACY
+> Niente pubblicità, niente analisi, niente telemetria. La tua lista di app e
+> le tue partecipazioni restano sul tuo dispositivo; l'unica eccezione è la
+> condivisione facoltativa del catalogo descritta sopra. Open source
+> (Apache 2.0).
+>
+> LINGUE
+> Inglese, spagnolo, tedesco, francese, italiano, portoghese brasiliano e
+> finlandese.
+>
+> DA SAPERE
+> Anche senza accesso puoi comunque sfogliare le beta trovate, aprire le loro
+> pagine di iscrizione e impostare promemoria. La lettura automatica delle
+> tue pagine di test è una zona grigia nei termini di Google; BetaScout è
+> volutamente prudente, ma un piccolo rischio per l'account non si può
+> escludere.
 
 ## Screenshot checklist (`store-assets/`, 1080×2400 PNG)
 
