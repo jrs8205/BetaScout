@@ -59,6 +59,7 @@
     <string name="known_often_open">Suele estar abierta</string>
     <string name="known_often_full">Suele estar completa</string>
     <string name="known_no_program">Sin programa</string>
+    <string name="crowd_source_notes">Reportado por usuarios, confirmado en Google Play</string>
 
     <!-- Detected status (from the authenticated scan) -->
     <string name="observed_title">Estado beta detectado</string>

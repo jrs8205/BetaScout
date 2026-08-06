@@ -56,6 +56,7 @@ import org.jarsi.betascout.domain.KnownBetaStatus
 import org.jarsi.betascout.domain.LiveBetaStatus
 import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.UserBetaState
+import org.jarsi.betascout.domain.isCrowdCatalogNotes
 import org.jarsi.betascout.ui.applist.BetaMembership
 import org.jarsi.betascout.ui.applist.betaMembership
 import org.jarsi.betascout.ui.applist.labelRes
@@ -424,7 +425,11 @@ private fun InfoCard(
             )
             it.notes?.let { notes ->
                 Text(
-                    notes,
+                    if (isCrowdCatalogNotes(notes)) {
+                        stringResource(R.string.crowd_source_notes)
+                    } else {
+                        notes
+                    },
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
@@ -465,14 +470,24 @@ private fun InfoCard(
 
 @Composable
 private fun InfoRow(label: String, value: String) {
-    Row(modifier = Modifier.fillMaxWidth()) {
+    // Both columns share the width so a long translated value wraps instead of
+    // squeezing the label into a letter-per-line column.
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(12.dp),
+    ) {
         Text(
             text = label,
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.weight(1f),
         )
-        Text(text = value, style = MaterialTheme.typography.bodyMedium)
+        Text(
+            text = value,
+            style = MaterialTheme.typography.bodyMedium,
+            textAlign = TextAlign.End,
+            modifier = Modifier.weight(1f),
+        )
     }
 }
 

@@ -93,6 +93,15 @@ data class BetaProgramInfo(
     val source: BetaSource = BetaSource.BUNDLED,
 )
 
+/**
+ * The notes text the crowd harvester stamps on every catalog entry it adds.
+ * The shared catalog is served in English, so the UI swaps this exact value
+ * for a localized string; any other notes text is shown as-is.
+ */
+const val CROWD_CATALOG_NOTES = "Reported by users, confirmed via Google Play"
+
+fun isCrowdCatalogNotes(notes: String?): Boolean = notes == CROWD_CATALOG_NOTES
+
 /** What the authenticated testing page reported for one app, per user/device. */
 data class BetaObservation(
     val accountKey: String,
