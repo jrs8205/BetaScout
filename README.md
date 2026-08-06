@@ -1,6 +1,5 @@
 # BetaScout
 
-[![CI](https://github.com/jrs8205/BetaScout/actions/workflows/ci.yml/badge.svg)](https://github.com/jrs8205/BetaScout/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/jrs8205/BetaScout?label=Release)](https://github.com/jrs8205/BetaScout/releases/latest)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/jrs8205/BetaScout/total?label=Downloads)](https://github.com/jrs8205/BetaScout/releases)
