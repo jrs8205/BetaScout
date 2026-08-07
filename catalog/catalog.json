@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1785999129758,
+  "generatedAt": 1786082222623,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -16,6 +16,15 @@
       "appName": "control screen rotation",
       "hasBeta": true,
       "productionVersionCode": 24,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ai.forty4pixels.karen",
+      "appName": "Clara - AI Receptionist",
+      "hasBeta": true,
+      "productionVersionCode": 2981,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -84,6 +93,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "allen.town.focus.reader",
+      "appName": "FocusReader RSS Reader",
+      "hasBeta": true,
+      "productionVersionCode": 251,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "alpha.sticker.maker",
       "appName": "Animated Sticker Maker (FSM)",
       "hasBeta": true,
@@ -120,6 +138,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "app.affine.pro",
+      "appName": "AFFiNE",
+      "hasBeta": true,
+      "productionVersionCode": 435,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "app.alextran.immich",
       "appName": "Immich",
       "hasBeta": true,
@@ -133,6 +160,15 @@
       "appName": "Athena AI Life AdvisorGPT",
       "hasBeta": true,
       "productionVersionCode": 242,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "app.coreply.coreplyapp",
+      "appName": "Coreply",
+      "hasBeta": true,
+      "productionVersionCode": 21,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -183,6 +219,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "app.hiddify.com",
+      "appName": "Hiddify",
+      "hasBeta": true,
+      "productionVersionCode": 40101,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "app.ladb.connect",
       "appName": "LADB Connect",
       "hasBeta": true,
@@ -228,6 +273,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "at.bitfire.davdroid",
+      "appName": "DAVx⁵ – CalDAV CardDAV WebDAV",
+      "hasBeta": true,
+      "productionVersionCode": 405190003,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "at.bitfire.icsdroid",
+      "appName": "ICSx⁵ – Subscribe to calendars",
+      "hasBeta": true,
+      "productionVersionCode": 92,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "at.harnisch.android.planets",
       "appName": "Sun, moon and planets",
       "hasBeta": true,
@@ -250,6 +313,15 @@
       "appName": "Axxess",
       "hasBeta": true,
       "productionVersionCode": 11000424,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "bot.touchkin",
+      "appName": "Wysa: Mental Wellbeing AI",
+      "hasBeta": true,
+      "productionVersionCode": 950,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -381,6 +453,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "chaskaforyou.apps.calculatoractions",
+      "appName": "Incognito Calculator Tools",
+      "hasBeta": true,
+      "productionVersionCode": 54,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "chat.fluffy.fluffychat",
       "appName": "FluffyChat",
       "hasBeta": true,
@@ -426,6 +507,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "cn.com.broadlink.econtrol.international",
+      "appName": "BroadLink -Universal TV Remote",
+      "hasBeta": true,
+      "productionVersionCode": 127,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "cn.onebound.cssbuy",
+      "appName": "CSSBuy",
+      "hasBeta": true,
+      "productionVersionCode": 624,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "co.hinge.app",
       "appName": "Hinge Dating App: Match & Date",
       "hasBeta": true,
@@ -444,10 +543,46 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "co.swasth.cbtcompanion",
+      "appName": "Untangle: CBT Companion",
+      "hasBeta": true,
+      "productionVersionCode": 439,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "co.uk.getmondo",
+      "appName": "Monzo Bank - Mobile Banking",
+      "hasBeta": true,
+      "productionVersionCode": 7370051,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "code.devil.gifhomewidget",
       "appName": "GIF HOME WIDGET",
       "hasBeta": true,
       "productionVersionCode": 36,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "code.name.monkey.retromusic",
+      "appName": "Retro Music Player",
+      "hasBeta": true,
+      "productionVersionCode": 10651,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "color.dev.com.tangerine",
+      "appName": "Pass2Pay",
+      "hasBeta": true,
+      "productionVersionCode": 803,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -520,6 +655,15 @@
       "appName": "ACKO Insurance",
       "hasBeta": true,
       "productionVersionCode": 370,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.acmeaom.android.myradar",
+      "appName": "MyRadar Weather Radar",
+      "hasBeta": true,
+      "productionVersionCode": 593,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -624,6 +768,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ajaxsystems",
+      "appName": "Ajax Security System",
+      "hasBeta": true,
+      "productionVersionCode": 35205047,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.aktaris.chattranslator",
       "appName": "PopLingo: Popup Dictionary",
       "hasBeta": true,
@@ -669,6 +822,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.amazon.aba.application",
+      "appName": "Transparency",
+      "hasBeta": true,
+      "productionVersionCode": 4000009,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.amazon.atozm",
+      "appName": "Amazon A to Z",
+      "hasBeta": true,
+      "productionVersionCode": 60011242,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.amazon.avod.thirdpartyclient",
       "appName": "Prime Video",
       "hasBeta": true,
@@ -696,10 +867,19 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.americanexpress.android.acctsvcs.us",
+      "appName": "Amex",
+      "hasBeta": true,
+      "productionVersionCode": 160287,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 787118833,
+      "productionVersionCode": 787118933,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -777,6 +957,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.app.hyperspace",
+      "appName": "Hyperspace Lighting",
+      "hasBeta": true,
+      "productionVersionCode": 102,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.appindustry.everywherelauncher",
       "appName": "Everywhere Launcher - Sidebar ",
       "hasBeta": true,
@@ -849,6 +1038,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.arashivision.insta360akiko",
+      "appName": "Insta360",
+      "hasBeta": true,
+      "productionVersionCode": 461406,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.arlosoft.macrodroid",
       "appName": "MacroDroid - Device Automation",
       "hasBeta": true,
@@ -871,6 +1069,15 @@
       "appName": "How to Tie a Tie",
       "hasBeta": true,
       "productionVersionCode": 220,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.arteneta.miuithemetester",
+      "appName": "MTZ Tester - Apply MIUI Theme",
+      "hasBeta": true,
+      "productionVersionCode": 41,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -925,6 +1132,33 @@
       "appName": "Twilio Authy Authenticator",
       "hasBeta": true,
       "productionVersionCode": 1077,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.avantiwestcoast",
+      "appName": "Avanti West Coast",
+      "hasBeta": true,
+      "productionVersionCode": 5020001,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.avira.android",
+      "appName": "Avira Security Antivirus & VPN",
+      "hasBeta": true,
+      "productionVersionCode": 260611311,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.avira.vpn",
+      "appName": "Avira Phantom VPN: Fast VPN",
+      "hasBeta": true,
+      "productionVersionCode": 3770,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1029,10 +1263,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.beatstars.mobile",
+      "appName": "BeatStars - Instrumental Beats",
+      "hasBeta": true,
+      "productionVersionCode": 11061,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.bee.autodo",
       "appName": "AutoDo AI Automation",
       "hasBeta": true,
       "productionVersionCode": 50,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.beemdevelopment.aegis",
+      "appName": "Aegis Authenticator - 2FA App",
+      "hasBeta": true,
+      "productionVersionCode": 81,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1155,6 +1407,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.blinknetwork.mobile2",
+      "appName": "Blink Charging Mobile App",
+      "hasBeta": true,
+      "productionVersionCode": 2498,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.bluetag.airtouch",
       "appName": "AirTouch: Gesture Control",
       "hasBeta": true,
@@ -1173,10 +1434,46 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.brocelia.cgp",
+      "appName": "Pathé France",
+      "hasBeta": true,
+      "productionVersionCode": 10453,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.brouken.player",
+      "appName": "Just (Video) Player",
+      "hasBeta": true,
+      "productionVersionCode": 212,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bubblesoft.android.bubbleupnp",
+      "appName": "BubbleUPnP for DLNA/Chromecast",
+      "hasBeta": true,
+      "productionVersionCode": 3000929,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.budget.tracker_app",
       "appName": "Cashew—Expense Budget Tracker",
       "hasBeta": true,
       "productionVersionCode": 510,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bumble.app",
+      "appName": "Bumble Dating App: Meet & Date",
+      "hasBeta": true,
+      "productionVersionCode": 4055,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1227,6 +1524,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.camcrushernew",
+      "appName": "CamCrusher",
+      "hasBeta": true,
+      "productionVersionCode": 184,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.capp.poplive",
       "appName": "Airbuds Widget",
       "hasBeta": true,
@@ -1240,6 +1546,15 @@
       "appName": "Alarm Clock: Calendar & Tasks",
       "hasBeta": true,
       "productionVersionCode": 151001,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.chamberlain.android.liftmaster.myq",
+      "appName": "myQ Garage & Access Control",
+      "hasBeta": true,
+      "productionVersionCode": 1131455,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1263,10 +1578,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.chessimprovement.chessis",
+      "appName": "Chessis: Chess Analysis",
+      "hasBeta": true,
+      "productionVersionCode": 196,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.chilllive.chillwallpaperproject",
       "appName": "Chill Live Wallpaper",
       "hasBeta": true,
       "productionVersionCode": 10200401,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.chimbori.hermitcrab",
+      "appName": "Hermit — Lite Apps Browser",
+      "hasBeta": true,
+      "productionVersionCode": 310800,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1371,10 +1704,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.concur.breeze",
+      "appName": "SAP Concur",
+      "hasBeta": true,
+      "productionVersionCode": 2026072616,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.controld.setuputility",
       "appName": "Control D Quick Setup",
       "hasBeta": true,
       "productionVersionCode": 173,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.coulombtech",
+      "appName": "ChargePoint",
+      "hasBeta": true,
+      "productionVersionCode": 1631,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1398,10 +1749,46 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.cv.docscanner",
+      "appName": "Document Scanner - PDF Creator",
+      "hasBeta": true,
+      "productionVersionCode": 70190,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.cvinfo.filemanager",
+      "appName": "File Manager by Lufick",
+      "hasBeta": true,
+      "productionVersionCode": 92,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.cxinventor.file.explorer",
+      "appName": "Cx File Explorer",
+      "hasBeta": true,
+      "productionVersionCode": 278,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.cxsw.sdprinter",
       "appName": "Creality Cloud - 3D Printing",
       "hasBeta": true,
       "productionVersionCode": 556,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.d4viddf.hyperbridge",
+      "appName": "Hyper Bridge",
+      "hasBeta": true,
+      "productionVersionCode": 0,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1434,10 +1821,37 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.dci.dev.holdmylink",
+      "appName": "LaterLinks: Bookmark Saver",
+      "hasBeta": true,
+      "productionVersionCode": 2003006,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.dci.dev.somethingwidgets",
       "appName": "Something OS Widgets",
       "hasBeta": true,
       "productionVersionCode": 14006,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.dd.doordash",
+      "appName": "DoorDash: Food, Grocery, More",
+      "hasBeta": true,
+      "productionVersionCode": 15286009,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.dealabs.apps.android",
+      "appName": "Dealabs – bons plans & promos",
+      "hasBeta": true,
+      "productionVersionCode": 81702,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1555,6 +1969,24 @@
       "appName": "EatSure Food Delivery",
       "hasBeta": true,
       "productionVersionCode": 465,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.donetick.app",
+      "appName": "Donetick - Home Chores Tracker",
+      "hasBeta": true,
+      "productionVersionCode": 59,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.doordash.driverapp",
+      "appName": "DoorDash - Dasher",
+      "hasBeta": true,
+      "productionVersionCode": 8092089,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1722,6 +2154,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.elevatelabs.geonosis",
+      "appName": "Balance: Meditation & Sleep",
+      "hasBeta": true,
+      "productionVersionCode": 994,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.elvai2.app",
       "appName": "Elvai",
       "hasBeta": true,
@@ -1740,6 +2181,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.enflick.android.TextNow",
+      "appName": "TextNow: Call + Text Unlimited",
+      "hasBeta": true,
+      "productionVersionCode": 15640,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.eokoe.smartfitcoach",
       "appName": "Smart Fit",
       "hasBeta": true,
@@ -1753,6 +2203,15 @@
       "appName": "Geominders: GPS Alarm Reminder",
       "hasBeta": true,
       "productionVersionCode": 46,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.evo.inware",
+      "appName": "Inware",
+      "hasBeta": true,
+      "productionVersionCode": 1070103,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1806,7 +2265,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 473623872,
+      "productionVersionCode": 473623796,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -1824,7 +2283,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 344411485,
+      "productionVersionCode": 344611868,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -1866,6 +2325,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.feverup.fever",
+      "appName": "Fever: Events & Tickets",
+      "hasBeta": true,
+      "productionVersionCode": 1430,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.fictionpress.fanfiction",
       "appName": "FanFiction.Net",
       "hasBeta": true,
@@ -1875,10 +2343,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.fillobotto.mp3tagger",
+      "appName": "Automatic Tag Editor",
+      "hasBeta": true,
+      "productionVersionCode": 771,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.finart",
       "appName": "FinArt: AI Expense Tracker",
       "hasBeta": true,
       "productionVersionCode": 185,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.fis.ebtedge",
+      "appName": "ebtEDGE",
+      "hasBeta": true,
+      "productionVersionCode": 69,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1897,6 +2383,15 @@
       "appName": "Fitify: Fitness, Home Workout",
       "hasBeta": true,
       "productionVersionCode": 9548,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.fleekcustomer",
+      "appName": "Fleek Wholesale",
+      "hasBeta": true,
+      "productionVersionCode": 540323202,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1938,6 +2433,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.foragetechnologycorp.forage",
+      "appName": "Forage EBT Balance & Rewards",
+      "hasBeta": true,
+      "productionVersionCode": 122,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.foreachi.photocurves",
       "appName": "Photo Curves - Color Grading",
       "hasBeta": true,
@@ -1947,10 +2451,46 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.foxdebug.acode",
+      "appName": "Acode — Terminal & AI Coding",
+      "hasBeta": true,
+      "productionVersionCode": 1004,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.foxdebug.acodefree",
+      "appName": "Acode — Terminal & AI Coding",
+      "hasBeta": true,
+      "productionVersionCode": 967,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.frandroid.app",
+      "appName": "Frandroid",
+      "hasBeta": true,
+      "productionVersionCode": 2026052009,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.frank.magic8ball",
       "appName": "Magic 8 Ball Glyph Toy",
       "hasBeta": true,
       "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.frontrow.vlog",
+      "appName": "VN: Photo & Video Editor",
+      "hasBeta": true,
+      "productionVersionCode": 6989,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1996,6 +2536,15 @@
       "appName": "Video MP3 Converter",
       "hasBeta": true,
       "productionVersionCode": 308,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.funnycat.virustotal",
+      "appName": "VirusTotal Mobile",
+      "hasBeta": true,
+      "productionVersionCode": 122,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2055,6 +2604,33 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.gettaxi.android",
+      "appName": "Gett- Corporate Ground Travel",
+      "hasBeta": true,
+      "productionVersionCode": 1048187,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ghisler.android.TotalCommander",
+      "appName": "Total Commander - file manager",
+      "hasBeta": true,
+      "productionVersionCode": 1493,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.giffgaffmobile.controller",
+      "appName": "giffgaff",
+      "hasBeta": true,
+      "productionVersionCode": 900,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.github.android",
       "appName": "GitHub",
       "hasBeta": true,
@@ -2109,6 +2685,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.goibibo",
+      "appName": "Goibibo: Hotel, Flight & Train",
+      "hasBeta": true,
+      "productionVersionCode": 2159,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.goodmapsapp",
+      "appName": "GoodMaps: Indoor Navigation",
+      "hasBeta": true,
+      "productionVersionCode": 1467,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.google.android.apps.accessibility.voiceaccess",
       "appName": "Voice Access",
       "hasBeta": true,
@@ -2148,7 +2742,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068706899,
+      "productionVersionCode": 1068706905,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2167,6 +2761,15 @@
       "appName": "Files by Google",
       "hasBeta": true,
       "productionVersionCode": 1908487,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.android.apps.searchlite",
+      "appName": "Google Go",
+      "hasBeta": true,
+      "productionVersionCode": 11840419,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2324,10 +2927,37 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.goyonder.yonder",
+      "appName": "Yonder Rewards Cards",
+      "hasBeta": true,
+      "productionVersionCode": 1678844645,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.goyourfly.bigidea",
       "appName": "Idea Note-Floating Voice Note",
       "hasBeta": true,
       "productionVersionCode": 126,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.gpsmapcamera.geotagginglocationonphoto",
+      "appName": "GPS Map Camera",
+      "hasBeta": true,
+      "productionVersionCode": 187,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.granturismo.gcamator",
+      "appName": "GCamator",
+      "hasBeta": true,
+      "productionVersionCode": 548,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2364,6 +2994,15 @@
       "appName": "Blinkit: Groceries & more",
       "hasBeta": true,
       "productionVersionCode": 280180150,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.groupme.android",
+      "appName": "GroupMe",
+      "hasBeta": true,
+      "productionVersionCode": 261980104,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2486,6 +3125,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.havabee.breathe",
+      "appName": "Breathe: Relax & Focus",
+      "hasBeta": true,
+      "productionVersionCode": 102,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.hdqwalls.hdqwalls1",
       "appName": "HDQWALLS 4k Wallpapers",
       "hasBeta": true,
@@ -2508,6 +3156,24 @@
       "appName": "Healthify: AI Diet & Fitness",
       "hasBeta": true,
       "productionVersionCode": 1120,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.heappi.android.Bubble",
+      "appName": "Bubble BD Comics Mangas",
+      "hasBeta": true,
+      "productionVersionCode": 3876,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.helloasso.android",
+      "appName": "HelloAsso",
+      "hasBeta": true,
+      "productionVersionCode": 46,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2621,6 +3287,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.hualai",
+      "appName": "Wyze - Never Wonder",
+      "hasBeta": true,
+      "productionVersionCode": 62618,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.hulu.plus",
       "appName": "Hulu: Stream TV shows & movies",
       "hasBeta": true,
@@ -2729,6 +3404,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.infomaniak.mail",
+      "appName": "Infomaniak Mail",
+      "hasBeta": true,
+      "productionVersionCode": 13100002,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ingka.ikea.app",
       "appName": "IKEA",
       "hasBeta": true,
@@ -2747,10 +3431,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.instabridge.android",
+      "appName": "Instabridge: WiFi Hotspot Map",
+      "hasBeta": true,
+      "productionVersionCode": 101858,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.instacart.client",
+      "appName": "Instacart: Get Food Delivery",
+      "hasBeta": true,
+      "productionVersionCode": 92801000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384710428,
+      "productionVersionCode": 384710369,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2814,6 +3516,15 @@
       "appName": "Internet Speed Meter",
       "hasBeta": true,
       "productionVersionCode": 56,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.internet.tvbrowser",
+      "appName": "Browser",
+      "hasBeta": true,
+      "productionVersionCode": 452,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2891,6 +3602,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ivuu",
+      "appName": "AlfredCamera Home Security app",
+      "hasBeta": true,
+      "productionVersionCode": 6288300,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.jacksoftw.webcam",
       "appName": "Iriun 4K Webcam for PC and Mac",
       "hasBeta": true,
@@ -2936,6 +3656,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.jamworks.doubletaptosleepscreenoff",
+      "appName": "Double Tap Screen Off / Lock",
+      "hasBeta": true,
+      "productionVersionCode": 1025,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.jamworks.dynamicspot",
       "appName": "dynamicSpot - Dynamic Island",
       "hasBeta": true,
@@ -2954,10 +3683,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.javiersantos.mlmanager",
+      "appName": "ML Manager: APK Extractor",
+      "hasBeta": true,
+      "productionVersionCode": 120,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.javiersantos.mlmanagerpro",
       "appName": "ML Manager Pro: APK Extractor",
       "hasBeta": true,
       "productionVersionCode": 120,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.jetpack.android",
+      "appName": "Jetpack – Website Builder",
+      "hasBeta": true,
+      "productionVersionCode": 270027599,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3026,6 +3773,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.july.cricinfo",
+      "appName": "Cricinfo - Live Cricket Scores",
+      "hasBeta": true,
+      "productionVersionCode": 9220,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.justdial.search",
       "appName": "JD -Search, Shop, Travel, B2B",
       "hasBeta": true,
@@ -3039,6 +3795,33 @@
       "appName": "JustWatch - Streaming Guide",
       "hasBeta": true,
       "productionVersionCode": 2628002,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.kaching.merchant",
+      "appName": "SumUp Business",
+      "hasBeta": true,
+      "productionVersionCode": 262101505,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.kajda.blurtext",
+      "appName": "Screenshot Editor - Markup",
+      "hasBeta": true,
+      "productionVersionCode": 110007,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.karriapps.smartsiddurlite",
+      "appName": "Smart Siddur",
+      "hasBeta": true,
+      "productionVersionCode": 286,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3066,6 +3849,15 @@
       "appName": "Codora - QR Code/Barcode Tools",
       "hasBeta": true,
       "productionVersionCode": 62,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.kroegerama.appchecker",
+      "appName": "AppChecker - App & System info",
+      "hasBeta": true,
+      "productionVersionCode": 4003000,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3120,6 +3912,15 @@
       "appName": "Sticker Maker for WhatsApp",
       "hasBeta": true,
       "productionVersionCode": 31,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ledger.live",
+      "appName": "Ledger Wallet™ crypto app",
+      "hasBeta": true,
+      "productionVersionCode": 50399360,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3209,7 +4010,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 213700,
+      "productionVersionCode": 213800,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3219,6 +4020,24 @@
       "appName": "LinkedIn Learning",
       "hasBeta": true,
       "productionVersionCode": 555,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.lionscribe.elist",
+      "appName": "Smartlist Phone",
+      "hasBeta": true,
+      "productionVersionCode": 962,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.lionscribe.hebdate",
+      "appName": "HebDate Hebrew Calendar",
+      "hasBeta": true,
+      "productionVersionCode": 902,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3278,6 +4097,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ltu.flashInvader",
+      "appName": "FlashInvaders",
+      "hasBeta": true,
+      "productionVersionCode": 345,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.lucagrillo.ImageGlitcher",
       "appName": "Glitch! (glitch4ndroid)",
       "hasBeta": true,
@@ -3287,10 +4115,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.lucky_apps.RainViewer",
+      "appName": "Rain Viewer: Weather Radar Map",
+      "hasBeta": true,
+      "productionVersionCode": 33306,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.luckydroid.droidbase",
       "appName": "Memento Database",
       "hasBeta": true,
       "productionVersionCode": 291,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.lumiunited.aqarahome.play",
+      "appName": "Aqara Home",
+      "hasBeta": true,
+      "productionVersionCode": 6966,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3309,6 +4155,24 @@
       "appName": "Floating Apps (multitasking)",
       "hasBeta": true,
       "productionVersionCode": 142306013,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.mahersafadi.electron",
+      "appName": "Electron: battery health info",
+      "hasBeta": true,
+      "productionVersionCode": 106,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.mail.mobile.android.mail",
+      "appName": "mail.com: Email app & Cloud",
+      "hasBeta": true,
+      "productionVersionCode": 405197,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3431,6 +4295,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.merxury.blocker",
+      "appName": "Blocker - App Controller",
+      "hasBeta": true,
+      "productionVersionCode": 4839,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.meteoblue.droid",
       "appName": "Weather forecast & live radar",
       "hasBeta": true,
@@ -3453,6 +4326,15 @@
       "appName": "File Manager",
       "hasBeta": true,
       "productionVersionCode": 20210601,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.mi.android.globallauncher",
+      "appName": "POCO Launcher 2.0 - Customize,",
+      "hasBeta": true,
+      "productionVersionCode": 0,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3782,10 +4664,46 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.mojang.minecraftpe",
+      "appName": "Minecraft: Dream it, Build it!",
+      "hasBeta": true,
+      "productionVersionCode": 972604005,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.monect.portable",
+      "appName": "PC Remote",
+      "hasBeta": true,
+      "productionVersionCode": 144,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.moobky.MiPolicia",
       "appName": "Mi Policía",
       "hasBeta": true,
       "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.moodtools.cbtassistant.app",
+      "appName": "Clarity - CBT Thought Diary",
+      "hasBeta": true,
+      "productionVersionCode": 122,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.moremins.moremins",
+      "appName": "MoreMins: eSIM & Temp Number",
+      "hasBeta": true,
+      "productionVersionCode": 525,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3822,6 +4740,15 @@
       "appName": "Musiko: music notifications",
       "hasBeta": true,
       "productionVersionCode": 217,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.musixmatch.android.lyrify",
+      "appName": "Musixmatch Dynamic Lyrics",
+      "hasBeta": true,
+      "productionVersionCode": 2026061901,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3908,6 +4835,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.nbaimd.gametime.nba2011",
+      "appName": "NBA: Live Games & Scores",
+      "hasBeta": true,
+      "productionVersionCode": 95012,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.nearbuy.nearbuymobile",
       "appName": "nearbuy - Food Spa Salon Deals",
       "hasBeta": true,
@@ -3929,10 +4865,19 @@
       "packageName": "com.netflix.mediaclient",
       "appName": "Netflix",
       "hasBeta": true,
-      "productionVersionCode": 64328,
+      "productionVersionCode": 64348,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.nextdoor",
+      "appName": "Nextdoor: Neighborhood Network",
+      "hasBeta": true,
+      "productionVersionCode": 1252556,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.nfo.me.android",
@@ -4097,6 +5042,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.oasisfeng.greenify",
+      "appName": "Greenify",
+      "hasBeta": true,
+      "productionVersionCode": 51100,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.oceangalaxy.camera.new",
       "appName": "Timemark: Photo Proof for Work",
       "hasBeta": true,
@@ -4128,6 +5082,33 @@
       "appName": "Jiji Kenya: Buy & Sell Online",
       "hasBeta": true,
       "productionVersionCode": 1400415,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.omkar.voiceflow",
+      "appName": "Phravia — Voice Dictation",
+      "hasBeta": true,
+      "productionVersionCode": 59,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.onepassword.android",
+      "appName": "1Password: Password Manager",
+      "hasBeta": true,
+      "productionVersionCode": 81230021,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.oneplus.backuprestore",
+      "appName": "Clone Phone - OnePlus app",
+      "hasBeta": true,
+      "productionVersionCode": 140728,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4169,10 +5150,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.onoffapp.app",
+      "appName": "Onoff Numbers",
+      "hasBeta": true,
+      "productionVersionCode": 732,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.openai.chatgpt",
       "appName": "ChatGPT",
       "hasBeta": true,
       "productionVersionCode": 2618827,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.opera.gx",
+      "appName": "Opera GX: Gaming Browser",
+      "hasBeta": true,
+      "productionVersionCode": 185,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4223,6 +5222,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.otovent.app",
+      "appName": "Otovent",
+      "hasBeta": true,
+      "productionVersionCode": 39,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.otp.octopilauncher",
       "appName": "Octopi Launcher • Home Screens",
       "hasBeta": true,
@@ -4254,6 +5262,15 @@
       "appName": "Car Scanner ELM OBD2",
       "hasBeta": true,
       "productionVersionCode": 42001046,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.pal.train",
+      "appName": "TrainPal - Cheap Train Tickets",
+      "hasBeta": true,
+      "productionVersionCode": 3880,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4304,10 +5321,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.payoneer.android",
+      "appName": "Payoneer - Business Payments",
+      "hasBeta": true,
+      "productionVersionCode": 10016180,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.paypal.android.p2pmobile",
       "appName": "PayPal - Pay, Send, Save",
       "hasBeta": true,
       "productionVersionCode": 1160086005,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.pdanet",
+      "appName": "PdaNet+",
+      "hasBeta": true,
+      "productionVersionCode": 5320,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4326,6 +5361,15 @@
       "appName": "Peerlist: Professional Network",
       "hasBeta": true,
       "productionVersionCode": 1002004,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.peoplestrong.alt.organise",
+      "appName": "PeopleStrong",
+      "hasBeta": true,
+      "productionVersionCode": 2220,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4367,6 +5411,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.pikatorrent.PikaTorrent",
+      "appName": "PikaTorrent -  Torrent app",
+      "hasBeta": true,
+      "productionVersionCode": 7,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.pingpros.keyboard",
       "appName": "Zavi AI Voice Typing Keyboard",
       "hasBeta": true,
@@ -4385,10 +5438,28 @@
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.pittvandewitt.wavelet",
+      "appName": "Wavelet: headphone equalizer",
+      "hasBeta": true,
+      "productionVersionCode": 260508,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.pixelfed",
       "appName": "Pixelfed",
       "hasBeta": true,
       "productionVersionCode": 441083,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.pl.cwc_2015",
+      "appName": "ICC Official",
+      "hasBeta": true,
+      "productionVersionCode": 101488647,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4484,6 +5555,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.prequel.app",
+      "appName": "PREQUEL AI Filter Photo Editor",
+      "hasBeta": true,
+      "productionVersionCode": 10500625,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.prismtree.sponge",
       "appName": "Sponge - Gallery Cleaner",
       "hasBeta": true,
@@ -4511,6 +5591,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.psiphon3.subscription",
+      "appName": "Psiphon VPN: Freedom Online",
+      "hasBeta": true,
+      "productionVersionCode": 474,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.psma.videosplitter",
       "appName": "Video Splitter - Status Maker",
       "hasBeta": true,
@@ -4533,6 +5622,15 @@
       "appName": "Pushbullet: SMS on PC and more",
       "hasBeta": true,
       "productionVersionCode": 410,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.q1.breakbricks",
+      "appName": "Break Bricks - Bricks Breaker",
+      "hasBeta": true,
+      "productionVersionCode": 150,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4592,6 +5690,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.realvnc.viewer.android",
+      "appName": "RealVNC Viewer: Remote Desktop",
+      "hasBeta": true,
+      "productionVersionCode": 2080175,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.recovery.recentlyuninstalledappsrecovery",
       "appName": "Uninstalled Apps Recovery",
       "hasBeta": true,
@@ -4617,6 +5724,15 @@
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.redfin.android",
+      "appName": "Redfin: Buy, Sell & Rent Homes",
+      "hasBeta": true,
+      "productionVersionCode": 1477,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.Relmtech.Remote",
@@ -4646,6 +5762,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.requapp.requ",
+      "appName": "AttaPoll Surveys: Earn Money",
+      "hasBeta": true,
+      "productionVersionCode": 8377,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.resilio.sync",
       "appName": "Resilio Sync",
       "hasBeta": true,
@@ -4655,10 +5780,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.revolut.business",
+      "appName": "Revolut Business",
+      "hasBeta": true,
+      "productionVersionCode": 616003111,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.revolut.revolut",
       "appName": "Revolut: Spend, Save, Trade",
       "hasBeta": true,
       "productionVersionCode": 1013810118,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.rhmsoft.edit.pro",
+      "appName": "QuickEdit Text Editor Pro",
+      "hasBeta": true,
+      "productionVersionCode": 281,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4691,6 +5834,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.robinhood.android",
+      "appName": "Robinhood: Trading & Investing",
+      "hasBeta": true,
+      "productionVersionCode": 20263103,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.robleridge.Moodfit",
+      "appName": "Moodfit: Mental Health Fitness",
+      "hasBeta": true,
+      "productionVersionCode": 30500,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.rocketshipapps.adblockfast",
       "appName": "Adblock Fast",
       "hasBeta": true,
@@ -4713,6 +5874,15 @@
       "appName": "Rockbot - Request Music",
       "hasBeta": true,
       "productionVersionCode": 3069,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.rtbishop.look4sat",
+      "appName": "Look4Sat: Satellite tracker",
+      "hasBeta": true,
+      "productionVersionCode": 445,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4754,6 +5924,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.safaricom.mysafaricom",
+      "appName": "MySafaricom",
+      "hasBeta": true,
+      "productionVersionCode": 12813,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.safeincloud",
+      "appName": "SafeInCloud 1",
+      "hasBeta": true,
+      "productionVersionCode": 270000300,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.salt.music",
       "appName": "Salt Player",
       "hasBeta": true,
@@ -4767,6 +5955,15 @@
       "appName": "BuzzKill Notification Manager",
       "hasBeta": true,
       "productionVersionCode": 328,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.samruston.flip",
+      "appName": "CoinCalc - Currency Converter",
+      "hasBeta": true,
+      "productionVersionCode": 188,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4857,6 +6054,15 @@
       "appName": "Seeing",
       "hasBeta": true,
       "productionVersionCode": 69,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.sei.android",
+      "appName": "7-Eleven: Rewards & Shopping",
+      "hasBeta": true,
+      "productionVersionCode": 118060,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4970,10 +6176,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.simonandschuster.pimsleur.unified.android",
+      "appName": "Pimsleur | Language Learning",
+      "hasBeta": true,
+      "productionVersionCode": 733,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.simonsturge.myjdownloader",
       "appName": "JDownloader Remote Control",
       "hasBeta": true,
       "productionVersionCode": 53,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.sirma.mobile.bible.android",
+      "appName": "YouVersion Bible App + Audio",
+      "hasBeta": true,
+      "productionVersionCode": 7094458,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4992,6 +6216,15 @@
       "appName": "Ragdoll Hero Dismounting Fly",
       "hasBeta": true,
       "productionVersionCode": 61,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.Slack",
+      "appName": "Slack",
+      "hasBeta": true,
+      "productionVersionCode": 90016007,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5028,6 +6261,15 @@
       "appName": "SnoreLab : Record Your Snoring",
       "hasBeta": true,
       "productionVersionCode": 70460,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.soccer.score.star",
+      "appName": "Soccer Superstar",
+      "hasBeta": true,
+      "productionVersionCode": 372,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5096,6 +6338,24 @@
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.spotlightsix.zentimerlite2",
+      "appName": "Insight Timer - Meditation App",
+      "hasBeta": true,
+      "productionVersionCode": 56808,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.squareup.cash",
+      "appName": "Cash App",
+      "hasBeta": true,
+      "productionVersionCode": 5631002,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.squats.fittr",
       "appName": "FITTR: Diet & Fitness App",
       "hasBeta": true,
@@ -5145,6 +6405,15 @@
       "appName": "PortDroid",
       "hasBeta": true,
       "productionVersionCode": 113,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.stepsappgmbh.stepsapp",
+      "appName": "StepsApp – Step Counter",
+      "hasBeta": true,
+      "productionVersionCode": 421,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5204,6 +6473,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.subway.mobile.subwayapp03",
+      "appName": "Subway®",
+      "hasBeta": true,
+      "productionVersionCode": 5007324,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.superlist.superlist",
       "appName": "Superlist: To-Do List Planner",
       "hasBeta": true,
@@ -5249,6 +6527,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.tabdeveloper.tvoverlayremote",
+      "appName": "Tv Overlay Remote",
+      "hasBeta": true,
+      "productionVersionCode": 10025,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.tailscale.ipn",
       "appName": "Tailscale",
       "hasBeta": true,
@@ -5276,6 +6563,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.tcx.sipphone14",
+      "appName": "3CX",
+      "hasBeta": true,
+      "productionVersionCode": 2007005,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.teamviewer.teamviewer.market.mobile",
       "appName": "TeamViewer Remote Control",
       "hasBeta": true,
@@ -5298,6 +6594,15 @@
       "appName": "GPS Alarm - Location Reminder",
       "hasBeta": true,
       "productionVersionCode": 305009001,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.tencent.mm",
+      "appName": "WeChat",
+      "hasBeta": true,
+      "productionVersionCode": 3084,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5357,6 +6662,42 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.thestepupapp.stepup",
+      "appName": "StepUp Pedometer Step Counter",
+      "hasBeta": true,
+      "productionVersionCode": 50660,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.theswitchbot.switchbot",
+      "appName": "SwitchBot",
+      "hasBeta": true,
+      "productionVersionCode": 30000145,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.thetileapp.tile",
+      "appName": "Tile: Making Things Findable",
+      "hasBeta": true,
+      "productionVersionCode": 6750,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.thetrainline",
+      "appName": "Trainline: Train travel Europe",
+      "hasBeta": true,
+      "productionVersionCode": 1278994,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.thetransitapp.droid",
       "appName": "Transit - Subway & Bus Times",
       "hasBeta": true,
@@ -5379,6 +6720,15 @@
       "appName": "TickTick:To Do List & Calendar",
       "hasBeta": true,
       "productionVersionCode": 8120,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.tinder",
+      "appName": "Tinder Dating App: Chat & Date",
+      "hasBeta": true,
+      "productionVersionCode": 17280160,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5433,6 +6783,15 @@
       "appName": "Bobble AI Keyboard Memes, Gifs",
       "hasBeta": true,
       "productionVersionCode": 10900002,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.tplink.aginet",
+      "appName": "TP-Link Aginet",
+      "hasBeta": true,
+      "productionVersionCode": 434,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5510,6 +6869,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ttxapps.autosync",
+      "appName": "Autosync - File Sync & Backup",
+      "hasBeta": true,
+      "productionVersionCode": 2607231,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ttxapps.drivesync",
+      "appName": "Autosync for Google Drive",
+      "hasBeta": true,
+      "productionVersionCode": 26072310,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.tumblr",
       "appName": "Tumblr: Social Media & Art",
       "hasBeta": true,
@@ -5555,6 +6932,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ubercab.driver",
+      "appName": "Uber - Driver: Drive & Deliver",
+      "hasBeta": true,
+      "productionVersionCode": 299166,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ubercab.eats",
       "appName": "Uber Eats: Food and Grocery",
       "hasBeta": true,
@@ -5595,6 +6981,15 @@
       "appName": "Flip DND: Flip to shhh..shush!",
       "hasBeta": true,
       "productionVersionCode": 44,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.urbandroid.kinestop",
+      "appName": "KineStop: Car sickness aid",
+      "hasBeta": true,
+      "productionVersionCode": 101,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5672,6 +7067,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.usps.id45833",
+      "appName": "Informed Delivery® Mobile",
+      "hasBeta": true,
+      "productionVersionCode": 10200054,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.valhalla.thor",
       "appName": "Thor App Manager",
       "hasBeta": true,
@@ -5735,10 +7139,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.vimeo.android.videoapp",
+      "appName": "Vimeo",
+      "hasBeta": true,
+      "productionVersionCode": 3698025,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.vitorpamplona.amethyst",
       "appName": "Amethyst",
       "hasBeta": true,
       "productionVersionCode": 456,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.volvmedia.volvapp",
+      "appName": "Volv - Curated 9-Second News",
+      "hasBeta": true,
+      "productionVersionCode": 1110,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5807,6 +7229,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.weberdo.apps.serviceinfo",
+      "appName": "Services Info (Update)",
+      "hasBeta": true,
+      "productionVersionCode": 17,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.webwidget.app",
       "appName": "AnyWidget - Custom Web Widgets",
       "hasBeta": true,
@@ -5819,7 +7250,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 262907320,
+      "productionVersionCode": 263009720,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5848,8 +7279,8 @@
       "hasBeta": true,
       "productionVersionCode": 2328,
       "liveStatus": "UNKNOWN",
-      "source": "CROWD",
-      "notes": "Reported by users, confirmed via Google Play"
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
     },
     {
       "packageName": "com.wisdomlogix.send.files.tv.fileshare",
@@ -5861,10 +7292,46 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.wise.converter",
+      "appName": "Currency Converter",
+      "hasBeta": true,
+      "productionVersionCode": 42,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.withings.wiscale2",
+      "appName": "Withings",
+      "hasBeta": true,
+      "productionVersionCode": 8090006,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.wix.android",
       "appName": "Spaces: Follow Businesses",
       "hasBeta": true,
       "productionVersionCode": 145277,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.wizway.nfcagent",
+      "appName": "Ticket sans contact",
+      "hasBeta": true,
+      "productionVersionCode": 1130,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.wolt.android",
+      "appName": "Wolt Delivery: Food and more",
+      "hasBeta": true,
+      "productionVersionCode": 142026311,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5924,10 +7391,37 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.xodo.pdf.reader",
+      "appName": "PDF Reader & Editor: Xodo",
+      "hasBeta": true,
+      "productionVersionCode": 210170200,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.xsense.security",
       "appName": "X-Sense Home Security",
       "hasBeta": true,
       "productionVersionCode": 1410,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.xt.retouchoversea",
+      "appName": "Hypic - Photo Editor & AI Art",
+      "hasBeta": true,
+      "productionVersionCode": 92080,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.xtreak.notificationdictionary",
+      "appName": "Notification Dictionary",
+      "hasBeta": true,
+      "productionVersionCode": 24,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5978,6 +7472,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ytheekshana.apkextractor",
+      "appName": "APK & XAPK Extractor",
+      "hasBeta": true,
+      "productionVersionCode": 47,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ytheekshana.deviceinfo",
       "appName": "Device Info: System & CPU Info",
       "hasBeta": true,
@@ -5991,6 +7494,15 @@
       "appName": "SystemUI Tuner",
       "hasBeta": true,
       "productionVersionCode": 362,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.zengge.wifi",
+      "appName": "Magic Home Pro",
+      "hasBeta": true,
+      "productionVersionCode": 230,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6077,6 +7589,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.zumiez",
+      "appName": "Zumiez",
+      "hasBeta": true,
+      "productionVersionCode": 534,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.zzkko",
       "appName": "SHEIN-Shopping Online",
       "hasBeta": true,
@@ -6158,6 +7679,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "de.gmx.mobile.android.mail",
+      "appName": "GMX - Mail & Cloud",
+      "hasBeta": true,
+      "productionVersionCode": 405199,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "de.hp.volume",
       "appName": "Volume Manager",
       "hasBeta": true,
@@ -6180,6 +7710,24 @@
       "appName": "komoot - hike, bike & run",
       "hasBeta": true,
       "productionVersionCode": 263730002,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "de.lemke.oneurl",
+      "appName": "OneURL - URL Shortener (QR)",
+      "hasBeta": true,
+      "productionVersionCode": 45,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "de.orrs.deliveries",
+      "appName": "Deliveries Package Tracker",
+      "hasBeta": true,
+      "productionVersionCode": 1975,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6248,6 +7796,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "deckers.thibault.aves",
+      "appName": "Aves Gallery",
+      "hasBeta": true,
+      "productionVersionCode": 173,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "deezer.android.app",
       "appName": "Deezer: Music & Podcast Player",
       "hasBeta": true,
@@ -6275,6 +7832,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "dev.introdructor.wallique.app",
+      "appName": "Wallique",
+      "hasBeta": true,
+      "productionVersionCode": 3,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "dev.lexip.hecate",
       "appName": "Adaptive Theme: Auto Dark Mode",
       "hasBeta": true,
@@ -6288,6 +7854,24 @@
       "appName": "Lovable: Build Apps With AI",
       "hasBeta": true,
       "productionVersionCode": 112,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "dev.narikdesign.nothingadaptive",
+      "appName": "Everything Adaptive Icons",
+      "hasBeta": true,
+      "productionVersionCode": 380,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "dev.sebaubuntu.athena",
+      "appName": "Athena",
+      "hasBeta": true,
+      "productionVersionCode": 17,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6374,6 +7958,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "energy.octopus.octopusenergy.android",
+      "appName": "Octopus Energy",
+      "hasBeta": true,
+      "productionVersionCode": 41390006,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "es.aeat.dgc.mobile",
       "appName": "Agencia Tributaria",
       "hasBeta": true,
@@ -6392,6 +7985,33 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "eu.darken.bluemusic",
+      "appName": "Bluetooth Volume Manager",
+      "hasBeta": true,
+      "productionVersionCode": 30403000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "eu.darken.myperm",
+      "appName": "Permission Pilot",
+      "hasBeta": true,
+      "productionVersionCode": 20200000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "eu.darken.octi",
+      "appName": "Octi - Multi-Device Monitor",
+      "hasBeta": true,
+      "productionVersionCode": 10100000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "eu.darken.sdmse",
       "appName": "SD Maid 2/SE - System Cleaner",
       "hasBeta": true,
@@ -6401,10 +8021,55 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "eu.faircode.email",
+      "appName": "FairEmail, privacy aware email",
+      "hasBeta": true,
+      "productionVersionCode": 2325,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "eu.faircode.netguard",
+      "appName": "NetGuard - no-root firewall",
+      "hasBeta": true,
+      "productionVersionCode": 2025101201,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "eu.siacs.conversations",
       "appName": "Conversations (Jabber / XMPP)",
       "hasBeta": true,
       "productionVersionCode": 4217804,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "eu.teamr.custom",
+      "appName": "MonClub",
+      "hasBeta": true,
+      "productionVersionCode": 221,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "eu.thedarken.sdm",
+      "appName": "SD Maid 1 - System Cleaner",
+      "hasBeta": true,
+      "productionVersionCode": 50603,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "eu.thedarken.sdm.unlocker",
+      "appName": "SD Maid 1 Pro - Unlocker",
+      "hasBeta": true,
+      "productionVersionCode": 50601,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6491,10 +8156,55 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "fr.francetv.apps.info",
+      "appName": "franceinfo: actualités et info",
+      "hasBeta": true,
+      "productionVersionCode": 1498194,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "fr.freebox.download",
+      "appName": "Freebox Files",
+      "hasBeta": true,
+      "productionVersionCode": 3815,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "fr.gouv.franceidentite",
+      "appName": "France Identité",
+      "hasBeta": true,
+      "productionVersionCode": 1035031,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "fr.pixelprose.game2048",
       "appName": "2048",
       "hasBeta": true,
       "productionVersionCode": 130,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "fr.pretapousser.lilo",
+      "appName": "Prêt à Pousser",
+      "hasBeta": true,
+      "productionVersionCode": 1123,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "fr.vsct.compagnonpro.android",
+      "appName": "TGV INOUI PRO",
+      "hasBeta": true,
+      "productionVersionCode": 20030001,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6572,6 +8282,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "host.stjin.cometin",
+      "appName": "Cometin",
+      "hasBeta": true,
+      "productionVersionCode": 275,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "hu.co.tramontana.netprinter",
       "appName": "NetPrinter",
       "hasBeta": true,
@@ -6608,6 +8327,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "ie.leapcard.tnfc",
+      "appName": "Leap Top-up",
+      "hasBeta": true,
+      "productionVersionCode": 21000415,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "il.co.PriceZ.android",
       "appName": "פרייסז-השוואת מחירי מזון ופארם",
       "hasBeta": true,
@@ -6639,6 +8367,15 @@
       "appName": "toing - Food Delivery",
       "hasBeta": true,
       "productionVersionCode": 1796,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "in.wallpaper.wallpapers",
+      "appName": "Wallcandy - Unique Wallpapers",
+      "hasBeta": true,
+      "productionVersionCode": 204,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6725,6 +8462,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "io.flic.app",
+      "appName": "Flic",
+      "hasBeta": true,
+      "productionVersionCode": 165,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "io.github.fertwbr.pixelcompass",
+      "appName": "Pixel Compass: Nav & Level",
+      "hasBeta": true,
+      "productionVersionCode": 330121061,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "io.github.sds100.keymapper",
       "appName": "Key Mapper & Floating Buttons",
       "hasBeta": true,
@@ -6770,6 +8525,33 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "io.wifimap.wifimap",
+      "appName": "WiFi Map・Internet & Speed Test",
+      "hasBeta": true,
+      "productionVersionCode": 9492,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "it.dbtecno.pizzaboygbapro",
+      "appName": "Pizza Boy A Pro",
+      "hasBeta": true,
+      "productionVersionCode": 518,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "it.Ettore.raspcontroller",
+      "appName": "RaspController",
+      "hasBeta": true,
+      "productionVersionCode": 488,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "it.mirko.transcriber",
       "appName": "Transcriber for WhatsApp",
       "hasBeta": true,
@@ -6801,6 +8583,15 @@
       "appName": "JEFIT Gym Workout Tracker",
       "hasBeta": true,
       "productionVersionCode": 2028,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ke.co.pizza.inn",
+      "appName": "Pizza Inn Kenya",
+      "hasBeta": true,
+      "productionVersionCode": 109,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6869,10 +8660,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "me.hackerchick.catima",
+      "appName": "Catima — Loyalty Card Wallet",
+      "hasBeta": true,
+      "productionVersionCode": 168,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "me.kavishdevar.librepods",
       "appName": "LibrePods",
       "hasBeta": true,
       "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "me.liaoheng.wallpaper",
+      "appName": "Starth Bing Wallpaper",
+      "hasBeta": true,
+      "productionVersionCode": 11004,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6905,10 +8714,37 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "me.proton.wallet.android",
+      "appName": "Proton Wallet: Secure Bitcoin",
+      "hasBeta": true,
+      "productionVersionCode": 115,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "mega.privacy.android.app",
       "appName": "MEGA",
       "hasBeta": true,
       "productionVersionCode": 261970902,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "mimo.sz",
+      "appName": "Mimo",
+      "hasBeta": true,
+      "productionVersionCode": 241075,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ml.docilealligator.infinityforreddit.plus",
+      "appName": "Infinity for Reddit+",
+      "hasBeta": true,
+      "productionVersionCode": 222,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6968,10 +8804,55 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "net.countrymania.brick",
+      "appName": "Brick Mania: Fun Arcade Game",
+      "hasBeta": true,
+      "productionVersionCode": 822,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "net.dinglisch.android.appfactory",
+      "appName": "Tasker App Factory",
+      "hasBeta": true,
+      "productionVersionCode": 5474,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "net.dinglisch.android.taskerm",
+      "appName": "Tasker",
+      "hasBeta": true,
+      "productionVersionCode": 5445,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "net.easyjoin.pro",
+      "appName": "EasyJoin: SMS from PC & Sync",
+      "hasBeta": true,
+      "productionVersionCode": 194,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "net.fieldagent",
       "appName": "Field Agent",
       "hasBeta": true,
       "productionVersionCode": 7200,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "net.liveatc.liveatc_app",
+      "appName": "LiveATC for Android",
+      "hasBeta": true,
+      "productionVersionCode": 63,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7031,6 +8912,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "net.openvpn.openvpn",
+      "appName": "OpenVPN Connect",
+      "hasBeta": true,
+      "productionVersionCode": 10568,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "net.pnhdroid.ws4as",
       "appName": "Internet search for App Search",
       "hasBeta": true,
@@ -7040,10 +8930,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "net.poolsuite.mobile",
+      "appName": "Poolsuite",
+      "hasBeta": true,
+      "productionVersionCode": 17,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "net.quetta.browser",
       "appName": "Quetta - Video Private Browser",
       "hasBeta": true,
       "productionVersionCode": 5125,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "net.skyscanner.android.main",
+      "appName": "Skyscanner Flights Hotels Cars",
+      "hasBeta": true,
+      "productionVersionCode": 2021112266,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7071,6 +8979,15 @@
       "appName": "EXIF Pro: ExifTool for Android",
       "hasBeta": true,
       "productionVersionCode": 4009,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "net.xnano.android.photoexifeditor",
+      "appName": "Photo Exif Editor - Metadata",
+      "hasBeta": true,
+      "productionVersionCode": 2504,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7121,6 +9038,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "no.nrk.yr",
+      "appName": "Yr",
+      "hasBeta": true,
+      "productionVersionCode": 1100009061,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "notion.id",
       "appName": "Notion: Notes, Tasks, AI",
       "hasBeta": true,
@@ -7134,6 +9060,15 @@
       "appName": "InBrowser - Incognito Browsing",
       "hasBeta": true,
       "productionVersionCode": 90,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "nz.co.codepoint.minimetro",
+      "appName": "Mini Metro",
+      "hasBeta": true,
+      "productionVersionCode": 129,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7193,6 +9128,33 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.erosson.freecbt",
+      "appName": "FreeCBT",
+      "hasBeta": true,
+      "productionVersionCode": 101,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.fossify.calendar",
+      "appName": "Fossify Calendar",
+      "hasBeta": true,
+      "productionVersionCode": 20,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.fossify.contacts",
+      "appName": "Fossify Contacts",
+      "hasBeta": true,
+      "productionVersionCode": 13,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.fossify.filemanager",
       "appName": "Fossify File Manager",
       "hasBeta": true,
@@ -7202,10 +9164,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.fossify.gallery",
+      "appName": "Fossify Gallery",
+      "hasBeta": true,
+      "productionVersionCode": 28,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.fossify.messages",
       "appName": "Fossify Messages",
       "hasBeta": true,
       "productionVersionCode": 23,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.fossify.voicerecorder",
+      "appName": "Fossify Voice Recorder Beta",
+      "hasBeta": true,
+      "productionVersionCode": 18,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7238,10 +9218,37 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.jellyfin.mobile",
+      "appName": "Jellyfin",
+      "hasBeta": true,
+      "productionVersionCode": 2060399,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.joinmastodon.android",
       "appName": "Mastodon",
       "hasBeta": true,
       "productionVersionCode": 189,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.khanacademy.android",
+      "appName": "Khan Academy",
+      "hasBeta": true,
+      "productionVersionCode": 104534,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.kman.AquaMail",
+      "appName": "Email Aqua Mail - Fast, Secure",
+      "hasBeta": true,
+      "productionVersionCode": 200600043,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7336,6 +9343,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.openfoodfacts.scanner",
+      "appName": "Open Food Facts",
+      "hasBeta": true,
+      "productionVersionCode": 1574,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.ppsspp.ppsspp",
+      "appName": "PPSSPP - PSP emulator",
+      "hasBeta": true,
+      "productionVersionCode": 120040000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.proninyaroslav.libretorrent",
       "appName": "LibreTorrent",
       "hasBeta": true,
@@ -7408,6 +9433,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.thunderdog.challegram",
+      "appName": "Telegram X",
+      "hasBeta": true,
+      "productionVersionCode": 1785202,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.videolan.vlc",
       "appName": "VLC for Android",
       "hasBeta": true,
@@ -7421,6 +9455,15 @@
       "appName": "aCalendar+ Calendar & Tasks",
       "hasBeta": true,
       "productionVersionCode": 2009500,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.wordpress.android",
+      "appName": "WordPress – Website Builder",
+      "hasBeta": true,
+      "productionVersionCode": 270027599,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7462,6 +9505,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "police.scanner.radio.broadcastify.citizen",
+      "appName": "Police Scanner - Live Radio",
+      "hasBeta": true,
+      "productionVersionCode": 260420093,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "pro.momin.localmind",
       "appName": "LocalMind: Ollama & LM Studio",
       "hasBeta": true,
@@ -7493,6 +9545,15 @@
       "appName": "Proton Pass: Password Manager",
       "hasBeta": true,
       "productionVersionCode": 14001363,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "psh.doc_scanner.doc_kit",
+      "appName": "DocKit: PDF Scanner & Toolkit",
+      "hasBeta": true,
+      "productionVersionCode": 28,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7642,6 +9703,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "se.footballaddicts.livescore",
+      "appName": "Forza Football - Soccer Scores",
+      "hasBeta": true,
+      "productionVersionCode": 727,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "se.leap.riseupvpn",
       "appName": "RiseupVPN",
       "hasBeta": true,
@@ -7678,10 +9748,37 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "sk.michalec.SimpleDigiClockWidget",
+      "appName": "DIGI Clock Widget",
+      "hasBeta": true,
+      "productionVersionCode": 26000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "smellymoo.sand",
+      "appName": "sand:box",
+      "hasBeta": true,
+      "productionVersionCode": 21192,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "social.snort.app",
       "appName": "Snort: The Nostr App",
       "hasBeta": true,
       "productionVersionCode": 24,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "sp0n.citizen",
+      "appName": "Citizen: Protect The World",
+      "hasBeta": true,
+      "productionVersionCode": 1138,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7768,6 +9865,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "tv.medal.recorder",
+      "appName": "Medal - Gaming Clips",
+      "hasBeta": true,
+      "productionVersionCode": 806,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "tv.twitch.android.app",
       "appName": "Twitch: Live Streaming",
       "hasBeta": true,
@@ -7808,6 +9914,15 @@
       "appName": "Remove Unwanted Object",
       "hasBeta": true,
       "productionVersionCode": 103,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "webfreak.si.rainradar",
+      "appName": "Rain Radar: Weather Radar",
+      "hasBeta": true,
+      "productionVersionCode": 1503,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

@@ -158,69 +158,111 @@
     },
     {
       "packageName": "app.simple.peri",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785999129756
+      "lastErrorAt": 1786082222621
     },
     {
       "packageName": "com.jrummyapps.rootchecker",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785999129756
+      "lastErrorAt": 1786082222621
     },
     {
       "packageName": "com.microsoft.rdc.androidx.beta",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785999129756
+      "lastErrorAt": 1786082222621
     },
     {
       "packageName": "com.ss.android.ugc.trill",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785999129756
+      "lastErrorAt": 1786082222621
     },
     {
       "packageName": "com.microsoft.lists.public",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785999129756
+      "lastErrorAt": 1786082222621
     },
     {
       "packageName": "com.smartkit.ios26widgets",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785999129756
+      "lastErrorAt": 1786082222621
     },
     {
       "packageName": "com.snapmint.customerapp",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785999129756
+      "lastErrorAt": 1786082222621
     },
     {
       "packageName": "com.tatacliq.palette",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785999129756
+      "lastErrorAt": 1786082222621
     },
     {
       "packageName": "com.tgv.afterhours",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785999129756
+      "lastErrorAt": 1786082222621
     },
     {
       "packageName": "dev.khoj.app",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785999129756
+      "lastErrorAt": 1786082222621
     },
     {
       "packageName": "com.whizdm.moneyview.loans",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786082222621
+    },
+    {
+      "packageName": "com.google.android.apps.betterbug",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1785999129756
+      "lastErrorAt": 1786082222621
+    },
+    {
+      "packageName": "com.andreacioccarelli.vmtweaker",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786082222621
+    },
+    {
+      "packageName": "com.samruston.permission",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786082222621
+    },
+    {
+      "packageName": "net.oneplus.launcher",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786082222621
+    },
+    {
+      "packageName": "com.happymod.apk",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786082222621
+    },
+    {
+      "packageName": "com.larus.wolf",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786082222621
+    },
+    {
+      "packageName": "com.advasoft.touchretouch",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786082222621
     }
   ]
 }
