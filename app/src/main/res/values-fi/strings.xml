@@ -60,6 +60,8 @@
     <string name="known_often_full">Yleensä täynnä</string>
     <string name="known_no_program">Ei ohjelmaa</string>
     <string name="crowd_source_notes">Käyttäjien ilmoittama, vahvistettu Google Playsta</string>
+    <string name="gplay_source_notes">Vahvistettu Google Playsta</string>
+    <string name="apkmirror_source_notes">Beetaversio havaittu APKMirrorissa</string>
 
     <!-- Detected status (from the authenticated scan) -->
     <string name="observed_title">Havaittu beta-tila</string>

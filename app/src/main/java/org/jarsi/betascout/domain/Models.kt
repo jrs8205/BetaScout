@@ -94,13 +94,23 @@ data class BetaProgramInfo(
 )
 
 /**
- * The notes text the crowd harvester stamps on every catalog entry it adds.
- * The shared catalog is served in English, so the UI swaps this exact value
- * for a localized string; any other notes text is shown as-is.
+ * The exact English notes texts the harvest pipeline stamps on catalog entries.
+ * The shared catalog is served in English, so the UI swaps these exact values
+ * for localized strings; any other notes text is shown as-is.
  */
 const val CROWD_CATALOG_NOTES = "Reported by users, confirmed via Google Play"
+const val GPLAY_CATALOG_NOTES = "Confirmed via Google Play"
+const val APKMIRROR_CATALOG_NOTES = "Beta build seen on APKMirror"
 
-fun isCrowdCatalogNotes(notes: String?): Boolean = notes == CROWD_CATALOG_NOTES
+/** Which harvest source stamped a catalog entry's notes, or null for curated text. */
+enum class CatalogNotesKind { CROWD, GPLAY_VERIFIED, APKMIRROR_SIGHTING }
+
+fun catalogNotesKind(notes: String?): CatalogNotesKind? = when (notes) {
+    CROWD_CATALOG_NOTES -> CatalogNotesKind.CROWD
+    GPLAY_CATALOG_NOTES -> CatalogNotesKind.GPLAY_VERIFIED
+    APKMIRROR_CATALOG_NOTES -> CatalogNotesKind.APKMIRROR_SIGHTING
+    else -> null
+}
 
 /** What the authenticated testing page reported for one app, per user/device. */
 data class BetaObservation(

@@ -56,7 +56,8 @@ import org.jarsi.betascout.domain.KnownBetaStatus
 import org.jarsi.betascout.domain.LiveBetaStatus
 import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.UserBetaState
-import org.jarsi.betascout.domain.isCrowdCatalogNotes
+import org.jarsi.betascout.domain.CatalogNotesKind
+import org.jarsi.betascout.domain.catalogNotesKind
 import org.jarsi.betascout.ui.applist.BetaMembership
 import org.jarsi.betascout.ui.applist.betaMembership
 import org.jarsi.betascout.ui.applist.labelRes
@@ -425,10 +426,9 @@ private fun InfoCard(
             )
             it.notes?.let { notes ->
                 Text(
-                    if (isCrowdCatalogNotes(notes)) {
-                        stringResource(R.string.crowd_source_notes)
-                    } else {
-                        notes
+                    when (val kind = catalogNotesKind(notes)) {
+                        null -> notes
+                        else -> stringResource(kind.labelRes())
                     },
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -561,6 +561,12 @@ private fun NoteSection(overview: AppBetaOverview, onSaveNote: (String) -> Unit)
             modifier = Modifier.align(Alignment.End),
         ) { Text(stringResource(R.string.save_note)) }
     }
+}
+
+private fun CatalogNotesKind.labelRes(): Int = when (this) {
+    CatalogNotesKind.CROWD -> R.string.crowd_source_notes
+    CatalogNotesKind.GPLAY_VERIFIED -> R.string.gplay_source_notes
+    CatalogNotesKind.APKMIRROR_SIGHTING -> R.string.apkmirror_source_notes
 }
 
 private fun KnownBetaStatus.labelRes(): Int = when (this) {

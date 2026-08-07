@@ -60,6 +60,8 @@
     <string name="known_often_full">Meist voll</string>
     <string name="known_no_program">Kein Programm</string>
     <string name="crowd_source_notes">Von Nutzern gemeldet, über Google Play bestätigt</string>
+    <string name="gplay_source_notes">Über Google Play bestätigt</string>
+    <string name="apkmirror_source_notes">Beta-Version auf APKMirror gesichtet</string>
 
     <!-- Detected status (from the authenticated scan) -->
     <string name="observed_title">Erkannter Beta-Status</string>
