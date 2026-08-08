@@ -1415,6 +1415,326 @@
     {
       "packageName": "com.google.android.apps.chromecast.app",
       "rejectedAt": 1786082222620
+    },
+    {
+      "packageName": "com.rfi.sams.android",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.tmobile.vvm.application",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.ups.mobile.android",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "comb.blackvuec",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "io.airzone.dknNA",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "net.slickdeals.android",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "org.nyulmc.clinical.mychart",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.edgepro.controlcenter",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.jio.jioplay.tv",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.mygalaxy",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "in.krosbits.castplugin",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "app.whisperian.client",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "co.acaia.androidupdater",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.booking",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.bshg.homeconnect.android.release",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.conatech.lightmywatts.android",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.dkbcodefactory.banking",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.excelsisnet.android.breuninger",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.fillibri.app",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.kptncook.app.kptncook",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.pashapuma.glassy.materialyou",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.pashapuma.oneyou.icons",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.pashapuma.oneyou.themed",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.pashapuma.pix.material.you.dark",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.runbuddy.prod",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.steuerbot",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.tennisnet.fan",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "de.arbeitsagentur.bka",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "de.dm.meindm.android",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "de.dpd.mobile",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "de.hafas.android.db",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "de.myhermes.app",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "net.easypark.android",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "nl.jumbo.hitster",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.audio.mp3.musicplayer.video",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.audio.mp3player.video.musicplayer",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.deanencoded.ease",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.franco.focus.lite",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.gaia.cx",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.googol.android.apps.oneplayer",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.googol.android.apps.photos",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.hishd.chatx",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.openbubbles.messaging",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.openbubbles.openpigeon",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.zimdial.app",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.zimpocket.app",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.zitenga.zitengamobile",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "ins.freevideodownload.pro",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "org.fossify.camera",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "org.fossify.clock",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "org.fossify.home",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "org.fossify.keyboard",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "org.fossify.math",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "org.fossify.notes",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "org.fossify.paint",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "tino.varconn.com.fastnetworks",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.usfb.roarbank",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.amanous",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.bygmind.app",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.monsterindia.seeker.views",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.nautilus.realcricket",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.wordreference",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "io.github.sps619.mandibhav",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.funbase.xradio",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.owner.tapee",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "io.github.bambosan.mbloader",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "me.timschneeberger.rootlessjamesdsp",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.motorola.ccc.notification",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.alphabet.oxstudio.apphunting",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.arctco.cinematique",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.arta.dogearwidget",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.audiobookshelf.app",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.camel.corp.universalcopy",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.cinopsys.movieshows",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.classdojo.android",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.location.test",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "com.offerup",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "flashcards.words.words",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "fr.gaulupeau.apps.InThePoche",
+      "rejectedAt": 1786166131268
+    },
+    {
+      "packageName": "io.raindrop.raindropio",
+      "rejectedAt": 1786166131268
     }
   ]
 }
