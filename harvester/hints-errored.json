@@ -266,93 +266,141 @@
     },
     {
       "packageName": "com.x.android.lite",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.jio.media.ondemand",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.verimi",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.adobe.fas",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.gmlabs.perch",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.sh.smart.caller",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.aravi.dotpro",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.artemzarubin.cardsharp",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.memause.app",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.period.tracker.deluxe",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.aatorque.carstats",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.emilkrebs.watchlock",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "io.github.domi04151309.alwayson",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.rubenmayayo.reddit",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
     },
     {
       "packageName": "com.potentialproject.app",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786340974334
+    },
+    {
+      "packageName": "com.samruston.luci",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786252987289
+      "lastErrorAt": 1786340974334
+    },
+    {
+      "packageName": "com.google.mainline.go.primary",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786340974334
+    },
+    {
+      "packageName": "com.google.mainline.go.telemetry",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786340974334
+    },
+    {
+      "packageName": "com.secuso.privacyFriendlyCodeScanner",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786340974334
+    },
+    {
+      "packageName": "com.ubiquitly.magicmapperdlr",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786340974334
+    },
+    {
+      "packageName": "eu.livesport.FlashScore_com",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786340974334
+    },
+    {
+      "packageName": "com.urik.keyboard",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786340974334
+    },
+    {
+      "packageName": "com.degoo.android",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786340974334
     }
   ]
 }
