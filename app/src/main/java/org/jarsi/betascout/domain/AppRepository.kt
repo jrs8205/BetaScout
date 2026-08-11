@@ -8,6 +8,11 @@ interface AppRepository {
     /** Combined view: installed apps + beta info + the user's own marking. */
     fun observeApps(): Flow<List<AppBetaOverview>>
 
+    /** One-shot snapshot of [observeApps], for workers: a Room flow's initial
+     *  emission can be lost to an invalidation-tracker race, after which first()
+     *  suspends forever because nothing rewrites the underlying tables. */
+    suspend fun getApps(): List<AppBetaOverview>
+
     /** True while a status scan holds the scan lock — including the tail of a
      *  cancelled run that is still unwinding its in-flight page fetch. UIs gate
      *  their scan controls on this, not on WorkManager state, which reports
@@ -28,9 +33,11 @@ interface AppRepository {
 
     suspend fun setUserState(packageName: String, state: UserBetaState): Result<Unit>
 
-    /** Deletes all scrape observations recorded for the given account (used on sign-out
-     *  so a signed-out account's beta memberships do not linger on the device). */
-    suspend fun clearObservations(accountKey: String): Result<Unit>
+    /** Deletes every scrape observation, whatever account key it was recorded
+     *  under (used on sign-out so no account's beta memberships linger on the
+     *  device — cookie-hash fallback keys change across re-logins, so rows can
+     *  exist under keys no caller knows anymore). */
+    suspend fun clearAllObservations(): Result<Unit>
 
     /** Scrapes the authenticated testing page for the installed apps that are due a
      *  check, recording live status and observed membership. Returns a run summary.

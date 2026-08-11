@@ -56,8 +56,10 @@ private class FakeInstalledAppDao : InstalledAppDao {
         state.value = state.value + apps.associateBy { it.packageName }
     }
 
-    override suspend fun deleteNotIn(keep: List<String>) {
-        state.value = state.value.filterKeys { it in keep }
+    override suspend fun getAllPackageNames(): List<String> = state.value.keys.toList()
+
+    override suspend fun deleteIn(packageNames: List<String>) {
+        state.value = state.value.filterKeys { it !in packageNames.toSet() }
     }
 }
 
@@ -80,8 +82,10 @@ private class FakeBetaProgramDao : BetaProgramDao {
         state.value = state.value + (program.packageName to program)
     }
 
-    override suspend fun deleteNotIn(keep: List<String>) {
-        state.value = state.value.filterKeys { it in keep }
+    override suspend fun getAllPackageNames(): List<String> = state.value.keys.toList()
+
+    override suspend fun deleteIn(packageNames: List<String>) {
+        state.value = state.value.filterKeys { it !in packageNames.toSet() }
     }
 
     override suspend fun count(): Int = state.value.size
@@ -102,8 +106,8 @@ private class FakeBetaObservationDao : BetaObservationDao {
     override suspend fun get(accountKey: String, packageName: String): BetaObservationEntity? =
         state.value[ObservationKey(accountKey, packageName)]
 
-    override suspend fun deleteForAccount(accountKey: String) {
-        state.value = state.value.filterKeys { it.accountKey != accountKey }
+    override suspend fun deleteAll() {
+        state.value = emptyMap()
     }
 
     override suspend fun upsert(observation: BetaObservationEntity) {
@@ -115,6 +119,8 @@ private class FakeUserBetaStatusDao : UserBetaStatusDao {
     val state = MutableStateFlow<Map<String, UserBetaStatusEntity>>(emptyMap())
 
     override fun observeAll(): Flow<List<UserBetaStatusEntity>> = state.map { it.values.toList() }
+
+    override suspend fun getAll(): List<UserBetaStatusEntity> = state.value.values.toList()
 
     override fun observe(packageName: String): Flow<UserBetaStatusEntity?> =
         state.map { it[packageName] }
@@ -205,6 +211,21 @@ class DefaultAppRepositoryTest {
         scanBlockedUntil = blockedUntil,
         setScanBlockedUntil = { savedBlockedUntil = it },
     )
+
+    @Test
+    fun `getApps returns the combined snapshot without collecting the flow`() = runTest {
+        // Workers need a one-shot read: a Room flow's initial emission can be lost
+        // to the invalidation-tracker race, after which first() suspends forever.
+        val repo = repository()
+        scanner.result = { listOf(app("com.whatsapp", "WhatsApp")) }
+        repo.refreshApps()
+        repo.setUserState("com.whatsapp", UserBetaState.JOINED)
+
+        val rows = repo.getApps()
+
+        val whatsapp = rows.single { it.app.packageName == "com.whatsapp" }
+        assertEquals(UserBetaState.JOINED, whatsapp.userStatus?.state)
+    }
 
     @Test
     fun `observeApps combines installed apps with beta info and user status`() = runTest {
@@ -728,7 +749,9 @@ class DefaultAppRepositoryTest {
     }
 
     @Test
-    fun `clearObservations deletes only the given account's observations`() = runTest {
+    fun `clearAllObservations deletes every account's observations including orphaned keys`() = runTest {
+        // Cookie-hash fallback keys change across re-logins, so rows can be
+        // orphaned under keys no caller knows anymore; sign-out wipes them all.
         val repo = repository()
         observationDao.upsert(
             BetaObservationEntity(
@@ -742,7 +765,7 @@ class DefaultAppRepositoryTest {
         )
         observationDao.upsert(
             BetaObservationEntity(
-                accountKey = "b@example.com",
+                accountKey = "cookie:0123abcd",
                 packageName = "com.a",
                 liveStatus = LiveBetaStatus.OPEN,
                 observedMembership = ObservedMembership.JOINED,
@@ -751,14 +774,11 @@ class DefaultAppRepositoryTest {
             )
         )
 
-        val result = repo.clearObservations("a@example.com")
+        val result = repo.clearAllObservations()
 
         assertTrue(result.isSuccess)
         assertNull(observationDao.get("a@example.com", "com.a"))
-        assertEquals(
-            ObservedMembership.JOINED,
-            observationDao.get("b@example.com", "com.a")!!.observedMembership,
-        )
+        assertNull(observationDao.get("cookie:0123abcd", "com.a"))
     }
 
     @Test

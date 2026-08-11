@@ -6,7 +6,6 @@ import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
-import kotlinx.coroutines.flow.first
 import org.jarsi.betascout.domain.AppRepository
 import org.jarsi.betascout.domain.BetaLinkBuilder
 import org.jarsi.betascout.domain.ReminderPolicy
@@ -25,7 +24,7 @@ class ReminderWorker @AssistedInject constructor(
     override suspend fun doWork(): Result {
         // Only installed apps appear in the overview, so watched-but-uninstalled
         // apps never trigger reminders.
-        val rows = repository.observeApps().first()
+        val rows = repository.getApps()
         val due = ReminderPolicy.dueForReminder(
             statuses = rows.mapNotNull { it.userStatus },
             now = System.currentTimeMillis(),

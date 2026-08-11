@@ -35,8 +35,8 @@ private class FakeBetaObservationDao : BetaObservationDao {
     override suspend fun get(accountKey: String, packageName: String): BetaObservationEntity? =
         state.value[Key(accountKey, packageName)]
 
-    override suspend fun deleteForAccount(accountKey: String) {
-        state.value = state.value.filterKeys { it.accountKey != accountKey }
+    override suspend fun deleteAll() {
+        state.value = emptyMap()
     }
 
     override suspend fun upsert(observation: BetaObservationEntity) {
@@ -64,8 +64,10 @@ private class FakeBetaProgramDao : BetaProgramDao {
         state.value = state.value + (program.packageName to program)
     }
 
-    override suspend fun deleteNotIn(keep: List<String>) {
-        state.value = state.value.filterKeys { it in keep }
+    override suspend fun getAllPackageNames(): List<String> = state.value.keys.toList()
+
+    override suspend fun deleteIn(packageNames: List<String>) {
+        state.value = state.value.filterKeys { it !in packageNames.toSet() }
     }
 
     override suspend fun count(): Int = state.value.size

@@ -13,8 +13,7 @@ import kotlinx.coroutines.withContext
 class SignOutUseCase(
     private val cancelScanWork: suspend () -> Unit,
     private val withScanLock: suspend (suspend () -> Unit) -> Unit,
-    private val currentAccountKey: suspend () -> String?,
-    private val clearObservations: suspend (String) -> Unit,
+    private val clearObservations: suspend () -> Unit,
     private val clearSession: suspend () -> Unit,
     private val clearLastScan: suspend () -> Unit,
     private val clearWebViewCookies: suspend () -> Unit,
@@ -35,8 +34,10 @@ class SignOutUseCase(
         // the cleanup runs bounces off with ScanInProgress instead of racing it.
         withScanLock {
             // Observations first, then the session, so a signed-out account's
-            // beta memberships cannot linger on the device.
-            currentAccountKey()?.let { clearObservations(it) }
+            // beta memberships cannot linger on the device. The whole table, not
+            // just the current key: cookie-hash fallback keys change across
+            // re-logins, so a per-account wipe would orphan the old key's rows.
+            clearObservations()
             clearSession()
             clearLastScan()
         }

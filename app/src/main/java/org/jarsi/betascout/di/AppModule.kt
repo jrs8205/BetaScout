@@ -133,8 +133,7 @@ object AppModule {
             workManager.cancelUniqueWork(BetaScanScheduler.WORK_NAME).await()
         },
         withScanLock = { repository.withScanLock(it) },
-        currentAccountKey = { settings.playSession.first()?.accountKey },
-        clearObservations = { repository.clearObservations(it) },
+        clearObservations = { repository.clearAllObservations() },
         clearSession = settings::clearPlaySession,
         clearLastScan = settings::clearLastScan,
         clearWebViewCookies = {

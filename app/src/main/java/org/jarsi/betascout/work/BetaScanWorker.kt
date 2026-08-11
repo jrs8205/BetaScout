@@ -134,7 +134,7 @@ class BetaScanWorker @AssistedInject constructor(
         // never affect the scan outcome.
         runCatching { discoveryReporter.reportAfterScan(session.accountKey) }
 
-        val rows = repository.observeApps().first()
+        val rows = repository.getApps()
         val notifier = BetaSlotNotifier(applicationContext)
         SlotOpenPolicy.notifiable(summary.transitions, rows).forEach { row ->
             notifier.showSlotOpen(

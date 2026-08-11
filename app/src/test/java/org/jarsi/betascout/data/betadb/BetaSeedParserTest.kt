@@ -116,6 +116,39 @@ class BetaSeedParserTest {
     }
 
     @Test
+    fun `keeps a play testing url`() {
+        val json = """
+            {"programs":[{
+              "packageName":"com.whatsapp",
+              "testingUrl":"https://play.google.com/apps/testing/com.whatsapp"
+            }]}
+        """.trimIndent()
+
+        assertEquals(
+            "https://play.google.com/apps/testing/com.whatsapp",
+            BetaSeedParser.parse(json).single().testingUrl,
+        )
+    }
+
+    @Test
+    fun `drops a testing url pointing outside play so the canonical link is derived instead`() {
+        // The catalog is remote data opened in a Custom Tab; a poisoned entry must
+        // not be able to steer the user to a look-alike sign-in page. null makes
+        // the app derive the safe canonical URL from the package name.
+        val json = """
+            {"programs":[
+              {"packageName":"com.a","testingUrl":"https://evil.example.com/apps/testing/com.a"},
+              {"packageName":"com.b","testingUrl":"http://play.google.com/apps/testing/com.b"},
+              {"packageName":"com.c","testingUrl":"intent://play.google.com/#Intent;scheme=https;end"},
+              {"packageName":"com.d","testingUrl":"https://play.google.com.evil.example/apps/testing/com.d"},
+              {"packageName":"com.e","testingUrl":"not a url"}
+            ]}
+        """.trimIndent()
+
+        BetaSeedParser.parse(json).forEach { assertNull(it.packageName, it.testingUrl) }
+    }
+
+    @Test
     fun `entries are tagged with the requested source`() {
         val json = """{"programs":[{"packageName":"com.spotify.music"}]}"""
 

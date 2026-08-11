@@ -187,6 +187,39 @@ class BetaStatusScraperTest {
     }
 
     @Test
+    fun `an unrecognized page is a failed check, not an observation`() = runTest {
+        val source = TestingPageSource { pkg, _ ->
+            val html =
+                if (pkg == "com.blank") ""
+                else "<html><body><div>Totally new markup</div></body></html>"
+            Result.success(FetchedPage(html))
+        }
+
+        val outcome = scraper(source).scrape(listOf("com.blank", "com.changed"), session)
+
+        // Persisting UNKNOWN would overwrite a good OPEN/FULL/CLOSED status and later
+        // fire a false slot-open notification when the page parses again.
+        assertTrue(outcome.observations.isEmpty())
+        assertEquals(setOf("com.blank", "com.changed"), outcome.failures.keys)
+    }
+
+    @Test
+    fun `aborts the run when every page is unrecognized`() = runTest {
+        val fetched = mutableListOf<String>()
+        val source = TestingPageSource { pkg, _ ->
+            fetched += pkg
+            Result.success(FetchedPage("<html><body><div>New layout</div></body></html>"))
+        }
+
+        val outcome = scraper(source).scrape((1..10).map { "com.app$it" }, session)
+
+        // A markup change makes every page unrecognized; hammering through the rest
+        // of the list would add nothing but account risk.
+        assertEquals(5, fetched.size)
+        assertTrue(outcome.observations.isEmpty())
+    }
+
+    @Test
     fun `reports progress before each fetch`() = runTest {
         val progress = mutableListOf<String>()
         val source = TestingPageSource { _, _ -> Result.success(FetchedPage(OPEN_HTML)) }

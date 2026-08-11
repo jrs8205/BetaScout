@@ -24,8 +24,9 @@ private class FakeBetaProgramDao : BetaProgramDao {
     override suspend fun upsert(program: BetaProgramEntity) {
         state[program.packageName] = program
     }
-    override suspend fun deleteNotIn(keep: List<String>) {
-        state.keys.retainAll(keep.toSet())
+    override suspend fun getAllPackageNames(): List<String> = state.keys.toList()
+    override suspend fun deleteIn(packageNames: List<String>) {
+        state.keys.removeAll(packageNames.toSet())
     }
     override suspend fun count(): Int = state.size
 }

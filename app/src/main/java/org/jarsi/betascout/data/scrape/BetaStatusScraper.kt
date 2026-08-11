@@ -2,6 +2,8 @@ package org.jarsi.betascout.data.scrape
 
 import kotlinx.coroutines.delay
 import org.jarsi.betascout.domain.BetaObservation
+import org.jarsi.betascout.domain.LiveBetaStatus
+import org.jarsi.betascout.domain.ObservedMembership
 import org.jarsi.betascout.domain.PlaySession
 
 /** Result of scraping a batch of packages. [failures] maps each package whose
@@ -78,7 +80,6 @@ class BetaStatusScraper(
                 }
                 return@forEachIndexed
             }
-            consecutiveFailures = 0
             // A redirect to accounts.google.com is the authoritative signed-out signal;
             // the sign-in page's HTML markers have changed shape before.
             if (isSignInRedirect(page.finalUrl)) {
@@ -93,6 +94,24 @@ class BetaStatusScraper(
             if (result.needsLogin) {
                 return ScrapeOutcome(observations, needsLogin = true, failures = failures)
             }
+            if (result.liveStatus == LiveBetaStatus.UNKNOWN &&
+                result.membership == ObservedMembership.UNKNOWN
+            ) {
+                // An unparseable page (blank body, changed markup) is a failed check,
+                // not an observation: persisting UNKNOWN would overwrite a good
+                // OPEN/FULL/CLOSED status and later fire a false slot-open
+                // notification when the page parses again.
+                failures[packageName] = "unrecognized page"
+                if (++consecutiveFailures >= MAX_CONSECUTIVE_FAILURES) {
+                    android.util.Log.d(
+                        "BetaScout",
+                        "scrape: $consecutiveFailures consecutive unusable pages, aborting the run",
+                    )
+                    return ScrapeOutcome(observations, needsLogin = false, failures = failures)
+                }
+                return@forEachIndexed
+            }
+            consecutiveFailures = 0
             val observation = BetaObservation(
                 accountKey = session.accountKey,
                 packageName = packageName,

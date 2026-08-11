@@ -13,15 +13,14 @@ class SignOutUseCaseTest {
 
     private val calls = mutableListOf<String>()
 
-    private fun useCase(accountKey: String? = "user@example.com") = SignOutUseCase(
+    private fun useCase() = SignOutUseCase(
         cancelScanWork = { calls += "cancelScanWork" },
         withScanLock = { block ->
             calls += "lock:acquired"
             block()
             calls += "lock:released"
         },
-        currentAccountKey = { accountKey },
-        clearObservations = { calls += "clearObservations:$it" },
+        clearObservations = { calls += "clearObservations" },
         clearSession = { calls += "clearSession" },
         clearLastScan = { calls += "clearLastScan" },
         clearWebViewCookies = { calls += "clearWebViewCookies" },
@@ -36,7 +35,7 @@ class SignOutUseCaseTest {
             listOf(
                 "cancelScanWork",
                 "lock:acquired",
-                "clearObservations:user@example.com",
+                "clearObservations",
                 "clearSession",
                 "clearLastScan",
                 "lock:released",
@@ -58,8 +57,7 @@ class SignOutUseCaseTest {
         val useCase = SignOutUseCase(
             cancelScanWork = { calls += "cancelScanWork" },
             withScanLock = { block -> block() },
-            currentAccountKey = { "user@example.com" },
-            clearObservations = { calls += "clearObservations:$it" },
+            clearObservations = { calls += "clearObservations" },
             clearSession = {
                 sessionCleared.complete(Unit)
                 calls += "clearSession"
@@ -82,10 +80,13 @@ class SignOutUseCaseTest {
     }
 
     @Test
-    fun `skips the observation wipe when no account is signed in`() = runTest {
-        useCase(accountKey = null).signOut()
+    fun `wipes observations unconditionally so orphaned account keys cannot linger`() = runTest {
+        // A failed email capture keys observations by a cookie hash; a re-login
+        // mints a new hash, so a per-account wipe would leave the old key's rows
+        // behind forever. Sign-out therefore always clears the whole table.
+        useCase().signOut()
 
-        assertTrue(calls.none { it.startsWith("clearObservations") })
+        assertTrue("clearObservations" in calls)
         assertTrue("clearSession" in calls)
         assertTrue("clearWebViewCookies" in calls)
         assertEquals("reschedule", calls.last())

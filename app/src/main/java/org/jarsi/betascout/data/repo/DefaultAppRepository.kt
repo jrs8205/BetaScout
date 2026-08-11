@@ -7,14 +7,19 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeeder
 import org.jarsi.betascout.data.db.BetaObservationDao
+import org.jarsi.betascout.data.db.BetaObservationEntity
 import org.jarsi.betascout.data.db.BetaProgramDao
+import org.jarsi.betascout.data.db.BetaProgramEntity
 import org.jarsi.betascout.data.db.InstalledAppDao
+import org.jarsi.betascout.data.db.InstalledAppEntity
 import org.jarsi.betascout.data.db.UserBetaStatusDao
+import org.jarsi.betascout.data.db.UserBetaStatusEntity
 import org.jarsi.betascout.data.db.toDomain
 import org.jarsi.betascout.data.db.toEntity
 import org.jarsi.betascout.data.scanner.PackageScanner
@@ -70,6 +75,26 @@ class DefaultAppRepository(
         userBetaStatusDao.observeAll(),
         currentAccountKey,
     ) { apps, programs, observations, statuses, accountKey ->
+        buildOverviews(apps, programs, observations, statuses, accountKey)
+    }
+
+    override suspend fun getApps(): List<AppBetaOverview> = withContext(io) {
+        buildOverviews(
+            apps = installedAppDao.getAll(),
+            programs = betaProgramDao.getAll(),
+            observations = betaObservationDao.getAll(),
+            statuses = userBetaStatusDao.getAll(),
+            accountKey = currentAccountKey.first(),
+        )
+    }
+
+    private fun buildOverviews(
+        apps: List<InstalledAppEntity>,
+        programs: List<BetaProgramEntity>,
+        observations: List<BetaObservationEntity>,
+        statuses: List<UserBetaStatusEntity>,
+        accountKey: String?,
+    ): List<AppBetaOverview> {
         val programsByPkg = programs.associateBy { it.packageName }
         // Only the signed-in account's observations are surfaced; when signed out
         // (accountKey null) none are shown.
@@ -79,7 +104,7 @@ class DefaultAppRepository(
             observations.filter { it.accountKey == accountKey }.associateBy { it.packageName }
         }
         val statusesByPkg = statuses.associateBy { it.packageName }
-        apps.map { app ->
+        return apps.map { app ->
             AppBetaOverview(
                 app = app.toDomain(),
                 betaProgram = programsByPkg[app.packageName]?.toDomain(),
@@ -101,9 +126,9 @@ class DefaultAppRepository(
     override suspend fun setUserState(packageName: String, state: UserBetaState): Result<Unit> =
         updateStatus(packageName) { it.copy(state = state) }
 
-    override suspend fun clearObservations(accountKey: String): Result<Unit> =
+    override suspend fun clearAllObservations(): Result<Unit> =
         runCatchingData(::wrapLocal) {
-            betaObservationDao.deleteForAccount(accountKey)
+            betaObservationDao.deleteAll()
         }
 
     override suspend fun refreshBetaStatus(

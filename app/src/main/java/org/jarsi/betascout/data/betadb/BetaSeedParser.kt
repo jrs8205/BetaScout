@@ -42,7 +42,7 @@ object BetaSeedParser {
                 BetaProgramInfo(
                     packageName = pkg,
                     appName = entry.appName?.takeIf { it.isNotBlank() } ?: pkg,
-                    testingUrl = entry.testingUrl,
+                    testingUrl = entry.testingUrl?.takeIf(::isTrustedTestingUrl),
                     knownStatus = entry.knownStatus,
                     liveStatus = entry.liveStatus,
                     statusCheckedAt = entry.statusCheckedAt,
@@ -51,4 +51,13 @@ object BetaSeedParser {
                     source = source,
                 )
             }
+
+    /** The catalog is remote data whose testingUrl is opened in a Custom Tab /
+     *  ACTION_VIEW; anything but https on play.google.com is dropped so the app
+     *  derives the canonical URL from the package name instead. */
+    private fun isTrustedTestingUrl(url: String): Boolean {
+        val uri = runCatching { java.net.URI(url.trim()) }.getOrNull() ?: return false
+        return "https".equals(uri.scheme, ignoreCase = true) &&
+            "play.google.com".equals(uri.host, ignoreCase = true)
+    }
 }

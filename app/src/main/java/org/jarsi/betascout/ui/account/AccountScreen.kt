@@ -444,7 +444,7 @@ private fun GoogleLoginWebView(onCaptured: (String, String) -> Unit) {
                     private var handled = false
 
                     override fun onPageFinished(view: WebView, url: String?) {
-                        if (handled || url == null || !url.contains("play.google.com")) return
+                        if (handled || !isPlayPageUrl(url)) return
                         val cookies = CookieManager.getInstance()
                             .getCookie("https://play.google.com") ?: return
                         // A signed-in Google web session carries these auth cookies.

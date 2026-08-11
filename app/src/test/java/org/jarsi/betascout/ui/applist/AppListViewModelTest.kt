@@ -30,6 +30,7 @@ private class FakeAppRepository : AppRepository {
     var gate: CompletableDeferred<Unit>? = null
 
     override fun observeApps(): Flow<List<AppBetaOverview>> = flowOf(emptyList())
+    override suspend fun getApps(): List<AppBetaOverview> = emptyList()
     override val scanRunning: StateFlow<Boolean> = MutableStateFlow(false)
     override suspend fun withScanLock(block: suspend () -> Unit) = block()
 
@@ -47,7 +48,7 @@ private class FakeAppRepository : AppRepository {
     override suspend fun setUserState(packageName: String, state: UserBetaState) =
         Result.success(Unit)
 
-    override suspend fun clearObservations(accountKey: String) = Result.success(Unit)
+    override suspend fun clearAllObservations() = Result.success(Unit)
 
     override suspend fun refreshBetaStatus(
         session: PlaySession,
