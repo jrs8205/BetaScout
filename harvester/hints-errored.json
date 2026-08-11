@@ -326,81 +326,153 @@
     },
     {
       "packageName": "com.aatorque.carstats",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
     },
     {
       "packageName": "com.emilkrebs.watchlock",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
     },
     {
       "packageName": "io.github.domi04151309.alwayson",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
     },
     {
       "packageName": "com.rubenmayayo.reddit",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
     },
     {
       "packageName": "com.potentialproject.app",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
     },
     {
       "packageName": "com.samruston.luci",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
     },
     {
       "packageName": "com.google.mainline.go.primary",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
     },
     {
       "packageName": "com.google.mainline.go.telemetry",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
     },
     {
       "packageName": "com.secuso.privacyFriendlyCodeScanner",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
     },
     {
       "packageName": "com.ubiquitly.magicmapperdlr",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
     },
     {
       "packageName": "eu.livesport.FlashScore_com",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
     },
     {
       "packageName": "com.urik.keyboard",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
     },
     {
       "packageName": "com.degoo.android",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786426385330
+    },
+    {
+      "packageName": "com.joaomgcd.taskersettings",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786340974334
+      "lastErrorAt": 1786426385330
+    },
+    {
+      "packageName": "com.microsoft.outlooklite",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786426385330
+    },
+    {
+      "packageName": "ca.walmart.ecommerceapp",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786426385330
+    },
+    {
+      "packageName": "com.pranshulgg.weather_master",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786426385330
+    },
+    {
+      "packageName": "com.retroarch",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786426385330
+    },
+    {
+      "packageName": "com.rossellini.cubecrash",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786426385330
+    },
+    {
+      "packageName": "com.loongcheer.neverlate.wizardlegend.fightmaster",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786426385330
+    },
+    {
+      "packageName": "uk.co.tdsstudios.noterly",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786426385330
+    },
+    {
+      "packageName": "com.ecnetwork.crma",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786426385330
+    },
+    {
+      "packageName": "com.fullcontact.ledene",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786426385330
+    },
+    {
+      "packageName": "in.codeseed.undonotification.pro",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786426385330
+    },
+    {
+      "packageName": "philly.com.sportsnow",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786426385330
     }
   ]
 }
