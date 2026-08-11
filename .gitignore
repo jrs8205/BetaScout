@@ -12,6 +12,7 @@ captures/
 *.apkm
 *.aab
 .gplay.local
+APTOIDE_API_KEY.local
 .wrangler/
 *.keystore
 !debug.keystore
