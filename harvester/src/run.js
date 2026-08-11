@@ -17,7 +17,7 @@ import {
   extractPackageName,
   appNameFromTitle,
 } from './apkmirror.js';
-import { buildCatalog } from './catalog.js';
+import { buildCatalog, loadPublishedPrograms } from './catalog.js';
 import { mergeCatalogEntries, accumulateCatalog } from './merge.js';
 import { runGplay } from './gplay.js';
 import { fetchText, sleep } from './fetch.js';
@@ -27,6 +27,7 @@ import {
   updateErrored,
   clearErrored,
   partitionVerifyResults,
+  settledForConsume,
   crowdEntry,
   fetchHints,
 } from './hints.js';
@@ -58,11 +59,9 @@ function loadSeedPackages() {
 }
 
 function loadExistingPrograms() {
-  try {
-    return JSON.parse(readFileSync(PUBLISHED_URL, 'utf8')).programs ?? [];
-  } catch {
-    return [];
-  }
+  // Missing file = first run; anything else (corrupt JSON, unreadable file)
+  // aborts the run — see loadPublishedPrograms.
+  return loadPublishedPrograms(() => readFileSync(PUBLISHED_URL, 'utf8'));
 }
 
 async function collectBetaAppPages() {
@@ -111,17 +110,20 @@ async function discoverPackages(betaByAppPage) {
   return discovered;
 }
 
+/** Returns per-package results, or null when the whole batch could not run
+ *  (tool disabled or crashed) — null carries "this says nothing about the
+ *  individual packages" through to the callers. */
 function enrichViaGplay(packageNames) {
   if (!GPLAY_ENABLED) {
     console.error('gplay enrichment disabled (set GPLAY_ENABLED=1 to confirm via Google Play).');
-    return [];
+    return null;
   }
   console.error(`Confirming ${packageNames.length} package(s) via gplayapi...`);
   try {
     return runGplay(packageNames, { gradlew: GRADLEW, projectRoot: REPO_ROOT, javaHome: JAVA_HOME });
   } catch (error) {
     console.error(`gplay enrichment failed (continuing with APKMirror only): ${error.message}`);
-    return [];
+    return null;
   }
 }
 
@@ -188,7 +190,13 @@ async function processHints(knownPrograms) {
   );
 
   const results = verify.length > 0 ? enrichViaGplay(verify) : [];
-  const { confirmed, rejected: rejectedNow, errored } = partitionVerifyResults(verify, results);
+  const { confirmed, rejected: rejectedNow, errored, batchFailed } =
+    partitionVerifyResults(verify, results);
+  if (batchFailed) {
+    console.error(
+      `gplay batch failed: ${verify.length} hint(s) stay pending untouched (no error cooldown).`,
+    );
+  }
   // Errored hints stay pending on the Worker; after ERROR_COOLDOWN_ATTEMPTS
   // failures they stop occupying verify slots (see selectHintsToVerify).
   for (const { packageName, error } of errored) {
@@ -198,18 +206,24 @@ async function processHints(knownPrograms) {
   if (rejectedNow.length > 0) {
     saveRejected(updateRejected(rejected, rejectedNow, Date.now()));
   }
-  if (verify.length > 0) {
+  if (verify.length > 0 && !batchFailed) {
     const settled = [...confirmed.map((r) => r.packageName), ...rejectedNow];
     saveErrored(updateErrored(clearErrored(priorErrored, settled), errored, Date.now()));
   }
 
-  // Merged, rejected and already-in-catalog hints are all settled; only
-  // pending ones (over cap, cooling, gplay errors) stay on the Worker.
-  // Settled hints are NOT consumed here: the list is recorded for the
-  // workflow's final step, which consumes only after the catalog has been
-  // durably published (KV + git). A failed publish leaves them pending, and
-  // the next run settles them again instead of losing verified candidates.
-  const consumed = [...entries.map((e) => e.packageName), ...rejectedNow, ...alreadyInCatalog];
+  // Merged, rejected, already-in-catalog and cooling (rejected on an earlier
+  // run whose consume failed) hints are all settled; only pending ones (over
+  // cap, gplay errors) stay on the Worker. Settled hints are NOT consumed
+  // here: the list is recorded for the workflow's final step, which consumes
+  // only after the catalog has been durably published (KV + git). A failed
+  // publish leaves them pending, and the next run settles them again instead
+  // of losing verified candidates.
+  const consumed = settledForConsume({
+    confirmedPackages: entries.map((e) => e.packageName),
+    rejectedNow,
+    alreadyInCatalog,
+    cooling,
+  });
   writeFileSync(CONSUME_PENDING_URL, JSON.stringify({ packages: consumed }, null, 2) + '\n');
   console.log(
     `Hints verified: ${entries.length} added as CROWD, ${rejectedNow.length} rejected, ` +
@@ -225,7 +239,7 @@ async function main() {
   const discovered = await discoverPackages(betaByAppPage);
   const seed = loadSeedPackages();
   const packagesToConfirm = [...new Set([...discovered.map((d) => d.packageName), ...seed])];
-  const gplayResults = enrichViaGplay(packagesToConfirm);
+  const gplayResults = enrichViaGplay(packagesToConfirm) ?? [];
 
   const fresh = mergeCatalogEntries(discovered, gplayResults);
   const existing = loadExistingPrograms();

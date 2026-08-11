@@ -38,12 +38,22 @@ export function parseGplayLine(rawLine) {
   };
 }
 
+/** Package names reach this module from the hints Worker over the network, and
+ *  the gradle command below runs through a shell where $(...) and backticks
+ *  expand — so only plain Android package names may pass. */
+const SAFE_PACKAGE_RE = /^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)+$/;
+
 /**
  * Runs the JVM gplayapi tool for the given packages and returns parsed results.
  * Requires a built credentials file and a JDK; throws if the tool fails.
  */
 export function runGplay(packages, { gradlew, projectRoot, javaHome, credsPath = '../.gplay.local' }) {
   if (packages.length === 0) return [];
+  for (const packageName of packages) {
+    if (!SAFE_PACKAGE_RE.test(packageName)) {
+      throw new Error(`unsafe package name refused: ${JSON.stringify(packageName)}`);
+    }
+  }
   // execSync (shell) so a Windows gradlew.bat works too; args are quoted because
   // paths and the package list contain spaces. Gradle noise goes to our stderr.
   const argString = [credsPath, ...packages].join(' ');

@@ -52,6 +52,36 @@ test('a gplay-only package is included', () => {
   assert.equal(entries.find((e) => e.packageName === 'com.e').source, 'GPLAYAPI');
 });
 
+test('an unverified sighting cannot downgrade a verified entry', () => {
+  // One night with gplay down turns a re-appearing package into a bare
+  // APKMIRROR entry; overwriting would lose the versionCode and verified name.
+  const merged = accumulateCatalog(
+    [
+      { packageName: 'com.a', productionVersionCode: 7, source: 'GPLAYAPI', appName: 'App A' },
+      { packageName: 'com.b', productionVersionCode: 9, source: 'CROWD', appName: 'App B' },
+    ],
+    [
+      { packageName: 'com.a', source: 'APKMIRROR', appName: 'A (beta) APK' },
+      { packageName: 'com.b', source: 'APKMIRROR', appName: 'B beta' },
+    ],
+  );
+
+  const byPackage = Object.fromEntries(merged.map((e) => [e.packageName, e]));
+  assert.equal(byPackage['com.a'].source, 'GPLAYAPI');
+  assert.equal(byPackage['com.a'].productionVersionCode, 7);
+  assert.equal(byPackage['com.b'].source, 'CROWD');
+  assert.equal(byPackage['com.b'].productionVersionCode, 9);
+});
+
+test('an apkmirror entry still updates an apkmirror entry', () => {
+  const merged = accumulateCatalog(
+    [{ packageName: 'com.a', source: 'APKMIRROR', appName: 'Old Name' }],
+    [{ packageName: 'com.a', source: 'APKMIRROR', appName: 'New Name' }],
+  );
+
+  assert.equal(merged.find((e) => e.packageName === 'com.a').appName, 'New Name');
+});
+
 test('accumulate updates existing entries, keeps unseen ones and adds new ones', () => {
   const merged = accumulateCatalog(
     [

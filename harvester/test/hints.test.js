@@ -6,12 +6,49 @@ import {
   updateRejected,
   crowdEntry,
   partitionVerifyResults,
+  settledForConsume,
   updateErrored,
   clearErrored,
   consumePendingHints,
   REJECTED_TTL_MS,
   ERRORED_TTL_MS,
 } from '../src/hints.js';
+
+test('a batch-level gplay failure produces no per-package errors', () => {
+  // The tool crashing (expired AAS token, jar download failure) says nothing
+  // about the individual hints; recording per-package errors would push every
+  // hint in the batch into the 30-day error cooldown after three bad nights.
+  const result = partitionVerifyResults(['com.a', 'com.b'], null);
+
+  assert.equal(result.batchFailed, true);
+  assert.deepEqual(result.confirmed, []);
+  assert.deepEqual(result.rejected, []);
+  assert.deepEqual(result.errored, []);
+});
+
+test('a batch that ran is not flagged as failed even when a package is missing', () => {
+  const result = partitionVerifyResults(['com.a'], []);
+
+  assert.equal(result.batchFailed, false);
+  assert.deepEqual(result.errored, [{ packageName: 'com.a', error: 'no result from gplayapi' }]);
+});
+
+test('the consume list includes hints settled on earlier runs whose consume failed', () => {
+  // A rejected hint whose consume step failed shows up as "cooling" on the next
+  // run; without re-adding it here it would stay pending on the Worker for the
+  // full 30-day TTL and then burn a verify slot just to be re-rejected.
+  const consumed = settledForConsume({
+    confirmedPackages: ['com.new'],
+    rejectedNow: ['com.rejected'],
+    alreadyInCatalog: ['com.known'],
+    cooling: ['com.rejectedEarlier'],
+  });
+
+  assert.deepEqual(
+    [...consumed].sort(),
+    ['com.known', 'com.new', 'com.rejected', 'com.rejectedEarlier'],
+  );
+});
 
 const DAY_MS = 24 * 3600 * 1000;
 const NOW = 1000 * DAY_MS;

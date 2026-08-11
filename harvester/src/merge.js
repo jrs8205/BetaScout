@@ -41,15 +41,26 @@ export function mergeCatalogEntries(discovered, gplayResults) {
   return entries;
 }
 
+/** Sources whose data came from Google Play itself (gplayapi). */
+const VERIFIED_SOURCES = new Set(['GPLAYAPI', 'CROWD']);
+
 /**
  * Accumulates this run's fresh entries into the previously published programs:
  * a fresh entry replaces the existing one for the same package, packages not
  * seen this run are kept, and new packages are added. Lets the catalog grow
  * across runs instead of being overwritten with only the latest finds.
+ *
+ * Exception: an unverified APKMirror sighting never replaces a verified entry.
+ * One night with gplay down would otherwise downgrade a re-appearing package
+ * to a bare sighting, losing its versionCode and Play-verified name.
  */
 export function accumulateCatalog(existingPrograms, freshEntries) {
   const byPackage = new Map(existingPrograms.map((e) => [e.packageName, e]));
   for (const entry of freshEntries) {
+    const existing = byPackage.get(entry.packageName);
+    if (existing && VERIFIED_SOURCES.has(existing.source) && !VERIFIED_SOURCES.has(entry.source)) {
+      continue;
+    }
     byPackage.set(entry.packageName, entry);
   }
   return [...byPackage.values()];

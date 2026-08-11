@@ -55,11 +55,19 @@ export function selectHintsToVerify(hints, { catalogPackages, rejected, errored 
 }
 
 /**
- * Splits a verify batch by its gplayapi results.
+ * Splits a verify batch by its gplayapi results. results === null means the
+ * whole batch failed (tool crash, expired credentials): that says nothing about
+ * the individual hints, so none of them gets a per-package error — recording
+ * one would push every hint into the 30-day error cooldown after three bad
+ * nights.
  * @returns {confirmed: [gplayResult], rejected: [packageName],
- *   errored: [{packageName, error}]} — errored hints stay pending on the Worker.
+ *   errored: [{packageName, error}], batchFailed} — errored hints stay pending
+ *   on the Worker.
  */
 export function partitionVerifyResults(verify, results) {
+  if (results === null) {
+    return { confirmed: [], rejected: [], errored: [], batchFailed: true };
+  }
   const byPackage = new Map(results.map((r) => [r.packageName, r]));
   const confirmed = [];
   const rejected = [];
@@ -80,7 +88,18 @@ export function partitionVerifyResults(verify, results) {
       errored.push({ packageName, error: 'no availability in gplayapi output' });
     }
   }
-  return { confirmed, rejected, errored };
+  return { confirmed, rejected, errored, batchFailed: false };
+}
+
+/**
+ * Packages settled from the Worker's viewpoint after a verify run: confirmed,
+ * rejected now, already in the catalog — plus "cooling" hints, i.e. ones
+ * rejected on an earlier run whose consume step failed. Re-listing those every
+ * run is the recovery path: without it they stay pending for the full rejected
+ * TTL and then burn a verify slot just to be re-rejected.
+ */
+export function settledForConsume({ confirmedPackages, rejectedNow, alreadyInCatalog, cooling }) {
+  return [...new Set([...confirmedPackages, ...rejectedNow, ...alreadyInCatalog, ...cooling])];
 }
 
 /** Adds this run's verification failures to the rejected list; a re-rejection
