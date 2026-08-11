@@ -4,6 +4,9 @@ export const PACKAGE_RE = /^[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)+$/;
 
 const MAX_PACKAGES = 50;
 const MAX_NAME_LENGTH = 150;
+// A legitimate batch (50 names × 150 chars + JSON overhead) stays under 10 KB;
+// anything bigger is refused before JSON.parse touches it.
+export const MAX_BODY_BYTES = 32 * 1024;
 
 /**
  * @param {string} bodyText raw request body
@@ -14,6 +17,7 @@ const MAX_NAME_LENGTH = 150;
  *   either way so the endpoint cannot be used to probe the catalog.
  */
 export function parseHintRequest(bodyText, catalogPackages) {
+  if (bodyText.length > MAX_BODY_BYTES) return { status: 413, accepted: [] };
   let parsed;
   try {
     parsed = JSON.parse(bodyText);

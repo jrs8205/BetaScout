@@ -3,7 +3,7 @@
 // reaches the published catalog until the harvester's gplayapi verification
 // confirms it, which is why the intake needs no submitter identity.
 
-import { parseHintRequest } from './hints.js';
+import { parseHintRequest, MAX_BODY_BYTES } from './hints.js';
 
 const JSON_HEADERS = {
   'content-type': 'application/json; charset=utf-8',
@@ -41,6 +41,13 @@ export class HintBudget {
     const { day, count, limit } = await request.json();
     let budget = (await this.state.storage.get('budget')) ?? { day, spent: 0 };
     if (budget.day !== day) budget = { day, spent: 0 };
+    if (new URL(request.url).pathname === '/refund') {
+      // Gives back budget spent on hints a failed KV write never stored, so a
+      // storage incident cannot burn the whole day's budget on retries.
+      budget.spent = Math.max(0, budget.spent - count);
+      await this.state.storage.put('budget', budget);
+      return Response.json({ allowed: true });
+    }
     if (budget.spent + count > limit) return Response.json({ allowed: false });
     budget.spent += count;
     await this.state.storage.put('budget', budget);
@@ -58,9 +65,16 @@ async function handleHintPost(request, env) {
   const limit = await env.HINT_LIMITER?.limit({ key: source });
   if (limit && !limit.success) return new Response(null, { status: 429 });
 
+  // A declared oversized body is refused before buffering; a body that arrives
+  // oversized anyway (missing or lying Content-Length) is caught by the length
+  // check inside parseHintRequest before any JSON.parse.
+  const declaredLength = Number(request.headers.get('content-length'));
+  if (declaredLength > MAX_BODY_BYTES) return new Response(null, { status: 413 });
+
   const result = parseHintRequest(await request.text(), await catalogPackages(env));
   if (result.status !== 204) return new Response(null, { status: result.status });
 
+  const day = Math.floor(Date.now() / 86_400_000);
   if (result.accepted.length > 0) {
     // Fail closed: a missing binding or an overloaded/unreachable budget
     // object answers 503 instead of accepting unbudgeted hints — a flood
@@ -73,7 +87,7 @@ async function handleHintPost(request, env) {
       const spend = await stub.fetch('https://hint-budget/spend', {
         method: 'POST',
         body: JSON.stringify({
-          day: Math.floor(Date.now() / 86_400_000),
+          day,
           count: result.accepted.length,
           limit: GLOBAL_DAILY_PACKAGE_LIMIT,
         }),
@@ -86,21 +100,42 @@ async function handleHintPost(request, env) {
   }
 
   const now = Date.now();
-  for (const packageName of result.accepted) {
-    const key = `hint:${packageName}`;
-    // Read-modify-write; a racing write may lose a count increment, which is
-    // acceptable — count is informational only, never a trust signal.
-    let entry = { firstSeen: now, count: 0 };
-    const existing = await env.CATALOG.get(key);
-    if (existing) {
+  let stored = 0;
+  try {
+    for (const packageName of result.accepted) {
+      const key = `hint:${packageName}`;
+      // Read-modify-write; a racing write may lose a count increment, which is
+      // acceptable — count is informational only, never a trust signal.
+      let entry = { firstSeen: now, count: 0 };
+      const existing = await env.CATALOG.get(key);
+      if (existing) {
+        try {
+          entry = JSON.parse(existing);
+        } catch {
+          // A corrupt entry is simply reset.
+        }
+      }
+      entry.count = (entry.count ?? 0) + 1;
+      await env.CATALOG.put(key, JSON.stringify(entry));
+      stored++;
+    }
+  } catch {
+    // The budget was debited before these writes; give back what was never
+    // stored so devices retrying the batch (non-2xx is not marked reported)
+    // don't exhaust the day's budget during a KV incident.
+    const unstored = result.accepted.length - stored;
+    if (unstored > 0) {
       try {
-        entry = JSON.parse(existing);
+        const stub = env.HINT_BUDGET.get(env.HINT_BUDGET.idFromName('global'));
+        await stub.fetch('https://hint-budget/refund', {
+          method: 'POST',
+          body: JSON.stringify({ day, count: unstored }),
+        });
       } catch {
-        // A corrupt entry is simply reset.
+        // Best effort: an unrefunded debit self-heals at the next UTC day.
       }
     }
-    entry.count = (entry.count ?? 0) + 1;
-    await env.CATALOG.put(key, JSON.stringify(entry));
+    return new Response(null, { status: 500 });
   }
   return new Response(null, { status: 204 });
 }

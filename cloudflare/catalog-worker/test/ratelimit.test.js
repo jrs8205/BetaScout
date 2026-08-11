@@ -192,6 +192,82 @@ test('a failing budget object fails closed and stores nothing', async () => {
   assert.equal(kv.store.has('hint:com.example.app'), false);
 });
 
+test('a KV write failure refunds the unstored budget and answers 500', async () => {
+  // Devices retry non-2xx batches; without the refund every retry during a KV
+  // incident debits the daily budget again while storing nothing, and once KV
+  // recovers legitimate posts are answered 429 for the rest of the UTC day.
+  const kv = fakeKv();
+  kv.put = async () => {
+    throw new Error('KV write failed');
+  };
+  const state = fakeDoState();
+
+  const response = await worker.fetch(hintPost(['com.a.one', 'com.b.two']), {
+    CATALOG: kv,
+    HINT_LIMITER: fakeLimiter(),
+    HINT_BUDGET: budgetBinding(new HintBudget(state)),
+  });
+
+  assert.equal(response.status, 500);
+  assert.equal(state.map.get('budget').spent, 0);
+});
+
+test('a partial KV failure refunds only the unstored packages', async () => {
+  const kv = fakeKv();
+  const originalPut = kv.put.bind(kv);
+  kv.put = async (key, value) => {
+    if (key === 'hint:com.b.two') throw new Error('KV write failed');
+    return originalPut(key, value);
+  };
+  const state = fakeDoState();
+
+  const response = await worker.fetch(hintPost(['com.a.one', 'com.b.two']), {
+    CATALOG: kv,
+    HINT_LIMITER: fakeLimiter(),
+    HINT_BUDGET: budgetBinding(new HintBudget(state)),
+  });
+
+  assert.equal(response.status, 500);
+  assert.equal(kv.store.has('hint:com.a.one'), true);
+  assert.equal(state.map.get('budget').spent, 1);
+});
+
+test('a refund never drives the budget below zero', async () => {
+  const budget = new HintBudget(fakeDoState());
+  assert.equal(await spend(budget, 2, 100), true);
+
+  await budget.fetch(
+    new Request('https://hint-budget/refund', {
+      method: 'POST',
+      body: JSON.stringify({ day: 100, count: 10 }),
+    }),
+  );
+
+  // The whole day's budget is available again, but not more.
+  assert.equal(await spend(budget, 5_000, 100), true);
+  assert.equal(await spend(budget, 1, 100), false);
+});
+
+test('an oversized post body is rejected without being parsed', async () => {
+  // The endpoint is unauthenticated; without a size cap each request forces
+  // full-body buffering plus a large JSON.parse on the paid plan.
+  const kv = fakeKv();
+  const oversized = new Request('https://worker.test/hints', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: `{"version":1,"packages":["com.a.one"],"padding":"${'x'.repeat(64 * 1024)}"}`,
+  });
+
+  const response = await worker.fetch(oversized, {
+    CATALOG: kv,
+    HINT_LIMITER: fakeLimiter(),
+    HINT_BUDGET: budgetBinding(new HintBudget(fakeDoState())),
+  });
+
+  assert.equal(response.status, 413);
+  assert.equal(kv.store.has('hint:com.a.one'), false);
+});
+
 test('a post entirely of catalog members skips the budget and still answers 204', async () => {
   // Nothing would be stored, so no budget is needed — and the endpoint must
   // stay unprobeable (204 either way) even when the budget binding is absent.
