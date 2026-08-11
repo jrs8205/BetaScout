@@ -41,6 +41,10 @@ jobs:
       - name: Fetch gplayapi jar
         run: |
           curl -sL https://repo1.maven.org/maven2/com/auroraoss/gplayapi/3.4.2/gplayapi-3.4.2.aar -o /tmp/g.aar
+          # The jar executes with the Play credentials in scope; a tampered
+          # artifact must fail the run, not run. Maven Central artifacts are
+          # immutable, so the pin only changes with the version.
+          echo "5653052845cee813cd909995bc5e9d9d8846604b53df88cf0ea0965dc99e79e2  /tmp/g.aar" | sha256sum -c -
           mkdir -p harvester/gplay/libs
           unzip -o /tmp/g.aar classes.jar -d harvester/gplay/libs
           mv harvester/gplay/libs/classes.jar harvester/gplay/libs/gplayapi-3.4.2.jar
@@ -76,7 +80,19 @@ jobs:
             echo "No catalog changes."
           else
             git commit -m 'Update beta catalog [skip ci]'
-            git push
+            # Main can move during the long harvest run; rebase and retry so a
+            # non-fast-forward rejection doesn't discard the night's ~300
+            # Google Play verifications.
+            for attempt in 1 2 3; do
+              if git push; then
+                break
+              fi
+              if [ "$attempt" = 3 ]; then
+                echo "git push failed after 3 attempts" >&2
+                exit 1
+              fi
+              git pull --rebase
+            done
           fi
 
       # A missing token FAILS the run on purpose: silently skipping would let
