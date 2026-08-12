@@ -356,123 +356,195 @@
     },
     {
       "packageName": "com.samruston.luci",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.google.mainline.go.primary",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.google.mainline.go.telemetry",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.secuso.privacyFriendlyCodeScanner",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.ubiquitly.magicmapperdlr",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "eu.livesport.FlashScore_com",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.urik.keyboard",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.degoo.android",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.joaomgcd.taskersettings",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.microsoft.outlooklite",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "ca.walmart.ecommerceapp",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.pranshulgg.weather_master",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.retroarch",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.rossellini.cubecrash",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.loongcheer.neverlate.wizardlegend.fightmaster",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "uk.co.tdsstudios.noterly",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.ecnetwork.crma",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "com.fullcontact.ledene",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "in.codeseed.undonotification.pro",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
     },
     {
       "packageName": "philly.com.sportsnow",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786513809143
+    },
+    {
+      "packageName": "com.opera.max.oem",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1786513809143
+    },
+    {
+      "packageName": "com.ray.notificationwidget",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786513809143
+    },
+    {
+      "packageName": "app.fanclubs.android",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786513809143
+    },
+    {
+      "packageName": "com.h3r3t1c.wear.btbattery",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786513809143
+    },
+    {
+      "packageName": "com.ncm.noovietrivia",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786513809143
+    },
+    {
+      "packageName": "com.notacult.walkscape",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786513809143
+    },
+    {
+      "packageName": "com.scannerradio_pro",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786513809143
+    },
+    {
+      "packageName": "social.ones.app",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786513809143
+    },
+    {
+      "packageName": "com.games.gp.eden",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786513809143
+    },
+    {
+      "packageName": "one.zagura.IonLauncher",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786513809143
+    },
+    {
+      "packageName": "com.drdisagree.depthly",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786513809143
+    },
+    {
+      "packageName": "threads.thor",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786513809143
     }
   ]
 }
