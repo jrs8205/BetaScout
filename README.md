@@ -17,6 +17,11 @@ automatically; on Android 13+
 you can also pick the language per app in system settings. Native speakers: corrections
 are very welcome — please [open an issue](https://github.com/jrs8205/BetaScout/issues).
 
+## In the media
+
+- 📰 [Saudi Android's look at BetaScout](https://www.saudiandroid.net/2026/08/%d8%aa%d8%b7%d8%a8%d9%8a%d9%82-betascout-%d8%b9%d9%84%d9%89-%d8%a7%d9%86%d8%af%d8%b1%d9%88%d9%8a%d8%af.html) (in Arabic)
+- ▶️ [Video walkthrough by @odorizzioficial](https://youtu.be/pvlpOOCeWUQ) (in Brazilian Portuguese)
+
 ## What it does
 
 - 📋 **Scans installed apps** — name, icon, version and install source, entirely on-device
@@ -47,9 +52,13 @@ Honesty first:
 
 ## Screenshots
 
-| Onboarding | App details | Watchlist |
+| Front page | Joined betas | No beta | App details |
+|:---:|:---:|:---:|:---:|
+| ![Front page](docs/screenshots/frontpage.png) | ![Joined betas](docs/screenshots/joined-page.png) | ![No beta](docs/screenshots/no-beta-page.png) | ![App details](docs/screenshots/app-page.png) |
+
+| App details — no beta | Watchlist | Settings |
 |:---:|:---:|:---:|
-| ![Onboarding](docs/screenshots/onboarding.png) | ![App details](docs/screenshots/app-detail.png) | ![Watchlist](docs/screenshots/watchlist.png) |
+| ![App details with no known beta](docs/screenshots/app-page-no-beta.png) | ![Watchlist](docs/screenshots/watchlist.png) | ![Settings](docs/screenshots/settings.png) |
 
 ## Installation
 
