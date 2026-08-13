@@ -2931,6 +2931,38 @@
     {
       "packageName": "com.oneassist",
       "rejectedAt": 1786513809141
+    },
+    {
+      "packageName": "com.rossellini.cubecrash",
+      "rejectedAt": 1786600300603
+    },
+    {
+      "packageName": "com.afrifanom.gwcl",
+      "rejectedAt": 1786600300603
+    },
+    {
+      "packageName": "com.blackstargroup.ai",
+      "rejectedAt": 1786600300603
+    },
+    {
+      "packageName": "gh.gov.ghana.citizen",
+      "rejectedAt": 1786600300603
+    },
+    {
+      "packageName": "com.mtcmobile.snappyshopper",
+      "rejectedAt": 1786600300603
+    },
+    {
+      "packageName": "com.farlightgames.samo.gp",
+      "rejectedAt": 1786600300603
+    },
+    {
+      "packageName": "com.one4studio.one4home",
+      "rejectedAt": 1786600300603
+    },
+    {
+      "packageName": "com.payzy1.payzy",
+      "rejectedAt": 1786600300603
     }
   ]
 }

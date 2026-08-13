@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1786513809146,
+  "generatedAt": 1786600300608,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -2514,6 +2514,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.bittorrent.client",
+      "appName": "BitTorrent®- Torrent Downloads",
+      "hasBeta": true,
+      "productionVersionCode": 7676,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.blackberry.hub",
       "appName": "BlackBerry Hub+ Inbox",
       "hasBeta": true,
@@ -3984,7 +3993,7 @@
       "packageName": "com.dropbox.android",
       "appName": "Dropbox: Secure Cloud Storage",
       "hasBeta": true,
-      "productionVersionCode": 48420200,
+      "productionVersionCode": 48620200,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -4129,6 +4138,15 @@
       "appName": "Kleinanzeigen - Marketplace",
       "hasBeta": true,
       "productionVersionCode": 2026310204,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ecgmobile",
+      "appName": "ECG PowerApp",
+      "hasBeta": true,
+      "productionVersionCode": 976,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4336,6 +4354,15 @@
       "appName": "Snes9x EX+",
       "hasBeta": true,
       "productionVersionCode": 16010585,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.expresspay",
+      "appName": "expressPay",
+      "hasBeta": true,
+      "productionVersionCode": 173,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5106,6 +5133,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ghanapostgps.ghanapost",
+      "appName": "GhanaPostGPS",
+      "hasBeta": true,
+      "productionVersionCode": 89,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ghisler.android.TotalCommander",
       "appName": "Total Commander - file manager",
       "hasBeta": true,
@@ -5295,6 +5331,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.gollyexpress.prod",
+      "appName": "Golly express",
+      "hasBeta": true,
+      "productionVersionCode": 100012,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.gombosdev.ampere",
       "appName": "Ampere",
       "hasBeta": true,
@@ -5469,7 +5514,7 @@
       "packageName": "com.google.android.gms",
       "appName": "Google Play services",
       "hasBeta": true,
-      "productionVersionCode": 262932029,
+      "productionVersionCode": 263032029,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5558,7 +5603,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561185093,
+      "productionVersionCode": 1561190189,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6212,6 +6257,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.hubtel.hcb",
+      "appName": "Hubtel - Bills, Food, Stores",
+      "hasBeta": true,
+      "productionVersionCode": 4852,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.hulu.plus",
       "appName": "Hulu: Stream TV shows & movies",
       "hasBeta": true,
@@ -6512,7 +6566,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384810179,
+      "productionVersionCode": 384810185,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7638,6 +7692,15 @@
       "appName": "Raccoon",
       "hasBeta": true,
       "productionVersionCode": 107,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.lk.efutures",
+      "appName": "CSE Mobile App",
+      "hasBeta": true,
+      "productionVersionCode": 136,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9002,6 +9065,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.myvodafone.app",
+      "appName": "Telecel Play (Ghana)",
+      "hasBeta": true,
+      "productionVersionCode": 241,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.nand.addtext",
       "appName": "Add Text: Text on Photo Editor",
       "hasBeta": true,
@@ -10055,6 +10127,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.pickme.passenger",
+      "appName": "PickMe (Sri Lanka)",
+      "hasBeta": true,
+      "productionVersionCode": 871,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.picpay",
       "appName": "Banco PicPay: Cartão, Pix e +",
       "hasBeta": true,
@@ -10679,7 +10760,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2631040,
+      "productionVersionCode": 2632040,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10932,6 +11013,15 @@
       "appName": "Adblock Fast",
       "hasBeta": true,
       "productionVersionCode": 16,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.rookery.courier",
+      "appName": "Roost Social",
+      "hasBeta": true,
+      "productionVersionCode": 56,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -11714,7 +11804,7 @@
       "packageName": "com.snapchat.android",
       "appName": "Snapchat",
       "hasBeta": true,
-      "productionVersionCode": 305522,
+      "productionVersionCode": 306972,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12539,6 +12629,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.tencent.wework",
+      "appName": "WeCom",
+      "hasBeta": true,
+      "productionVersionCode": 75141,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.tendershoot.hypnospaceoutlaw",
       "appName": "Hypnospace Outlaw",
       "hasBeta": true,
@@ -12579,6 +12678,15 @@
       "appName": "Foliago - AI Plant Identifier",
       "hasBeta": true,
       "productionVersionCode": 13,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.theedo.noobly",
+      "appName": "Noobly: Find Gamer Friends LFG",
+      "hasBeta": true,
+      "productionVersionCode": 294,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -12921,6 +13029,15 @@
       "appName": "TP-Link Deco",
       "hasBeta": true,
       "productionVersionCode": 2389,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.tradingview.tradingviewapp",
+      "appName": "TradingView: Track All Markets",
+      "hasBeta": true,
+      "productionVersionCode": 1002385,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -13856,7 +13973,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 263009720,
+      "productionVersionCode": 263107700,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16256,6 +16373,33 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "lk.bhasha.helakuru",
+      "appName": "Helakuru Superapp - Sri Lanka",
+      "hasBeta": true,
+      "productionVersionCode": 1642,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "lk.ikman",
+      "appName": "ikman - Everything Sells",
+      "hasBeta": true,
+      "productionVersionCode": 412,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "lk.mintpay.app",
+      "appName": "Mintpay | Pay Better.",
+      "hasBeta": true,
+      "productionVersionCode": 199,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "ltd.xyzer.app.bongocat",
       "appName": "Acti: Agentic Keyboard",
       "hasBeta": true,
@@ -17996,6 +18140,15 @@
       "appName": "hh: поиск работы",
       "hasBeta": true,
       "productionVersionCode": 11475,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ru.innim.my_finance",
+      "appName": "Money manager & expenses",
+      "hasBeta": true,
+      "productionVersionCode": 4239,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
