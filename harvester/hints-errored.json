@@ -536,33 +536,33 @@
     },
     {
       "packageName": "com.fidocredit",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1786769402990
     },
     {
       "packageName": "com.surfshark.free.proxy.trust.dns",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1786769402990
     },
     {
       "packageName": "com.worldance.drama",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1786769402990
     },
     {
       "packageName": "ch.admin.bag.dp3t",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1786769402990
     },
     {
       "packageName": "org.kustom.apkmaker",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1786769402990
     }
   ]
 }

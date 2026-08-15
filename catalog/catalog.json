@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1786686602996,
+  "generatedAt": 1786769402992,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -1078,6 +1078,15 @@
       "appName": "Hinge Dating App: Match & Date",
       "hasBeta": true,
       "productionVersionCode": 168201167,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "co.kidcasa.app",
+      "appName": "brightwheel: Childcare App",
+      "hasBeta": true,
+      "productionVersionCode": 469,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3441,6 +3450,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.compliance.alpha.mobile",
+      "appName": "ComplianceAlpha",
+      "hasBeta": true,
+      "productionVersionCode": 91,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.conceptworks.spontacts",
       "appName": "Spontacts: Aktivitäten & Leute",
       "hasBeta": true,
@@ -4614,7 +4632,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 473825528,
+      "productionVersionCode": 473825347,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -4642,6 +4660,15 @@
       "appName": "Meta Business Suite",
       "hasBeta": true,
       "productionVersionCode": 1023339812,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.fairprice.mcomapp",
+      "appName": "FairPrice Group",
+      "hasBeta": true,
+      "productionVersionCode": 701,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6599,6 +6626,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ifit.wolf",
+      "appName": "iFIT Workouts",
+      "hasBeta": true,
+      "productionVersionCode": 5643,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ifs.banking.fiid1378",
       "appName": "Town & Country FCU Mobile",
       "hasBeta": true,
@@ -6788,6 +6824,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.inshape.ishcmobile",
+      "appName": "In-Shape",
+      "hasBeta": true,
+      "productionVersionCode": 623,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.instabridge.android",
       "appName": "Instabridge: WiFi Hotspot Map",
       "hasBeta": true,
@@ -6809,7 +6854,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384810126,
+      "productionVersionCode": 384810185,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9407,10 +9452,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.navyfederal.android",
+      "appName": "Navy Federal Credit Union",
+      "hasBeta": true,
+      "productionVersionCode": 89382,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.nbaimd.gametime.nba2011",
       "appName": "NBA: Live Games & Scores",
       "hasBeta": true,
       "productionVersionCode": 95012,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ndemiccreations.afterinc",
+      "appName": "After Inc.",
+      "hasBeta": true,
+      "productionVersionCode": 171096764,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -11873,6 +11936,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.sgx.SGXandroid",
+      "appName": "SGX Mobile",
+      "hasBeta": true,
+      "productionVersionCode": 5240,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.shady.reefin",
       "appName": "Reefin: Video Player",
       "hasBeta": true,
@@ -13403,6 +13475,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.tpg_sg",
+      "appName": "My SIMBA",
+      "hasBeta": true,
+      "productionVersionCode": 137,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.tplink.aginet",
       "appName": "TP-Link Aginet",
       "hasBeta": true,
@@ -14414,7 +14495,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 263107700,
+      "productionVersionCode": 263009720,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -14613,6 +14694,15 @@
       "appName": "WristNav - Offline GPX Maps",
       "hasBeta": true,
       "productionVersionCode": 77,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.wsgc.stores.wsigiftreg.pb",
+      "appName": "Pottery Barn",
+      "hasBeta": true,
+      "productionVersionCode": 16100005,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -14856,6 +14946,15 @@
       "appName": "Crossy Road",
       "hasBeta": true,
       "productionVersionCode": 254290,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.yoka.sgs",
+      "appName": "三国杀",
+      "hasBeta": true,
+      "productionVersionCode": 4571,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17507,6 +17606,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "net.wigle.wigleandroid",
+      "appName": "WiGLE WiFi Wardriving",
+      "hasBeta": true,
+      "productionVersionCode": 311,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "net.xblacky.animexwallpaper",
       "appName": "Anime X Wallpaper",
       "hasBeta": true,
@@ -18029,6 +18137,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.kp.m",
+      "appName": "Kaiser Permanente",
+      "hasBeta": true,
+      "productionVersionCode": 710000115,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.kustom.wallpaper",
       "appName": "KLWP Live Wallpaper Maker",
       "hasBeta": true,
@@ -18176,6 +18293,15 @@
       "appName": "OU Kosher",
       "hasBeta": true,
       "productionVersionCode": 110,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.outline.android.client",
+      "appName": "Outline",
+      "hasBeta": true,
+      "productionVersionCode": 495734,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18446,6 +18572,15 @@
       "appName": "Police Scanner - Live Radio",
       "hasBeta": true,
       "productionVersionCode": 260420093,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "pro.beatmatch.twa",
+      "appName": "Beatmatch PRO",
+      "hasBeta": true,
+      "productionVersionCode": 10,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18892,6 +19027,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "statussaver.statusdownloader.downloadstatus.videoimagesaver",
+      "appName": "Status Saver - Video Saver",
+      "hasBeta": true,
+      "productionVersionCode": 61,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "studio.com.techriz.andronix",
       "appName": "Andronix - Linux on Android",
       "hasBeta": true,
@@ -19148,6 +19292,15 @@
       "appName": "Video Maker & Editor: FotoPlay",
       "hasBeta": true,
       "productionVersionCode": 720,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "vitaminshoppe.consumerapp",
+      "appName": "The Vitamin Shoppe - VShoppe",
+      "hasBeta": true,
+      "productionVersionCode": 1638,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

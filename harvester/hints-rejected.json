@@ -3051,6 +3051,38 @@
     {
       "packageName": "me.fup.joyapp",
       "rejectedAt": 1786686602993
+    },
+    {
+      "packageName": "com.umo.pracer",
+      "rejectedAt": 1786769402988
+    },
+    {
+      "packageName": "com.doctoranywhere",
+      "rejectedAt": 1786769402988
+    },
+    {
+      "packageName": "com.grabtaxi.passenger",
+      "rejectedAt": 1786769402988
+    },
+    {
+      "packageName": "com.singtel.mysingtel",
+      "rejectedAt": 1786769402988
+    },
+    {
+      "packageName": "sg.gov.hpb.healthy365",
+      "rejectedAt": 1786769402988
+    },
+    {
+      "packageName": "sg.ndi.sp",
+      "rejectedAt": 1786769402988
+    },
+    {
+      "packageName": "com.barclaycardus",
+      "rejectedAt": 1786769402988
+    },
+    {
+      "packageName": "com.librarything.librarything",
+      "rejectedAt": 1786769402988
     }
   ]
 }
