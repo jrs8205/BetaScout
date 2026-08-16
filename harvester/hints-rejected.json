@@ -3083,6 +3083,14 @@
     {
       "packageName": "com.librarything.librarything",
       "rejectedAt": 1786769402988
+    },
+    {
+      "packageName": "com.delaware.empark",
+      "rejectedAt": 1786855979667
+    },
+    {
+      "packageName": "tucmcp.zitycard.es.tucmcp",
+      "rejectedAt": 1786855979667
     }
   ]
 }
