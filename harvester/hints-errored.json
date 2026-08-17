@@ -566,15 +566,51 @@
     },
     {
       "packageName": "com.bambuna.podcastaddictdonate",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786855979668
+      "lastErrorAt": 1786942864155
     },
     {
       "packageName": "com.lowenhardt.inboxit",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786942864155
+    },
+    {
+      "packageName": "com.blackberry.blackberrylauncher",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786855979668
+      "lastErrorAt": 1786942864155
+    },
+    {
+      "packageName": "com.blackberry.passwordkeeper",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786942864155
+    },
+    {
+      "packageName": "com.blackberry.universalsearch",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786942864155
+    },
+    {
+      "packageName": "de.dennisguse.opentracks",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786942864155
+    },
+    {
+      "packageName": "de.fiduciagad.android.vrwallet",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786942864155
+    },
+    {
+      "packageName": "com.appmindlab.nano",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1786942864155
     }
   ]
 }

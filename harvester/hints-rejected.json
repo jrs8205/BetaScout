@@ -3091,6 +3091,70 @@
     {
       "packageName": "tucmcp.zitycard.es.tucmcp",
       "rejectedAt": 1786855979667
+    },
+    {
+      "packageName": "com.anthem.sydney",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "com.drillyapps.babydaybook",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "com.joinhoney.honeyandroid",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "com.liftosaur.www.twa",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "com.propel.ebenefits",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "com.paytm.business",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "de.deutscheglasfaser.kundenportal",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "de.dfn.easyroam",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "com.att.android.tfa",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "com.allstate.view",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "com.androidyou.wifiloginnew",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "com.ifs.banking.fiid1590",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "com.infinitygames.dotcollect",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "com.myfitnesspal.android",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "com.quickcursor",
+      "rejectedAt": 1786942864154
+    },
+    {
+      "packageName": "net.cachapa.libra",
+      "rejectedAt": 1786942864154
     }
   ]
 }
