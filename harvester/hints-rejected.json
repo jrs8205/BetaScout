@@ -3211,6 +3211,42 @@
     {
       "packageName": "de.gesund.app",
       "rejectedAt": 1787028928899
+    },
+    {
+      "packageName": "br.gov.caixa.superapp",
+      "rejectedAt": 1787115300130
+    },
+    {
+      "packageName": "com.run.tower.defense",
+      "rejectedAt": 1787115300130
+    },
+    {
+      "packageName": "pl.bzwbk.bzwbk24",
+      "rejectedAt": 1787115300130
+    },
+    {
+      "packageName": "co.com.flypass.flypassApp",
+      "rejectedAt": 1787115300130
+    },
+    {
+      "packageName": "com.cencosud.co.clientes",
+      "rejectedAt": 1787115300130
+    },
+    {
+      "packageName": "com.farmatodo.app",
+      "rejectedAt": 1787115300130
+    },
+    {
+      "packageName": "com.frisby.frisby",
+      "rejectedAt": 1787115300130
+    },
+    {
+      "packageName": "com.sec.android.app.shealth",
+      "rejectedAt": 1787115300130
+    },
+    {
+      "packageName": "com.sbi.SBIFreedomPlus",
+      "rejectedAt": 1787115300130
     }
   ]
 }

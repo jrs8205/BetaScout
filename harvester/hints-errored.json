@@ -578,45 +578,63 @@
     },
     {
       "packageName": "com.blackberry.blackberrylauncher",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787028928900
+      "lastErrorAt": 1787115300131
     },
     {
       "packageName": "com.blackberry.passwordkeeper",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787028928900
+      "lastErrorAt": 1787115300131
     },
     {
       "packageName": "com.blackberry.universalsearch",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787028928900
+      "lastErrorAt": 1787115300131
     },
     {
       "packageName": "de.dennisguse.opentracks",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787028928900
+      "lastErrorAt": 1787115300131
     },
     {
       "packageName": "de.fiduciagad.android.vrwallet",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787028928900
+      "lastErrorAt": 1787115300131
     },
     {
       "packageName": "com.appmindlab.nano",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787028928900
+      "lastErrorAt": 1787115300131
     },
     {
       "packageName": "com.fb.fluid",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1787115300131
+    },
+    {
+      "packageName": "com.free.sudokupurr",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787028928900
+      "lastErrorAt": 1787115300131
+    },
+    {
+      "packageName": "com.willvin.habitxp",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1787115300131
+    },
+    {
+      "packageName": "com.blackview.userfeedback",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1787115300131
     }
   ]
 }
