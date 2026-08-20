@@ -3247,6 +3247,14 @@
     {
       "packageName": "com.sbi.SBIFreedomPlus",
       "rejectedAt": 1787115300130
+    },
+    {
+      "packageName": "com.Avenza",
+      "rejectedAt": 1787201770214
+    },
+    {
+      "packageName": "com.zonewalker.acar",
+      "rejectedAt": 1787201770214
     }
   ]
 }
