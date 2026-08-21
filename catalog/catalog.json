@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1787201770218,
+  "generatedAt": 1787288201487,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -1437,7 +1437,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
       "hasBeta": true,
-      "productionVersionCode": 1931947372,
+      "productionVersionCode": 1931947181,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -4533,7 +4533,7 @@
       "packageName": "com.duolingo",
       "appName": "Duolingo: Language Lessons",
       "hasBeta": true,
-      "productionVersionCode": 2433,
+      "productionVersionCode": 2440,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -4974,7 +4974,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 345012791,
+      "productionVersionCode": 345012844,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7313,7 +7313,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384910567,
+      "productionVersionCode": 384910602,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8483,7 +8483,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 214300,
+      "productionVersionCode": 214400,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10139,7 +10139,7 @@
       "packageName": "com.netflix.mediaclient",
       "appName": "Netflix",
       "hasBeta": true,
-      "productionVersionCode": 64388,
+      "productionVersionCode": 64396,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11894,7 +11894,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2633170,
+      "productionVersionCode": 2632040,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12264,6 +12264,15 @@
       "appName": "Kids Math: Math Games for Kids",
       "hasBeta": true,
       "productionVersionCode": 228,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.rydah.widgets",
+      "appName": "YOUR Widgets: Widgets & Walls",
+      "hasBeta": true,
+      "productionVersionCode": 165,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -13226,7 +13235,7 @@
       "packageName": "com.spotify.music",
       "appName": "Spotify: Music and Podcasts",
       "hasBeta": true,
-      "productionVersionCode": 144716725,
+      "productionVersionCode": 145242161,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15458,7 +15467,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 263009720,
+      "productionVersionCode": 263208100,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15711,6 +15720,15 @@
       "appName": "PlugShare - EV & Tesla Map",
       "hasBeta": true,
       "productionVersionCode": 20399,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.xdiarys.www",
+      "appName": "CalendarTask",
+      "hasBeta": true,
+      "productionVersionCode": 40000280,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -16152,6 +16170,15 @@
       "appName": "Image Combiner & Editor",
       "hasBeta": true,
       "productionVersionCode": 20724,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.zong.customercare",
+      "appName": "My Zong",
+      "hasBeta": true,
+      "productionVersionCode": 132,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -16940,6 +16967,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "eu.darken.capod",
+      "appName": "CAPod - Companion for AirPods",
+      "hasBeta": true,
+      "productionVersionCode": 50203000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "eu.darken.myperm",
       "appName": "Permission Pilot",
       "hasBeta": true,
@@ -17349,6 +17385,15 @@
       "appName": "Thanox Pro",
       "hasBeta": true,
       "productionVersionCode": 3380725,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "glass.kwgt.app",
+      "appName": "Liquid Glass KWGT Widgets",
+      "hasBeta": true,
+      "productionVersionCode": 9,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18546,6 +18591,15 @@
       "appName": "Brick Mania: Fun Arcade Game",
       "hasBeta": true,
       "productionVersionCode": 822,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "net.countrymania.morse",
+      "appName": "Morse Mania: Learn Morse Code",
+      "hasBeta": true,
+      "productionVersionCode": 950,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -19783,6 +19837,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "pl.neptis.yanosik.mobi.android",
+      "appName": "Yanosik antiradar & navigation",
+      "hasBeta": true,
+      "productionVersionCode": 6001504,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "pl.revanmj.toastsource",
       "appName": "Toast Source",
       "hasBeta": true,
@@ -19796,6 +19859,15 @@
       "appName": "Solid Explorer File Manager",
       "hasBeta": true,
       "productionVersionCode": 305171,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "pl.tablica",
+      "appName": "OLX.PL: Classifieds of Poland",
+      "hasBeta": true,
+      "productionVersionCode": 8102,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

@@ -3255,6 +3255,26 @@
     {
       "packageName": "com.zonewalker.acar",
       "rejectedAt": 1787201770214
+    },
+    {
+      "packageName": "com.itechbuddy.dmi",
+      "rejectedAt": 1787288201483
+    },
+    {
+      "packageName": "project.vivid.hex.bodhi",
+      "rejectedAt": 1787288201483
+    },
+    {
+      "packageName": "project.vivid.ui.plugin.aosps",
+      "rejectedAt": 1787288201483
+    },
+    {
+      "packageName": "com.tarjetametrobus.app.a2_20",
+      "rejectedAt": 1787288201483
+    },
+    {
+      "packageName": "com.anonlab.voidlauncher",
+      "rejectedAt": 1787288201483
     }
   ]
 }
