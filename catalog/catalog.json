@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1787288201487,
+  "generatedAt": 1787374386559,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -1437,7 +1437,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
       "hasBeta": true,
-      "productionVersionCode": 1931947181,
+      "productionVersionCode": 1931947399,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2973,6 +2973,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.bored.jejemon.billardpathfinder",
+      "appName": "8 Ball Path Finder: Line Tool",
+      "hasBeta": true,
+      "productionVersionCode": 71,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.br.twelvemin",
       "appName": "12min: Book Summaries Daily",
       "hasBeta": true,
@@ -3895,6 +3904,15 @@
       "appName": "Creality Cloud - 3D Printing",
       "hasBeta": true,
       "productionVersionCode": 556,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.cycleai.android",
+      "appName": "Cycle AI: Chat & AI Friends",
+      "hasBeta": true,
+      "productionVersionCode": 2080014,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4956,7 +4974,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 474025206,
+      "productionVersionCode": 474027549,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6180,7 +6198,7 @@
       "packageName": "com.google.android.googlequicksearchbox",
       "appName": "Google",
       "hasBeta": true,
-      "productionVersionCode": 301780194,
+      "productionVersionCode": 301793794,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7350,6 +7368,15 @@
       "appName": "Web Video Cast | Browser to TV",
       "hasBeta": true,
       "productionVersionCode": 8018,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.instructure.parentapp",
+      "appName": "Canvas Parent",
+      "hasBeta": true,
+      "productionVersionCode": 74,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -8889,6 +8916,15 @@
       "appName": "MaxRewards Credit Card Rewards",
       "hasBeta": true,
       "productionVersionCode": 1784927532,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.maxvision.noisetimer",
+      "appName": "NoiseTimer: Sleep Noise Sounds",
+      "hasBeta": true,
+      "productionVersionCode": 10012,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -11342,6 +11378,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.pleco.chinesesystem",
+      "appName": "Pleco Chinese Dictionary",
+      "hasBeta": true,
+      "productionVersionCode": 3460,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.plexapp.android",
       "appName": "Plex: Find Movies & TV Shows",
       "hasBeta": true,
@@ -11894,7 +11939,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2632040,
+      "productionVersionCode": 2633190,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -14243,7 +14288,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12248,
+      "productionVersionCode": 12250,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -14603,7 +14648,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312170000,
+      "productionVersionCode": 312191000,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15467,7 +15512,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 263208100,
+      "productionVersionCode": 263208300,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -17876,6 +17921,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "io.stellio.music",
+      "appName": "Stellio - Music and mp3 Player",
+      "hasBeta": true,
+      "productionVersionCode": 30373,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "io.strongapp.strong",
       "appName": "Strong Workout Tracker Gym Log",
       "hasBeta": true,
@@ -19687,7 +19741,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 69912,
+      "productionVersionCode": 70312,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

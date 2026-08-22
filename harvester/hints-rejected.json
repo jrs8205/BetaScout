@@ -3275,6 +3275,18 @@
     {
       "packageName": "com.anonlab.voidlauncher",
       "rejectedAt": 1787288201483
+    },
+    {
+      "packageName": "com.discoverpilgrim",
+      "rejectedAt": 1787374386555
+    },
+    {
+      "packageName": "com.verynicegames.mergemon",
+      "rejectedAt": 1787374386555
+    },
+    {
+      "packageName": "com.naviapp",
+      "rejectedAt": 1787374386555
     }
   ]
 }
