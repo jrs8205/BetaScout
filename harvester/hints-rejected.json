@@ -3287,6 +3287,10 @@
     {
       "packageName": "com.naviapp",
       "rejectedAt": 1787374386555
+    },
+    {
+      "packageName": "com.shrivatsav.monomail",
+      "rejectedAt": 1787460868598
     }
   ]
 }
