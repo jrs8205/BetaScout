@@ -650,9 +650,33 @@
     },
     {
       "packageName": "com.dropfake.wb.dcko",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787460868600
+      "lastErrorAt": 1787547887164
+    },
+    {
+      "packageName": "com.duplicatephotoremover.duplicatefileremover.filefixer",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1787547887164
+    },
+    {
+      "packageName": "com.nianticlabs.peridot",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1787547887164
+    },
+    {
+      "packageName": "com.skype.insiders",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1787547887164
+    },
+    {
+      "packageName": "il.co.mitug.WhereBus",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1787547887164
     }
   ]
 }
