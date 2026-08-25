@@ -656,27 +656,33 @@
     },
     {
       "packageName": "com.duplicatephotoremover.duplicatefileremover.filefixer",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787547887164
+      "lastErrorAt": 1787633842844
     },
     {
       "packageName": "com.nianticlabs.peridot",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787547887164
+      "lastErrorAt": 1787633842844
     },
     {
       "packageName": "com.skype.insiders",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787547887164
+      "lastErrorAt": 1787633842844
     },
     {
       "packageName": "il.co.mitug.WhereBus",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1787633842844
+    },
+    {
+      "packageName": "com.laurencedawson.reddit_sync.pro",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787547887164
+      "lastErrorAt": 1787633842844
     }
   ]
 }
