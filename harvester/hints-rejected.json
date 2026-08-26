@@ -3431,6 +3431,18 @@
     {
       "packageName": "com.nostalgiatv",
       "rejectedAt": 1787633842843
+    },
+    {
+      "packageName": "de.bvg.ticket",
+      "rejectedAt": 1787720314076
+    },
+    {
+      "packageName": "com.hubspot.android",
+      "rejectedAt": 1787720314076
+    },
+    {
+      "packageName": "cz.zasilkovna.app",
+      "rejectedAt": 1787720314076
     }
   ]
 }

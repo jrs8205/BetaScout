@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1787633842847,
+  "generatedAt": 1787720314079,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -403,6 +403,15 @@
       "appName": "Retro Mode - Icon Pack (Light)",
       "hasBeta": true,
       "productionVersionCode": 2010004,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "app.nanogram.alpha",
+      "appName": "nanogram",
+      "hasBeta": true,
+      "productionVersionCode": 463,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3144,6 +3153,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.bringyour.network",
+      "appName": "URnetwork",
+      "hasBeta": true,
+      "productionVersionCode": 1021635350,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.brocelia.cgp",
       "appName": "Pathé France",
       "hasBeta": true,
@@ -4134,6 +4152,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.dageek.socialtoolbox_android",
+      "appName": "Toolkit for Instagram - Gbox",
+      "hasBeta": true,
+      "productionVersionCode": 251,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.dailymotion.dailymotion",
       "appName": "Dailymotion Social Video App",
       "hasBeta": true,
@@ -4452,7 +4479,7 @@
       "packageName": "com.discord",
       "appName": "Discord - Talk, Play, Hang Out",
       "hasBeta": true,
-      "productionVersionCode": 341013,
+      "productionVersionCode": 342016,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6477,7 +6504,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068728557,
+      "productionVersionCode": 1068739428,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7112,6 +7139,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.herman.ringtone",
+      "appName": "Ringtone Maker:create ringtone",
+      "hasBeta": true,
+      "productionVersionCode": 3100326,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.hesham.nodey",
       "appName": "Nodey | n8n Mobile Automation",
       "hasBeta": true,
@@ -7727,7 +7763,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 384910608,
+      "productionVersionCode": 385010833,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8876,6 +8912,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.lightcut.videoeditor",
+      "appName": "LightCut -AI Auto Video Editor",
+      "hasBeta": true,
+      "productionVersionCode": 31631,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.lightinthebox.android",
       "appName": "LightInTheBox Online Shopping",
       "hasBeta": true,
@@ -8924,7 +8969,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 214400,
+      "productionVersionCode": 214600,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9833,7 +9878,7 @@
       "packageName": "com.microsoft.skydrive",
       "appName": "Microsoft OneDrive",
       "hasBeta": true,
-      "productionVersionCode": 2027610202,
+      "productionVersionCode": 2027620202,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12305,6 +12350,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.purposebudget.app",
+      "appName": "Purpose Budget",
+      "hasBeta": true,
+      "productionVersionCode": 17,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.pushbullet.android",
       "appName": "Pushbullet: SMS on PC and more",
       "hasBeta": true,
@@ -12820,6 +12874,24 @@
     {
       "packageName": "com.rocketshipapps.adblockfast",
       "appName": "Adblock Fast",
+      "hasBeta": true,
+      "productionVersionCode": 16,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.rohankhayech.choona",
+      "appName": "Choona - Guitar Tuner",
+      "hasBeta": true,
+      "productionVersionCode": 16,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.rojins.kaizen",
+      "appName": "Kaizen - Habit Tracker",
       "hasBeta": true,
       "productionVersionCode": 16,
       "liveStatus": "UNKNOWN",
@@ -14123,6 +14195,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.stepstone.totaljobs",
+      "appName": "Totaljobs - UK Job Search App",
+      "hasBeta": true,
+      "productionVersionCode": 302000001,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.stevenw.headlessunit.android",
       "appName": "HeadlessUnit",
       "hasBeta": true,
@@ -14280,6 +14361,15 @@
       "appName": "Venue — Interior Design Games",
       "hasBeta": true,
       "productionVersionCode": 128001,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.superbru.football",
+      "appName": "Superbru Football",
+      "hasBeta": true,
+      "productionVersionCode": 68,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -15026,7 +15116,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12252,
+      "productionVersionCode": 12254,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15395,7 +15485,7 @@
       "packageName": "com.tumblr",
       "appName": "Tumblr: Social Media & Art",
       "hasBeta": true,
-      "productionVersionCode": 1450900108,
+      "productionVersionCode": 1460000107,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16035,6 +16125,15 @@
       "appName": "Volv - Curated 9-Second News",
       "hasBeta": true,
       "productionVersionCode": 1110,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.vrchat.mobile.playstore",
+      "appName": "VRChat",
+      "hasBeta": true,
+      "productionVersionCode": 973750,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18515,6 +18614,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "in.chartr.transit",
+      "appName": "Chartr - Tickets, Bus & Metro",
+      "hasBeta": true,
+      "productionVersionCode": 200,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "in.cricketexchange.app.cricketexchange",
       "appName": "CREX - Just Cricket",
       "hasBeta": true,
@@ -18528,6 +18636,15 @@
       "appName": "Musicolet Music Player",
       "hasBeta": true,
       "productionVersionCode": 53000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "in.krosbits.nocrop",
+      "appName": "No Crop • Fit to any size",
+      "hasBeta": true,
+      "productionVersionCode": 300,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -19226,6 +19343,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "ma.unel.satellitescanner",
+      "appName": "Satellite Scanner: GPS & Stars",
+      "hasBeta": true,
+      "productionVersionCode": 725,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "masar.bluetoothbridge.pro",
       "appName": "Communication Bridge Pro",
       "hasBeta": true,
@@ -19545,6 +19671,15 @@
       "appName": "MyMixtapez: Playlists 24/7",
       "hasBeta": true,
       "productionVersionCode": 1143,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "name.boyle.chris.sgtpuzzles",
+      "appName": "Simon Tatham's Puzzles",
+      "hasBeta": true,
+      "productionVersionCode": 149,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -20405,6 +20540,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.jitsi.meet",
+      "appName": "Jitsi Meet",
+      "hasBeta": true,
+      "productionVersionCode": 23729264,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.joinmastodon.android",
       "appName": "Mastodon",
       "hasBeta": true,
@@ -20722,7 +20866,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 70312,
+      "productionVersionCode": 70382,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -21115,6 +21259,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "ru.androidtools.imagetowallpaper",
+      "appName": "Image to Wallpaper",
+      "hasBeta": true,
+      "productionVersionCode": 32,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "ru.beru.android",
       "appName": "Яндекс Маркет: онлайн-магазин",
       "hasBeta": true,
@@ -21389,6 +21542,15 @@
       "appName": "DIGI Clock Widget",
       "hasBeta": true,
       "productionVersionCode": 26000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "sk.pokec",
+      "appName": "Pokec.sk - dating & chat",
+      "hasBeta": true,
+      "productionVersionCode": 823,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
