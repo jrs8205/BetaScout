@@ -680,15 +680,39 @@
     },
     {
       "packageName": "com.laurencedawson.reddit_sync.pro",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787720314077
+      "lastErrorAt": 1787843913768
     },
     {
       "packageName": "com.ctxwidget",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1787843913768
+    },
+    {
+      "packageName": "com.agilebits.onepassword",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787720314077
+      "lastErrorAt": 1787843913768
+    },
+    {
+      "packageName": "com.callcenter.dynamic.notch",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1787843913768
+    },
+    {
+      "packageName": "com.facebook.mlite",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1787843913768
+    },
+    {
+      "packageName": "com.google.android.gmssystem",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1787843913768
     }
   ]
 }

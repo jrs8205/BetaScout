@@ -3443,6 +3443,82 @@
     {
       "packageName": "cz.zasilkovna.app",
       "rejectedAt": 1787720314076
+    },
+    {
+      "packageName": "com.privacydisplay.hidescreen.private.darkscreen.guard",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "com.agedstudio.card.solitaire.klondike",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "com.app.acmilan",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "com.bestapp.entertainment.ringsfree",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "com.grice.camera",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "com.hampusolsson.abstruct",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "com.newgen.edgelighting",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "com.ryanair.cheapflights",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "it.eurospin.mobileapp",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "it.fastweb.myfastweb",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "it.giunko.junker",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "it.pagopa.io.app",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "tv.wuaki",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "widget.dd.com.overdrop.pro",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "com.dingleinc.texttoolspro",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "com.textexpander.textexpander",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "com.ea.gp.fifamobilebeta",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "com.yango.team",
+      "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "com.yangotech.grocery.demo",
+      "rejectedAt": 1787843913767
     }
   ]
 }
