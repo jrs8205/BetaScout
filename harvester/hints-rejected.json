@@ -3519,6 +3519,10 @@
     {
       "packageName": "com.yangotech.grocery.demo",
       "rejectedAt": 1787843913767
+    },
+    {
+      "packageName": "org.de_studio.recentappswitcher.pro",
+      "rejectedAt": 1787935346136
     }
   ]
 }

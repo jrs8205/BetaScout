@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1787843913770,
+  "generatedAt": 1787935346141,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -529,6 +529,15 @@
       "appName": "Symfonium: Music player & cast",
       "hasBeta": true,
       "productionVersionCode": 127734,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "app.tellows",
+      "appName": "tellows - Caller ID & Block",
+      "hasBeta": true,
+      "productionVersionCode": 192,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1887,7 +1896,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 792217333,
+      "productionVersionCode": 797706404,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2509,6 +2518,15 @@
       "appName": "AWQAF UAE",
       "hasBeta": true,
       "productionVersionCode": 112250521,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ax.androidtv",
+      "appName": "AX TV Remote for Android TV",
+      "hasBeta": true,
+      "productionVersionCode": 31,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3801,6 +3819,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.cliffweitzman.speechify2",
+      "appName": "Speechify – Text to Speech",
+      "hasBeta": true,
+      "productionVersionCode": 5547543,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.cloudflare.cloudflareoneagent",
       "appName": "Cloudflare One Agent",
       "hasBeta": true,
@@ -4857,7 +4884,7 @@
       "packageName": "com.duolingo",
       "appName": "Duolingo: Language Lessons",
       "hasBeta": true,
-      "productionVersionCode": 2445,
+      "productionVersionCode": 2447,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5307,7 +5334,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 345012844,
+      "productionVersionCode": 345212742,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6630,7 +6657,7 @@
       "packageName": "com.google.android.apps.messaging",
       "appName": "Google Messages",
       "hasBeta": true,
-      "productionVersionCode": 317307063,
+      "productionVersionCode": 320337063,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7889,7 +7916,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385010833,
+      "productionVersionCode": 385010828,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9095,7 +9122,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 214600,
+      "productionVersionCode": 214700,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9159,6 +9186,15 @@
       "appName": "Raccoon",
       "hasBeta": true,
       "productionVersionCode": 107,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.livefast.eattrash.raccoonforlemmy.android",
+      "appName": "Raccoon for Lemmy",
+      "hasBeta": true,
+      "productionVersionCode": 154,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -12056,7 +12092,7 @@
       "packageName": "com.pinterest",
       "appName": "Pinterest",
       "hasBeta": true,
-      "productionVersionCode": 14328010,
+      "productionVersionCode": 14338020,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -14375,6 +14411,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.stixy.wa.sticker.maker",
+      "appName": "Stixy: Sticker Maker, WA Emoji",
+      "hasBeta": true,
+      "productionVersionCode": 101,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.Stones100.TheEyesOfAra",
       "appName": "The Eyes of Ara",
       "hasBeta": true,
@@ -15296,7 +15341,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12256,
+      "productionVersionCode": 12258,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15728,7 +15773,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312191000,
+      "productionVersionCode": 312205001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -21101,6 +21146,15 @@
       "appName": "Torque Pro (OBD 2 & Car)",
       "hasBeta": true,
       "productionVersionCode": 1120108,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.punkeroso.motoanswer",
+      "appName": "MotoAnswer - Auto Answer Calls",
+      "hasBeta": true,
+      "productionVersionCode": 532,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
