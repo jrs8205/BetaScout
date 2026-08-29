@@ -692,27 +692,57 @@
     },
     {
       "packageName": "com.agilebits.onepassword",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787935346138
+      "lastErrorAt": 1788001768003
     },
     {
       "packageName": "com.callcenter.dynamic.notch",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787935346138
+      "lastErrorAt": 1788001768003
     },
     {
       "packageName": "com.facebook.mlite",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787935346138
+      "lastErrorAt": 1788001768003
     },
     {
       "packageName": "com.google.android.gmssystem",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787935346138
+      "lastErrorAt": 1788001768003
+    },
+    {
+      "packageName": "com.area120.grasshopper",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1788001768003
+    },
+    {
+      "packageName": "com.imposter.challenge.party.guess.who.word",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1788001768003
+    },
+    {
+      "packageName": "com.samruston.hurry",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1788001768003
+    },
+    {
+      "packageName": "com.stario.launcher",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1788001768003
+    },
+    {
+      "packageName": "com.syntaxerrorstudios.walkrewards50",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1788001768003
     }
   ]
 }
