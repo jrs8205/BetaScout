@@ -3611,6 +3611,18 @@
     {
       "packageName": "scientific.graphing.calculator.t84.t36.t83",
       "rejectedAt": 1788001768002
+    },
+    {
+      "packageName": "com.yum.kfc",
+      "rejectedAt": 1788083959453
+    },
+    {
+      "packageName": "com.apnatime",
+      "rejectedAt": 1788083959453
+    },
+    {
+      "packageName": "com.appylab.syncspend",
+      "rejectedAt": 1788083959453
     }
   ]
 }

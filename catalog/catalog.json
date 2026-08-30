@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1788001768006,
+  "generatedAt": 1788083959457,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -1905,7 +1905,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 797706404,
+      "productionVersionCode": 792217433,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2473,6 +2473,15 @@
       "appName": "Simplenote",
       "hasBeta": true,
       "productionVersionCode": 186,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.autonavi.minimap",
+      "appName": "AMap Global",
+      "hasBeta": true,
+      "productionVersionCode": 162200,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5361,7 +5370,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 474227001,
+      "productionVersionCode": 474227118,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5379,7 +5388,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 345212725,
+      "productionVersionCode": 345212742,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6872,7 +6881,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561190505,
+      "productionVersionCode": 1561292962,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8015,7 +8024,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385010833,
+      "productionVersionCode": 385010801,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -19239,6 +19248,15 @@
       "appName": "Oceans of AI - All AI Tools",
       "hasBeta": true,
       "productionVersionCode": 25,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "in.burgerking.android",
+      "appName": "Burger King India",
+      "hasBeta": true,
+      "productionVersionCode": 472003,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
