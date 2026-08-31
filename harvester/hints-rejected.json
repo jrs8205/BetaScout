@@ -3623,6 +3623,26 @@
     {
       "packageName": "com.appylab.syncspend",
       "rejectedAt": 1788083959453
+    },
+    {
+      "packageName": "com.aim.racing.motorcycles",
+      "rejectedAt": 1788173719038
+    },
+    {
+      "packageName": "com.siwalusoftware.dogscanner",
+      "rejectedAt": 1788173719038
+    },
+    {
+      "packageName": "com.zpqv.llmcouncilapp.techenthusiast.adce",
+      "rejectedAt": 1788173719038
+    },
+    {
+      "packageName": "ru.erdenian.studentassistant",
+      "rejectedAt": 1788173719038
+    },
+    {
+      "packageName": "io.hgpoker.app",
+      "rejectedAt": 1788173719038
     }
   ]
 }

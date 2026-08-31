@@ -716,39 +716,45 @@
     },
     {
       "packageName": "com.area120.grasshopper",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788083959454
+      "lastErrorAt": 1788173719039
     },
     {
       "packageName": "com.imposter.challenge.party.guess.who.word",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788083959454
+      "lastErrorAt": 1788173719039
     },
     {
       "packageName": "com.samruston.hurry",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788083959454
+      "lastErrorAt": 1788173719039
     },
     {
       "packageName": "com.stario.launcher",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788083959454
+      "lastErrorAt": 1788173719039
     },
     {
       "packageName": "com.syntaxerrorstudios.walkrewards50",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788083959454
+      "lastErrorAt": 1788173719039
     },
     {
       "packageName": "com.brute.launcher",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1788173719039
+    },
+    {
+      "packageName": "ai.blurrr.video",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788083959454
+      "lastErrorAt": 1788173719039
     }
   ]
 }
