@@ -746,15 +746,15 @@
     },
     {
       "packageName": "com.brute.launcher",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788173719039
+      "lastErrorAt": 1788254838550
     },
     {
       "packageName": "ai.blurrr.video",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788173719039
+      "lastErrorAt": 1788254838550
     }
   ]
 }

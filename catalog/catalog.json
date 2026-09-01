@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1788173719041,
+  "generatedAt": 1788254838552,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -1617,7 +1617,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
       "hasBeta": true,
-      "productionVersionCode": 1931947401,
+      "productionVersionCode": 1932048364,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -1968,7 +1968,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 792217333,
+      "productionVersionCode": 797706404,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -4818,6 +4818,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.dotfield.dotcal",
+      "appName": "DotCal - Calendar & Tasks",
+      "hasBeta": true,
+      "productionVersionCode": 34,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.dotfiles.app",
+      "appName": "DotFiles - File Manager",
+      "hasBeta": true,
+      "productionVersionCode": 35,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.doublep.wakey",
       "appName": "Wakey: Keep Screen On",
       "hasBeta": true,
@@ -5469,7 +5487,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 474226976,
+      "productionVersionCode": 474227118,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5487,7 +5505,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 345212656,
+      "productionVersionCode": 345212742,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5974,6 +5992,15 @@
       "appName": "FV File Manager",
       "hasBeta": true,
       "productionVersionCode": 1698,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.fonlow.VAC",
+      "appName": "Eye Charts",
+      "hasBeta": true,
+      "productionVersionCode": 155,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6810,7 +6837,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068739428,
+      "productionVersionCode": 1068739440,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8168,7 +8195,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385010801,
+      "productionVersionCode": 385111379,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9024,6 +9051,15 @@
       "appName": "Koodous Antivirus",
       "hasBeta": true,
       "productionVersionCode": 126,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.kortix.app",
+      "appName": "Kortix",
+      "hasBeta": true,
+      "productionVersionCode": 13,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -10982,6 +11018,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.multipleapp.clonespace",
+      "appName": "Multiple App",
+      "hasBeta": true,
+      "productionVersionCode": 7,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.musclewiki.macro",
       "appName": "MuscleWiki: Workout & Fitness",
       "hasBeta": true,
@@ -12566,6 +12611,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.playmini.miniworld",
+      "appName": "Mini World: CREATA",
+      "hasBeta": true,
+      "productionVersionCode": 67343,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.playvalve.ballsort",
       "appName": "Ball Sort Puz - Color Game",
       "hasBeta": true,
@@ -14136,6 +14190,15 @@
       "appName": "Reefin: Video Player",
       "hasBeta": true,
       "productionVersionCode": 84,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.shallwaystudio.nodevideo",
+      "appName": "Node Video",
+      "hasBeta": true,
+      "productionVersionCode": 677,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -15863,7 +15926,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12258,
+      "productionVersionCode": 12260,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16304,7 +16367,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312205001,
+      "productionVersionCode": 312211005,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20409,6 +20472,15 @@
       "appName": "Catima — Loyalty Card Wallet",
       "hasBeta": true,
       "productionVersionCode": 168,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "me.highest.aviate",
+      "appName": "Aviate: Flight Companion",
+      "hasBeta": true,
+      "productionVersionCode": 210,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

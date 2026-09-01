@@ -2,19 +2,19 @@
   "rejected": [
     {
       "packageName": "com.google.android.apps.magazines",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788254838549
     },
     {
       "packageName": "com.google.android.apps.youtube.music",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788254838549
     },
     {
       "packageName": "com.google.android.deskclock",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788254838549
     },
     {
       "packageName": "it.mirko.beta",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788254838549
     },
     {
       "packageName": "fi.sok.skaupat",
@@ -54,7 +54,7 @@
     },
     {
       "packageName": "com.amazon.storm.lightning.client.aosp",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788254838549
     },
     {
       "packageName": "com.blinkslabs.blinkist.android",
@@ -62,7 +62,7 @@
     },
     {
       "packageName": "com.ebay.mobile",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788254838549
     },
     {
       "packageName": "com.geoguessr.app",
@@ -70,7 +70,7 @@
     },
     {
       "packageName": "com.google.audio.hearing.visualization.accessibility.scribe",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788254838549
     },
     {
       "packageName": "com.wireguard.android",
@@ -150,7 +150,7 @@
     },
     {
       "packageName": "com.samsung.android.spay",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788254838549
     },
     {
       "packageName": "com.tmobile.tuesdays",
@@ -166,19 +166,19 @@
     },
     {
       "packageName": "com.olacabs.customer",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788254838549
     },
     {
       "packageName": "in.gov.uidai.pehchaan",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788254838549
     },
     {
       "packageName": "in.startv.hotstar",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788254838549
     },
     {
       "packageName": "in.swiggy.android",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788254838549
     },
     {
       "packageName": "me.highest.aviate",
@@ -3643,6 +3643,10 @@
     {
       "packageName": "io.hgpoker.app",
       "rejectedAt": 1788173719038
+    },
+    {
+      "packageName": "com.planetmedia.paymentsloyalty.chedraui",
+      "rejectedAt": 1788254838549
     }
   ]
 }
