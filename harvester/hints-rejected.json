@@ -218,11 +218,11 @@
     },
     {
       "packageName": "com.foursquare.robin",
-      "rejectedAt": 1785743648973
+      "rejectedAt": 1788338989304
     },
     {
       "packageName": "com.kiloo.subwaysurf",
-      "rejectedAt": 1785743648973
+      "rejectedAt": 1788338989304
     },
     {
       "packageName": "com.nosmk.burgerking",
@@ -250,7 +250,7 @@
     },
     {
       "packageName": "com.apkmirror.helper.prod",
-      "rejectedAt": 1785743648973
+      "rejectedAt": 1788338989304
     },
     {
       "packageName": "com.bstar.intl",
@@ -3647,6 +3647,50 @@
     {
       "packageName": "com.planetmedia.paymentsloyalty.chedraui",
       "rejectedAt": 1788254838549
+    },
+    {
+      "packageName": "burgerking.com.br.appandroid",
+      "rejectedAt": 1788338989304
+    },
+    {
+      "packageName": "com.celularlegal",
+      "rejectedAt": 1788338989304
+    },
+    {
+      "packageName": "com.monefy.app.lite",
+      "rejectedAt": 1788338989304
+    },
+    {
+      "packageName": "com.nexstreaming.app.kinemasterfree",
+      "rejectedAt": 1788338989304
+    },
+    {
+      "packageName": "com.polvo.cincominutos",
+      "rejectedAt": 1788338989304
+    },
+    {
+      "packageName": "com.sonyericsson.pontofrio",
+      "rejectedAt": 1788338989304
+    },
+    {
+      "packageName": "com.starmakerinteractive.starmaker",
+      "rejectedAt": 1788338989304
+    },
+    {
+      "packageName": "com.studiosol.player.letras",
+      "rejectedAt": 1788338989304
+    },
+    {
+      "packageName": "com.wondershare.pdfelement",
+      "rejectedAt": 1788338989304
+    },
+    {
+      "packageName": "easynotes.notes.notepad.notebook.privatenotes.note",
+      "rejectedAt": 1788338989304
+    },
+    {
+      "packageName": "au.com.amp.myportfolio.android",
+      "rejectedAt": 1788338989304
     }
   ]
 }
