@@ -755,6 +755,18 @@
       "attempts": 3,
       "lastError": "AppNotFound: null",
       "lastErrorAt": 1788338989305
+    },
+    {
+      "packageName": "com.spotify.lite",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1788425960543
+    },
+    {
+      "packageName": "com.trendmicro.qrscan",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1788425960543
     }
   ]
 }

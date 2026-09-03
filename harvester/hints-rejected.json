@@ -262,7 +262,7 @@
     },
     {
       "packageName": "com.instagram.lite",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "com.collexo.payment",
@@ -270,7 +270,7 @@
     },
     {
       "packageName": "com.dede.android_eggs",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "com.delhitransport.onedelhi",
@@ -278,11 +278,11 @@
     },
     {
       "packageName": "com.google.android.apps.nbu.paisa.user",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "com.sonyliv",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "com.korbitec.property24",
@@ -314,7 +314,7 @@
     },
     {
       "packageName": "com.nothing.gallery",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "ru.citilink",
@@ -322,15 +322,15 @@
     },
     {
       "packageName": "com.estmob.android.sendanywhere",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "com.jpl.jiomart",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "com.xiaomi.midrop",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "com.atomberg.app",
@@ -342,11 +342,11 @@
     },
     {
       "packageName": "com.vivo.easyshare",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "com.vivo.website",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "in.upstox.app",
@@ -354,7 +354,7 @@
     },
     {
       "packageName": "com.google.ai.edge.gallery",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "ak.alizandro.smartaudiobookplayer",
@@ -382,15 +382,15 @@
     },
     {
       "packageName": "com.miui.android.fashiongallery",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "com.miui.videoplayer",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "com.mixplorer.silver",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "com.polyhistor.remoteme",
@@ -446,11 +446,11 @@
     },
     {
       "packageName": "com.binance.dev",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "com.bybit.app",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "cn.wps.moffice_i18n",
@@ -478,7 +478,7 @@
     },
     {
       "packageName": "com.whereismytrain.android",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "cris.org.in.prs.ima",
@@ -486,11 +486,11 @@
     },
     {
       "packageName": "org.cris.aikyam",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "tech.butterfly.app",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788425960541
     },
     {
       "packageName": "co.za.oneplan",
@@ -3691,6 +3691,98 @@
     {
       "packageName": "au.com.amp.myportfolio.android",
       "rejectedAt": 1788338989304
+    },
+    {
+      "packageName": "com.tpuc.gp",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "it.unieuro.unieuro",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "app.avantis.rket",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "co.yindii",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "com.bss.rabbitmobileapp",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "com.capital.investmate",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "com.cashcoach.app",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "com.hlpth.majorcineplex",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "com.jitta.wealth",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "com.krungsri.uchoose",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "com.minor.bonchon",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "com.nxp.nfc.tagwriter",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "com.premise.android.prod",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "com.silentlexx.ffmpeggui",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "com.strafe.android",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "com.truelife.mobile.android.trueiservice",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "io.metamask",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "io.serialflow.terminal",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "me.magnum.melonds",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "onlymash.flexbooru.play",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "org.dayup.stocks.th",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "pl.dronline.nettools",
+      "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "pl.nextcamera",
+      "rejectedAt": 1788425960541
     }
   ]
 }
