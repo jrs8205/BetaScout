@@ -286,11 +286,11 @@
     },
     {
       "packageName": "com.korbitec.property24",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788512022872
     },
     {
       "packageName": "za.co.pnet.andr",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788512022872
     },
     {
       "packageName": "za.co.spar",
@@ -298,7 +298,7 @@
     },
     {
       "packageName": "app.lawnchair.play",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788512022872
     },
     {
       "packageName": "com.dewmobile.kuaiya.play",
@@ -646,11 +646,11 @@
     },
     {
       "packageName": "app.ijp.dskmode",
-      "rejectedAt": 1785912541385
+      "rejectedAt": 1788512022872
     },
     {
       "packageName": "app.ijp.mechanly",
-      "rejectedAt": 1785912541385
+      "rejectedAt": 1788512022872
     },
     {
       "packageName": "app.ijp.medianow",
@@ -810,7 +810,7 @@
     },
     {
       "packageName": "com.eventbrite.attendee",
-      "rejectedAt": 1785912541385
+      "rejectedAt": 1788512022872
     },
     {
       "packageName": "com.flipkart.shopsy",
@@ -830,7 +830,7 @@
     },
     {
       "packageName": "com.google.android.apps.books",
-      "rejectedAt": 1785912541385
+      "rejectedAt": 1788512022872
     },
     {
       "packageName": "com.healthkart.healthkart",
@@ -3783,6 +3783,26 @@
     {
       "packageName": "pl.nextcamera",
       "rejectedAt": 1788425960541
+    },
+    {
+      "packageName": "rubicoin.rubicoinlearn",
+      "rejectedAt": 1788512022872
+    },
+    {
+      "packageName": "cc.forestapp",
+      "rejectedAt": 1788512022872
+    },
+    {
+      "packageName": "com.game.pwm",
+      "rejectedAt": 1788512022872
+    },
+    {
+      "packageName": "com.chatbot.ai.aichat.openaibot.chat",
+      "rejectedAt": 1788512022872
+    },
+    {
+      "packageName": "com.themeart.icons.widgets",
+      "rejectedAt": 1788512022872
     }
   ]
 }

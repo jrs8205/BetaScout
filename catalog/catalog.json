@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1788425960545,
+  "generatedAt": 1788512022876,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -2058,7 +2058,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 797707504,
+      "productionVersionCode": 797708204,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3468,6 +3468,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.bubbleshooter.popbubbles.shootbubblesgame",
+      "appName": "Bubble Shooter - Pop Bubbles",
+      "hasBeta": true,
+      "productionVersionCode": 214,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.bubblesoft.android.bubbleupnp",
       "appName": "BubbleUPnP for DLNA/Chromecast",
       "hasBeta": true,
@@ -4300,6 +4309,15 @@
       "appName": "Eptura Engage",
       "hasBeta": true,
       "productionVersionCode": 297,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.confirmtkt.lite",
+      "appName": "ConfirmTkt: Train Booking App",
+      "hasBeta": true,
+      "productionVersionCode": 491,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5685,7 +5703,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 345212742,
+      "productionVersionCode": 345414158,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7223,7 +7241,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561295275,
+      "productionVersionCode": 1561190505,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8420,7 +8438,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385111347,
+      "productionVersionCode": 385111379,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9716,7 +9734,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 215000,
+      "productionVersionCode": 215100,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12857,7 +12875,7 @@
       "packageName": "com.pinterest",
       "appName": "Pinterest",
       "hasBeta": true,
-      "productionVersionCode": 14338020,
+      "productionVersionCode": 14348020,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16367,7 +16385,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12264,
+      "productionVersionCode": 12266,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16817,7 +16835,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312220001,
+      "productionVersionCode": 312230001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -17798,7 +17816,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 263307622,
+      "productionVersionCode": 263408100,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -23149,6 +23167,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "ru.andr7e.wifimonitor",
+      "appName": "Wi-Fi Monitor",
+      "hasBeta": true,
+      "productionVersionCode": 34,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "ru.androidtools.imagetowallpaper",
       "appName": "Image to Wallpaper",
       "hasBeta": true,
@@ -23356,6 +23383,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "se.erikfahlen.obscontroller",
+      "appName": "OBS Controller",
+      "hasBeta": true,
+      "productionVersionCode": 33,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "se.footballaddicts.livescore",
       "appName": "Forza Football - Soccer Scores",
       "hasBeta": true,
@@ -23414,6 +23450,15 @@
       "appName": "Gesture Shortcut - Gesture Go",
       "hasBeta": true,
       "productionVersionCode": 229,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "sh.gufeng.tempest",
+      "appName": "Tempest 3: SSH, RDP, Mosh",
+      "hasBeta": true,
+      "productionVersionCode": 25890,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -23635,10 +23680,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "tech.ula",
+      "appName": "UserLAnd - Linux on Android",
+      "hasBeta": true,
+      "productionVersionCode": 22835473,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "tech.vietbyte.floatytouch",
       "appName": "Floaty Touch: On-Screen AI",
       "hasBeta": true,
       "productionVersionCode": 2113,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "th.co.carrotrewards",
+      "appName": "Rabbit Rewards",
+      "hasBeta": true,
+      "productionVersionCode": 4451,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -23671,10 +23734,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "tk.toolkeys.mtools",
+      "appName": "MTools - Mifare ACR122 PN532",
+      "hasBeta": true,
+      "productionVersionCode": 459,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "to.blend.mobile_app",
       "appName": "Blend: AI Videos Logos Try On",
       "hasBeta": true,
       "productionVersionCode": 1475,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "tools.uncle.network",
+      "appName": "iPerf3",
+      "hasBeta": true,
+      "productionVersionCode": 22,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -24044,6 +24125,15 @@
       "appName": "glinet",
       "hasBeta": true,
       "productionVersionCode": 270,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "xyz.gyroflow",
+      "appName": "Gyroflow",
+      "hasBeta": true,
+      "productionVersionCode": 2453,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
