@@ -378,7 +378,7 @@
     },
     {
       "packageName": "com.lookandfeel.cleanerforwhatsapp",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1788596651581
     },
     {
       "packageName": "com.miui.android.fashiongallery",
@@ -678,7 +678,7 @@
     },
     {
       "packageName": "cn.wps.moffice_eng",
-      "rejectedAt": 1785912541385
+      "rejectedAt": 1788596651581
     },
     {
       "packageName": "co.intellect.app",
@@ -750,7 +750,7 @@
     },
     {
       "packageName": "com.bsbportal.music",
-      "rejectedAt": 1785912541385
+      "rejectedAt": 1788596651581
     },
     {
       "packageName": "com.bulkd.app",
@@ -954,7 +954,7 @@
     },
     {
       "packageName": "com.olx.southasia",
-      "rejectedAt": 1785999129755
+      "rejectedAt": 1788596651581
     },
     {
       "packageName": "com.oneplus.opsports",
@@ -1026,7 +1026,7 @@
     },
     {
       "packageName": "com.sparkine.widgets",
-      "rejectedAt": 1785999129755
+      "rejectedAt": 1788596651581
     },
     {
       "packageName": "com.sticker.app.aisticker.android",
@@ -1194,7 +1194,7 @@
     },
     {
       "packageName": "tk.zwander.lockscreenwidgets",
-      "rejectedAt": 1785999129755
+      "rejectedAt": 1788596651581
     },
     {
       "packageName": "tk.zwander.rootactivitylauncher",
@@ -1218,7 +1218,7 @@
     },
     {
       "packageName": "com.fampay.in",
-      "rejectedAt": 1785999129755
+      "rejectedAt": 1788596651581
     },
     {
       "packageName": "com.marrow",
@@ -1226,7 +1226,7 @@
     },
     {
       "packageName": "in.gov.umang.negd.g2c",
-      "rejectedAt": 1785999129755
+      "rejectedAt": 1788596651581
     },
     {
       "packageName": "ke.co.equitygroup.equitymobile",
@@ -3803,6 +3803,14 @@
     {
       "packageName": "com.themeart.icons.widgets",
       "rejectedAt": 1788512022872
+    },
+    {
+      "packageName": "com.app_by_LZ.calendar_alarm_clock",
+      "rejectedAt": 1788596651581
+    },
+    {
+      "packageName": "sk.mildev84.reminder",
+      "rejectedAt": 1788596651581
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1788512022876,
+  "generatedAt": 1788596651586,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -1707,7 +1707,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
       "hasBeta": true,
-      "productionVersionCode": 1932048364,
+      "productionVersionCode": 1932048379,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3067,6 +3067,15 @@
       "appName": "BeReal. Your friends for real.",
       "hasBeta": true,
       "productionVersionCode": 3590760,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bestweatherfor.bibleoffline_pt_ra",
+      "appName": "Holy Bible Offline KJV + Audio",
+      "hasBeta": true,
+      "productionVersionCode": 36118400,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5376,6 +5385,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.emileyt_iptv_player",
+      "appName": "Emileyt IPTV & M3U Player",
+      "hasBeta": true,
+      "productionVersionCode": 143,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.emirates.ek.android",
       "appName": "Emirates",
       "hasBeta": true,
@@ -6420,6 +6438,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.frozenfrog.Dungeon2",
+      "appName": "Dungeon Survival 2",
+      "hasBeta": true,
+      "productionVersionCode": 2030201,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.fsck.k9",
       "appName": "K-9 Mail",
       "hasBeta": true,
@@ -7241,7 +7268,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561190505,
+      "productionVersionCode": 1561295275,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9438,6 +9465,15 @@
       "appName": "My Kyivstar: mobile services",
       "hasBeta": true,
       "productionVersionCode": 24123,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.kyy.tubevideosB",
+      "appName": "ShortsHub – Daily Short Videos",
+      "hasBeta": true,
+      "productionVersionCode": 115,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -11954,6 +11990,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.nrubintech.finale",
+      "appName": "Finale for Last.fm",
+      "hasBeta": true,
+      "productionVersionCode": 53,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ntslive.ntsradio",
       "appName": "NTS Radio: Music Discovery",
       "hasBeta": true,
@@ -13631,7 +13676,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2635090,
+      "productionVersionCode": 2633220,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15188,7 +15233,7 @@
       "packageName": "com.spotify.music",
       "appName": "Spotify: Music and Podcasts",
       "hasBeta": true,
-      "productionVersionCode": 145505446,
+      "productionVersionCode": 145767611,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15612,6 +15657,15 @@
       "appName": "Swann Security",
       "hasBeta": true,
       "productionVersionCode": 794,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.sweet.candy.match.gp",
+      "appName": "Sweet Candy Match: Puzzle Game",
+      "hasBeta": true,
+      "productionVersionCode": 203000,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -16385,7 +16439,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12266,
+      "productionVersionCode": 12268,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16835,7 +16889,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312230001,
+      "productionVersionCode": 312231001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22550,6 +22604,15 @@
       "appName": "M64Plus FZ Pro Emulator",
       "hasBeta": true,
       "productionVersionCode": 332,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.myklos.inote",
+      "appName": "Tasks & Notes",
+      "hasBeta": true,
+      "productionVersionCode": 1200000021,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
