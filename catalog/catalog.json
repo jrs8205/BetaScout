@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1788596651586,
+  "generatedAt": 1788684165513,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -97,6 +97,15 @@
       "appName": "OpenClaw",
       "hasBeta": true,
       "productionVersionCode": 2026070301,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ai.oravo",
+      "appName": "Oravo AI Voice Typing Keyboard",
+      "hasBeta": true,
+      "productionVersionCode": 25,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -241,6 +250,15 @@
       "appName": "AAWireless for Android Auto™",
       "hasBeta": true,
       "productionVersionCode": 7062659,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "app.adbotg.shell",
+      "appName": "ADB OTG - Shell",
+      "hasBeta": true,
+      "productionVersionCode": 16,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2058,7 +2076,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 797708204,
+      "productionVersionCode": 797707504,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3148,6 +3166,15 @@
       "appName": "bilibili - All Your Fav Videos",
       "hasBeta": true,
       "productionVersionCode": 9060400,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bitby.twitchtv",
+      "appName": "TwiX: Live for Twitch",
+      "hasBeta": true,
+      "productionVersionCode": 111,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5479,6 +5506,15 @@
       "appName": "Geominders: GPS Alarm Reminder",
       "hasBeta": true,
       "productionVersionCode": 46,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.esotech.waplus",
+      "appName": "WhatsApp Tool : WAPlus Ultra",
+      "hasBeta": true,
+      "productionVersionCode": 74,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -8465,7 +8501,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385111379,
+      "productionVersionCode": 385111338,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -13676,7 +13712,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2633220,
+      "productionVersionCode": 2635090,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
