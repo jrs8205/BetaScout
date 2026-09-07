@@ -22,7 +22,7 @@
     },
     {
       "packageName": "de.axelspringer.yana.zeropage",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788773072581
     },
     {
       "packageName": "au.com.amaysim.android",
@@ -1086,7 +1086,7 @@
     },
     {
       "packageName": "filemanager.ai.personnel.assistant",
-      "rejectedAt": 1785999129755
+      "rejectedAt": 1788773072581
     },
     {
       "packageName": "flar2.homebutton",
@@ -1198,7 +1198,7 @@
     },
     {
       "packageName": "tk.zwander.rootactivitylauncher",
-      "rejectedAt": 1785999129755
+      "rejectedAt": 1788773072581
     },
     {
       "packageName": "xyz.slingshot.ashley.app",
@@ -1506,7 +1506,7 @@
     },
     {
       "packageName": "com.pashapuma.oneyou.themed",
-      "rejectedAt": 1786166131268
+      "rejectedAt": 1788773072581
     },
     {
       "packageName": "com.pashapuma.pix.material.you.dark",
@@ -1682,7 +1682,7 @@
     },
     {
       "packageName": "me.timschneeberger.rootlessjamesdsp",
-      "rejectedAt": 1786166131268
+      "rejectedAt": 1788773072581
     },
     {
       "packageName": "com.motorola.ccc.notification",
@@ -1706,7 +1706,7 @@
     },
     {
       "packageName": "com.camel.corp.universalcopy",
-      "rejectedAt": 1786166131268
+      "rejectedAt": 1788773072581
     },
     {
       "packageName": "com.cinopsys.movieshows",
@@ -3827,6 +3827,54 @@
     {
       "packageName": "com.mealawe.app",
       "rejectedAt": 1788684165510
+    },
+    {
+      "packageName": "com.tgv.afterhours",
+      "rejectedAt": 1788773072581
+    },
+    {
+      "packageName": "com.kik.pol.loyaltyapplication",
+      "rejectedAt": 1788773072581
+    },
+    {
+      "packageName": "com.play.play24m",
+      "rejectedAt": 1788773072581
+    },
+    {
+      "packageName": "com.softhis.tui",
+      "rejectedAt": 1788773072581
+    },
+    {
+      "packageName": "pl.gov.cez.mojeikp",
+      "rejectedAt": 1788773072581
+    },
+    {
+      "packageName": "pl.nask.mobywatel",
+      "rejectedAt": 1788773072581
+    },
+    {
+      "packageName": "pl.orlen.vitay",
+      "rejectedAt": 1788773072581
+    },
+    {
+      "packageName": "pl.pracuj.android.jobsearcher",
+      "rejectedAt": 1788773072581
+    },
+    {
+      "packageName": "taxi.android.client",
+      "rejectedAt": 1788773072581
+    },
+    {
+      "packageName": "com.tribab.tricount.android",
+      "rejectedAt": 1788773072581
+    },
+    {
+      "packageName": "com.bskyb.nowtv.beta",
+      "rejectedAt": 1788773072581
+    },
+    {
+      "packageName": "com.quicktext.smsorganizer.schedulermsg",
+      "rejectedAt": 1788773072581
     }
   ]
 }

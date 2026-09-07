@@ -182,45 +182,39 @@
     },
     {
       "packageName": "com.microsoft.lists.public",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786166131269
+      "lastErrorAt": 1788773072582
     },
     {
       "packageName": "com.smartkit.ios26widgets",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786166131269
+      "lastErrorAt": 1788773072582
     },
     {
       "packageName": "com.snapmint.customerapp",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786166131269
+      "lastErrorAt": 1788773072582
     },
     {
       "packageName": "com.tatacliq.palette",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786166131269
-    },
-    {
-      "packageName": "com.tgv.afterhours",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786166131269
+      "lastErrorAt": 1788773072582
     },
     {
       "packageName": "dev.khoj.app",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786166131269
+      "lastErrorAt": 1788773072582
     },
     {
       "packageName": "com.whizdm.moneyview.loans",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786166131269
+      "lastErrorAt": 1788773072582
     },
     {
       "packageName": "com.google.android.apps.betterbug",

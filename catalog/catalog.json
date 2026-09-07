@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1788684165513,
+  "generatedAt": 1788773072584,
   "programs": [
     {
       "packageName": "adarshurs.android.vlcmobileremote",
@@ -939,6 +939,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "br.com.gabba.Caixa",
+      "appName": "CAIXA",
+      "hasBeta": true,
+      "productionVersionCode": 3582,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "br.com.intermedium",
       "appName": "Inter Banking & Money Transfer",
       "hasBeta": true,
@@ -1384,6 +1393,15 @@
       "appName": "CSSBuy",
       "hasBeta": true,
       "productionVersionCode": 624,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "co.conscioussai.android",
+      "appName": "Consciouss: Personal AI Agent",
+      "hasBeta": true,
+      "productionVersionCode": 15,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2076,7 +2094,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 797707504,
+      "productionVersionCode": 797708204,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -4021,6 +4039,15 @@
       "appName": "PalerMobilità",
       "hasBeta": true,
       "productionVersionCode": 59,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.citynav.jakdojade.pl.android",
+      "appName": "Jakdojade: public transport",
+      "hasBeta": true,
+      "productionVersionCode": 2850,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7814,6 +7841,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.herewallet",
+      "appName": "NEAR Crypto wallet - HERE",
+      "hasBeta": true,
+      "productionVersionCode": 222,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.herman.ringtone",
       "appName": "Ringtone Maker:create ringtone",
       "hasBeta": true,
@@ -8151,6 +8187,15 @@
       "appName": "Hushed: US Second Phone Number",
       "hasBeta": true,
       "productionVersionCode": 100038,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.hv.replaio",
+      "appName": "Replaio Radio",
+      "hasBeta": true,
+      "productionVersionCode": 2500339,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -8501,7 +8546,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385111338,
+      "productionVersionCode": 385111379,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -13250,6 +13295,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.pranavpandey.theme",
+      "appName": "Palettes: Theme & Wallpaper",
+      "hasBeta": true,
+      "productionVersionCode": 150,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.prequel.app",
       "appName": "PREQUEL AI Filter Photo Editor",
       "hasBeta": true,
@@ -15144,6 +15198,15 @@
       "appName": "SoFi: Bank, Investing & Crypto",
       "hasBeta": true,
       "productionVersionCode": 194240804,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.sokoban.puzzle",
+      "appName": "Sokoban Puzzle",
+      "hasBeta": true,
+      "productionVersionCode": 11,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18893,6 +18956,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "cz.seznam.mapy",
+      "appName": "Mapy.com: Offline Outdoor Maps",
+      "hasBeta": true,
+      "productionVersionCode": 26090101,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "daldev.android.gradehelper",
       "appName": "School Planner",
       "hasBeta": true,
@@ -21449,6 +21521,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "mobi.mangatoon.novel.portuguese",
+      "appName": "NovelToon: Read Books, Stories",
+      "hasBeta": true,
+      "productionVersionCode": 21595,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "moe.apex.breadboard",
       "appName": "Breadboard: Discover Artwork",
       "hasBeta": true,
@@ -23014,6 +23095,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "pl.orange.mojeorange",
+      "appName": "Mój Orange",
+      "hasBeta": true,
+      "productionVersionCode": 66226,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "pl.revanmj.toastsource",
       "appName": "Toast Source",
       "hasBeta": true,
@@ -23450,6 +23540,15 @@
       "appName": "Yandex Maps and Navigator",
       "hasBeta": true,
       "productionVersionCode": 739523110,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ru.ytkab0bp.slicebeam",
+      "appName": "Slice Beam",
+      "hasBeta": true,
+      "productionVersionCode": 109,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
