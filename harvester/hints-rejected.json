@@ -50,7 +50,7 @@
     },
     {
       "packageName": "com.adguard.email",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788857717327
     },
     {
       "packageName": "com.amazon.storm.lightning.client.aosp",
@@ -158,7 +158,7 @@
     },
     {
       "packageName": "org.freepoc.wearinstaller2",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1788857717327
     },
     {
       "packageName": "com.digilocker.android",
@@ -230,7 +230,7 @@
     },
     {
       "packageName": "com.olioex.android",
-      "rejectedAt": 1785743648973
+      "rejectedAt": 1788857717327
     },
     {
       "packageName": "com.urbandroid.sleep",
@@ -1022,7 +1022,7 @@
     },
     {
       "packageName": "com.sparkine.muvizedge",
-      "rejectedAt": 1785999129755
+      "rejectedAt": 1788857717327
     },
     {
       "packageName": "com.sparkine.widgets",
@@ -1322,7 +1322,7 @@
     },
     {
       "packageName": "com.tesco.grocery.view",
-      "rejectedAt": 1786082222620
+      "rejectedAt": 1788857717327
     },
     {
       "packageName": "com.toffeeshare.android",
@@ -1470,7 +1470,7 @@
     },
     {
       "packageName": "com.booking",
-      "rejectedAt": 1786166131268
+      "rejectedAt": 1788857717327
     },
     {
       "packageName": "com.bshg.homeconnect.android.release",
@@ -1702,7 +1702,7 @@
     },
     {
       "packageName": "com.audiobookshelf.app",
-      "rejectedAt": 1786166131268
+      "rejectedAt": 1788857717327
     },
     {
       "packageName": "com.camel.corp.universalcopy",
@@ -1734,7 +1734,7 @@
     },
     {
       "packageName": "io.raindrop.raindropio",
-      "rejectedAt": 1786166131268
+      "rejectedAt": 1788857717327
     },
     {
       "packageName": "seesaw.shadowpuppet.co.classroom",
@@ -1806,7 +1806,7 @@
     },
     {
       "packageName": "uk.gov.tfl.gotfl",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1788857717327
     },
     {
       "packageName": "com.progdigy.cdisplay",
@@ -1846,7 +1846,7 @@
     },
     {
       "packageName": "com.tempmail",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1788857717327
     },
     {
       "packageName": "de.arbeitsagentur.jobcenter",
@@ -1986,7 +1986,7 @@
     },
     {
       "packageName": "com.einnovation.temu",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1788857717327
     },
     {
       "packageName": "com.lknninex.enix",
@@ -3875,6 +3875,22 @@
     {
       "packageName": "com.quicktext.smsorganizer.schedulermsg",
       "rejectedAt": 1788773072581
+    },
+    {
+      "packageName": "com.devsukamaju.aiphoto.photoeditor.videogeneration",
+      "rejectedAt": 1788857717327
+    },
+    {
+      "packageName": "com.fitbit.FitbitMobile",
+      "rejectedAt": 1788857717327
+    },
+    {
+      "packageName": "com.google.android.apps.labs.lotus",
+      "rejectedAt": 1788857717327
+    },
+    {
+      "packageName": "org.thayyil.ringdroid",
+      "rejectedAt": 1788857717327
     }
   ]
 }
