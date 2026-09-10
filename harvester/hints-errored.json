@@ -320,33 +320,33 @@
     },
     {
       "packageName": "com.aatorque.carstats",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1789030789987
     },
     {
       "packageName": "com.emilkrebs.watchlock",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1789030789987
     },
     {
       "packageName": "io.github.domi04151309.alwayson",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1789030789987
     },
     {
       "packageName": "com.rubenmayayo.reddit",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1789030789987
     },
     {
       "packageName": "com.potentialproject.app",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786426385330
+      "lastErrorAt": 1789030789987
     },
     {
       "packageName": "com.samruston.luci",
@@ -767,6 +767,30 @@
       "attempts": 3,
       "lastError": "AppNotFound: null",
       "lastErrorAt": 1788684165511
+    },
+    {
+      "packageName": "com.droid.netflixIMDB",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1789030789987
+    },
+    {
+      "packageName": "com.givencity.m_ledger",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1789030789987
+    },
+    {
+      "packageName": "com.infinix.xshare",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1789030789987
+    },
+    {
+      "packageName": "com.lightweb",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1789030789987
     }
   ]
 }
