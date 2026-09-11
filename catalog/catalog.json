@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1789030789989,
+  "generatedAt": 1789117128097,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2184,7 +2184,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 797708204,
+      "productionVersionCode": 797708304,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2914,6 +2914,15 @@
       "appName": "Glide Launcher: privacy & AI",
       "hasBeta": true,
       "productionVersionCode": 117,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.azampay.azampesa",
+      "appName": "AzamPesa",
+      "hasBeta": true,
+      "productionVersionCode": 93,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4030,6 +4039,15 @@
       "appName": "Rethink: DNS + Firewall + VPN",
       "hasBeta": true,
       "productionVersionCode": 36,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.cerveceriamodelo.modelonow",
+      "appName": "Zé Delivery",
+      "hasBeta": true,
+      "productionVersionCode": 1135,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5295,6 +5313,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.douglas.upflix",
+      "appName": "Upflix: Streaming Guide",
+      "hasBeta": true,
+      "productionVersionCode": 414,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.downriver.safetag",
       "appName": "SafeTag Tracking",
       "hasBeta": true,
@@ -6000,7 +6027,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 345414158,
+      "productionVersionCode": 345613452,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6433,6 +6460,15 @@
       "appName": "FlightAware Flight Tracker",
       "hasBeta": true,
       "productionVersionCode": 501500500,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.flightconnections",
+      "appName": "FlightConnections",
+      "hasBeta": true,
+      "productionVersionCode": 6,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7449,7 +7485,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068751342,
+      "productionVersionCode": 1068763340,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7637,7 +7673,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561295275,
+      "productionVersionCode": 1561295689,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7908,6 +7944,15 @@
       "appName": "Gumroad",
       "hasBeta": true,
       "productionVersionCode": 360,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.gympass",
+      "appName": "Wellhub (Gympass)",
+      "hasBeta": true,
+      "productionVersionCode": 21462,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -8906,7 +8951,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385211231,
+      "productionVersionCode": 385211304,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9015,6 +9060,15 @@
       "appName": "CamScanner- scanner, PDF maker",
       "hasBeta": true,
       "productionVersionCode": 72202,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.investidor10app",
+      "appName": "Investidor10 - Bolsa e Mercado",
+      "hasBeta": true,
+      "productionVersionCode": 4350,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9186,6 +9240,15 @@
       "appName": "ixigo Train, Bus, Metro Ticket",
       "hasBeta": true,
       "productionVersionCode": 2004,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.izettle.android",
+      "appName": "PayPal POS (ex Zettle)",
+      "hasBeta": true,
+      "productionVersionCode": 83102,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9699,6 +9762,15 @@
       "appName": "Fuelio: gas log & gas prices",
       "hasBeta": true,
       "productionVersionCode": 3437,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.kajda.textbehindimage",
+      "appName": "Text Behind Image Editor",
+      "hasBeta": true,
+      "productionVersionCode": 40108,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -13394,6 +13466,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.photoenhancer.upscale.restore.photoeditor",
+      "appName": "Enhancio: AI Photo Enhancer",
+      "hasBeta": true,
+      "productionVersionCode": 9,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.photomanager.imagephotogallery",
       "appName": "Gallery",
       "hasBeta": true,
@@ -13862,6 +13943,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.primety.sodexomobile",
+      "appName": "Pluxee Brasil",
+      "hasBeta": true,
+      "productionVersionCode": 7129,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.prismtree.sponge",
       "appName": "Sponge - Gallery Cleaner",
       "hasBeta": true,
@@ -14306,7 +14396,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2635090,
+      "productionVersionCode": 2636090,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15045,6 +15135,15 @@
       "appName": "Star Trek Fleet Command",
       "hasBeta": true,
       "productionVersionCode": 100051385,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.scores365",
+      "appName": "365Scores: Live Sports Scores",
+      "hasBeta": true,
+      "productionVersionCode": 1492,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -16418,10 +16517,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.symantec.cleansweep",
+      "appName": "Norton Cleaner – Junk removal",
+      "hasBeta": true,
+      "productionVersionCode": 800011466,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.symantec.mobilesecurity",
       "appName": "Norton360 Antivirus & Security",
       "hasBeta": true,
       "productionVersionCode": 260831725,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.symantec.securewifi",
+      "appName": "Norton VPN – Fast & Secure",
+      "hasBeta": true,
+      "productionVersionCode": 260827727,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -16548,6 +16665,15 @@
       "appName": "Audify read aloud web browser",
       "hasBeta": true,
       "productionVersionCode": 1182,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.tangerino.app",
+      "appName": "Sólides",
+      "hasBeta": true,
+      "productionVersionCode": 202609091,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17177,7 +17303,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12272,
+      "productionVersionCode": 12276,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -17663,7 +17789,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312240002,
+      "productionVersionCode": 312250001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -17808,6 +17934,15 @@
       "appName": "Focus Friend by Hank Green",
       "hasBeta": true,
       "productionVersionCode": 260,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.unitpricecalculator",
+      "appName": "Unit Price Calculator",
+      "hasBeta": true,
+      "productionVersionCode": 36,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -20009,6 +20144,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "de.spiritcroc.syncsettings",
+      "appName": "Sync Settings Locale-Plugin",
+      "hasBeta": true,
+      "productionVersionCode": 10,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "de.storchp.opentracks.osmplugin",
       "appName": "OSM Dashboard for OpenTracks",
       "hasBeta": true,
@@ -21618,6 +21762,15 @@
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "io.invideo.ai",
+      "appName": "invideo AI: AI Video Generator",
+      "hasBeta": true,
+      "productionVersionCode": 445,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "io.lonepalm.retro",
@@ -24067,6 +24220,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "pl.onet.poczta",
+      "appName": "Onet Poczta",
+      "hasBeta": true,
+      "productionVersionCode": 597,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "pl.orange.mojeorange",
       "appName": "Mój Orange",
       "hasBeta": true,
@@ -24944,6 +25106,15 @@
       "appName": "Blend: AI Videos Logos Try On",
       "hasBeta": true,
       "productionVersionCode": 1475,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "todolist.scheduleplanner.dailyplanner.todo.reminders",
+      "appName": "Todoery: To Do List & Planner",
+      "hasBeta": true,
+      "productionVersionCode": 1000349,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

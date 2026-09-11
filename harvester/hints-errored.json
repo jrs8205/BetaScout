@@ -350,51 +350,45 @@
     },
     {
       "packageName": "com.samruston.luci",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786513809143
+      "lastErrorAt": 1789117128095
     },
     {
       "packageName": "com.google.mainline.go.primary",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786513809143
+      "lastErrorAt": 1789117128095
     },
     {
       "packageName": "com.google.mainline.go.telemetry",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786513809143
+      "lastErrorAt": 1789117128095
     },
     {
       "packageName": "com.secuso.privacyFriendlyCodeScanner",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786513809143
-    },
-    {
-      "packageName": "com.ubiquitly.magicmapperdlr",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786513809143
+      "lastErrorAt": 1789117128095
     },
     {
       "packageName": "eu.livesport.FlashScore_com",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786513809143
+      "lastErrorAt": 1789117128095
     },
     {
       "packageName": "com.urik.keyboard",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786513809143
+      "lastErrorAt": 1789117128095
     },
     {
       "packageName": "com.degoo.android",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786513809143
+      "lastErrorAt": 1789117128095
     },
     {
       "packageName": "com.joaomgcd.taskersettings",
@@ -770,27 +764,45 @@
     },
     {
       "packageName": "com.droid.netflixIMDB",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789030789987
+      "lastErrorAt": 1789117128095
     },
     {
       "packageName": "com.givencity.m_ledger",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789030789987
+      "lastErrorAt": 1789117128095
     },
     {
       "packageName": "com.infinix.xshare",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789030789987
+      "lastErrorAt": 1789117128095
     },
     {
       "packageName": "com.lightweb",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1789117128095
+    },
+    {
+      "packageName": "br.gov.caixa.loterias.apostas",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789030789987
+      "lastErrorAt": 1789117128095
+    },
+    {
+      "packageName": "com.norton.genieapp",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1789117128095
+    },
+    {
+      "packageName": "com.goodmooddroid.gestures",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1789117128095
     }
   ]
 }
