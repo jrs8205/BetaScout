@@ -78,7 +78,7 @@
     },
     {
       "packageName": "com.xiaomi.hm.health",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1789202451899
     },
     {
       "packageName": "com.zaneschepke.wireguardautotunnel",
@@ -90,11 +90,11 @@
     },
     {
       "packageName": "de.avm.android.fritzapp",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1789202451899
     },
     {
       "packageName": "de.avm.android.myfritz2",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1789202451899
     },
     {
       "packageName": "de.avm.android.smarthome",
@@ -102,7 +102,7 @@
     },
     {
       "packageName": "de.avm.android.wlanapp",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1789202451899
     },
     {
       "packageName": "de.blitzer.plus",
@@ -122,11 +122,11 @@
     },
     {
       "packageName": "de.payback.client.android",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1789202451899
     },
     {
       "packageName": "de.rewe.app.mobile",
-      "rejectedAt": 1785662233651
+      "rejectedAt": 1789202451899
     },
     {
       "packageName": "de.rtli.tvnow",
@@ -638,7 +638,7 @@
     },
     {
       "packageName": "app.comaps.google",
-      "rejectedAt": 1785912541385
+      "rejectedAt": 1789202451899
     },
     {
       "packageName": "app.ijp.callerfxid",
@@ -1798,7 +1798,7 @@
     },
     {
       "packageName": "com.jvelimited.vehiclesmart",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1789202451899
     },
     {
       "packageName": "com.t3tools.t3code",
@@ -1822,7 +1822,7 @@
     },
     {
       "packageName": "com.daikineurope.online.controller",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1789202451899
     },
     {
       "packageName": "com.nowtv.it",
@@ -1946,7 +1946,7 @@
     },
     {
       "packageName": "de.lidlconnect.android",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1789202451899
     },
     {
       "packageName": "de.noranotruf",
@@ -4055,6 +4055,46 @@
     {
       "packageName": "net.smartlauncher.beakynews",
       "rejectedAt": 1789117128094
+    },
+    {
+      "packageName": "com.pranshulgg.weather_master",
+      "rejectedAt": 1789202451899
+    },
+    {
+      "packageName": "com.retroarch",
+      "rejectedAt": 1789202451899
+    },
+    {
+      "packageName": "com.bgeraser.bg.edit.ai",
+      "rejectedAt": 1789202451899
+    },
+    {
+      "packageName": "com.screen.guard.screenguard.mm.app",
+      "rejectedAt": 1789202451899
+    },
+    {
+      "packageName": "ch.glue.android.awista",
+      "rejectedAt": 1789202451899
+    },
+    {
+      "packageName": "com.americanexpress.android.acctsvcs.de",
+      "rejectedAt": 1789202451899
+    },
+    {
+      "packageName": "com.bbva.germany",
+      "rejectedAt": 1789202451899
+    },
+    {
+      "packageName": "com.home24.android",
+      "rejectedAt": 1789202451899
+    },
+    {
+      "packageName": "com.tidemark.app",
+      "rejectedAt": 1789202451899
+    },
+    {
+      "packageName": "de.axa.noa",
+      "rejectedAt": 1789202451899
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1789117128097,
+  "generatedAt": 1789202451904,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -3072,6 +3072,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.barnabas.absorb",
+      "appName": "Absorb",
+      "hasBeta": true,
+      "productionVersionCode": 217,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.battlelancer.seriesguide",
       "appName": "SeriesGuide: Track TV & Movies",
       "hasBeta": true,
@@ -3301,6 +3310,15 @@
       "appName": "bigbasket: Groceries and more",
       "hasBeta": true,
       "productionVersionCode": 25115010,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bigdream.radar.speedcam",
+      "appName": "Speed Cameras Radar",
+      "hasBeta": true,
+      "productionVersionCode": 35174,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7584,7 +7602,7 @@
       "packageName": "com.google.android.gms",
       "appName": "Google Play services",
       "hasBeta": true,
-      "productionVersionCode": 263032029,
+      "productionVersionCode": 263332029,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9965,6 +9983,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.kss.calllogeditor",
+      "appName": "Call Log Editor & Backup",
+      "hasBeta": true,
+      "productionVersionCode": 10,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.kuma.recentcontactswidget",
       "appName": "Recent Contacts Widget",
       "hasBeta": true,
@@ -12290,7 +12317,7 @@
       "packageName": "com.netflix.mediaclient",
       "appName": "Netflix",
       "hasBeta": true,
-      "productionVersionCode": 74524,
+      "productionVersionCode": 74540,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -17498,6 +17525,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.tractive.android.gps",
+      "appName": "Tractive GPS for Cats & Dogs",
+      "hasBeta": true,
+      "productionVersionCode": 675,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.tradingview.tradingviewapp",
       "appName": "TradingView: Track All Markets",
       "hasBeta": true,
@@ -19680,6 +19716,15 @@
       "appName": "Zoho Mail - Email and Calendar",
       "hasBeta": true,
       "productionVersionCode": 220,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.zoho.sheet.android",
+      "appName": "Zoho Sheet: Spreadsheet App",
+      "hasBeta": true,
+      "productionVersionCode": 197,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -23195,6 +23240,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "no.easee.apps.easee.users",
+      "appName": "Easee",
+      "hasBeta": true,
+      "productionVersionCode": 22578,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "no.mobitroll.kahoot.android",
       "appName": "Kahoot! Play & Create Quizzes",
       "hasBeta": true,
@@ -24805,6 +24859,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "sg.parking.streetsmart",
+      "appName": "Parking.sg",
+      "hasBeta": true,
+      "productionVersionCode": 54,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "sh.gufeng.tempest",
       "appName": "Tempest 3: SSH, RDP, Mosh",
       "hasBeta": true,
@@ -25259,6 +25322,15 @@
       "appName": "Дія",
       "hasBeta": true,
       "productionVersionCode": 2904,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "uk.co.metrobankonline.mobile.android.production",
+      "appName": "Metro Bank",
+      "hasBeta": true,
+      "productionVersionCode": 10065,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
