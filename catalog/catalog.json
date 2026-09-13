@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1789202451904,
+  "generatedAt": 1789292159906,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2184,7 +2184,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 797708304,
+      "productionVersionCode": 801003604,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3054,6 +3054,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.bankinter.launcher",
+      "appName": "Bankinter Mobile",
+      "hasBeta": true,
+      "productionVersionCode": 26072310,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.banknorwegian",
       "appName": "Bank Norwegian",
       "hasBeta": true,
@@ -3562,6 +3571,15 @@
       "appName": "Gakugame - WaniKani Companion",
       "hasBeta": true,
       "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bolito2.rallygo",
+      "appName": "sideways — Rally GPS Navigator",
+      "hasBeta": true,
+      "productionVersionCode": 85,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6045,7 +6063,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 345613452,
+      "productionVersionCode": 345613435,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6505,6 +6523,15 @@
       "appName": "Flipper Mobile App",
       "hasBeta": true,
       "productionVersionCode": 1878,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.flipperdevices.busybar",
+      "appName": "BUSY – Advanced Focus Timer",
+      "hasBeta": true,
+      "productionVersionCode": 1067,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7691,7 +7718,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561295689,
+      "productionVersionCode": 1561296049,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8358,6 +8385,15 @@
       "appName": "PPFD Meter - Grow Light Meter",
       "hasBeta": true,
       "productionVersionCode": 103,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.homework.helper",
+      "appName": "GradeUp: Homework Scanner",
+      "hasBeta": true,
+      "productionVersionCode": 44,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9560,6 +9596,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.joaomgcd.autoapps",
+      "appName": "AutoLaunch",
+      "hasBeta": true,
+      "productionVersionCode": 32,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.joaomgcd.autoappshub",
       "appName": "AutoApps",
       "hasBeta": true,
@@ -9591,6 +9636,15 @@
       "appName": "AutoNotification",
       "hasBeta": true,
       "productionVersionCode": 182,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.joaomgcd.autoremote.lite",
+      "appName": "AutoRemoteLite",
+      "hasBeta": true,
+      "productionVersionCode": 112,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -10127,6 +10181,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.leadaxe.lxbox",
+      "appName": "L×Box",
+      "hasBeta": true,
+      "productionVersionCode": 22301500,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.leadstepp.memecreator",
       "appName": "Memingo: Meme Maker & Collage",
       "hasBeta": true,
@@ -10536,6 +10599,15 @@
       "appName": "X-plore File Manager",
       "hasBeta": true,
       "productionVersionCode": 44901,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.loop.clear.cube.free.card.puzzle.sort.match",
+      "appName": "Loop Master™: Color Jam Sort",
+      "hasBeta": true,
+      "productionVersionCode": 24,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17660,6 +17732,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.truecourse.FerryFriend",
+      "appName": "FerryFriend",
+      "hasBeta": true,
+      "productionVersionCode": 5000122,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.trueilm.ltd",
       "appName": "True Ilm: Audiobooks & eBooks",
       "hasBeta": true,
@@ -19334,6 +19415,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.yalla.yallagames",
+      "appName": "Yalla Ludo - Ludo&Jackaroo",
+      "hasBeta": true,
+      "productionVersionCode": 1050104,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.yammer.v1",
       "appName": "Viva Engage",
       "hasBeta": true,
@@ -20724,6 +20814,15 @@
       "appName": "Image & Video Date Fixer",
       "hasBeta": true,
       "productionVersionCode": 30800010,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "eu.europa.ec.ecas",
+      "appName": "EU Login",
+      "hasBeta": true,
+      "productionVersionCode": 202001,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

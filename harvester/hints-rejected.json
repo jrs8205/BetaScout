@@ -414,7 +414,7 @@
     },
     {
       "packageName": "org.kde.kdeconnect_tp",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1789292159902
     },
     {
       "packageName": "com.beyachadproject",
@@ -502,7 +502,7 @@
     },
     {
       "packageName": "com.dgt.midgt",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1789292159902
     },
     {
       "packageName": "app.storysurf.app",
@@ -554,11 +554,11 @@
     },
     {
       "packageName": "air.RTE.OSMF.Minimal",
-      "rejectedAt": 1785912541385
+      "rejectedAt": 1789292159902
     },
     {
       "packageName": "com.agni.dina.weather.ai",
-      "rejectedAt": 1785912541385
+      "rejectedAt": 1789292159902
     },
     {
       "packageName": "com.americanexpress.android.acctsvcs.in",
@@ -1162,11 +1162,11 @@
     },
     {
       "packageName": "org.kustom.lockscreen",
-      "rejectedAt": 1785999129755
+      "rejectedAt": 1789292159902
     },
     {
       "packageName": "org.kustom.lockscreen.pro",
-      "rejectedAt": 1785999129755
+      "rejectedAt": 1789292159902
     },
     {
       "packageName": "org.torproject.torbrowser",
@@ -2006,7 +2006,7 @@
     },
     {
       "packageName": "jp.co.br31ice.android.thirtyoneclub",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1789292159902
     },
     {
       "packageName": "com.behance.behance",
@@ -2694,7 +2694,7 @@
     },
     {
       "packageName": "com.owletcare.owletcare",
-      "rejectedAt": 1786513809141
+      "rejectedAt": 1789292159902
     },
     {
       "packageName": "com.cardpointers.app",
@@ -4095,6 +4095,42 @@
     {
       "packageName": "de.axa.noa",
       "rejectedAt": 1789202451899
+    },
+    {
+      "packageName": "com.ray.notificationwidget",
+      "rejectedAt": 1789292159902
+    },
+    {
+      "packageName": "com.drdisagree.depthly",
+      "rejectedAt": 1789292159902
+    },
+    {
+      "packageName": "com.textra",
+      "rejectedAt": 1789292159902
+    },
+    {
+      "packageName": "com.orange.es.orangetv",
+      "rejectedAt": 1789292159902
+    },
+    {
+      "packageName": "com.joaomgcd.autogmail",
+      "rejectedAt": 1789292159902
+    },
+    {
+      "packageName": "com.joaomgcd.autophoto",
+      "rejectedAt": 1789292159902
+    },
+    {
+      "packageName": "com.joaomgcd.autoweb",
+      "rejectedAt": 1789292159902
+    },
+    {
+      "packageName": "com.joaomgcd.autoyoutube",
+      "rejectedAt": 1789292159902
+    },
+    {
+      "packageName": "com.beyondzero.lens",
+      "rejectedAt": 1789292159902
     }
   ]
 }

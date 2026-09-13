@@ -446,69 +446,57 @@
     },
     {
       "packageName": "com.opera.max.oem",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
-    },
-    {
-      "packageName": "com.ray.notificationwidget",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1789292159904
     },
     {
       "packageName": "app.fanclubs.android",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1789292159904
     },
     {
       "packageName": "com.h3r3t1c.wear.btbattery",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1789292159904
     },
     {
       "packageName": "com.ncm.noovietrivia",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1789292159904
     },
     {
       "packageName": "com.notacult.walkscape",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1789292159904
     },
     {
       "packageName": "com.scannerradio_pro",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1789292159904
     },
     {
       "packageName": "social.ones.app",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1789292159904
     },
     {
       "packageName": "one.zagura.IonLauncher",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
-    },
-    {
-      "packageName": "com.drdisagree.depthly",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1789292159904
     },
     {
       "packageName": "threads.thor",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786686602994
+      "lastErrorAt": 1789292159904
     },
     {
       "packageName": "com.fidocredit",
@@ -776,21 +764,27 @@
     },
     {
       "packageName": "br.gov.caixa.loterias.apostas",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1789292159904
     },
     {
       "packageName": "com.norton.genieapp",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1789292159904
     },
     {
       "packageName": "com.goodmooddroid.gestures",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1789292159904
+    },
+    {
+      "packageName": "app.attestation.auditor",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1789292159904
     }
   ]
 }
