@@ -500,9 +500,9 @@
     },
     {
       "packageName": "com.fidocredit",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786769402990
+      "lastErrorAt": 1789379755476
     },
     {
       "packageName": "com.surfshark.free.proxy.trust.dns",
@@ -782,9 +782,9 @@
     },
     {
       "packageName": "app.attestation.auditor",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
+      "lastErrorAt": 1789379755476
     }
   ]
 }

@@ -454,7 +454,7 @@
     },
     {
       "packageName": "cn.wps.moffice_i18n",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1789379755474
     },
     {
       "packageName": "com.dpkay.apps.developer_options_toggler",
@@ -3062,7 +3062,7 @@
     },
     {
       "packageName": "com.grabtaxi.passenger",
-      "rejectedAt": 1786769402988
+      "rejectedAt": 1789379755474
     },
     {
       "packageName": "com.singtel.mysingtel",
@@ -4131,6 +4131,30 @@
     {
       "packageName": "com.beyondzero.lens",
       "rejectedAt": 1789292159902
+    },
+    {
+      "packageName": "com.kwai.bulldog",
+      "rejectedAt": 1789379755474
+    },
+    {
+      "packageName": "com.launcher.custom.phone.os",
+      "rejectedAt": 1789379755474
+    },
+    {
+      "packageName": "com.filter.camera.ccd.pro",
+      "rejectedAt": 1789379755474
+    },
+    {
+      "packageName": "com.venticake.retrica",
+      "rejectedAt": 1789379755474
+    },
+    {
+      "packageName": "com.hari.androidtvremote",
+      "rejectedAt": 1789379755474
+    },
+    {
+      "packageName": "com.evamall.evacustomer",
+      "rejectedAt": 1789379755474
     }
   ]
 }
