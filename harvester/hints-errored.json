@@ -506,27 +506,27 @@
     },
     {
       "packageName": "com.surfshark.free.proxy.trust.dns",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786855979668
+      "lastErrorAt": 1789464584813
     },
     {
       "packageName": "com.worldance.drama",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786855979668
+      "lastErrorAt": 1789464584813
     },
     {
       "packageName": "ch.admin.bag.dp3t",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786855979668
+      "lastErrorAt": 1789464584813
     },
     {
       "packageName": "org.kustom.apkmaker",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1786855979668
+      "lastErrorAt": 1789464584813
     },
     {
       "packageName": "com.bambuna.podcastaddictdonate",
@@ -782,9 +782,9 @@
     },
     {
       "packageName": "app.attestation.auditor",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789379755476
+      "lastErrorAt": 1789464584813
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1789379755478,
+  "generatedAt": 1789464584816,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2184,7 +2184,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 797708304,
+      "productionVersionCode": 801003604,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3832,6 +3832,15 @@
       "appName": "Perugia InApp",
       "hasBeta": true,
       "productionVersionCode": 28,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.caddish_hedgehog.hedgecam2",
+      "appName": "HedgeCam 2: Advanced Camera",
+      "hasBeta": true,
+      "productionVersionCode": 61,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7530,7 +7539,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068763340,
+      "productionVersionCode": 1068774593,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7718,7 +7727,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561295689,
+      "productionVersionCode": 1561295698,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9005,7 +9014,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385211272,
+      "productionVersionCode": 385211304,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11444,7 +11453,7 @@
       "packageName": "com.microsoft.skydrive",
       "appName": "Microsoft OneDrive",
       "hasBeta": true,
-      "productionVersionCode": 2027620202,
+      "productionVersionCode": 2027630102,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15806,6 +15815,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.simplemobilegenie",
+      "appName": "Genie AI Agent by Deva",
+      "hasBeta": true,
+      "productionVersionCode": 44,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.sirius",
       "appName": "SiriusXM: Music, Sports & News",
       "hasBeta": true,
@@ -16142,7 +16160,7 @@
       "packageName": "com.spotify.music",
       "appName": "Spotify: Music and Podcasts",
       "hasBeta": true,
-      "productionVersionCode": 146029328,
+      "productionVersionCode": 145767611,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16458,6 +16476,15 @@
       "appName": "WalP Pro - Stock HD Wallpapers",
       "hasBeta": true,
       "productionVersionCode": 76,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.stsheapps.contextfolder",
+      "appName": "ContextFolder: App Widget",
+      "hasBeta": true,
+      "productionVersionCode": 25,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17411,7 +17438,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12276,
+      "productionVersionCode": 12278,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -17610,6 +17637,15 @@
       "appName": "Tractive GPS for Cats & Dogs",
       "hasBeta": true,
       "productionVersionCode": 675,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.tradera",
+      "appName": "Tradera – buy & sell",
+      "hasBeta": true,
+      "productionVersionCode": 2030997826,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17915,7 +17951,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312250001,
+      "productionVersionCode": 312252001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -19577,6 +19613,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.yowatch.app",
+      "appName": "YoWatch: Watch Videos Together",
+      "hasBeta": true,
+      "productionVersionCode": 25,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ytheekshana.apkextractor",
       "appName": "APK & XAPK Extractor",
       "hasBeta": true,
@@ -20076,6 +20121,15 @@
       "appName": "VR SecureGo plus",
       "hasBeta": true,
       "productionVersionCode": 437014,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "de.foobarsoft.calendareventreminder",
+      "appName": "Calendar Event Reminder (CER)",
+      "hasBeta": true,
+      "productionVersionCode": 108,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

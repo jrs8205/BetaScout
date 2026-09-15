@@ -2538,7 +2538,7 @@
     },
     {
       "packageName": "io.github.jqssun.btremote",
-      "rejectedAt": 1786426385328
+      "rejectedAt": 1789464584812
     },
     {
       "packageName": "quick.read.app",
@@ -4155,6 +4155,18 @@
     {
       "packageName": "com.evamall.evacustomer",
       "rejectedAt": 1789379755474
+    },
+    {
+      "packageName": "com.adrix.scopi",
+      "rejectedAt": 1789464584812
+    },
+    {
+      "packageName": "com.filmic.filmicpro",
+      "rejectedAt": 1789464584812
+    },
+    {
+      "packageName": "com.fueled.afterlight",
+      "rejectedAt": 1789464584812
     }
   ]
 }
