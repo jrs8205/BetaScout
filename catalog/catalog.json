@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1789464584816,
+  "generatedAt": 1789550442743,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2184,7 +2184,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 801003604,
+      "productionVersionCode": 801003704,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3040,6 +3040,15 @@
       "appName": "BandLab – Music Making Studio",
       "hasBeta": true,
       "productionVersionCode": 11290400,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bang_olufsen.OneApp",
+      "appName": "Bang & Olufsen",
+      "hasBeta": true,
+      "productionVersionCode": 260902380,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5208,7 +5217,7 @@
       "packageName": "com.discord",
       "appName": "Discord - Talk, Play, Hang Out",
       "hasBeta": true,
-      "productionVersionCode": 344013,
+      "productionVersionCode": 345009,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5469,7 +5478,7 @@
       "packageName": "com.dropbox.android",
       "appName": "Dropbox: Secure Cloud Storage",
       "hasBeta": true,
-      "productionVersionCode": 48820200,
+      "productionVersionCode": 49020200,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5541,7 +5550,7 @@
       "packageName": "com.duolingo",
       "appName": "Duolingo: Language Lessons",
       "hasBeta": true,
-      "productionVersionCode": 2454,
+      "productionVersionCode": 2457,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6054,7 +6063,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 474426253,
+      "productionVersionCode": 474618932,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6235,6 +6244,15 @@
       "appName": "Feather",
       "hasBeta": true,
       "productionVersionCode": 109,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.felix.thefeed",
+      "appName": "The Feed: AI Social Network",
+      "hasBeta": true,
+      "productionVersionCode": 60,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7727,7 +7745,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561295698,
+      "productionVersionCode": 1561296049,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9389,6 +9407,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.jamworks.aodnotificationledlight",
+      "appName": "Notification light for Pixel",
+      "hasBeta": true,
+      "productionVersionCode": 41,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.jamworks.autoredialphonenumbers",
       "appName": "Auto Redial - smartRedial",
       "hasBeta": true,
@@ -9492,6 +9519,15 @@
       "appName": "RelaxSpace: Meditation Timer",
       "hasBeta": true,
       "productionVersionCode": 31,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.jda.mobility.wfmr",
+      "appName": "Blue Yonder Workforce",
+      "hasBeta": true,
+      "productionVersionCode": 332,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -10436,7 +10472,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 215300,
+      "productionVersionCode": 215500,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16139,6 +16175,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.spians.plenary",
+      "appName": "Plenary - RSS feeds, Podcasts",
+      "hasBeta": true,
+      "productionVersionCode": 60,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.spocky.projengmenu",
       "appName": "Projectivy Launcher",
       "hasBeta": true,
@@ -18398,6 +18443,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.vaultapp.savelinks",
+      "appName": "Vault — Save Links for Later",
+      "hasBeta": true,
+      "productionVersionCode": 9,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.vectorunit.purple.googleplay",
       "appName": "Beach Buggy Racing",
       "hasBeta": true,
@@ -20058,6 +20112,15 @@
       "appName": "OpenVPN for Android",
       "hasBeta": true,
       "productionVersionCode": 219,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "de.codestream.horus",
+      "appName": "Home Quest - Idle Adventure",
+      "hasBeta": true,
+      "productionVersionCode": 3136,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -22070,6 +22133,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "io.unifans",
+      "appName": "UniFans: Creators & Fans Hub",
+      "hasBeta": true,
+      "productionVersionCode": 26070915,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "io.voiapp.voi",
       "appName": "Voi – e-scooter & e-bike hire",
       "hasBeta": true,
@@ -22916,6 +22988,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "net.activitywatch.android",
+      "appName": "ActivityWatch",
+      "hasBeta": true,
+      "productionVersionCode": 42,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "net.adhikary.mrtbuddy",
       "appName": "MRT Buddy (for Dhaka City)",
       "hasBeta": true,
@@ -23109,6 +23190,15 @@
       "appName": "My Airtel - Bangladesh",
       "hasBeta": true,
       "productionVersionCode": 10000077,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "net.omobio.robisc",
+      "appName": "My Robi - Offers, Usage, More",
+      "hasBeta": true,
+      "productionVersionCode": 10000093,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -25012,6 +25102,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "sg.bigo.live",
+      "appName": "Bigo Live - Live Streaming App",
+      "hasBeta": true,
+      "productionVersionCode": 4137,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "sg.matchlab.gesturego",
       "appName": "Gesture Shortcut - Gesture Go",
       "hasBeta": true,
@@ -25106,6 +25205,15 @@
       "appName": "sand:box",
       "hasBeta": true,
       "productionVersionCode": 21192,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "so.sprk.app",
+      "appName": "Spark",
+      "hasBeta": true,
+      "productionVersionCode": 4389,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -25438,7 +25546,7 @@
       "packageName": "tv.twitch.android.app",
       "appName": "Twitch: Live Streaming",
       "hasBeta": true,
-      "productionVersionCode": 3101026,
+      "productionVersionCode": 3102006,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

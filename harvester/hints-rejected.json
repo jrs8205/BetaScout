@@ -578,7 +578,7 @@
     },
     {
       "packageName": "com.global.foodpanda.android",
-      "rejectedAt": 1785912541385
+      "rejectedAt": 1789550442738
     },
     {
       "packageName": "com.intellihealth.truemeds",
@@ -878,7 +878,7 @@
     },
     {
       "packageName": "com.jamworks.hyper.doubletaptosleepscreenoff",
-      "rejectedAt": 1785912541385
+      "rejectedAt": 1789550442738
     },
     {
       "packageName": "com.jaystudio.expense.upi.track.ultimateaiexpenseupitracker",
@@ -4167,6 +4167,18 @@
     {
       "packageName": "com.fueled.afterlight",
       "rejectedAt": 1789464584812
+    },
+    {
+      "packageName": "com.xb.car360.app",
+      "rejectedAt": 1789550442738
+    },
+    {
+      "packageName": "com.simplesync.app",
+      "rejectedAt": 1789550442738
+    },
+    {
+      "packageName": "net.fiper",
+      "rejectedAt": 1789550442738
     }
   ]
 }
