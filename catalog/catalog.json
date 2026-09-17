@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1789550442743,
+  "generatedAt": 1789637368920,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2184,7 +2184,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 801003704,
+      "productionVersionCode": 797708204,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2712,6 +2712,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.attobyte.myPesa",
+      "appName": "myPesa",
+      "hasBeta": true,
+      "productionVersionCode": 16,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.auctionmobility.auctions.recommerce412llc",
       "appName": "MAC.BID",
       "hasBeta": true,
@@ -2811,6 +2820,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.autonion.automationcompanion",
+      "appName": "Autonion: Android Automation",
+      "hasBeta": true,
+      "productionVersionCode": 11,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.AutoSist.Screens",
       "appName": "AUTOsist Fleet Maintenance App",
       "hasBeta": true,
@@ -2878,6 +2896,15 @@
       "appName": "AX TV Remote for Android TV",
       "hasBeta": true,
       "productionVersionCode": 31,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ax.remote",
+      "appName": "Remote Mouse & Keyboard | AX",
+      "hasBeta": true,
+      "productionVersionCode": 14,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4737,10 +4764,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.creed.statuszone_downloadermanager",
+      "appName": "Status Downloader",
+      "hasBeta": true,
+      "productionVersionCode": 16,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.creed.unisaver",
       "appName": "Unisaver: Browser Downloader",
       "hasBeta": true,
       "productionVersionCode": 66,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.creedmotions.status_clear",
+      "appName": "Upload HD Status: Quality Fix",
+      "hasBeta": true,
+      "productionVersionCode": 2,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5524,6 +5569,15 @@
       "appName": "TeraBox: 1TB Cloud & AI Space",
       "hasBeta": true,
       "productionVersionCode": 625,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.duc_app_lab_ind.pic_trim_app",
+      "appName": "Modipix: Film Lab & 3D LUT",
+      "hasBeta": true,
+      "productionVersionCode": 4806,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6816,6 +6870,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.freresmensah.imagesearch",
+      "appName": "Image Search Pro HD Downloader",
+      "hasBeta": true,
+      "productionVersionCode": 2471,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.friend.ios",
       "appName": "Omi AI - Smart Meeting Notes",
       "hasBeta": true,
@@ -7745,7 +7808,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561296049,
+      "productionVersionCode": 1561295707,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9032,7 +9095,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385211304,
+      "productionVersionCode": 385311927,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11498,7 +11561,7 @@
       "packageName": "com.microsoft.teams",
       "appName": "Microsoft Teams",
       "hasBeta": true,
-      "productionVersionCode": 2026162525,
+      "productionVersionCode": 2026163845,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11697,6 +11760,15 @@
       "appName": "Ultra Lock - App Lock & Vault",
       "hasBeta": true,
       "productionVersionCode": 55,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.miraisoft.shiori",
+      "appName": "Shiori for GI: Unofficial DB",
+      "hasBeta": true,
+      "productionVersionCode": 195,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -11940,6 +12012,15 @@
       "appName": "PC Remote",
       "hasBeta": true,
       "productionVersionCode": 144,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.moneko.mobile",
+      "appName": "Moneko AI: Track & Budget",
+      "hasBeta": true,
+      "productionVersionCode": 232,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -14549,7 +14630,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2636090,
+      "productionVersionCode": 2637050,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -19031,7 +19112,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 263507522,
+      "productionVersionCode": 263607422,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20621,6 +20702,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "dev.halim.shelfdroid",
+      "appName": "Shelfdroid",
+      "hasBeta": true,
+      "productionVersionCode": 24,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "dev.introdructor.wallique.app",
       "appName": "Wallique",
       "hasBeta": true,
@@ -20742,6 +20832,15 @@
       "appName": "FolderSync",
       "hasBeta": true,
       "productionVersionCode": 2020100209,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "dk.TrackMan.Range",
+      "appName": "Trackman Golf",
+      "hasBeta": true,
+      "productionVersionCode": 50411001,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

@@ -4179,6 +4179,62 @@
     {
       "packageName": "net.fiper",
       "rejectedAt": 1789550442738
+    },
+    {
+      "packageName": "com.slayd.tech",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "dr.blank.vaani",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "com.chatbrief.app",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "com.notigist",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "com.notirecall.app",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "org.noztek.coppy",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "ro.studio.moderncalculator",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "com.brawlboost.brawlboost",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "com.delhiveryConsigneeApp",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "com.shadowfax.courier",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "ahb.dev.stasisgallery.stasis_gallery",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "com.beyondzero.swipe",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "com.flawedkoncepts.dekaff",
+      "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "com.tool.decluttr",
+      "rejectedAt": 1789637368914
     }
   ]
 }

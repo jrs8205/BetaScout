@@ -530,15 +530,15 @@
     },
     {
       "packageName": "com.bambuna.podcastaddictdonate",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787028928900
+      "lastErrorAt": 1789637368916
     },
     {
       "packageName": "com.lowenhardt.inboxit",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787028928900
+      "lastErrorAt": 1789637368916
     },
     {
       "packageName": "com.blackberry.blackberrylauncher",
@@ -785,6 +785,18 @@
       "attempts": 3,
       "lastError": "AppNotFound: null",
       "lastErrorAt": 1789464584813
+    },
+    {
+      "packageName": "com.ringside.launcher",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1789637368916
+    },
+    {
+      "packageName": "com.duo.statusbar",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1789637368916
     }
   ]
 }
