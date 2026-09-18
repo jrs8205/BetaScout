@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1789637368920,
+  "generatedAt": 1789722189333,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2184,7 +2184,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 797708204,
+      "productionVersionCode": 801004904,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6135,7 +6135,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 345613452,
+      "productionVersionCode": 345815195,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7284,6 +7284,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.gianlu.aria2android",
+      "appName": "Aria2Android  (open source)",
+      "hasBeta": true,
+      "productionVersionCode": 77,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.giantturtle.automaticappstopper",
       "appName": "App manager and  launcher",
       "hasBeta": true,
@@ -7808,7 +7817,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561295707,
+      "productionVersionCode": 1561296049,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7818,6 +7827,15 @@
       "appName": "Chrome Remote Desktop",
       "hasBeta": true,
       "productionVersionCode": 1000000016,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.goover.ai",
+      "appName": "Goover: Your AI Research Agent",
+      "hasBeta": true,
+      "productionVersionCode": 156,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -10535,7 +10553,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 215500,
+      "productionVersionCode": 215600,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12515,7 +12533,7 @@
       "packageName": "com.netflix.mediaclient",
       "appName": "Netflix",
       "hasBeta": true,
-      "productionVersionCode": 74540,
+      "productionVersionCode": 74548,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -13829,7 +13847,7 @@
       "packageName": "com.pinterest",
       "appName": "Pinterest",
       "hasBeta": true,
-      "productionVersionCode": 14358020,
+      "productionVersionCode": 14368020,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -13983,6 +14001,15 @@
       "appName": "Gravity Screen - On/Off",
       "hasBeta": true,
       "productionVersionCode": 332000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.plugilo.plugiloprod",
+      "appName": "plugilo",
+      "hasBeta": true,
+      "productionVersionCode": 435,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -16097,7 +16124,7 @@
       "packageName": "com.snapchat.android",
       "appName": "Snapchat",
       "hasBeta": true,
-      "productionVersionCode": 313722,
+      "productionVersionCode": 315022,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16286,7 +16313,7 @@
       "packageName": "com.spotify.music",
       "appName": "Spotify: Music and Podcasts",
       "hasBeta": true,
-      "productionVersionCode": 145767611,
+      "productionVersionCode": 146029335,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16737,6 +16764,15 @@
       "appName": "Sweet Candy Match: Puzzle Game",
       "hasBeta": true,
       "productionVersionCode": 203000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.sweetsugar.cards",
+      "appName": "Digital Business card maker",
+      "hasBeta": true,
+      "productionVersionCode": 46,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -23618,6 +23654,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "norton.five.teleprompter",
+      "appName": "Teleprompter for Video",
+      "hasBeta": true,
+      "productionVersionCode": 311011,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "notion.id",
       "appName": "Notion: Notes, Tasks, AI",
       "hasBeta": true,
@@ -24448,7 +24493,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 70382,
+      "productionVersionCode": 70892,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -25649,6 +25694,15 @@
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "tz.go.ictc.jamiipocket",
+      "appName": "Jamii Pocket",
+      "hasBeta": true,
+      "productionVersionCode": 7,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "ua.com.abank",

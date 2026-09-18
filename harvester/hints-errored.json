@@ -542,39 +542,39 @@
     },
     {
       "packageName": "com.blackberry.blackberrylauncher",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787115300131
+      "lastErrorAt": 1789722189331
     },
     {
       "packageName": "com.blackberry.passwordkeeper",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787115300131
+      "lastErrorAt": 1789722189331
     },
     {
       "packageName": "com.blackberry.universalsearch",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787115300131
+      "lastErrorAt": 1789722189331
     },
     {
       "packageName": "de.dennisguse.opentracks",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787115300131
+      "lastErrorAt": 1789722189331
     },
     {
       "packageName": "de.fiduciagad.android.vrwallet",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787115300131
+      "lastErrorAt": 1789722189331
     },
     {
       "packageName": "com.appmindlab.nano",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787115300131
+      "lastErrorAt": 1789722189331
     },
     {
       "packageName": "com.fb.fluid",
@@ -788,15 +788,21 @@
     },
     {
       "packageName": "com.ringside.launcher",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789637368916
+      "lastErrorAt": 1789722189331
     },
     {
       "packageName": "com.duo.statusbar",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1789722189331
+    },
+    {
+      "packageName": "com.ottersuite.kelp",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789637368916
+      "lastErrorAt": 1789722189331
     }
   ]
 }

@@ -1842,7 +1842,7 @@
     },
     {
       "packageName": "com.hyperionics.avar",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1789722189329
     },
     {
       "packageName": "com.tempmail",
@@ -4235,6 +4235,46 @@
     {
       "packageName": "com.tool.decluttr",
       "rejectedAt": 1789637368914
+    },
+    {
+      "packageName": "tz.go.mawasiliano.jamiiapps",
+      "rejectedAt": 1789722189329
+    },
+    {
+      "packageName": "com.rrd.ideaShell",
+      "rejectedAt": 1789722189329
+    },
+    {
+      "packageName": "com.kin.easynotes",
+      "rejectedAt": 1789722189329
+    },
+    {
+      "packageName": "br.com.uol.mail.uolhost",
+      "rejectedAt": 1789722189329
+    },
+    {
+      "packageName": "com.app.punjlekh",
+      "rejectedAt": 1789722189329
+    },
+    {
+      "packageName": "com.movimientomadrid.doortodoorapp",
+      "rejectedAt": 1789722189329
+    },
+    {
+      "packageName": "com.floatkit.app",
+      "rejectedAt": 1789722189329
+    },
+    {
+      "packageName": "com.gpssimulator.app",
+      "rejectedAt": 1789722189329
+    },
+    {
+      "packageName": "com.DSmartApps.CalculosTrabalhistas",
+      "rejectedAt": 1789722189329
+    },
+    {
+      "packageName": "com.treintaapp",
+      "rejectedAt": 1789722189329
     }
   ]
 }
