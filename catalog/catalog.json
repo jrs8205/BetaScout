@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1789722189333,
+  "generatedAt": 1789807850261,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -16,6 +16,15 @@
       "appName": "VLC Mobile Remote - PC & Mac",
       "hasBeta": true,
       "productionVersionCode": 413,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ae.adx.mobile",
+      "appName": "ADX Mobile",
+      "hasBeta": true,
+      "productionVersionCode": 238,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2184,7 +2193,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 801004904,
+      "productionVersionCode": 801005204,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6226,6 +6235,15 @@
       "appName": "Fanatics: Shop NFL, NBA & MLB",
       "hasBeta": true,
       "productionVersionCode": 26073119,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.farmerbb.secondscreen.free",
+      "appName": "SecondScreen",
+      "hasBeta": true,
+      "productionVersionCode": 186,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -13565,6 +13583,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.pavit.docker",
+      "appName": "Docker Manager",
+      "hasBeta": true,
+      "productionVersionCode": 30,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.paycom.mobile.ess",
       "appName": "Paycom",
       "hasBeta": true,
@@ -17600,7 +17627,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12278,
+      "productionVersionCode": 12282,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -18117,6 +18144,15 @@
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.typebase.app",
+      "appName": "Typebase",
+      "hasBeta": true,
+      "productionVersionCode": 24,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.ua.poc.filmpano",
@@ -18798,6 +18834,15 @@
       "appName": "Lightmeter: Film & Logbook",
       "hasBeta": true,
       "productionVersionCode": 70081,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.voicecursor.android.type",
+      "appName": "Voice Cursor",
+      "hasBeta": true,
+      "productionVersionCode": 66,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

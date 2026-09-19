@@ -578,9 +578,9 @@
     },
     {
       "packageName": "com.fb.fluid",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787201770216
+      "lastErrorAt": 1789807850258
     },
     {
       "packageName": "com.free.sudokupurr",
@@ -788,21 +788,21 @@
     },
     {
       "packageName": "com.ringside.launcher",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789722189331
+      "lastErrorAt": 1789807850258
     },
     {
       "packageName": "com.duo.statusbar",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789722189331
+      "lastErrorAt": 1789807850258
     },
     {
       "packageName": "com.ottersuite.kelp",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789722189331
+      "lastErrorAt": 1789807850258
     }
   ]
 }
