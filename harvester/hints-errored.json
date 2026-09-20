@@ -583,22 +583,16 @@
       "lastErrorAt": 1789807850258
     },
     {
-      "packageName": "com.free.sudokupurr",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787288201485
-    },
-    {
       "packageName": "com.willvin.habitxp",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787288201485
+      "lastErrorAt": 1789895982881
     },
     {
       "packageName": "com.blackview.userfeedback",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787288201485
+      "lastErrorAt": 1789895982881
     },
     {
       "packageName": "co.modplus.go",
@@ -800,9 +794,15 @@
     },
     {
       "packageName": "com.ottersuite.kelp",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789807850258
+      "lastErrorAt": 1789895982881
+    },
+    {
+      "packageName": "com.watchfacestudio.pt53",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1789895982881
     }
   ]
 }

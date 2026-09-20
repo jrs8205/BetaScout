@@ -1474,7 +1474,7 @@
     },
     {
       "packageName": "com.bshg.homeconnect.android.release",
-      "rejectedAt": 1786166131268
+      "rejectedAt": 1789895982879
     },
     {
       "packageName": "com.conatech.lightmywatts.android",
@@ -1546,7 +1546,7 @@
     },
     {
       "packageName": "net.easypark.android",
-      "rejectedAt": 1786166131268
+      "rejectedAt": 1789895982879
     },
     {
       "packageName": "nl.jumbo.hitster",
@@ -1814,11 +1814,11 @@
     },
     {
       "packageName": "com.americanexpress.android.acctsvcs.it",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1789895982879
     },
     {
       "packageName": "com.chaltec.klarsteinrn",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1789895982879
     },
     {
       "packageName": "com.daikineurope.online.controller",
@@ -1826,15 +1826,15 @@
     },
     {
       "packageName": "com.nowtv.it",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1789895982879
     },
     {
       "packageName": "com.vpg",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1789895982879
     },
     {
       "packageName": "it.subito",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1789895982879
     },
     {
       "packageName": "com.ants360.yicamera.international",
@@ -4275,6 +4275,22 @@
     {
       "packageName": "com.treintaapp",
       "rejectedAt": 1789722189329
+    },
+    {
+      "packageName": "com.free.sudokupurr",
+      "rejectedAt": 1789895982879
+    },
+    {
+      "packageName": "com.kinorium.kinoriumapp",
+      "rejectedAt": 1789895982879
+    },
+    {
+      "packageName": "au.com.lexus.mylexus.app",
+      "rejectedAt": 1789895982879
+    },
+    {
+      "packageName": "com.au.lexus.oneapp",
+      "rejectedAt": 1789895982879
     }
   ]
 }

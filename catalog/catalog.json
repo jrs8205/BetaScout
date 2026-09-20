@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1789807850261,
+  "generatedAt": 1789895982883,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -975,6 +975,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "boo.noce.launcher",
+      "appName": "Nocebo Launcher",
+      "hasBeta": true,
+      "productionVersionCode": 1600070300,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "bot.touchkin",
       "appName": "Wysa: Mental Wellbeing AI",
       "hasBeta": true,
@@ -1842,7 +1851,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
       "hasBeta": true,
-      "productionVersionCode": 1932048725,
+      "productionVersionCode": 1932049043,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2193,7 +2202,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 801005204,
+      "productionVersionCode": 797708204,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -4386,6 +4395,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.cleevio.spendee",
+      "appName": "Budget Planner & App: Spendee",
+      "hasBeta": true,
+      "productionVersionCode": 1760030001,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.clevertype.ai.keyboard",
       "appName": "CleverType AI Keyboard",
       "hasBeta": true,
@@ -5817,6 +5835,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.emiratesnbd.einvest",
+      "appName": "Emirates NBD Securities",
+      "hasBeta": true,
+      "productionVersionCode": 39,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.emlid.reachview3",
       "appName": "Emlid Flow",
       "hasBeta": true,
@@ -7117,6 +7144,15 @@
       "appName": "CodeBoard Keyboard for Coding",
       "hasBeta": true,
       "productionVersionCode": 23,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.gdjztech.ringconn",
+      "appName": "RingConn Smart Ring",
+      "hasBeta": true,
+      "productionVersionCode": 137,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -12728,6 +12764,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.nixesea.travelcardreader",
+      "appName": "Баланс проездного СПб",
+      "hasBeta": true,
+      "productionVersionCode": 420,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.njtransit.njtapp",
       "appName": "NJ TRANSIT Mobile App",
       "hasBeta": true,
@@ -13929,6 +13974,15 @@
       "appName": "Jemini Art : AI Photo Editing",
       "hasBeta": true,
       "productionVersionCode": 2,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.pkyul13.gamepadmouse",
+      "appName": "Gamepad mouse",
+      "hasBeta": true,
+      "productionVersionCode": 36,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17876,6 +17930,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.transportspb.app",
+      "appName": "TransportSpb. Public transport",
+      "hasBeta": true,
+      "productionVersionCode": 173,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.transsion.filemanagerx",
       "appName": "File Manager",
       "hasBeta": true,
@@ -18140,7 +18203,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312252001,
+      "productionVersionCode": 312271001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -23825,6 +23888,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.briarproject.mailbox",
+      "appName": "Briar Mailbox",
+      "hasBeta": true,
+      "productionVersionCode": 10009,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.buffer.android",
       "appName": "Buffer: Social Media Scheduler",
       "hasBeta": true,
@@ -25129,10 +25201,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "ru.perekrestok.app",
+      "appName": "Перекресток доставка продуктов",
+      "hasBeta": true,
+      "productionVersionCode": 4127,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "ru.pt.iconpack.pixel",
       "appName": "Pix Icon pack - app Icon",
       "hasBeta": true,
       "productionVersionCode": 1055390,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ru.raiffeisennews",
+      "appName": "Raiffeisen Online Bank Russia",
+      "hasBeta": true,
+      "productionVersionCode": 6068142,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
