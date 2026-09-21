@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1789895982883,
+  "generatedAt": 1789984786036,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -871,6 +871,15 @@
       "appName": "Pocket Casts - Podcast App",
       "hasBeta": true,
       "productionVersionCode": 9441,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "au.com.weatherzone.android.weatherzonefreeapp",
+      "appName": "Weatherzone: Weather Forecasts",
+      "hasBeta": true,
+      "productionVersionCode": 3342,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7176,6 +7185,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.gemsaroundnative",
+      "appName": "Gems Around: Travel Videos",
+      "hasBeta": true,
+      "productionVersionCode": 36,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.gener8ads.wallet",
       "appName": "Gener8 - Earn From Your Data",
       "hasBeta": true,
@@ -7683,7 +7701,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068774593,
+      "productionVersionCode": 1068785740,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -17745,6 +17763,15 @@
       "appName": "Concepts: Sketch, Note, Draw",
       "hasBeta": true,
       "productionVersionCode": 260726877,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.toppluva.grandmountain2",
+      "appName": "Grand Mountain Adventure 2",
+      "hasBeta": true,
+      "productionVersionCode": 108002,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

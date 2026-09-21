@@ -758,7 +758,7 @@
     },
     {
       "packageName": "com.castle.sefirah",
-      "rejectedAt": 1785912541385
+      "rejectedAt": 1789984786032
     },
     {
       "packageName": "com.citrus.citruspay",
@@ -2922,7 +2922,7 @@
     },
     {
       "packageName": "hitzone.anima.spirit.guardians",
-      "rejectedAt": 1786513809141
+      "rejectedAt": 1789984786032
     },
     {
       "packageName": "com.billu.care",
@@ -3142,7 +3142,7 @@
     },
     {
       "packageName": "com.infinitygames.dotcollect",
-      "rejectedAt": 1786942864154
+      "rejectedAt": 1789984786032
     },
     {
       "packageName": "com.myfitnesspal.android",
@@ -4291,6 +4291,18 @@
     {
       "packageName": "com.au.lexus.oneapp",
       "rejectedAt": 1789895982879
+    },
+    {
+      "packageName": "com.carxtech.sr",
+      "rejectedAt": 1789984786032
+    },
+    {
+      "packageName": "md.maib.maibank",
+      "rejectedAt": 1789984786032
+    },
+    {
+      "packageName": "com.tyron.code",
+      "rejectedAt": 1789984786032
     }
   ]
 }
