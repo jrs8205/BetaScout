@@ -601,12 +601,6 @@
       "lastErrorAt": 1789984786034
     },
     {
-      "packageName": "com.armanmaurya.internetradio",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787460868600
-    },
-    {
       "packageName": "com.dropfake.wb.dcko",
       "attempts": 3,
       "lastError": "AppNotFound: null",
@@ -800,21 +794,57 @@
     },
     {
       "packageName": "com.watchfacestudio.pt53",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789984786034
+      "lastErrorAt": 1790068863303
     },
     {
       "packageName": "com.sameerasw.medrop",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789984786034
+      "lastErrorAt": 1790068863303
     },
     {
       "packageName": "com.rishi.commonplace",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790068863303
+    },
+    {
+      "packageName": "com.hypedrop.hypedropapp1",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789984786034
+      "lastErrorAt": 1790068863303
+    },
+    {
+      "packageName": "com.iboalali.sysnotifsnooze",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790068863303
+    },
+    {
+      "packageName": "com.amazon.drive",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790068863303
+    },
+    {
+      "packageName": "com.google.android.apps.gmm.qp",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790068863303
+    },
+    {
+      "packageName": "fr.freebox.network",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790068863303
+    },
+    {
+      "packageName": "fr.freemobile.android.vvm",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790068863303
     }
   ]
 }
