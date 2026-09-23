@@ -3170,7 +3170,7 @@
     },
     {
       "packageName": "com.homeretailgroup.argos.android",
-      "rejectedAt": 1787028928899
+      "rejectedAt": 1790155297698
     },
     {
       "packageName": "rikka.appops",
@@ -4403,6 +4403,58 @@
     {
       "packageName": "com.niksoftware.snapseed",
       "rejectedAt": 1790068863301
+    },
+    {
+      "packageName": "bbc.mobile.news.uk",
+      "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.dss.purr.doku",
+      "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.dzu.koaladoku.sudokupuzzle.game",
+      "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.global.player",
+      "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.hootdoku.relaxing.brain.puzzle",
+      "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.kiwifun.game.android.differences",
+      "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.latestdeals.app",
+      "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.memediff.findpuzzle.roitqq",
+      "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.playgames.queenspuzzle",
+      "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.sudocow.puzzle.gp",
+      "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.tailchase.dicetales",
+      "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.u3.ixdg.corgidoku",
+      "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.zestplay.meow.sudoku",
+      "rejectedAt": 1790155297698
     }
   ]
 }

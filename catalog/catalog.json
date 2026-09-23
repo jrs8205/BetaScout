@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1790068863305,
+  "generatedAt": 1790155297702,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -250,6 +250,15 @@
       "appName": "Animated Sticker Maker (FSM)",
       "hasBeta": true,
       "productionVersionCode": 30101,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "and.lhhpub.wordsearch",
+      "appName": "Word Search: Daily Motivation",
+      "hasBeta": true,
+      "productionVersionCode": 26,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -511,6 +520,15 @@
       "appName": "Intent – The Chat translator",
       "hasBeta": true,
       "productionVersionCode": 248,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "app.intra",
+      "appName": "Intra",
+      "hasBeta": true,
+      "productionVersionCode": 75,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2595,6 +2613,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.arkreson.pawdoku.puzzle",
+      "appName": "Fidoku: Logic Puzzle Game",
+      "hasBeta": true,
+      "productionVersionCode": 12,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.arlo.app",
       "appName": "Arlo Secure: Home Security",
       "hasBeta": true,
@@ -4170,6 +4197,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ccmstudio.detectivedoku",
+      "appName": "Detective Doku: Clue Puzzles",
+      "hasBeta": true,
+      "productionVersionCode": 88,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.cdkeys",
       "appName": "Loaded",
       "hasBeta": true,
@@ -5367,10 +5403,19 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.dimsumgames.queens",
+      "appName": "Dim Sum Queens: A Logic Puzzle",
+      "hasBeta": true,
+      "productionVersionCode": 94,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.discord",
       "appName": "Discord - Talk, Play, Hang Out",
       "hasBeta": true,
-      "productionVersionCode": 345009,
+      "productionVersionCode": 346013,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5712,7 +5757,7 @@
       "packageName": "com.duolingo",
       "appName": "Duolingo: Language Lessons",
       "hasBeta": true,
-      "productionVersionCode": 2457,
+      "productionVersionCode": 2462,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5974,6 +6019,15 @@
       "appName": "Atlas Photo - Photo Companion",
       "hasBeta": true,
       "productionVersionCode": 138,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.entilitystudio.CopyCat",
+      "appName": "CopyCat Clipboard Manager",
+      "hasBeta": true,
+      "productionVersionCode": 82,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6568,6 +6622,15 @@
       "appName": "Earthquake Network",
       "hasBeta": true,
       "productionVersionCode": 856,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.find.spot.photo.hunt.differences.free.hidden",
+      "appName": "Difference: Spot & Find Master",
+      "hasBeta": true,
+      "productionVersionCode": 28,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7252,6 +7315,24 @@
       "appName": "RingConn Smart Ring",
       "hasBeta": true,
       "productionVersionCode": 137,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.gdm.hexaword",
+      "appName": "Hexa Word Connect",
+      "hasBeta": true,
+      "productionVersionCode": 10,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.gdm.pawtrail",
+      "appName": "PawTrail",
+      "hasBeta": true,
+      "productionVersionCode": 17,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9311,7 +9392,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385411988,
+      "productionVersionCode": 385412061,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9879,6 +9960,15 @@
       "appName": "Homecenter: Hogar Construcción",
       "hasBeta": true,
       "productionVersionCode": 2607173,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.jgame.Difference",
+      "appName": "Difference - find & spot！",
+      "hasBeta": true,
+      "productionVersionCode": 179,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -10760,7 +10850,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 215600,
+      "productionVersionCode": 215800,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11063,6 +11153,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.lunappstudio.crossroyal",
+      "appName": "Crossario: Crossword Puzzles",
+      "hasBeta": true,
+      "productionVersionCode": 155,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.lwi.android.flapps.docs",
       "appName": "Floating Apps - DOCS Module",
       "hasBeta": true,
@@ -11094,6 +11193,15 @@
       "appName": "Orgro",
       "hasBeta": true,
       "productionVersionCode": 252,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.magicave.mindsetgo",
+      "appName": "Mindset GO!",
+      "hasBeta": true,
+      "productionVersionCode": 260791947,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -12287,6 +12395,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.monopoly.farm.fish.tycoon",
+      "appName": "Farm Feud",
+      "hasBeta": true,
+      "productionVersionCode": 93,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.montunosoftware.dosecast",
       "appName": "Dosecast - Pill Reminder App",
       "hasBeta": true,
@@ -12881,6 +12998,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.nhn.android.band",
+      "appName": "BAND - App for all groups",
+      "hasBeta": true,
+      "productionVersionCode": 29000358,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.nhn.android.search",
       "appName": "네이버 - NAVER",
       "hasBeta": true,
@@ -13133,6 +13259,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.novas.piggydoku.sudoku.puzzle",
+      "appName": "Piggydoku: Sudoku Puzzle",
+      "hasBeta": true,
+      "productionVersionCode": 3,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.novasoftinteractive.games.meridian157prologue",
       "appName": "Meridian 157: Prologue",
       "hasBeta": true,
@@ -13254,6 +13389,15 @@
       "appName": "Nevolution",
       "hasBeta": true,
       "productionVersionCode": 65101,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.OblongStudio.WordyBirdie",
+      "appName": "Wordy Birdie",
+      "hasBeta": true,
+      "productionVersionCode": 32,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -13461,6 +13605,15 @@
       "appName": "ChatGPT",
       "hasBeta": true,
       "productionVersionCode": 2618827,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.openigloo",
+      "appName": "Openigloo NYC Apartment Finder",
+      "hasBeta": true,
+      "productionVersionCode": 3983,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -14213,6 +14366,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.PlayBliss.Pawdoku",
+      "appName": "CopDoku - Escape Puzzle Games",
+      "hasBeta": true,
+      "productionVersionCode": 55,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.playdead.limbo.full",
       "appName": "LIMBO",
       "hasBeta": true,
@@ -14726,6 +14888,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.puzzby.pawdoku",
+      "appName": "Pawdoku - Brain Puzzle Games",
+      "hasBeta": true,
+      "productionVersionCode": 33,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.puzztime.pastimes",
       "appName": "Pastimes - Mini Games",
       "hasBeta": true,
@@ -14924,6 +15095,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.reallybadapps.podcastguru",
+      "appName": "Podcast Guru - Podcast App",
+      "hasBeta": true,
+      "productionVersionCode": 1037,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.realvnc.viewer.android",
       "appName": "RealVNC Viewer: Remote Desktop",
       "hasBeta": true,
@@ -14991,6 +15171,15 @@
       "appName": "Honeydew: Recipe Manager",
       "hasBeta": true,
       "productionVersionCode": 181,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.redtooth.buzzer",
+      "appName": "Redtooth SmartQuiz",
+      "hasBeta": true,
+      "productionVersionCode": 645,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -16994,6 +17183,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.sugarscone.modoku",
+      "appName": "Modoku",
+      "hasBeta": true,
+      "productionVersionCode": 336,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.sun.alasbrowser",
       "appName": "Alas browser",
       "hasBeta": true,
@@ -17933,7 +18131,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12284,
+      "productionVersionCode": 12286,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -18464,7 +18662,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312271001,
+      "productionVersionCode": 312280001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -19415,6 +19613,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.wayfair.wayfair",
+      "appName": "Wayfair - Shop All Things Home",
+      "hasBeta": true,
+      "productionVersionCode": 2576378,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.waymo.carapp",
       "appName": "Waymo",
       "hasBeta": true,
@@ -19536,6 +19743,15 @@
       "appName": "WeWard - Walk & Earn Rewards",
       "hasBeta": true,
       "productionVersionCode": 242496,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.whaleplayed.duckdoku",
+      "appName": "Duckdoku: Puzzle Game",
+      "hasBeta": true,
+      "productionVersionCode": 91,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -19761,6 +19977,15 @@
       "appName": "Woot! Deals and Shenanigans",
       "hasBeta": true,
       "productionVersionCode": 3177,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.word.connect.association.puzzle.game",
+      "appName": "Word Connect: Fun Association",
+      "hasBeta": true,
+      "productionVersionCode": 110,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -23406,6 +23631,15 @@
       "appName": "MEGA VPN - Privacy Online",
       "hasBeta": true,
       "productionVersionCode": 261050421,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "meowdoku.find.the.cats",
+      "appName": "PawDoku: Find the Cats",
+      "hasBeta": true,
+      "productionVersionCode": 10006,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
