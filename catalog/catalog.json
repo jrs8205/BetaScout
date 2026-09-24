@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1790155297702,
+  "generatedAt": 1790241686532,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -151,6 +151,15 @@
       "appName": "Indus by Sarvam",
       "hasBeta": true,
       "productionVersionCode": 500000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ai.seaart.app.global",
+      "appName": "SeaArt AI: Photo & Video Maker",
+      "hasBeta": true,
+      "productionVersionCode": 1786006604,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1915,6 +1924,15 @@
       "appName": "myWisely: Mobile Banking",
       "hasBeta": true,
       "productionVersionCode": 13217,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.adsk.sketchbook",
+      "appName": "Sketchbook",
+      "hasBeta": true,
+      "productionVersionCode": 454243,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6397,6 +6415,15 @@
       "appName": "Fanatics: Shop NFL, NBA & MLB",
       "hasBeta": true,
       "productionVersionCode": 26073119,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.farmerbb.notepad",
+      "appName": "Notepad",
+      "hasBeta": true,
+      "productionVersionCode": 122,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -12998,6 +13025,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ng_labs.dateandtime.pro",
+      "appName": "Date Calculator Pro",
+      "hasBeta": true,
+      "productionVersionCode": 28,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.nhn.android.band",
       "appName": "BAND - App for all groups",
       "hasBeta": true,
@@ -14288,7 +14324,7 @@
       "packageName": "com.pinterest",
       "appName": "Pinterest",
       "hasBeta": true,
-      "productionVersionCode": 14368020,
+      "productionVersionCode": 14378020,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16628,7 +16664,7 @@
       "packageName": "com.snapchat.android",
       "appName": "Snapchat",
       "hasBeta": true,
-      "productionVersionCode": 315022,
+      "productionVersionCode": 316472,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -18131,7 +18167,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12286,
+      "productionVersionCode": 12288,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -19769,7 +19805,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 263607422,
+      "productionVersionCode": 263707322,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -21273,6 +21309,15 @@
       "appName": "tagesschau - Nachrichten",
       "hasBeta": true,
       "productionVersionCode": 2026070102,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "de.thomann",
+      "appName": "Thomann: Discover Music Gear",
+      "hasBeta": true,
+      "productionVersionCode": 28821301,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -25249,7 +25294,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 70892,
+      "productionVersionCode": 70992,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -25294,10 +25339,10 @@
       "packageName": "org.torproject.torbrowser_alpha",
       "appName": "Tor Browser (Alpha)",
       "hasBeta": true,
-      "productionVersionCode": 2016174186,
+      "productionVersionCode": 2016185874,
       "liveStatus": "UNKNOWN",
-      "source": "CROWD",
-      "notes": "Reported by users, confirmed via Google Play"
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
     },
     {
       "packageName": "org.vernazza.androidfuel",
@@ -26123,6 +26168,15 @@
       "appName": "WatchMaker Watch Faces",
       "hasBeta": true,
       "productionVersionCode": 31102803,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "smalllivingworld.com.Unlocked",
+      "appName": "Small Living World UNLOCKED",
+      "hasBeta": true,
+      "productionVersionCode": 1091,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

@@ -4455,6 +4455,10 @@
     {
       "packageName": "com.zestplay.meow.sudoku",
       "rejectedAt": 1790155297698
+    },
+    {
+      "packageName": "com.hifi_apps.sp_setup",
+      "rejectedAt": 1790241686528
     }
   ]
 }

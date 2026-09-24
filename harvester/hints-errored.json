@@ -812,39 +812,45 @@
     },
     {
       "packageName": "com.hypedrop.hypedropapp1",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790155297699
+      "lastErrorAt": 1790241686530
     },
     {
       "packageName": "com.iboalali.sysnotifsnooze",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790155297699
+      "lastErrorAt": 1790241686530
     },
     {
       "packageName": "com.amazon.drive",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790155297699
+      "lastErrorAt": 1790241686530
     },
     {
       "packageName": "com.google.android.apps.gmm.qp",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790155297699
+      "lastErrorAt": 1790241686530
     },
     {
       "packageName": "fr.freebox.network",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790155297699
+      "lastErrorAt": 1790241686530
     },
     {
       "packageName": "fr.freemobile.android.vvm",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790155297699
+      "lastErrorAt": 1790241686530
+    },
+    {
+      "packageName": "com.cedarworks.standby",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790241686530
     }
   ]
 }
