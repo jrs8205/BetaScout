@@ -2502,7 +2502,7 @@
     },
     {
       "packageName": "com.mossapps.flick",
-      "rejectedAt": 1786426385328
+      "rejectedAt": 1790329163260
     },
     {
       "packageName": "com.raxdenstudios.radio",
@@ -3378,7 +3378,7 @@
     },
     {
       "packageName": "com.kinoshitaproductions.booru_nav",
-      "rejectedAt": 1787633842843
+      "rejectedAt": 1790329163260
     },
     {
       "packageName": "net.cacko.wallies",
@@ -4459,6 +4459,22 @@
     {
       "packageName": "com.hifi_apps.sp_setup",
       "rejectedAt": 1790241686528
+    },
+    {
+      "packageName": "com.homeserve.androidapp",
+      "rejectedAt": 1790329163260
+    },
+    {
+      "packageName": "com.ghostmode.app",
+      "rejectedAt": 1790329163260
+    },
+    {
+      "packageName": "com.technosub.unlimitedaiimagen",
+      "rejectedAt": 1790329163260
+    },
+    {
+      "packageName": "com.sbs.ondemand.android",
+      "rejectedAt": 1790329163260
     }
   ]
 }

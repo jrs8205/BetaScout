@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1790241686532,
+  "generatedAt": 1790329163265,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -1905,7 +1905,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
       "hasBeta": true,
-      "productionVersionCode": 1932049043,
+      "productionVersionCode": 1932049084,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5775,7 +5775,7 @@
       "packageName": "com.duolingo",
       "appName": "Duolingo: Language Lessons",
       "hasBeta": true,
-      "productionVersionCode": 2462,
+      "productionVersionCode": 2463,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6087,6 +6087,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.espruino.gadgetbridge.banglejs",
+      "appName": "Bangle.js Gadgetbridge",
+      "hasBeta": true,
+      "productionVersionCode": 240,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.eterno",
       "appName": "Dailyhunt - News & Magazines",
       "hasBeta": true,
@@ -6306,7 +6315,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 474818489,
+      "productionVersionCode": 475019369,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8313,6 +8322,15 @@
       "appName": "GSMArena",
       "hasBeta": true,
       "productionVersionCode": 191,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.gss.baadoku",
+      "appName": "Sheep Doku: Brain Puzzle",
+      "hasBeta": true,
+      "productionVersionCode": 2,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -10877,7 +10895,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 215800,
+      "productionVersionCode": 216001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11477,6 +11495,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.mdblist.app",
+      "appName": "Reeel",
+      "hasBeta": true,
+      "productionVersionCode": 74,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.meam.pro",
       "appName": "MEAM - The Meme Maker Pro",
       "hasBeta": true,
@@ -11939,7 +11966,7 @@
       "packageName": "com.microsoft.skydrive",
       "appName": "Microsoft OneDrive",
       "hasBeta": true,
-      "productionVersionCode": 2027640102,
+      "productionVersionCode": 2027640202,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12911,7 +12938,7 @@
       "packageName": "com.netflix.mediaclient",
       "appName": "Netflix",
       "hasBeta": true,
-      "productionVersionCode": 74548,
+      "productionVersionCode": 74576,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16589,6 +16616,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.slg.policewar",
+      "appName": "Police Chief",
+      "hasBeta": true,
+      "productionVersionCode": 1047,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.slowlyapp",
       "appName": "Slowly: Make Global Friends",
       "hasBeta": true,
@@ -18155,6 +18191,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.titangames.sudoku",
+      "appName": "Sudoku",
+      "hasBeta": true,
+      "productionVersionCode": 44,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.tmstore.robu.in",
       "appName": "Robu.in Electronics RC Store",
       "hasBeta": true,
@@ -18825,6 +18870,15 @@
       "appName": "ULTRA",
       "hasBeta": true,
       "productionVersionCode": 63,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ultrahuman.android",
+      "appName": "Ultrahuman",
+      "hasBeta": true,
+      "productionVersionCode": 302000000,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -24864,6 +24918,15 @@
       "appName": "FBReader: Favorite Book Reader",
       "hasBeta": true,
       "productionVersionCode": 30803100,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.getlantern.lantern",
+      "appName": "Lantern: Fast & Private VPN",
+      "hasBeta": true,
+      "productionVersionCode": 558990447,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
