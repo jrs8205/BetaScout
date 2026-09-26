@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1790329163265,
+  "generatedAt": 1790414636387,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -196,6 +196,15 @@
       "appName": "Grok AI",
       "hasBeta": true,
       "productionVersionCode": 11217201,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ai.yaps.app",
+      "appName": "Yaps: AI Voice Typing Keyboard",
+      "hasBeta": true,
+      "productionVersionCode": 127,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -624,6 +633,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "app.recaal.reminders",
+      "appName": "Recaal: Reminders & Snooze",
+      "hasBeta": true,
+      "productionVersionCode": 23,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "app.reflection.reflection",
       "appName": "Reflection: AI Journal & Coach",
       "hasBeta": true,
@@ -790,6 +808,15 @@
       "appName": "Full Battery Charge Alarm",
       "hasBeta": true,
       "productionVersionCode": 363,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "apps.syrupy.metadatacleaner",
+      "appName": "Photo Metadata Remover",
+      "hasBeta": true,
+      "productionVersionCode": 322,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1501,6 +1528,15 @@
       "appName": "My Finances - Bills Reminder",
       "hasBeta": true,
       "productionVersionCode": 899,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "classic.sudoku.puzzle.woodensudoku",
+      "appName": "Zen Sudoku",
+      "hasBeta": true,
+      "productionVersionCode": 29,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2283,7 +2319,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 801005204,
+      "productionVersionCode": 801005304,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6333,7 +6369,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 345815195,
+      "productionVersionCode": 346013444,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8016,7 +8052,7 @@
       "packageName": "com.google.android.googlequicksearchbox",
       "appName": "Google",
       "hasBeta": true,
-      "productionVersionCode": 301806946,
+      "productionVersionCode": 301810370,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8096,7 +8132,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561296049,
+      "productionVersionCode": 1561297264,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9038,6 +9074,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.iAgentur.tcs",
+      "appName": "TCS - Touring Club Schweiz",
+      "hasBeta": true,
+      "productionVersionCode": 5026,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ibragunduz.applockpro",
       "appName": "AppLock Pro - App Lock & Guard",
       "hasBeta": true,
@@ -9437,7 +9482,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385412061,
+      "productionVersionCode": 385412056,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10203,6 +10248,15 @@
       "appName": "Swyp Launcher",
       "hasBeta": true,
       "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.jpeg.image.compressor",
+      "appName": "JPEG Image Compressor & Resize",
+      "hasBeta": true,
+      "productionVersionCode": 28,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18212,7 +18266,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12288,
+      "productionVersionCode": 12290,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -19172,6 +19226,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.vacuapps.photos3d",
+      "appName": "Photos 3D: Spatial scenes",
+      "hasBeta": true,
+      "productionVersionCode": 2400113,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.vadeapps.frasesparastatus.criadorfrasesdemaloka",
       "appName": "Quotes Creator App 2026",
       "hasBeta": true,
@@ -20076,6 +20139,15 @@
       "appName": "Word Connect: Fun Association",
       "hasBeta": true,
       "productionVersionCode": 110,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.wordgametrivia.sudokuadventure",
+      "appName": "Sudoku Adventure",
+      "hasBeta": true,
+      "productionVersionCode": 6,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -24950,6 +25022,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.howwefeel.moodmeter",
+      "appName": "How We Feel",
+      "hasBeta": true,
+      "productionVersionCode": 433,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.isoron.uhabits",
       "appName": "Loop Habit Tracker",
       "hasBeta": true,
@@ -25357,7 +25438,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 70992,
+      "productionVersionCode": 71052,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -26590,7 +26671,7 @@
       "packageName": "tv.twitch.android.app",
       "appName": "Twitch: Live Streaming",
       "hasBeta": true,
-      "productionVersionCode": 3103006,
+      "productionVersionCode": 3103016,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
