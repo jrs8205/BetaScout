@@ -632,9 +632,9 @@
     },
     {
       "packageName": "com.laurencedawson.reddit_sync.pro",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787843913768
+      "lastErrorAt": 1790503402127
     },
     {
       "packageName": "com.ctxwidget",
@@ -854,9 +854,33 @@
     },
     {
       "packageName": "com.google.android.desktop.feedback",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790414636385
+      "lastErrorAt": 1790503402127
+    },
+    {
+      "packageName": "com.ancestry.ancestrydna",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790503402127
+    },
+    {
+      "packageName": "net.countrymania.jezz",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790503402127
+    },
+    {
+      "packageName": "net.flowlauncher",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790503402127
+    },
+    {
+      "packageName": "org.mian.gitnex",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790503402127
     }
   ]
 }
