@@ -3322,7 +3322,7 @@
     },
     {
       "packageName": "com.sunbird.apps",
-      "rejectedAt": 1787547887163
+      "rejectedAt": 1790593141452
     },
     {
       "packageName": "com.vkslrzm.Zombie",
@@ -4527,6 +4527,34 @@
     {
       "packageName": "com.tellmewow.senior.hangman",
       "rejectedAt": 1790503402125
+    },
+    {
+      "packageName": "com.stopfield.focara",
+      "rejectedAt": 1790593141452
+    },
+    {
+      "packageName": "air.com.taern.BrokenRanks",
+      "rejectedAt": 1790593141452
+    },
+    {
+      "packageName": "eu.airly.android",
+      "rejectedAt": 1790593141452
+    },
+    {
+      "packageName": "eu.darken.butler",
+      "rejectedAt": 1790593141452
+    },
+    {
+      "packageName": "appyweather.appyweather",
+      "rejectedAt": 1790593141452
+    },
+    {
+      "packageName": "com.songkick",
+      "rejectedAt": 1790593141452
+    },
+    {
+      "packageName": "com.zoosk.zoosk",
+      "rejectedAt": 1790593141452
     }
   ]
 }

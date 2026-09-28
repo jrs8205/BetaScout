@@ -638,9 +638,9 @@
     },
     {
       "packageName": "com.ctxwidget",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1787935346138
+      "lastErrorAt": 1790593141453
     },
     {
       "packageName": "com.agilebits.onepassword",
@@ -860,27 +860,45 @@
     },
     {
       "packageName": "com.ancestry.ancestrydna",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790503402127
+      "lastErrorAt": 1790593141453
     },
     {
       "packageName": "net.countrymania.jezz",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790503402127
+      "lastErrorAt": 1790593141453
     },
     {
       "packageName": "net.flowlauncher",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790503402127
+      "lastErrorAt": 1790593141453
     },
     {
       "packageName": "org.mian.gitnex",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790593141453
+    },
+    {
+      "packageName": "pl.tvp.stream",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790503402127
+      "lastErrorAt": 1790593141453
+    },
+    {
+      "packageName": "com.google.android.ext.services",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790593141453
+    },
+    {
+      "packageName": "com.google.android.permissioncontroller",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1790593141453
     }
   ]
 }
