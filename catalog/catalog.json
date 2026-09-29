@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1790593141456,
+  "generatedAt": 1790678663243,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -1968,7 +1968,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
       "hasBeta": true,
-      "productionVersionCode": 1932049084,
+      "productionVersionCode": 1932149916,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2373,7 +2373,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 801005304,
+      "productionVersionCode": 803705704,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6468,7 +6468,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 475019344,
+      "productionVersionCode": 475019369,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8097,7 +8097,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068785740,
+      "productionVersionCode": 1068797714,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8285,7 +8285,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561299900,
+      "productionVersionCode": 1561297264,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9635,7 +9635,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385412061,
+      "productionVersionCode": 385511871,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12692,6 +12692,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.monodivision.archivist",
+      "appName": "Archivist Browser",
+      "hasBeta": true,
+      "productionVersionCode": 31,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.monopoly.farm.fish.tycoon",
       "appName": "Farm Feud",
       "hasBeta": true,
@@ -13988,6 +13997,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.oppanagames.car.simulator",
+      "appName": "Car Simulator 2: Open World",
+      "hasBeta": true,
+      "productionVersionCode": 385,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.oppo.community.global",
       "appName": "OPPO Community",
       "hasBeta": true,
@@ -14639,7 +14657,7 @@
       "packageName": "com.pinterest",
       "appName": "Pinterest",
       "hasBeta": true,
-      "productionVersionCode": 14378020,
+      "productionVersionCode": 14388010,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15270,6 +15288,15 @@
       "appName": "Star Tracker - Mobile Sky Map ",
       "hasBeta": true,
       "productionVersionCode": 285,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.pythonxi.openreelvideo",
+      "appName": "Openreel Video",
+      "hasBeta": true,
+      "productionVersionCode": 17,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17249,7 +17276,7 @@
       "packageName": "com.spotify.music",
       "appName": "Spotify: Music and Podcasts",
       "hasBeta": true,
-      "productionVersionCode": 146291969,
+      "productionVersionCode": 146555520,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -17448,6 +17475,15 @@
       "appName": "HeadlessUnit",
       "hasBeta": true,
       "productionVersionCode": 57,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.stickermaker.creator.emojimix",
+      "appName": "Sticker Maker: Custom Stickers",
+      "hasBeta": true,
+      "productionVersionCode": 104,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18590,7 +18626,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12290,
+      "productionVersionCode": 12292,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20283,6 +20319,15 @@
       "appName": "WhatsApp Business",
       "hasBeta": true,
       "productionVersionCode": 262708312,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.whyyao.rings",
+      "appName": "Rings: Fitness Tracking Hub",
+      "hasBeta": true,
+      "productionVersionCode": 523,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -24990,6 +25035,15 @@
       "appName": "Fintunes",
       "hasBeta": true,
       "productionVersionCode": 37,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "nl.steinov.bletaskerplugin",
+      "appName": "BLE Tasker Plugin",
+      "hasBeta": true,
+      "productionVersionCode": 141,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

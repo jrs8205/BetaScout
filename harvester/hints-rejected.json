@@ -1850,7 +1850,7 @@
     },
     {
       "packageName": "de.arbeitsagentur.jobcenter",
-      "rejectedAt": 1786252987289
+      "rejectedAt": 1790678663238
     },
     {
       "packageName": "com.bankid.bus",
@@ -3242,7 +3242,7 @@
     },
     {
       "packageName": "com.sec.android.app.shealth",
-      "rejectedAt": 1787115300130
+      "rejectedAt": 1790678663238
     },
     {
       "packageName": "com.sbi.SBIFreedomPlus",
@@ -3538,7 +3538,7 @@
     },
     {
       "packageName": "com.appsomniacs.mmc",
-      "rejectedAt": 1788001768002
+      "rejectedAt": 1790678663238
     },
     {
       "packageName": "com.canva.editor",
@@ -4555,6 +4555,18 @@
     {
       "packageName": "com.zoosk.zoosk",
       "rejectedAt": 1790593141452
+    },
+    {
+      "packageName": "com.power.wash.simulator.game",
+      "rejectedAt": 1790678663238
+    },
+    {
+      "packageName": "nl.jolanrensen.hotwordPlugin",
+      "rejectedAt": 1790678663238
+    },
+    {
+      "packageName": "com.okcupid.okcupid",
+      "rejectedAt": 1790678663238
     }
   ]
 }
