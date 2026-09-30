@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1790678663243,
+  "generatedAt": 1790764363176,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -615,6 +615,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "app.notedraft.noteall",
+      "appName": "NoteDraft – Offline Notepad",
+      "hasBeta": true,
+      "productionVersionCode": 16,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "app.offertag",
       "appName": "Offertag: Shop Save",
       "hasBeta": true,
@@ -1051,6 +1060,15 @@
       "appName": "Ad-silence - OpenSource",
       "hasBeta": true,
       "productionVersionCode": 55,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "blueprint.project.management.time.tracker",
+      "appName": "Blueprint: To Do List Pomodoro",
+      "hasBeta": true,
+      "productionVersionCode": 15,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -1951,6 +1969,15 @@
       "appName": "Adobe Account Access",
       "hasBeta": true,
       "productionVersionCode": 206063,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.adobe.premiere",
+      "appName": "Adobe Premiere: Video Editor",
+      "hasBeta": true,
+      "productionVersionCode": 260106929,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5151,6 +5178,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.cyclefive.anya_app",
+      "appName": "Anya: AI Accountability Coach",
+      "hasBeta": true,
+      "productionVersionCode": 28,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.d4rk.cleaner",
       "appName": "Smart Cleaner for Android",
       "hasBeta": true,
@@ -5559,7 +5595,7 @@
       "packageName": "com.discord",
       "appName": "Discord - Talk, Play, Hang Out",
       "hasBeta": true,
-      "productionVersionCode": 346013,
+      "productionVersionCode": 347012,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5838,7 +5874,7 @@
       "packageName": "com.dropbox.android",
       "appName": "Dropbox: Secure Cloud Storage",
       "hasBeta": true,
-      "productionVersionCode": 49020200,
+      "productionVersionCode": 49220200,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5919,7 +5955,7 @@
       "packageName": "com.duolingo",
       "appName": "Duolingo: Language Lessons",
       "hasBeta": true,
-      "productionVersionCode": 2463,
+      "productionVersionCode": 2468,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8285,7 +8321,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561297264,
+      "productionVersionCode": 1561299901,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10532,6 +10568,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.kanetik.movement_detection",
+      "appName": "Movement Detection for Tasker",
+      "hasBeta": true,
+      "productionVersionCode": 3483409,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.kanout.mawaqit",
       "appName": "MAWAQIT: Prayer, Mosque, Quran",
       "hasBeta": true,
@@ -11120,7 +11165,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 216001,
+      "productionVersionCode": 216200,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12218,7 +12263,7 @@
       "packageName": "com.microsoft.teams",
       "appName": "Microsoft Teams",
       "hasBeta": true,
-      "productionVersionCode": 2026163845,
+      "productionVersionCode": 2026173625,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12588,6 +12633,15 @@
       "appName": "Intervalometer for TimeLapse",
       "hasBeta": true,
       "productionVersionCode": 51,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.mobispend.mobile",
+      "appName": "MobiSpend",
+      "hasBeta": true,
+      "productionVersionCode": 20,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -15113,6 +15167,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.prosper.routines.todo.productive.fabulous.habits.selfcare",
+      "appName": "SupaTask - Daily Task Planner",
+      "hasBeta": true,
+      "productionVersionCode": 73,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.prosus.toqi",
       "appName": "Toqi",
       "hasBeta": true,
@@ -15539,7 +15602,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2638050,
+      "productionVersionCode": 2639040,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16269,6 +16332,15 @@
       "appName": "CareerJunction App",
       "hasBeta": true,
       "productionVersionCode": 243000000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.satispay.customer",
+      "appName": "Satispay: Pay and invest",
+      "hasBeta": true,
+      "productionVersionCode": 9820,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17187,6 +17259,15 @@
       "appName": "Sort AI - Thought Clarity",
       "hasBeta": true,
       "productionVersionCode": 88,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.soulspce.threedhabits",
+      "appName": "3D Habits",
+      "hasBeta": true,
+      "productionVersionCode": 69,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18626,7 +18707,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12292,
+      "productionVersionCode": 12294,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -18956,6 +19037,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.tripeax.ascendai",
+      "appName": "Ascend-AI Accountability Coach",
+      "hasBeta": true,
+      "productionVersionCode": 9,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.tripomatic",
       "appName": "Tripomatic Planner & Maps",
       "hasBeta": true,
@@ -19103,7 +19193,7 @@
       "packageName": "com.tumblr",
       "appName": "Tumblr: Social Media & Art",
       "hasBeta": true,
-      "productionVersionCode": 1460300110,
+      "productionVersionCode": 1460500109,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -19157,7 +19247,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312291001,
+      "productionVersionCode": 312300001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -19698,6 +19788,15 @@
       "appName": "Veil: White Noise Sleep Sounds",
       "hasBeta": true,
       "productionVersionCode": 37,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.velis.auto.brightness",
+      "appName": "Velis Auto Brightness",
+      "hasBeta": true,
+      "productionVersionCode": 154,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -26110,6 +26209,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "Orion.Soft",
+      "appName": "Sound Profile (Volume control)",
+      "hasBeta": true,
+      "productionVersionCode": 1303,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "page.puzzak.paios",
       "appName": "PAIOS - Offline AI | Local AI",
       "hasBeta": true,
@@ -27229,7 +27337,7 @@
       "packageName": "tv.twitch.android.app",
       "appName": "Twitch: Live Streaming",
       "hasBeta": true,
-      "productionVersionCode": 3103016,
+      "productionVersionCode": 3104016,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

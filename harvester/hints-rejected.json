@@ -4567,6 +4567,22 @@
     {
       "packageName": "com.okcupid.okcupid",
       "rejectedAt": 1790678663238
+    },
+    {
+      "packageName": "cube.sudoku.block.puzzle",
+      "rejectedAt": 1790764363171
+    },
+    {
+      "packageName": "com.focusflow.focus",
+      "rejectedAt": 1790764363171
+    },
+    {
+      "packageName": "air.au.com.ontherun",
+      "rejectedAt": 1790764363171
+    },
+    {
+      "packageName": "com.gbellalx.vidlax",
+      "rejectedAt": 1790764363171
     }
   ]
 }
