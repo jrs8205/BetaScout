@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1790764363176,
+  "generatedAt": 1790852420007,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -1995,7 +1995,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
       "hasBeta": true,
-      "productionVersionCode": 1932149916,
+      "productionVersionCode": 1932149937,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2400,7 +2400,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 803705704,
+      "productionVersionCode": 803705904,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3391,6 +3391,15 @@
       "appName": "Lemon8 - Lifestyle Community",
       "hasBeta": true,
       "productionVersionCode": 130801,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.be10x.app",
+      "appName": "be10x",
+      "hasBeta": true,
+      "productionVersionCode": 189,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -13313,6 +13322,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.nexech.superapp",
+      "appName": "NextApp: AI & Android Tools",
+      "hasBeta": true,
+      "productionVersionCode": 285,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.nextcloud.client",
       "appName": "Nextcloud",
       "hasBeta": true,
@@ -13565,6 +13583,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.noodlecake.lichtspeer",
+      "appName": "Lichtspeer",
+      "hasBeta": true,
+      "productionVersionCode": 25,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.noodlecake.perfectgrind",
       "appName": "Perfect Grind",
       "hasBeta": true,
@@ -13650,6 +13677,15 @@
       "appName": "Nothing Weather",
       "hasBeta": true,
       "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.notifysync",
+      "appName": "Notify Sync: Secure E2E Mirror",
+      "hasBeta": true,
+      "productionVersionCode": 31,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -14834,6 +14870,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.playit.videoplayer",
+      "appName": "PLAYit-All in One Video Player",
+      "hasBeta": true,
+      "productionVersionCode": 20752006,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.playmini.miniworld",
       "appName": "Mini World: CREATA",
       "hasBeta": true,
@@ -15602,7 +15647,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2639040,
+      "productionVersionCode": 2638050,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16242,6 +16287,15 @@
       "appName": "CoinCalc - Currency Converter",
       "hasBeta": true,
       "productionVersionCode": 188,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.samruston.hurry",
+      "appName": "Hurry Day Countdown & Reminder",
+      "hasBeta": true,
+      "productionVersionCode": 186,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17150,7 +17204,7 @@
       "packageName": "com.snapchat.android",
       "appName": "Snapchat",
       "hasBeta": true,
-      "productionVersionCode": 316472,
+      "productionVersionCode": 317722,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -17357,7 +17411,7 @@
       "packageName": "com.spotify.music",
       "appName": "Spotify: Music and Podcasts",
       "hasBeta": true,
-      "productionVersionCode": 146555520,
+      "productionVersionCode": 146816068,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -18707,7 +18761,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12294,
+      "productionVersionCode": 12296,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20408,7 +20462,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 263707322,
+      "productionVersionCode": 263807322,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22875,6 +22929,15 @@
       "appName": "Nebula AI - Smart AI Agents",
       "hasBeta": true,
       "productionVersionCode": 25,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "gg.oneupgames.ggclient",
+      "appName": "Urban Heat",
+      "hasBeta": true,
+      "productionVersionCode": 32057,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -26077,7 +26140,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 71052,
+      "productionVersionCode": 71122,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
