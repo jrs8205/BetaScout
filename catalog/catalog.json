@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1790852420007,
+  "generatedAt": 1790937203267,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -1677,6 +1677,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "co.lessisbetter.folio",
+      "appName": "Folio – Save now. Read later.",
+      "hasBeta": true,
+      "productionVersionCode": 46,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "co.mangotechnologies.clickup",
       "appName": "ClickUp: Tasks, Chat, Docs, AI",
       "hasBeta": true,
@@ -2400,7 +2409,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 803705904,
+      "productionVersionCode": 803705704,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3184,6 +3193,15 @@
       "appName": "AzamPesa",
       "hasBeta": true,
       "productionVersionCode": 93,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.azirevpn.android",
+      "appName": "AzireVPN – Ultra private VPN",
+      "hasBeta": true,
+      "productionVersionCode": 103,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6513,7 +6531,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 475019369,
+      "productionVersionCode": 475215273,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8080,6 +8098,15 @@
       "appName": "Right Messages",
       "hasBeta": true,
       "productionVersionCode": 824,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.google.ambient.streaming",
+      "appName": "Cross-Device Services",
+      "hasBeta": true,
+      "productionVersionCode": 100132460,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -11174,7 +11201,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 216200,
+      "productionVersionCode": 216300,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12263,7 +12290,7 @@
       "packageName": "com.microsoft.skydrive",
       "appName": "Microsoft OneDrive",
       "hasBeta": true,
-      "productionVersionCode": 2027640202,
+      "productionVersionCode": 2027640302,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -13271,7 +13298,7 @@
       "packageName": "com.netflix.mediaclient",
       "appName": "Netflix",
       "hasBeta": true,
-      "productionVersionCode": 74576,
+      "productionVersionCode": 74592,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -14555,6 +14582,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.petshoot.glo.and",
+      "appName": "Pet Shoot",
+      "hasBeta": true,
+      "productionVersionCode": 260928056,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.philips.sleepmapper.root",
       "appName": "DreamMapper",
       "hasBeta": true,
@@ -15647,7 +15683,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2638050,
+      "productionVersionCode": 2639070,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -17328,9 +17364,9 @@
     },
     {
       "packageName": "com.soundcloud.android",
-      "appName": "SoundCloud: The Music You Love",
+      "appName": "SoundCloud: Discover Music",
       "hasBeta": true,
-      "productionVersionCode": 365060,
+      "productionVersionCode": 374060,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -21426,6 +21462,15 @@
       "appName": "My Zong",
       "hasBeta": true,
       "productionVersionCode": 132,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.zoomera.camera.hd",
+      "appName": "Zoomera: Super Camera HD",
+      "hasBeta": true,
+      "productionVersionCode": 16,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -27400,7 +27445,7 @@
       "packageName": "tv.twitch.android.app",
       "appName": "Twitch: Live Streaming",
       "hasBeta": true,
-      "productionVersionCode": 3104016,
+      "productionVersionCode": 3104026,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

@@ -218,11 +218,11 @@
     },
     {
       "packageName": "com.foursquare.robin",
-      "rejectedAt": 1788338989304
+      "rejectedAt": 1790937203262
     },
     {
       "packageName": "com.kiloo.subwaysurf",
-      "rejectedAt": 1788338989304
+      "rejectedAt": 1790937203262
     },
     {
       "packageName": "com.nosmk.burgerking",
@@ -250,7 +250,7 @@
     },
     {
       "packageName": "com.apkmirror.helper.prod",
-      "rejectedAt": 1788338989304
+      "rejectedAt": 1790937203262
     },
     {
       "packageName": "com.bstar.intl",
@@ -3690,7 +3690,7 @@
     },
     {
       "packageName": "au.com.amp.myportfolio.android",
-      "rejectedAt": 1788338989304
+      "rejectedAt": 1790937203262
     },
     {
       "packageName": "com.tpuc.gp",
@@ -4607,6 +4607,14 @@
     {
       "packageName": "com.xalies.input2touch",
       "rejectedAt": 1790852420003
+    },
+    {
+      "packageName": "com.orube.mcl",
+      "rejectedAt": 1790937203262
+    },
+    {
+      "packageName": "com.ohze.heroes.cup",
+      "rejectedAt": 1790937203262
     }
   ]
 }
