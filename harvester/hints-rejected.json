@@ -386,7 +386,7 @@
     },
     {
       "packageName": "com.miui.videoplayer",
-      "rejectedAt": 1788425960541
+      "rejectedAt": 1791021295317
     },
     {
       "packageName": "com.mixplorer.silver",
@@ -446,7 +446,7 @@
     },
     {
       "packageName": "com.binance.dev",
-      "rejectedAt": 1788425960541
+      "rejectedAt": 1791021295317
     },
     {
       "packageName": "com.bybit.app",
@@ -4615,6 +4615,14 @@
     {
       "packageName": "com.ohze.heroes.cup",
       "rejectedAt": 1790937203262
+    },
+    {
+      "packageName": "com.glauc.lumecursor",
+      "rejectedAt": 1791021295317
+    },
+    {
+      "packageName": "com.saveitlater.app",
+      "rejectedAt": 1791021295317
     }
   ]
 }

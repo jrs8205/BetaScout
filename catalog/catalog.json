@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1790937203267,
+  "generatedAt": 1791021295323,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2004,7 +2004,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
       "hasBeta": true,
-      "productionVersionCode": 1932149937,
+      "productionVersionCode": 1932149959,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2409,7 +2409,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 803705704,
+      "productionVersionCode": 803709404,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3013,6 +3013,15 @@
       "appName": "Twilio Authy Authenticator",
       "hasBeta": true,
       "productionVersionCode": 1077,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.auto.app.refresher.apps.reolader",
+      "appName": "Auto Refresher: App Reloader",
+      "hasBeta": true,
+      "productionVersionCode": 12,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5980,9 +5989,9 @@
     },
     {
       "packageName": "com.duolingo",
-      "appName": "Duolingo: Language Lessons",
+      "appName": "Duolingo: Learn Languages",
       "hasBeta": true,
-      "productionVersionCode": 2468,
+      "productionVersionCode": 2469,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6531,7 +6540,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 475215273,
+      "productionVersionCode": 475215365,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6549,7 +6558,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 346013444,
+      "productionVersionCode": 346213584,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11201,7 +11210,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 216300,
+      "productionVersionCode": 216401,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -13308,6 +13317,15 @@
       "appName": "Spirit Crossing NETFLIX",
       "hasBeta": true,
       "productionVersionCode": 164130,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.newrp.game",
+      "appName": "NEWRP: RolePlay Life Simulator",
+      "hasBeta": true,
+      "productionVersionCode": 18,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17240,7 +17258,7 @@
       "packageName": "com.snapchat.android",
       "appName": "Snapchat",
       "hasBeta": true,
-      "productionVersionCode": 317722,
+      "productionVersionCode": 317772,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -19337,7 +19355,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312300001,
+      "productionVersionCode": 312310001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22709,6 +22727,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "fi.Pepperbox.DiceOfKalma",
+      "appName": "Dice of Kalma: Dice Roguelike",
+      "hasBeta": true,
+      "productionVersionCode": 644,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "fi.supersaa",
       "appName": "IS Supers��",
       "hasBeta": true,
@@ -24383,6 +24410,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "me.mikecroall.oledbuddy",
+      "appName": "OLEDBuddy",
+      "hasBeta": true,
+      "productionVersionCode": 53,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "me.nanova.summaryexpressive",
       "appName": "Summary Expressive",
       "hasBeta": true,
@@ -24927,6 +24963,15 @@
       "appName": "Muzei Live Wallpaper",
       "hasBeta": true,
       "productionVersionCode": 360005,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "net.obscura.vpnclientapp",
+      "appName": "Obscura VPN",
+      "hasBeta": true,
+      "productionVersionCode": 181,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
