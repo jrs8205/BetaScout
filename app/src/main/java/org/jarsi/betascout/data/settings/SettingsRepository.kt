@@ -13,8 +13,12 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.IOException
 import javax.inject.Inject
 import javax.inject.Singleton
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import org.jarsi.betascout.domain.PlaySession
 
@@ -38,11 +42,48 @@ data class LastScanInfo(
     val scanType: ScanType = ScanType.MANUAL,
 )
 
+/** The two preference values that make up the Play session, before decryption. */
+internal data class StoredSession(val email: String?, val cookie: String?)
+
+/**
+ * Turns stored session values into [PlaySession]s. Decryption is an
+ * AndroidKeyStore round-trip, so it runs on [io] and only when the stored values
+ * actually change — every DataStore edit re-emits the whole Preferences snapshot
+ * to each collector (several ViewModels on Main), and the cookie bytes are the
+ * same across all of them.
+ */
+internal fun Flow<StoredSession>.toPlaySessions(
+    isEncrypted: (String) -> Boolean,
+    decrypt: (String) -> String?,
+    io: CoroutineDispatcher,
+): Flow<PlaySession?> = distinctUntilChanged()
+    .map { stored ->
+        val raw = stored.cookie
+        val cookie = when {
+            raw.isNullOrBlank() -> null
+            // A legacy plaintext cookie is still a valid session — read it directly
+            // so an upgrade never signs the user out; it is re-encrypted at rest by
+            // migratePlaintextPlaySessionIfNeeded() on the next launch.
+            !isEncrypted(raw) -> raw
+            // Encrypted but unreadable (Keystore key lost/invalidated) => treat as
+            // signed out; the account screen then prompts a fresh sign-in.
+            else -> decrypt(raw)
+        }
+        if (!cookie.isNullOrBlank()) {
+            PlaySession(accountEmail = stored.email.orEmpty(), cookieHeader = cookie)
+        } else {
+            null
+        }
+    }
+    .flowOn(io)
+
 @Singleton
 class SettingsRepository @Inject constructor(
     @ApplicationContext private val context: Context,
     private val sessionCookieCipher: SessionCookieCipher,
 ) {
+    private val io: CoroutineDispatcher = Dispatchers.IO
+
     private val onboardingDoneKey = booleanPreferencesKey("onboarding_done")
 
     val onboardingDone: Flow<Boolean> = context.dataStore.data
@@ -109,25 +150,12 @@ class SettingsRepository @Inject constructor(
     /** The stored Play web session, or null if not signed in or the encrypted cookie is unreadable. */
     val playSession: Flow<PlaySession?> = context.dataStore.data
         .catch { e -> if (e is IOException) emit(emptyPreferences()) else throw e }
-        .map { prefs ->
-            val email = prefs[sessionEmailKey]
-            val raw = prefs[sessionCookieKey]
-            val cookie = when {
-                raw.isNullOrBlank() -> null
-                // A legacy plaintext cookie is still a valid session — read it directly
-                // so an upgrade never signs the user out; it is re-encrypted at rest by
-                // migratePlaintextPlaySessionIfNeeded() on the next launch.
-                !sessionCookieCipher.isEncrypted(raw) -> raw
-                // Encrypted but unreadable (Keystore key lost/invalidated) => treat as
-                // signed out; the account screen then prompts a fresh sign-in.
-                else -> sessionCookieCipher.decrypt(raw)
-            }
-            if (!cookie.isNullOrBlank()) {
-                PlaySession(accountEmail = email.orEmpty(), cookieHeader = cookie)
-            } else {
-                null
-            }
-    }
+        .map { prefs -> StoredSession(email = prefs[sessionEmailKey], cookie = prefs[sessionCookieKey]) }
+        .toPlaySessions(
+            isEncrypted = sessionCookieCipher::isEncrypted,
+            decrypt = sessionCookieCipher::decrypt,
+            io = io,
+        )
 
     suspend fun savePlaySession(email: String, cookieHeader: String) {
         val encryptedCookie = sessionCookieCipher.encrypt(cookieHeader)
