@@ -5,12 +5,20 @@ import kotlinx.coroutines.sync.withLock
 import org.jarsi.betascout.domain.BetaProgramInfo
 import org.jarsi.betascout.domain.BetaSource
 
+/** Identity of one catalog text, cheap enough to keep for every candidate. */
+data class CatalogFingerprint(val length: Int, val hash: Int) {
+    companion object {
+        fun of(json: String) = CatalogFingerprint(json.length, json.hashCode())
+    }
+}
+
 /** A parsed catalog ready to be mirrored into the database, with its provenance:
  *  [BetaSource.REMOTE] for a download (or the cached copy of one), [BetaSource.BUNDLED]
  *  for the seed shipped inside the APK. */
 data class CatalogSnapshot(
     val programs: List<BetaProgramInfo>,
     val source: BetaSource,
+    val fingerprint: CatalogFingerprint,
 )
 
 /**
@@ -21,9 +29,11 @@ data class CatalogSnapshot(
  * catalog (HTTP 200) for a missing KV key, and a bad remote body must not poison
  * the cache.
  *
- * The provider also remembers what it already handed out: the list screen asks
- * on every resume, and neither a second download inside the backend's cache
+ * The provider also remembers what the database already holds: the list screen
+ * asks on every resume, and neither a second download inside the backend's cache
  * window nor a second full table rewrite of an unchanged catalog is useful work.
+ * A catalog counts as applied only once the caller says so via [markApplied] —
+ * a failed or cancelled database write must get the same catalog again.
  */
 class CatalogProvider(
     private val fetchRemote: suspend () -> String?,
@@ -40,19 +50,18 @@ class CatalogProvider(
     /** Clock time of the last successful download, or null before the first one. */
     private var remoteFetchedAt: Long? = null
 
-    /** Identity of the catalog text last handed out, so an unchanged catalog is
-     *  not delivered (and mirrored into the database) twice. */
-    private var deliveredFingerprint: Fingerprint? = null
+    /** Identity of the catalog the caller confirmed it applied. */
+    private var appliedFingerprint: CatalogFingerprint? = null
 
-    /** The catalog to mirror, or null when the caller already received exactly
-     *  this catalog from this provider and there is nothing new to apply. */
+    /** The catalog to mirror, or null when the database already holds exactly
+     *  this catalog (see [markApplied]) and there is nothing new to apply. */
     suspend fun catalog(): CatalogSnapshot? = lock.withLock {
         val now = clock()
         val remoteIsFresh = remoteFetchedAt?.let { now - it < remoteFreshFor } == true
         if (!remoteIsFresh) {
             val remote = fetchRemote()
-            val programs = remote?.let { parse(it, BetaSource.REMOTE) }
-            if (remote != null && programs != null) {
+            val remotePrograms = remote?.let { parse(it, BetaSource.REMOTE) }
+            if (remote != null && remotePrograms != null) {
                 // Best effort: a failed cache write (disk full) must not throw away
                 // a perfectly good download.
                 try {
@@ -61,30 +70,33 @@ class CatalogProvider(
                     android.util.Log.d("BetaScout", "catalog cache write failed: $e")
                 }
                 remoteFetchedAt = now
-                return@withLock deliver(remote, programs, BetaSource.REMOTE)
+                return@withLock deliver(CatalogFingerprint.of(remote), remotePrograms, BetaSource.REMOTE)
             }
         }
         readCache()?.let { cached ->
             parse(cached, BetaSource.REMOTE)?.let { programs ->
-                return@withLock deliver(cached, programs, BetaSource.REMOTE)
+                return@withLock deliver(CatalogFingerprint.of(cached), programs, BetaSource.REMOTE)
             }
         }
         val bundled = readBundled()
-        deliver(bundled, parse(bundled, BetaSource.BUNDLED).orEmpty(), BetaSource.BUNDLED)
+        deliver(
+            CatalogFingerprint.of(bundled),
+            parse(bundled, BetaSource.BUNDLED).orEmpty(),
+            BetaSource.BUNDLED,
+        )
+    }
+
+    /** Confirms that [snapshot] reached the database; it will not be handed out again. */
+    suspend fun markApplied(snapshot: CatalogSnapshot) = lock.withLock {
+        appliedFingerprint = snapshot.fingerprint
     }
 
     private fun deliver(
-        json: String,
+        fingerprint: CatalogFingerprint,
         programs: List<BetaProgramInfo>,
         source: BetaSource,
-    ): CatalogSnapshot? {
-        val fingerprint = Fingerprint(json.length, json.hashCode())
-        if (fingerprint == deliveredFingerprint) return null
-        deliveredFingerprint = fingerprint
-        return CatalogSnapshot(programs, source)
-    }
-
-    private data class Fingerprint(val length: Int, val hash: Int)
+    ): CatalogSnapshot? =
+        if (fingerprint == appliedFingerprint) null else CatalogSnapshot(programs, source, fingerprint)
 
     private companion object {
         /** Matches the catalog Worker's `cache-control: max-age=3600`. */

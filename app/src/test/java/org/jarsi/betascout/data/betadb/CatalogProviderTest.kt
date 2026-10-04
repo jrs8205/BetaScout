@@ -41,6 +41,10 @@ class CatalogProviderTest {
 
     private fun CatalogSnapshot?.singlePackage(): String = this!!.programs.single().packageName
 
+    /** Hands the catalog out and confirms it reached the database, like the seeder does. */
+    private suspend fun CatalogProvider.catalogApplied(): CatalogSnapshot? =
+        catalog()?.also { markApplied(it) }
+
     @Test
     fun `remote success is returned, cached and marked as remote data`() = runTest {
         var cached: String? = null
@@ -128,7 +132,7 @@ class CatalogProviderTest {
         // network each time only burns the user's data plan.
         val provider = provider(fetchRemote = { "REMOTE" }, readCache = { "REMOTE" })
 
-        provider.catalog()
+        provider.catalogApplied()
         now += 30 * 60_000L
         provider.catalog()
 
@@ -139,7 +143,7 @@ class CatalogProviderTest {
     fun `the remote is fetched again once the freshness window has passed`() = runTest {
         val provider = provider(fetchRemote = { "REMOTE" }, readCache = { "REMOTE" })
 
-        provider.catalog()
+        provider.catalogApplied()
         now += 3_600_000L
         provider.catalog()
 
@@ -156,7 +160,7 @@ class CatalogProviderTest {
             readCache = { null },
         )
 
-        provider.catalog()
+        provider.catalogApplied()
         online = true
         now += 1_000L
 
@@ -164,12 +168,25 @@ class CatalogProviderTest {
     }
 
     @Test
-    fun `a catalog already handed out is not handed out again`() = runTest {
+    fun `a catalog is handed out again until the caller confirms it was applied`() = runTest {
+        // The database write can fail or the seeding coroutine can be cancelled
+        // after the hand-out; the next attempt must get the same catalog again, or
+        // the table stays empty or stale until the process restarts.
+        val provider = provider(fetchRemote = { "REMOTE" }, readCache = { "REMOTE" })
+
+        assertNotNull(provider.catalog())
+
+        assertEquals("REMOTE", provider.catalog().singlePackage())
+    }
+
+    @Test
+    fun `a catalog confirmed as applied is not handed out again`() = runTest {
         // Re-seeding the same 2000 programs on every resume rewrites the whole
         // table and makes every observeApps() collector recompute and flicker.
         val provider = provider(fetchRemote = { "REMOTE" }, readCache = { "REMOTE" })
 
-        assertNotNull(provider.catalog())
+        provider.catalogApplied()
+
         assertNull(provider.catalog())
     }
 
@@ -178,7 +195,7 @@ class CatalogProviderTest {
         var remote = "REMOTE"
         val provider = provider(fetchRemote = { remote }, readCache = { null })
 
-        provider.catalog()
+        provider.catalogApplied()
         remote = "REMOTE2"
         now += 3_600_000L
 

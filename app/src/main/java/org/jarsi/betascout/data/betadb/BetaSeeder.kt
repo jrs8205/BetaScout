@@ -6,6 +6,8 @@ import org.jarsi.betascout.domain.BetaSource
 
 class BetaSeeder(
     private val readCatalog: suspend () -> CatalogSnapshot?,
+    /** Told which catalog reached the database, so the provider stops offering it. */
+    private val markApplied: suspend (CatalogSnapshot) -> Unit,
     private val dao: BetaProgramDao,
 ) {
     /** Mirrors a downloaded catalog into beta_programs: rows the catalog dropped
@@ -23,5 +25,8 @@ class BetaSeeder(
             BetaSource.REMOTE -> dao.replaceAll(entities)
             BetaSource.BUNDLED -> dao.insertIgnoring(entities)
         }
+        // Only after the write: a failed or cancelled write must be retried with
+        // the same catalog, not skipped as already applied.
+        markApplied(snapshot)
     }
 }
