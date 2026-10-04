@@ -1,7 +1,6 @@
 package org.jarsi.betascout.data.scrape
 
-import java.net.InetAddress
-import java.net.ServerSocket
+import java.net.URL
 import kotlin.system.measureTimeMillis
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -10,62 +9,14 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
 import org.jarsi.betascout.domain.PlaySession
+import org.jarsi.betascout.testutil.Reply
+import org.jarsi.betascout.testutil.TinyHttpServer
 import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
-
-/** Minimal single-threaded HTTP server; com.sun.net.httpserver is not on the
- *  android.jar compile classpath, so responses are written by hand. */
-private class TinyHttpServer {
-    private val socket = ServerSocket(0, 1, InetAddress.getByName("127.0.0.1"))
-    val port: Int get() = socket.localPort
-
-    @Volatile var status = 200
-    @Volatile var body = ""
-
-    /** When false the server reads the request but never answers — the client
-     *  blocks until its own read timeout, like a stalled Google endpoint. */
-    @Volatile var respond = true
-
-    private val thread = Thread {
-        try {
-            while (true) {
-                socket.accept().use { client ->
-                    val reader = client.getInputStream().bufferedReader()
-                    while (true) {
-                        val line = reader.readLine() ?: break
-                        if (line.isEmpty()) break
-                    }
-                    if (!respond) {
-                        Thread.sleep(30_000)
-                        return@use
-                    }
-                    val bytes = body.toByteArray()
-                    client.getOutputStream().apply {
-                        write(
-                            (
-                                "HTTP/1.1 $status Status\r\n" +
-                                    "Content-Type: text/html\r\n" +
-                                    "Content-Length: ${bytes.size}\r\n" +
-                                    "Connection: close\r\n\r\n"
-                                ).toByteArray(),
-                        )
-                        write(bytes)
-                        flush()
-                    }
-                }
-            }
-        } catch (_: Exception) {
-            // The server socket was closed by stop(); the thread just ends.
-        }
-    }
-
-    fun start() = thread.apply { isDaemon = true }.start()
-
-    fun stop() = socket.close()
-}
 
 class HttpTestingPageSourceTest {
 
@@ -145,5 +96,50 @@ class HttpTestingPageSourceTest {
         val result = source().fetch("com.example", session)
 
         assertTrue(result.exceptionOrNull() is HttpStatusException)
+    }
+
+    @Test
+    fun `a redirect on the same host is followed and the final url reported`() = runTest {
+        server.handler = { request ->
+            if (request.path == "/apps/testing/com.example") {
+                Reply(302, headers = mapOf("Location" to "http://127.0.0.1:${server.port}/moved"))
+            } else {
+                Reply(200, """<html><body><form id="joinForm"></form></body></html>""")
+            }
+        }
+
+        val page = source().fetch("com.example", session).getOrThrow()
+
+        assertEquals("http://127.0.0.1:${server.port}/moved", page.finalUrl)
+        assertEquals(listOf("/apps/testing/com.example", "/moved"), server.requests.map { it.path })
+        assertEquals("SID=abc", server.requests.last().headers["cookie"])
+    }
+
+    @Test
+    fun `a redirect to a foreign host is not followed and the session cookie stays home`() = runTest {
+        // Android's HttpURLConnection re-sends every request header on a cross-host
+        // redirect, Cookie included; PRIVACY.md promises the Google session goes to
+        // Google only, so anything but the same host or *.google.com stops here.
+        server.handler = {
+            Reply(302, headers = mapOf("Location" to "http://localhost:${server.port}/elsewhere"))
+        }
+
+        val result = source().fetch("com.example", session)
+
+        val error = result.exceptionOrNull()
+        assertTrue("expected HttpStatusException, was $error", error is HttpStatusException)
+        assertEquals(302, (error as HttpStatusException).code)
+        assertEquals(listOf("/apps/testing/com.example"), server.requests.map { it.path })
+    }
+
+    @Test
+    fun `the default redirect policy keeps the Google session on Google over https`() {
+        val from = URL("https://play.google.com/apps/testing/com.example?hl=en")
+
+        assertTrue(redirectKeepsSession(from, URL("https://accounts.google.com/v3/signin/identifier")))
+        assertTrue(redirectKeepsSession(from, URL("https://play.google.com/store/apps/details?id=x")))
+        assertFalse(redirectKeepsSession(from, URL("https://play.google.com.evil.example/")))
+        assertFalse(redirectKeepsSession(from, URL("https://evil.example/google.com")))
+        assertFalse(redirectKeepsSession(from, URL("http://accounts.google.com/plaintext")))
     }
 }
