@@ -163,15 +163,14 @@ class DiscoveryReporterTest {
     }
 
     @Test
-    fun `user-created program rows do not hide a discovery`() = runTest {
-        observationDao.upsert(observation("com.user.marked", LiveBetaStatus.OPEN))
-        programDao.upsert(program("com.user.marked", BetaSource.USER))
+    fun `a program the catalog already lists is not reported as a discovery`() = runTest {
+        observationDao.upsert(observation("com.new.find", LiveBetaStatus.OPEN))
         programDao.upsert(program("com.from.catalog", BetaSource.REMOTE))
         observationDao.upsert(observation("com.from.catalog", LiveBetaStatus.OPEN))
 
         reporter().reportAfterScan(ACCOUNT)
 
-        assertEquals(listOf(listOf("com.user.marked")), postedBatches)
+        assertEquals(listOf(listOf("com.new.find")), postedBatches)
     }
 
     @Test

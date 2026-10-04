@@ -12,29 +12,40 @@ import org.junit.Test
 
 private class FakeBetaProgramDao : BetaProgramDao {
     val state = linkedMapOf<String, BetaProgramEntity>()
+    var writes = 0
 
     override fun observeAll(): Flow<List<BetaProgramEntity>> = MutableStateFlow(emptyList())
     override suspend fun getAll(): List<BetaProgramEntity> = state.values.toList()
     override suspend fun insertIgnoring(programs: List<BetaProgramEntity>) {
+        writes++
         programs.forEach { state.putIfAbsent(it.packageName, it) }
     }
     override suspend fun upsertAll(programs: List<BetaProgramEntity>) {
+        writes++
         programs.forEach { state[it.packageName] = it }
     }
     override suspend fun upsert(program: BetaProgramEntity) {
+        writes++
         state[program.packageName] = program
     }
     override suspend fun getAllPackageNames(): List<String> = state.keys.toList()
     override suspend fun deleteIn(packageNames: List<String>) {
+        writes++
         state.keys.removeAll(packageNames.toSet())
     }
     override suspend fun count(): Int = state.size
 }
 
+private fun snapshot(json: String, source: BetaSource = BetaSource.REMOTE) =
+    CatalogSnapshot(programs = BetaSeedParser.parse(json, source), source = source)
+
+private suspend fun FakeBetaProgramDao.seedWith(snapshot: CatalogSnapshot?) =
+    BetaSeeder(readCatalog = { snapshot }, dao = this).seed()
+
 class BetaSeederTest {
 
     @Test
-    fun `seeds parsed programs into dao as bundled entities`() = runTest {
+    fun `seeds parsed programs into dao with the catalog's provenance`() = runTest {
         val dao = FakeBetaProgramDao()
         val seedJson = """
             {"programs":[
@@ -43,7 +54,7 @@ class BetaSeederTest {
             ]}
         """.trimIndent()
 
-        BetaSeeder(readSeedJson = { seedJson }, dao = dao).seed()
+        dao.seedWith(snapshot(seedJson, BetaSource.BUNDLED))
 
         val seeded = dao.state.values.toList()
         assertEquals(2, seeded.size)
@@ -54,22 +65,18 @@ class BetaSeederTest {
     }
 
     @Test
-    fun `seed removes programs the catalog no longer contains`() = runTest {
+    fun `a downloaded catalog removes programs it no longer contains`() = runTest {
         val dao = FakeBetaProgramDao()
-        BetaSeeder(
-            readSeedJson = {
+        dao.seedWith(
+            snapshot(
                 """{"programs":[
                     {"packageName":"com.kept","appName":"Kept"},
                     {"packageName":"com.removed","appName":"Removed"}
-                ]}"""
-            },
-            dao = dao,
-        ).seed()
+                ]}""",
+            ),
+        )
 
-        BetaSeeder(
-            readSeedJson = { """{"programs":[{"packageName":"com.kept","appName":"Kept"}]}""" },
-            dao = dao,
-        ).seed()
+        dao.seedWith(snapshot("""{"programs":[{"packageName":"com.kept","appName":"Kept"}]}"""))
 
         assertEquals(listOf("com.kept"), dao.state.keys.toList())
     }
@@ -77,13 +84,53 @@ class BetaSeederTest {
     @Test
     fun `an empty catalog is ignored instead of wiping the seeded programs`() = runTest {
         val dao = FakeBetaProgramDao()
-        BetaSeeder(
-            readSeedJson = { """{"programs":[{"packageName":"com.kept","appName":"Kept"}]}""" },
-            dao = dao,
-        ).seed()
+        dao.seedWith(snapshot("""{"programs":[{"packageName":"com.kept","appName":"Kept"}]}"""))
 
-        BetaSeeder(readSeedJson = { """{"programs":[]}""" }, dao = dao).seed()
+        dao.seedWith(snapshot("""{"programs":[]}"""))
 
         assertEquals(listOf("com.kept"), dao.state.keys.toList())
+    }
+
+    @Test
+    fun `the bundled seed only fills gaps and never deletes downloaded programs`() = runTest {
+        // Offline start with a truncated cache file: the provider falls back to the
+        // tiny bundled seed. Mirroring it would delete every program a previous
+        // download stored and make all "Beta available" badges vanish.
+        val dao = FakeBetaProgramDao()
+        dao.seedWith(
+            snapshot(
+                """{"programs":[
+                    {"packageName":"com.downloaded","appName":"Downloaded"},
+                    {"packageName":"com.shared","appName":"Shared (remote)"}
+                ]}""",
+            ),
+        )
+
+        dao.seedWith(
+            snapshot(
+                """{"programs":[
+                    {"packageName":"com.shared","appName":"Shared (bundled)"},
+                    {"packageName":"com.bundled.only","appName":"Bundled"}
+                ]}""",
+                BetaSource.BUNDLED,
+            ),
+        )
+
+        assertEquals(
+            listOf("com.downloaded", "com.shared", "com.bundled.only"),
+            dao.state.keys.toList(),
+        )
+        assertEquals("Shared (remote)", dao.state.getValue("com.shared").appName)
+    }
+
+    @Test
+    fun `nothing new from the provider leaves the table untouched`() = runTest {
+        val dao = FakeBetaProgramDao()
+        dao.seedWith(snapshot("""{"programs":[{"packageName":"com.kept","appName":"Kept"}]}"""))
+        val writesAfterSeed = dao.writes
+
+        dao.seedWith(null)
+
+        assertEquals(writesAfterSeed, dao.writes)
     }
 }

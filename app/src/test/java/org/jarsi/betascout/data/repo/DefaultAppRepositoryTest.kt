@@ -11,7 +11,9 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
+import org.jarsi.betascout.data.betadb.BetaSeedParser
 import org.jarsi.betascout.data.betadb.BetaSeeder
+import org.jarsi.betascout.data.betadb.CatalogSnapshot
 import org.jarsi.betascout.data.db.BetaObservationDao
 import org.jarsi.betascout.data.db.BetaObservationEntity
 import org.jarsi.betascout.data.db.BetaProgramDao
@@ -192,7 +194,12 @@ class DefaultAppRepositoryTest {
         betaProgramDao = betaDao,
         betaObservationDao = observationDao,
         userBetaStatusDao = userDao,
-        seeder = BetaSeeder(seedJson, betaDao),
+        seeder = BetaSeeder(
+            readCatalog = {
+                CatalogSnapshot(BetaSeedParser.parse(seedJson(), BetaSource.REMOTE), BetaSource.REMOTE)
+            },
+            dao = betaDao,
+        ),
         scraper = BetaStatusScraper(
             source = TestingPageSource { pkg, _ ->
                 onFetch(pkg)

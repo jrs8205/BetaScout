@@ -13,8 +13,9 @@ enum class LiveBetaStatus { UNKNOWN, OPEN, FULL, CLOSED, NO_PROGRAM }
 /** Membership as observed from the authenticated testing page (not user-declared). */
 enum class ObservedMembership { UNKNOWN, JOINED, NOT_JOINED }
 
-/** Origin of a beta record. */
-enum class BetaSource { BUNDLED, REMOTE, USER }
+/** Origin of a beta program row: the catalog download (or its cached copy), or
+ *  the seed bundled in the APK. */
+enum class BetaSource { BUNDLED, REMOTE }
 
 /** The user's Google Play web session, as a cookie header for authenticated requests. */
 data class PlaySession(

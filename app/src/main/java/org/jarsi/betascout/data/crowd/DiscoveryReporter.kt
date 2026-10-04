@@ -6,7 +6,6 @@ import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.db.BetaObservationDao
 import org.jarsi.betascout.data.db.BetaObservationEntity
 import org.jarsi.betascout.data.db.BetaProgramDao
-import org.jarsi.betascout.domain.BetaSource
 import org.jarsi.betascout.domain.LiveBetaStatus
 
 /** Statuses that prove the scan saw a real testing-program page. */
@@ -51,12 +50,7 @@ class DiscoveryReporter(
     suspend fun reportAfterScan(accountKey: String) = withContext(io) {
         try {
             if (!shareEnabled()) return@withContext
-            val catalogPackages = betaProgramDao.getAll()
-                // A user-created row is the user's own marking, not catalog
-                // knowledge — it must not hide a discovery from the crowd.
-                .filter { it.source != BetaSource.USER }
-                .map { it.packageName }
-                .toSet()
+            val catalogPackages = betaProgramDao.getAll().mapTo(HashSet()) { it.packageName }
             val candidates = selectDiscoveries(
                 observations = betaObservationDao.getAllForAccount(accountKey),
                 catalogPackages = catalogPackages,
