@@ -24,7 +24,7 @@ class HttpStatusException(val code: Int) : java.io.IOException("HTTP $code")
 class HttpTestingPageSource(
     private val io: CoroutineDispatcher = Dispatchers.IO,
     private val userAgent: String = DEFAULT_USER_AGENT,
-    private val urlFor: (String) -> String = BetaLinkBuilder::testingUrl,
+    private val urlFor: (String) -> String = BetaLinkBuilder::scrapeUrl,
 ) : TestingPageSource {
 
     override suspend fun fetch(packageName: String, session: PlaySession): Result<FetchedPage> =

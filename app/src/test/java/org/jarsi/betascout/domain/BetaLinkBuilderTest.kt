@@ -55,4 +55,23 @@ class BetaLinkBuilderTest {
             BetaLinkBuilder.testingUrl("   ")
         }
     }
+
+    @Test
+    fun `scrapeUrl forces the English page so the status phrases can be parsed`() {
+        // The signed-in account's own language preference overrides Accept-Language;
+        // the FULL/CLOSED/NO_PROGRAM detection keys on English phrases, so a Finnish
+        // or German account would get "unrecognized page" for every full beta.
+        assertEquals(
+            "https://play.google.com/apps/testing/com.whatsapp?hl=en",
+            BetaLinkBuilder.scrapeUrl("com.whatsapp"),
+        )
+    }
+
+    @Test
+    fun `scrapeUrl keeps the Play Store alias`() {
+        assertEquals(
+            "https://play.google.com/apps/testing/com.google.android.gms?hl=en",
+            BetaLinkBuilder.scrapeUrl("com.android.vending"),
+        )
+    }
 }

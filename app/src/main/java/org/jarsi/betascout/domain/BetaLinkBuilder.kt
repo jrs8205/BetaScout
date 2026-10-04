@@ -8,8 +8,14 @@ object BetaLinkBuilder {
      *  reads the real program in one hop. */
     private const val GOOGLE_SYSTEM_SERVICES_PACKAGE = "com.google.android.gms"
 
+    /** The page the user opens to join or leave — in their own language. */
     fun testingUrl(packageName: String): String =
         "https://play.google.com/apps/testing/${aliased(clean(packageName))}"
+
+    /** The page the status scan fetches. `hl=en` pins the English rendering: the
+     *  signed-in account's language preference overrides Accept-Language, and the
+     *  parser recognises the full/closed/no-program states by English phrases. */
+    fun scrapeUrl(packageName: String): String = "${testingUrl(packageName)}?hl=en"
 
     private fun aliased(packageName: String): String =
         if (packageName == PLAY_STORE_PACKAGE) GOOGLE_SYSTEM_SERVICES_PACKAGE else packageName
