@@ -451,12 +451,11 @@ private fun GoogleLoginWebView(onCaptured: (String, String) -> Unit) {
                         val signedIn = cookies.contains("SAPISID=") || cookies.contains("SID=")
                         if (!signedIn) return
                         handled = true
-                        view.evaluateJavascript(
-                            "(function(){var m=document.documentElement.innerHTML" +
-                                ".match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}/);" +
-                                "return m?m[0]:'';})()",
-                        ) { raw ->
-                            onCaptured(raw.trim('"'), cookies)
+                        // The account chip's accessible label ("Google Account: Name
+                        // (email)") is the one place the signed-in address reliably
+                        // appears; the page source is full of other addresses.
+                        view.evaluateJavascript(ACCOUNT_LABEL_SCRIPT) { raw ->
+                            onCaptured(capturedEmailOf(raw).orEmpty(), cookies)
                         }
                     }
                 }
@@ -465,3 +464,18 @@ private fun GoogleLoginWebView(onCaptured: (String, String) -> Unit) {
         },
     )
 }
+
+private const val ACCOUNT_LABEL_SCRIPT = """
+    (function () {
+      var selectors = [
+        'a[aria-label*="Google Account"]',
+        'a[href*="accounts.google.com"][aria-label*="@"]',
+        '[aria-label*="@"]'
+      ];
+      for (var i = 0; i < selectors.length; i++) {
+        var node = document.querySelector(selectors[i]);
+        if (node) return node.getAttribute('aria-label') || '';
+      }
+      return '';
+    })()
+"""

@@ -1,6 +1,8 @@
 package org.jarsi.betascout.ui.account
 
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -31,5 +33,28 @@ class LoginCaptureTest {
         assertFalse(isPlayPageUrl("https://evil.example/play.google.com"))
         assertFalse(isPlayPageUrl("not a url"))
         assertFalse(isPlayPageUrl(null))
+    }
+
+    @Test
+    fun `the account email is read from the account chip's label and normalised`() {
+        // evaluateJavascript hands back a JSON string literal, quotes included.
+        assertEquals(
+            "user@example.com",
+            capturedEmailOf("\"Google Account: Test User  \n(User@Example.com)\""),
+        )
+    }
+
+    @Test
+    fun `a JavaScript failure or an empty label yields no email instead of the literal null`() {
+        // A failed evaluateJavascript resolves to the string "null"; stored as the
+        // account it would become the accountKey every observation is filed under.
+        assertNull(capturedEmailOf("null"))
+        assertNull(capturedEmailOf("\"\""))
+        assertNull(capturedEmailOf(null))
+    }
+
+    @Test
+    fun `a label without an address yields no email`() {
+        assertNull(capturedEmailOf("\"Google Account\""))
     }
 }
