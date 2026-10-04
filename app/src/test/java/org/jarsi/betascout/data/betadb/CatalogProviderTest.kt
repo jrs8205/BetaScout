@@ -126,6 +126,24 @@ class CatalogProviderTest {
     }
 
     @Test
+    fun `a stale disk cache cannot replace a download whose cache write failed`() = runTest {
+        // The download reached the database but not the disk. Inside the freshness
+        // window the provider must keep serving that download from memory — going
+        // back to the disk would hand out the OLD catalog as fresh remote data and
+        // make the seeder delete every program the download had just added.
+        val provider = provider(
+            fetchRemote = { "REMOTE2" },
+            readCache = { "REMOTE1" },
+            writeCache = { throw IOException("ENOSPC") },
+        )
+
+        assertEquals("REMOTE2", provider.catalogApplied().singlePackage())
+        now += 60_000L
+
+        assertNull(provider.catalog())
+    }
+
+    @Test
     fun `the remote is not fetched again inside the freshness window`() = runTest {
         // The list screen refreshes on every resume (every back-navigation from a
         // detail screen); the worker's cache-control allows an hour, so hitting the

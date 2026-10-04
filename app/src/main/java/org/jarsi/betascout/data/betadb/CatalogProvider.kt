@@ -47,8 +47,10 @@ class CatalogProvider(
 ) {
     private val lock = Mutex()
 
-    /** Clock time of the last successful download, or null before the first one. */
-    private var remoteFetchedAt: Long? = null
+    /** The last successful download, kept in memory for the freshness window: the
+     *  disk cache may be older than it (its write is best effort), so inside the
+     *  window the disk is never consulted. */
+    private var lastDownload: Download? = null
 
     /** Identity of the catalog the caller confirmed it applied. */
     private var appliedFingerprint: CatalogFingerprint? = null
@@ -57,21 +59,22 @@ class CatalogProvider(
      *  this catalog (see [markApplied]) and there is nothing new to apply. */
     suspend fun catalog(): CatalogSnapshot? = lock.withLock {
         val now = clock()
-        val remoteIsFresh = remoteFetchedAt?.let { now - it < remoteFreshFor } == true
-        if (!remoteIsFresh) {
-            val remote = fetchRemote()
-            val remotePrograms = remote?.let { parse(it, BetaSource.REMOTE) }
-            if (remote != null && remotePrograms != null) {
-                // Best effort: a failed cache write (disk full) must not throw away
-                // a perfectly good download.
-                try {
-                    writeCache(remote)
-                } catch (e: Exception) {
-                    android.util.Log.d("BetaScout", "catalog cache write failed: $e")
-                }
-                remoteFetchedAt = now
-                return@withLock deliver(CatalogFingerprint.of(remote), remotePrograms, BetaSource.REMOTE)
+        lastDownload?.takeIf { now - it.fetchedAt < remoteFreshFor }?.let { fresh ->
+            return@withLock deliver(fresh.fingerprint, fresh.programs, BetaSource.REMOTE)
+        }
+        val remote = fetchRemote()
+        val remotePrograms = remote?.let { parse(it, BetaSource.REMOTE) }
+        if (remote != null && remotePrograms != null) {
+            // Best effort: a failed cache write (disk full) must not throw away
+            // a perfectly good download.
+            try {
+                writeCache(remote)
+            } catch (e: Exception) {
+                android.util.Log.d("BetaScout", "catalog cache write failed: $e")
             }
+            val fingerprint = CatalogFingerprint.of(remote)
+            lastDownload = Download(fingerprint, remotePrograms, fetchedAt = now)
+            return@withLock deliver(fingerprint, remotePrograms, BetaSource.REMOTE)
         }
         readCache()?.let { cached ->
             parse(cached, BetaSource.REMOTE)?.let { programs ->
@@ -97,6 +100,12 @@ class CatalogProvider(
         source: BetaSource,
     ): CatalogSnapshot? =
         if (fingerprint == appliedFingerprint) null else CatalogSnapshot(programs, source, fingerprint)
+
+    private class Download(
+        val fingerprint: CatalogFingerprint,
+        val programs: List<BetaProgramInfo>,
+        val fetchedAt: Long,
+    )
 
     private companion object {
         /** Matches the catalog Worker's `cache-control: max-age=3600`. */
