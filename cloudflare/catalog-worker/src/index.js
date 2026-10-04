@@ -3,7 +3,7 @@
 // reaches the published catalog until the harvester's gplayapi verification
 // confirms it, which is why the intake needs no submitter identity.
 
-import { parseHintRequest, MAX_BODY_BYTES } from './hints.js';
+import { parseHintRequest, readBodyCapped, MAX_BODY_BYTES } from './hints.js';
 
 const JSON_HEADERS = {
   'content-type': 'application/json; charset=utf-8',
@@ -66,12 +66,14 @@ async function handleHintPost(request, env) {
   if (limit && !limit.success) return new Response(null, { status: 429 });
 
   // A declared oversized body is refused before buffering; a body that arrives
-  // oversized anyway (missing or lying Content-Length) is caught by the length
-  // check inside parseHintRequest before any JSON.parse.
+  // oversized anyway (missing or lying Content-Length) is cut off while
+  // streaming, so no more than the cap is ever held in memory or parsed.
   const declaredLength = Number(request.headers.get('content-length'));
   if (declaredLength > MAX_BODY_BYTES) return new Response(null, { status: 413 });
+  const bodyText = await readBodyCapped(request, MAX_BODY_BYTES);
+  if (bodyText === null) return new Response(null, { status: 413 });
 
-  const result = parseHintRequest(await request.text(), await catalogPackages(env));
+  const result = parseHintRequest(bodyText, await catalogPackages(env));
   if (result.status !== 204) return new Response(null, { status: result.status });
 
   const day = Math.floor(Date.now() / 86_400_000);

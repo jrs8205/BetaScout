@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseHintRequest } from '../src/hints.js';
+import { parseHintRequest, readBodyCapped, MAX_BODY_BYTES } from '../src/hints.js';
 
 const catalog = new Set(['com.known.app']);
 
@@ -55,4 +55,22 @@ test('a batch that is entirely already-known still answers 204', () => {
 test('duplicates collapse to one accepted entry', () => {
   const body = JSON.stringify({ version: 1, packages: ['com.example.app', 'com.example.app'] });
   assert.deepEqual(parseHintRequest(body, catalog).accepted, ['com.example.app']);
+});
+
+test('the body limit counts UTF-8 bytes, not UTF-16 code units', () => {
+  // 20 000 three-byte characters: 20 000 code units but 60 000 bytes. Measured
+  // in code units the body would sail past a 32 KB limit into JSON.parse.
+  const body = '"' + '€'.repeat(20_000) + '"';
+  assert.equal(parseHintRequest(body, catalog).status, 413);
+});
+
+test('readBodyCapped stops reading once the byte cap is exceeded', async () => {
+  const oversized = new Request('https://worker.test/hints', {
+    method: 'POST',
+    body: 'x'.repeat(MAX_BODY_BYTES + 1),
+  });
+  assert.equal(await readBodyCapped(oversized, MAX_BODY_BYTES), null);
+
+  const ok = new Request('https://worker.test/hints', { method: 'POST', body: '{"a":1}' });
+  assert.equal(await readBodyCapped(ok, MAX_BODY_BYTES), '{"a":1}');
 });
