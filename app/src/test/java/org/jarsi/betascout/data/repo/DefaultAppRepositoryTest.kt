@@ -13,6 +13,7 @@ import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.jarsi.betascout.data.betadb.BetaSeedParser
 import org.jarsi.betascout.data.betadb.BetaSeeder
+import org.jarsi.betascout.data.betadb.CatalogFingerprint
 import org.jarsi.betascout.data.betadb.CatalogSnapshot
 import org.jarsi.betascout.data.db.BetaObservationDao
 import org.jarsi.betascout.data.db.BetaObservationEntity
@@ -196,8 +197,14 @@ class DefaultAppRepositoryTest {
         userBetaStatusDao = userDao,
         seeder = BetaSeeder(
             readCatalog = {
-                CatalogSnapshot(BetaSeedParser.parse(seedJson(), BetaSource.REMOTE), BetaSource.REMOTE)
+                val json = seedJson()
+                CatalogSnapshot(
+                    programs = BetaSeedParser.parse(json, BetaSource.REMOTE),
+                    source = BetaSource.REMOTE,
+                    fingerprint = CatalogFingerprint.of(json),
+                )
             },
+            markApplied = {},
             dao = betaDao,
         ),
         scraper = BetaStatusScraper(
@@ -960,7 +967,9 @@ class DefaultAppRepositoryTest {
 
         val result = repo.refreshSingleBetaStatus(session, "com.whatsapp")
 
-        assertTrue("expected NeedsLogin, was ${result.exceptionOrNull()}", result.exceptionOrNull() is DataError.NeedsLogin)
+        // StaleSession, not NeedsLogin: the detail screen clears the stored session
+        // on NeedsLogin, which here would wipe whatever account signed in meanwhile.
+        assertTrue("expected StaleSession, was ${result.exceptionOrNull()}", result.exceptionOrNull() is DataError.StaleSession)
         assertEquals(0, fetches)
         assertTrue(observationDao.getAll().isEmpty())
     }
@@ -974,7 +983,7 @@ class DefaultAppRepositoryTest {
 
         val result = repo.refreshSingleBetaStatus(session, "com.whatsapp")
 
-        assertTrue(result.exceptionOrNull() is DataError.NeedsLogin)
+        assertTrue(result.exceptionOrNull() is DataError.StaleSession)
         assertEquals(0, fetches)
     }
 

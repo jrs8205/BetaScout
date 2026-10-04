@@ -25,6 +25,9 @@ enum class CheckStatusError { SCAN_IN_PROGRESS, SCAN_BLOCKED, FAILED }
  *  another surface (the sign-in prompt) already explains the situation. */
 internal fun checkStatusErrorOf(error: Throwable): CheckStatusError? = when (error) {
     is DataError.NeedsLogin -> null
+    // The account changed under the re-check; the screen already shows the
+    // current account's data and the stored session must stay untouched.
+    is DataError.StaleSession -> null
     is DataError.ScanInProgress -> CheckStatusError.SCAN_IN_PROGRESS
     is DataError.ScanBlocked -> CheckStatusError.SCAN_BLOCKED
     else -> CheckStatusError.FAILED
@@ -98,9 +101,11 @@ class AppDetailViewModel @Inject constructor(
                     .onSuccess { checkError.value = null }
                     .onFailure { error ->
                         // Same handling as the scan worker: a dead session is cleared so
-                        // every screen switches to prompting for a fresh sign-in. Every
-                        // other failure is surfaced — the membership on screen may be
-                        // stale and the user must not mistake it for a fresh result.
+                        // every screen switches to prompting for a fresh sign-in. Only
+                        // NeedsLogin — a StaleSession means another account is signed
+                        // in now, and its session must not be wiped. Every other failure
+                        // is surfaced — the membership on screen may be stale and the
+                        // user must not mistake it for a fresh result.
                         if (error is DataError.NeedsLogin) settings.clearPlaySession()
                         checkError.value = checkStatusErrorOf(error)
                     }

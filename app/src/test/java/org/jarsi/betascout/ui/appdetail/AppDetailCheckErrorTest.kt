@@ -29,6 +29,14 @@ class AppDetailCheckErrorTest {
     }
 
     @Test
+    fun `a re-check started with a session that is no longer current shows nothing and clears nothing`() {
+        // Unlike NeedsLogin this must not be treated as a dead session: the account
+        // may simply have changed, and clearing the stored session would sign the
+        // new account out.
+        assertNull(checkStatusErrorOf(DataError.StaleSession()))
+    }
+
+    @Test
     fun `any other failure is surfaced as a generic check failure`() {
         assertEquals(
             CheckStatusError.FAILED,

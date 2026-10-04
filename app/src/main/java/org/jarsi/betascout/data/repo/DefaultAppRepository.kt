@@ -248,12 +248,12 @@ class DefaultAppRepository(
         try {
             try {
                 // The caller read its session before reaching the lock, and sign-out
-                // (which cancels only the WorkManager scans) may have wiped the
-                // account inside the lock meanwhile. Re-checked here so a dead
-                // session never fetches Google or writes a membership row back for
-                // an account that is no longer signed in.
+                // (which cancels only the WorkManager scans) may have wiped or
+                // replaced the account inside the lock meanwhile. Re-checked here so
+                // a superseded session never fetches Google or writes a membership
+                // row back for an account that is no longer signed in.
                 if (currentAccountKey.first() != session.accountKey) {
-                    return@withContext Result.failure(DataError.NeedsLogin())
+                    return@withContext Result.failure(DataError.StaleSession())
                 }
                 val outcome = scraper.scrape(listOf(packageName), session) { observation ->
                     betaObservationDao.upsert(observation.toEntity())
