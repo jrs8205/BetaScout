@@ -57,4 +57,14 @@ class LoginCaptureTest {
     fun `a label without an address yields no email`() {
         assertNull(capturedEmailOf("\"Google Account\""))
     }
+
+    @Test
+    fun `back inside the login WebView first walks its history and only then cancels the login`() {
+        val calls = mutableListOf<String>()
+
+        onLoginBack(canGoBack = true, goBack = { calls += "back" }, cancel = { calls += "cancel" })
+        onLoginBack(canGoBack = false, goBack = { calls += "back" }, cancel = { calls += "cancel" })
+
+        assertEquals(listOf("back", "cancel"), calls)
+    }
 }

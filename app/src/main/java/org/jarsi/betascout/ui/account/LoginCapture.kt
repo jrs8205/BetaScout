@@ -25,3 +25,9 @@ internal fun capturedEmailOf(raw: String?): String? {
     if (raw == null || raw == "null") return null
     return EMAIL.find(raw)?.value?.lowercase()
 }
+
+/** Back inside the login WebView walks Google's multi-page flow first; only from
+ *  its first page does it abandon the sign-in. */
+internal fun onLoginBack(canGoBack: Boolean, goBack: () -> Unit, cancel: () -> Unit) {
+    if (canGoBack) goBack() else cancel()
+}

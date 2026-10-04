@@ -4,6 +4,7 @@ import android.os.Build
 import android.webkit.CookieManager
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -35,7 +36,9 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -67,7 +70,7 @@ fun AccountScreen(
     val sharePromptShown by viewModel.sharePromptShown.collectAsStateWithLifecycle()
 
     if (state.showLogin) {
-        GoogleLoginWebView(onCaptured = viewModel::onLoginCaptured)
+        GoogleLoginWebView(onCaptured = viewModel::onLoginCaptured, onCancel = viewModel::cancelLogin)
         return
     }
 
@@ -428,7 +431,19 @@ private fun AppearanceCard(useDynamicColor: Boolean, onToggle: (Boolean) -> Unit
  * the same mechanism the reference app uses.
  */
 @Composable
-private fun GoogleLoginWebView(onCaptured: (String, String) -> Unit) {
+private fun GoogleLoginWebView(onCaptured: (String, String) -> Unit, onCancel: () -> Unit) {
+    var webView by remember { mutableStateOf<WebView?>(null) }
+    // Without this the system back button pops the whole Account screen and the
+    // half-finished login is discarded; inside Google's multi-page flow it should
+    // step back one page instead.
+    BackHandler {
+        val view = webView
+        onLoginBack(
+            canGoBack = view?.canGoBack() == true,
+            goBack = { view?.goBack() },
+            cancel = onCancel,
+        )
+    }
     AndroidView(
         modifier = Modifier.fillMaxSize(),
         factory = { context ->
@@ -460,7 +475,15 @@ private fun GoogleLoginWebView(onCaptured: (String, String) -> Unit) {
                     }
                 }
                 loadUrl("https://accounts.google.com/ServiceLogin?continue=https://play.google.com/")
+                webView = this
             }
+        },
+        // A WebView holds a renderer process, the cookie jar and a JS context; left
+        // to the garbage collector it stays alive until process death.
+        onRelease = { view ->
+            webView = null
+            view.stopLoading()
+            view.destroy()
         },
     )
 }
