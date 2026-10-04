@@ -56,6 +56,16 @@ android {
         compose = true
     }
 
+    androidResources {
+        // aapt2's default ignore list plus the tooling-generated, gitignored
+        // adi-registration.properties that otherwise rides along from
+        // src/main/assets into every locally built APK (but not CI's), leaking a
+        // developer-machine identifier and making the two builds differ.
+        ignoreAssetsPattern =
+            "!.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:" +
+                "!adi-registration.properties"
+    }
+
     testOptions {
         // Diagnostic android.util.Log calls in data classes become no-ops in JVM unit tests.
         unitTests.isReturnDefaultValues = true
