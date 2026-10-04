@@ -34,11 +34,17 @@ data class CatalogSnapshot(
  * window nor a second full table rewrite of an unchanged catalog is useful work.
  * A catalog counts as applied only once the caller says so via [markApplied] —
  * a failed or cancelled database write must get the same catalog again.
+ *
+ * The disk cache is only ever allowed to be as new as the database. A download
+ * is applied even when its cache write fails, so the older disk copy is deleted
+ * then: handed out later as REMOTE data it would make the seeder delete the
+ * programs that download had just added.
  */
 class CatalogProvider(
     private val fetchRemote: suspend () -> String?,
     private val readCache: () -> String?,
     private val writeCache: (String) -> Unit,
+    private val deleteCache: () -> Unit,
     private val readBundled: () -> String,
     /** Null when the text is not a usable, non-empty catalog. */
     private val parse: (json: String, source: BetaSource) -> List<BetaProgramInfo>?,
@@ -47,9 +53,9 @@ class CatalogProvider(
 ) {
     private val lock = Mutex()
 
-    /** The last successful download, kept in memory for the freshness window: the
-     *  disk cache may be older than it (its write is best effort), so inside the
-     *  window the disk is never consulted. */
+    /** The last successful download. Inside the freshness window it is served
+     *  without touching the network; after that it stays the preferred fallback
+     *  for a failed download, because it is never older than the disk cache. */
     private var lastDownload: Download? = null
 
     /** Identity of the catalog the caller confirmed it applied. */
@@ -60,22 +66,17 @@ class CatalogProvider(
     suspend fun catalog(): CatalogSnapshot? = lock.withLock {
         val now = clock()
         lastDownload?.takeIf { now - it.fetchedAt < remoteFreshFor }?.let { fresh ->
-            return@withLock deliver(fresh.fingerprint, fresh.programs, BetaSource.REMOTE)
+            return@withLock deliver(fresh)
         }
         val remote = fetchRemote()
         val remotePrograms = remote?.let { parse(it, BetaSource.REMOTE) }
         if (remote != null && remotePrograms != null) {
-            // Best effort: a failed cache write (disk full) must not throw away
-            // a perfectly good download.
-            try {
-                writeCache(remote)
-            } catch (e: Exception) {
-                android.util.Log.d("BetaScout", "catalog cache write failed: $e")
-            }
-            val fingerprint = CatalogFingerprint.of(remote)
-            lastDownload = Download(fingerprint, remotePrograms, fetchedAt = now)
-            return@withLock deliver(fingerprint, remotePrograms, BetaSource.REMOTE)
+            cacheBestEffort(remote)
+            val download = Download(CatalogFingerprint.of(remote), remotePrograms, fetchedAt = now)
+            lastDownload = download
+            return@withLock deliver(download)
         }
+        lastDownload?.let { return@withLock deliver(it) }
         readCache()?.let { cached ->
             parse(cached, BetaSource.REMOTE)?.let { programs ->
                 return@withLock deliver(CatalogFingerprint.of(cached), programs, BetaSource.REMOTE)
@@ -93,6 +94,24 @@ class CatalogProvider(
     suspend fun markApplied(snapshot: CatalogSnapshot) = lock.withLock {
         appliedFingerprint = snapshot.fingerprint
     }
+
+    /** The cache is best effort: a failed write (disk full) must not throw away a
+     *  good download. The older copy must go, though — see the class comment. */
+    private fun cacheBestEffort(remote: String) {
+        try {
+            writeCache(remote)
+        } catch (e: Exception) {
+            android.util.Log.d("BetaScout", "catalog cache write failed: $e")
+            try {
+                deleteCache()
+            } catch (e: Exception) {
+                android.util.Log.d("BetaScout", "stale catalog cache could not be removed: $e")
+            }
+        }
+    }
+
+    private fun deliver(download: Download): CatalogSnapshot? =
+        deliver(download.fingerprint, download.programs, BetaSource.REMOTE)
 
     private fun deliver(
         fingerprint: CatalogFingerprint,

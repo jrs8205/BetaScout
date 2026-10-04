@@ -154,6 +154,7 @@ object AppModule {
             // not a truncated file that fails parsing and drags the catalog back
             // to the bundled seed on the next offline start.
             writeCache = { File(context.filesDir, CATALOG_CACHE_FILE).writeTextAtomically(it) },
+            deleteCache = { File(context.filesDir, CATALOG_CACHE_FILE).delete() },
             readBundled = {
                 context.assets.open(SEED_ASSET).bufferedReader().use { it.readText() }
             },

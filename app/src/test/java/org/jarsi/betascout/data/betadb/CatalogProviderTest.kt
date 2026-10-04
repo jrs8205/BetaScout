@@ -27,12 +27,14 @@ class CatalogProviderTest {
         fetchRemote: suspend () -> String?,
         readCache: () -> String?,
         writeCache: (String) -> Unit = {},
+        deleteCache: () -> Unit = {},
         readBundled: () -> String = { "BUNDLED" },
         remoteFreshFor: Long = 3_600_000L,
     ) = CatalogProvider(
         fetchRemote = { remoteFetches++; fetchRemote() },
         readCache = readCache,
         writeCache = writeCache,
+        deleteCache = deleteCache,
         readBundled = readBundled,
         parse = parse,
         clock = { now },
@@ -141,6 +143,58 @@ class CatalogProviderTest {
         now += 60_000L
 
         assertNull(provider.catalog())
+    }
+
+    @Test
+    fun `an offline refresh after the window prefers the last download over an older disk cache`() = runTest {
+        // Same situation an hour later: the download reached the database, its cache
+        // write failed, and now the network is gone. The in-memory download is the
+        // newest catalog there is; falling through to the older disk copy would hand
+        // it out as REMOTE and the seeder would delete the newer programs.
+        var online = true
+        val provider = provider(
+            fetchRemote = { if (online) "REMOTE2" else null },
+            readCache = { "REMOTE1" },
+            writeCache = { throw IOException("ENOSPC") },
+        )
+
+        assertEquals("REMOTE2", provider.catalogApplied().singlePackage())
+        now += 3_600_000L
+        online = false
+
+        assertNull(provider.catalog())
+    }
+
+    @Test
+    fun `a failed cache write discards the older disk copy so a restart cannot roll the database back`() = runTest {
+        // After a process restart the in-memory download is gone. An offline start
+        // then reads the disk; if the older copy were still there it would be handed
+        // out as REMOTE and the seeder would delete the newer programs the database
+        // already holds. With the stale copy gone the bundled seed is used, and that
+        // one only ever fills gaps.
+        var cached: String? = "REMOTE1"
+        val disk = object {
+            val read: () -> String? = { cached }
+            val write: (String) -> Unit = { throw IOException("ENOSPC") }
+            val delete: () -> Unit = { cached = null }
+        }
+        val beforeRestart = provider(
+            fetchRemote = { "REMOTE2" },
+            readCache = disk.read,
+            writeCache = disk.write,
+            deleteCache = disk.delete,
+        )
+        assertEquals("REMOTE2", beforeRestart.catalogApplied().singlePackage())
+
+        val afterRestart = provider(
+            fetchRemote = { null },
+            readCache = disk.read,
+            writeCache = disk.write,
+            deleteCache = disk.delete,
+        )
+        val snapshot = afterRestart.catalog()
+
+        assertEquals(BetaSource.BUNDLED, snapshot!!.source)
     }
 
     @Test
