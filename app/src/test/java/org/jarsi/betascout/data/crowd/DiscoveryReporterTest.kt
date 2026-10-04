@@ -213,6 +213,21 @@ class DiscoveryReporterTest {
     }
 
     @Test
+    fun `a rejected batch stops the remaining uploads instead of hammering the worker`() = runTest {
+        // The worker answers 429 once its per-source limit trips (and 5xx during an
+        // outage); every further chunk in the same run is then a guaranteed waste
+        // that also prolongs the rate-limit window. Nothing was marked reported, so
+        // the whole set simply retries after the next scan.
+        postResult = false
+        (1..120).forEach { observationDao.upsert(observation("com.app$it", LiveBetaStatus.OPEN)) }
+
+        reporter().reportAfterScan(ACCOUNT)
+
+        assertEquals(1, postedBatches.size)
+        assertTrue(reported.isEmpty())
+    }
+
+    @Test
     fun `revoking consent mid-run stops the remaining batches`() = runTest {
         (1..60).forEach { observationDao.upsert(observation("com.app$it", LiveBetaStatus.OPEN)) }
         val reporter = DiscoveryReporter(

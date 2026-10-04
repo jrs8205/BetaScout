@@ -63,12 +63,16 @@ class DiscoveryReporter(
                 reported = reportedPackages(),
             )
             // Chunked under the worker's request cap; each accepted chunk is
-            // marked on its own so a failed one retries without resending the rest.
+            // marked on its own so an interrupted run never resends what landed.
             for (batch in candidates.chunked(MAX_BATCH)) {
                 // Re-checked before every upload: the user can revoke consent
                 // while a multi-batch report is still running.
                 if (!shareEnabled()) return@withContext
-                if (post(batch)) markReported(batch.toSet())
+                // A rejection (429 once the per-source limit trips, 5xx in an
+                // outage) would repeat for every remaining chunk and only
+                // prolong the limiter's window; the leftovers retry next scan.
+                if (!post(batch)) return@withContext
+                markReported(batch.toSet())
             }
         } catch (e: CancellationException) {
             throw e
