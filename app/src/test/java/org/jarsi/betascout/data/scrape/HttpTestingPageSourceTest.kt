@@ -89,6 +89,28 @@ class HttpTestingPageSourceTest {
     }
 
     @Test
+    fun `a throttling answer whose body cannot be read still reports the status`() = runTest {
+        // Google's 429/403 is what arms the one-hour scan cooldown. If reading the
+        // (worthless) error body fails — broken chunk framing here, a stalled read
+        // in the field — the result must still be HttpStatusException(429), not a
+        // generic IOException the scraper does not recognise as a block.
+        server.handler = {
+            Reply(
+                429,
+                raw = "HTTP/1.1 429 Too Many Requests\r\n" +
+                    "Transfer-Encoding: chunked\r\n" +
+                    "Connection: close\r\n\r\n" +
+                    "not-a-chunk\r\n",
+            )
+        }
+
+        val error = source().fetch("com.example", session).exceptionOrNull()
+
+        assertTrue("expected HttpStatusException, was $error", error is HttpStatusException)
+        assertEquals(429, (error as HttpStatusException).code)
+    }
+
+    @Test
     fun `a server error is a failure, not a page`() = runTest {
         server.status = 503
         server.body = "<html>Service Unavailable</html>"

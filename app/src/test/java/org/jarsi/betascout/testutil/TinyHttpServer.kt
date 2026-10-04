@@ -13,11 +13,14 @@ data class RecordedRequest(
     val body: String,
 )
 
-/** What the server answers; [headers] are emitted verbatim (e.g. a Location). */
+/** What the server answers; [headers] are emitted verbatim (e.g. a Location). When
+ *  [raw] is set it is written as the complete response instead, which lets a test
+ *  send deliberately malformed framing. */
 data class Reply(
     val status: Int,
     val body: String = "",
     val headers: Map<String, String> = emptyMap(),
+    val raw: String? = null,
 )
 
 /**
@@ -53,6 +56,13 @@ class TinyHttpServer {
                         return@use
                     }
                     val reply = handler(request)
+                    reply.raw?.let { raw ->
+                        client.getOutputStream().apply {
+                            write(raw.toByteArray())
+                            flush()
+                        }
+                        return@use
+                    }
                     val bytes = reply.body.toByteArray()
                     val extra = reply.headers.entries.joinToString("") { "${it.key}: ${it.value}\r\n" }
                     client.getOutputStream().apply {

@@ -105,11 +105,15 @@ class HttpTestingPageSource(
                 ?: return Response(code, "", redirectTo = null)
             return Response(code, "", redirectTo = URL(connection.url, location))
         }
-        val stream = if (code in 200..299) {
-            connection.inputStream
-        } else {
+        val stream = when {
+            code in 200..299 -> connection.inputStream
             // A 404 body is still meaningful: it is the "no testing program" page.
-            connection.errorStream
+            code == 404 -> connection.errorStream
+            // Every other status is reported as is, without touching its body: a
+            // 429/403 is what arms the scan cooldown, and a body read that fails
+            // (broken framing, stalled read) must not turn it into a generic
+            // IOException the scraper does not recognise as a block.
+            else -> null
         }
         val html = stream?.bufferedReader()?.use { it.readText() }.orEmpty()
         return Response(code, html, redirectTo = null)
