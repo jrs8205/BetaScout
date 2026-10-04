@@ -11,8 +11,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import java.io.File
-import java.net.HttpURLConnection
-import java.net.URL
 import javax.inject.Singleton
 import kotlin.coroutines.resume
 import kotlinx.coroutines.Dispatchers
@@ -20,11 +18,11 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.suspendCancellableCoroutine
-import kotlinx.coroutines.withContext
 import org.jarsi.betascout.data.betadb.BetaSeedParser
 import org.jarsi.betascout.data.crowd.DiscoveryReporter
 import org.jarsi.betascout.data.betadb.BetaSeeder
 import org.jarsi.betascout.data.betadb.CatalogProvider
+import org.jarsi.betascout.data.remote.CatalogWorkerClient
 import org.jarsi.betascout.data.scrape.BetaStatusScraper
 import org.jarsi.betascout.data.scrape.HttpTestingPageSource
 import org.jarsi.betascout.data.db.AppDatabase
@@ -53,53 +51,9 @@ object AppModule {
     private const val CATALOG_URL = "https://betascout-catalog.jarsi.workers.dev"
     private const val CATALOG_CACHE_FILE = "catalog_cache.json"
 
-    /** GET the catalog; returns null on any failure so the caller can fall back. */
-    private suspend fun fetchCatalog(url: String): String? = withContext(Dispatchers.IO) {
-        try {
-            val connection = (URL(url).openConnection() as HttpURLConnection).apply {
-                requestMethod = "GET"
-                connectTimeout = 10_000
-                readTimeout = 10_000
-            }
-            try {
-                if (connection.responseCode == 200) {
-                    connection.inputStream.bufferedReader().use { it.readText() }
-                } else {
-                    null
-                }
-            } finally {
-                connection.disconnect()
-            }
-        } catch (e: Exception) {
-            null
-        }
-    }
-
-    /** POST discovery hints; true only on a 2xx answer. Package names are plain
-     *  `[A-Za-z0-9_.]` identifiers, so the JSON needs no escaping. */
-    private suspend fun postHints(urlBase: String, packages: List<String>): Boolean =
-        withContext(Dispatchers.IO) {
-            try {
-                val connection = (URL("$urlBase/hints").openConnection() as HttpURLConnection).apply {
-                    requestMethod = "POST"
-                    doOutput = true
-                    connectTimeout = 10_000
-                    readTimeout = 10_000
-                    setRequestProperty("Content-Type", "application/json; charset=utf-8")
-                }
-                try {
-                    val body = """{"version":1,"packages":[${
-                        packages.joinToString(",") { "\"$it\"" }
-                    }]}"""
-                    connection.outputStream.use { it.write(body.toByteArray()) }
-                    connection.responseCode in 200..299
-                } finally {
-                    connection.disconnect()
-                }
-            } catch (e: Exception) {
-                false
-            }
-        }
+    @Provides
+    @Singleton
+    fun provideCatalogWorkerClient(): CatalogWorkerClient = CatalogWorkerClient(CATALOG_URL)
 
     @Provides
     @Singleton
@@ -107,13 +61,14 @@ object AppModule {
         settings: SettingsRepository,
         betaObservationDao: BetaObservationDao,
         betaProgramDao: BetaProgramDao,
+        catalogWorker: CatalogWorkerClient,
     ): DiscoveryReporter = DiscoveryReporter(
         shareEnabled = { settings.shareDiscoveries.first() },
         reportedPackages = { settings.reportedPackages.first() },
         markReported = { settings.addReportedPackages(it) },
         betaObservationDao = betaObservationDao,
         betaProgramDao = betaProgramDao,
-        post = { packages -> postHints(CATALOG_URL, packages) },
+        post = catalogWorker::postHints,
         io = Dispatchers.IO,
     )
 
@@ -181,6 +136,7 @@ object AppModule {
     @Singleton
     fun provideAppRepository(
         @ApplicationContext context: Context,
+        catalogWorker: CatalogWorkerClient,
         scanner: PackageScanner,
         installedAppDao: InstalledAppDao,
         betaProgramDao: BetaProgramDao,
@@ -195,7 +151,7 @@ object AppModule {
         userBetaStatusDao = userBetaStatusDao,
         seeder = BetaSeeder(
             readSeedJson = CatalogProvider(
-                fetchRemote = { fetchCatalog(CATALOG_URL) },
+                fetchRemote = catalogWorker::fetchCatalog,
                 readCache = {
                     File(context.filesDir, CATALOG_CACHE_FILE).takeIf { it.exists() }?.readText()
                 },
