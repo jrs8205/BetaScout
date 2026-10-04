@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1791021295323,
+  "generatedAt": 1791110250782,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2145,6 +2145,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.AiPlix",
+      "appName": "AiPlix - The AI Browser",
+      "hasBeta": true,
+      "productionVersionCode": 3024,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.airbnb.android",
       "appName": "Airbnb",
       "hasBeta": true,
@@ -2409,7 +2418,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 803709404,
+      "productionVersionCode": 803712604,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2613,6 +2622,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.AppDVision.Simata",
+      "appName": "Greek Driving Test",
+      "hasBeta": true,
+      "productionVersionCode": 20000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.appgeneration.itunerfree",
       "appName": "myTuner FM Radio App",
       "hasBeta": true,
@@ -2725,6 +2743,15 @@
       "appName": "Birthdays, Reminder & Calendar",
       "hasBeta": true,
       "productionVersionCode": 227,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.apusapps.browser",
+      "appName": "APUS Browser-Private & Fast",
+      "hasBeta": true,
+      "productionVersionCode": 274,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3094,6 +3121,33 @@
       "appName": "Avanti West Coast",
       "hasBeta": true,
       "productionVersionCode": 5020001,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.avast.android.mobilesecurity",
+      "appName": "Avast One: Antivirus, Security",
+      "hasBeta": true,
+      "productionVersionCode": 260901787,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.avast.android.secure.browser",
+      "appName": "Avast Secure Browser",
+      "hasBeta": true,
+      "productionVersionCode": 5600,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.avg.android.secure.browser",
+      "appName": "AVG Secure Browser",
+      "hasBeta": true,
+      "productionVersionCode": 5170,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3828,6 +3882,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.blue.oriole",
+      "appName": "Blue Oriole",
+      "hasBeta": true,
+      "productionVersionCode": 51,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.bluegate.app",
       "appName": "PalGate",
       "hasBeta": true,
@@ -4008,6 +4071,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.broearn.browser",
+      "appName": "Broearn Browser for Web3.0",
+      "hasBeta": true,
+      "productionVersionCode": 300210,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.brouken.player",
       "appName": "Just (Video) Player",
       "hasBeta": true,
@@ -4174,6 +4246,15 @@
       "appName": "Cake Wallet: Crypto, Made Easy",
       "hasBeta": true,
       "productionVersionCode": 4419,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.calea.echo",
+      "appName": "Mood SMS - Messages App",
+      "hasBeta": true,
+      "productionVersionCode": 3895,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9716,7 +9797,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385511871,
+      "productionVersionCode": 385511839,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10676,6 +10757,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.kidsnanny.browser",
+      "appName": "Browsely – Safe AI Browser",
+      "hasBeta": true,
+      "productionVersionCode": 119,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.kii.safe",
       "appName": "Private Photo Vault - Keepsafe",
       "hasBeta": true,
@@ -10743,6 +10833,15 @@
       "appName": "Weather Today",
       "hasBeta": true,
       "productionVersionCode": 122,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.kolin.browsertun",
+      "appName": "BrowserTun: Easy Web Proxy",
+      "hasBeta": true,
+      "productionVersionCode": 110,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -10914,6 +11013,15 @@
       "appName": "TheFork - Restaurant bookings",
       "hasBeta": true,
       "productionVersionCode": 22373,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.lasoo.android.target",
+      "appName": "Target Australia",
+      "hasBeta": true,
+      "productionVersionCode": 119,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -16931,6 +17039,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.shortc.adfree.adblocker",
+      "appName": "DNS Shield: DNS & Firewal",
+      "hasBeta": true,
+      "productionVersionCode": 62,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.shortwave.android",
       "appName": "Shortwave — AI Email",
       "hasBeta": true,
@@ -17579,6 +17696,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.starstudio.android.mobilesecurity.antivirus",
+      "appName": "VirusGuard Antivirus Security",
+      "hasBeta": true,
+      "productionVersionCode": 97,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.startpage.app",
       "appName": "Startpage",
       "hasBeta": true,
@@ -17871,6 +17997,15 @@
       "appName": "syncVol - Auto Volume Control",
       "hasBeta": true,
       "productionVersionCode": 26,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.superai.web",
+      "appName": "Super AI Browser",
+      "hasBeta": true,
+      "productionVersionCode": 2016124336,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -19239,6 +19374,15 @@
       "appName": "QuickBooks Workforce",
       "hasBeta": true,
       "productionVersionCode": 262161528,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ttt.fortressmerge",
+      "appName": "Fortress Merge: Puzzle Defense",
+      "hasBeta": true,
+      "productionVersionCode": 356,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -21611,6 +21755,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "cz.mobilesoft.appblock",
+      "appName": "AppBlock - Block Apps & Sites",
+      "hasBeta": true,
+      "productionVersionCode": 577,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "cz.mroczis.netmonster",
       "appName": "NetMonster",
       "hasBeta": true,
@@ -22839,6 +22992,15 @@
       "appName": "Compte ameli",
       "hasBeta": true,
       "productionVersionCode": 2410,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "fr.ecp.ruler.app",
+      "appName": "Ruler",
+      "hasBeta": true,
+      "productionVersionCode": 35,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -26965,6 +27127,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "SavySoda.PrivateBrowsing",
+      "appName": "Private Browsing Web Browser",
+      "hasBeta": true,
+      "productionVersionCode": 1701,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "screenguard.privacyscreen.hidescreen",
       "appName": "Screen Guard - Privacy Display",
       "hasBeta": true,
@@ -26996,6 +27167,15 @@
       "appName": "ICA – recept och erbjudanden",
       "hasBeta": true,
       "productionVersionCode": 26047701,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "se.leap.bitmaskclient",
+      "appName": "Bitmask",
+      "hasBeta": true,
+      "productionVersionCode": 186000,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -27248,6 +27428,15 @@
       "appName": "ChatBoost: AI Agent Client",
       "hasBeta": true,
       "productionVersionCode": 300500233,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "studio.oo1.browser",
+      "appName": "the browser of oo1 studio",
+      "hasBeta": true,
+      "productionVersionCode": 59,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

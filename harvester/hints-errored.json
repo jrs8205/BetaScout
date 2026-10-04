@@ -80,21 +80,21 @@
     },
     {
       "packageName": "com.laurencedawson.reddit_sync",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788512022873
+      "lastErrorAt": 1791110250781
     },
     {
       "packageName": "com.mex.gbmmobile.containerhomebroker",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788512022873
+      "lastErrorAt": 1791110250781
     },
     {
       "packageName": "com.trianguloy.addonOIW",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788512022873
+      "lastErrorAt": 1791110250781
     },
     {
       "packageName": "com.xiaomi.calendar",
@@ -881,6 +881,24 @@
       "attempts": 3,
       "lastError": "AppNotFound: null",
       "lastErrorAt": 1790764363173
+    },
+    {
+      "packageName": "com.ducky.android.app.tool.adsdetectorandcloser",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791110250781
+    },
+    {
+      "packageName": "me.plusnow.shield.stable",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791110250781
+    },
+    {
+      "packageName": "com.appntox.browserpro",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791110250781
     }
   ]
 }
