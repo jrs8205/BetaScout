@@ -946,6 +946,39 @@ class DefaultAppRepositoryTest {
     }
 
     @Test
+    fun `a single re-check aborts inside the scan lock once the account has signed out`() = runTest {
+        // The detail screen reads the session before it reaches the scan lock, and
+        // sign-out (which cancels only the WorkManager scans) can complete its wipe
+        // in that window. The re-check must then stop instead of fetching Google
+        // with the dead cookies and writing a membership row for the signed-out
+        // account back into the freshly emptied table.
+        val repo = repository()
+        pageHtml = { """<html><body><form id="leaveForm"></form></body></html>""" }
+        var fetches = 0
+        onFetch = { fetches++ }
+        currentAccountKey.value = null
+
+        val result = repo.refreshSingleBetaStatus(session, "com.whatsapp")
+
+        assertTrue("expected NeedsLogin, was ${result.exceptionOrNull()}", result.exceptionOrNull() is DataError.NeedsLogin)
+        assertEquals(0, fetches)
+        assertTrue(observationDao.getAll().isEmpty())
+    }
+
+    @Test
+    fun `a single re-check for a different signed-in account is refused too`() = runTest {
+        val repo = repository()
+        var fetches = 0
+        onFetch = { fetches++ }
+        currentAccountKey.value = OTHER_ACCOUNT
+
+        val result = repo.refreshSingleBetaStatus(session, "com.whatsapp")
+
+        assertTrue(result.exceptionOrNull() is DataError.NeedsLogin)
+        assertEquals(0, fetches)
+    }
+
+    @Test
     fun `ensureSeeded loads seed into beta dao`() = runTest {
         val repo = repository(seedJson = {
             """{"programs":[{"packageName":"com.whatsapp","appName":"WhatsApp"}]}"""
