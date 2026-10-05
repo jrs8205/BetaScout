@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1791110250782,
+  "generatedAt": 1791200039229,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -1029,6 +1029,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "be.robinj.distrohopper",
+      "appName": "DistroHopper • Linux desktop",
+      "hasBeta": true,
+      "productionVersionCode": 114,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "biblia.de.estudos.com.explicacoes",
       "appName": "The Study Bible explained",
       "hasBeta": true,
@@ -1285,6 +1294,15 @@
       "appName": "Call Blocker - Block Numbers",
       "hasBeta": true,
       "productionVersionCode": 1830,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "callfilter.app",
+      "appName": "Callfilter.app",
+      "hasBeta": true,
+      "productionVersionCode": 1353,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2418,7 +2436,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 803712604,
+      "productionVersionCode": 803709204,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3288,6 +3306,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ba.cp.controller",
+      "appName": "Bajaj General",
+      "hasBeta": true,
+      "productionVersionCode": 571,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.babg.dialx",
       "appName": "DialX: Phone Dialer & Contacts",
       "hasBeta": true,
@@ -3855,6 +3882,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.blade.shadowcloudgaming",
+      "appName": "Shadow PC",
+      "hasBeta": true,
+      "productionVersionCode": 335020,
+      "liveStatus": "UNKNOWN",
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
+    },
+    {
       "packageName": "com.bleachbypass.app",
       "appName": "Bleach Bypass",
       "hasBeta": true,
@@ -4161,6 +4197,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.bws.appv2",
+      "appName": "BuiltWithScience+",
+      "hasBeta": true,
+      "productionVersionCode": 612,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.byairapp.android",
       "appName": "byAir: Flight Tracker & Status",
       "hasBeta": true,
@@ -4273,6 +4318,15 @@
       "appName": "CallApp: Caller ID & Block",
       "hasBeta": true,
       "productionVersionCode": 2286,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.caller.sms.trustedcall.app",
+      "appName": "Caller ID: Trusted Call & SMS",
+      "hasBeta": true,
+      "productionVersionCode": 20,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6501,6 +6555,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.explusalpha.NeoEmu",
+      "appName": "NEO.emu (Arcade Emulator)",
+      "hasBeta": true,
+      "productionVersionCode": 16010585,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.explusalpha.NesEmu",
       "appName": "NES.emu (NES Emulator)",
       "hasBeta": true,
@@ -7428,6 +7491,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.freshtohome",
+      "appName": "Fresh To Home - Meat Delivery",
+      "hasBeta": true,
+      "productionVersionCode": 801040,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.friend.ios",
       "appName": "Omi AI - Smart Meeting Notes",
       "hasBeta": true,
@@ -7666,6 +7738,15 @@
       "appName": "QR & Barcode Scanner PRO",
       "hasBeta": true,
       "productionVersionCode": 150,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ganbaru.method",
+      "appName": "Ganbaru Method",
+      "hasBeta": true,
+      "productionVersionCode": 326,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -8089,6 +8170,24 @@
       "appName": "Scrinium - Reading tracker",
       "hasBeta": true,
       "productionVersionCode": 10,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.godbtech.reliancemf",
+      "appName": "Nippon India Mutual Fund",
+      "hasBeta": true,
+      "productionVersionCode": 661,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.godigit.digit",
+      "appName": "Digit Insurance",
+      "hasBeta": true,
+      "productionVersionCode": 2097393,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9797,7 +9896,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385511839,
+      "productionVersionCode": 385511871,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10919,6 +11018,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ktix007.talk",
+      "appName": "Talk: Text to Voice",
+      "hasBeta": true,
+      "productionVersionCode": 2608121,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.kuma.recentcontactswidget",
       "appName": "Recent Contacts Widget",
       "hasBeta": true,
@@ -10986,6 +11094,15 @@
       "appName": "My Kyivstar: mobile services",
       "hasBeta": true,
       "productionVersionCode": 24123,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.kyun.flashgame",
+      "appName": "Retro Flash Game Player",
+      "hasBeta": true,
+      "productionVersionCode": 888119,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -11328,6 +11445,15 @@
       "appName": "LinkedIn Learning",
       "hasBeta": true,
       "productionVersionCode": 555,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.linkssaver.thelinksbox",
+      "appName": "Links Saver",
+      "hasBeta": true,
+      "productionVersionCode": 109,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -11990,6 +12116,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.medplus.mobile.android",
+      "appName": "MedPlus Mart - Online Pharmacy",
+      "hasBeta": true,
+      "productionVersionCode": 501130,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.meesho.supply",
       "appName": "Meesho: Online Shopping App",
       "hasBeta": true,
@@ -12480,6 +12615,15 @@
       "appName": "SmartHome (MSmartHome)",
       "hasBeta": true,
       "productionVersionCode": 318010,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.mikrotik.android.tikapp",
+      "appName": "MikroTik Pro",
+      "hasBeta": true,
+      "productionVersionCode": 235,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -13776,6 +13920,24 @@
       "appName": "Sleep Cycle: Sleep Tracker",
       "hasBeta": true,
       "productionVersionCode": 9787,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.nostalgiaemulators.gbclite",
+      "appName": "Nostalgia.GBC (GBC Emulator)",
+      "hasBeta": true,
+      "productionVersionCode": 1016,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.nostalgiaemulators.nesfull",
+      "appName": "NostalgiaNes Pro",
+      "hasBeta": true,
+      "productionVersionCode": 1016,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18950,7 +19112,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12296,
+      "productionVersionCode": 12298,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -19149,6 +19311,15 @@
       "appName": "TP-Link Deco",
       "hasBeta": true,
       "productionVersionCode": 2389,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.tracfone.preload.accountservices",
+      "appName": "Device Pulse",
+      "hasBeta": true,
+      "productionVersionCode": 560004,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -19445,7 +19616,7 @@
       "packageName": "com.tumblr",
       "appName": "Tumblr: Social Media & Art",
       "hasBeta": true,
-      "productionVersionCode": 1460500109,
+      "productionVersionCode": 1460600110,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -19473,6 +19644,24 @@
       "appName": "SmartLife- Smart Living",
       "hasBeta": true,
       "productionVersionCode": 842,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.tuyware.myboardgamecollection",
+      "appName": "My Board Game Collection",
+      "hasBeta": true,
+      "productionVersionCode": 351,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.tuyware.mygamecollection",
+      "appName": "My Game Collection: Tracker",
+      "hasBeta": true,
+      "productionVersionCode": 902,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -20247,6 +20436,15 @@
       "appName": "Star Walk 2 Plus: Sky Map View",
       "hasBeta": true,
       "productionVersionCode": 22100155,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.vivastudios.galaxy.force",
+      "appName": "Galaxy Force",
+      "hasBeta": true,
+      "productionVersionCode": 35,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -21840,6 +22038,15 @@
       "appName": "AntennaPod - Podcast Player",
       "hasBeta": true,
       "productionVersionCode": 3110495,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "de.devmil.minimaltext",
+      "appName": "Minimalistic Text: Widgets",
+      "hasBeta": true,
+      "productionVersionCode": 90514,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -24041,6 +24248,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "it.dbtecno.pizzaboypro",
+      "appName": "Pizza Boy C Pro",
+      "hasBeta": true,
+      "productionVersionCode": 327,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "it.dbtecno.pizzaboyscpro",
+      "appName": "Pizza Boy SC Pro Genesis Emu",
+      "hasBeta": true,
+      "productionVersionCode": 84,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "it.Ettore.calcolielettrici",
       "appName": "Electrical Calculations",
       "hasBeta": true,
@@ -25355,10 +25580,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "net.xnano.android.ftpserver",
+      "appName": "FTP Server - Multiple users",
+      "hasBeta": true,
+      "productionVersionCode": 1519,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "net.xnano.android.photoexifeditor",
       "appName": "Photo Exif Editor - Metadata",
       "hasBeta": true,
       "productionVersionCode": 2504,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "net.yumnumm.eqmonitor",
+      "appName": "EQMonitor - 地震速報",
+      "hasBeta": true,
+      "productionVersionCode": 1225,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -27941,6 +28184,15 @@
       "appName": "one sec | app blocker, focus",
       "hasBeta": true,
       "productionVersionCode": 20904,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "x.org.server",
+      "appName": "XServer XSDL",
+      "hasBeta": true,
+      "productionVersionCode": 12070,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

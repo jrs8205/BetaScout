@@ -98,57 +98,57 @@
     },
     {
       "packageName": "com.xiaomi.calendar",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788596651583
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "com.miui.securitycenter",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788596651583
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "com.mxtech.videoplayer.pro",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788596651583
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "com.mobile.legends",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788596651583
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "com.mobikwik_new",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788596651583
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "com.tommasoberlose.anotherwidget",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788596651583
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "com.zhiliaoapp.musically.go",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788596651583
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "com.ideashower.readitlater.pro",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788596651583
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "com.microsoft.office.officelens",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788596651583
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "app.simple.peri",
@@ -692,15 +692,15 @@
     },
     {
       "packageName": "com.spotify.lite",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788596651583
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "com.trendmicro.qrscan",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788596651583
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "org.nbos.system",
@@ -884,21 +884,33 @@
     },
     {
       "packageName": "com.ducky.android.app.tool.adsdetectorandcloser",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791110250781
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "me.plusnow.shield.stable",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791110250781
+      "lastErrorAt": 1791200039225
     },
     {
       "packageName": "com.appntox.browserpro",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791200039225
+    },
+    {
+      "packageName": "com.samsung.smartviewad",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791110250781
+      "lastErrorAt": 1791200039225
+    },
+    {
+      "packageName": "com.nobroker.app",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791200039225
     }
   ]
 }
