@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1791200039229,
+  "generatedAt": 1791285594123,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -430,6 +430,15 @@
       "appName": "Tellself: more than AI Journal",
       "hasBeta": true,
       "productionVersionCode": 2747,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "app.datablocker",
+      "appName": "Net Data Blocker",
+      "hasBeta": true,
+      "productionVersionCode": 6,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2436,7 +2445,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 803709204,
+      "productionVersionCode": 803712604,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2626,6 +2635,15 @@
       "appName": "Generation Dance - Dance Radio",
       "hasBeta": true,
       "productionVersionCode": 106,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.app.gvine",
+      "appName": "Grapevine - Real Work Talk",
+      "hasBeta": true,
+      "productionVersionCode": 2023,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4890,6 +4908,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.coccoc.trinhduyet_beta",
+      "appName": "Co Co Beta: Browse securely",
+      "hasBeta": true,
+      "productionVersionCode": 998815304,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.cocktailarium.mobile",
       "appName": "Cocktailarium",
       "hasBeta": true,
@@ -4903,6 +4930,15 @@
       "appName": "Pocket City",
       "hasBeta": true,
       "productionVersionCode": 10551,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.CodeBySonu.VoxSherpa",
+      "appName": "VoxSherpa TTS",
+      "hasBeta": true,
+      "productionVersionCode": 47,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6834,6 +6870,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.fastbrowser.private.secure",
+      "appName": "Cloak - Fast Private Browser",
+      "hasBeta": true,
+      "productionVersionCode": 91,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.fatmerge.global",
       "appName": "Tasty Travels: Merge Game",
       "hasBeta": true,
@@ -7036,6 +7081,15 @@
       "appName": "Difference: Spot & Find Master",
       "hasBeta": true,
       "productionVersionCode": 28,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.find.the.difference.puzzle",
+      "appName": "Find Differences Puzzle",
+      "hasBeta": true,
+      "productionVersionCode": 12,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7855,6 +7909,15 @@
       "appName": "Dot Hub for Glyph Matrix",
       "hasBeta": true,
       "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.gessure.app",
+      "appName": "Gessure: Jobs, Network, Growth",
+      "hasBeta": true,
+      "productionVersionCode": 78,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9011,6 +9074,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.hbwares.wordfeud.free",
+      "appName": "Wordfeud",
+      "hasBeta": true,
+      "productionVersionCode": 4438,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.hde7.fotogenic",
       "appName": "Fotogenic : Face & Body Editor",
       "hasBeta": true,
@@ -9348,6 +9420,15 @@
       "appName": "Vocabulary - Learn words daily",
       "hasBeta": true,
       "productionVersionCode": 1000704,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.hsv.freeadblockerbrowser",
+      "appName": "FREE ADBLOCKER BROWSER",
+      "hasBeta": true,
+      "productionVersionCode": 2016124140,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9896,7 +9977,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385511871,
+      "productionVersionCode": 385611438,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -13470,6 +13551,15 @@
       "appName": "NaturalReader - Text to Speech",
       "hasBeta": true,
       "productionVersionCode": 2001205,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.naveedshahzad.apps.inviso",
+      "appName": "Inviso: Screenshot Search",
+      "hasBeta": true,
+      "productionVersionCode": 2,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18425,6 +18515,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.tailwind.launcher",
+      "appName": "Tailwind Launcher",
+      "hasBeta": true,
+      "productionVersionCode": 906,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.talabat",
       "appName": "talabat: Food, grocery & more",
       "hasBeta": true,
@@ -19112,7 +19211,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12298,
+      "productionVersionCode": 12300,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -24545,6 +24644,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "lite.cryptotab.android",
+      "appName": "CryptoTab Browser Lite",
+      "hasBeta": true,
+      "productionVersionCode": 260119,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "live.shorttv.apps",
       "appName": "ShortMax - Short Dramas & TV",
       "hasBeta": true,
@@ -24693,6 +24801,15 @@
       "appName": "X-7E UI/HUD Designer PRO",
       "hasBeta": true,
       "productionVersionCode": 19,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "max.cryptotab.android",
+      "appName": "CryptoTab Browser Max Speed",
+      "hasBeta": true,
+      "productionVersionCode": 2766,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -26947,6 +27064,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "pro.cryptotab.android",
+      "appName": "CryptoTab Browser Pro",
+      "hasBeta": true,
+      "productionVersionCode": 2549,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "pro.listy",
       "appName": "Listy · Beautiful lists",
       "hasBeta": true,
@@ -27922,7 +28048,7 @@
       "packageName": "tv.twitch.android.app",
       "appName": "Twitch: Live Streaming",
       "hasBeta": true,
-      "productionVersionCode": 3104026,
+      "productionVersionCode": 3105016,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

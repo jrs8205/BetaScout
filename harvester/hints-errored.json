@@ -152,27 +152,27 @@
     },
     {
       "packageName": "app.simple.peri",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788684165511
+      "lastErrorAt": 1791285594120
     },
     {
       "packageName": "com.jrummyapps.rootchecker",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788684165511
+      "lastErrorAt": 1791285594120
     },
     {
       "packageName": "com.microsoft.rdc.androidx.beta",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788684165511
+      "lastErrorAt": 1791285594120
     },
     {
       "packageName": "com.ss.android.ugc.trill",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788684165511
+      "lastErrorAt": 1791285594120
     },
     {
       "packageName": "com.microsoft.lists.public",
@@ -704,9 +704,9 @@
     },
     {
       "packageName": "org.nbos.system",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788684165511
+      "lastErrorAt": 1791285594120
     },
     {
       "packageName": "com.droid.netflixIMDB",
@@ -884,33 +884,75 @@
     },
     {
       "packageName": "com.ducky.android.app.tool.adsdetectorandcloser",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791200039225
+      "lastErrorAt": 1791285594120
     },
     {
       "packageName": "me.plusnow.shield.stable",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791200039225
+      "lastErrorAt": 1791285594120
     },
     {
       "packageName": "com.appntox.browserpro",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791200039225
+      "lastErrorAt": 1791285594120
     },
     {
       "packageName": "com.samsung.smartviewad",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791200039225
+      "lastErrorAt": 1791285594120
     },
     {
       "packageName": "com.nobroker.app",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791285594120
+    },
+    {
+      "packageName": "co.pesastack.monee",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791200039225
+      "lastErrorAt": 1791285594120
+    },
+    {
+      "packageName": "com.clackey.keyboard",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791285594120
+    },
+    {
+      "packageName": "com.duo.camisland",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791285594120
+    },
+    {
+      "packageName": "com.ornobaadi.popcalc",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791285594120
+    },
+    {
+      "packageName": "com.catchingnow.share",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791285594120
+    },
+    {
+      "packageName": "com.opera.cryptobrowser",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791285594120
+    },
+    {
+      "packageName": "app.dankium.browser",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791285594120
     }
   ]
 }
