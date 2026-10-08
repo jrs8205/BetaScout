@@ -212,45 +212,45 @@
     },
     {
       "packageName": "com.google.android.apps.betterbug",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788857717328
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "com.andreacioccarelli.vmtweaker",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788857717328
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "com.samruston.permission",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788857717328
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "net.oneplus.launcher",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788857717328
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "com.happymod.apk",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788857717328
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "com.larus.wolf",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788857717328
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "com.advasoft.touchretouch",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1788857717328
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "com.x.android.lite",
@@ -914,45 +914,63 @@
     },
     {
       "packageName": "co.pesastack.monee",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791371290089
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "com.clackey.keyboard",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791371290089
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "com.duo.camisland",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791371290089
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "com.ornobaadi.popcalc",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791371290089
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "com.catchingnow.share",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791371290089
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "com.opera.cryptobrowser",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791371290089
+      "lastErrorAt": 1791458720463
     },
     {
       "packageName": "app.dankium.browser",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791371290089
+      "lastErrorAt": 1791458720463
+    },
+    {
+      "packageName": "com.simpler.contacts",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791458720463
+    },
+    {
+      "packageName": "com.simplysmartframe.app",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791458720463
+    },
+    {
+      "packageName": "com.webstop.tops",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791458720463
     }
   ]
 }
