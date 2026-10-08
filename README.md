@@ -70,6 +70,10 @@ and is also available on Aptoide — it is **not** on the Play Store.
 3. Done. Listing and tracking work offline; the beta-catalog refresh and the
    signed-in status scan need a network connection.
 
+**Registered with Google.** The package name and signing key are registered in Google's
+Android Developer Console, so the app keeps installing as usual under Google's new
+[sideloading rules](https://developer.android.com/developer-verification).
+
 > **Why not the Play Store?** BetaScout uses the `QUERY_ALL_PACKAGES` permission to list
 > everything installed on your device. That permission is heavily restricted on the Play
 > Store, but it is exactly what makes the app useful — so it lives here instead.
