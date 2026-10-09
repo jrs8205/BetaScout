@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1791458720466,
+  "generatedAt": 1791544957143,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -3036,6 +3036,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.astrosureai",
+      "appName": "AstroSure: 24x7 AI Astrology",
+      "hasBeta": true,
+      "productionVersionCode": 185,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.aswdc_dbms",
       "appName": "Learn SQL",
       "hasBeta": true,
@@ -4624,6 +4633,15 @@
       "appName": "Detective Doku: Clue Puzzles",
       "hasBeta": true,
       "productionVersionCode": 88,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ccp.rpgsimpledice",
+      "appName": "RPG Simple Dice",
+      "hasBeta": true,
+      "productionVersionCode": 18,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6837,7 +6855,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 475215365,
+      "productionVersionCode": 475417031,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10184,7 +10202,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385611400,
+      "productionVersionCode": 385611438,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11768,7 +11786,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 216401,
+      "productionVersionCode": 216700,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15449,7 +15467,7 @@
       "packageName": "com.pinterest",
       "appName": "Pinterest",
       "hasBeta": true,
-      "productionVersionCode": 14388010,
+      "productionVersionCode": 14398020,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -18158,7 +18176,7 @@
       "packageName": "com.spotify.music",
       "appName": "Spotify: Music and Podcasts",
       "hasBeta": true,
-      "productionVersionCode": 146816068,
+      "productionVersionCode": 147078674,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -21503,6 +21521,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.winkgo",
+      "appName": "Tranzy",
+      "hasBeta": true,
+      "productionVersionCode": 231,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.winzip.android",
       "appName": "WinZip – Zip UnZip Tool",
       "hasBeta": true,
@@ -22155,6 +22182,15 @@
       "appName": "SystemUI Tuner",
       "hasBeta": true,
       "productionVersionCode": 362,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.zanoshky.firewall",
+      "appName": "Firewall",
+      "hasBeta": true,
+      "productionVersionCode": 15,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -25364,6 +25400,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "me.kerooker.rpgcharactergenerator",
+      "appName": "RPG NPC Generator",
+      "hasBeta": true,
+      "productionVersionCode": 50400,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "me.lecaro.breakout",
       "appName": "B71 - Roguelite brick breaker",
       "hasBeta": true,
@@ -25899,6 +25944,15 @@
       "appName": "BombSquad",
       "hasBeta": true,
       "productionVersionCode": 22837,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "net.hubalek.android.gaugebattwidget",
+      "appName": "Gauge Battery Widget & Monitor",
+      "hasBeta": true,
+      "productionVersionCode": 80113,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -26759,6 +26813,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.freevpn",
+      "appName": "Free VPN by Free VPN .org™",
+      "hasBeta": true,
+      "productionVersionCode": 4056,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.fsociety.vernet.store",
       "appName": "Vernet - Network Analyzer",
       "hasBeta": true,
@@ -27274,7 +27337,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 71122,
+      "productionVersionCode": 71581,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -27464,6 +27527,15 @@
       "appName": "Ceneo: porównywarka cen online",
       "hasBeta": true,
       "productionVersionCode": 5110100,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "pl.gadugadu",
+      "appName": "GG Messenger",
+      "hasBeta": true,
+      "productionVersionCode": 20771,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
