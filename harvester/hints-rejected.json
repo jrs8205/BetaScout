@@ -4014,7 +4014,7 @@
     },
     {
       "packageName": "br.com.serasaexperian.consumidor",
-      "rejectedAt": 1789030789986
+      "rejectedAt": 1791628777591
     },
     {
       "packageName": "com.ubiquitly.magicmapperdlr",
@@ -4847,6 +4847,14 @@
     {
       "packageName": "com.goon.mobile",
       "rejectedAt": 1791544957138
+    },
+    {
+      "packageName": "com.ogesture",
+      "rejectedAt": 1791628777591
+    },
+    {
+      "packageName": "com.herond.android.browser",
+      "rejectedAt": 1791628777591
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1791544957143,
+  "generatedAt": 1791628777596,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -1956,6 +1956,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.actfirstgames.seven",
+      "appName": "Obsidian Knight — RPG Games",
+      "hasBeta": true,
+      "productionVersionCode": 541,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.actionlauncher.playstore",
       "appName": "Action Launcher: Pixel Edition",
       "hasBeta": true,
@@ -2499,7 +2508,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 803712604,
+      "productionVersionCode": 803712704,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3220,6 +3229,15 @@
       "appName": "AUTOsist Fleet Maintenance App",
       "hasBeta": true,
       "productionVersionCode": 227,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.avalon.rpg",
+      "appName": "Hero of Aethric Turn Based RPG",
+      "hasBeta": true,
+      "productionVersionCode": 30026004,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6855,7 +6873,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 475417031,
+      "productionVersionCode": 475417129,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6873,7 +6891,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 346213584,
+      "productionVersionCode": 346415776,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8771,7 +8789,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561301413,
+      "productionVersionCode": 1561301422,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9326,6 +9344,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.heartbrowser.app",
+      "appName": "Heart browser: search for good",
+      "hasBeta": true,
+      "productionVersionCode": 640031,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.helge.droiddashcam",
       "appName": "Droid Dashcam - Video Recorder",
       "hasBeta": true,
@@ -9402,6 +9429,15 @@
       "appName": "HeyMelody",
       "hasBeta": true,
       "productionVersionCode": 116008002,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.heytap.music",
+      "appName": "Music",
+      "hasBeta": true,
+      "productionVersionCode": 101501591,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -13937,7 +13973,7 @@
       "packageName": "com.netflix.mediaclient",
       "appName": "Netflix",
       "hasBeta": true,
-      "productionVersionCode": 74592,
+      "productionVersionCode": 74620,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16385,7 +16421,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2640090,
+      "productionVersionCode": 2639070,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -17934,6 +17970,15 @@
       "appName": "Smarter You",
       "hasBeta": true,
       "productionVersionCode": 41,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.smartPlay.PulsePlayerA",
+      "appName": "PulsePlayer",
+      "hasBeta": true,
+      "productionVersionCode": 27,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -19616,7 +19661,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12304,
+      "productionVersionCode": 12306,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20210,7 +20255,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312320001,
+      "productionVersionCode": 312330001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -21398,7 +21443,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 263907400,
+      "productionVersionCode": 263907900,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -23217,6 +23262,15 @@
       "appName": "Lovable: Build Apps With AI",
       "hasBeta": true,
       "productionVersionCode": 112,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "dev.mahlernim.timelinevisualizer",
+      "appName": "Timeline Visualizer Original",
+      "hasBeta": true,
+      "productionVersionCode": 65,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -27337,7 +27391,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 71581,
+      "productionVersionCode": 71671,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

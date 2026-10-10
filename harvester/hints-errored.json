@@ -314,33 +314,33 @@
     },
     {
       "packageName": "com.aatorque.carstats",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789030789987
+      "lastErrorAt": 1791628777593
     },
     {
       "packageName": "com.emilkrebs.watchlock",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789030789987
+      "lastErrorAt": 1791628777593
     },
     {
       "packageName": "io.github.domi04151309.alwayson",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789030789987
+      "lastErrorAt": 1791628777593
     },
     {
       "packageName": "com.rubenmayayo.reddit",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789030789987
+      "lastErrorAt": 1791628777593
     },
     {
       "packageName": "com.potentialproject.app",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789030789987
+      "lastErrorAt": 1791628777593
     },
     {
       "packageName": "com.samruston.luci",
@@ -956,27 +956,39 @@
     },
     {
       "packageName": "com.simpler.contacts",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791544957140
+      "lastErrorAt": 1791628777593
     },
     {
       "packageName": "com.simplysmartframe.app",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791544957140
+      "lastErrorAt": 1791628777593
     },
     {
       "packageName": "com.webstop.tops",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791544957140
+      "lastErrorAt": 1791628777593
     },
     {
       "packageName": "com.ghostery.android.ghostery",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791628777593
+    },
+    {
+      "packageName": "app.cordaya.android",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791544957140
+      "lastErrorAt": 1791628777593
+    },
+    {
+      "packageName": "com.top.notch",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791628777593
     }
   ]
 }
