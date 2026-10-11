@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1791628777596,
+  "generatedAt": 1791715946677,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2508,7 +2508,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 803712704,
+      "productionVersionCode": 803712604,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5817,6 +5817,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.dexteralabs.home",
+      "appName": "Dextera Launcher",
+      "hasBeta": true,
+      "productionVersionCode": 1172,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.dgmltn.radiomg.somafm",
       "appName": "RadiOMG for SomaFM",
       "hasBeta": true,
@@ -7914,6 +7923,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.GalacticSlice.OneBitAdventure",
+      "appName": "OneBit Adventure Roguelite RPG",
+      "hasBeta": true,
+      "productionVersionCode": 1017,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.gallagher.security.commandcentrecardholderapp",
       "appName": "Gallagher Mobile Connect",
       "hasBeta": true,
@@ -8691,7 +8709,7 @@
       "packageName": "com.google.android.dialer",
       "appName": "Phone by Google",
       "hasBeta": true,
-      "productionVersionCode": 19933388,
+      "productionVersionCode": 20129568,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8789,7 +8807,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561301422,
+      "productionVersionCode": 1561301413,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9087,6 +9105,15 @@
       "appName": "Gumroad",
       "hasBeta": true,
       "productionVersionCode": 360,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.gurry.kvbrowser",
+      "appName": "Indi Browser",
+      "hasBeta": true,
+      "productionVersionCode": 163,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -10238,7 +10265,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385611438,
+      "productionVersionCode": 385611395,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12201,6 +12228,15 @@
       "appName": "TCL Official TV Remote App",
       "hasBeta": true,
       "productionVersionCode": 201980,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.magmafortress.hoplite",
+      "appName": "Hoplite",
+      "hasBeta": true,
+      "productionVersionCode": 2008067,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -15473,6 +15509,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.pinestreetcodeworks.TinyBubbles",
+      "appName": "Tiny Bubbles",
+      "hasBeta": true,
+      "productionVersionCode": 163,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.pingou.champignouf",
       "appName": "Mushroom Identify - Automatic ",
       "hasBeta": true,
@@ -15783,6 +15828,15 @@
       "appName": "Polarsteps",
       "hasBeta": true,
       "productionVersionCode": 2000010306,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.poncle.vampiresurvivors",
+      "appName": "Vampire Survivors",
+      "hasBeta": true,
+      "productionVersionCode": 64958766,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -19712,6 +19766,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.tonyq.betteragentterminal",
+      "appName": "Better Agent Terminal",
+      "hasBeta": true,
+      "productionVersionCode": 73,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.toofifi.mobile",
       "appName": "tranScreen",
       "hasBeta": true,
@@ -20255,7 +20318,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312330001,
+      "productionVersionCode": 312331001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -24338,6 +24401,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "in.codeguyakash.booster",
+      "appName": "RAM Monitor & Junk Cleaner",
+      "hasBeta": true,
+      "productionVersionCode": 4,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "in.cricketexchange.app.cricketexchange",
       "appName": "CREX - Just Cricket",
       "hasBeta": true,
@@ -26979,6 +27051,15 @@
       "appName": "Loop Habit Tracker",
       "hasBeta": true,
       "productionVersionCode": 20301,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.jade.jadebrowser",
+      "appName": "Jade AdBlock Browser & VPN",
+      "hasBeta": true,
+      "productionVersionCode": 815013614,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

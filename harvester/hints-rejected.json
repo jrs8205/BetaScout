@@ -370,7 +370,7 @@
     },
     {
       "packageName": "br.com.vivo.vivoeasy",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.here.app.maps",
@@ -2314,7 +2314,7 @@
     },
     {
       "packageName": "com.sofascore.results",
-      "rejectedAt": 1786340974333
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.glance.internet",
@@ -2782,35 +2782,35 @@
     },
     {
       "packageName": "com.absa.iotfapp",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.afrihost.adslbandwidthmonitor",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.d6.schools",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.evernote",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.joinpanda.panda",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.ztesoft.zlife",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "za.co.discovery.consumer.bankmed",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "za.co.wigroup.burgerking",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.allstarunion.AGTB",
@@ -3318,7 +3318,7 @@
     },
     {
       "packageName": "com.runawayplay.dragons",
-      "rejectedAt": 1787547887163
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.sunbird.apps",
@@ -4022,27 +4022,27 @@
     },
     {
       "packageName": "com.br.smiles",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.cartaodetodoswalletapp",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.latam.pass",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.samsung.shop",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "net.natura.semprepresente",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "ws.hanzo.Vrrh",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1791715946672
     },
     {
       "packageName": "com.datavending_app.dsedatavending",
@@ -4855,6 +4855,38 @@
     {
       "packageName": "com.herond.android.browser",
       "rejectedAt": 1791628777591
+    },
+    {
+      "packageName": "com.innovist",
+      "rejectedAt": 1791715946672
+    },
+    {
+      "packageName": "com.PyreGames.IdleDungeon",
+      "rejectedAt": 1791715946672
+    },
+    {
+      "packageName": "com.vivo.browser",
+      "rejectedAt": 1791715946672
+    },
+    {
+      "packageName": "dev.alenajam.monsterdialer",
+      "rejectedAt": 1791715946672
+    },
+    {
+      "packageName": "com.airfind.browser",
+      "rejectedAt": 1791715946672
+    },
+    {
+      "packageName": "com.arsnovasystems.browser",
+      "rejectedAt": 1791715946672
+    },
+    {
+      "packageName": "com.jio.web",
+      "rejectedAt": 1791715946672
+    },
+    {
+      "packageName": "com.rls.bubble",
+      "rejectedAt": 1791715946672
     }
   ]
 }

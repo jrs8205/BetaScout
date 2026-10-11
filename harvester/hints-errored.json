@@ -344,45 +344,45 @@
     },
     {
       "packageName": "com.samruston.luci",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789117128095
+      "lastErrorAt": 1791715946674
     },
     {
       "packageName": "com.google.mainline.go.primary",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789117128095
+      "lastErrorAt": 1791715946674
     },
     {
       "packageName": "com.google.mainline.go.telemetry",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789117128095
+      "lastErrorAt": 1791715946674
     },
     {
       "packageName": "com.secuso.privacyFriendlyCodeScanner",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789117128095
+      "lastErrorAt": 1791715946674
     },
     {
       "packageName": "eu.livesport.FlashScore_com",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789117128095
+      "lastErrorAt": 1791715946674
     },
     {
       "packageName": "com.urik.keyboard",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789117128095
+      "lastErrorAt": 1791715946674
     },
     {
       "packageName": "com.degoo.android",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789117128095
+      "lastErrorAt": 1791715946674
     },
     {
       "packageName": "com.joaomgcd.taskersettings",
@@ -974,21 +974,21 @@
     },
     {
       "packageName": "com.ghostery.android.ghostery",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791628777593
+      "lastErrorAt": 1791715946674
     },
     {
       "packageName": "app.cordaya.android",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791628777593
+      "lastErrorAt": 1791715946674
     },
     {
       "packageName": "com.top.notch",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791628777593
+      "lastErrorAt": 1791715946674
     }
   ]
 }
