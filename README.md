@@ -63,7 +63,8 @@ Honesty first:
 ## Installation
 
 BetaScout is distributed as an APK via [GitHub Releases](https://github.com/jrs8205/BetaScout/releases)
-and is also available on Aptoide — it is **not** on the Play Store.
+and is also available on Aptoide and
+[SourceForge](https://sourceforge.net/projects/betascout/) — it is **not** on the Play Store.
 
 1. Download the latest APK from the Releases page.
 2. Allow installs from unknown sources when Android asks.
