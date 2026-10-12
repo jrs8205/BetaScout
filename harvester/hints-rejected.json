@@ -1462,7 +1462,7 @@
     },
     {
       "packageName": "app.whisperian.client",
-      "rejectedAt": 1786166131268
+      "rejectedAt": 1791806700411
     },
     {
       "packageName": "co.acaia.androidupdater",
@@ -4887,6 +4887,30 @@
     {
       "packageName": "com.rls.bubble",
       "rejectedAt": 1791715946672
+    },
+    {
+      "packageName": "com.infinix.xshare",
+      "rejectedAt": 1791806700411
+    },
+    {
+      "packageName": "com.mallelalabs.greenbin",
+      "rejectedAt": 1791806700411
+    },
+    {
+      "packageName": "com.shaheer.mediarescue.mediarescue",
+      "rejectedAt": 1791806700411
+    },
+    {
+      "packageName": "com.astfifzapr.gp",
+      "rejectedAt": 1791806700411
+    },
+    {
+      "packageName": "com.fluxlabs.zoop",
+      "rejectedAt": 1791806700411
+    },
+    {
+      "packageName": "pl.koleo",
+      "rejectedAt": 1791806700411
     }
   ]
 }

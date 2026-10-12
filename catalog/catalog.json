@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1791715946677,
+  "generatedAt": 1791806700417,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2508,7 +2508,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 803712604,
+      "productionVersionCode": 803712704,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8076,6 +8076,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.gemwallet.android",
+      "appName": "Gem Wallet: Bitcoin, USDT, BNB",
+      "hasBeta": true,
+      "productionVersionCode": 883,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.gener8ads.wallet",
       "appName": "Gener8 - Earn From Your Data",
       "hasBeta": true,
@@ -10265,7 +10274,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385611395,
+      "productionVersionCode": 385611438,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11481,6 +11490,15 @@
       "appName": "Connect",
       "hasBeta": true,
       "productionVersionCode": 470,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.kuto.browser",
+      "appName": "KUTO Mini Browser",
+      "hasBeta": true,
+      "productionVersionCode": 1077,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -12983,7 +13001,7 @@
       "packageName": "com.microsoft.teams",
       "appName": "Microsoft Teams",
       "hasBeta": true,
-      "productionVersionCode": 2026173625,
+      "productionVersionCode": 2026183025,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -25634,6 +25652,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "me.twentyfour.www",
+      "appName": "24me: Calendar, Tasks, Notes",
+      "hasBeta": true,
+      "productionVersionCode": 24446,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "me.x2gd4.dollphone",
       "appName": "Dollphone Icon Pack",
       "hasBeta": true,
@@ -27472,7 +27499,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 71671,
+      "productionVersionCode": 71751,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

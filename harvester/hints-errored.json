@@ -386,57 +386,57 @@
     },
     {
       "packageName": "com.joaomgcd.taskersettings",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "com.microsoft.outlooklite",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "ca.walmart.ecommerceapp",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "com.loongcheer.neverlate.wizardlegend.fightmaster",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "uk.co.tdsstudios.noterly",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "com.ecnetwork.crma",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "com.fullcontact.ledene",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "in.codeseed.undonotification.pro",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "philly.com.sportsnow",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "com.opera.max.oem",
@@ -710,27 +710,21 @@
     },
     {
       "packageName": "com.droid.netflixIMDB",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "com.givencity.m_ledger",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
-    },
-    {
-      "packageName": "com.infinix.xshare",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "com.lightweb",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789202451900
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "br.gov.caixa.loterias.apostas",
@@ -980,15 +974,27 @@
     },
     {
       "packageName": "app.cordaya.android",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791715946674
+      "lastErrorAt": 1791806700413
     },
     {
       "packageName": "com.top.notch",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791715946674
+      "lastErrorAt": 1791806700413
+    },
+    {
+      "packageName": "com.lightsourcelabs.drift",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791806700413
+    },
+    {
+      "packageName": "com.syntheone.alertinbox",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791806700413
     }
   ]
 }
