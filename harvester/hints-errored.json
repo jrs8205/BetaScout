@@ -440,57 +440,57 @@
     },
     {
       "packageName": "com.opera.max.oem",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
+      "lastErrorAt": 1791892354200
     },
     {
       "packageName": "app.fanclubs.android",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
+      "lastErrorAt": 1791892354200
     },
     {
       "packageName": "com.h3r3t1c.wear.btbattery",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
+      "lastErrorAt": 1791892354200
     },
     {
       "packageName": "com.ncm.noovietrivia",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
+      "lastErrorAt": 1791892354200
     },
     {
       "packageName": "com.notacult.walkscape",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
+      "lastErrorAt": 1791892354200
     },
     {
       "packageName": "com.scannerradio_pro",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
+      "lastErrorAt": 1791892354200
     },
     {
       "packageName": "social.ones.app",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
+      "lastErrorAt": 1791892354200
     },
     {
       "packageName": "one.zagura.IonLauncher",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
+      "lastErrorAt": 1791892354200
     },
     {
       "packageName": "threads.thor",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
+      "lastErrorAt": 1791892354200
     },
     {
       "packageName": "com.fidocredit",
@@ -728,21 +728,15 @@
     },
     {
       "packageName": "br.gov.caixa.loterias.apostas",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
+      "lastErrorAt": 1791892354200
     },
     {
       "packageName": "com.norton.genieapp",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
-    },
-    {
-      "packageName": "com.goodmooddroid.gestures",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789292159904
+      "lastErrorAt": 1791892354200
     },
     {
       "packageName": "app.attestation.auditor",
@@ -986,15 +980,51 @@
     },
     {
       "packageName": "com.lightsourcelabs.drift",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791806700413
+      "lastErrorAt": 1791892354200
     },
     {
       "packageName": "com.syntheone.alertinbox",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791892354200
+    },
+    {
+      "packageName": "com.codebrewgames.pocketcity",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791806700413
+      "lastErrorAt": 1791892354200
+    },
+    {
+      "packageName": "com.akshayysk.pixelbattery",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791892354200
+    },
+    {
+      "packageName": "com.ayman.keyboard",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791892354200
+    },
+    {
+      "packageName": "com.ayman.launcher",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791892354200
+    },
+    {
+      "packageName": "com.kaadan.Netumi",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791892354200
+    },
+    {
+      "packageName": "com.sonymobile.sketch",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1791892354200
     }
   ]
 }
