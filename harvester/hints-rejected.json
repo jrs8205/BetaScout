@@ -262,7 +262,7 @@
     },
     {
       "packageName": "com.instagram.lite",
-      "rejectedAt": 1788425960541
+      "rejectedAt": 1791970455257
     },
     {
       "packageName": "com.collexo.payment",
@@ -1174,7 +1174,7 @@
     },
     {
       "packageName": "org.torproject.vpn",
-      "rejectedAt": 1788684165510
+      "rejectedAt": 1791970455257
     },
     {
       "packageName": "pub.hanks.appfolderwidget",
@@ -1198,7 +1198,7 @@
     },
     {
       "packageName": "tk.zwander.rootactivitylauncher",
-      "rejectedAt": 1788773072581
+      "rejectedAt": 1791970455257
     },
     {
       "packageName": "xyz.slingshot.ashley.app",
@@ -1630,7 +1630,7 @@
     },
     {
       "packageName": "org.fossify.notes",
-      "rejectedAt": 1789030789986
+      "rejectedAt": 1791970455257
     },
     {
       "packageName": "org.fossify.paint",
@@ -2046,7 +2046,7 @@
     },
     {
       "packageName": "org.fossify.documents",
-      "rejectedAt": 1789030789986
+      "rejectedAt": 1791970455257
     },
     {
       "packageName": "com.digitalchemy.calculator.decimal",
@@ -2654,7 +2654,7 @@
     },
     {
       "packageName": "gallery.memories",
-      "rejectedAt": 1786513809141
+      "rejectedAt": 1791970455257
     },
     {
       "packageName": "net.iplato.mygp",
@@ -4963,6 +4963,14 @@
     {
       "packageName": "cs14.pixelperfect.kwgtwidget.one4kwgtpro",
       "rejectedAt": 1791892354198
+    },
+    {
+      "packageName": "pl.orlen.paczka",
+      "rejectedAt": 1791970455257
+    },
+    {
+      "packageName": "com.github.vauvenal5.yaga",
+      "rejectedAt": 1791970455257
     }
   ]
 }
