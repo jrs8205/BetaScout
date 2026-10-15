@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1791970455261,
+  "generatedAt": 1792055517805,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -493,6 +493,15 @@
       "appName": "Knit — Offline Mesh Messenger",
       "hasBeta": true,
       "productionVersionCode": 8,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "app.getopencode",
+      "appName": "Opencode Mobile",
+      "hasBeta": true,
+      "productionVersionCode": 72,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2535,7 +2544,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 805903904,
+      "productionVersionCode": 805904104,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -4102,6 +4111,15 @@
       "appName": "AirTouch: Gesture Control",
       "hasBeta": true,
       "productionVersionCode": 22,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bluetooth.auto.connect.pairing.device.finder",
+      "appName": "Bluetooth Pair Auto Connector",
+      "hasBeta": true,
+      "productionVersionCode": 29,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6018,7 +6036,7 @@
       "packageName": "com.discord",
       "appName": "Discord - Talk, Play, Hang Out",
       "hasBeta": true,
-      "productionVersionCode": 348010,
+      "productionVersionCode": 349009,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7008,7 +7026,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 346611439,
+      "productionVersionCode": 346415776,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12579,6 +12597,15 @@
       "appName": "Ad Skipper",
       "hasBeta": true,
       "productionVersionCode": 20,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.maxbrowser.browser",
+      "appName": "Max Browser",
+      "hasBeta": true,
+      "productionVersionCode": 1020200063,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -20075,7 +20102,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12310,
+      "productionVersionCode": 12312,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20696,7 +20723,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312331001,
+      "productionVersionCode": 312340001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -21929,7 +21956,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 263907900,
+      "productionVersionCode": 264007622,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

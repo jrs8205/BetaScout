@@ -494,9 +494,9 @@
     },
     {
       "packageName": "com.fidocredit",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789379755476
+      "lastErrorAt": 1792055517801
     },
     {
       "packageName": "com.surfshark.free.proxy.trust.dns",
@@ -992,57 +992,57 @@
     },
     {
       "packageName": "com.codebrewgames.pocketcity",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791970455258
+      "lastErrorAt": 1792055517801
     },
     {
       "packageName": "com.akshayysk.pixelbattery",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791970455258
+      "lastErrorAt": 1792055517801
     },
     {
       "packageName": "com.ayman.keyboard",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791970455258
+      "lastErrorAt": 1792055517801
     },
     {
       "packageName": "com.ayman.launcher",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791970455258
+      "lastErrorAt": 1792055517801
     },
     {
       "packageName": "com.kaadan.Netumi",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791970455258
+      "lastErrorAt": 1792055517801
     },
     {
       "packageName": "com.sonymobile.sketch",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791970455258
+      "lastErrorAt": 1792055517801
     },
     {
       "packageName": "com.andrewshu.android.reddit",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791970455258
+      "lastErrorAt": 1792055517801
     },
     {
       "packageName": "com.thepssaini.browser",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791970455258
+      "lastErrorAt": 1792055517801
     },
     {
       "packageName": "net.maskbrowser.browser",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791970455258
+      "lastErrorAt": 1792055517801
     }
   ]
 }
