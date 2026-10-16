@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1792055517805,
+  "generatedAt": 1792141485788,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2085,7 +2085,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Adobe Acrobat Reader: Edit PDF",
       "hasBeta": true,
-      "productionVersionCode": 1932149959,
+      "productionVersionCode": 1932150367,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2544,7 +2544,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 805904104,
+      "productionVersionCode": 805908404,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7026,7 +7026,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 346415776,
+      "productionVersionCode": 346611422,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8772,7 +8772,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068809342,
+      "productionVersionCode": 1068821134,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8898,10 +8898,10 @@
       "packageName": "com.google.android.inputmethod.latin",
       "appName": "Gboard - the Google Keyboard",
       "hasBeta": true,
-      "productionVersionCode": 175871582,
+      "productionVersionCode": 176027078,
       "liveStatus": "UNKNOWN",
-      "source": "CROWD",
-      "notes": "Reported by users, confirmed via Google Play"
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
     },
     {
       "packageName": "com.google.android.projection.gearhead",
@@ -9933,6 +9933,15 @@
       "appName": "Hulu: Stream TV shows & movies",
       "hasBeta": true,
       "productionVersionCode": 60010281,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.humana.go365.medicaid",
+      "appName": "Go365 Humana Healthy Horizons",
+      "hasBeta": true,
+      "productionVersionCode": 2012302158,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -15545,6 +15554,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.pdfviewer.pdfreader.eagle.apps",
+      "appName": "PDF Reader, Editor & Scanner",
+      "hasBeta": true,
+      "productionVersionCode": 163,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.pecepta.spot",
       "appName": "Spot Gym Buddy",
       "hasBeta": true,
@@ -15818,7 +15836,7 @@
       "packageName": "com.pinterest",
       "appName": "Pinterest",
       "hasBeta": true,
-      "productionVersionCode": 14398020,
+      "productionVersionCode": 14408010,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15837,6 +15855,15 @@
       "appName": "Wavelet: headphone equalizer",
       "hasBeta": true,
       "productionVersionCode": 260508,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.pixabay.pixabayapp",
+      "appName": "Pixabay",
+      "hasBeta": true,
+      "productionVersionCode": 20016,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18428,7 +18455,7 @@
       "packageName": "com.snapchat.android",
       "appName": "Snapchat",
       "hasBeta": true,
-      "productionVersionCode": 319422,
+      "productionVersionCode": 321072,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -18635,7 +18662,7 @@
       "packageName": "com.spotify.music",
       "appName": "Spotify: Music and Podcasts",
       "hasBeta": true,
-      "productionVersionCode": 147078674,
+      "productionVersionCode": 147346334,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20106,6 +20133,15 @@
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.todolu.todolu",
+      "appName": "Todolu: Notes, Task & Focus",
+      "hasBeta": true,
+      "productionVersionCode": 62,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.toilets4london.toiletapp",
@@ -22214,6 +22250,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.wordchute.app",
+      "appName": "Wordchute: Daily Word Puzzle",
+      "hasBeta": true,
+      "productionVersionCode": 15,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.wordgametrivia.sudokuadventure",
       "appName": "Sudoku Adventure",
       "hasBeta": true,
@@ -22254,6 +22299,15 @@
       "appName": "Luma: Overthinking, Calm & CBT",
       "hasBeta": true,
       "productionVersionCode": 50044,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.wp.aiphotoenhancer",
+      "appName": "AI Photo Enhancer & Restore",
+      "hasBeta": true,
+      "productionVersionCode": 4,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -23037,6 +23091,15 @@
       "appName": "Notepad – Notes and To Do List",
       "hasBeta": true,
       "productionVersionCode": 18832,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.zubithedev.trackermax",
+      "appName": "Workout Tracker: TrackerMax",
+      "hasBeta": true,
+      "productionVersionCode": 14,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -24968,6 +25031,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "in.noveltywealth.app",
+      "appName": "Novelty Wealth: AI for Finance",
+      "hasBeta": true,
+      "productionVersionCode": 199,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "in.shabinder.soundbound",
       "appName": "Soundbound : Music and Songs",
       "hasBeta": true,
@@ -25062,6 +25134,15 @@
       "appName": "Network Monitor Mini Pro",
       "hasBeta": true,
       "productionVersionCode": 281,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "info.kfsoft.force.rotation",
+      "appName": "Force Rotation: Auto-rotate",
+      "hasBeta": true,
+      "productionVersionCode": 60,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

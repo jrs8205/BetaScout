@@ -500,27 +500,27 @@
     },
     {
       "packageName": "com.surfshark.free.proxy.trust.dns",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789464584813
+      "lastErrorAt": 1792141485785
     },
     {
       "packageName": "com.worldance.drama",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789464584813
+      "lastErrorAt": 1792141485785
     },
     {
       "packageName": "ch.admin.bag.dp3t",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789464584813
+      "lastErrorAt": 1792141485785
     },
     {
       "packageName": "org.kustom.apkmaker",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789464584813
+      "lastErrorAt": 1792141485785
     },
     {
       "packageName": "com.bambuna.podcastaddictdonate",
@@ -740,9 +740,9 @@
     },
     {
       "packageName": "app.attestation.auditor",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789464584813
+      "lastErrorAt": 1792141485785
     },
     {
       "packageName": "com.ringside.launcher",
@@ -1028,21 +1028,39 @@
     },
     {
       "packageName": "com.andrewshu.android.reddit",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792055517801
+      "lastErrorAt": 1792141485785
     },
     {
       "packageName": "com.thepssaini.browser",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792055517801
+      "lastErrorAt": 1792141485785
     },
     {
       "packageName": "net.maskbrowser.browser",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792055517801
+      "lastErrorAt": 1792141485785
+    },
+    {
+      "packageName": "com.actionkey.quantumloop",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1792141485785
+    },
+    {
+      "packageName": "com.jinultimate.klikey",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1792141485785
+    },
+    {
+      "packageName": "org.antivirus",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1792141485785
     }
   ]
 }

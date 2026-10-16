@@ -494,7 +494,7 @@
     },
     {
       "packageName": "co.za.oneplan",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1792141485783
     },
     {
       "packageName": "com.zs.android.apps.photos",
@@ -2390,7 +2390,7 @@
     },
     {
       "packageName": "tv.accedo.airtel.wynk",
-      "rejectedAt": 1789030789986
+      "rejectedAt": 1792141485783
     },
     {
       "packageName": "com.gingerlabs.notability",
@@ -4971,6 +4971,38 @@
     {
       "packageName": "com.github.vauvenal5.yaga",
       "rejectedAt": 1791970455257
+    },
+    {
+      "packageName": "co.za.vodacom.android.app.mymuze",
+      "rejectedAt": 1792141485783
+    },
+    {
+      "packageName": "com.dstvmobile.android",
+      "rejectedAt": 1792141485783
+    },
+    {
+      "packageName": "com.senecalearning.app",
+      "rejectedAt": 1792141485783
+    },
+    {
+      "packageName": "com.abi.busjam.sortpuzzle",
+      "rejectedAt": 1792141485783
+    },
+    {
+      "packageName": "com.facebook.weave",
+      "rejectedAt": 1792141485783
+    },
+    {
+      "packageName": "moje.a2mobile.pl",
+      "rejectedAt": 1792141485783
+    },
+    {
+      "packageName": "com.find.difference.spot.changes",
+      "rejectedAt": 1792141485783
+    },
+    {
+      "packageName": "com.who.seat.brain.logic.next.my.thats.puzzle.games",
+      "rejectedAt": 1792141485783
     }
   ]
 }
