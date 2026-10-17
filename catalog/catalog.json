@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1792141485788,
+  "generatedAt": 1792226246203,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2544,7 +2544,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 805908404,
+      "productionVersionCode": 805907904,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7008,7 +7008,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 475417129,
+      "productionVersionCode": 475614366,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7026,7 +7026,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 346611422,
+      "productionVersionCode": 346611439,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7729,6 +7729,15 @@
       "appName": "Foreca Weather & Radar",
       "hasBeta": true,
       "productionVersionCode": 5216,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.forumcopilot.abda",
+      "appName": "A Better Discourse App (ABDA)",
+      "hasBeta": true,
+      "productionVersionCode": 19,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -8943,10 +8952,10 @@
       "packageName": "com.google.android.webview",
       "appName": "Android System WebView",
       "hasBeta": true,
-      "productionVersionCode": 787104603,
+      "productionVersionCode": 805904303,
       "liveStatus": "UNKNOWN",
-      "source": "CROWD",
-      "notes": "Reported by users, confirmed via Google Play"
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
     },
     {
       "packageName": "com.google.android.webview.beta",
@@ -8960,7 +8969,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561303420,
+      "productionVersionCode": 1561303418,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10445,7 +10454,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385713116,
+      "productionVersionCode": 385713082,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16130,6 +16139,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.polyhistor.stepline",
+      "appName": "Stepline: Pedometer & Walk Map",
+      "hasBeta": true,
+      "productionVersionCode": 6,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.poncle.vampiresurvivors",
       "appName": "Vampire Survivors",
       "hasBeta": true,
@@ -20129,7 +20147,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12312,
+      "productionVersionCode": 12314,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20759,7 +20777,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312340001,
+      "productionVersionCode": 312350001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -28165,7 +28183,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 71751,
+      "productionVersionCode": 71831,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

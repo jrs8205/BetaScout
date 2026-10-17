@@ -5003,6 +5003,18 @@
     {
       "packageName": "com.who.seat.brain.logic.next.my.thats.puzzle.games",
       "rejectedAt": 1792141485783
+    },
+    {
+      "packageName": "com.meridian_launcher.pro",
+      "rejectedAt": 1792226246199
+    },
+    {
+      "packageName": "io.github.nicholasarda.keysnap",
+      "rejectedAt": 1792226246199
+    },
+    {
+      "packageName": "com.XOVisions.com.SlickTires",
+      "rejectedAt": 1792226246199
     }
   ]
 }
