@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1792226246203,
+  "generatedAt": 1792313603047,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -4336,6 +4336,15 @@
       "appName": "Cashew—Expense Budget Tracker",
       "hasBeta": true,
       "productionVersionCode": 510,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.buildcores.buildcores",
+      "appName": "BuildCores: 3D Part Picker PC",
+      "hasBeta": true,
+      "productionVersionCode": 113,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -8855,8 +8864,8 @@
       "hasBeta": true,
       "productionVersionCode": 0,
       "liveStatus": "UNKNOWN",
-      "source": "CROWD",
-      "notes": "Reported by users, confirmed via Google Play"
+      "source": "GPLAYAPI",
+      "notes": "Confirmed via Google Play"
     },
     {
       "packageName": "com.google.android.contactkeys",
@@ -8969,7 +8978,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561303418,
+      "productionVersionCode": 1561301449,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10454,7 +10463,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385713082,
+      "productionVersionCode": 385713027,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12921,6 +12930,15 @@
       "appName": "TrustDial: Caller, SMS & Block",
       "hasBeta": true,
       "productionVersionCode": 26,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.mexcpro.client",
+      "appName": "MEXC: Buy Bitcoin & Crypto",
+      "hasBeta": true,
+      "productionVersionCode": 678010,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -20409,6 +20427,15 @@
       "appName": "Tradera – buy & sell",
       "hasBeta": true,
       "productionVersionCode": 2030997826,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.tradingeconomics.calendar",
+      "appName": "Trading Economics",
+      "hasBeta": true,
+      "productionVersionCode": 311,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

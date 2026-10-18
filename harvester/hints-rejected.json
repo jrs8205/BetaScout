@@ -5015,6 +5015,22 @@
     {
       "packageName": "com.XOVisions.com.SlickTires",
       "rejectedAt": 1792226246199
+    },
+    {
+      "packageName": "com.fw.word.connect.puzzle",
+      "rejectedAt": 1792313603045
+    },
+    {
+      "packageName": "com.sparklingapps.callrecorder",
+      "rejectedAt": 1792313603045
+    },
+    {
+      "packageName": "com.siplx.android",
+      "rejectedAt": 1792313603045
+    },
+    {
+      "packageName": "dev.qaidvoid.expand",
+      "rejectedAt": 1792313603045
     }
   ]
 }
