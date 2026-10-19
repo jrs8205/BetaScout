@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1792313603047,
+  "generatedAt": 1792403919914,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -115,6 +115,15 @@
       "appName": "Off Grid - Private AI Chat",
       "hasBeta": true,
       "productionVersionCode": 1784144537,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ai.omnigent.android",
+      "appName": "Omnigent",
+      "hasBeta": true,
+      "productionVersionCode": 9,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2544,7 +2553,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 805907904,
+      "productionVersionCode": 805908104,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -4120,6 +4129,15 @@
       "appName": "Bluetooth Pair Auto Connector",
       "hasBeta": true,
       "productionVersionCode": 29,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bluetooth.autoconnect.find.device",
+      "appName": "Fast Bluetooth Auto Connect",
+      "hasBeta": true,
+      "productionVersionCode": 21,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7428,6 +7446,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.firsty.app",
+      "appName": "Firsty: eSIM & Mobile Data",
+      "hasBeta": true,
+      "productionVersionCode": 8820,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.fis.ebtedge",
       "appName": "ebtEDGE",
       "hasBeta": true,
@@ -7873,6 +7900,15 @@
       "appName": "Fresh To Home - Meat Delivery",
       "hasBeta": true,
       "productionVersionCode": 801040,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.Friedemann.SlotsAndDaggers",
+      "appName": "Slots & Daggers",
+      "hasBeta": true,
+      "productionVersionCode": 22,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -8978,7 +9014,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561301449,
+      "productionVersionCode": 1561303420,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10463,7 +10499,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385713027,
+      "productionVersionCode": 385713116,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10572,6 +10608,15 @@
       "appName": "Browser",
       "hasBeta": true,
       "productionVersionCode": 452,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.internetbrowser.explorer.pro",
+      "appName": "Browser",
+      "hasBeta": true,
+      "productionVersionCode": 11,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -12714,6 +12759,15 @@
       "appName": "Notify for Huawei",
       "hasBeta": true,
       "productionVersionCode": 2350,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.mcsoftware.myvinyl",
+      "appName": "My Vinyl+",
+      "hasBeta": true,
+      "productionVersionCode": 45,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -25845,6 +25899,15 @@
       "appName": "JEFIT Gym Workout Tracker",
       "hasBeta": true,
       "productionVersionCode": 2028,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "jjong.kim.rotationcontrol",
+      "appName": "Screen rotation control",
+      "hasBeta": true,
+      "productionVersionCode": 119,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

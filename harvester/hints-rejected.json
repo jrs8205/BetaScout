@@ -4250,7 +4250,7 @@
     },
     {
       "packageName": "br.com.uol.mail.uolhost",
-      "rejectedAt": 1789722189329
+      "rejectedAt": 1792403919911
     },
     {
       "packageName": "com.app.punjlekh",
@@ -5031,6 +5031,30 @@
     {
       "packageName": "dev.qaidvoid.expand",
       "rejectedAt": 1792313603045
+    },
+    {
+      "packageName": "com.ringside.launcher",
+      "rejectedAt": 1792403919911
+    },
+    {
+      "packageName": "com.duo.statusbar",
+      "rejectedAt": 1792403919911
+    },
+    {
+      "packageName": "com.fantasygames.android",
+      "rejectedAt": 1792403919911
+    },
+    {
+      "packageName": "io.github.sds100.keymapper.gaming",
+      "rejectedAt": 1792403919911
+    },
+    {
+      "packageName": "org.google.academy",
+      "rejectedAt": 1792403919911
+    },
+    {
+      "packageName": "com.mx.browser",
+      "rejectedAt": 1792403919911
     }
   ]
 }

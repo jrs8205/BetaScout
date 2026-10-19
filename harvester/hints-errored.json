@@ -536,45 +536,45 @@
     },
     {
       "packageName": "com.blackberry.blackberrylauncher",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789722189331
+      "lastErrorAt": 1792403919913
     },
     {
       "packageName": "com.blackberry.passwordkeeper",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789722189331
+      "lastErrorAt": 1792403919913
     },
     {
       "packageName": "com.blackberry.universalsearch",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789722189331
+      "lastErrorAt": 1792403919913
     },
     {
       "packageName": "de.dennisguse.opentracks",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789722189331
+      "lastErrorAt": 1792403919913
     },
     {
       "packageName": "de.fiduciagad.android.vrwallet",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789722189331
+      "lastErrorAt": 1792403919913
     },
     {
       "packageName": "com.appmindlab.nano",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789722189331
+      "lastErrorAt": 1792403919913
     },
     {
       "packageName": "com.fb.fluid",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789807850258
+      "lastErrorAt": 1792403919913
     },
     {
       "packageName": "com.willvin.habitxp",
@@ -743,18 +743,6 @@
       "attempts": 4,
       "lastError": "AppNotFound: null",
       "lastErrorAt": 1792141485785
-    },
-    {
-      "packageName": "com.ringside.launcher",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789807850258
-    },
-    {
-      "packageName": "com.duo.statusbar",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789807850258
     },
     {
       "packageName": "com.ottersuite.kelp",
@@ -1064,9 +1052,15 @@
     },
     {
       "packageName": "com.at.oneui9",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792313603046
+      "lastErrorAt": 1792403919913
+    },
+    {
+      "packageName": "com.himavarshan.dialdeck",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1792403919913
     }
   ]
 }
