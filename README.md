@@ -131,6 +131,13 @@ WorkManager · Hilt · Navigation-Compose · kotlinx-serialization
 
 Suggestions and bug reports are welcome in [Issues](https://github.com/jrs8205/BetaScout/issues).
 
+## Support development
+
+If BetaScout is useful to you, you can support its development:
+
+- [GitHub Sponsors](https://github.com/sponsors/jrs8205) — monthly or one-time
+- [Buy Me a Coffee](https://buymeacoffee.com/jrs8205) — no sign-up needed
+
 ## License
 
 The app is under the [Apache License 2.0](LICENSE). Beta membership and open/full/closed
