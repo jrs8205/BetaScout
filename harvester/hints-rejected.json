@@ -462,7 +462,7 @@
     },
     {
       "packageName": "com.kotak811mobilebankingapp.instantsavingsupiscanandpayrecharge",
-      "rejectedAt": 1785826074436
+      "rejectedAt": 1792488537842
     },
     {
       "packageName": "com.pubg.imobile",
@@ -490,7 +490,7 @@
     },
     {
       "packageName": "tech.butterfly.app",
-      "rejectedAt": 1788425960541
+      "rejectedAt": 1792488537842
     },
     {
       "packageName": "co.za.oneplan",
@@ -5055,6 +5055,18 @@
     {
       "packageName": "com.mx.browser",
       "rejectedAt": 1792403919911
+    },
+    {
+      "packageName": "com.willvin.habitxp",
+      "rejectedAt": 1792488537842
+    },
+    {
+      "packageName": "com.ottersuite.kelp",
+      "rejectedAt": 1792488537842
+    },
+    {
+      "packageName": "com.zekinthos.centr",
+      "rejectedAt": 1792488537842
     }
   ]
 }

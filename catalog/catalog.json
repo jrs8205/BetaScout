@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1792403919914,
+  "generatedAt": 1792488537848,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -277,6 +277,15 @@
       "appName": "Animated Sticker Maker (FSM)",
       "hasBeta": true,
       "productionVersionCode": 30101,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "altergames.carlauncher",
+      "appName": "AGAMA Car Launcher",
+      "hasBeta": true,
+      "productionVersionCode": 60304,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2553,7 +2562,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 805908104,
+      "productionVersionCode": 805908404,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6249,6 +6258,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.dpns.browser",
+      "appName": "Neo Browser",
+      "hasBeta": true,
+      "productionVersionCode": 73,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.draco.ladb",
       "appName": "LADB — Local ADB Shell",
       "hasBeta": true,
@@ -8826,7 +8844,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068821134,
+      "productionVersionCode": 1068832648,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10499,7 +10517,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385713116,
+      "productionVersionCode": 385810270,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10698,6 +10716,15 @@
       "appName": "Buttons Remapper: Map & Combo",
       "hasBeta": true,
       "productionVersionCode": 93,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.iron.neptune",
+      "appName": "Neptune - Hub Browser",
+      "hasBeta": true,
+      "productionVersionCode": 52,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -15248,6 +15275,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.oracle.oci.console.ocimobile",
+      "appName": "Oracle Cloud Infrastructure",
+      "hasBeta": true,
+      "productionVersionCode": 127,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.orange.myorange.oci",
       "appName": "Orange Max it - Côte d'Ivoire",
       "hasBeta": true,
@@ -16976,6 +17012,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.refect.nowonwrist",
+      "appName": "Now On Wrist",
+      "hasBeta": true,
+      "productionVersionCode": 1006,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.reflectivalabs.journal",
       "appName": "My Days - Mood Journal Habits",
       "hasBeta": true,
@@ -17376,6 +17421,15 @@
       "appName": "Cartogram: Live Map Wallpaper",
       "hasBeta": true,
       "productionVersionCode": 1319,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.routerpagesetup",
+      "appName": "Router Page Setup",
+      "hasBeta": true,
+      "productionVersionCode": 31,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -20219,7 +20273,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12314,
+      "productionVersionCode": 12316,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -24500,6 +24554,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "fi.yle.ylefiapp",
+      "appName": "Yle",
+      "hasBeta": true,
+      "productionVersionCode": 880,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "file.recovery.photo.video.audio.document.restore.findback",
       "appName": "FileRecovery - Restore photos",
       "hasBeta": true,
@@ -26079,6 +26142,15 @@
       "appName": "Mintpay | Pay Better.",
       "hasBeta": true,
       "productionVersionCode": 199,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "llc.itdev.incy",
+      "appName": "incy",
+      "hasBeta": true,
+      "productionVersionCode": 379,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -27875,6 +27947,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.kde.kdeconnect_tp",
+      "appName": "KDE Connect",
+      "hasBeta": true,
+      "productionVersionCode": 13600,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.khanacademy.android",
       "appName": "Khan Academy",
       "hasBeta": true,
@@ -29278,6 +29359,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "so.morgen.kai",
+      "appName": "Kai: AI Executive Assistant",
+      "hasBeta": true,
+      "productionVersionCode": 28,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "so.sprk.app",
       "appName": "Spark",
       "hasBeta": true,
@@ -29755,6 +29845,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "video.downloader.tiktok.instagram.file.saver.vault",
+      "appName": "X Video Downloader & Player",
+      "hasBeta": true,
+      "productionVersionCode": 20319,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "video.mojo",
       "appName": "Mojo: Reels and Video Captions",
       "hasBeta": true,
@@ -30074,6 +30173,15 @@
       "appName": "Discovery Health App",
       "hasBeta": true,
       "productionVersionCode": 108390,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "za.co.easypay.mobile.app",
+      "appName": "EasyPay Mobile",
+      "hasBeta": true,
+      "productionVersionCode": 70,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

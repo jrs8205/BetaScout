@@ -577,16 +577,10 @@
       "lastErrorAt": 1792403919913
     },
     {
-      "packageName": "com.willvin.habitxp",
-      "attempts": 4,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789895982881
-    },
-    {
       "packageName": "com.blackview.userfeedback",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789895982881
+      "lastErrorAt": 1792488537844
     },
     {
       "packageName": "co.modplus.go",
@@ -743,12 +737,6 @@
       "attempts": 4,
       "lastError": "AppNotFound: null",
       "lastErrorAt": 1792141485785
-    },
-    {
-      "packageName": "com.ottersuite.kelp",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1789895982881
     },
     {
       "packageName": "com.watchfacestudio.pt53",
@@ -1058,9 +1046,21 @@
     },
     {
       "packageName": "com.himavarshan.dialdeck",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1792488537844
+    },
+    {
+      "packageName": "com.ikusa.netsamurai",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792403919913
+      "lastErrorAt": 1792488537844
+    },
+    {
+      "packageName": "com.frzzy.vozma26",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1792488537844
     }
   ]
 }
