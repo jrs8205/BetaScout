@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1792488537848,
+  "generatedAt": 1792574687393,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -124,6 +124,15 @@
       "appName": "Omnigent",
       "hasBeta": true,
       "productionVersionCode": 9,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ai.oonak.browser",
+      "appName": "Oonak Browser - Private",
+      "hasBeta": true,
+      "productionVersionCode": 782705934,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -426,6 +435,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "app.clpro.app",
+      "appName": "CozyLife",
+      "hasBeta": true,
+      "productionVersionCode": 563,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "app.coreply.coreplyapp",
       "appName": "Coreply",
       "hasBeta": true,
@@ -637,6 +655,15 @@
       "appName": "nanogram",
       "hasBeta": true,
       "productionVersionCode": 463,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "app.nicegram",
+      "appName": "Nicegram: AI x Dual Telegram",
+      "hasBeta": true,
+      "productionVersionCode": 2279,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2562,7 +2589,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 805908404,
+      "productionVersionCode": 807804704,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6072,7 +6099,7 @@
       "packageName": "com.discord",
       "appName": "Discord - Talk, Play, Hang Out",
       "hasBeta": true,
-      "productionVersionCode": 349009,
+      "productionVersionCode": 350008,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6190,6 +6217,15 @@
       "appName": "BagMaster Isekai – Bag Battle",
       "hasBeta": true,
       "productionVersionCode": 228,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.doppler.capture",
+      "appName": "footnotes: notes for noticing",
+      "hasBeta": true,
+      "productionVersionCode": 42,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9032,7 +9068,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561303420,
+      "productionVersionCode": 1561304941,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10172,6 +10208,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ifs.mobilebanking.fiid3500",
+      "appName": "GECU Mobile",
+      "hasBeta": true,
+      "productionVersionCode": 2026040001,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ifttt.ifttt",
       "appName": "IFTTT - Automate work and home",
       "hasBeta": true,
@@ -10914,6 +10959,15 @@
       "appName": "97.5 The Fanatic -Philadelphia",
       "hasBeta": true,
       "productionVersionCode": 2026040618,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.jag.essentialgallery",
+      "appName": "Photo Gallery & Album",
+      "hasBeta": true,
+      "productionVersionCode": 228,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -12164,7 +12218,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 216900,
+      "productionVersionCode": 217100,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -14069,6 +14123,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.murphy.driverewards",
+      "appName": "Murphy Drive Rewards",
+      "hasBeta": true,
+      "productionVersionCode": 651,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.musclewiki.macro",
       "appName": "MuscleWiki: Workout & Fitness",
       "hasBeta": true,
@@ -14360,7 +14423,7 @@
       "packageName": "com.netflix.mediaclient",
       "appName": "Netflix",
       "hasBeta": true,
-      "productionVersionCode": 74620,
+      "productionVersionCode": 74648,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15953,10 +16016,19 @@
       "packageName": "com.pinterest",
       "appName": "Pinterest",
       "hasBeta": true,
-      "productionVersionCode": 14408010,
+      "productionVersionCode": 14418020,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
+    },
+    {
+      "packageName": "com.piorko.obrazkowo",
+      "appName": "Obrazkowo",
+      "hasBeta": true,
+      "productionVersionCode": 11037150,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
     },
     {
       "packageName": "com.piriform.ccleaner",
@@ -16647,6 +16719,15 @@
       "appName": "Pastimes - Mini Games",
       "hasBeta": true,
       "productionVersionCode": 612,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.pwnplatoonsaloon.randomringtonesmanager",
+      "appName": "Random Ringtones Manager (RRM)",
+      "hasBeta": true,
+      "productionVersionCode": 97,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17633,6 +17714,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.samiwami.riomusicplayer",
+      "appName": "Rio - Music & Online Radio",
+      "hasBeta": true,
+      "productionVersionCode": 27,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.samruston.buzzkill",
       "appName": "BuzzKill Notification Manager",
       "hasBeta": true,
@@ -17741,6 +17831,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.santhoshDsubramani.debloater",
+      "appName": "Debloater – Remove Bloatwares",
+      "hasBeta": true,
+      "productionVersionCode": 104,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.saongroup.careerjunction",
       "appName": "CareerJunction App",
       "hasBeta": true,
@@ -17754,6 +17853,15 @@
       "appName": "Satispay: Pay and invest",
       "hasBeta": true,
       "productionVersionCode": 9820,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.sc.na.gp",
+      "appName": "Last Echo",
+      "hasBeta": true,
+      "productionVersionCode": 27,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -20273,7 +20381,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12316,
+      "productionVersionCode": 12318,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20831,7 +20939,7 @@
       "packageName": "com.tumblr",
       "appName": "Tumblr: Social Media & Art",
       "hasBeta": true,
-      "productionVersionCode": 1460700109,
+      "productionVersionCode": 1460800109,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20912,7 +21020,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312350001,
+      "productionVersionCode": 312361001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -26606,6 +26714,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "mobi.koni.appstofiretv",
+      "appName": "Apps2Fire",
+      "hasBeta": true,
+      "productionVersionCode": 431,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "mobi.lockdown.weather",
       "appName": "Today Weather:Data by NOAA/NWS",
       "hasBeta": true,
@@ -28354,7 +28471,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 71831,
+      "productionVersionCode": 72291,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -29722,7 +29839,7 @@
       "packageName": "tv.twitch.android.app",
       "appName": "Twitch: Live Streaming",
       "hasBeta": true,
-      "productionVersionCode": 3106006,
+      "productionVersionCode": 3107006,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

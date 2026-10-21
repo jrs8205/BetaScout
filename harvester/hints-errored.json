@@ -1046,21 +1046,39 @@
     },
     {
       "packageName": "com.himavarshan.dialdeck",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792488537844
+      "lastErrorAt": 1792574687391
     },
     {
       "packageName": "com.ikusa.netsamurai",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792488537844
+      "lastErrorAt": 1792574687391
     },
     {
       "packageName": "com.frzzy.vozma26",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1792574687391
+    },
+    {
+      "packageName": "com.norton.safesearch",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792488537844
+      "lastErrorAt": 1792574687391
+    },
+    {
+      "packageName": "org.mistergroup.shouldianswerpersonal",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1792574687391
+    },
+    {
+      "packageName": "com.opera.touch",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1792574687391
     }
   ]
 }

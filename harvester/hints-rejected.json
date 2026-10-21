@@ -5067,6 +5067,14 @@
     {
       "packageName": "com.zekinthos.centr",
       "rejectedAt": 1792488537842
+    },
+    {
+      "packageName": "com.arcanerealms.android",
+      "rejectedAt": 1792574687389
+    },
+    {
+      "packageName": "com.contacts.dialer.caller.dialpad.android",
+      "rejectedAt": 1792574687389
     }
   ]
 }
