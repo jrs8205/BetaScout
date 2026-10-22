@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1792574687393,
+  "generatedAt": 1792661254136,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2589,7 +2589,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 807804704,
+      "productionVersionCode": 805908404,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6495,7 +6495,7 @@
       "packageName": "com.duolingo",
       "appName": "Duolingo: Learn Languages",
       "hasBeta": true,
-      "productionVersionCode": 2476,
+      "productionVersionCode": 2481,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8979,7 +8979,7 @@
       "packageName": "com.google.android.gms",
       "appName": "Google Play services",
       "hasBeta": true,
-      "productionVersionCode": 263332029,
+      "productionVersionCode": 264131029,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10562,7 +10562,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385810270,
+      "productionVersionCode": 385811006,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15950,6 +15950,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.pierspad.betterlauncher",
+      "appName": "BetterLauncher",
+      "hasBeta": true,
+      "productionVersionCode": 134,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.pigeoncast.screen.mirroring",
       "appName": "PigeonCast：Mirror via AirPlay",
       "hasBeta": true,
@@ -17051,7 +17060,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2641080,
+      "productionVersionCode": 2642020,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -18707,7 +18716,7 @@
       "packageName": "com.snapchat.android",
       "appName": "Snapchat",
       "hasBeta": true,
-      "productionVersionCode": 321072,
+      "productionVersionCode": 322522,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20381,7 +20390,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12318,
+      "productionVersionCode": 12320,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22223,6 +22232,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.wetter.androidclient",
+      "appName": "weather24: Forecast & Radar",
+      "hasBeta": true,
+      "productionVersionCode": 1515278101,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.weward",
       "appName": "WeWard - Walk & Earn Rewards",
       "hasBeta": true,
@@ -22253,7 +22271,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp Messenger",
       "hasBeta": true,
-      "productionVersionCode": 264007622,
+      "productionVersionCode": 264107700,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -28607,6 +28625,15 @@
       "appName": "Sound Profile (Volume control)",
       "hasBeta": true,
       "productionVersionCode": 1303,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "oxy.ozon.browser",
+      "appName": "OxyZen Browser",
+      "hasBeta": true,
+      "productionVersionCode": 20,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

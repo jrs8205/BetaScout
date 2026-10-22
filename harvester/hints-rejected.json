@@ -254,7 +254,7 @@
     },
     {
       "packageName": "com.bstar.intl",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.dsnl.multicall",
@@ -962,7 +962,7 @@
     },
     {
       "packageName": "com.oplus.games",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.overdrive.mobile.android.libby",
@@ -1206,7 +1206,7 @@
     },
     {
       "packageName": "ai.perplexity.comet",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.colourswift.cssecurity",
@@ -1250,7 +1250,7 @@
     },
     {
       "packageName": "com.transsion.phoenix",
-      "rejectedAt": 1789117128094
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.gof.global",
@@ -2994,7 +2994,7 @@
     },
     {
       "packageName": "eu.weblibre.gecko",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "ua.com.skidki.akcii",
@@ -3162,7 +3162,7 @@
     },
     {
       "packageName": "com.catinthebox.dnsspeedtest",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.doubleangels.nextdnsmanagement",
@@ -4322,35 +4322,35 @@
     },
     {
       "packageName": "chat.revolt",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.Shashwat.Muzo",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.denksites.obsremotecontrol",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.fedmobile",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.linways.lms",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.mubarak.mbcompass",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.quadren.arc",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "compress.joshattic.us",
-      "rejectedAt": 1790068863301
+      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.backelite.vingtminutes",
@@ -5075,6 +5075,26 @@
     {
       "packageName": "com.contacts.dialer.caller.dialpad.android",
       "rejectedAt": 1792574687389
+    },
+    {
+      "packageName": "com.watchfacestudio.pt53",
+      "rejectedAt": 1792661254132
+    },
+    {
+      "packageName": "br.marcelo.monumentbrowser",
+      "rejectedAt": 1792661254132
+    },
+    {
+      "packageName": "com.orange.phone",
+      "rejectedAt": 1792661254132
+    },
+    {
+      "packageName": "com.vuottuongthep.vn",
+      "rejectedAt": 1792661254132
+    },
+    {
+      "packageName": "com.ppapps.zapas",
+      "rejectedAt": 1792661254132
     }
   ]
 }
