@@ -27,9 +27,9 @@ jobs:
   harvest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
 
@@ -105,7 +105,9 @@ jobs:
             echo "CLOUDFLARE_API_TOKEN not set; failing so hints are not consumed." >&2
             exit 1
           fi
-          npx wrangler kv key put --remote \
+          # Pinned: this step holds the Cloudflare token, so it must not pull
+          # whatever wrangler release is newest that night.
+          npx --yes wrangler@4.151.3 kv key put --remote \
             --namespace-id 5deb2577b8524356a98468b5fb60f5df \
             catalog --path catalog/catalog.json
 
