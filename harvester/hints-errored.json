@@ -589,12 +589,6 @@
       "lastErrorAt": 1792661254133
     },
     {
-      "packageName": "com.dropfake.wb.dcko",
-      "attempts": 4,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790155297699
-    },
-    {
       "packageName": "com.duplicatephotoremover.duplicatefileremover.filefixer",
       "attempts": 4,
       "lastError": "AppNotFound: null",
@@ -740,15 +734,9 @@
     },
     {
       "packageName": "com.sameerasw.medrop",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790155297699
-    },
-    {
-      "packageName": "com.rishi.commonplace",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790155297699
+      "lastErrorAt": 1792747453911
     },
     {
       "packageName": "com.hypedrop.hypedropapp1",
@@ -1058,27 +1046,27 @@
     },
     {
       "packageName": "com.norton.safesearch",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792661254133
+      "lastErrorAt": 1792747453911
     },
     {
       "packageName": "org.mistergroup.shouldianswerpersonal",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792661254133
+      "lastErrorAt": 1792747453911
     },
     {
       "packageName": "com.opera.touch",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792661254133
+      "lastErrorAt": 1792747453911
     },
     {
       "packageName": "com.marc.browse",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792661254133
+      "lastErrorAt": 1792747453911
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1792661254136,
+  "generatedAt": 1792747453914,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -1308,6 +1308,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "br.socialcondo.app",
+      "appName": "TownSq Community",
+      "hasBeta": true,
+      "productionVersionCode": 24578,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "bruenor.magicbox",
       "appName": "Magic DosBox",
       "hasBeta": true,
@@ -1744,6 +1753,15 @@
       "appName": "Photo Friend exposure & meter",
       "hasBeta": true,
       "productionVersionCode": 6000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "co.fotoapp.foto",
+      "appName": "Foto",
+      "hasBeta": true,
+      "productionVersionCode": 235,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2589,7 +2607,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 805908404,
+      "productionVersionCode": 805908704,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2644,6 +2662,15 @@
       "appName": "Metronome Beats",
       "hasBeta": true,
       "productionVersionCode": 180,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.andymstone.sunpositiondemo",
+      "appName": "Sun Position: Sunrise & Sunset",
+      "hasBeta": true,
+      "productionVersionCode": 62,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6330,6 +6357,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.dreamstime.buy",
+      "appName": "Stock Photos by Dreamstime",
+      "hasBeta": true,
+      "productionVersionCode": 70001,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.dreamtechnologies.music8d",
       "appName": "8D Music Player - Media Player",
       "hasBeta": true,
@@ -7089,7 +7125,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 475614366,
+      "productionVersionCode": 475817387,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12218,7 +12254,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 217100,
+      "productionVersionCode": 217200,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15918,6 +15954,15 @@
       "appName": "PicMaze: Premium 4K Wallpapers",
       "hasBeta": true,
       "productionVersionCode": 355,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.picmonkey.picmonkey",
+      "appName": "PicMonkey Photo Editor",
+      "hasBeta": true,
+      "productionVersionCode": 71002,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -20009,6 +20054,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.textra",
+      "appName": "Textra SMS",
+      "hasBeta": true,
+      "productionVersionCode": 48767,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.texts.throttlebench",
       "appName": "CPU Throttling Test",
       "hasBeta": true,
@@ -20882,6 +20936,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.tssystems.photomate3",
+      "appName": "Photo Mate R3",
+      "hasBeta": true,
+      "productionVersionCode": 226,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ttt.fortressmerge",
       "appName": "Fortress Merge: Puzzle Defense",
       "hasBeta": true,
@@ -20948,7 +21011,7 @@
       "packageName": "com.tumblr",
       "appName": "Tumblr: Social Media & Art",
       "hasBeta": true,
-      "productionVersionCode": 1460800109,
+      "productionVersionCode": 1460801100,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22269,7 +22332,7 @@
     },
     {
       "packageName": "com.whatsapp",
-      "appName": "WhatsApp Messenger",
+      "appName": "WhatsApp",
       "hasBeta": true,
       "productionVersionCode": 264107700,
       "liveStatus": "UNKNOWN",
@@ -28489,7 +28552,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 72291,
+      "productionVersionCode": 72371,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -28760,6 +28823,15 @@
       "appName": "Toast Source",
       "hasBeta": true,
       "productionVersionCode": 20601,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "pl.sfd.app",
+      "appName": "SFD",
+      "hasBeta": true,
+      "productionVersionCode": 97,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

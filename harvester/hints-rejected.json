@@ -1218,7 +1218,7 @@
     },
     {
       "packageName": "com.fampay.in",
-      "rejectedAt": 1788596651581
+      "rejectedAt": 1792747453909
     },
     {
       "packageName": "com.marrow",
@@ -2318,7 +2318,7 @@
     },
     {
       "packageName": "com.glance.internet",
-      "rejectedAt": 1786340974333
+      "rejectedAt": 1792747453909
     },
     {
       "packageName": "live.citymall.customer.prod",
@@ -5095,6 +5095,34 @@
     {
       "packageName": "com.ppapps.zapas",
       "rejectedAt": 1792661254132
+    },
+    {
+      "packageName": "com.dropfake.wb.dcko",
+      "rejectedAt": 1792747453909
+    },
+    {
+      "packageName": "com.rishi.commonplace",
+      "rejectedAt": 1792747453909
+    },
+    {
+      "packageName": "com.coffye.gnvaib",
+      "rejectedAt": 1792747453909
+    },
+    {
+      "packageName": "com.enil.activbharat",
+      "rejectedAt": 1792747453909
+    },
+    {
+      "packageName": "com.weaver.app.prod",
+      "rejectedAt": 1792747453909
+    },
+    {
+      "packageName": "com.cool.home.launcher.android",
+      "rejectedAt": 1792747453909
+    },
+    {
+      "packageName": "com.app99.driver",
+      "rejectedAt": 1792747453909
     }
   ]
 }
