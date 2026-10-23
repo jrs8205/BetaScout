@@ -161,4 +161,25 @@ class BetaSeedParserTest {
 
         assertEquals(BetaSource.BUNDLED, BetaSeedParser.parse(json).single().source)
     }
+
+    @Test
+    fun `reads the catalog generation time alongside the programs`() {
+        val json = """
+            {"version": 2, "generatedAt": 1792661254136,
+             "programs": [{"packageName": "com.a"}]}
+        """.trimIndent()
+
+        val catalog = BetaSeedParser.parseCatalog(json, BetaSource.REMOTE)
+
+        assertEquals(1792661254136L, catalog.generatedAt)
+        assertEquals(listOf("com.a"), catalog.programs.map { it.packageName })
+        assertEquals(BetaSource.REMOTE, catalog.programs.single().source)
+    }
+
+    @Test
+    fun `a catalog without a generation time has none`() {
+        val catalog = BetaSeedParser.parseCatalog("""{"programs": [{"packageName": "com.a"}]}""")
+
+        assertNull(catalog.generatedAt)
+    }
 }

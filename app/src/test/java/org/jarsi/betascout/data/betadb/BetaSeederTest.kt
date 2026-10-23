@@ -9,6 +9,7 @@ import org.jarsi.betascout.data.db.BetaProgramEntity
 import org.jarsi.betascout.domain.BetaSource
 import org.jarsi.betascout.domain.KnownBetaStatus
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -62,7 +63,99 @@ private class SeedHarness(val dao: FakeBetaProgramDao = FakeBetaProgramDao()) {
         BetaSeeder(readCatalog = { snapshot }, markApplied = { applied += it }, dao = dao).seed()
 }
 
+/** Keeps disk state while new providers simulate process restarts. */
+private class RecoveryHarness {
+    val dao = FakeBetaProgramDao()
+    var appliedVersion: Long? = 20L
+    var cached: String? = null
+    var remote: String? = null
+    var failVersionWrite = false
+
+    fun catalog(name: String, version: Long) =
+        """{"generatedAt":$version,"programs":[{"packageName":"com.$name","appName":"$name"}]}"""
+
+    fun seeder(): BetaSeeder {
+        val provider = CatalogProvider(
+            fetchRemote = { remote },
+            readCache = { cached },
+            writeCache = { cached = it },
+            deleteCache = { cached = null },
+            readBundled = { catalog("bundled", 5L) },
+            readAppliedVersion = { appliedVersion },
+            writeAppliedVersion = {
+                if (failVersionWrite) throw IOException("EROFS")
+                appliedVersion = it
+            },
+            isCatalogEmpty = { dao.count() == 0 },
+            parse = { json, source -> BetaSeedParser.parseCatalog(json, source) },
+            clock = { 1_000_000L },
+        )
+        return BetaSeeder(provider::catalog, provider::markApplied, dao)
+    }
+}
+
 class BetaSeederTest {
+
+    @Test
+    fun `a recreated database recovers offline from the seed when its old watermark survives`() = runTest {
+        val harness = RecoveryHarness()
+        val seeder = harness.seeder()
+
+        seeder.seed()
+
+        assertEquals(listOf("com.bundled"), harness.dao.state.keys.toList())
+        assertEquals(BetaSource.BUNDLED, harness.dao.state.getValue("com.bundled").source)
+        assertNull(harness.appliedVersion)
+        val writes = harness.dao.writes
+        seeder.seed()
+        assertEquals(writes, harness.dao.writes)
+    }
+
+    @Test
+    fun `a recreated database accepts an older cache and then protects the recovered catalog`() = runTest {
+        val harness = RecoveryHarness()
+        harness.cached = harness.catalog("cached", 10L)
+
+        harness.seeder().seed()
+
+        assertEquals(listOf("com.cached"), harness.dao.state.keys.toList())
+        assertEquals(BetaSource.REMOTE, harness.dao.state.getValue("com.cached").source)
+        assertEquals(10L, harness.appliedVersion)
+
+        // Once populated, another restart must still reject older cache and seed data.
+        harness.cached = harness.catalog("obsolete", 1L)
+        val writes = harness.dao.writes
+        harness.seeder().seed()
+        assertEquals(listOf("com.cached"), harness.dao.state.keys.toList())
+        assertEquals(writes, harness.dao.writes)
+    }
+
+    @Test
+    fun `recovery in the same process reapplies a download already marked applied`() = runTest {
+        val harness = RecoveryHarness()
+        harness.remote = harness.catalog("downloaded", 20L)
+        val seeder = harness.seeder()
+        seeder.seed()
+
+        harness.dao.state.clear()
+        harness.remote = null
+        harness.cached = null
+        seeder.seed()
+
+        assertEquals(listOf("com.downloaded"), harness.dao.state.keys.toList())
+        assertEquals(20L, harness.appliedVersion)
+    }
+
+    @Test
+    fun `a failure to clear the orphaned watermark cannot block offline recovery`() = runTest {
+        val harness = RecoveryHarness()
+        harness.failVersionWrite = true
+
+        harness.seeder().seed()
+
+        assertEquals(listOf("com.bundled"), harness.dao.state.keys.toList())
+        assertEquals(20L, harness.appliedVersion)
+    }
 
     @Test
     fun `seeds parsed programs into dao with the catalog's provenance`() = runTest {

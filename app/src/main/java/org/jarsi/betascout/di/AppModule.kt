@@ -51,6 +51,7 @@ object AppModule {
     private const val SEED_ASSET = "beta_programs.json"
     private const val CATALOG_URL = "https://betascout-catalog.jarsi.workers.dev"
     private const val CATALOG_CACHE_FILE = "catalog_cache.json"
+    private const val CATALOG_APPLIED_VERSION_FILE = "catalog_applied_version"
 
     @Provides
     @Singleton
@@ -158,11 +159,24 @@ object AppModule {
             readBundled = {
                 context.assets.open(SEED_ASSET).bufferedReader().use { it.readText() }
             },
+            // No-backup storage, like the database it describes (betascout.db is
+            // excluded from backup): a restored version without its database
+            // would refuse the restored catalog cache.
+            readAppliedVersion = {
+                File(context.noBackupFilesDir, CATALOG_APPLIED_VERSION_FILE)
+                    .takeIf { it.exists() }?.readText()?.trim()?.toLongOrNull()
+            },
+            writeAppliedVersion = { version ->
+                val file = File(context.noBackupFilesDir, CATALOG_APPLIED_VERSION_FILE)
+                if (version == null) file.delete() else file.writeTextAtomically(version.toString())
+            },
+            isCatalogEmpty = { betaProgramDao.count() == 0 },
             // The catalog Worker answers a missing KV key with HTTP 200 and an
             // empty catalog, and the cache file can be corrupt: only a parseable,
             // non-empty catalog may be mirrored (or cached).
             parse = { json, source ->
-                runCatching { BetaSeedParser.parse(json, source) }.getOrNull()?.takeIf { it.isNotEmpty() }
+                runCatching { BetaSeedParser.parseCatalog(json, source) }.getOrNull()
+                    ?.takeIf { it.programs.isNotEmpty() }
             },
             clock = System::currentTimeMillis,
         )

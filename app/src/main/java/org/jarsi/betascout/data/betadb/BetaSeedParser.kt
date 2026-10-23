@@ -10,6 +10,7 @@ import org.jarsi.betascout.domain.LiveBetaStatus
 @Serializable
 private data class BetaSeedFile(
     val version: Int = 1,
+    val generatedAt: Long? = null,
     val programs: List<BetaSeedEntry> = emptyList(),
 )
 
@@ -25,6 +26,12 @@ private data class BetaSeedEntry(
     val notes: String? = null,
 )
 
+/** A parsed catalog file: its programs plus the backend's generation time. */
+data class ParsedCatalog(
+    val programs: List<BetaProgramInfo>,
+    val generatedAt: Long?,
+)
+
 object BetaSeedParser {
 
     private val json = Json {
@@ -35,8 +42,15 @@ object BetaSeedParser {
     }
 
     fun parse(jsonText: String, source: BetaSource = BetaSource.BUNDLED): List<BetaProgramInfo> =
-        json.decodeFromString<BetaSeedFile>(jsonText).programs
-            .filter { it.packageName.isNotBlank() }
+        parseCatalog(jsonText, source).programs
+
+    fun parseCatalog(jsonText: String, source: BetaSource = BetaSource.BUNDLED): ParsedCatalog {
+        val file = json.decodeFromString<BetaSeedFile>(jsonText)
+        return ParsedCatalog(file.programs.toProgramInfos(source), file.generatedAt)
+    }
+
+    private fun List<BetaSeedEntry>.toProgramInfos(source: BetaSource): List<BetaProgramInfo> =
+        filter { it.packageName.isNotBlank() }
             .map { entry ->
                 val pkg = entry.packageName.trim()
                 BetaProgramInfo(

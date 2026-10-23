@@ -14,11 +14,13 @@ data class CatalogFingerprint(val length: Int, val hash: Int) {
 
 /** A parsed catalog ready to be mirrored into the database, with its provenance:
  *  [BetaSource.REMOTE] for a download (or the cached copy of one), [BetaSource.BUNDLED]
- *  for the seed shipped inside the APK. */
+ *  for the seed shipped inside the APK. [generatedAt] is the backend's generation
+ *  time, null when the file carries none. */
 data class CatalogSnapshot(
     val programs: List<BetaProgramInfo>,
     val source: BetaSource,
     val fingerprint: CatalogFingerprint,
+    val generatedAt: Long? = null,
 )
 
 /**
@@ -38,7 +40,12 @@ data class CatalogSnapshot(
  * The disk cache is only ever allowed to be as new as the database. A download
  * is applied even when its cache write fails, so the older disk copy is deleted
  * then: handed out later as REMOTE data it would make the seeder delete the
- * programs that download had just added.
+ * programs that download had just added. Should that delete fail too, the
+ * persisted version of the applied catalog ([readAppliedVersion]) still keeps a
+ * restart from handing the older copy — or the even older bundled seed — out:
+ * only a download may take a populated database back in time. If the table is
+ * empty (for example after SQLite corruption recovery), its old applied state
+ * is discarded so any usable local catalog can restore it offline.
  */
 class CatalogProvider(
     private val fetchRemote: suspend () -> String?,
@@ -46,8 +53,14 @@ class CatalogProvider(
     private val writeCache: (String) -> Unit,
     private val deleteCache: () -> Unit,
     private val readBundled: () -> String,
+    /** generatedAt of the remote catalog the database was last made equal to. */
+    private val readAppliedVersion: () -> Long?,
+    /** Persists that version; null forgets it. */
+    private val writeAppliedVersion: (Long?) -> Unit,
+    /** Checks the live table, opening/recovering the database before using its watermark. */
+    private val isCatalogEmpty: suspend () -> Boolean,
     /** Null when the text is not a usable, non-empty catalog. */
-    private val parse: (json: String, source: BetaSource) -> List<BetaProgramInfo>?,
+    private val parse: (json: String, source: BetaSource) -> ParsedCatalog?,
     private val clock: () -> Long,
     private val remoteFreshFor: Long = DEFAULT_REMOTE_FRESH_FOR_MS,
 ) {
@@ -61,39 +74,89 @@ class CatalogProvider(
     /** Identity of the catalog the caller confirmed it applied. */
     private var appliedFingerprint: CatalogFingerprint? = null
 
+    /** In-memory copy of the persisted applied version, read on first use. */
+    private var appliedVersion: Long? = null
+    private var appliedVersionLoaded = false
+
     /** The catalog to mirror, or null when the database already holds exactly
-     *  this catalog (see [markApplied]) and there is nothing new to apply. */
+     *  this catalog (see [markApplied]) or something newer than every local copy,
+     *  so there is nothing to apply. */
     suspend fun catalog(): CatalogSnapshot? = lock.withLock {
+        // Room can recreate a corrupt database without clearing no-backup files.
+        // Check before even the in-memory fast path: a matching fingerprint must
+        // not prevent restoring a table that was emptied in this process either.
+        if (isCatalogEmpty()) {
+            appliedFingerprint = null
+            updateAppliedVersion(null)
+        }
         val now = clock()
         lastDownload?.takeIf { now - it.fetchedAt < remoteFreshFor }?.let { fresh ->
             return@withLock deliver(fresh)
         }
         val remote = fetchRemote()
-        val remotePrograms = remote?.let { parse(it, BetaSource.REMOTE) }
-        if (remote != null && remotePrograms != null) {
+        val remoteCatalog = remote?.let { parse(it, BetaSource.REMOTE) }
+        if (remote != null && remoteCatalog != null) {
             cacheBestEffort(remote)
-            val download = Download(CatalogFingerprint.of(remote), remotePrograms, fetchedAt = now)
+            val download = Download(CatalogFingerprint.of(remote), remoteCatalog, fetchedAt = now)
             lastDownload = download
             return@withLock deliver(download)
         }
         lastDownload?.let { return@withLock deliver(it) }
+        val floor = appliedVersion()
         readCache()?.let { cached ->
-            parse(cached, BetaSource.REMOTE)?.let { programs ->
-                return@withLock deliver(CatalogFingerprint.of(cached), programs, BetaSource.REMOTE)
+            parse(cached, BetaSource.REMOTE)?.let { catalog ->
+                if (!catalog.isOlderThan(floor)) {
+                    return@withLock deliver(CatalogFingerprint.of(cached), catalog, BetaSource.REMOTE)
+                }
+                android.util.Log.d("BetaScout", "catalog cache older than the database; not applied")
             }
         }
         val bundled = readBundled()
+        val bundledCatalog = parse(bundled, BetaSource.BUNDLED)
+        if (bundledCatalog.isOlderThan(floor)) return@withLock null
         deliver(
             CatalogFingerprint.of(bundled),
-            parse(bundled, BetaSource.BUNDLED).orEmpty(),
+            bundledCatalog ?: ParsedCatalog(emptyList(), generatedAt = null),
             BetaSource.BUNDLED,
         )
     }
 
-    /** Confirms that [snapshot] reached the database; it will not be handed out again. */
+    /** Confirms that [snapshot] reached the database; it will not be handed out again.
+     *  A remote catalog replaced the whole table, so its version becomes the floor
+     *  for later cache copies; the bundled seed only filled gaps and sets none. */
     suspend fun markApplied(snapshot: CatalogSnapshot) = lock.withLock {
         appliedFingerprint = snapshot.fingerprint
+        if (snapshot.source == BetaSource.REMOTE) {
+            updateAppliedVersion(snapshot.generatedAt)
+        }
     }
+
+    private fun updateAppliedVersion(version: Long?) {
+        appliedVersion = version
+        appliedVersionLoaded = true
+        try {
+            writeAppliedVersion(version)
+        } catch (e: Exception) {
+            android.util.Log.d("BetaScout", "applied catalog version not saved: $e")
+        }
+    }
+
+    private fun appliedVersion(): Long? {
+        if (!appliedVersionLoaded) {
+            appliedVersion = try {
+                readAppliedVersion()
+            } catch (e: Exception) {
+                android.util.Log.d("BetaScout", "applied catalog version unreadable: $e")
+                null
+            }
+            appliedVersionLoaded = true
+        }
+        return appliedVersion
+    }
+
+    /** A catalog without a version counts as older than any known one. */
+    private fun ParsedCatalog?.isOlderThan(floor: Long?): Boolean =
+        floor != null && (this?.generatedAt ?: Long.MIN_VALUE) < floor
 
     /** The cache is best effort: a failed write (disk full) must not throw away a
      *  good download. The older copy must go, though — see the class comment. */
@@ -111,18 +174,22 @@ class CatalogProvider(
     }
 
     private fun deliver(download: Download): CatalogSnapshot? =
-        deliver(download.fingerprint, download.programs, BetaSource.REMOTE)
+        deliver(download.fingerprint, download.catalog, BetaSource.REMOTE)
 
     private fun deliver(
         fingerprint: CatalogFingerprint,
-        programs: List<BetaProgramInfo>,
+        catalog: ParsedCatalog,
         source: BetaSource,
     ): CatalogSnapshot? =
-        if (fingerprint == appliedFingerprint) null else CatalogSnapshot(programs, source, fingerprint)
+        if (fingerprint == appliedFingerprint) {
+            null
+        } else {
+            CatalogSnapshot(catalog.programs, source, fingerprint, catalog.generatedAt)
+        }
 
     private class Download(
         val fingerprint: CatalogFingerprint,
-        val programs: List<BetaProgramInfo>,
+        val catalog: ParsedCatalog,
         val fetchedAt: Long,
     )
 

@@ -14,14 +14,25 @@ class CatalogProviderTest {
     private var now = 1_000_000L
     private var remoteFetches = 0
 
-    /** A toy catalog format: the text is the single program's package name;
-     *  "EMPTY" and "CORRUPT" are the two shapes of an unusable catalog. */
-    private val parse: (String, BetaSource) -> List<BetaProgramInfo>? = { text, source ->
+    /** A toy catalog format: the text is the single program's package name,
+     *  optionally followed by "@<generatedAt>"; "EMPTY" and "CORRUPT" are the two
+     *  shapes of an unusable catalog. */
+    private val parse: (String, BetaSource) -> ParsedCatalog? = { text, source ->
         when (text) {
             "EMPTY", "CORRUPT" -> null
-            else -> listOf(BetaProgramInfo(packageName = text, appName = text, source = source))
+            else -> {
+                val name = text.substringBefore('@')
+                ParsedCatalog(
+                    programs = listOf(BetaProgramInfo(packageName = name, appName = name, source = source)),
+                    generatedAt = text.substringAfter('@', "").toLongOrNull(),
+                )
+            }
         }
     }
+
+    /** The persisted version of the catalog the database holds; survives a
+     *  "restart" because both provider instances share it. */
+    private var appliedVersion: Long? = null
 
     private fun provider(
         fetchRemote: suspend () -> String?,
@@ -30,12 +41,16 @@ class CatalogProviderTest {
         deleteCache: () -> Unit = {},
         readBundled: () -> String = { "BUNDLED" },
         remoteFreshFor: Long = 3_600_000L,
+        writeAppliedVersion: (Long?) -> Unit = { appliedVersion = it },
     ) = CatalogProvider(
         fetchRemote = { remoteFetches++; fetchRemote() },
         readCache = readCache,
         writeCache = writeCache,
         deleteCache = deleteCache,
         readBundled = readBundled,
+        readAppliedVersion = { appliedVersion },
+        writeAppliedVersion = writeAppliedVersion,
+        isCatalogEmpty = { false },
         parse = parse,
         clock = { now },
         remoteFreshFor = remoteFreshFor,
@@ -272,5 +287,122 @@ class CatalogProviderTest {
         now += 3_600_000L
 
         assertEquals("REMOTE2", provider.catalog().singlePackage())
+    }
+
+    @Test
+    fun `a restart cannot roll the database back even when the stale disk copy cannot be removed`() = runTest {
+        // The known gap of the delete-on-failed-write guard: the download reached
+        // the database, but writing AND deleting the cache both failed. The
+        // persisted version of the applied catalog shows the disk copy is older
+        // than the database, so an offline restart hands out nothing instead of
+        // letting the seeder delete the newer programs.
+        val failingDisk = object {
+            val read: () -> String? = { "REMOTE1@10" }
+            val write: (String) -> Unit = { throw IOException("ENOSPC") }
+            val delete: () -> Unit = { throw IOException("EROFS") }
+        }
+        val beforeRestart = provider(
+            fetchRemote = { "REMOTE2@20" },
+            readCache = failingDisk.read,
+            writeCache = failingDisk.write,
+            deleteCache = failingDisk.delete,
+        )
+        assertEquals("REMOTE2", beforeRestart.catalogApplied().singlePackage())
+
+        val afterRestart = provider(
+            fetchRemote = { null },
+            readCache = failingDisk.read,
+            writeCache = failingDisk.write,
+            deleteCache = failingDisk.delete,
+            readBundled = { "BUNDLED@5" },
+        )
+
+        assertNull(afterRestart.catalog())
+    }
+
+    @Test
+    fun `a disk cache newer than the database is applied after a restart`() = runTest {
+        // The opposite order: the download was cached, then the process died before
+        // the database write finished. The disk copy is the newest catalog there is.
+        appliedVersion = 10L
+        val provider = provider(fetchRemote = { null }, readCache = { "REMOTE2@20" })
+
+        val snapshot = provider.catalog()
+
+        assertEquals("REMOTE2", snapshot.singlePackage())
+        assertEquals(BetaSource.REMOTE, snapshot!!.source)
+    }
+
+    @Test
+    fun `a disk cache of the applied version is still handed out after a restart`() = runTest {
+        // Same catalog as the database: rewriting it is harmless, and refusing it
+        // would leave nothing to show if the table were ever emptied.
+        appliedVersion = 20L
+        val provider = provider(fetchRemote = { null }, readCache = { "REMOTE2@20" })
+
+        assertEquals("REMOTE2", provider.catalog().singlePackage())
+    }
+
+    @Test
+    fun `the bundled seed no longer fills gaps once a newer download has been applied`() = runTest {
+        // Merging the months-old seed into a newer catalog would bring back programs
+        // the backend has since dropped.
+        appliedVersion = 20L
+        val provider = provider(
+            fetchRemote = { null },
+            readCache = { null },
+            readBundled = { "BUNDLED@5" },
+        )
+
+        assertNull(provider.catalog())
+    }
+
+    @Test
+    fun `applying a download persists its version`() = runTest {
+        val provider = provider(fetchRemote = { "REMOTE@20" }, readCache = { null })
+
+        provider.catalogApplied()
+
+        assertEquals(20L, appliedVersion)
+    }
+
+    @Test
+    fun `applying the bundled seed persists no version`() = runTest {
+        // The seed only fills gaps, so the database does not hold "that catalog".
+        val provider = provider(
+            fetchRemote = { null },
+            readCache = { null },
+            readBundled = { "BUNDLED@5" },
+        )
+
+        provider.catalogApplied()
+
+        assertNull(appliedVersion)
+    }
+
+    @Test
+    fun `applying a download without a version clears the persisted one`() = runTest {
+        // Unknown provenance: comparing later cache copies against the old version
+        // could refuse a newer one, so the guard steps aside until the next version.
+        appliedVersion = 20L
+        val provider = provider(fetchRemote = { "REMOTE" }, readCache = { null })
+
+        provider.catalogApplied()
+
+        assertNull(appliedVersion)
+    }
+
+    @Test
+    fun `a failing version write still counts the catalog as applied`() = runTest {
+        // Best effort like the cache: the database write already happened.
+        val provider = provider(
+            fetchRemote = { "REMOTE@20" },
+            readCache = { null },
+            writeAppliedVersion = { throw IOException("ENOSPC") },
+        )
+
+        provider.catalogApplied()
+
+        assertNull(provider.catalog())
     }
 }
