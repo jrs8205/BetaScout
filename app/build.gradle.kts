@@ -35,10 +35,24 @@ android {
         }
     }
 
+    // F-Droid's build server strips nothing (AGP finds no matching NDK there), so
+    // the AndroidX native libraries must ship untouched here too, whatever NDK
+    // this machine or CI has; otherwise the two builds differ byte for byte.
+    packaging {
+        jniLibs {
+            keepDebugSymbols += "**/*.so"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
+            // The git-revision file AGP embeds would tie reproducibility to the
+            // exact checkout state.
+            vcsInfo {
+                include = false
+            }
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -64,6 +78,13 @@ android {
         ignoreAssetsPattern =
             "!.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:" +
                 "!adi-registration.properties"
+    }
+
+    dependenciesInfo {
+        // The dependency block AGP adds to the APK signing block is encrypted for
+        // Google Play only; F-Droid's scanner flags it as an opaque blob.
+        includeInApk = false
+        includeInBundle = false
     }
 
     testOptions {
