@@ -10,8 +10,10 @@ import {
   updateErrored,
   clearErrored,
   consumePendingHints,
+  pruneRejected,
   REJECTED_TTL_MS,
   ERRORED_TTL_MS,
+  ERROR_RETIRE_ATTEMPTS,
 } from '../src/hints.js';
 
 test('a batch-level gplay failure produces no per-package errors', () => {
@@ -108,6 +110,71 @@ test('repeatedly erroring hints cool off without eating cap slots and retry afte
   assert.deepEqual(result.erroring, ['com.jammed']);
   assert.deepEqual(result.verify, ['com.retry', 'com.twice']);
   assert.deepEqual(result.overflow, []);
+});
+
+test('hints that keep erroring are retired from the queue instead of waiting forever', () => {
+  // System packages (com.android.vending, mainline modules) never resolve in
+  // gplayapi; without retirement they stay pending on the Worker indefinitely
+  // and inflate the queue the run reports.
+  const errored = [
+    { packageName: 'com.dead', attempts: ERROR_RETIRE_ATTEMPTS, lastError: 'x', lastErrorAt: NOW - DAY_MS },
+    { packageName: 'com.jammed', attempts: ERROR_RETIRE_ATTEMPTS - 1, lastError: 'x', lastErrorAt: NOW - DAY_MS },
+  ];
+
+  const result = selectHintsToVerify(
+    [hint('com.dead', 1), hint('com.jammed', 2)],
+    { catalogPackages: new Set(), rejected: [], errored, now: NOW, cap: 10 },
+  );
+
+  assert.deepEqual(result.retired, ['com.dead']);
+  assert.deepEqual(result.erroring, ['com.jammed']);
+  assert.deepEqual(result.verify, []);
+});
+
+test('a retired hint still gets one verify retry per error window', () => {
+  // Retirement only consumes the hint; if a device reports the package again
+  // after the window, it is re-verified once like any error-cooldown hint.
+  const errored = [
+    {
+      packageName: 'com.dead',
+      attempts: ERROR_RETIRE_ATTEMPTS + 2,
+      lastError: 'x',
+      lastErrorAt: NOW - ERRORED_TTL_MS - DAY_MS,
+    },
+  ];
+
+  const result = selectHintsToVerify(
+    [hint('com.dead')],
+    { catalogPackages: new Set(), rejected: [], errored, now: NOW, cap: 10 },
+  );
+
+  assert.deepEqual(result.verify, ['com.dead']);
+  assert.deepEqual(result.retired, []);
+});
+
+test('retired hints are consumed with the settled ones', () => {
+  const consumed = settledForConsume({
+    confirmedPackages: [],
+    rejectedNow: [],
+    alreadyInCatalog: [],
+    cooling: [],
+    retired: ['com.dead'],
+  });
+
+  assert.deepEqual(consumed, ['com.dead']);
+});
+
+test('pruneRejected drops rejections whose cooldown has expired', () => {
+  // An expired rejection no longer affects selection, so keeping it only grows
+  // the committed file forever.
+  const rejected = [
+    { packageName: 'com.expired', rejectedAt: NOW - REJECTED_TTL_MS - DAY_MS },
+    { packageName: 'com.cooling', rejectedAt: NOW - DAY_MS },
+  ];
+
+  assert.deepEqual(pruneRejected(rejected, NOW), [
+    { packageName: 'com.cooling', rejectedAt: NOW - DAY_MS },
+  ]);
 });
 
 test('updateRejected stamps new failures and keeps existing entries', () => {

@@ -24,6 +24,7 @@ import { fetchText, sleep } from './fetch.js';
 import {
   selectHintsToVerify,
   updateRejected,
+  pruneRejected,
   updateErrored,
   clearErrored,
   partitionVerifyResults,
@@ -176,17 +177,19 @@ async function processHints(knownPrograms) {
 
   const rejected = loadRejected();
   const priorErrored = loadErrored();
-  const { verify, alreadyInCatalog, cooling, erroring, overflow } = selectHintsToVerify(hints, {
-    catalogPackages: new Set(knownPrograms.map((p) => p.packageName)),
-    rejected,
-    errored: priorErrored,
-    now: Date.now(),
-    cap: GPLAY_HINTS_CAP,
-  });
+  const { verify, alreadyInCatalog, cooling, retired, erroring, overflow } =
+    selectHintsToVerify(hints, {
+      catalogPackages: new Set(knownPrograms.map((p) => p.packageName)),
+      rejected,
+      errored: priorErrored,
+      now: Date.now(),
+      cap: GPLAY_HINTS_CAP,
+    });
   console.log(
     `Hints: ${hints.length} pending; verifying ${verify.length} ` +
       `(in catalog ${alreadyInCatalog.length}, cooling ${cooling.length}, ` +
-      `error-cooldown ${erroring.length}, over cap ${overflow.length}).`,
+      `retired ${retired.length}, error-cooldown ${erroring.length}, ` +
+      `over cap ${overflow.length}).`,
   );
 
   const results = verify.length > 0 ? enrichViaGplay(verify) : [];
@@ -203,17 +206,19 @@ async function processHints(knownPrograms) {
     console.error(`  hint ${packageName}: ${error}`);
   }
   const entries = confirmed.map(crowdEntry);
-  if (rejectedNow.length > 0) {
-    saveRejected(updateRejected(rejected, rejectedNow, Date.now()));
+  const nextRejected = pruneRejected(updateRejected(rejected, rejectedNow, Date.now()), Date.now());
+  if (rejectedNow.length > 0 || nextRejected.length !== rejected.length) {
+    saveRejected(nextRejected);
   }
   if (verify.length > 0 && !batchFailed) {
     const settled = [...confirmed.map((r) => r.packageName), ...rejectedNow];
     saveErrored(updateErrored(clearErrored(priorErrored, settled), errored, Date.now()));
   }
 
-  // Merged, rejected, already-in-catalog and cooling (rejected on an earlier
-  // run whose consume failed) hints are all settled; only pending ones (over
-  // cap, gplay errors) stay on the Worker. Settled hints are NOT consumed
+  // Merged, rejected, already-in-catalog, retired (erroring past
+  // ERROR_RETIRE_ATTEMPTS) and cooling (rejected on an earlier run whose
+  // consume failed) hints are all settled; only pending ones (over cap, gplay
+  // errors still below the retire limit) stay on the Worker. Settled hints are NOT consumed
   // here: the list is recorded for the workflow's final step, which consumes
   // only after the catalog has been durably published (KV + git). A failed
   // publish leaves them pending, and the next run settles them again instead
@@ -223,6 +228,7 @@ async function processHints(knownPrograms) {
     rejectedNow,
     alreadyInCatalog,
     cooling,
+    retired,
   });
   writeFileSync(CONSUME_PENDING_URL, JSON.stringify({ packages: consumed }, null, 2) + '\n');
   console.log(

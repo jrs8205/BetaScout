@@ -8,14 +8,20 @@ export const REJECTED_TTL_MS = 30 * 24 * 3600 * 1000;
 // this many attempts and gets one retry per TTL window.
 export const ERROR_COOLDOWN_ATTEMPTS = 3;
 export const ERRORED_TTL_MS = 30 * 24 * 3600 * 1000;
+// After this many attempts a hint in error cooldown is consumed instead of
+// left pending: packages gplayapi never resolves (system apps, other regions)
+// would otherwise sit in the Worker queue forever. The error history is kept,
+// so a later report of the same package still gets one retry per window.
+export const ERROR_RETIRE_ATTEMPTS = 5;
 
 /**
  * Splits pending hints into what this run verifies and what it skips.
  * @param hints [{packageName, firstSeen, count}]
  * @param options {catalogPackages: Set, rejected: [{packageName, rejectedAt}],
  *   errored: [{packageName, attempts, lastError, lastErrorAt}], now, cap}
- * @returns {verify, alreadyInCatalog, cooling, erroring, overflow} — package
- *   name arrays; verify is oldest-first so long-waiting hints go before fresh ones.
+ * @returns {verify, alreadyInCatalog, cooling, retired, erroring, overflow} —
+ *   package name arrays; verify is oldest-first so long-waiting hints go before
+ *   fresh ones.
  */
 export function selectHintsToVerify(hints, { catalogPackages, rejected, errored = [], now, cap }) {
   const coolingSet = new Set(
@@ -23,17 +29,20 @@ export function selectHintsToVerify(hints, { catalogPackages, rejected, errored 
       .filter((entry) => now - entry.rejectedAt < REJECTED_TTL_MS)
       .map((entry) => entry.packageName),
   );
-  const erroringSet = new Set(
-    errored
-      .filter(
-        (entry) =>
-          entry.attempts >= ERROR_COOLDOWN_ATTEMPTS && now - entry.lastErrorAt < ERRORED_TTL_MS,
-      )
+  const inErrorCooldown = errored.filter(
+    (entry) =>
+      entry.attempts >= ERROR_COOLDOWN_ATTEMPTS && now - entry.lastErrorAt < ERRORED_TTL_MS,
+  );
+  const retiredSet = new Set(
+    inErrorCooldown
+      .filter((entry) => entry.attempts >= ERROR_RETIRE_ATTEMPTS)
       .map((entry) => entry.packageName),
   );
+  const erroringSet = new Set(inErrorCooldown.map((entry) => entry.packageName));
   const verify = [];
   const alreadyInCatalog = [];
   const cooling = [];
+  const retired = [];
   const erroring = [];
   const overflow = [];
   const oldestFirst = [...hints].sort((a, b) => (a.firstSeen ?? 0) - (b.firstSeen ?? 0));
@@ -43,6 +52,8 @@ export function selectHintsToVerify(hints, { catalogPackages, rejected, errored 
       alreadyInCatalog.push(packageName);
     } else if (coolingSet.has(packageName)) {
       cooling.push(packageName);
+    } else if (retiredSet.has(packageName)) {
+      retired.push(packageName);
     } else if (erroringSet.has(packageName)) {
       erroring.push(packageName);
     } else if (verify.length < cap) {
@@ -51,7 +62,7 @@ export function selectHintsToVerify(hints, { catalogPackages, rejected, errored 
       overflow.push(packageName);
     }
   }
-  return { verify, alreadyInCatalog, cooling, erroring, overflow };
+  return { verify, alreadyInCatalog, cooling, retired, erroring, overflow };
 }
 
 /**
@@ -93,13 +104,22 @@ export function partitionVerifyResults(verify, results) {
 
 /**
  * Packages settled from the Worker's viewpoint after a verify run: confirmed,
- * rejected now, already in the catalog — plus "cooling" hints, i.e. ones
- * rejected on an earlier run whose consume step failed. Re-listing those every
- * run is the recovery path: without it they stay pending for the full rejected
- * TTL and then burn a verify slot just to be re-rejected.
+ * rejected now, already in the catalog, retired after repeated errors — plus
+ * "cooling" hints, i.e. ones rejected on an earlier run whose consume step
+ * failed. Re-listing those every run is the recovery path: without it they
+ * stay pending for the full rejected TTL and then burn a verify slot just to be
+ * re-rejected.
  */
-export function settledForConsume({ confirmedPackages, rejectedNow, alreadyInCatalog, cooling }) {
-  return [...new Set([...confirmedPackages, ...rejectedNow, ...alreadyInCatalog, ...cooling])];
+export function settledForConsume({
+  confirmedPackages,
+  rejectedNow,
+  alreadyInCatalog,
+  cooling,
+  retired = [],
+}) {
+  return [
+    ...new Set([...confirmedPackages, ...rejectedNow, ...alreadyInCatalog, ...cooling, ...retired]),
+  ];
 }
 
 /** Adds this run's verification failures to the rejected list; a re-rejection
@@ -110,6 +130,12 @@ export function updateRejected(rejected, failures, now) {
     byPackage.set(packageName, { packageName, rejectedAt: now });
   }
   return [...byPackage.values()];
+}
+
+/** Drops rejections whose cooldown has expired: selection ignores them, so
+ *  keeping them would only grow the committed file without bound. */
+export function pruneRejected(rejected, now) {
+  return rejected.filter((entry) => now - entry.rejectedAt < REJECTED_TTL_MS);
 }
 
 /** Adds this run's gplayapi errors to the errored list: first failure starts
