@@ -1,0 +1,3 @@
+• The beta catalog can no longer fall back to an older copy after a restart without network.
+• If the app ever has to rebuild its database, the catalog is restored even offline.
+• Maintenance updates to the build and the shared catalog service.

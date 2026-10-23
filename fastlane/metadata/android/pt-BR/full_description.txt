@@ -1,0 +1,18 @@
+O BetaScout encontra os programas beta escondidos na sua lista de apps.
+
+Ele verifica seus apps instalados e explica em palavras simples quais têm um programa de teste no Google Play: beta aberto — você pode participar, beta lotado ou você já está dentro.
+
+O QUE ELE FAZ
+• Betas abertos em primeiro lugar — participe com um toque pela página oficial de inscrição.
+• Acompanhe betas lotados — faça login e receba uma notificação quando um programa acompanhado voltar a aceitar testadores (conferido a cada poucas horas).
+• Detecte suas participações — o login opcional com o Google lê suas próprias páginas de teste e mostra o status ao vivo (aberto/lotado) e os betas em que você já está.
+• Amplie o catálogo compartilhado — uma opção (desativada por padrão) contribui anonimamente com os programas recém-descobertos; apenas nomes de pacote são enviados.
+
+PRIVACIDADE
+Sem anúncios, sem análises, sem telemetria. O próprio BetaScout nunca envia sua lista de apps nem suas participações; a única exceção é o compartilhamento opcional do catálogo descrito acima. Quando você faz login, o app abre com a sua conta a página de teste do Google Play de cada app instalado, então o Google vê essas consultas — é assim que as participações e o status ao vivo são detectados. Código aberto (Apache 2.0).
+
+IDIOMAS
+Inglês, espanhol, alemão, francês, italiano, português do Brasil e finlandês.
+
+BOM SABER
+Sem login, você ainda pode explorar os betas encontrados, abrir as páginas de inscrição e criar lembretes. A leitura automática das suas próprias páginas de teste é uma área cinzenta nos termos do Google; o BetaScout é deliberadamente cuidadoso, mas um pequeno risco para a conta não pode ser descartado.

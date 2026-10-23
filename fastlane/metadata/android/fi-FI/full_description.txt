@@ -1,0 +1,18 @@
+BetaScout löytää sovelluslistaasi piiloutuneet beta-ohjelmat.
+
+Se skannaa asennetut sovelluksesi ja kertoo selkokielellä, mille niistä on Google Play -testiohjelma: beta auki — voit liittyä, beta täynnä tai olet jo mukana.
+
+MITÄ SE TEKEE
+• Avoimet betat ensin — liity yhdellä napautuksella virallisen liittymissivun kautta.
+• Vahdi täysiä betoja — kirjaudu ja saat ilmoituksen, kun vahdittu ohjelma alkaa taas ottaa testaajia (tarkistus muutaman tunnin välein).
+• Tunnista jäsenyytesi — vapaaehtoinen Google-kirjautuminen lukee omat testisivusi ja näyttää live-tilan (auki/täynnä) sekä betat, joissa jo olet.
+• Kasvata yhteistä katalogia — vapaaehtoinen jako (oletuksena pois) lähettää uudet löydöt nimettömästi; vain paljaita pakettinimiä.
+
+YKSITYISYYS
+Ei mainoksia, ei analytiikkaa, ei telemetriaa. BetaScout ei itse lähetä sovelluslistaasi tai jäsenyyksiäsi minnekään; ainoa poikkeus on yllä kuvattu vapaaehtoinen katalogijako. Kun kirjaudut, sovellus avaa jokaisen asennetun sovelluksesi Google Play -testisivun tililläsi, joten Google näkee nämä haut — näin jäsenyydet ja live-tila tunnistetaan. Avoin lähdekoodi (Apache 2.0).
+
+KIELET
+Englanti, espanja, saksa, ranska, italia, brasilianportugali ja suomi.
+
+HYVÄ TIETÄÄ
+Kirjautumatta voit silti selata löydettyjä betoja, avata liittymissivut ja asettaa muistutuksia. Omien testisivujen automaattinen luku on Googlen ehtojen harmaata aluetta; BetaScout on tarkoituksella varovainen, mutta pientä tiliriskiä ei voi sulkea pois.

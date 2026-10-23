@@ -1,0 +1,18 @@
+BetaScout finds the beta programs hiding in your app list.
+
+It scans your installed apps and tells you in plain words which ones have a Google Play testing program: beta open — you can join, beta full, or you're already in.
+
+WHAT IT DOES
+• Open betas first — join with one tap via the official opt-in page.
+• Watch full betas — sign in and get a notification when a watched program starts accepting testers again (checked every few hours).
+• Detect your memberships — the optional Google sign-in reads your own testing pages and shows live open/full status plus the betas you have already joined.
+• Grow the shared catalog — an opt-in (off by default) contributes newly found programs anonymously; only bare package names are ever sent.
+
+PRIVACY
+No ads, no analytics, no telemetry. BetaScout itself never uploads your app list or memberships; the only exception is the optional catalog sharing above. When you sign in, the app loads the Google Play testing page of each of your installed apps with your account, so Google sees those requests — that is how memberships and live status are detected. Open source (Apache 2.0).
+
+LANGUAGES
+English, Spanish, German, French, Italian, Brazilian Portuguese and Finnish.
+
+GOOD TO KNOW
+Without signing in you can still browse found betas, open their opt-in pages and set reminders. Automatically reading your own testing pages is a gray area in Google's terms; BetaScout is deliberately gentle, but a small account risk cannot be ruled out.
