@@ -15,8 +15,8 @@ android {
         applicationId = "org.jarsi.betascout"
         minSdk = 26
         targetSdk = 36
-        versionCode = 19
-        versionName = "0.6.8"
+        versionCode = 20
+        versionName = "0.6.9"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
