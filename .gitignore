@@ -23,5 +23,6 @@ review-package/
 docs/REVIEW_KORJAUSRAPORTTI*
 adi-registration.properties
 .superpowers/
+docs/superpowers/
 store-assets/
 harvester/hints-consume-pending.json
