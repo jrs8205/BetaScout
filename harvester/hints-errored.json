@@ -740,39 +740,39 @@
     },
     {
       "packageName": "com.hypedrop.hypedropapp1",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790241686530
+      "lastErrorAt": 1792919540355
     },
     {
       "packageName": "com.iboalali.sysnotifsnooze",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790241686530
+      "lastErrorAt": 1792919540355
     },
     {
       "packageName": "com.amazon.drive",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790241686530
+      "lastErrorAt": 1792919540355
     },
     {
       "packageName": "com.google.android.apps.gmm.qp",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790241686530
+      "lastErrorAt": 1792919540355
     },
     {
       "packageName": "fr.freebox.network",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790241686530
+      "lastErrorAt": 1792919540355
     },
     {
       "packageName": "fr.freemobile.android.vvm",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790241686530
+      "lastErrorAt": 1792919540355
     },
     {
       "packageName": "com.cedarworks.standby",
@@ -1067,6 +1067,12 @@
       "attempts": 3,
       "lastError": "AppNotFound: null",
       "lastErrorAt": 1792832131525
+    },
+    {
+      "packageName": "com.jackallalone.dev.vpkeyboard",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1792919540355
     }
   ]
 }

@@ -869,10 +869,6 @@
       "rejectedAt": 1792661254132
     },
     {
-      "packageName": "com.hifi_apps.sp_setup",
-      "rejectedAt": 1790241686528
-    },
-    {
       "packageName": "com.homeserve.androidapp",
       "rejectedAt": 1790329163260
     },
@@ -1591,6 +1587,66 @@
     {
       "packageName": "com.cat.gatekeeper",
       "rejectedAt": 1792832131524
+    },
+    {
+      "packageName": "com.ludenio.a7",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "com.folksable.app",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "com.effit.effitmobileui",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "com.artrix.manamonsters",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "com.belkatechnologies.clockmaker",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "com.bol.shop",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "com.distimo.phoneguardian",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "com.hunt.royale",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "com.ibood.app",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "com.lgi.ziggotv",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "com.motorola.ccc.notification",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "com.traversient.pictrove2.free",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "nl.dcentralize.beltegoed.hollandsnieuwe",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "nl.rijksoverheid.digid.pub",
+      "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "nl.tpp.mobile.android",
+      "rejectedAt": 1792919540354
     }
   ]
 }
