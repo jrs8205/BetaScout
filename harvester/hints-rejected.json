@@ -581,10 +581,6 @@
       "rejectedAt": 1791110250780
     },
     {
-      "packageName": "com.mossapps.flick",
-      "rejectedAt": 1790329163260
-    },
-    {
       "packageName": "dev.zwander.cellreader",
       "rejectedAt": 1791892354198
     },
@@ -725,10 +721,6 @@
       "rejectedAt": 1790593141452
     },
     {
-      "packageName": "com.kinoshitaproductions.booru_nav",
-      "rejectedAt": 1790329163260
-    },
-    {
       "packageName": "com.carfax.mycarfax",
       "rejectedAt": 1790503402125
     },
@@ -867,38 +859,6 @@
     {
       "packageName": "compress.joshattic.us",
       "rejectedAt": 1792661254132
-    },
-    {
-      "packageName": "com.homeserve.androidapp",
-      "rejectedAt": 1790329163260
-    },
-    {
-      "packageName": "com.ghostmode.app",
-      "rejectedAt": 1790329163260
-    },
-    {
-      "packageName": "com.technosub.unlimitedaiimagen",
-      "rejectedAt": 1790329163260
-    },
-    {
-      "packageName": "com.sbs.ondemand.android",
-      "rejectedAt": 1790329163260
-    },
-    {
-      "packageName": "com.heytap.quickgame",
-      "rejectedAt": 1790414636383
-    },
-    {
-      "packageName": "goodtime.training.wod.timer",
-      "rejectedAt": 1790414636383
-    },
-    {
-      "packageName": "com.pg.moew.number.trail",
-      "rejectedAt": 1790414636383
-    },
-    {
-      "packageName": "app.organicmaps",
-      "rejectedAt": 1790414636383
     },
     {
       "packageName": "com.cardinalblue.piccollage.google",
@@ -1647,6 +1607,22 @@
     {
       "packageName": "nl.tpp.mobile.android",
       "rejectedAt": 1792919540354
+    },
+    {
+      "packageName": "com.colourswift.cssecurity",
+      "rejectedAt": 1793009511467
+    },
+    {
+      "packageName": "com.summoners.kingdom.usagoogle",
+      "rejectedAt": 1793009511467
+    },
+    {
+      "packageName": "com.imo.android.imoim",
+      "rejectedAt": 1793009511467
+    },
+    {
+      "packageName": "com.paget96.batteryguru",
+      "rejectedAt": 1793009511467
     }
   ]
 }

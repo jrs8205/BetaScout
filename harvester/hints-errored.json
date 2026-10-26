@@ -590,27 +590,27 @@
     },
     {
       "packageName": "com.duplicatephotoremover.duplicatefileremover.filefixer",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790329163262
+      "lastErrorAt": 1793009511467
     },
     {
       "packageName": "com.nianticlabs.peridot",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790329163262
+      "lastErrorAt": 1793009511467
     },
     {
       "packageName": "com.skype.insiders",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790329163262
+      "lastErrorAt": 1793009511467
     },
     {
       "packageName": "il.co.mitug.WhereBus",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790329163262
+      "lastErrorAt": 1793009511467
     },
     {
       "packageName": "com.laurencedawson.reddit_sync.pro",
@@ -776,9 +776,9 @@
     },
     {
       "packageName": "com.cedarworks.standby",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790414636385
+      "lastErrorAt": 1793009511467
     },
     {
       "packageName": "com.google.android.desktop.feedback",
@@ -1070,9 +1070,15 @@
     },
     {
       "packageName": "com.jackallalone.dev.vpkeyboard",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793009511467
+    },
+    {
+      "packageName": "pl.krzyzvibe.game",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792919540355
+      "lastErrorAt": 1793009511467
     }
   ]
 }

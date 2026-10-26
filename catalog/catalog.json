@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1792919540357,
+  "generatedAt": 1793009511469,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -808,6 +808,15 @@
       "appName": "Therr: Local Social Discovery",
       "hasBeta": true,
       "productionVersionCode": 462,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "app.unnamed.rawrecording",
+      "appName": "Mereframe: RAW Camera",
+      "hasBeta": true,
+      "productionVersionCode": 118,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5034,6 +5043,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.chimbori.gigatext",
+      "appName": "Giga Text: Stickers & GIFs too",
+      "hasBeta": true,
+      "productionVersionCode": 40200,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.chimbori.hermitcrab",
       "appName": "Hermit — Lite Apps Browser",
       "hasBeta": true,
@@ -6100,6 +6118,15 @@
       "appName": "Home Network",
       "hasBeta": true,
       "productionVersionCode": 1001630,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.devwithzachary.completelinuxinstaller",
+      "appName": "Complete Linux Installer",
+      "hasBeta": true,
+      "productionVersionCode": 16,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7278,7 +7305,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 475817510,
+      "productionVersionCode": 475817387,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7296,7 +7323,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 346817025,
+      "productionVersionCode": 346816955,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9284,7 +9311,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561304941,
+      "productionVersionCode": 1561301422,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -14505,6 +14532,15 @@
       "appName": "MyChoize Self Drive Car Rental",
       "hasBeta": true,
       "productionVersionCode": 220,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.mycompany.magicdiscipline",
+      "appName": "Magic Discipline",
+      "hasBeta": true,
+      "productionVersionCode": 29,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -29146,6 +29182,15 @@
       "appName": "Waking Up: Meditation & Wisdom",
       "hasBeta": true,
       "productionVersionCode": 1332,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.webosbrew.devman",
+      "appName": "webOS Dev Manager",
+      "hasBeta": true,
+      "productionVersionCode": 1099019,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
