@@ -1070,15 +1070,21 @@
     },
     {
       "packageName": "com.jackallalone.dev.vpkeyboard",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793009511467
+      "lastErrorAt": 1793094697794
     },
     {
       "packageName": "pl.krzyzvibe.game",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793094697794
+    },
+    {
+      "packageName": "com.sol.Runefall",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793009511467
+      "lastErrorAt": 1793094697794
     }
   ]
 }

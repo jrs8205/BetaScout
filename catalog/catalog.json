@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1793009511469,
+  "generatedAt": 1793094697798,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -691,6 +691,15 @@
       "appName": "Offertag: Shop Save",
       "hasBeta": true,
       "productionVersionCode": 30,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "app.olauncher",
+      "appName": "Olauncher. Minimal AF Launcher",
+      "hasBeta": true,
+      "productionVersionCode": 112,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2679,7 +2688,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 805908404,
+      "productionVersionCode": 807804704,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7305,7 +7314,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 475817387,
+      "productionVersionCode": 475817399,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7323,7 +7332,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 346816955,
+      "productionVersionCode": 346817025,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7351,6 +7360,15 @@
       "appName": "Face Gallery: AI Image Manager",
       "hasBeta": true,
       "productionVersionCode": 82,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.faintlines.investomania",
+      "appName": "The Founder: Investment Game",
+      "hasBeta": true,
+      "productionVersionCode": 151,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9311,7 +9329,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561301422,
+      "productionVersionCode": 1561304941,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -14609,6 +14627,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.myprizepicks.myprizepicks",
+      "appName": "PrizePicks: Sports and Packs",
+      "hasBeta": true,
+      "productionVersionCode": 1253,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.mysticmobileapps.gps.location",
       "appName": "My GPS Location",
       "hasBeta": true,
@@ -15869,6 +15896,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.pabloleban.IdleSlayer",
+      "appName": "Idle Slayer - Pixel RPG",
+      "hasBeta": true,
+      "productionVersionCode": 869,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.pagesuite.europeanrailtimetable",
       "appName": "European Rail Timetable",
       "hasBeta": true,
@@ -16494,6 +16530,15 @@
       "appName": "Jemini Art : AI Photo Editing",
       "hasBeta": true,
       "productionVersionCode": 2,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.pizzaemulators.pbds",
+      "appName": "Pizza Boy Double Slice",
+      "hasBeta": true,
+      "productionVersionCode": 51,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -19703,6 +19748,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.StudioFurukawa.PixelCarRacer",
+      "appName": "Pixel Car Racer",
+      "hasBeta": true,
+      "productionVersionCode": 1002005,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.stylishkeyboard.fonts",
       "appName": "Stylish Keyboard-Fonts & Emoji",
       "hasBeta": true,
@@ -19995,6 +20049,15 @@
       "appName": "SkyView® Lite",
       "hasBeta": true,
       "productionVersionCode": 121,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.t3tools.t3code",
+      "appName": "T3 Code",
+      "hasBeta": true,
+      "productionVersionCode": 92,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -20867,7 +20930,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12322,
+      "productionVersionCode": 12324,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -30549,7 +30612,7 @@
       "packageName": "tv.twitch.android.app",
       "appName": "Twitch: Live Streaming",
       "hasBeta": true,
-      "productionVersionCode": 3107006,
+      "productionVersionCode": 3108006,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

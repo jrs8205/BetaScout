@@ -1623,6 +1623,38 @@
     {
       "packageName": "com.paget96.batteryguru",
       "rejectedAt": 1793009511467
+    },
+    {
+      "packageName": "app.prolauncher",
+      "rejectedAt": 1793094697793
+    },
+    {
+      "packageName": "de.dhl.paket",
+      "rejectedAt": 1793094697793
+    },
+    {
+      "packageName": "com.adpmobile.android",
+      "rejectedAt": 1793094697793
+    },
+    {
+      "packageName": "com.ddt.dotdotbuy",
+      "rejectedAt": 1793094697793
+    },
+    {
+      "packageName": "com.grocerkey.frontendapp.woodmans",
+      "rejectedAt": 1793094697793
+    },
+    {
+      "packageName": "com.homes.homesdotcom",
+      "rejectedAt": 1793094697793
+    },
+    {
+      "packageName": "com.kwiktrip",
+      "rejectedAt": 1793094697793
+    },
+    {
+      "packageName": "vg.real",
+      "rejectedAt": 1793094697793
     }
   ]
 }
