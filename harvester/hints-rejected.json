@@ -41,10 +41,6 @@
       "rejectedAt": 1790852420003
     },
     {
-      "packageName": "com.tmobile.tuesdays",
-      "rejectedAt": 1790503402125
-    },
-    {
       "packageName": "org.freepoc.wearinstaller2",
       "rejectedAt": 1792832131524
     },
@@ -149,10 +145,6 @@
       "rejectedAt": 1792832131524
     },
     {
-      "packageName": "com.project.aimotech.printmaster",
-      "rejectedAt": 1790503402125
-    },
-    {
       "packageName": "com.binance.dev",
       "rejectedAt": 1791021295317
     },
@@ -171,10 +163,6 @@
     {
       "packageName": "com.whereismytrain.android",
       "rejectedAt": 1791110250780
-    },
-    {
-      "packageName": "cris.org.in.prs.ima",
-      "rejectedAt": 1790503402125
     },
     {
       "packageName": "org.cris.aikyam",
@@ -362,7 +350,7 @@
     },
     {
       "packageName": "com.ups.mobile.android",
-      "rejectedAt": 1790503402125
+      "rejectedAt": 1793183896661
     },
     {
       "packageName": "io.airzone.dknNA",
@@ -417,10 +405,6 @@
       "rejectedAt": 1791371290087
     },
     {
-      "packageName": "com.samsung.android.tvplus",
-      "rejectedAt": 1790503402125
-    },
-    {
       "packageName": "com.tracket.app",
       "rejectedAt": 1791458720462
     },
@@ -455,10 +439,6 @@
     {
       "packageName": "com.etsy.android",
       "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.otraku.app",
-      "rejectedAt": 1790503402125
     },
     {
       "packageName": "com.touchtype.swiftkey.beta",
@@ -601,10 +581,6 @@
       "rejectedAt": 1791970455257
     },
     {
-      "packageName": "com.innova.rs2",
-      "rejectedAt": 1790503402125
-    },
-    {
       "packageName": "trai.gov.in.dnd",
       "rejectedAt": 1791200039224
     },
@@ -647,10 +623,6 @@
     {
       "packageName": "com.experian.android",
       "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.infoscout.receipthog",
-      "rejectedAt": 1790503402125
     },
     {
       "packageName": "com.tplink.kasa_android",
@@ -701,10 +673,6 @@
       "rejectedAt": 1790678663238
     },
     {
-      "packageName": "com.Avenza",
-      "rejectedAt": 1790503402125
-    },
-    {
       "packageName": "project.vivid.hex.bodhi",
       "rejectedAt": 1792832131524
     },
@@ -719,10 +687,6 @@
     {
       "packageName": "com.sunbird.apps",
       "rejectedAt": 1790593141452
-    },
-    {
-      "packageName": "com.carfax.mycarfax",
-      "rejectedAt": 1790503402125
     },
     {
       "packageName": "com.ebay.motorsapp",
@@ -859,42 +823,6 @@
     {
       "packageName": "compress.joshattic.us",
       "rejectedAt": 1792661254132
-    },
-    {
-      "packageName": "com.cardinalblue.piccollage.google",
-      "rejectedAt": 1790503402125
-    },
-    {
-      "packageName": "com.funplus.st.region",
-      "rejectedAt": 1790503402125
-    },
-    {
-      "packageName": "com.immediasemi.android.blink",
-      "rejectedAt": 1790503402125
-    },
-    {
-      "packageName": "com.intuit.qbse",
-      "rejectedAt": 1790503402125
-    },
-    {
-      "packageName": "com.intuit.turbotax.mobile",
-      "rejectedAt": 1790503402125
-    },
-    {
-      "packageName": "com.nnxshcwrkg.scavengerhunt",
-      "rejectedAt": 1790503402125
-    },
-    {
-      "packageName": "com.paywithfour",
-      "rejectedAt": 1790503402125
-    },
-    {
-      "packageName": "com.rottzgames.idle.tower",
-      "rejectedAt": 1790503402125
-    },
-    {
-      "packageName": "com.tellmewow.senior.hangman",
-      "rejectedAt": 1790503402125
     },
     {
       "packageName": "com.stopfield.focara",
@@ -1655,6 +1583,46 @@
     {
       "packageName": "vg.real",
       "rejectedAt": 1793094697793
+    },
+    {
+      "packageName": "com.Orqa.FPVSkyDive",
+      "rejectedAt": 1793183896661
+    },
+    {
+      "packageName": "com.box.android",
+      "rejectedAt": 1793183896661
+    },
+    {
+      "packageName": "com.coolniks.niksgps",
+      "rejectedAt": 1793183896661
+    },
+    {
+      "packageName": "com.google.android.apps.village.boond",
+      "rejectedAt": 1793183896661
+    },
+    {
+      "packageName": "com.sameerasw.canvas",
+      "rejectedAt": 1793183896661
+    },
+    {
+      "packageName": "com.anthropic.aibo",
+      "rejectedAt": 1793183896661
+    },
+    {
+      "packageName": "com.barstoolsports.onebite",
+      "rejectedAt": 1793183896661
+    },
+    {
+      "packageName": "com.camel.corp.universalcopy",
+      "rejectedAt": 1793183896661
+    },
+    {
+      "packageName": "com.novapontocom.casasbahia",
+      "rejectedAt": 1793183896661
+    },
+    {
+      "packageName": "com.roleplay.riorise",
+      "rejectedAt": 1793183896661
     }
   ]
 }

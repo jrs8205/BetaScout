@@ -614,9 +614,9 @@
     },
     {
       "packageName": "com.laurencedawson.reddit_sync.pro",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790503402127
+      "lastErrorAt": 1793183896663
     },
     {
       "packageName": "com.ctxwidget",
@@ -779,12 +779,6 @@
       "attempts": 4,
       "lastError": "AppNotFound: null",
       "lastErrorAt": 1793009511467
-    },
-    {
-      "packageName": "com.google.android.desktop.feedback",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790503402127
     },
     {
       "packageName": "com.ancestry.ancestrydna",
@@ -1076,15 +1070,39 @@
     },
     {
       "packageName": "pl.krzyzvibe.game",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793094697794
+      "lastErrorAt": 1793183896663
     },
     {
       "packageName": "com.sol.Runefall",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793183896663
+    },
+    {
+      "packageName": "com.careerbuilder.SugarDrone",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793094697794
+      "lastErrorAt": 1793183896663
+    },
+    {
+      "packageName": "com.springbig.muv",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793183896663
+    },
+    {
+      "packageName": "de.mdiener.rain.usa.plus",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793183896663
+    },
+    {
+      "packageName": "mindware.wordgamespro",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793183896663
     }
   ]
 }
