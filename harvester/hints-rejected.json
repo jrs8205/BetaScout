@@ -413,10 +413,6 @@
       "rejectedAt": 1791458720462
     },
     {
-      "packageName": "de.arbeitsagentur.jobcenter",
-      "rejectedAt": 1790678663238
-    },
-    {
       "packageName": "org.mozilla.klar",
       "rejectedAt": 1791458720462
     },
@@ -669,10 +665,6 @@
       "rejectedAt": 1792661254132
     },
     {
-      "packageName": "com.sec.android.app.shealth",
-      "rejectedAt": 1790678663238
-    },
-    {
       "packageName": "project.vivid.hex.bodhi",
       "rejectedAt": 1792832131524
     },
@@ -685,10 +677,6 @@
       "rejectedAt": 1791715946672
     },
     {
-      "packageName": "com.sunbird.apps",
-      "rejectedAt": 1790593141452
-    },
-    {
       "packageName": "com.ebay.motorsapp",
       "rejectedAt": 1791458720462
     },
@@ -698,7 +686,7 @@
     },
     {
       "packageName": "com.appsomniacs.mmc",
-      "rejectedAt": 1790678663238
+      "rejectedAt": 1793271371776
     },
     {
       "packageName": "com.playbridge.sender",
@@ -825,44 +813,8 @@
       "rejectedAt": 1792661254132
     },
     {
-      "packageName": "com.stopfield.focara",
-      "rejectedAt": 1790593141452
-    },
-    {
-      "packageName": "air.com.taern.BrokenRanks",
-      "rejectedAt": 1790593141452
-    },
-    {
-      "packageName": "eu.airly.android",
-      "rejectedAt": 1790593141452
-    },
-    {
-      "packageName": "eu.darken.butler",
-      "rejectedAt": 1790593141452
-    },
-    {
-      "packageName": "appyweather.appyweather",
-      "rejectedAt": 1790593141452
-    },
-    {
-      "packageName": "com.songkick",
-      "rejectedAt": 1790593141452
-    },
-    {
-      "packageName": "com.zoosk.zoosk",
-      "rejectedAt": 1790593141452
-    },
-    {
       "packageName": "com.power.wash.simulator.game",
-      "rejectedAt": 1790678663238
-    },
-    {
-      "packageName": "nl.jolanrensen.hotwordPlugin",
-      "rejectedAt": 1790678663238
-    },
-    {
-      "packageName": "com.okcupid.okcupid",
-      "rejectedAt": 1790678663238
+      "rejectedAt": 1793271371776
     },
     {
       "packageName": "cube.sudoku.block.puzzle",
@@ -1623,6 +1575,34 @@
     {
       "packageName": "com.roleplay.riorise",
       "rejectedAt": 1793183896661
+    },
+    {
+      "packageName": "net.flowlauncher",
+      "rejectedAt": 1793271371776
+    },
+    {
+      "packageName": "com.innovacode.launcher",
+      "rejectedAt": 1793271371776
+    },
+    {
+      "packageName": "games.minit.app",
+      "rejectedAt": 1793271371776
+    },
+    {
+      "packageName": "com.noksfluxa.player",
+      "rejectedAt": 1793271371776
+    },
+    {
+      "packageName": "com.verynicegames.hyperlight",
+      "rejectedAt": 1793271371776
+    },
+    {
+      "packageName": "com.nearpieapp.nearpie",
+      "rejectedAt": 1793271371776
+    },
+    {
+      "packageName": "nl.iquality.lpb.banking.de",
+      "rejectedAt": 1793271371776
     }
   ]
 }
