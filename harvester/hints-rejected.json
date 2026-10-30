@@ -817,20 +817,8 @@
       "rejectedAt": 1793271371776
     },
     {
-      "packageName": "cube.sudoku.block.puzzle",
-      "rejectedAt": 1790764363171
-    },
-    {
-      "packageName": "com.focusflow.focus",
-      "rejectedAt": 1790764363171
-    },
-    {
       "packageName": "air.au.com.ontherun",
-      "rejectedAt": 1790764363171
-    },
-    {
-      "packageName": "com.gbellalx.vidlax",
-      "rejectedAt": 1790764363171
+      "rejectedAt": 1793357658765
     },
     {
       "packageName": "com.brute.launcher",
@@ -1603,6 +1591,22 @@
     {
       "packageName": "nl.iquality.lpb.banking.de",
       "rejectedAt": 1793271371776
+    },
+    {
+      "packageName": "com.maximemazzone.aerial",
+      "rejectedAt": 1793357658765
+    },
+    {
+      "packageName": "com.wave.livewallpaper",
+      "rejectedAt": 1793357658765
+    },
+    {
+      "packageName": "wave.paperworld.wallpaper",
+      "rejectedAt": 1793357658765
+    },
+    {
+      "packageName": "com.vivo.website",
+      "rejectedAt": 1793357658765
     }
   ]
 }

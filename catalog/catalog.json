@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1793271371781,
+  "generatedAt": 1793357658770,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -1920,6 +1920,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "co.sride",
+      "appName": "sRide - Carpool & Taxipool",
+      "hasBeta": true,
+      "productionVersionCode": 701,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "co.swasth.cbtcompanion",
       "appName": "Untangle: CBT Companion",
       "hasBeta": true,
@@ -2742,7 +2751,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 807804904,
+      "productionVersionCode": 807807304,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6627,6 +6636,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.dreautall.waterflyiii",
+      "appName": "Waterfly III",
+      "hasBeta": true,
+      "productionVersionCode": 4269,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.drilens.wamr",
       "appName": "WAMR: Reveal deleted messages!",
       "hasBeta": true,
@@ -6702,7 +6720,7 @@
       "packageName": "com.dropbox.android",
       "appName": "Dropbox: Secure Cloud Storage",
       "hasBeta": true,
-      "productionVersionCode": 49420200,
+      "productionVersionCode": 49620200,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7413,7 +7431,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 475817510,
+      "productionVersionCode": 476015655,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7431,7 +7449,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 346817025,
+      "productionVersionCode": 347015066,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8031,10 +8049,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.flow.simulation.live.wallpaper",
+      "appName": "Flow Simulation Live Wallpaper",
+      "hasBeta": true,
+      "productionVersionCode": 23,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.flower.forest.word.puzzle",
       "appName": "Flower Forest - Word Puzzle",
       "hasBeta": true,
       "productionVersionCode": 85,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.fluidwallpaper.fluidmagic.livewallpaper.screen",
+      "appName": "Fluid Magic: 4D Live Wallpaper",
+      "hasBeta": true,
+      "productionVersionCode": 58,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -8989,6 +9025,15 @@
       "appName": "MJ PDF - Fast PDF Viewer",
       "hasBeta": true,
       "productionVersionCode": 58,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.gkfriend.gpscameralocation",
+      "appName": "GPS Geotag Photo Editor",
+      "hasBeta": true,
+      "productionVersionCode": 40,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -12668,7 +12713,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 217400,
+      "productionVersionCode": 217500,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12705,6 +12750,15 @@
       "appName": "HebDate Hebrew Calendar",
       "hasBeta": true,
       "productionVersionCode": 902,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.lipisoft.quickvpn",
+      "appName": "QuickVPN",
+      "hasBeta": true,
+      "productionVersionCode": 83,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -13092,6 +13146,15 @@
       "appName": "mail.com: Email app & Cloud",
       "hasBeta": true,
       "productionVersionCode": 405197,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.makecontact.app",
+      "appName": "Make Contact",
+      "hasBeta": true,
+      "productionVersionCode": 21,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -16094,6 +16157,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.padosi.app",
+      "appName": "Padosi: Neighbor Community",
+      "hasBeta": true,
+      "productionVersionCode": 11,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.pagesuite.europeanrailtimetable",
       "appName": "European Rail Timetable",
       "hasBeta": true,
@@ -16161,6 +16233,33 @@
       "appName": "CloverPit",
       "hasBeta": true,
       "productionVersionCode": 38,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.paperworldcreation.flux",
+      "appName": "Flux 3D Live Wallpaper",
+      "hasBeta": true,
+      "productionVersionCode": 5,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.paperworldcreation.spirly",
+      "appName": "Spirly - Live Wallpaper",
+      "hasBeta": true,
+      "productionVersionCode": 20,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.paperworldcreation.tunnel",
+      "appName": "Tunnel 3D Live Wallpaper",
+      "hasBeta": true,
+      "productionVersionCode": 15,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -22834,6 +22933,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.wallpapers.wallpaper4k.livewallpaper",
+      "appName": "Live Wallpaper - Wallpapers 4K",
+      "hasBeta": true,
+      "productionVersionCode": 299,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.wallpaperscraft.wallpaper",
       "appName": "Wallpaper 4K HD – Wallcraft",
       "hasBeta": true,
@@ -26335,6 +26443,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "info.kfsoft.usageanalyzer",
+      "appName": "Usage Analyzer: apps usage",
+      "hasBeta": true,
+      "productionVersionCode": 156,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "info.NYCHA.Mobile.MyNYCHA",
       "appName": "My NYCHA",
       "hasBeta": true,
@@ -26654,6 +26771,15 @@
       "appName": "zap.stream",
       "hasBeta": true,
       "productionVersionCode": 17,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "io.nunchuk.android",
+      "appName": "Nunchuk Bitcoin Wallet",
+      "hasBeta": true,
+      "productionVersionCode": 348,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
