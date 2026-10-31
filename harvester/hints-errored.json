@@ -1100,9 +1100,15 @@
     },
     {
       "packageName": "com.sameerasw.overcast",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793442374181
+    },
+    {
+      "packageName": "com.tessera.db",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793357658767
+      "lastErrorAt": 1793442374181
     }
   ]
 }

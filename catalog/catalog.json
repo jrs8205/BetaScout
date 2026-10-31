@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1793357658770,
+  "generatedAt": 1793442374183,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -7431,7 +7431,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 476015655,
+      "productionVersionCode": 476015538,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9417,6 +9417,15 @@
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.google.android.GoogleCamera",
+      "appName": "Pixel Camera",
+      "hasBeta": true,
+      "productionVersionCode": 66480026,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.google.android.googlequicksearchbox",
       "appName": "Google",
       "hasBeta": true,
@@ -9500,7 +9509,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561307650,
+      "productionVersionCode": 1561190505,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15035,7 +15044,7 @@
       "packageName": "com.netflix.mediaclient",
       "appName": "Netflix",
       "hasBeta": true,
-      "productionVersionCode": 74712,
+      "productionVersionCode": 74684,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -21254,7 +21263,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12328,
+      "productionVersionCode": 12330,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -30847,6 +30856,15 @@
       "appName": "Floaty Touch: On-Screen AI",
       "hasBeta": true,
       "productionVersionCode": 2113,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "tesmath.calcy",
+      "appName": "Calcy IV - Fast IV & PvP Ranks",
+      "hasBeta": true,
+      "productionVersionCode": 350110,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

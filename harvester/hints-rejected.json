@@ -1607,6 +1607,30 @@
     {
       "packageName": "com.vivo.website",
       "rejectedAt": 1793357658765
+    },
+    {
+      "packageName": "com.mixapplications.miuithemeeditor",
+      "rejectedAt": 1793442374180
+    },
+    {
+      "packageName": "com.jamworks.blitzer.speedcamera",
+      "rejectedAt": 1793442374180
+    },
+    {
+      "packageName": "com.shopee.my",
+      "rejectedAt": 1793442374180
+    },
+    {
+      "packageName": "com.zte.smarthome.abroad",
+      "rejectedAt": 1793442374180
+    },
+    {
+      "packageName": "com.bycodec.project_drift",
+      "rejectedAt": 1793442374180
+    },
+    {
+      "packageName": "com.covve.android",
+      "rejectedAt": 1793442374180
     }
   ]
 }
