@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1793442374183,
+  "generatedAt": 1793531955458,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -7431,7 +7431,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 476015538,
+      "productionVersionCode": 476015655,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9509,7 +9509,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561190505,
+      "productionVersionCode": 1561307650,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16805,6 +16805,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.pixamotion",
+      "appName": "Moving Pictures & 3D pictures",
+      "hasBeta": true,
+      "productionVersionCode": 183,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.pixelfed",
       "appName": "Pixelfed",
       "hasBeta": true,
@@ -17781,6 +17790,15 @@
       "appName": "RealVNC Viewer: Remote Desktop",
       "hasBeta": true,
       "productionVersionCode": 2080175,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.rebelvox.voxer",
+      "appName": "Voxer Walkie Talkie Messenger",
+      "hasBeta": true,
+      "productionVersionCode": 1302205542,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -22717,6 +22735,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.viraldevelopment.calai",
+      "appName": "Cal AI - Food Calorie Tracker",
+      "hasBeta": true,
+      "productionVersionCode": 287,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.viscouspot.gitsync",
       "appName": "GitSync",
       "hasBeta": true,
@@ -25147,6 +25174,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "dev.lknninex.doi",
+      "appName": "DOI Icon Pack",
+      "hasBeta": true,
+      "productionVersionCode": 130,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "dev.lknninex.nyon.material",
+      "appName": "Nyon Material You icons",
+      "hasBeta": true,
+      "productionVersionCode": 15,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "dev.lovable.build",
       "appName": "Lovable: Build Apps With AI",
       "hasBeta": true,
@@ -26614,6 +26659,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "io.friendly.ai",
+      "appName": "Friendly AI Browser",
+      "hasBeta": true,
+      "productionVersionCode": 104,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "io.friendly.twitter",
       "appName": "Friendly For Twitter/X",
       "hasBeta": true,
@@ -27761,6 +27815,15 @@
       "appName": "Infinity for Reddit+",
       "hasBeta": true,
       "productionVersionCode": 222,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ml.docilealligator.infinityforreddit.plus2",
+      "appName": "Infinity for Reddit++",
+      "hasBeta": true,
+      "productionVersionCode": 232,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

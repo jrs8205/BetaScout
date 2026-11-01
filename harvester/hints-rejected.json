@@ -2,19 +2,19 @@
   "rejected": [
     {
       "packageName": "com.google.android.apps.magazines",
-      "rejectedAt": 1790852420003
+      "rejectedAt": 1793531955454
     },
     {
       "packageName": "com.google.android.apps.youtube.music",
-      "rejectedAt": 1790852420003
+      "rejectedAt": 1793531955454
     },
     {
       "packageName": "com.google.android.deskclock",
-      "rejectedAt": 1790852420003
+      "rejectedAt": 1793531955454
     },
     {
       "packageName": "it.mirko.beta",
-      "rejectedAt": 1790852420003
+      "rejectedAt": 1793531955454
     },
     {
       "packageName": "com.sapiens.assistant.ai",
@@ -25,12 +25,8 @@
       "rejectedAt": 1791200039224
     },
     {
-      "packageName": "com.ebay.mobile",
-      "rejectedAt": 1790852420003
-    },
-    {
       "packageName": "com.google.audio.hearing.visualization.accessibility.scribe",
-      "rejectedAt": 1790852420003
+      "rejectedAt": 1793531955454
     },
     {
       "packageName": "de.ka.kamedi.heat_it",
@@ -38,7 +34,7 @@
     },
     {
       "packageName": "com.samsung.android.spay",
-      "rejectedAt": 1790852420003
+      "rejectedAt": 1793531955454
     },
     {
       "packageName": "org.freepoc.wearinstaller2",
@@ -50,7 +46,7 @@
     },
     {
       "packageName": "in.gov.uidai.pehchaan",
-      "rejectedAt": 1790852420003
+      "rejectedAt": 1793531955454
     },
     {
       "packageName": "in.startv.hotstar",
@@ -62,11 +58,11 @@
     },
     {
       "packageName": "com.foursquare.robin",
-      "rejectedAt": 1790937203262
+      "rejectedAt": 1793531955454
     },
     {
       "packageName": "com.kiloo.subwaysurf",
-      "rejectedAt": 1790937203262
+      "rejectedAt": 1793531955454
     },
     {
       "packageName": "com.urbandroid.sleep",
@@ -78,7 +74,7 @@
     },
     {
       "packageName": "com.apkmirror.helper.prod",
-      "rejectedAt": 1790937203262
+      "rejectedAt": 1793531955454
     },
     {
       "packageName": "com.bstar.intl",
@@ -693,10 +689,6 @@
       "rejectedAt": 1792832131524
     },
     {
-      "packageName": "au.com.amp.myportfolio.android",
-      "rejectedAt": 1790937203262
-    },
-    {
       "packageName": "app.avantis.rket",
       "rejectedAt": 1791371290087
     },
@@ -819,38 +811,6 @@
     {
       "packageName": "air.au.com.ontherun",
       "rejectedAt": 1793357658765
-    },
-    {
-      "packageName": "com.brute.launcher",
-      "rejectedAt": 1790852420003
-    },
-    {
-      "packageName": "com.rls.notify",
-      "rejectedAt": 1790852420003
-    },
-    {
-      "packageName": "app.paperplane.app",
-      "rejectedAt": 1790852420003
-    },
-    {
-      "packageName": "com.filipestarling.conexoesmobile",
-      "rejectedAt": 1790852420003
-    },
-    {
-      "packageName": "com.martomz.pinpoint",
-      "rejectedAt": 1790852420003
-    },
-    {
-      "packageName": "com.xalies.input2touch",
-      "rejectedAt": 1790852420003
-    },
-    {
-      "packageName": "com.orube.mcl",
-      "rejectedAt": 1790937203262
-    },
-    {
-      "packageName": "com.ohze.heroes.cup",
-      "rejectedAt": 1790937203262
     },
     {
       "packageName": "com.glauc.lumecursor",
@@ -1631,6 +1591,22 @@
     {
       "packageName": "com.covve.android",
       "rejectedAt": 1793442374180
+    },
+    {
+      "packageName": "com.kinoshitaproductions.booru_nav",
+      "rejectedAt": 1793531955454
+    },
+    {
+      "packageName": "com.seerobs.echo",
+      "rejectedAt": 1793531955454
+    },
+    {
+      "packageName": "com.nimbly.vellum.pool",
+      "rejectedAt": 1793531955454
+    },
+    {
+      "packageName": "kenneth.app.starlightlauncher",
+      "rejectedAt": 1793531955454
     }
   ]
 }
