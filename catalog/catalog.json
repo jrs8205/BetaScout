@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1793531955458,
+  "generatedAt": 1793622592762,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2751,7 +2751,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 807807304,
+      "productionVersionCode": 807807904,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3877,6 +3877,15 @@
       "appName": "Themes",
       "hasBeta": true,
       "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bcbsm.mmaprod",
+      "appName": "BCBSM",
+      "hasBeta": true,
+      "productionVersionCode": 2669,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5520,6 +5529,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.collinson.prioritypass.aire",
+      "appName": "Priority Pass+",
+      "hasBeta": true,
+      "productionVersionCode": 7505,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.color.loop.puzzle",
       "appName": "Color Loop Puzzle",
       "hasBeta": true,
@@ -6762,6 +6780,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.dteenergy.insight",
+      "appName": "DTE Insight",
+      "hasBeta": true,
+      "productionVersionCode": 1800008053,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.dubox.drive",
       "appName": "TeraBox: 1TB Cloud & AI Space",
       "hasBeta": true,
@@ -6955,6 +6982,15 @@
       "appName": "edjing Mix - Music DJ app",
       "hasBeta": true,
       "productionVersionCode": 63073400,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.elan.icsmobile.elanapp",
+      "appName": "Elan Credit Card",
+      "hasBeta": true,
+      "productionVersionCode": 2010900119,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7431,7 +7467,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 476015655,
+      "productionVersionCode": 476015544,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9509,7 +9545,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561307650,
+      "productionVersionCode": 1561303456,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -14906,6 +14942,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.nakamalist.app",
+      "appName": "NakamaList",
+      "hasBeta": true,
+      "productionVersionCode": 370,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.nand.addtext",
       "appName": "Add Text: Text on Photo Editor",
       "hasBeta": true,
@@ -16706,6 +16751,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.pillars.pillars",
+      "appName": "Pillars: Prayer Times & Qibla",
+      "hasBeta": true,
+      "productionVersionCode": 166,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.pinestreetcodeworks.TinyBubbles",
       "appName": "Tiny Bubbles",
       "hasBeta": true,
@@ -18092,6 +18146,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ria.moneytransfer",
+      "appName": "Ria Money Transfer",
+      "hasBeta": true,
+      "productionVersionCode": 410002124,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ribeirop.drumknee",
       "appName": "DrumKnee 3D Drums - Drum Set",
       "hasBeta": true,
@@ -18258,6 +18321,15 @@
       "appName": "Rokomari: Trusted Online Store",
       "hasBeta": true,
       "productionVersionCode": 366,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.rome2rio.www.rome2rio",
+      "appName": "Rome2Rio: Travel Route Planner",
+      "hasBeta": true,
+      "productionVersionCode": 2077,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -21865,7 +21937,7 @@
       "packageName": "com.tumblr",
       "appName": "Tumblr: Social Media & Art",
       "hasBeta": true,
-      "productionVersionCode": 1460901100,
+      "productionVersionCode": 1470000108,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -21946,7 +22018,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312381001,
+      "productionVersionCode": 312390001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -23702,6 +23774,15 @@
       "appName": "XING – the right job for you",
       "hasBeta": true,
       "productionVersionCode": 1726310000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.xingin.xhs",
+      "appName": "rednote",
+      "hasBeta": true,
+      "productionVersionCode": 9530803,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -26788,7 +26869,7 @@
       "packageName": "io.homeassistant.companion.android",
       "appName": "Home Assistant",
       "hasBeta": true,
-      "productionVersionCode": 22884,
+      "productionVersionCode": 24906,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

@@ -133,16 +133,12 @@
       "rejectedAt": 1791200039224
     },
     {
-      "packageName": "com.miui.videoplayer",
-      "rejectedAt": 1791021295317
-    },
-    {
       "packageName": "com.mixplorer.silver",
       "rejectedAt": 1792832131524
     },
     {
       "packageName": "com.binance.dev",
-      "rejectedAt": 1791021295317
+      "rejectedAt": 1793622592758
     },
     {
       "packageName": "com.bybit.app",
@@ -811,14 +807,6 @@
     {
       "packageName": "air.au.com.ontherun",
       "rejectedAt": 1793357658765
-    },
-    {
-      "packageName": "com.glauc.lumecursor",
-      "rejectedAt": 1791021295317
-    },
-    {
-      "packageName": "com.saveitlater.app",
-      "rejectedAt": 1791021295317
     },
     {
       "packageName": "com.tvsm.connect",
@@ -1607,6 +1595,18 @@
     {
       "packageName": "kenneth.app.starlightlauncher",
       "rejectedAt": 1793531955454
+    },
+    {
+      "packageName": "com.tmobile.tuesdays",
+      "rejectedAt": 1793622592758
+    },
+    {
+      "packageName": "net.aiislam.app",
+      "rejectedAt": 1793622592758
+    },
+    {
+      "packageName": "com.WonderHive.HyperHome",
+      "rejectedAt": 1793622592758
     }
   ]
 }
