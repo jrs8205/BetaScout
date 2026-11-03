@@ -86,7 +86,7 @@
     },
     {
       "packageName": "com.google.android.apps.nbu.paisa.user",
-      "rejectedAt": 1791110250780
+      "rejectedAt": 1793707182738
     },
     {
       "packageName": "com.sonyliv",
@@ -94,15 +94,15 @@
     },
     {
       "packageName": "com.korbitec.property24",
-      "rejectedAt": 1791110250780
+      "rejectedAt": 1793707182738
     },
     {
       "packageName": "za.co.pnet.andr",
-      "rejectedAt": 1791110250780
+      "rejectedAt": 1793707182738
     },
     {
       "packageName": "app.lawnchair.play",
-      "rejectedAt": 1791110250780
+      "rejectedAt": 1793707182738
     },
     {
       "packageName": "com.samsung.android.goodlock",
@@ -122,7 +122,7 @@
     },
     {
       "packageName": "com.google.ai.edge.gallery",
-      "rejectedAt": 1791110250780
+      "rejectedAt": 1793707182738
     },
     {
       "packageName": "br.com.vivo.vivoeasy",
@@ -154,7 +154,7 @@
     },
     {
       "packageName": "com.whereismytrain.android",
-      "rejectedAt": 1791110250780
+      "rejectedAt": 1793707182738
     },
     {
       "packageName": "org.cris.aikyam",
@@ -226,7 +226,7 @@
     },
     {
       "packageName": "com.google.android.apps.books",
-      "rejectedAt": 1791110250780
+      "rejectedAt": 1793707182738
     },
     {
       "packageName": "com.imgur.mobile",
@@ -545,10 +545,6 @@
       "rejectedAt": 1792141485783
     },
     {
-      "packageName": "com.discoveryplus.mobile.android",
-      "rejectedAt": 1791110250780
-    },
-    {
       "packageName": "dev.zwander.cellreader",
       "rejectedAt": 1791892354198
     },
@@ -671,10 +667,6 @@
     {
       "packageName": "com.ebay.motorsapp",
       "rejectedAt": 1791458720462
-    },
-    {
-      "packageName": "com.bestapp.entertainment.ringsfree",
-      "rejectedAt": 1791110250780
     },
     {
       "packageName": "com.appsomniacs.mmc",
@@ -810,31 +802,7 @@
     },
     {
       "packageName": "com.tvsm.connect",
-      "rejectedAt": 1791110250780
-    },
-    {
-      "packageName": "bohrium.browser",
-      "rejectedAt": 1791110250780
-    },
-    {
-      "packageName": "com.alohamobile.browser",
-      "rejectedAt": 1791110250780
-    },
-    {
-      "packageName": "com.seven.mx.launcher",
-      "rejectedAt": 1791110250780
-    },
-    {
-      "packageName": "com.smsrobot.call.blocker.caller.id.callmaster",
-      "rejectedAt": 1791110250780
-    },
-    {
-      "packageName": "com.vmcsoft.aerodns",
-      "rejectedAt": 1791110250780
-    },
-    {
-      "packageName": "ro.jubu.ainews",
-      "rejectedAt": 1791110250780
+      "rejectedAt": 1793707182738
     },
     {
       "packageName": "com.browser.tssomas",
@@ -1607,6 +1575,50 @@
     {
       "packageName": "com.WonderHive.HyperHome",
       "rejectedAt": 1793622592758
+    },
+    {
+      "packageName": "uz.unnarsx.cherrygram",
+      "rejectedAt": 1793707182738
+    },
+    {
+      "packageName": "com.symetium.holepunchcameraeffects",
+      "rejectedAt": 1793707182738
+    },
+    {
+      "packageName": "com.bhanu.notchapplauncher",
+      "rejectedAt": 1793707182738
+    },
+    {
+      "packageName": "com.light.shortcutswidget",
+      "rejectedAt": 1793707182738
+    },
+    {
+      "packageName": "com.deskangel.daremote",
+      "rejectedAt": 1793707182738
+    },
+    {
+      "packageName": "com.dreame.smartlife",
+      "rejectedAt": 1793707182738
+    },
+    {
+      "packageName": "com.rrd.ideaShell",
+      "rejectedAt": 1793707182738
+    },
+    {
+      "packageName": "com.sameerasw.airsync",
+      "rejectedAt": 1793707182738
+    },
+    {
+      "packageName": "com.overdrive.mobile.android.libby",
+      "rejectedAt": 1793707182738
+    },
+    {
+      "packageName": "com.google.android.apps.labs.lotus",
+      "rejectedAt": 1793707182738
+    },
+    {
+      "packageName": "com.iamalive.alive",
+      "rejectedAt": 1793707182738
     }
   ]
 }

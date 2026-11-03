@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1793622592762,
+  "generatedAt": 1793707182742,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2263,9 +2263,9 @@
     },
     {
       "packageName": "com.adobe.reader",
-      "appName": "Adobe Acrobat Reader: Edit PDF",
+      "appName": "Acrobat Reader: PDF Converter",
       "hasBeta": true,
-      "productionVersionCode": 1932251147,
+      "productionVersionCode": 1932251189,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2320,6 +2320,15 @@
       "appName": "fo2.exe",
       "hasBeta": true,
       "productionVersionCode": 185,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.affinityehealth.spectrum",
+      "appName": "SPECTRUM Compliance",
+      "hasBeta": true,
+      "productionVersionCode": 65,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4444,6 +4453,15 @@
       "appName": "Money Lover - Money Manager",
       "hasBeta": true,
       "productionVersionCode": 7141,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bookwise",
+      "appName": "Readwise Books",
+      "hasBeta": true,
+      "productionVersionCode": 625,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6978,6 +6996,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.editoy.memo.onesecond",
+      "appName": "1Sec Note :Floating Cloud Note",
+      "hasBeta": true,
+      "productionVersionCode": 252,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.edjing.edjingdjturntable",
       "appName": "edjing Mix - Music DJ app",
       "hasBeta": true,
@@ -7467,7 +7494,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 476015544,
+      "productionVersionCode": 476015538,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8395,6 +8422,15 @@
       "appName": "Omi AI - Smart Meeting Notes",
       "hasBeta": true,
       "productionVersionCode": 1072,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.frigateviewer",
+      "appName": "Viewer for Frigate",
+      "hasBeta": true,
+      "productionVersionCode": 122,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9545,7 +9581,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561303456,
+      "productionVersionCode": 1561307650,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9555,6 +9591,15 @@
       "appName": "Chrome Remote Desktop",
       "hasBeta": true,
       "productionVersionCode": 1000000016,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.googol.android.apps.oneplayer",
+      "appName": "Video Player HD — One Player",
+      "hasBeta": true,
+      "productionVersionCode": 48,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -11057,7 +11102,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 385914557,
+      "productionVersionCode": 386014758,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12093,6 +12138,15 @@
       "appName": "Smart Siddur",
       "hasBeta": true,
       "productionVersionCode": 286,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.kennethwahl.vibescout",
+      "appName": "VibeScout - Discover New Music",
+      "hasBeta": true,
+      "productionVersionCode": 64,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -13322,6 +13376,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.matedroid",
+      "appName": "MateDroid",
+      "hasBeta": true,
+      "productionVersionCode": 179145094,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.mavenkalabs.adskipper",
       "appName": "Ad Skipper",
       "hasBeta": true,
@@ -14460,6 +14523,15 @@
       "appName": "Minecraft: Dream it, Build it!",
       "hasBeta": true,
       "productionVersionCode": 972604005,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.molina.mobile.myhealthinhand",
+      "appName": "My Molina",
+      "hasBeta": true,
+      "productionVersionCode": 3371,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17673,6 +17745,15 @@
       "appName": "Qwant – Search engine",
       "hasBeta": true,
       "productionVersionCode": 50107010,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.rachio.iro",
+      "appName": "Rachio",
+      "hasBeta": true,
+      "productionVersionCode": 20173,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -21353,7 +21434,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12330,
+      "productionVersionCode": 12332,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -21713,6 +21794,15 @@
       "appName": "Moovit: Your Transit Tracker",
       "hasBeta": true,
       "productionVersionCode": 1799,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.treebeard.app",
+      "appName": "Treebeard",
+      "hasBeta": true,
+      "productionVersionCode": 132,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -22469,6 +22559,15 @@
       "appName": "Informed Delivery® Mobile",
       "hasBeta": true,
       "productionVersionCode": 10200054,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.utec.utec",
+      "appName": "Xthings Home(formerly U home)",
+      "hasBeta": true,
+      "productionVersionCode": 407,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -23689,6 +23788,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.x0.strai.secondfrep",
+      "appName": "FRep2",
+      "hasBeta": true,
+      "productionVersionCode": 112,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.x8bit.bitwarden",
       "appName": "Bitwarden Password Manager",
       "hasBeta": true,
@@ -24566,6 +24674,15 @@
       "appName": "NetMonster",
       "hasBeta": true,
       "productionVersionCode": 268,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "cz.mts.phone",
+      "appName": "MTs Dialer - Phone You Love",
+      "hasBeta": true,
+      "productionVersionCode": 1024,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -26618,6 +26735,15 @@
       "appName": "TorrDroid - Torrent Downloader",
       "hasBeta": true,
       "productionVersionCode": 10266,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "invoice.invoicemaker.estimatemaker.billingapp",
+      "appName": "Invoice Maker - InvoiceBase",
+      "hasBeta": true,
+      "productionVersionCode": 10244,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -29799,6 +29925,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.venkado.relagent",
+      "appName": "Relagent",
+      "hasBeta": true,
+      "productionVersionCode": 320,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.vernazza.androidfuel",
       "appName": "Prezzi Benzina! Metano GPL HVO",
       "hasBeta": true,
@@ -29920,6 +30055,15 @@
       "appName": "PAIOS - Offline AI | Local AI",
       "hasBeta": true,
       "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "paid_apps_deals.devops.z2p.com.paidappsdeals_appsgonefree",
+      "appName": "AppMagpie - App Price Tracker",
+      "hasBeta": true,
+      "productionVersionCode": 100,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -31261,6 +31405,15 @@
       "appName": "Natal Chart: Birth Horoscope",
       "hasBeta": true,
       "productionVersionCode": 121,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "udk.android.reader",
+      "appName": "ezPDF Reader PDF Annotate Form",
+      "hasBeta": true,
+      "productionVersionCode": 340,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

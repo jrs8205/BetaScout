@@ -80,9 +80,9 @@
     },
     {
       "packageName": "com.laurencedawson.reddit_sync",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791110250781
+      "lastErrorAt": 1793707182739
     },
     {
       "packageName": "com.mex.gbmmobile.containerhomebroker",
@@ -1109,6 +1109,18 @@
       "attempts": 3,
       "lastError": "AppNotFound: null",
       "lastErrorAt": 1793622592759
+    },
+    {
+      "packageName": "app.dnsotg",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793707182739
+    },
+    {
+      "packageName": "com.cosmos.cloud",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793707182739
     }
   ]
 }
