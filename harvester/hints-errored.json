@@ -110,9 +110,9 @@
     },
     {
       "packageName": "com.mxtech.videoplayer.pro",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791200039225
+      "lastErrorAt": 1793794363491
     },
     {
       "packageName": "com.mobile.legends",
@@ -140,15 +140,15 @@
     },
     {
       "packageName": "com.ideashower.readitlater.pro",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791200039225
+      "lastErrorAt": 1793794363491
     },
     {
       "packageName": "com.microsoft.office.officelens",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791200039225
+      "lastErrorAt": 1793794363491
     },
     {
       "packageName": "app.simple.peri",
@@ -680,15 +680,15 @@
     },
     {
       "packageName": "com.spotify.lite",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791200039225
+      "lastErrorAt": 1793794363491
     },
     {
       "packageName": "com.trendmicro.qrscan",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791200039225
+      "lastErrorAt": 1793794363491
     },
     {
       "packageName": "org.nbos.system",
@@ -1112,15 +1112,45 @@
     },
     {
       "packageName": "app.dnsotg",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793707182739
+      "lastErrorAt": 1793794363491
     },
     {
       "packageName": "com.cosmos.cloud",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793794363491
+    },
+    {
+      "packageName": "com.donghoon.teswatch",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793707182739
+      "lastErrorAt": 1793794363491
+    },
+    {
+      "packageName": "com.pixel.widgets.pro",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793794363491
+    },
+    {
+      "packageName": "com.Jutai_Pimentel.Cyberpunk_Neon_BR",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793794363491
+    },
+    {
+      "packageName": "com.chaterminal.deskviewbrowser",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793794363491
+    },
+    {
+      "packageName": "com.dotch",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1793794363491
     }
   ]
 }

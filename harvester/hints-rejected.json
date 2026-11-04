@@ -17,14 +17,6 @@
       "rejectedAt": 1793531955454
     },
     {
-      "packageName": "com.sapiens.assistant.ai",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.amazon.storm.lightning.client.aosp",
-      "rejectedAt": 1791200039224
-    },
-    {
       "packageName": "com.google.audio.hearing.visualization.accessibility.scribe",
       "rejectedAt": 1793531955454
     },
@@ -41,20 +33,8 @@
       "rejectedAt": 1792832131524
     },
     {
-      "packageName": "com.olacabs.customer",
-      "rejectedAt": 1791200039224
-    },
-    {
       "packageName": "in.gov.uidai.pehchaan",
       "rejectedAt": 1793531955454
-    },
-    {
-      "packageName": "in.startv.hotstar",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "in.swiggy.android",
-      "rejectedAt": 1791200039224
     },
     {
       "packageName": "com.foursquare.robin",
@@ -89,10 +69,6 @@
       "rejectedAt": 1793707182738
     },
     {
-      "packageName": "com.sonyliv",
-      "rejectedAt": 1791200039224
-    },
-    {
       "packageName": "com.korbitec.property24",
       "rejectedAt": 1793707182738
     },
@@ -109,16 +85,8 @@
       "rejectedAt": 1791458720462
     },
     {
-      "packageName": "com.jpl.jiomart",
-      "rejectedAt": 1791200039224
-    },
-    {
       "packageName": "com.vivo.easyshare",
       "rejectedAt": 1791458720462
-    },
-    {
-      "packageName": "in.upstox.app",
-      "rejectedAt": 1791200039224
     },
     {
       "packageName": "com.google.ai.edge.gallery",
@@ -130,7 +98,7 @@
     },
     {
       "packageName": "com.miui.android.fashiongallery",
-      "rejectedAt": 1791200039224
+      "rejectedAt": 1793794363490
     },
     {
       "packageName": "com.mixplorer.silver",
@@ -157,10 +125,6 @@
       "rejectedAt": 1793707182738
     },
     {
-      "packageName": "org.cris.aikyam",
-      "rejectedAt": 1791200039224
-    },
-    {
       "packageName": "tech.butterfly.app",
       "rejectedAt": 1792488537842
     },
@@ -169,60 +133,24 @@
       "rejectedAt": 1792141485783
     },
     {
-      "packageName": "com.rovio.baba",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "cx.indianoil.in",
-      "rejectedAt": 1791200039224
-    },
-    {
       "packageName": "com.maxmpz.audioplayer.unlock",
       "rejectedAt": 1791285594118
-    },
-    {
-      "packageName": "com.americanexpress.android.acctsvcs.in",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.c2info.wellnessforever",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.intellihealth.truemeds",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "in.dmart",
-      "rejectedAt": 1791200039224
     },
     {
       "packageName": "org.digiyatra.org",
       "rejectedAt": 1792832131524
     },
     {
-      "packageName": "app.mycountrydelight.in.countrydelight",
-      "rejectedAt": 1791200039224
-    },
-    {
       "packageName": "cn.wps.moffice_eng",
-      "rejectedAt": 1791200039224
+      "rejectedAt": 1793794363490
     },
     {
       "packageName": "com.accuweather.android",
       "rejectedAt": 1791285594118
     },
     {
-      "packageName": "com.apollo.patientapp",
-      "rejectedAt": 1791200039224
-    },
-    {
       "packageName": "com.bsbportal.music",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.flipkart.shopsy",
-      "rejectedAt": 1791200039224
+      "rejectedAt": 1793794363490
     },
     {
       "packageName": "com.google.android.apps.books",
@@ -233,48 +161,16 @@
       "rejectedAt": 1791371290087
     },
     {
-      "packageName": "com.jio.jse",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.lic.liccustomer",
-      "rejectedAt": 1791200039224
-    },
-    {
       "packageName": "com.meetup",
       "rejectedAt": 1792832131524
     },
     {
       "packageName": "com.olx.southasia",
-      "rejectedAt": 1791200039224
+      "rejectedAt": 1793794363490
     },
     {
       "packageName": "com.oplus.games",
       "rejectedAt": 1792661254132
-    },
-    {
-      "packageName": "com.ovunque.parkwheels",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "gomechanic.retail",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "in.gokiwi.kiwitpap",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "in.jfs.jiofinance",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "jio.cloud.drive",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "money.super.payments",
-      "rejectedAt": 1791200039224
     },
     {
       "packageName": "org.torproject.vpn",
@@ -291,10 +187,6 @@
     {
       "packageName": "com.fampay.in",
       "rejectedAt": 1792747453909
-    },
-    {
-      "packageName": "in.gov.umang.negd.g2c",
-      "rejectedAt": 1791200039224
     },
     {
       "packageName": "com.coloros.gallery3d",
@@ -351,10 +243,6 @@
     {
       "packageName": "org.nyulmc.clinical.mychart",
       "rejectedAt": 1791285594118
-    },
-    {
-      "packageName": "com.jio.jioplay.tv",
-      "rejectedAt": 1791200039224
     },
     {
       "packageName": "app.whisperian.client",
@@ -565,14 +453,6 @@
       "rejectedAt": 1791970455257
     },
     {
-      "packageName": "trai.gov.in.dnd",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.grinch.rivo4",
-      "rejectedAt": 1791200039224
-    },
-    {
       "packageName": "com.absa.iotfapp",
       "rejectedAt": 1791715946672
     },
@@ -721,10 +601,6 @@
       "rejectedAt": 1791458720462
     },
     {
-      "packageName": "me.magnum.melonds",
-      "rejectedAt": 1791200039224
-    },
-    {
       "packageName": "com.cuvora.carinfo",
       "rejectedAt": 1791544957138
     },
@@ -803,94 +679,6 @@
     {
       "packageName": "com.tvsm.connect",
       "rejectedAt": 1793707182738
-    },
-    {
-      "packageName": "com.browser.tssomas",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.gonext.automovetosdcard",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.ihgames.voiddrifter",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.tafayor.hibernator",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "org.devmiyax.yabasanshioro2.pro",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "org.godotengine.editor.v4",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "org.godotengine.godot_gradle_build_environment",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "org.scummvm.scummvm",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "ph.mikesoft.ps5launcher",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.ubercab.uberlite",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.cambyte.okenscan",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.cgt.bharatgas",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.creditcard.onecard",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.freecharge.android",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.icici.digitalrupee",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.joyalukkas.mcstaging.twa",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.mobicule.mgl",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.nexusmalls.elantenexusone",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.screw3d.match.nuts.bolts.pin.jam.away.puzzle",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.shtpl.sastasundar",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.snapwork.IDBI",
-      "rejectedAt": 1791200039224
-    },
-    {
-      "packageName": "com.vijaysales.vscare",
-      "rejectedAt": 1791200039224
     },
     {
       "packageName": "tv.plex.photos",
@@ -1619,6 +1407,26 @@
     {
       "packageName": "com.iamalive.alive",
       "rejectedAt": 1793707182738
+    },
+    {
+      "packageName": "com.bhanu.devicesystemmonitor",
+      "rejectedAt": 1793794363490
+    },
+    {
+      "packageName": "com.bonoloware.wifiknockknock",
+      "rejectedAt": 1793794363490
+    },
+    {
+      "packageName": "speed.autoclicker.automatictap.clicker",
+      "rejectedAt": 1793794363490
+    },
+    {
+      "packageName": "com.miui.videoplayer",
+      "rejectedAt": 1793794363490
+    },
+    {
+      "packageName": "com.t3.chat",
+      "rejectedAt": 1793794363490
     }
   ]
 }
