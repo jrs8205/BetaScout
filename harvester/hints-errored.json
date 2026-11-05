@@ -152,9 +152,9 @@
     },
     {
       "packageName": "app.simple.peri",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791285594120
+      "lastErrorAt": 1793881571589
     },
     {
       "packageName": "com.jrummyapps.rootchecker",
@@ -692,9 +692,9 @@
     },
     {
       "packageName": "org.nbos.system",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791285594120
+      "lastErrorAt": 1793881571589
     },
     {
       "packageName": "com.droid.netflixIMDB",
@@ -818,21 +818,21 @@
     },
     {
       "packageName": "com.ducky.android.app.tool.adsdetectorandcloser",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791285594120
+      "lastErrorAt": 1793881571589
     },
     {
       "packageName": "me.plusnow.shield.stable",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791285594120
+      "lastErrorAt": 1793881571589
     },
     {
       "packageName": "com.appntox.browserpro",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791285594120
+      "lastErrorAt": 1793881571589
     },
     {
       "packageName": "com.samsung.smartviewad",
@@ -1112,45 +1112,45 @@
     },
     {
       "packageName": "app.dnsotg",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793794363491
+      "lastErrorAt": 1793881571589
     },
     {
       "packageName": "com.cosmos.cloud",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793794363491
+      "lastErrorAt": 1793881571589
     },
     {
       "packageName": "com.donghoon.teswatch",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793794363491
+      "lastErrorAt": 1793881571589
     },
     {
       "packageName": "com.pixel.widgets.pro",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793794363491
+      "lastErrorAt": 1793881571589
     },
     {
       "packageName": "com.Jutai_Pimentel.Cyberpunk_Neon_BR",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793794363491
+      "lastErrorAt": 1793881571589
     },
     {
       "packageName": "com.chaterminal.deskviewbrowser",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793794363491
+      "lastErrorAt": 1793881571589
     },
     {
       "packageName": "com.dotch",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793794363491
+      "lastErrorAt": 1793881571589
     }
   ]
 }

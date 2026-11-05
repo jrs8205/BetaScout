@@ -134,7 +134,7 @@
     },
     {
       "packageName": "com.maxmpz.audioplayer.unlock",
-      "rejectedAt": 1791285594118
+      "rejectedAt": 1793881571587
     },
     {
       "packageName": "org.digiyatra.org",
@@ -143,10 +143,6 @@
     {
       "packageName": "cn.wps.moffice_eng",
       "rejectedAt": 1793794363490
-    },
-    {
-      "packageName": "com.accuweather.android",
-      "rejectedAt": 1791285594118
     },
     {
       "packageName": "com.bsbportal.music",
@@ -214,19 +210,11 @@
     },
     {
       "packageName": "app.zophop",
-      "rejectedAt": 1791285594118
+      "rejectedAt": 1793881571587
     },
     {
       "packageName": "com.azefsw.audioconnect",
       "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "com.coveragemap.coveragemap",
-      "rejectedAt": 1791285594118
-    },
-    {
-      "packageName": "com.google.android.apps.chromecast.app",
-      "rejectedAt": 1791285594118
     },
     {
       "packageName": "com.tmobile.vvm.application",
@@ -235,14 +223,6 @@
     {
       "packageName": "com.ups.mobile.android",
       "rejectedAt": 1793183896661
-    },
-    {
-      "packageName": "io.airzone.dknNA",
-      "rejectedAt": 1791285594118
-    },
-    {
-      "packageName": "org.nyulmc.clinical.mychart",
-      "rejectedAt": 1791285594118
     },
     {
       "packageName": "app.whisperian.client",
@@ -489,14 +469,6 @@
       "rejectedAt": 1792832131524
     },
     {
-      "packageName": "com.tplink.kasa_android",
-      "rejectedAt": 1791285594118
-    },
-    {
-      "packageName": "tv.trakt.trakt",
-      "rejectedAt": 1791285594118
-    },
-    {
       "packageName": "eu.weblibre.gecko",
       "rejectedAt": 1792661254132
     },
@@ -679,26 +651,6 @@
     {
       "packageName": "com.tvsm.connect",
       "rejectedAt": 1793707182738
-    },
-    {
-      "packageName": "tv.plex.photos",
-      "rejectedAt": 1791285594118
-    },
-    {
-      "packageName": "com.igload",
-      "rejectedAt": 1791285594118
-    },
-    {
-      "packageName": "com.sebschaef.papaya",
-      "rejectedAt": 1791285594118
-    },
-    {
-      "packageName": "in.dealempire.deepsearch",
-      "rejectedAt": 1791285594118
-    },
-    {
-      "packageName": "com.beyondzero.voicefolio",
-      "rejectedAt": 1791285594118
     },
     {
       "packageName": "com.zonarmr.dnsify",
@@ -1427,6 +1379,26 @@
     {
       "packageName": "com.t3.chat",
       "rejectedAt": 1793794363490
+    },
+    {
+      "packageName": "com.appylabs.promptoff",
+      "rejectedAt": 1793881571587
+    },
+    {
+      "packageName": "com.promptify.ai.promptgenerator",
+      "rejectedAt": 1793881571587
+    },
+    {
+      "packageName": "com.moh.nusukapp",
+      "rejectedAt": 1793881571587
+    },
+    {
+      "packageName": "com.chahal.gtaww",
+      "rejectedAt": 1793881571587
+    },
+    {
+      "packageName": "com.chahal.mostw",
+      "rejectedAt": 1793881571587
     }
   ]
 }

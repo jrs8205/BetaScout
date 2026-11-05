@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1793794363494,
+  "generatedAt": 1793881571593,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2397,6 +2397,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ailmlabs.jsonpromptgenerator",
+      "appName": "JSON Prompt Generator",
+      "hasBeta": true,
+      "productionVersionCode": 4,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.aim.racing",
       "appName": "Extreme Car Driving Simulator",
       "hasBeta": true,
@@ -2760,7 +2769,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 807807904,
+      "productionVersionCode": 810303804,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6423,7 +6432,7 @@
       "packageName": "com.discord",
       "appName": "Discord - Talk, Play, Hang Out",
       "hasBeta": true,
-      "productionVersionCode": 351011,
+      "productionVersionCode": 352017,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6765,7 +6774,7 @@
       "packageName": "com.dropbox.android",
       "appName": "Dropbox: Secure Cloud Storage",
       "hasBeta": true,
-      "productionVersionCode": 49620200,
+      "productionVersionCode": 49720200,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6864,7 +6873,7 @@
       "packageName": "com.duolingo",
       "appName": "Duolingo: Learn Languages",
       "hasBeta": true,
-      "productionVersionCode": 2488,
+      "productionVersionCode": 2494,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8283,6 +8292,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.forem.android",
+      "appName": "DEV Community",
+      "hasBeta": true,
+      "productionVersionCode": 96,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.forumcopilot.abda",
       "appName": "A Better Discourse App (ABDA)",
       "hasBeta": true,
@@ -9291,6 +9309,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.gomtv.gomaudio",
+      "appName": "GOM Audio - Multi Music Player",
+      "hasBeta": true,
+      "productionVersionCode": 127,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.goodmapsapp",
       "appName": "GoodMaps: Indoor Navigation",
       "hasBeta": true,
@@ -9384,7 +9411,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068844608,
+      "productionVersionCode": 1068856900,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11111,7 +11138,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 386014712,
+      "productionVersionCode": 386014758,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11760,6 +11787,15 @@
       "appName": "Jetpack – Website Builder",
       "hasBeta": true,
       "productionVersionCode": 270027599,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.jetpaclabs.jetpac",
+      "appName": "Jetpac: eSIM Travel App",
+      "hasBeta": true,
+      "productionVersionCode": 121,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -14036,7 +14072,7 @@
       "packageName": "com.microsoft.teams",
       "appName": "Microsoft Teams",
       "hasBeta": true,
-      "productionVersionCode": 2026193045,
+      "productionVersionCode": 2026202325,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -14271,6 +14307,15 @@
       "appName": "Shiori for GI: Unofficial DB",
       "hasBeta": true,
       "productionVersionCode": 195,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.mirocam.app",
+      "appName": "MiroCam – Pro Camera & Film",
+      "hasBeta": true,
+      "productionVersionCode": 46,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -15509,6 +15554,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.nomad88.nomadmusic",
+      "appName": "Music Player, MP3: Nomad Music",
+      "hasBeta": true,
+      "productionVersionCode": 384,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.nononsenseapps.feeder.play",
       "appName": "Feeder",
       "hasBeta": true,
@@ -15900,6 +15954,15 @@
       "appName": "Jiji Kenya: Buy & Sell Online",
       "hasBeta": true,
       "productionVersionCode": 1400415,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.olzhas.carparking.multyplayer",
+      "appName": "Car Parking Multiplayer",
+      "hasBeta": true,
+      "productionVersionCode": 200485,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -17439,6 +17502,15 @@
       "appName": "Glyph Lab -Widgets, Glyph Toys",
       "hasBeta": true,
       "productionVersionCode": 41,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.promptfyai",
+      "appName": "Promptfy: AI Prompts Community",
+      "hasBeta": true,
+      "productionVersionCode": 16,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -21443,7 +21515,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12332,
+      "productionVersionCode": 12334,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22117,7 +22189,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312390001,
+      "productionVersionCode": 312401001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -23422,7 +23494,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp",
       "hasBeta": true,
-      "productionVersionCode": 264207400,
+      "productionVersionCode": 264307427,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -24269,6 +24341,15 @@
       "appName": "SystemUI Tuner",
       "hasBeta": true,
       "productionVersionCode": 362,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.zain.faizannamaz",
+      "appName": "Faizan e Namaz (فیضان نماز)",
+      "hasBeta": true,
+      "productionVersionCode": 8,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
