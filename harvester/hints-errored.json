@@ -836,15 +836,15 @@
     },
     {
       "packageName": "com.samsung.smartviewad",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791371290089
+      "lastErrorAt": 1793967019358
     },
     {
       "packageName": "com.nobroker.app",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791371290089
+      "lastErrorAt": 1793967019358
     },
     {
       "packageName": "co.pesastack.monee",
@@ -1124,33 +1124,33 @@
     },
     {
       "packageName": "com.donghoon.teswatch",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793881571589
+      "lastErrorAt": 1793967019358
     },
     {
       "packageName": "com.pixel.widgets.pro",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793881571589
+      "lastErrorAt": 1793967019358
     },
     {
       "packageName": "com.Jutai_Pimentel.Cyberpunk_Neon_BR",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793881571589
+      "lastErrorAt": 1793967019358
     },
     {
       "packageName": "com.chaterminal.deskviewbrowser",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793881571589
+      "lastErrorAt": 1793967019358
     },
     {
       "packageName": "com.dotch",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793881571589
+      "lastErrorAt": 1793967019358
     }
   ]
 }
