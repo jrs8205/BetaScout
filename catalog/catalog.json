@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1793967019362,
+  "generatedAt": 1794049621854,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -1456,6 +1456,15 @@
       "appName": "Poet Assistant (English)",
       "hasBeta": true,
       "productionVersionCode": 113101,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "calculator.lock.hidephoto.video.vault",
+      "appName": "Calculator Vault - Hide Photos",
+      "hasBeta": true,
+      "productionVersionCode": 49,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4926,6 +4935,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.carxtech.sr",
+      "appName": "CarX Street",
+      "hasBeta": true,
+      "productionVersionCode": 1005,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.Caseys.finder",
       "appName": "Casey's",
       "hasBeta": true,
@@ -7512,7 +7530,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 476217079,
+      "productionVersionCode": 476217123,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8377,6 +8395,15 @@
       "appName": "Magic 8 Ball Glyph Toy",
       "hasBeta": true,
       "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.fredrikburmester.streamyfin",
+      "appName": "Streamyfin",
+      "hasBeta": true,
+      "productionVersionCode": 156,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9510,7 +9537,7 @@
       "packageName": "com.google.android.dialer",
       "appName": "Phone by Google",
       "hasBeta": true,
-      "productionVersionCode": 20129568,
+      "productionVersionCode": 20204368,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9617,7 +9644,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561301422,
+      "productionVersionCode": 1561307686,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11138,7 +11165,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 386014657,
+      "productionVersionCode": 386014712,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15215,7 +15242,7 @@
       "packageName": "com.netflix.mediaclient",
       "appName": "Netflix",
       "hasBeta": true,
-      "productionVersionCode": 74736,
+      "productionVersionCode": 74752,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -21515,7 +21542,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12336,
+      "productionVersionCode": 12338,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22189,7 +22216,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312401001,
+      "productionVersionCode": 312410001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
