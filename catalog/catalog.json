@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1794049621854,
+  "generatedAt": 1794136805797,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -1227,6 +1227,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "block.color.game.jam.blocks.sort.puzzle.games.slide.free",
+      "appName": "Block Color Mania, Puzzle Game",
+      "hasBeta": true,
+      "productionVersionCode": 26103008,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "bluepie.ad_silence",
       "appName": "Ad-silence - OpenSource",
       "hasBeta": true,
@@ -1699,6 +1708,15 @@
       "appName": "Threema. The Secure Messenger",
       "hasBeta": true,
       "productionVersionCode": 3001148,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ch.viaccoz.callconfirmation",
+      "appName": "Call Confirmation",
+      "hasBeta": true,
+      "productionVersionCode": 31,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -3864,6 +3882,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.banyac.midrive.app.na",
+      "appName": "70mai",
+      "hasBeta": true,
+      "productionVersionCode": 275,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.barnabas.absorb",
       "appName": "Absorb",
       "hasBeta": true,
@@ -4516,6 +4543,15 @@
       "appName": "12min: Book Summaries Daily",
       "hasBeta": true,
       "productionVersionCode": 4196338,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.braingames.findthedog",
+      "appName": "Find The Dogs - Hidden Objects",
+      "hasBeta": true,
+      "productionVersionCode": 23002,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6060,6 +6096,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.dapascript.mever",
+      "appName": "MEVER - Downloader & Saver",
+      "hasBeta": true,
+      "productionVersionCode": 20261312,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.dariydsoft.mygarage",
       "appName": "MyGarage | CarDocs & History",
       "hasBeta": true,
@@ -7530,7 +7575,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 476217123,
+      "productionVersionCode": 476217000,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7548,7 +7593,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 347215347,
+      "productionVersionCode": 347215294,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8724,6 +8769,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.gamepad.gamepadapp",
+      "appName": "Gamepad for Android TV",
+      "hasBeta": true,
+      "productionVersionCode": 34,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.gamestar.perfectpiano",
       "appName": "Perfect Piano",
       "hasBeta": true,
@@ -9644,7 +9698,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561307686,
+      "productionVersionCode": 1561310246,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10167,6 +10221,15 @@
       "appName": "Wordfeud",
       "hasBeta": true,
       "productionVersionCode": 4438,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.hczz.sfgame",
+      "appName": "Synthesis War：Tactic Gear",
+      "hasBeta": true,
+      "productionVersionCode": 17,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -11165,7 +11228,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 386014712,
+      "productionVersionCode": 386014758,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11724,6 +11787,15 @@
       "appName": "MaybeLater: Private Bookmarks",
       "hasBeta": true,
       "productionVersionCode": 5,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.jb.bluetoothbuttons",
+      "appName": "VB + Bluetooth Keyboard",
+      "hasBeta": true,
+      "productionVersionCode": 183,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -16260,6 +16332,15 @@
       "appName": "Orgzly Revived",
       "hasBeta": true,
       "productionVersionCode": 292,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ornobaadi.popcalc",
+      "appName": "PopCalc-All In one Calculator",
+      "hasBeta": true,
+      "productionVersionCode": 17,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -26488,6 +26569,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "hidden.objects.find.it.out.seek.puzzle.games.free",
+      "appName": "Find It® - Hidden Object Games",
+      "hasBeta": true,
+      "productionVersionCode": 26100961,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "hidratenow.com.hidrate.hidrateandroid",
       "appName": "HidrateSpark Water Tracker",
       "hasBeta": true,
@@ -29982,7 +30072,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 72801,
+      "productionVersionCode": 72911,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

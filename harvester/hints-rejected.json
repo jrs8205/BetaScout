@@ -81,14 +81,6 @@
       "rejectedAt": 1793707182738
     },
     {
-      "packageName": "com.samsung.android.goodlock",
-      "rejectedAt": 1791458720462
-    },
-    {
-      "packageName": "com.vivo.easyshare",
-      "rejectedAt": 1791458720462
-    },
-    {
       "packageName": "com.google.ai.edge.gallery",
       "rejectedAt": 1793707182738
     },
@@ -214,11 +206,7 @@
     },
     {
       "packageName": "com.booking",
-      "rejectedAt": 1791458720462
-    },
-    {
-      "packageName": "org.fossify.camera",
-      "rejectedAt": 1791458720462
+      "rejectedAt": 1794136805793
     },
     {
       "packageName": "org.fossify.clock",
@@ -245,20 +233,8 @@
       "rejectedAt": 1791544957138
     },
     {
-      "packageName": "com.tracket.app",
-      "rejectedAt": 1791458720462
-    },
-    {
-      "packageName": "com.tempmail",
-      "rejectedAt": 1791458720462
-    },
-    {
-      "packageName": "org.mozilla.klar",
-      "rejectedAt": 1791458720462
-    },
-    {
       "packageName": "com.einnovation.temu",
-      "rejectedAt": 1791458720462
+      "rejectedAt": 1794136805793
     },
     {
       "packageName": "com.coloros.backuprestore",
@@ -397,10 +373,6 @@
       "rejectedAt": 1792832131524
     },
     {
-      "packageName": "com.tmobile.m1",
-      "rejectedAt": 1791458720462
-    },
-    {
       "packageName": "com.wendys.nutritiontool",
       "rejectedAt": 1792832131524
     },
@@ -493,20 +465,12 @@
       "rejectedAt": 1791715946672
     },
     {
-      "packageName": "com.ebay.motorsapp",
-      "rejectedAt": 1791458720462
-    },
-    {
       "packageName": "com.appsomniacs.mmc",
       "rejectedAt": 1793271371776
     },
     {
       "packageName": "com.playbridge.sender",
       "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.silentlexx.ffmpeggui",
-      "rejectedAt": 1791458720462
     },
     {
       "packageName": "com.cuvora.carinfo",
@@ -587,30 +551,6 @@
     {
       "packageName": "com.tvsm.connect",
       "rejectedAt": 1793707182738
-    },
-    {
-      "packageName": "com.asus.syncv2",
-      "rejectedAt": 1791458720462
-    },
-    {
-      "packageName": "com.cyberjoy.galaxydefense",
-      "rejectedAt": 1791458720462
-    },
-    {
-      "packageName": "com.kiwwi.android",
-      "rejectedAt": 1791458720462
-    },
-    {
-      "packageName": "com.softpauer.f1timingapp2014.basic",
-      "rejectedAt": 1791458720462
-    },
-    {
-      "packageName": "com.swappa.app.market",
-      "rejectedAt": 1791458720462
-    },
-    {
-      "packageName": "com.falconbrowser.android",
-      "rejectedAt": 1791458720462
     },
     {
       "packageName": "com.aim.racing.car",
@@ -1295,6 +1235,46 @@
     {
       "packageName": "sg.gov.psst",
       "rejectedAt": 1793967019357
+    },
+    {
+      "packageName": "co.pesastack.monee",
+      "rejectedAt": 1794136805793
+    },
+    {
+      "packageName": "com.duo.camisland",
+      "rejectedAt": 1794136805793
+    },
+    {
+      "packageName": "com.nova.toplegends.gp",
+      "rejectedAt": 1794136805793
+    },
+    {
+      "packageName": "com.anonlab.voidlauncher",
+      "rejectedAt": 1794136805793
+    },
+    {
+      "packageName": "com.mgmedia.androidApp",
+      "rejectedAt": 1794136805793
+    },
+    {
+      "packageName": "uk.latestdeals.blackfriday",
+      "rejectedAt": 1794136805793
+    },
+    {
+      "packageName": "com.bhanu.colorfromimage",
+      "rejectedAt": 1794136805793
+    },
+    {
+      "packageName": "com.nimbus.weather",
+      "rejectedAt": 1794136805793
+    },
+    {
+      "packageName": "eu.woshicado.circletoshare",
+      "rejectedAt": 1794136805793
+    },
+    {
+      "packageName": "com.cosstudios.siftly",
+      "rejectedAt": 1794136805793
     }
   ]
 }

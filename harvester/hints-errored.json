@@ -248,9 +248,9 @@
     },
     {
       "packageName": "com.advasoft.touchretouch",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791458720463
+      "lastErrorAt": 1794136805794
     },
     {
       "packageName": "com.x.android.lite",
@@ -847,46 +847,28 @@
       "lastErrorAt": 1793967019358
     },
     {
-      "packageName": "co.pesastack.monee",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791458720463
-    },
-    {
       "packageName": "com.clackey.keyboard",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791458720463
-    },
-    {
-      "packageName": "com.duo.camisland",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791458720463
-    },
-    {
-      "packageName": "com.ornobaadi.popcalc",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791458720463
+      "lastErrorAt": 1794136805794
     },
     {
       "packageName": "com.catchingnow.share",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791458720463
+      "lastErrorAt": 1794136805794
     },
     {
       "packageName": "com.opera.cryptobrowser",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791458720463
+      "lastErrorAt": 1794136805794
     },
     {
       "packageName": "app.dankium.browser",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791458720463
+      "lastErrorAt": 1794136805794
     },
     {
       "packageName": "com.simpler.contacts",
@@ -1154,15 +1136,51 @@
     },
     {
       "packageName": "com.google.android.go.documentsui",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794049621850
+      "lastErrorAt": 1794136805794
     },
     {
       "packageName": "dev.ruslanbabaiev.tome",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1794136805794
+    },
+    {
+      "packageName": "com.at.studio",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794049621850
+      "lastErrorAt": 1794136805794
+    },
+    {
+      "packageName": "com.dotwatt",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1794136805794
+    },
+    {
+      "packageName": "com.osunalabs.notchy",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1794136805794
+    },
+    {
+      "packageName": "com.overnotch.app",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1794136805794
+    },
+    {
+      "packageName": "life.andre.message487",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1794136805794
+    },
+    {
+      "packageName": "cc.skysparkle.sparkledns",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1794136805794
     }
   ]
 }
