@@ -166,11 +166,11 @@
     },
     {
       "packageName": "com.coloros.gallery3d",
-      "rejectedAt": 1791544957138
+      "rejectedAt": 1794228992930
     },
     {
       "packageName": "com.coloros.phonemanager",
-      "rejectedAt": 1791544957138
+      "rejectedAt": 1794228992930
     },
     {
       "packageName": "com.transsion.phoenix",
@@ -209,28 +209,8 @@
       "rejectedAt": 1794136805793
     },
     {
-      "packageName": "org.fossify.clock",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "org.fossify.home",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "org.fossify.keyboard",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "org.fossify.math",
-      "rejectedAt": 1791544957138
-    },
-    {
       "packageName": "org.fossify.notes",
       "rejectedAt": 1791970455257
-    },
-    {
-      "packageName": "org.fossify.paint",
-      "rejectedAt": 1791544957138
     },
     {
       "packageName": "com.einnovation.temu",
@@ -238,15 +218,11 @@
     },
     {
       "packageName": "com.coloros.backuprestore",
-      "rejectedAt": 1791544957138
+      "rejectedAt": 1794228992930
     },
     {
       "packageName": "org.fossify.documents",
       "rejectedAt": 1791970455257
-    },
-    {
-      "packageName": "com.etsy.android",
-      "rejectedAt": 1791544957138
     },
     {
       "packageName": "com.touchtype.swiftkey.beta",
@@ -254,99 +230,23 @@
     },
     {
       "packageName": "com.mcdonalds.au.gma",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "au.com.PetCircle",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "au.com.appspeople.grocer_customer_app",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "au.com.crust.mobile",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "au.com.dominos.olo.android.app",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "au.com.fetchtv",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "au.com.natPOS.Xpress.FredsOneStop",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "au.com.qantas.qantas",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "au.com.seek",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "au.com.studentedge",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "au.thecoffeeclub",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.americanexpress.android.acctsvcs.au",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.beattheq.android",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.commbank.netbank",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.egclub.android",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.grilld.grilld",
-      "rejectedAt": 1791544957138
+      "rejectedAt": 1794228992930
     },
     {
       "packageName": "com.gruden.redrooster",
-      "rejectedAt": 1791544957138
+      "rejectedAt": 1794228992930
     },
     {
       "packageName": "com.gyg.gomex",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.iaglimited.mobile.android.dicustomerapp.nrma",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.kfcaus.ordering",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.lifestylesapp",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.linkgroup.android_investorcentre",
-      "rejectedAt": 1791544957138
+      "rejectedAt": 1794228992930
     },
     {
       "packageName": "com.ted.android",
-      "rejectedAt": 1791544957138
+      "rejectedAt": 1794228992930
     },
     {
       "packageName": "com.tomra.digital.returnandearn",
-      "rejectedAt": 1791544957138
+      "rejectedAt": 1794228992930
     },
     {
       "packageName": "com.sofascore.results",
@@ -474,11 +374,11 @@
     },
     {
       "packageName": "com.cuvora.carinfo",
-      "rejectedAt": 1791544957138
+      "rejectedAt": 1794228992930
     },
     {
       "packageName": "br.com.serasaexperian.consumidor",
-      "rejectedAt": 1791628777591
+      "rejectedAt": 1794228992930
     },
     {
       "packageName": "com.br.smiles",
@@ -551,34 +451,6 @@
     {
       "packageName": "com.tvsm.connect",
       "rejectedAt": 1793707182738
-    },
-    {
-      "packageName": "com.aim.racing.car",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.bt.bms",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "fr.hoaviere.fala",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "pl.furgonetka.furgonapp",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.goon.mobile",
-      "rejectedAt": 1791544957138
-    },
-    {
-      "packageName": "com.ogesture",
-      "rejectedAt": 1791628777591
-    },
-    {
-      "packageName": "com.herond.android.browser",
-      "rejectedAt": 1791628777591
     },
     {
       "packageName": "com.innovist",
@@ -1275,6 +1147,14 @@
     {
       "packageName": "com.cosstudios.siftly",
       "rejectedAt": 1794136805793
+    },
+    {
+      "packageName": "com.prabincode.vanish",
+      "rejectedAt": 1794228992930
+    },
+    {
+      "packageName": "com.vmirchev.volumeinspector",
+      "rejectedAt": 1794228992930
     }
   ]
 }

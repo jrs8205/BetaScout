@@ -872,21 +872,21 @@
     },
     {
       "packageName": "com.simpler.contacts",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791628777593
+      "lastErrorAt": 1794228992931
     },
     {
       "packageName": "com.simplysmartframe.app",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791628777593
+      "lastErrorAt": 1794228992931
     },
     {
       "packageName": "com.webstop.tops",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791628777593
+      "lastErrorAt": 1794228992931
     },
     {
       "packageName": "com.ghostery.android.ghostery",
@@ -1136,51 +1136,57 @@
     },
     {
       "packageName": "com.google.android.go.documentsui",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794136805794
+      "lastErrorAt": 1794228992931
     },
     {
       "packageName": "dev.ruslanbabaiev.tome",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794136805794
+      "lastErrorAt": 1794228992931
     },
     {
       "packageName": "com.at.studio",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794136805794
+      "lastErrorAt": 1794228992931
     },
     {
       "packageName": "com.dotwatt",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794136805794
+      "lastErrorAt": 1794228992931
     },
     {
       "packageName": "com.osunalabs.notchy",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794136805794
+      "lastErrorAt": 1794228992931
     },
     {
       "packageName": "com.overnotch.app",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794136805794
+      "lastErrorAt": 1794228992931
     },
     {
       "packageName": "life.andre.message487",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794136805794
+      "lastErrorAt": 1794228992931
     },
     {
       "packageName": "cc.skysparkle.sparkledns",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1794228992931
+    },
+    {
+      "packageName": "com.solosignalstudio.ambience",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794136805794
+      "lastErrorAt": 1794228992931
     }
   ]
 }

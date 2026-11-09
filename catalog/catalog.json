@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1794136805797,
+  "generatedAt": 1794228992935,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2140,6 +2140,15 @@
       "appName": "Absorb Learn",
       "hasBeta": true,
       "productionVersionCode": 128704664,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ac.remote.universal.smart.control",
+      "appName": "AC Remote Control Universal",
+      "hasBeta": true,
+      "productionVersionCode": 7,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7575,7 +7584,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 476217000,
+      "productionVersionCode": 476217123,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7593,7 +7602,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 347215294,
+      "productionVersionCode": 347215330,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9492,7 +9501,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068856900,
+      "productionVersionCode": 1068868465,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9698,7 +9707,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561310246,
+      "productionVersionCode": 1561307686,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20075,7 +20084,7 @@
       "packageName": "com.spotify.music",
       "appName": "Spotify: Music and Podcasts",
       "hasBeta": true,
-      "productionVersionCode": 147600575,
+      "productionVersionCode": 148115707,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -26758,6 +26767,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "in.kay.phocus",
+      "appName": "Phocus",
+      "hasBeta": true,
+      "productionVersionCode": 67,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "in.krosbits.musicolet",
       "appName": "Musicolet Music Player",
       "hasBeta": true,
@@ -31693,6 +31711,15 @@
       "appName": "Zoom Workplace",
       "hasBeta": true,
       "productionVersionCode": 6701060,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "vadiole.unicode",
+      "appName": "Unicode – characters and emoji",
+      "hasBeta": true,
+      "productionVersionCode": 175,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
