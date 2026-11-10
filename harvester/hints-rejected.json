@@ -86,7 +86,7 @@
     },
     {
       "packageName": "br.com.vivo.vivoeasy",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "com.miui.android.fashiongallery",
@@ -249,10 +249,6 @@
       "rejectedAt": 1794228992930
     },
     {
-      "packageName": "com.sofascore.results",
-      "rejectedAt": 1791715946672
-    },
-    {
       "packageName": "com.glance.internet",
       "rejectedAt": 1792747453909
     },
@@ -282,35 +278,35 @@
     },
     {
       "packageName": "com.absa.iotfapp",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "com.afrihost.adslbandwidthmonitor",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "com.d6.schools",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "com.evernote",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "com.joinpanda.panda",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "com.ztesoft.zlife",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "za.co.discovery.consumer.bankmed",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "za.co.wigroup.burgerking",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "com.experian.android",
@@ -361,10 +357,6 @@
       "rejectedAt": 1791892354198
     },
     {
-      "packageName": "com.runawayplay.dragons",
-      "rejectedAt": 1791715946672
-    },
-    {
       "packageName": "com.appsomniacs.mmc",
       "rejectedAt": 1793271371776
     },
@@ -382,27 +374,27 @@
     },
     {
       "packageName": "com.br.smiles",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "com.cartaodetodoswalletapp",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "com.latam.pass",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "com.samsung.shop",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "net.natura.semprepresente",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "ws.hanzo.Vrrh",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "br.com.uol.mail.uolhost",
@@ -453,36 +445,8 @@
       "rejectedAt": 1793707182738
     },
     {
-      "packageName": "com.innovist",
-      "rejectedAt": 1791715946672
-    },
-    {
-      "packageName": "com.PyreGames.IdleDungeon",
-      "rejectedAt": 1791715946672
-    },
-    {
-      "packageName": "com.vivo.browser",
-      "rejectedAt": 1791715946672
-    },
-    {
       "packageName": "dev.alenajam.monsterdialer",
-      "rejectedAt": 1791715946672
-    },
-    {
-      "packageName": "com.airfind.browser",
-      "rejectedAt": 1791715946672
-    },
-    {
-      "packageName": "com.arsnovasystems.browser",
-      "rejectedAt": 1791715946672
-    },
-    {
-      "packageName": "com.jio.web",
-      "rejectedAt": 1791715946672
-    },
-    {
-      "packageName": "com.rls.bubble",
-      "rejectedAt": 1791715946672
+      "rejectedAt": 1794314594678
     },
     {
       "packageName": "com.infinix.xshare",
@@ -1155,6 +1119,142 @@
     {
       "packageName": "com.vmirchev.volumeinspector",
       "rejectedAt": 1794228992930
+    },
+    {
+      "packageName": "com.bhanu.datatrafficmonitor",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.pashapuma.hishoot3i",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.aitask.app",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.app.smytten",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.bharatekkhoj.askmyguru",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.bryancandi.android.updateassistant",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.clue.android",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.daamitt.walnut.app",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.dealshare",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.delhiveryConsigneeApp",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.disha.quickride",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.evamall.evacustomer",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.externally.clenchup",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.jar.app",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.jio.home",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.jio.jse",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.jpl.jiomart",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.licious",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.mobeedom.android.jdirectdial",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.nextbillion.groww",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.olacabs.customer",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.oneplus.opshelf",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.oplus.dialer",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.pdfeditor.reader.document.manager",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.snapwork.sbfc",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.thedermacoapp",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.urbanic",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.vivo.easyshare",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.xiaomi.midrop",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "com.zivame.consumer",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "in.dmart",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "in.gokiwi.kiwitpap",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "in.gov.umang.negd.g2c",
+      "rejectedAt": 1794314594678
+    },
+    {
+      "packageName": "in.swiggy.android",
+      "rejectedAt": 1794314594678
     }
   ]
 }

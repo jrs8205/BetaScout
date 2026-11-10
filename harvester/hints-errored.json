@@ -176,9 +176,9 @@
     },
     {
       "packageName": "com.microsoft.lists.public",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791371290089
+      "lastErrorAt": 1794314594680
     },
     {
       "packageName": "com.smartkit.ios26widgets",
@@ -194,15 +194,15 @@
     },
     {
       "packageName": "com.tatacliq.palette",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791371290089
+      "lastErrorAt": 1794314594680
     },
     {
       "packageName": "dev.khoj.app",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791371290089
+      "lastErrorAt": 1794314594680
     },
     {
       "packageName": "com.whizdm.moneyview.loans",
@@ -890,9 +890,9 @@
     },
     {
       "packageName": "com.ghostery.android.ghostery",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791715946674
+      "lastErrorAt": 1794314594680
     },
     {
       "packageName": "app.cordaya.android",
@@ -1148,45 +1148,57 @@
     },
     {
       "packageName": "com.at.studio",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794228992931
+      "lastErrorAt": 1794314594680
     },
     {
       "packageName": "com.dotwatt",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794228992931
+      "lastErrorAt": 1794314594680
     },
     {
       "packageName": "com.osunalabs.notchy",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794228992931
+      "lastErrorAt": 1794314594680
     },
     {
       "packageName": "com.overnotch.app",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794228992931
+      "lastErrorAt": 1794314594680
     },
     {
       "packageName": "life.andre.message487",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794228992931
+      "lastErrorAt": 1794314594680
     },
     {
       "packageName": "cc.skysparkle.sparkledns",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794228992931
+      "lastErrorAt": 1794314594680
     },
     {
       "packageName": "com.solosignalstudio.ambience",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1794314594680
+    },
+    {
+      "packageName": "com.deltaechothree.wayward",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794228992931
+      "lastErrorAt": 1794314594680
+    },
+    {
+      "packageName": "in.gov.uidai.mAadhaarPlus",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1794314594680
     }
   ]
 }

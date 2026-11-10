@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1794228992935,
+  "generatedAt": 1794314594684,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -3027,6 +3027,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.app.WindCreek.CasinoVerse",
+      "appName": "Casinoverse By Wind Creek",
+      "hasBeta": true,
+      "productionVersionCode": 592,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.AppDVision.Simata",
       "appName": "Greek Driving Test",
       "hasBeta": true,
@@ -3427,6 +3436,15 @@
       "appName": "MAC.BID",
       "hasBeta": true,
       "productionVersionCode": 303939,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.audials",
+      "appName": "Audials Play: Radio & Podcasts",
+      "hasBeta": true,
+      "productionVersionCode": 260100905,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5952,6 +5970,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.crystalmissions.dailytunes",
+      "appName": "Daily Tunes: All Online Radios",
+      "hasBeta": true,
+      "productionVersionCode": 26014,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.cubesmart.customer",
       "appName": "CubeSmart Self Storage",
       "hasBeta": true,
@@ -7455,6 +7482,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.experaforge.leafandspine",
+      "appName": "Leaf & Spine: Reader & Tracker",
+      "hasBeta": true,
+      "productionVersionCode": 77,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.explusalpha.NeoEmu",
       "appName": "NEO.emu (Arcade Emulator)",
       "hasBeta": true,
@@ -7602,7 +7638,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 347215330,
+      "productionVersionCode": 347215347,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8395,6 +8431,15 @@
       "appName": "Acode — Terminal & AI Coding",
       "hasBeta": true,
       "productionVersionCode": 967,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.foyer.merlin",
+      "appName": "Merlin AI: AI Chat Assistant",
+      "hasBeta": true,
+      "productionVersionCode": 190,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9707,7 +9752,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561307686,
+      "productionVersionCode": 1561310246,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10608,6 +10653,15 @@
       "appName": "HSA Bank",
       "hasBeta": true,
       "productionVersionCode": 2828,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.hsl.investright",
+      "appName": "HDFC Securities InvestRight",
+      "hasBeta": true,
+      "productionVersionCode": 884,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -12854,6 +12908,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.lescadeaux.kegel",
+      "appName": "Easy Kegel - Pelvic Floor",
+      "hasBeta": true,
+      "productionVersionCode": 26,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.letzrent.letzrentnew",
       "appName": "Zymo: Self Drive Car Rental",
       "hasBeta": true,
@@ -13335,6 +13398,15 @@
       "appName": "MorningStar Icon pack",
       "hasBeta": true,
       "productionVersionCode": 110,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.macro.workspace.mobile",
+      "appName": "Macro",
+      "hasBeta": true,
+      "productionVersionCode": 22,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -14171,7 +14243,7 @@
       "packageName": "com.microsoft.skydrive",
       "appName": "Microsoft OneDrive",
       "hasBeta": true,
-      "productionVersionCode": 2027640302,
+      "productionVersionCode": 2027690912,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16031,6 +16103,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.ogsdev.durak",
+      "appName": "Durak - Classic Card Game",
+      "hasBeta": true,
+      "productionVersionCode": 96,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ojassoft.astrosage",
       "appName": "AstroSage Kundli: AI Astrology",
       "hasBeta": true,
@@ -17714,6 +17795,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.psma.audioextractor",
+      "appName": "Audio Extractor: Video to MP3",
+      "hasBeta": true,
+      "productionVersionCode": 28,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.psma.videosplitter",
       "appName": "Video Splitter - Status Maker",
       "hasBeta": true,
@@ -17966,6 +18056,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.radiofmapp.radioindia",
+      "appName": "Radio India FM - All India",
+      "hasBeta": true,
+      "productionVersionCode": 507,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.railyatri.in.mobile",
       "appName": "Train App: Easy Ticket Booking",
       "hasBeta": true,
@@ -18051,6 +18150,15 @@
       "appName": "Rapido: Bike-Taxi, Auto & Cabs",
       "hasBeta": true,
       "productionVersionCode": 535,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.rasterage.micro.breaker",
+      "appName": "Micro Breaker",
+      "hasBeta": true,
+      "productionVersionCode": 26052001,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -19316,6 +19424,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.sfr.android.redmoncompte",
+      "appName": "RED & Moi",
+      "hasBeta": true,
+      "productionVersionCode": 12003000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.sg.cubejam.arrowout.arrow3d.escape",
       "appName": "Cube Jam: Arrow Out",
       "hasBeta": true,
@@ -20265,6 +20382,15 @@
       "appName": "PortDroid",
       "hasBeta": true,
       "productionVersionCode": 113,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.stefanroobol.pelvicfloor",
+      "appName": "Pelvic Floor Exercises",
+      "hasBeta": true,
+      "productionVersionCode": 250016,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -21632,7 +21758,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12338,
+      "productionVersionCode": 12340,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22225,7 +22351,7 @@
       "packageName": "com.tumblr",
       "appName": "Tumblr: Social Media & Art",
       "hasBeta": true,
-      "productionVersionCode": 1470000108,
+      "productionVersionCode": 1470100109,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -24652,6 +24778,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.zoho.android.documentscanner",
+      "appName": "PDF Scanner App: Documents",
+      "hasBeta": true,
+      "productionVersionCode": 184,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.zoho.chat",
       "appName": "Zoho Cliq - Team Chat",
       "hasBeta": true,
@@ -25232,6 +25367,15 @@
       "appName": "Deliveries Package Tracker",
       "hasBeta": true,
       "productionVersionCode": 1975,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "de.radio.android",
+      "appName": "radio.net - AM FM Radio Tuner",
+      "hasBeta": true,
+      "productionVersionCode": 100521,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -27505,6 +27649,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "it.nanosystems.Supremo",
+      "appName": "Supremo Remote Desktop",
+      "hasBeta": true,
+      "productionVersionCode": 94,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "it.nanosystems.supremo.addon",
+      "appName": "Supremo Mobile Add-On",
+      "hasBeta": true,
+      "productionVersionCode": 19,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "it.niedermann.nextcloud.deck.play",
       "appName": "Nextcloud Deck",
       "hasBeta": true,
@@ -28148,6 +28310,15 @@
       "appName": "Slate: Calculator",
       "hasBeta": true,
       "productionVersionCode": 7,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "meal.planner",
+      "appName": "Meal Planner & Macro Tracker",
+      "hasBeta": true,
+      "productionVersionCode": 318,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
