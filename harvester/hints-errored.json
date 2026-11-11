@@ -56,9 +56,9 @@
     },
     {
       "packageName": "com.adilhanney.no_more_background",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1790937203264
+      "lastErrorAt": 1794398125195
     },
     {
       "packageName": "com.skygo.ragdoll3ddismount",
@@ -1184,21 +1184,27 @@
     },
     {
       "packageName": "com.solosignalstudio.ambience",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794314594680
+      "lastErrorAt": 1794398125195
     },
     {
       "packageName": "com.deltaechothree.wayward",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794314594680
+      "lastErrorAt": 1794398125195
     },
     {
       "packageName": "in.gov.uidai.mAadhaarPlus",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1794398125195
+    },
+    {
+      "packageName": "com.higame.par.my.perfect.hospital",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794314594680
+      "lastErrorAt": 1794398125195
     }
   ]
 }
