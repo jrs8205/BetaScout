@@ -116,9 +116,9 @@
     },
     {
       "packageName": "com.mobile.legends",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791200039225
+      "lastErrorAt": 1794487695303
     },
     {
       "packageName": "com.mobikwik_new",
@@ -698,33 +698,27 @@
     },
     {
       "packageName": "com.droid.netflixIMDB",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791806700413
+      "lastErrorAt": 1794487695303
     },
     {
       "packageName": "com.givencity.m_ledger",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791806700413
-    },
-    {
-      "packageName": "com.lightweb",
-      "attempts": 4,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791806700413
+      "lastErrorAt": 1794487695303
     },
     {
       "packageName": "br.gov.caixa.loterias.apostas",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791892354200
+      "lastErrorAt": 1794487695303
     },
     {
       "packageName": "com.norton.genieapp",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791892354200
+      "lastErrorAt": 1794487695303
     },
     {
       "packageName": "app.attestation.auditor",
@@ -896,15 +890,15 @@
     },
     {
       "packageName": "app.cordaya.android",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791806700413
+      "lastErrorAt": 1794487695303
     },
     {
       "packageName": "com.top.notch",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791806700413
+      "lastErrorAt": 1794487695303
     },
     {
       "packageName": "com.lightsourcelabs.drift",
@@ -1190,21 +1184,21 @@
     },
     {
       "packageName": "com.deltaechothree.wayward",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794398125195
+      "lastErrorAt": 1794487695303
     },
     {
       "packageName": "in.gov.uidai.mAadhaarPlus",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794398125195
+      "lastErrorAt": 1794487695303
     },
     {
       "packageName": "com.higame.par.my.perfect.hospital",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794398125195
+      "lastErrorAt": 1794487695303
     }
   ]
 }

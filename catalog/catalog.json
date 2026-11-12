@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1794398125197,
+  "generatedAt": 1794487695306,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2595,6 +2595,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.alid0n.orbital",
+      "appName": "Orbital Launcher",
+      "hasBeta": true,
+      "productionVersionCode": 29,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.alien.shooter.galaxy.attack.premium",
       "appName": "Galaxy Attack (Premium)",
       "hasBeta": true,
@@ -2823,7 +2832,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 807808104,
+      "productionVersionCode": 810305004,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3985,6 +3994,15 @@
       "appName": "Themes",
       "hasBeta": true,
       "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bbva.bbvacontigo",
+      "appName": "BBVA Spain | Online Banking",
+      "hasBeta": true,
+      "productionVersionCode": 2705560,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6954,7 +6972,7 @@
       "packageName": "com.dropbox.android",
       "appName": "Dropbox: Secure Cloud Storage",
       "hasBeta": true,
-      "productionVersionCode": 49720200,
+      "productionVersionCode": 49820200,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7018,6 +7036,15 @@
       "appName": "Modipix: Film Lab & 3D LUT",
       "hasBeta": true,
       "productionVersionCode": 4806,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.duck.war",
+      "appName": "Duck War",
+      "hasBeta": true,
+      "productionVersionCode": 373,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -15557,7 +15584,7 @@
       "packageName": "com.netflix.mediaclient",
       "appName": "Netflix",
       "hasBeta": true,
-      "productionVersionCode": 74752,
+      "productionVersionCode": 74772,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -18446,7 +18473,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2644080,
+      "productionVersionCode": 2645080,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20192,7 +20219,7 @@
       "packageName": "com.snapchat.android",
       "appName": "Snapchat",
       "hasBeta": true,
-      "productionVersionCode": 325772,
+      "productionVersionCode": 327472,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20399,7 +20426,7 @@
       "packageName": "com.spotify.music",
       "appName": "Spotify: Music and Podcasts",
       "hasBeta": true,
-      "productionVersionCode": 148115707,
+      "productionVersionCode": 148387875,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -21974,7 +22001,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12340,
+      "productionVersionCode": 12342,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22648,7 +22675,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312410001,
+      "productionVersionCode": 312420001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -23941,6 +23968,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.whaleplayed.justasquire",
+      "appName": "Just a Squire",
+      "hasBeta": true,
+      "productionVersionCode": 1788417317,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.what3words.android",
       "appName": "what3words: Navigation & Maps",
       "hasBeta": true,
@@ -23953,7 +23989,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp",
       "hasBeta": true,
-      "productionVersionCode": 264307627,
+      "productionVersionCode": 264409011,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -30703,6 +30739,15 @@
       "appName": "Super Dad Guide for new daddys",
       "hasBeta": true,
       "productionVersionCode": 18,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "park.car.parking.games.master.mania",
+      "appName": "Parking Games: Parking Jam",
+      "hasBeta": true,
+      "productionVersionCode": 3711,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

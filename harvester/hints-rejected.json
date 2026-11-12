@@ -189,20 +189,12 @@
       "rejectedAt": 1793881571587
     },
     {
-      "packageName": "com.azefsw.audioconnect",
-      "rejectedAt": 1791892354198
-    },
-    {
       "packageName": "com.tmobile.vvm.application",
       "rejectedAt": 1792832131524
     },
     {
       "packageName": "com.ups.mobile.android",
       "rejectedAt": 1793183896661
-    },
-    {
-      "packageName": "app.whisperian.client",
-      "rejectedAt": 1791806700411
     },
     {
       "packageName": "com.booking",
@@ -253,16 +245,8 @@
       "rejectedAt": 1792747453909
     },
     {
-      "packageName": "com.google.android.aicore",
-      "rejectedAt": 1791892354198
-    },
-    {
       "packageName": "tv.accedo.airtel.wynk",
       "rejectedAt": 1792141485783
-    },
-    {
-      "packageName": "dev.zwander.cellreader",
-      "rejectedAt": 1791892354198
     },
     {
       "packageName": "org.mozilla.fenix",
@@ -351,10 +335,6 @@
     {
       "packageName": "project.vivid.hex.bodhi",
       "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.felix.diohub.dev",
-      "rejectedAt": 1791892354198
     },
     {
       "packageName": "com.appsomniacs.mmc",
@@ -447,82 +427,6 @@
     {
       "packageName": "dev.alenajam.monsterdialer",
       "rejectedAt": 1794314594678
-    },
-    {
-      "packageName": "com.infinix.xshare",
-      "rejectedAt": 1791806700411
-    },
-    {
-      "packageName": "com.mallelalabs.greenbin",
-      "rejectedAt": 1791806700411
-    },
-    {
-      "packageName": "com.shaheer.mediarescue.mediarescue",
-      "rejectedAt": 1791806700411
-    },
-    {
-      "packageName": "com.astfifzapr.gp",
-      "rejectedAt": 1791806700411
-    },
-    {
-      "packageName": "com.fluxlabs.zoop",
-      "rejectedAt": 1791806700411
-    },
-    {
-      "packageName": "pl.koleo",
-      "rejectedAt": 1791806700411
-    },
-    {
-      "packageName": "com.goodmooddroid.gestures",
-      "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "com.springwalk.mediaconverter",
-      "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "com.StudioSirah.Qila",
-      "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "com.cardemolition.simulator",
-      "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "com.fileapex",
-      "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "com.globus.glasslauncher",
-      "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "com.bonial.kaufda",
-      "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "com.naver.whale",
-      "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "au.com.bitbot.phonetowers",
-      "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "au.com.danmurphys",
-      "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "au.com.impactapps.wollongong.wasteinfo",
-      "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "com.c71.battery",
-      "rejectedAt": 1791892354198
-    },
-    {
-      "packageName": "cs14.pixelperfect.kwgtwidget.one4kwgtpro",
-      "rejectedAt": 1791892354198
     },
     {
       "packageName": "pl.orlen.paczka",
@@ -1335,6 +1239,22 @@
     {
       "packageName": "in.startv.hotstar",
       "rejectedAt": 1794398125194
+    },
+    {
+      "packageName": "com.lightweb",
+      "rejectedAt": 1794487695302
+    },
+    {
+      "packageName": "com.dewmobile.kuaiya.play",
+      "rejectedAt": 1794487695302
+    },
+    {
+      "packageName": "com.nexstreaming.app.kinemasterfree",
+      "rejectedAt": 1794487695302
+    },
+    {
+      "packageName": "com.samsung.android.goodlock",
+      "rejectedAt": 1794487695302
     }
   ]
 }
