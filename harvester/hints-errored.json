@@ -901,18 +901,6 @@
       "lastErrorAt": 1794487695303
     },
     {
-      "packageName": "com.lightsourcelabs.drift",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791970455258
-    },
-    {
-      "packageName": "com.syntheone.alertinbox",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791970455258
-    },
-    {
       "packageName": "com.codebrewgames.pocketcity",
       "attempts": 3,
       "lastError": "AppNotFound: null",
@@ -1196,9 +1184,9 @@
     },
     {
       "packageName": "com.higame.par.my.perfect.hospital",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794487695303
+      "lastErrorAt": 1794572233269
     }
   ]
 }

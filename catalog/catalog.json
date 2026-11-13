@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1794487695306,
+  "generatedAt": 1794572233272,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2832,7 +2832,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 810305004,
+      "productionVersionCode": 810305104,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5259,6 +5259,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.cheaf.app",
+      "appName": "Cheaf: Salva comida y ahorra",
+      "hasBeta": true,
+      "productionVersionCode": 775,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.chefparty.familystyle",
       "appName": "Family Style",
       "hasBeta": true,
@@ -6852,6 +6861,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.draftkings.sportsbook",
+      "appName": "DraftKings: Sports & Casino",
+      "hasBeta": true,
+      "productionVersionCode": 264452399,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.drawhome.drawgame.drawpuzzle.rushtohome",
       "appName": "Draw Home: Rush To Home",
       "hasBeta": true,
@@ -7728,7 +7746,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 476217123,
+      "productionVersionCode": 707414327,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7746,7 +7764,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 347215347,
+      "productionVersionCode": 347415354,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22001,7 +22019,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12342,
+      "productionVersionCode": 12344,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -29462,6 +29480,15 @@
       "appName": "Fintunes",
       "hasBeta": true,
       "productionVersionCode": 37,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "nl.pocomo.wallshuffle",
+      "appName": "WallShuffle",
+      "hasBeta": true,
+      "productionVersionCode": 289,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

@@ -61,10 +61,6 @@
       "rejectedAt": 1792661254132
     },
     {
-      "packageName": "com.instagram.lite",
-      "rejectedAt": 1791970455257
-    },
-    {
       "packageName": "com.google.android.apps.nbu.paisa.user",
       "rejectedAt": 1793707182738
     },
@@ -149,14 +145,6 @@
       "rejectedAt": 1792661254132
     },
     {
-      "packageName": "org.torproject.vpn",
-      "rejectedAt": 1791970455257
-    },
-    {
-      "packageName": "tk.zwander.rootactivitylauncher",
-      "rejectedAt": 1791970455257
-    },
-    {
       "packageName": "ai.perplexity.comet",
       "rejectedAt": 1792661254132
     },
@@ -201,20 +189,12 @@
       "rejectedAt": 1794136805793
     },
     {
-      "packageName": "org.fossify.notes",
-      "rejectedAt": 1791970455257
-    },
-    {
       "packageName": "com.einnovation.temu",
       "rejectedAt": 1794136805793
     },
     {
       "packageName": "com.coloros.backuprestore",
       "rejectedAt": 1794228992930
-    },
-    {
-      "packageName": "org.fossify.documents",
-      "rejectedAt": 1791970455257
     },
     {
       "packageName": "com.touchtype.swiftkey.beta",
@@ -255,10 +235,6 @@
     {
       "packageName": "com.wendys.nutritiontool",
       "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "gallery.memories",
-      "rejectedAt": 1791970455257
     },
     {
       "packageName": "com.absa.iotfapp",
@@ -427,14 +403,6 @@
     {
       "packageName": "dev.alenajam.monsterdialer",
       "rejectedAt": 1794314594678
-    },
-    {
-      "packageName": "pl.orlen.paczka",
-      "rejectedAt": 1791970455257
-    },
-    {
-      "packageName": "com.github.vauvenal5.yaga",
-      "rejectedAt": 1791970455257
     },
     {
       "packageName": "co.za.vodacom.android.app.mymuze",
@@ -1255,6 +1223,14 @@
     {
       "packageName": "com.samsung.android.goodlock",
       "rejectedAt": 1794487695302
+    },
+    {
+      "packageName": "com.lightsourcelabs.drift",
+      "rejectedAt": 1794572233268
+    },
+    {
+      "packageName": "com.syntheone.alertinbox",
+      "rejectedAt": 1794572233268
     }
   ]
 }
