@@ -277,10 +277,6 @@
       "rejectedAt": 1792661254132
     },
     {
-      "packageName": "com.grabtaxi.passenger",
-      "rejectedAt": 1792055517800
-    },
-    {
       "packageName": "com.allstate.view",
       "rejectedAt": 1792832131524
     },
@@ -1231,6 +1227,22 @@
     {
       "packageName": "com.syntheone.alertinbox",
       "rejectedAt": 1794572233268
+    },
+    {
+      "packageName": "com.akshayysk.pixelbattery",
+      "rejectedAt": 1794655966625
+    },
+    {
+      "packageName": "com.ayman.keyboard",
+      "rejectedAt": 1794655966625
+    },
+    {
+      "packageName": "com.ayman.launcher",
+      "rejectedAt": 1794655966625
+    },
+    {
+      "packageName": "com.kaadan.Netumi",
+      "rejectedAt": 1794655966625
     }
   ]
 }

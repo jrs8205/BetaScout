@@ -902,39 +902,15 @@
     },
     {
       "packageName": "com.codebrewgames.pocketcity",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792055517801
-    },
-    {
-      "packageName": "com.akshayysk.pixelbattery",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792055517801
-    },
-    {
-      "packageName": "com.ayman.keyboard",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792055517801
-    },
-    {
-      "packageName": "com.ayman.launcher",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792055517801
-    },
-    {
-      "packageName": "com.kaadan.Netumi",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792055517801
+      "lastErrorAt": 1794655966627
     },
     {
       "packageName": "com.sonymobile.sketch",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792055517801
+      "lastErrorAt": 1794655966627
     },
     {
       "packageName": "com.andrewshu.android.reddit",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1794572233272,
+  "generatedAt": 1794655966630,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -6213,6 +6213,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.daily.random.facts.interesting",
+      "appName": "Daily Random Facts - Factofy",
+      "hasBeta": true,
+      "productionVersionCode": 39,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.dailymotion.dailymotion",
       "appName": "Dailymotion Social Video App",
       "hasBeta": true,
@@ -7746,7 +7755,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 707414327,
+      "productionVersionCode": 707414444,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9681,7 +9690,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068868465,
+      "productionVersionCode": 1068880506,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9887,7 +9896,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561310996,
+      "productionVersionCode": 1561311075,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -13226,7 +13235,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 217800,
+      "productionVersionCode": 218000,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16661,6 +16670,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.otp.gowidget",
+      "appName": "GO Events Widget • Leek Duck",
+      "hasBeta": true,
+      "productionVersionCode": 122,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.otp.octopilauncher",
       "appName": "Octopi Launcher • Home Screens",
       "hasBeta": true,
@@ -17366,7 +17384,7 @@
       "packageName": "com.pinterest",
       "appName": "Pinterest",
       "hasBeta": true,
-      "productionVersionCode": 14438020,
+      "productionVersionCode": 14448030,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -29656,6 +29674,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.barebrowser",
+      "appName": "Bare Browser",
+      "hasBeta": true,
+      "productionVersionCode": 802000316,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.blokada.family",
       "appName": "Parental Control by Blokada",
       "hasBeta": true,
@@ -30487,6 +30514,15 @@
       "appName": "ReadEra Premium – ebook reader",
       "hasBeta": true,
       "productionVersionCode": 2300,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.smapps.merge",
+      "appName": "Math Merge: Brain Puzzle",
+      "hasBeta": true,
+      "productionVersionCode": 1007910,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -31666,6 +31702,15 @@
       "appName": "sand:box",
       "hasBeta": true,
       "productionVersionCode": 21192,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "so.eden.mobile",
+      "appName": "Eden: Capture, Create, Sell",
+      "hasBeta": true,
+      "productionVersionCode": 3611679,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
