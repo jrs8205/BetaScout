@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1794655966630,
+  "generatedAt": 1794743996220,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2451,6 +2451,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.aiart.artgenerator.photoeditor.aiimage",
+      "appName": "Genius Art: Image AI Generator",
+      "hasBeta": true,
+      "productionVersionCode": 166,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ailmlabs.jsonpromptgenerator",
       "appName": "JSON Prompt Generator",
       "hasBeta": true,
@@ -2832,7 +2841,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 810305104,
+      "productionVersionCode": 810305004,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5925,6 +5934,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.corsaview.app",
+      "appName": "CorsaView",
+      "hasBeta": true,
+      "productionVersionCode": 33,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.coulombtech",
       "appName": "ChargePoint",
       "hasBeta": true,
@@ -8544,6 +8562,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.fortid.wallet.silk",
+      "appName": "EUDI Ref. Wallet by FortID",
+      "hasBeta": true,
+      "productionVersionCode": 11,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.forumcopilot.abda",
       "appName": "A Better Discourse App (ABDA)",
       "hasBeta": true,
@@ -9896,7 +9923,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561311075,
+      "productionVersionCode": 1561310996,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10086,6 +10113,15 @@
       "appName": "Waypoint: Outdoor Navigation",
       "hasBeta": true,
       "productionVersionCode": 65,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.grinch.rivo4",
+      "appName": "Rivo: Modern & Fast Dialer",
+      "hasBeta": true,
+      "productionVersionCode": 2026091845,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -13070,6 +13106,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.legion.pc.animaldoku",
+      "appName": "Animaldoku: Sudoku Puzzle Game",
+      "hasBeta": true,
+      "productionVersionCode": 3,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.leimo.kybdlauncher",
       "appName": "kybd launcher: the QWERTY one.",
       "hasBeta": true,
@@ -13704,6 +13749,15 @@
       "appName": "MakeMyTrip - Flights & Hotels",
       "hasBeta": true,
       "productionVersionCode": 1038,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.malcarneapps.pengudoku.logic.puzzle",
+      "appName": "Pengudoku: Logic Puzzle Game",
+      "hasBeta": true,
+      "productionVersionCode": 4,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18758,6 +18812,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.rgiskard.fairnote",
+      "appName": "FairNote - Encrypted Notes",
+      "hasBeta": true,
+      "productionVersionCode": 10578,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.rheinischepost.wrapper",
       "appName": "Rheinische Post",
       "hasBeta": true,
@@ -19248,6 +19311,15 @@
       "appName": "Hurry Day Countdown & Reminder",
       "hasBeta": true,
       "productionVersionCode": 186,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.samsalfi.flipify",
+      "appName": "Flipify: Marketplace Alerts",
+      "hasBeta": true,
+      "productionVersionCode": 125,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -20468,6 +20540,15 @@
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.spotit.find.differences.hidden.puzzle.games",
+      "appName": "Differences: Spot & Find Them",
+      "hasBeta": true,
+      "productionVersionCode": 23,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.spotlightsix.zentimerlite2",
       "appName": "Insight Timer - Meditation App",
       "hasBeta": true,
@@ -20985,6 +21066,15 @@
       "appName": "Superlist: To-Do List Planner",
       "hasBeta": true,
       "productionVersionCode": 6912,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.superswell.findthedifference",
+      "appName": "Find the difference 750+",
+      "hasBeta": true,
+      "productionVersionCode": 750,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -29287,6 +29377,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "net.smartlauncher.beakynews",
+      "appName": "Beaky news ‧ RSS feed reader",
+      "hasBeta": true,
+      "productionVersionCode": 660260,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "net.smartlauncher.wallpaperstudio",
       "appName": "Wallpaper Studio",
       "hasBeta": true,
@@ -29903,6 +30002,15 @@
       "appName": "Fossify Contacts",
       "hasBeta": true,
       "productionVersionCode": 13,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "org.fossify.documents",
+      "appName": "Fossify Documents Beta",
+      "hasBeta": true,
+      "productionVersionCode": 10,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

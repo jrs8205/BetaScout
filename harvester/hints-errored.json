@@ -722,9 +722,9 @@
     },
     {
       "packageName": "app.attestation.auditor",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792141485785
+      "lastErrorAt": 1794743996217
     },
     {
       "packageName": "com.sameerasw.medrop",
@@ -914,21 +914,21 @@
     },
     {
       "packageName": "com.andrewshu.android.reddit",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792141485785
+      "lastErrorAt": 1794743996217
     },
     {
       "packageName": "com.thepssaini.browser",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792141485785
+      "lastErrorAt": 1794743996217
     },
     {
       "packageName": "net.maskbrowser.browser",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792141485785
+      "lastErrorAt": 1794743996217
     },
     {
       "packageName": "com.actionkey.quantumloop",

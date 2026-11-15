@@ -109,10 +109,6 @@
       "rejectedAt": 1792488537842
     },
     {
-      "packageName": "co.za.oneplan",
-      "rejectedAt": 1792141485783
-    },
-    {
       "packageName": "com.maxmpz.audioplayer.unlock",
       "rejectedAt": 1793881571587
     },
@@ -223,10 +219,6 @@
     {
       "packageName": "com.glance.internet",
       "rejectedAt": 1792747453909
-    },
-    {
-      "packageName": "tv.accedo.airtel.wynk",
-      "rejectedAt": 1792141485783
     },
     {
       "packageName": "org.mozilla.fenix",
@@ -399,38 +391,6 @@
     {
       "packageName": "dev.alenajam.monsterdialer",
       "rejectedAt": 1794314594678
-    },
-    {
-      "packageName": "co.za.vodacom.android.app.mymuze",
-      "rejectedAt": 1792141485783
-    },
-    {
-      "packageName": "com.dstvmobile.android",
-      "rejectedAt": 1792141485783
-    },
-    {
-      "packageName": "com.senecalearning.app",
-      "rejectedAt": 1792141485783
-    },
-    {
-      "packageName": "com.abi.busjam.sortpuzzle",
-      "rejectedAt": 1792141485783
-    },
-    {
-      "packageName": "com.facebook.weave",
-      "rejectedAt": 1792141485783
-    },
-    {
-      "packageName": "moje.a2mobile.pl",
-      "rejectedAt": 1792141485783
-    },
-    {
-      "packageName": "com.find.difference.spot.changes",
-      "rejectedAt": 1792141485783
-    },
-    {
-      "packageName": "com.who.seat.brain.logic.next.my.thats.puzzle.games",
-      "rejectedAt": 1792141485783
     },
     {
       "packageName": "com.meridian_launcher.pro",
@@ -1243,6 +1203,26 @@
     {
       "packageName": "com.kaadan.Netumi",
       "rejectedAt": 1794655966625
+    },
+    {
+      "packageName": "com.cat.sudoku.puzzle.brain.logic.meawdoku",
+      "rejectedAt": 1794743996216
+    },
+    {
+      "packageName": "com.izanagi.differences.find.spot",
+      "rejectedAt": 1794743996216
+    },
+    {
+      "packageName": "com.funtomic.matchmasters",
+      "rejectedAt": 1794743996216
+    },
+    {
+      "packageName": "com.goon.mobile",
+      "rejectedAt": 1794743996216
+    },
+    {
+      "packageName": "org.fossify.notes",
+      "rejectedAt": 1794743996216
     }
   ]
 }
