@@ -393,18 +393,6 @@
       "rejectedAt": 1794314594678
     },
     {
-      "packageName": "com.meridian_launcher.pro",
-      "rejectedAt": 1792226246199
-    },
-    {
-      "packageName": "io.github.nicholasarda.keysnap",
-      "rejectedAt": 1792226246199
-    },
-    {
-      "packageName": "com.XOVisions.com.SlickTires",
-      "rejectedAt": 1792226246199
-    },
-    {
       "packageName": "com.fw.word.connect.puzzle",
       "rejectedAt": 1792313603045
     },
@@ -1223,6 +1211,14 @@
     {
       "packageName": "org.fossify.notes",
       "rejectedAt": 1794743996216
+    },
+    {
+      "packageName": "com.voidware.voidcaller",
+      "rejectedAt": 1794833373114
+    },
+    {
+      "packageName": "com.plussa.mobileplussacard",
+      "rejectedAt": 1794833373114
     }
   ]
 }

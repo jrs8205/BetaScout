@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1794743996220,
+  "generatedAt": 1794833373117,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -511,6 +511,15 @@
       "appName": "Sense Pad Pro: Gesture Control",
       "hasBeta": true,
       "productionVersionCode": 135,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "app.eend.pushback",
+      "appName": "Pushback: Flight Tracker",
+      "hasBeta": true,
+      "productionVersionCode": 67,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2319,7 +2328,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Acrobat Reader: PDF Converter",
       "hasBeta": true,
-      "productionVersionCode": 1932251189,
+      "productionVersionCode": 1932251195,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -4552,6 +4561,15 @@
       "appName": "Metadator",
       "hasBeta": true,
       "productionVersionCode": 10000,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bokhary.calcmate",
+      "appName": "CalcMate – Notes Calculator",
+      "hasBeta": true,
+      "productionVersionCode": 9,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -22801,7 +22819,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312420001,
+      "productionVersionCode": 312430001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -23981,6 +23999,15 @@
       "appName": "The Weather Channel - Radar",
       "hasBeta": true,
       "productionVersionCode": 1080013693,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.weatherfront.app",
+      "appName": "WeatherFront",
+      "hasBeta": true,
+      "productionVersionCode": 3966,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
