@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1794833373117,
+  "generatedAt": 1794922255084,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2802,6 +2802,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.anasouh.memoria",
+      "appName": "Memoria - Search Your Photos",
+      "hasBeta": true,
+      "productionVersionCode": 900,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ancestry.android.apps.ancestry",
       "appName": "Ancestry: Family History & DNA",
       "hasBeta": true,
@@ -2850,7 +2859,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 810305004,
+      "productionVersionCode": 810307804,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6684,7 +6693,7 @@
       "packageName": "com.discord",
       "appName": "Discord - Talk, Play, Hang Out",
       "hasBeta": true,
-      "productionVersionCode": 353011,
+      "productionVersionCode": 354012,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9941,7 +9950,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561310996,
+      "productionVersionCode": 1561303429,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -12138,6 +12147,15 @@
       "appName": "Shopping Calculator",
       "hasBeta": true,
       "productionVersionCode": 28,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.jee.level",
+      "appName": "Compass Level: GPS Coordinates",
+      "hasBeta": true,
+      "productionVersionCode": 341,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -14522,7 +14540,7 @@
       "packageName": "com.microsoft.skydrive",
       "appName": "Microsoft OneDrive",
       "hasBeta": true,
-      "productionVersionCode": 2027690912,
+      "productionVersionCode": 2027640302,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -18524,6 +18542,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.realitymine.realitymeter.android",
+      "appName": "RealityMeter",
+      "hasBeta": true,
+      "productionVersionCode": 50060002,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.reallybadapps.podcastguru",
       "appName": "Podcast Guru - Podcast App",
       "hasBeta": true,
@@ -18581,7 +18608,7 @@
       "packageName": "com.reddit.frontpage",
       "appName": "Reddit",
       "hasBeta": true,
-      "productionVersionCode": 2645080,
+      "productionVersionCode": 2646090,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22145,7 +22172,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12344,
+      "productionVersionCode": 12346,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22262,6 +22289,15 @@
       "appName": "Grand Mountain Adventure 2",
       "hasBeta": true,
       "productionVersionCode": 108002,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.topview.aigc",
+      "appName": "Topview: AI Video Studio",
+      "hasBeta": true,
+      "productionVersionCode": 88,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -23666,6 +23702,15 @@
       "appName": "Galaxy Force",
       "hasBeta": true,
       "productionVersionCode": 35,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.vk.mail",
+      "appName": "VK Mail: email client",
+      "hasBeta": true,
+      "productionVersionCode": 142279,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -25723,6 +25768,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "de.materna.bbk.mobile.app",
+      "appName": "NINA - Die Warn-App des BBK",
+      "hasBeta": true,
+      "productionVersionCode": 6134,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "de.mathema.privacyblur",
       "appName": "PrivacyBlur",
       "hasBeta": true,
@@ -26704,6 +26758,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "finance.global.travel.niyo",
+      "appName": "Niyo: Global cards for travel",
+      "hasBeta": true,
+      "productionVersionCode": 20044,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "find.difference.spot.differences.hidden.puzzle.games.free",
       "appName": "Differences - Find & Spot It",
       "hasBeta": true,
@@ -27271,6 +27334,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "in.amoled.darkawallpapers",
+      "appName": "Amoled.in - Black Wallpapers",
+      "hasBeta": true,
+      "productionVersionCode": 2770,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "in.blueplanetapps.oceansofai",
       "appName": "Oceans of AI - All AI Tools",
       "hasBeta": true,
@@ -27563,6 +27635,15 @@
       "appName": "Bluetooth Keyboard & Mouse Pro",
       "hasBeta": true,
       "productionVersionCode": 255,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "io.bloco.largetext",
+      "appName": "Large Text: Signboard",
+      "hasBeta": true,
+      "productionVersionCode": 82,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -28301,6 +28382,15 @@
       "appName": "West Game II",
       "hasBeta": true,
       "productionVersionCode": 35751,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "leyi.frozenislandpro",
+      "appName": "Virox: Global Outbreak",
+      "hasBeta": true,
+      "productionVersionCode": 24496,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -31095,6 +31185,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "plant.identification.flower.tree.leaf.identifier.identify.cat.dog.breed.nature",
+      "appName": "Plantum - Plant Identifier",
+      "hasBeta": true,
+      "productionVersionCode": 508,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "playorna.com.orna",
       "appName": "Orna: Fantasy Turn‑Based RPG",
       "hasBeta": true,
@@ -32467,6 +32566,15 @@
       "appName": "Voice Changer - Voice Effects",
       "hasBeta": true,
       "productionVersionCode": 101599,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "wasaver.downloadstatus.videosaver.wasticker.downloader",
+      "appName": "Save Status - Download Status",
+      "hasBeta": true,
+      "productionVersionCode": 74,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

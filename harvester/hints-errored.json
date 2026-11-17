@@ -506,9 +506,9 @@
     },
     {
       "packageName": "com.worldance.drama",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792141485785
+      "lastErrorAt": 1794922255081
     },
     {
       "packageName": "ch.admin.bag.dp3t",
@@ -932,21 +932,15 @@
     },
     {
       "packageName": "com.actionkey.quantumloop",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792313603046
-    },
-    {
-      "packageName": "com.jinultimate.klikey",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792313603046
+      "lastErrorAt": 1794922255081
     },
     {
       "packageName": "org.antivirus",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792313603046
+      "lastErrorAt": 1794922255081
     },
     {
       "packageName": "com.at.oneui9",
@@ -1163,6 +1157,18 @@
       "attempts": 3,
       "lastError": "AppNotFound: null",
       "lastErrorAt": 1794572233269
+    },
+    {
+      "packageName": "au.com.impactapps.wollongong.wasteinfo",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1794922255081
+    },
+    {
+      "packageName": "com.virtual.video.i18n",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1794922255081
     }
   ]
 }

@@ -393,22 +393,6 @@
       "rejectedAt": 1794314594678
     },
     {
-      "packageName": "com.fw.word.connect.puzzle",
-      "rejectedAt": 1792313603045
-    },
-    {
-      "packageName": "com.sparklingapps.callrecorder",
-      "rejectedAt": 1792313603045
-    },
-    {
-      "packageName": "com.siplx.android",
-      "rejectedAt": 1792313603045
-    },
-    {
-      "packageName": "dev.qaidvoid.expand",
-      "rejectedAt": 1792313603045
-    },
-    {
       "packageName": "com.ringside.launcher",
       "rejectedAt": 1792403919911
     },
@@ -1219,6 +1203,90 @@
     {
       "packageName": "com.plussa.mobileplussacard",
       "rejectedAt": 1794833373114
+    },
+    {
+      "packageName": "com.jinultimate.klikey",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "app.whisperian.client",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "au.com.bitbot.phonetowers",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "au.com.danmurphys",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "com.c71.battery",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "com.google.android.aicore",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "dev.zwander.cellreader",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "com.udrama.ruiqilin",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "com.yum.kfc",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "gomechanic.retail",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "in.gov.uidai.facerd",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "in.medibuddy",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "in.redbus.android",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "live.traverseai.raheeai",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "me.timschneeberger.rootlessjamesdsp",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "br.com.iwof",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "bitpit.launcher",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "com.nlsn.psc",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "flar2.devcheck",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "org.wikipedia",
+      "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "com.vlv.aravali.reels",
+      "rejectedAt": 1794922255080
     }
   ]
 }
