@@ -341,10 +341,6 @@
       "rejectedAt": 1794314594678
     },
     {
-      "packageName": "br.com.uol.mail.uolhost",
-      "rejectedAt": 1792403919911
-    },
-    {
       "packageName": "chat.revolt",
       "rejectedAt": 1792661254132
     },
@@ -391,30 +387,6 @@
     {
       "packageName": "dev.alenajam.monsterdialer",
       "rejectedAt": 1794314594678
-    },
-    {
-      "packageName": "com.ringside.launcher",
-      "rejectedAt": 1792403919911
-    },
-    {
-      "packageName": "com.duo.statusbar",
-      "rejectedAt": 1792403919911
-    },
-    {
-      "packageName": "com.fantasygames.android",
-      "rejectedAt": 1792403919911
-    },
-    {
-      "packageName": "io.github.sds100.keymapper.gaming",
-      "rejectedAt": 1792403919911
-    },
-    {
-      "packageName": "org.google.academy",
-      "rejectedAt": 1792403919911
-    },
-    {
-      "packageName": "com.mx.browser",
-      "rejectedAt": 1792403919911
     },
     {
       "packageName": "com.willvin.habitxp",
@@ -1287,6 +1259,26 @@
     {
       "packageName": "com.vlv.aravali.reels",
       "rejectedAt": 1794922255080
+    },
+    {
+      "packageName": "air.RTE.OSMF.Minimal",
+      "rejectedAt": 1795007263635
+    },
+    {
+      "packageName": "com.agni.dina.weather.ai",
+      "rejectedAt": 1795007263635
+    },
+    {
+      "packageName": "org.kustom.konsole",
+      "rejectedAt": 1795007263635
+    },
+    {
+      "packageName": "org.kustom.lockscreen",
+      "rejectedAt": 1795007263635
+    },
+    {
+      "packageName": "org.kustom.lockscreen.pro",
+      "rejectedAt": 1795007263635
     }
   ]
 }

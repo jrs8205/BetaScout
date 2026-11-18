@@ -224,15 +224,15 @@
     },
     {
       "packageName": "com.samruston.permission",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791458720463
+      "lastErrorAt": 1795007263636
     },
     {
       "packageName": "net.oneplus.launcher",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791458720463
+      "lastErrorAt": 1795007263636
     },
     {
       "packageName": "com.happymod.apk",
@@ -944,9 +944,9 @@
     },
     {
       "packageName": "com.at.oneui9",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792403919913
+      "lastErrorAt": 1795007263636
     },
     {
       "packageName": "com.himavarshan.dialdeck",
@@ -1160,15 +1160,27 @@
     },
     {
       "packageName": "au.com.impactapps.wollongong.wasteinfo",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794922255081
+      "lastErrorAt": 1795007263636
     },
     {
       "packageName": "com.virtual.video.i18n",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1795007263636
+    },
+    {
+      "packageName": "com.google.android.apps.yourwidget",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1794922255081
+      "lastErrorAt": 1795007263636
+    },
+    {
+      "packageName": "com.vidhatch.play",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1795007263636
     }
   ]
 }
