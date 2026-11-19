@@ -97,16 +97,8 @@
       "rejectedAt": 1793622592758
     },
     {
-      "packageName": "com.kotak811mobilebankingapp.instantsavingsupiscanandpayrecharge",
-      "rejectedAt": 1792488537842
-    },
-    {
       "packageName": "com.whereismytrain.android",
       "rejectedAt": 1793707182738
-    },
-    {
-      "packageName": "tech.butterfly.app",
-      "rejectedAt": 1792488537842
     },
     {
       "packageName": "com.maxmpz.audioplayer.unlock",
@@ -387,18 +379,6 @@
     {
       "packageName": "dev.alenajam.monsterdialer",
       "rejectedAt": 1794314594678
-    },
-    {
-      "packageName": "com.willvin.habitxp",
-      "rejectedAt": 1792488537842
-    },
-    {
-      "packageName": "com.ottersuite.kelp",
-      "rejectedAt": 1792488537842
-    },
-    {
-      "packageName": "com.zekinthos.centr",
-      "rejectedAt": 1792488537842
     },
     {
       "packageName": "com.arcanerealms.android",
@@ -1279,6 +1259,18 @@
     {
       "packageName": "org.kustom.lockscreen.pro",
       "rejectedAt": 1795007263635
+    },
+    {
+      "packageName": "eu.darken.butler",
+      "rejectedAt": 1795094219045
+    },
+    {
+      "packageName": "com.snapbreak.solcesto",
+      "rejectedAt": 1795094219045
+    },
+    {
+      "packageName": "br.gov.caixa.superapp",
+      "rejectedAt": 1795094219045
     }
   ]
 }

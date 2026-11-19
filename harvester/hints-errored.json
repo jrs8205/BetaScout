@@ -122,9 +122,9 @@
     },
     {
       "packageName": "com.mobikwik_new",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791200039225
+      "lastErrorAt": 1795094219046
     },
     {
       "packageName": "com.tommasoberlose.anotherwidget",
@@ -1160,27 +1160,33 @@
     },
     {
       "packageName": "au.com.impactapps.wollongong.wasteinfo",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1795007263636
+      "lastErrorAt": 1795094219046
     },
     {
       "packageName": "com.virtual.video.i18n",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1795007263636
+      "lastErrorAt": 1795094219046
     },
     {
       "packageName": "com.google.android.apps.yourwidget",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1795007263636
+      "lastErrorAt": 1795094219046
     },
     {
       "packageName": "com.vidhatch.play",
+      "attempts": 2,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1795094219046
+    },
+    {
+      "packageName": "app.ouspix.voice_keyboard",
       "attempts": 1,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1795007263636
+      "lastErrorAt": 1795094219046
     }
   ]
 }
