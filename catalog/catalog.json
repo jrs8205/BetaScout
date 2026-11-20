@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1795094219049,
+  "generatedAt": 1795179540360,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -241,6 +241,15 @@
       "appName": "Bonza Planet",
       "hasBeta": true,
       "productionVersionCode": 5000001,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "air.bg.lan.Monopoli",
+      "appName": "Rento - Dice Board Game Online",
+      "hasBeta": true,
+      "productionVersionCode": 8008001,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2328,7 +2337,7 @@
       "packageName": "com.adobe.reader",
       "appName": "Acrobat Reader: PDF Converter",
       "hasBeta": true,
-      "productionVersionCode": 1932251195,
+      "productionVersionCode": 1932251485,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -2859,7 +2868,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 812704204,
+      "productionVersionCode": 810307804,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -5691,6 +5700,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.codigames.idle.tv.empire.tycoon",
+      "appName": "TV Empire Tycoon - Idle Game",
+      "hasBeta": true,
+      "productionVersionCode": 50,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.codigames.market.idle.tycoon",
       "appName": "Idle Supermarket Tycoon－Shop",
       "hasBeta": true,
@@ -6649,6 +6667,15 @@
       "appName": "MyDigicel",
       "hasBeta": true,
       "productionVersionCode": 2026052101,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.digipom.easymetronome",
+      "appName": "Easy Metronome",
+      "hasBeta": true,
+      "productionVersionCode": 361380200,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7818,7 +7845,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 347415354,
+      "productionVersionCode": 347617589,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10676,6 +10703,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.hightide",
+      "appName": "High Tide - Tide chart times",
+      "hasBeta": true,
+      "productionVersionCode": 49,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.highwayradar.app",
       "appName": "Highway Radar",
       "hasBeta": true,
@@ -11369,6 +11405,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.in.w3d",
+      "appName": "3D Wallpaper Parallax",
+      "hasBeta": true,
+      "productionVersionCode": 422,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.inbox.clean.free.gmail.unsubscribe.smart.email.fresh.mailbox",
       "appName": "Instaclean - Clean your Inbox",
       "hasBeta": true,
@@ -11534,7 +11579,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 386215076,
+      "productionVersionCode": 386215122,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -13316,7 +13361,7 @@
       "packageName": "com.linkedin.android",
       "appName": "LinkedIn: Community & Network",
       "hasBeta": true,
-      "productionVersionCode": 218300,
+      "productionVersionCode": 218400,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -14540,7 +14585,7 @@
       "packageName": "com.microsoft.skydrive",
       "appName": "Microsoft OneDrive",
       "hasBeta": true,
-      "productionVersionCode": 2027710312,
+      "productionVersionCode": 2027640302,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -17331,6 +17376,15 @@
       "appName": "Last Asylum: Plague",
       "hasBeta": true,
       "productionVersionCode": 96,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.piano2notes",
+      "appName": "Piano2Notes – Transcribe Piano",
+      "hasBeta": true,
+      "productionVersionCode": 4200038,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -20372,7 +20426,7 @@
       "packageName": "com.snapchat.android",
       "appName": "Snapchat",
       "hasBeta": true,
-      "productionVersionCode": 329172,
+      "productionVersionCode": 329222,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22492,6 +22546,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.train.taxi",
+      "appName": "Train Taxi",
+      "hasBeta": true,
+      "productionVersionCode": 562,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.transferwise.android",
       "appName": "Wise: International Transfers",
       "hasBeta": true,
@@ -24187,7 +24250,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp",
       "hasBeta": true,
-      "productionVersionCode": 264509300,
+      "productionVersionCode": 264509900,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -25570,6 +25633,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "de.divibib.onleihe",
+      "appName": "Onleihe 3",
+      "hasBeta": true,
+      "productionVersionCode": 1792068377,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "de.dual.cs529",
+      "appName": "Dual BLE Remoter",
+      "hasBeta": true,
+      "productionVersionCode": 21,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "de.elster.elstersecure.app",
       "appName": "ElsterSecure - sicherer Login",
       "hasBeta": true,
@@ -26024,6 +26105,15 @@
       "appName": "Defyx VPN",
       "hasBeta": true,
       "productionVersionCode": 287,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "de.vvo_online.vvomobil",
+      "appName": "VVO mobil",
+      "hasBeta": true,
+      "productionVersionCode": 567,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -31621,6 +31711,15 @@
       "appName": "Auto Redial",
       "hasBeta": true,
       "productionVersionCode": 700,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ru.murzify.everynasa",
+      "appName": "Starlio: APOD Space Wallpapers",
+      "hasBeta": true,
+      "productionVersionCode": 84,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

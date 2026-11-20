@@ -381,14 +381,6 @@
       "rejectedAt": 1794314594678
     },
     {
-      "packageName": "com.arcanerealms.android",
-      "rejectedAt": 1792574687389
-    },
-    {
-      "packageName": "com.contacts.dialer.caller.dialpad.android",
-      "rejectedAt": 1792574687389
-    },
-    {
       "packageName": "com.watchfacestudio.pt53",
       "rejectedAt": 1792661254132
     },
@@ -1271,6 +1263,30 @@
     {
       "packageName": "br.gov.caixa.superapp",
       "rejectedAt": 1795094219045
+    },
+    {
+      "packageName": "com.himavarshan.dialdeck",
+      "rejectedAt": 1795179540356
+    },
+    {
+      "packageName": "com.kotak811mobilebankingapp.instantsavingsupiscanandpayrecharge",
+      "rejectedAt": 1795179540356
+    },
+    {
+      "packageName": "com.embarcadero.VpMobil24",
+      "rejectedAt": 1795179540356
+    },
+    {
+      "packageName": "com.itslearning.main",
+      "rejectedAt": 1795179540356
+    },
+    {
+      "packageName": "com.playrix.fishdomdd.gplay",
+      "rejectedAt": 1795179540356
+    },
+    {
+      "packageName": "de.indiware.abimobil",
+      "rejectedAt": 1795179540356
     }
   ]
 }
