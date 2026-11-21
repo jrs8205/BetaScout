@@ -950,15 +950,15 @@
     },
     {
       "packageName": "com.ikusa.netsamurai",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792661254133
+      "lastErrorAt": 1795264999064
     },
     {
       "packageName": "com.frzzy.vozma26",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792661254133
+      "lastErrorAt": 1795264999064
     },
     {
       "packageName": "com.norton.safesearch",
@@ -1178,15 +1178,15 @@
     },
     {
       "packageName": "app.ouspix.voice_keyboard",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1795179540357
+      "lastErrorAt": 1795264999064
     },
     {
       "packageName": "com.adobe.premiererush.videoeditor",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1795179540357
+      "lastErrorAt": 1795264999064
     }
   ]
 }

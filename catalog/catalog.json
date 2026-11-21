@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1795179540360,
+  "generatedAt": 1795264999067,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -6312,6 +6312,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.daraz.android",
+      "appName": "Daraz Online Shopping App",
+      "hasBeta": true,
+      "productionVersionCode": 576,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.dariydsoft.mygarage",
       "appName": "MyGarage | CarDocs & History",
       "hasBeta": true,
@@ -6451,6 +6460,15 @@
       "appName": "Dealabs – bons plans & promos",
       "hasBeta": true,
       "productionVersionCode": 81702,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.deepnode.altyaziceviri",
+      "appName": "AI SRT Sub Translator & Editor",
+      "hasBeta": true,
+      "productionVersionCode": 183,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -7845,7 +7863,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 347617589,
+      "productionVersionCode": 347617466,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9849,6 +9867,15 @@
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.google.android.calculator",
+      "appName": "Calculator",
+      "hasBeta": true,
+      "productionVersionCode": 85022643,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.google.android.contactkeys",
       "appName": "Android System Key Verifier",
       "hasBeta": true,
@@ -10437,6 +10464,15 @@
       "appName": "Harvest.io – 3D Farming Arcade",
       "hasBeta": true,
       "productionVersionCode": 583,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.hasanaydins.muvy",
+      "appName": "Muvy: Movies & TV Tracker",
+      "hasBeta": true,
+      "productionVersionCode": 61,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -12107,6 +12143,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.jaumo",
+      "appName": "Jaumo Dating App: Flirt & Date",
+      "hasBeta": true,
+      "productionVersionCode": 1001910,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.javiersantos.mlmanager",
       "appName": "ML Manager: APK Extractor",
       "hasBeta": true,
@@ -13209,6 +13254,15 @@
       "appName": "CapCut - Video Editor",
       "hasBeta": true,
       "productionVersionCode": 18801600,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.lemurbrowser.exts",
+      "appName": "Lemur Browser: Web Extensions",
+      "hasBeta": true,
+      "productionVersionCode": 276034,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -14946,6 +15000,15 @@
       "appName": "WearSocials, let's connect!",
       "hasBeta": true,
       "productionVersionCode": 3110,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.mldmx.hkgame",
+      "appName": "Beasts Adventure",
+      "hasBeta": true,
+      "productionVersionCode": 322,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -22226,7 +22289,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12350,
+      "productionVersionCode": 12352,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -30909,7 +30972,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 73031,
+      "productionVersionCode": 73411,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -32593,6 +32656,15 @@
       "appName": "Unicode – characters and emoji",
       "hasBeta": true,
       "productionVersionCode": 175,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "video.crop.audio",
+      "appName": "Video Crop & Trim (Video Cut)",
+      "hasBeta": true,
+      "productionVersionCode": 90000029,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

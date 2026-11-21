@@ -58,7 +58,7 @@
     },
     {
       "packageName": "com.bstar.intl",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "com.google.android.apps.nbu.paisa.user",
@@ -130,11 +130,11 @@
     },
     {
       "packageName": "com.oplus.games",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "ai.perplexity.comet",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "com.fampay.in",
@@ -147,10 +147,6 @@
     {
       "packageName": "com.coloros.phonemanager",
       "rejectedAt": 1794228992930
-    },
-    {
-      "packageName": "com.transsion.phoenix",
-      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.gof.global",
@@ -258,7 +254,7 @@
     },
     {
       "packageName": "eu.weblibre.gecko",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "com.allstate.view",
@@ -286,7 +282,7 @@
     },
     {
       "packageName": "com.catinthebox.dnsspeedtest",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "project.vivid.hex.bodhi",
@@ -334,35 +330,35 @@
     },
     {
       "packageName": "chat.revolt",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "com.Shashwat.Muzo",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "com.denksites.obsremotecontrol",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "com.fedmobile",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "com.linways.lms",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "com.mubarak.mbcompass",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "com.quadren.arc",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "compress.joshattic.us",
-      "rejectedAt": 1792661254132
+      "rejectedAt": 1795264999063
     },
     {
       "packageName": "com.power.wash.simulator.game",
@@ -379,26 +375,6 @@
     {
       "packageName": "dev.alenajam.monsterdialer",
       "rejectedAt": 1794314594678
-    },
-    {
-      "packageName": "com.watchfacestudio.pt53",
-      "rejectedAt": 1792661254132
-    },
-    {
-      "packageName": "br.marcelo.monumentbrowser",
-      "rejectedAt": 1792661254132
-    },
-    {
-      "packageName": "com.orange.phone",
-      "rejectedAt": 1792661254132
-    },
-    {
-      "packageName": "com.vuottuongthep.vn",
-      "rejectedAt": 1792661254132
-    },
-    {
-      "packageName": "com.ppapps.zapas",
-      "rejectedAt": 1792661254132
     },
     {
       "packageName": "com.dropfake.wb.dcko",
@@ -1287,6 +1263,26 @@
     {
       "packageName": "de.indiware.abimobil",
       "rejectedAt": 1795179540356
+    },
+    {
+      "packageName": "com.sankuai.sailor.afooddelivery",
+      "rejectedAt": 1795264999063
+    },
+    {
+      "packageName": "com.reelog.app",
+      "rejectedAt": 1795264999063
+    },
+    {
+      "packageName": "com.theclashsoft.sofatime",
+      "rejectedAt": 1795264999063
+    },
+    {
+      "packageName": "de.ava",
+      "rejectedAt": 1795264999063
+    },
+    {
+      "packageName": "tv.trakt.trakt",
+      "rejectedAt": 1795264999063
     }
   ]
 }
