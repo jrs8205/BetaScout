@@ -137,10 +137,6 @@
       "rejectedAt": 1795264999063
     },
     {
-      "packageName": "com.fampay.in",
-      "rejectedAt": 1792747453909
-    },
-    {
       "packageName": "com.coloros.gallery3d",
       "rejectedAt": 1794228992930
     },
@@ -203,10 +199,6 @@
     {
       "packageName": "com.tomra.digital.returnandearn",
       "rejectedAt": 1794228992930
-    },
-    {
-      "packageName": "com.glance.internet",
-      "rejectedAt": 1792747453909
     },
     {
       "packageName": "org.mozilla.fenix",
@@ -377,32 +369,8 @@
       "rejectedAt": 1794314594678
     },
     {
-      "packageName": "com.dropfake.wb.dcko",
-      "rejectedAt": 1792747453909
-    },
-    {
-      "packageName": "com.rishi.commonplace",
-      "rejectedAt": 1792747453909
-    },
-    {
-      "packageName": "com.coffye.gnvaib",
-      "rejectedAt": 1792747453909
-    },
-    {
-      "packageName": "com.enil.activbharat",
-      "rejectedAt": 1792747453909
-    },
-    {
-      "packageName": "com.weaver.app.prod",
-      "rejectedAt": 1792747453909
-    },
-    {
-      "packageName": "com.cool.home.launcher.android",
-      "rejectedAt": 1792747453909
-    },
-    {
       "packageName": "com.app99.driver",
-      "rejectedAt": 1792747453909
+      "rejectedAt": 1795351141373
     },
     {
       "packageName": "com.adam4adam.radar2.ui",
@@ -1283,6 +1251,18 @@
     {
       "packageName": "tv.trakt.trakt",
       "rejectedAt": 1795264999063
+    },
+    {
+      "packageName": "com.instagram.lite",
+      "rejectedAt": 1795351141373
+    },
+    {
+      "packageName": "br.com.uol.mail.uolhost",
+      "rejectedAt": 1795351141373
+    },
+    {
+      "packageName": "com.rovio.abcasual",
+      "rejectedAt": 1795351141373
     }
   ]
 }

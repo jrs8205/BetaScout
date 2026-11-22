@@ -728,9 +728,9 @@
     },
     {
       "packageName": "com.sameerasw.medrop",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792747453911
+      "lastErrorAt": 1795351141374
     },
     {
       "packageName": "com.hypedrop.hypedropapp1",
@@ -962,21 +962,21 @@
     },
     {
       "packageName": "com.norton.safesearch",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792747453911
+      "lastErrorAt": 1795351141374
     },
     {
       "packageName": "org.mistergroup.shouldianswerpersonal",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792747453911
+      "lastErrorAt": 1795351141374
     },
     {
       "packageName": "com.opera.touch",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792747453911
+      "lastErrorAt": 1795351141374
     },
     {
       "packageName": "com.marc.browse",
@@ -1184,9 +1184,21 @@
     },
     {
       "packageName": "com.adobe.premiererush.videoeditor",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1795264999064
+      "lastErrorAt": 1795351141374
+    },
+    {
+      "packageName": "com.lamina.launcher",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1795351141374
+    },
+    {
+      "packageName": "com.spareroom.locator",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1795351141374
     }
   ]
 }

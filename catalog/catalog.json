@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1795264999067,
+  "generatedAt": 1795351141376,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2172,6 +2172,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.AbyteEntertainment.DealersLife2",
+      "appName": "Dealer's Life 2",
+      "hasBeta": true,
+      "productionVersionCode": 124,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.ac.remote.universal.smart.control",
       "appName": "AC Remote Control Universal",
       "hasBeta": true,
@@ -2868,7 +2877,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 810307804,
+      "productionVersionCode": 812704204,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3175,6 +3184,15 @@
       "appName": "Square Launcher Live Tiles Pro",
       "hasBeta": true,
       "productionVersionCode": 21,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.appmind.radios.br",
+      "appName": "Radio Brazil - radio online",
+      "hasBeta": true,
+      "productionVersionCode": 3990,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -4615,6 +4633,15 @@
       "appName": "BookBeat Audiobooks & E-books",
       "hasBeta": true,
       "productionVersionCode": 1018020,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.bookfunnel.bookfunnel",
+      "appName": "BookFunnel",
+      "hasBeta": true,
+      "productionVersionCode": 2050000055,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -6789,6 +6816,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.divmob.epicheroeswar.en.freemium",
+      "appName": "Epic Heroes War Premium",
+      "hasBeta": true,
+      "productionVersionCode": 1331,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.divoom.Divoom",
       "appName": "Divoom: pixel art editor",
       "hasBeta": true,
@@ -7197,7 +7233,7 @@
       "packageName": "com.duolingo",
       "appName": "Duolingo: Learn Languages",
       "hasBeta": true,
-      "productionVersionCode": 2503,
+      "productionVersionCode": 2506,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7845,7 +7881,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 707615136,
+      "productionVersionCode": 707615025,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -8931,6 +8967,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.fumbgames.dailyword",
+      "appName": "dailyword.fun",
+      "hasBeta": true,
+      "productionVersionCode": 12,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.fundevs.app.mediaconverter",
       "appName": "Video MP3 Converter",
       "hasBeta": true,
@@ -9534,6 +9579,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.glance.lockscreenM",
+      "appName": "Glance for Motorola",
+      "hasBeta": true,
+      "productionVersionCode": 0,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.glasswidgets",
       "appName": "Glass Widgets & Theme Pro",
       "hasBeta": true,
@@ -10004,7 +10058,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561314006,
+      "productionVersionCode": 1561314066,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11580,6 +11634,15 @@
       "appName": "In-Shape",
       "hasBeta": true,
       "productionVersionCode": 623,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.insidergaming.app",
+      "appName": "Insider Gaming",
+      "hasBeta": true,
+      "productionVersionCode": 90,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -14766,6 +14829,15 @@
       "appName": "Randomix - Wheel and any Dice",
       "hasBeta": true,
       "productionVersionCode": 41,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.mindful.android",
+      "appName": "Mindful : Focus & Screen Time",
+      "hasBeta": true,
+      "productionVersionCode": 146,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -25264,6 +25336,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.zh2314.aiedgecalendar",
+      "appName": "OatCal: AI Voice Calendar",
+      "hasBeta": true,
+      "productionVersionCode": 47,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.zhenxiang.superimage",
       "appName": "SuperImage - AI Enhancer",
       "hasBeta": true,
@@ -30972,7 +31053,7 @@
       "packageName": "org.telegram.messenger",
       "appName": "Telegram",
       "hasBeta": true,
-      "productionVersionCode": 73411,
+      "productionVersionCode": 73461,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
