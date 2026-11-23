@@ -980,9 +980,9 @@
     },
     {
       "packageName": "com.marc.browse",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792832131525
+      "lastErrorAt": 1795445070862
     },
     {
       "packageName": "com.jackallalone.dev.vpkeyboard",
@@ -1190,15 +1190,15 @@
     },
     {
       "packageName": "com.lamina.launcher",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1795351141374
+      "lastErrorAt": 1795445070862
     },
     {
       "packageName": "com.spareroom.locator",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1795351141374
+      "lastErrorAt": 1795445070862
     }
   ]
 }

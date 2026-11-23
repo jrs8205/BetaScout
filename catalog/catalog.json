@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1795351141376,
+  "generatedAt": 1795445070864,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2877,7 +2877,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 812704204,
+      "productionVersionCode": 810308004,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -3283,6 +3283,15 @@
       "appName": "Insta360",
       "hasBeta": true,
       "productionVersionCode": 461406,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.arbelsolutions.BVRUltimate",
+      "appName": "Background Video Recorder Pro",
+      "hasBeta": true,
+      "productionVersionCode": 21531,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -5700,6 +5709,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.codekarussell.rausgegangen",
+      "appName": "Rausgegangen: Events entdecken",
+      "hasBeta": true,
+      "productionVersionCode": 7274,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.codepup.workout_timer",
       "appName": "OpenHIIT",
       "hasBeta": true,
@@ -7881,7 +7899,7 @@
       "packageName": "com.facebook.katana",
       "appName": "Facebook",
       "hasBeta": true,
-      "productionVersionCode": 707615025,
+      "productionVersionCode": 707615136,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7899,7 +7917,7 @@
       "packageName": "com.facebook.orca",
       "appName": "Messenger",
       "hasBeta": true,
-      "productionVersionCode": 347617466,
+      "productionVersionCode": 347617589,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9843,7 +9861,7 @@
       "packageName": "com.google.android.apps.maps",
       "appName": "Google Maps",
       "hasBeta": true,
-      "productionVersionCode": 1068880506,
+      "productionVersionCode": 1068892333,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10058,7 +10076,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561314066,
+      "productionVersionCode": 1561314006,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10248,6 +10266,15 @@
       "appName": "Waypoint: Outdoor Navigation",
       "hasBeta": true,
       "productionVersionCode": 65,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.gridpop.isleofarrowsandroid",
+      "appName": "Isle of Arrows – Tower Defense",
+      "hasBeta": true,
+      "productionVersionCode": 103,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -23053,7 +23080,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312440001,
+      "productionVersionCode": 312451001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"

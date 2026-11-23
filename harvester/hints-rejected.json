@@ -21,16 +21,8 @@
       "rejectedAt": 1793531955454
     },
     {
-      "packageName": "de.ka.kamedi.heat_it",
-      "rejectedAt": 1792832131524
-    },
-    {
       "packageName": "com.samsung.android.spay",
       "rejectedAt": 1793531955454
-    },
-    {
-      "packageName": "org.freepoc.wearinstaller2",
-      "rejectedAt": 1792832131524
     },
     {
       "packageName": "in.gov.uidai.pehchaan",
@@ -43,14 +35,6 @@
     {
       "packageName": "com.kiloo.subwaysurf",
       "rejectedAt": 1793531955454
-    },
-    {
-      "packageName": "com.urbandroid.sleep",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.airtel.africa.selfcare",
-      "rejectedAt": 1792832131524
     },
     {
       "packageName": "com.apkmirror.helper.prod",
@@ -89,10 +73,6 @@
       "rejectedAt": 1793794363490
     },
     {
-      "packageName": "com.mixplorer.silver",
-      "rejectedAt": 1792832131524
-    },
-    {
       "packageName": "com.binance.dev",
       "rejectedAt": 1793622592758
     },
@@ -105,10 +85,6 @@
       "rejectedAt": 1793881571587
     },
     {
-      "packageName": "org.digiyatra.org",
-      "rejectedAt": 1792832131524
-    },
-    {
       "packageName": "cn.wps.moffice_eng",
       "rejectedAt": 1793794363490
     },
@@ -119,10 +95,6 @@
     {
       "packageName": "com.google.android.apps.books",
       "rejectedAt": 1793707182738
-    },
-    {
-      "packageName": "com.meetup",
-      "rejectedAt": 1792832131524
     },
     {
       "packageName": "com.olx.southasia",
@@ -145,20 +117,8 @@
       "rejectedAt": 1794228992930
     },
     {
-      "packageName": "com.gof.global",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.ugreen.pro",
-      "rejectedAt": 1792832131524
-    },
-    {
       "packageName": "app.zophop",
       "rejectedAt": 1793881571587
-    },
-    {
-      "packageName": "com.tmobile.vvm.application",
-      "rejectedAt": 1792832131524
     },
     {
       "packageName": "com.ups.mobile.android",
@@ -175,10 +135,6 @@
     {
       "packageName": "com.coloros.backuprestore",
       "rejectedAt": 1794228992930
-    },
-    {
-      "packageName": "com.touchtype.swiftkey.beta",
-      "rejectedAt": 1792832131524
     },
     {
       "packageName": "com.mcdonalds.au.gma",
@@ -199,14 +155,6 @@
     {
       "packageName": "com.tomra.digital.returnandearn",
       "rejectedAt": 1794228992930
-    },
-    {
-      "packageName": "org.mozilla.fenix",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.wendys.nutritiontool",
-      "rejectedAt": 1792832131524
     },
     {
       "packageName": "com.absa.iotfapp",
@@ -241,52 +189,16 @@
       "rejectedAt": 1794314594678
     },
     {
-      "packageName": "com.experian.android",
-      "rejectedAt": 1792832131524
-    },
-    {
       "packageName": "eu.weblibre.gecko",
       "rejectedAt": 1795264999063
-    },
-    {
-      "packageName": "com.allstate.view",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.androidyou.wifiloginnew",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.ifs.banking.fiid1590",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.myfitnesspal.android",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.quickcursor",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "net.cachapa.libra",
-      "rejectedAt": 1792832131524
     },
     {
       "packageName": "com.catinthebox.dnsspeedtest",
       "rejectedAt": 1795264999063
     },
     {
-      "packageName": "project.vivid.hex.bodhi",
-      "rejectedAt": 1792832131524
-    },
-    {
       "packageName": "com.appsomniacs.mmc",
       "rejectedAt": 1793271371776
-    },
-    {
-      "packageName": "com.playbridge.sender",
-      "rejectedAt": 1792832131524
     },
     {
       "packageName": "com.cuvora.carinfo",
@@ -371,62 +283,6 @@
     {
       "packageName": "com.app99.driver",
       "rejectedAt": 1795351141373
-    },
-    {
-      "packageName": "com.adam4adam.radar2.ui",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.fidelity.wi.activity",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.flea.gsd.flea",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.indeed.android.jobsearch",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.main.gopuff",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.manateeworks.barcodescanners",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.metropcs.service.vvm",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.motordata.obd",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.nuance.nmc.sihome.metropcs",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.publix.main",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.seeclickfix.ma.android",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "me.timschneeberger.galaxybudsclient",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.ripple.chat",
-      "rejectedAt": 1792832131524
-    },
-    {
-      "packageName": "com.cat.gatekeeper",
-      "rejectedAt": 1792832131524
     },
     {
       "packageName": "com.ludenio.a7",
@@ -1263,6 +1119,18 @@
     {
       "packageName": "com.rovio.abcasual",
       "rejectedAt": 1795351141373
+    },
+    {
+      "packageName": "com.drumlessai.drumless_mobile",
+      "rejectedAt": 1795445070861
+    },
+    {
+      "packageName": "de.hafas.android.db",
+      "rejectedAt": 1795445070861
+    },
+    {
+      "packageName": "de.telekom.android.customercenter",
+      "rejectedAt": 1795445070861
     }
   ]
 }
