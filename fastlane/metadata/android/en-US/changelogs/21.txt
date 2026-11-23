@@ -1,0 +1,3 @@
+• New "All" tab, a clear button in the search field and pull-to-refresh on the main screen.
+• Tapping the "sign in again" notification opens the sign-in page, and the main screen now says when your session has expired or a scan could not run.
+• Fixes: a filter left on after closing search, doubled spacing on the settings, details and watchlist screens.

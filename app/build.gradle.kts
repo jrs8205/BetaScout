@@ -15,10 +15,18 @@ android {
         applicationId = "org.jarsi.betascout"
         minSdk = 26
         targetSdk = 36
-        versionCode = 20
-        versionName = "0.6.9"
+        versionCode = 21
+        versionName = "0.6.10"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        // No default for the "disposableInstall" runner argument, on purpose.
+        // Some instrumented tests change the installed app itself (grant the
+        // notification permission, finish onboarding, post and cancel the
+        // sign-in notice) and cannot put it back; they are skipped unless the
+        // person starting the run says the install may be changed:
+        //   -Pandroid.testInstrumentationRunnerArguments.disposableInstall=true
+        // A Gradle run alone proves nothing about that — it installs over an
+        // existing debug install, and can be told to leave the app in place.
     }
 
     signingConfigs {
