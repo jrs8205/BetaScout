@@ -5,6 +5,7 @@
 
     <!-- App list -->
     <string name="search_hint">Search apps</string>
+    <string name="tab_all">All</string>
     <string name="tab_not_joined">Not joined</string>
     <string name="tab_joined">Joined</string>
     <string name="tab_no_beta">No beta</string>
@@ -46,6 +47,7 @@
     <string name="badge_beta">Beta</string>
     <string name="refresh">Refresh</string>
     <string name="empty_list">No apps match the filters.</string>
+    <string name="empty_all">No apps to show.</string>
     <string name="error_scan">Scanning installed apps failed.</string>
     <string name="retry">Try again</string>
 
@@ -112,6 +114,7 @@
     <string name="settings_open">Settings</string>
     <string name="search_open">Open search</string>
     <string name="search_close">Close search</string>
+    <string name="search_clear">Clear search</string>
     <string name="account_open">Account</string>
     <string name="account_hint">Sign in with your Google account so BetaScout can read your own testing pages and detect which betas you are in and whether each is open or full. It never joins on your behalf.</string>
     <string name="account_signin">Sign in with Google</string>
@@ -148,6 +151,8 @@
     <string name="account_relogin">Session expired — please sign in again.</string>
     <string name="account_error">Failed: %1$s</string>
     <string name="account_scan_in_progress">A scan is already running — try again once it finishes.</string>
+    <string name="scan_not_started">The scan you asked for did not run. Try again.</string>
+    <string name="scan_unrecorded">The scan ended with an error and its result could not be saved. Try again.</string>
     <string name="account_scan_blocked">Google is rate limiting checks right now — scanning is paused for about an hour to protect your account.</string>
     <string name="detail_check_failed">The status check failed — the info shown may be out of date. Try again in a moment.</string>
     <string name="account_signed_in">Signed in as %1$s</string>
@@ -187,4 +192,6 @@
     <string name="scan_channel_description">Shown while a manual beta status scan is running</string>
     <string name="scan_notification_title">Scanning beta statuses…</string>
     <string name="scan_notification_cancel">Cancel</string>
+    <string name="account_clear_local_data">Clear local account data</string>
+    <string name="account_signout_failed">Couldn’t finish signing out. Please try again.</string>
 </resources>

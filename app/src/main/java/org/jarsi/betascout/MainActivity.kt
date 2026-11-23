@@ -16,6 +16,11 @@ import org.jarsi.betascout.ui.BetaScoutNavHost
 import org.jarsi.betascout.ui.onboarding.OnboardingScreen
 import org.jarsi.betascout.ui.theme.BetaScoutTheme
 
+/**
+ * The launcher activity. Exported, so nothing here is driven by the intent it
+ * was started with: a request to open the sign-in page reaches it through
+ * [SignInRequests], which only code inside this app can raise.
+ */
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,10 +31,15 @@ class MainActivity : ComponentActivity() {
             val useDynamicColor by viewModel.useDynamicColor.collectAsStateWithLifecycle()
             BetaScoutTheme(useDynamicColor = useDynamicColor) {
                 val onboardingDone by viewModel.onboardingDone.collectAsStateWithLifecycle()
+                val signInRequested by viewModel.signInRequested.collectAsStateWithLifecycle()
                 when (onboardingDone) {
                     null -> Surface { Box(Modifier.fillMaxSize()) }
                     false -> Surface { OnboardingScreen(onDone = viewModel::completeOnboarding) }
-                    true -> BetaScoutNavHost()
+                    true -> BetaScoutNavHost(
+                        signInRequested = signInRequested,
+                        onRequestSignIn = viewModel::requestSignIn,
+                        onSignInRequestConsumed = viewModel::consumeSignInRequest,
+                    )
                 }
             }
         }

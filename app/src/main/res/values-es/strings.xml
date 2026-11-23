@@ -2,6 +2,7 @@
 <resources>
     <!-- App list -->
     <string name="search_hint">Buscar apps</string>
+    <string name="tab_all">Todas</string>
     <string name="tab_not_joined">Fuera de la beta</string>
     <string name="tab_joined">En la beta</string>
     <string name="tab_no_beta">Sin beta</string>
@@ -43,6 +44,7 @@
     <string name="badge_beta">Beta</string>
     <string name="refresh">Actualizar</string>
     <string name="empty_list">Ninguna app coincide con los filtros.</string>
+    <string name="empty_all">No hay apps que mostrar.</string>
     <string name="error_scan">No se pudieron verificar las apps instaladas.</string>
     <string name="retry">Reintentar</string>
 
@@ -109,6 +111,7 @@
     <string name="settings_open">Ajustes</string>
     <string name="search_open">Abrir búsqueda</string>
     <string name="search_close">Cerrar búsqueda</string>
+    <string name="search_clear">Borrar búsqueda</string>
     <string name="account_open">Cuenta</string>
     <string name="account_hint">Inicia sesión con tu cuenta de Google para que BetaScout pueda leer tus propias páginas de pruebas y detectar en qué betas estás y si cada una está abierta o completa. Nunca se une a una beta por ti.</string>
     <string name="account_signin">Iniciar sesión con Google</string>
@@ -145,6 +148,8 @@
     <string name="account_relogin">La sesión caducó — inicia sesión de nuevo.</string>
     <string name="account_error">Error: %1$s</string>
     <string name="account_scan_in_progress">Ya hay una verificación en curso — inténtalo de nuevo cuando termine.</string>
+    <string name="scan_not_started">La verificación que pediste no se realizó. Inténtalo de nuevo.</string>
+    <string name="scan_unrecorded">La verificación terminó con un error y su resultado no se pudo guardar. Inténtalo de nuevo.</string>
     <string name="account_scan_blocked">Google está limitando las consultas en este momento — la verificación se pausa durante una hora aproximadamente para proteger tu cuenta.</string>
     <string name="detail_check_failed">No se pudo verificar el estado — la información mostrada puede estar desactualizada. Inténtalo de nuevo en un momento.</string>
     <string name="account_signed_in">Sesión iniciada como %1$s</string>
@@ -184,4 +189,6 @@
     <string name="scan_channel_description">Se muestra mientras hay una verificación manual en curso</string>
     <string name="scan_notification_title">Verificando estados beta…</string>
     <string name="scan_notification_cancel">Cancelar</string>
+    <string name="account_clear_local_data">Borrar los datos locales de la cuenta</string>
+    <string name="account_signout_failed">No se pudo cerrar la sesión. Vuelve a intentarlo.</string>
 </resources>

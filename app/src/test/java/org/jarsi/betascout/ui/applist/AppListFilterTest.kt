@@ -146,9 +146,73 @@ class AppListFilterTest {
 
         val counts = tabCounts(filterApps(rows, AppFilters()))
 
-        assertEquals(1, counts[BetaMembership.JOINED] ?: 0)
-        assertEquals(1, counts[BetaMembership.AVAILABLE] ?: 0)
-        assertEquals(1, counts[BetaMembership.NONE] ?: 0)
+        assertEquals(1, counts[AppListTab.JOINED])
+        assertEquals(1, counts[AppListTab.AVAILABLE])
+        assertEquals(1, counts[AppListTab.NONE])
+        // The "All" tab totals every listed app, and nothing the filter dropped.
+        assertEquals(3, counts[AppListTab.ALL])
+    }
+
+    @Test
+    fun `the All tab lists every filtered row and the other tabs only their own`() {
+        val joined = row(
+            "com.joined",
+            observedLiveStatus = LiveBetaStatus.OPEN,
+            observedMembership = ObservedMembership.JOINED,
+        )
+        val available = row("com.available", betaStatus = KnownBetaStatus.OFTEN_FULL)
+        val none = row("com.none")
+        val filtered = filterApps(
+            listOf(
+                joined,
+                available,
+                none,
+                row("com.android.providers.media", isSystem = true, hasLauncher = false),
+            ),
+            AppFilters(),
+        )
+
+        // Same rows in the same order as the filter produced them.
+        assertEquals(listOf(joined, available, none), appsForTab(filtered, AppListTab.ALL))
+        assertEquals(listOf(available), appsForTab(filtered, AppListTab.AVAILABLE))
+        assertEquals(listOf(joined), appsForTab(filtered, AppListTab.JOINED))
+        assertEquals(listOf(none), appsForTab(filtered, AppListTab.NONE))
+    }
+
+    @Test
+    fun `an empty tab explains itself, and blames the filters when they are the reason`() {
+        val none = AppFilters()
+        assertEquals(R.string.empty_not_joined, emptyStateRes(AppListTab.AVAILABLE, none))
+        assertEquals(R.string.empty_joined, emptyStateRes(AppListTab.JOINED, none))
+        assertEquals(R.string.empty_no_beta, emptyStateRes(AppListTab.NONE, none))
+        // No filter is on, so "no apps match the filters" would point the user
+        // at something they cannot change (the package read failed, say).
+        assertEquals(R.string.empty_all, emptyStateRes(AppListTab.ALL, none))
+
+        // "You have not marked any app as joined yet" would be a false statement
+        // about the user's apps when a search simply found nothing.
+        for (tab in AppListTab.entries) {
+            assertEquals(R.string.empty_list, emptyStateRes(tab, AppFilters(query = "zzz")))
+            assertEquals(R.string.empty_list, emptyStateRes(tab, AppFilters(onlySystem = true)))
+        }
+        // Whitespace is not a search.
+        assertEquals(R.string.empty_joined, emptyStateRes(AppListTab.JOINED, AppFilters(query = "  ")))
+    }
+
+    @Test
+    fun `a search finds an app on the All tab whichever membership tab it sits on`() {
+        val rows = listOf(
+            row("com.whatsapp", label = "WhatsApp", betaStatus = KnownBetaStatus.OFTEN_FULL),
+            row("com.whatsnew", label = "Whats New"),
+            row("com.spotify", label = "Spotify"),
+        )
+
+        val filtered = filterApps(rows, AppFilters(query = "whats"))
+
+        assertEquals(
+            listOf("com.whatsapp", "com.whatsnew"),
+            appsForTab(filtered, AppListTab.ALL).map { it.app.packageName },
+        )
     }
 
     @Test
@@ -160,7 +224,16 @@ class AppListFilterTest {
 
         val counts = tabCounts(filterApps(rows, AppFilters(query = "whats")))
 
-        assertEquals(mapOf(BetaMembership.AVAILABLE to 1), counts)
+        // Every tab is present so a chip never falls back to a guessed count.
+        assertEquals(
+            mapOf(
+                AppListTab.ALL to 1,
+                AppListTab.AVAILABLE to 1,
+                AppListTab.JOINED to 0,
+                AppListTab.NONE to 0,
+            ),
+            counts,
+        )
     }
 
     @Test

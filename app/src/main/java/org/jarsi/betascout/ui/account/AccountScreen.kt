@@ -35,6 +35,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -47,6 +48,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.pm.PackageInfoCompat
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import java.text.DateFormat
 import java.util.Date
@@ -55,15 +57,33 @@ import org.jarsi.betascout.data.settings.LastScanInfo
 import org.jarsi.betascout.data.settings.ScanType
 import org.jarsi.betascout.ui.scan.ScanStatusCard
 import org.jarsi.betascout.ui.scan.ScanStatusViewModel
+import org.jarsi.betascout.ui.scan.canRequestScan
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AccountScreen(
     onBack: (() -> Unit)?,
+    signInRequested: Boolean = false,
+    onSignInRequestConsumed: () -> Unit = {},
     viewModel: AccountViewModel = hiltViewModel(),
     scanViewModel: ScanStatusViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    // Arriving from the "sign in again" notification: skip the settings page
+    // and go straight to the sign-in page. Consumed at once, so coming back to
+    // this screen later (or rotating it) does not reopen the page.
+    LaunchedEffect(signInRequested) {
+        if (signInRequested) {
+            viewModel.startLoginIfSignedOut()
+            onSignInRequestConsumed()
+        }
+    }
+    // The scan card can say "Google is rate limiting right now"; that may have
+    // stopped being true while the phone slept.
+    LifecycleResumeEffect(Unit) {
+        scanViewModel.recheckCooldown()
+        onPauseOrDispose { }
+    }
     val scanState by scanViewModel.state.collectAsStateWithLifecycle()
     val useDynamicColor by viewModel.useDynamicColor.collectAsStateWithLifecycle()
     val shareDiscoveries by viewModel.shareDiscoveries.collectAsStateWithLifecycle()
@@ -105,6 +125,9 @@ fun AccountScreen(
                 onSignIn = viewModel::startLogin,
                 onSignOut = viewModel::signOut,
             )
+            if (state.signOutFailed) {
+                Text(stringResource(R.string.account_signout_failed), color = MaterialTheme.colorScheme.error)
+            }
 
             if (state.signedIn) {
                 ScanStatusCard(
@@ -120,7 +143,7 @@ fun AccountScreen(
                 }
                 scanState.lastScan?.let { LastScanCard(it) }
                 FullScanCard(
-                    enabled = !scanState.busy && !scanState.cancelling,
+                    enabled = scanState.canRequestScan(),
                     onFullScan = scanViewModel::fullScan,
                 )
                 SharingCard(
@@ -219,7 +242,7 @@ private fun AccountCard(
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
-                TextButton(onClick = onSignOut) {
+                TextButton(onClick = onSignOut, enabled = !state.busy) {
                     Text(
                         stringResource(R.string.account_signout),
                         color = MaterialTheme.colorScheme.error,
@@ -246,6 +269,11 @@ private fun AccountCard(
             } else {
                 Button(onClick = onSignIn, modifier = Modifier.fillMaxWidth()) {
                     Text(stringResource(R.string.account_signin))
+                }
+                if (needsLogin || state.signOutFailed) {
+                    TextButton(onClick = onSignOut) {
+                        Text(stringResource(R.string.account_clear_local_data))
+                    }
                 }
             }
         }

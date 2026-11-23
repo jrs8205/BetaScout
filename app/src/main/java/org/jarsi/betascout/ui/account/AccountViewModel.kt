@@ -6,6 +6,7 @@ import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -13,6 +14,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.jarsi.betascout.data.settings.SessionStanding
 import org.jarsi.betascout.data.settings.SettingsRepository
 import org.jarsi.betascout.domain.SignOutUseCase
 import org.jarsi.betascout.work.BetaScanScheduler
@@ -22,10 +24,23 @@ data class AccountUiState(
     val signedIn: Boolean = false,
     val email: String = "",
     val showLogin: Boolean = false,
-    /** True only while the captured session is being persisted. */
+    /** A sign-in or sign-out is being persisted. */
     val busy: Boolean = false,
+    val signOutFailed: Boolean = false,
     val error: String? = null,
 )
+
+/**
+ * Whether a tap on the "sign in again" notification opens the sign-in page.
+ * [standing] is where the stored session stands, null if that could not be
+ * read. Only for a user the store says is signed out, expired or not: a read
+ * that failed is not that. The session may be perfectly good, and a sign-in
+ * page opened over it could store the WebView's cookies as a new sign-in and
+ * start a scan. And never while a sign-out is still clearing those cookies
+ * ([busy]): a page opened then could capture the old ones.
+ */
+internal fun opensSignInPage(standing: SessionStanding?, busy: Boolean): Boolean =
+    standing != null && standing != SessionStanding.SIGNED_IN && !busy
 
 @HiltViewModel
 class AccountViewModel @Inject constructor(
@@ -73,6 +88,20 @@ class AccountViewModel @Inject constructor(
 
     fun startLogin() = _state.update { it.copy(showLogin = true, error = null) }
 
+    /** Entry point for the "sign in again" notification. The notification can
+     *  outlive the problem it reports — the user may have signed in from the app
+     *  since — so where the stored session stands is read first;
+     *  [AccountUiState.signedIn] is not usable for this because it starts false
+     *  until DataStore answers. Read without decrypting anything, and so that
+     *  "could not be read" is not taken for "signed out" (see
+     *  [opensSignInPage]). */
+    fun startLoginIfSignedOut() {
+        viewModelScope.launch {
+            val standing = settings.readSessionStanding()
+            if (opensSignInPage(standing, busy = _state.value.busy)) startLogin()
+        }
+    }
+
     fun cancelLogin() = _state.update { it.copy(showLogin = false) }
 
     /** Called by the login WebView once it captures the account email and session cookies. */
@@ -90,7 +119,11 @@ class AccountViewModel @Inject constructor(
                 return@launch
             }
             // The scan card mirrors the enqueued work's state from here on.
-            BetaScanScheduler.scanNow(workManager, ExistingWorkPolicy.REPLACE)
+            BetaScanScheduler.scanNow(
+                workManager,
+                ExistingWorkPolicy.REPLACE,
+                sessionGeneration = saved.getOrThrow(),
+            )
             _state.update { it.copy(busy = false) }
         }
     }
@@ -101,16 +134,16 @@ class AccountViewModel @Inject constructor(
 
     fun signOut() {
         if (_state.value.busy) return
+        _state.update { it.copy(busy = true, signOutFailed = false, error = null) }
         viewModelScope.launch {
-            // Busy for the WHOLE cleanup: clearing the session flips signedIn
-            // false immediately (DataStore flow), and without busy the sign-in
-            // button would appear while the WebView cookie store is still being
-            // emptied — a login opened then could capture the old cookies.
-            _state.update { it.copy(busy = true) }
-            // The full ordering (cancel scans → wipe inside the scan lock →
-            // clear cookies → reschedule) lives in SignOutUseCase.
-            signOutUseCase.signOut()
-            _state.value = AccountUiState()
+            try {
+                signOutUseCase.signOut()
+                _state.value = AccountUiState()
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                _state.update { it.copy(busy = false, signOutFailed = true) }
+            }
         }
     }
 }

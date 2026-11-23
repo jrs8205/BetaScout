@@ -9,10 +9,12 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
@@ -44,8 +46,18 @@ private val topLevelDestinations = listOf(
     TopLevelDestination(Routes.WATCHLIST, Icons.Filled.Star, R.string.tab_watchlist),
 )
 
+/**
+ * @param signInRequested someone asked for the sign-in page (the "sign in again"
+ *   notification, or the main screen's "session expired" line through
+ *   [onRequestSignIn]): go to the account screen, which opens the page and then
+ *   reports back through [onSignInRequestConsumed].
+ */
 @Composable
-fun BetaScoutNavHost() {
+fun BetaScoutNavHost(
+    signInRequested: Boolean = false,
+    onRequestSignIn: () -> Unit = {},
+    onSignInRequestConsumed: () -> Unit = {},
+) {
     val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = backStackEntry?.destination?.route
@@ -78,22 +90,38 @@ fun BetaScoutNavHost() {
         NavHost(
             navController = navController,
             startDestination = Routes.APPS,
-            modifier = Modifier.padding(padding),
+            // padding() alone does not tell children the insets are taken: the
+            // screens with their own Scaffold and top bar would add the status
+            // and navigation bar heights a second time.
+            modifier = Modifier.padding(padding).consumeWindowInsets(padding),
         ) {
             composable(Routes.APPS) {
                 AppListScreen(
                     onAppClick = { navController.navigate(Routes.appDetail(it)) },
                     onAccountClick = { navController.navigate(Routes.ACCOUNT) },
+                    onSignInClick = onRequestSignIn,
                 )
             }
             composable(Routes.ACCOUNT) {
-                AccountScreen(onBack = { navController.popBackStack() })
+                AccountScreen(
+                    onBack = { navController.popBackStack() },
+                    signInRequested = signInRequested,
+                    onSignInRequestConsumed = onSignInRequestConsumed,
+                )
             }
             composable(Routes.WATCHLIST) {
                 WatchlistScreen(onAppClick = { navController.navigate(Routes.appDetail(it)) })
             }
             composable(Routes.APP_DETAIL) {
                 AppDetailScreen(onBack = { navController.popBackStack() })
+            }
+        }
+        // Declared after NavHost on purpose: NavHost attaches the graph during
+        // composition, and navigating before that throws. singleTop keeps a
+        // second tap (or a tap while already in settings) from stacking copies.
+        LaunchedEffect(signInRequested) {
+            if (signInRequested) {
+                navController.navigate(Routes.ACCOUNT) { launchSingleTop = true }
             }
         }
     }

@@ -13,9 +13,8 @@ import kotlinx.coroutines.withContext
 class SignOutUseCase(
     private val cancelScanWork: suspend () -> Unit,
     private val withScanLock: suspend (suspend () -> Unit) -> Unit,
-    private val clearObservations: suspend () -> Unit,
+    private val clearObservations: suspend () -> Result<Unit>,
     private val clearSession: suspend () -> Unit,
-    private val clearLastScan: suspend () -> Unit,
     private val clearWebViewCookies: suspend () -> Unit,
     private val rescheduleBackgroundScans: () -> Unit,
 ) {
@@ -28,26 +27,17 @@ class SignOutUseCase(
         // Stop BOTH scans first: a worker still holding the old session would
         // otherwise keep fetching Google pages with its cookies and could write
         // freshly deleted observations back.
-        cancelScanWork()
-        // The wipe runs INSIDE the scan lock: acquiring it waits out a cancelled
-        // worker still unwinding an in-flight fetch, and any scan started while
-        // the cleanup runs bounces off with ScanInProgress instead of racing it.
-        withScanLock {
-            // Observations first, then the session, so a signed-out account's
-            // beta memberships cannot linger on the device. The whole table, not
-            // just the current key: cookie-hash fallback keys change across
-            // re-logins, so a per-account wipe would orphan the old key's rows.
-            clearObservations()
-            clearSession()
-            clearLastScan()
+        try {
+            cancelScanWork()
+            withScanLock {
+                // Keep the session as a retry point until the local rows and browser cookies are gone.
+                // The final preferences edit clears the session and its scan history together.
+                clearObservations().getOrThrow()
+                clearWebViewCookies()
+                clearSession()
+            }
+        } finally {
+            rescheduleBackgroundScans()
         }
-        // The login WebView persists its Google cookies app-wide: without
-        // clearing them the next "sign in" silently reuses the old session.
-        // The lambda completes only once the cookie store confirms the removal.
-        clearWebViewCookies()
-        // Last on purpose: a freshly registered periodic request may start
-        // immediately (no initial delay), and by now the session is gone, so
-        // the run is a guaranteed no-op.
-        rescheduleBackgroundScans()
     }
 }

@@ -2,6 +2,7 @@
 <resources>
     <!-- App list -->
     <string name="search_hint">Rechercher des applis</string>
+    <string name="tab_all">Toutes</string>
     <string name="tab_not_joined">Hors bêta</string>
     <string name="tab_joined">Dans la bêta</string>
     <string name="tab_no_beta">Sans bêta</string>
@@ -43,6 +44,7 @@
     <string name="badge_beta">Bêta</string>
     <string name="refresh">Actualiser</string>
     <string name="empty_list">Aucune appli ne correspond aux filtres.</string>
+    <string name="empty_all">Aucune appli à afficher.</string>
     <string name="error_scan">L\'analyse des applis installées a échoué.</string>
     <string name="retry">Réessayer</string>
 
@@ -109,6 +111,7 @@
     <string name="settings_open">Paramètres</string>
     <string name="search_open">Ouvrir la recherche</string>
     <string name="search_close">Fermer la recherche</string>
+    <string name="search_clear">Effacer la recherche</string>
     <string name="account_open">Compte</string>
     <string name="account_hint">Connectez-vous avec votre compte Google pour que BetaScout puisse lire vos propres pages de test et détecter dans quelles bêtas vous êtes et si chacune est ouverte ou complète. Il ne rejoint jamais une bêta à votre place.</string>
     <string name="account_signin">Se connecter avec Google</string>
@@ -145,6 +148,8 @@
     <string name="account_relogin">Session expirée — veuillez vous reconnecter.</string>
     <string name="account_error">Échec : %1$s</string>
     <string name="account_scan_in_progress">Une analyse est déjà en cours — réessayez quand elle sera terminée.</string>
+    <string name="scan_not_started">L\'analyse demandée n\'a pas eu lieu. Réessayez.</string>
+    <string name="scan_unrecorded">L\'analyse s\'est terminée sur une erreur et son résultat n\'a pas pu être enregistré. Réessayez.</string>
     <string name="account_scan_blocked">Google limite les requêtes en ce moment — l\'analyse est suspendue pendant environ une heure pour protéger votre compte.</string>
     <string name="detail_check_failed">La vérification du statut a échoué — les infos affichées peuvent être obsolètes. Réessayez dans un instant.</string>
     <string name="account_signed_in">Compte connecté : %1$s</string>
@@ -184,4 +189,6 @@
     <string name="scan_channel_description">Affichée pendant une analyse manuelle des statuts bêta</string>
     <string name="scan_notification_title">Analyse des statuts bêta…</string>
     <string name="scan_notification_cancel">Annuler</string>
+    <string name="account_clear_local_data">Effacer les données locales du compte</string>
+    <string name="account_signout_failed">La déconnexion a échoué. Réessayez.</string>
 </resources>

@@ -26,6 +26,17 @@ class MainViewModel @Inject constructor(
     val useDynamicColor: StateFlow<Boolean> = settings.useDynamicColor
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
 
+    /** Someone inside the app asked for the sign-in page — the tap on the "sign
+     *  in again" notification or the main screen's "session expired" line. The
+     *  navigation host answers by opening the page and then consumes it. Process
+     *  state (see [SignInRequests]), so a rotation between the tap and the
+     *  navigation does not lose it. */
+    val signInRequested: StateFlow<Boolean> = SignInRequests.pending
+
+    fun requestSignIn() = SignInRequests.request()
+
+    fun consumeSignInRequest() = SignInRequests.consume()
+
     fun completeOnboarding() {
         viewModelScope.launch { settings.setOnboardingDone() }
     }

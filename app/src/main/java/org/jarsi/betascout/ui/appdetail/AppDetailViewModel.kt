@@ -4,14 +4,15 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import java.io.IOException
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import org.jarsi.betascout.data.settings.SessionRead
 import org.jarsi.betascout.data.settings.SettingsRepository
 import org.jarsi.betascout.domain.AppBetaOverview
 import org.jarsi.betascout.domain.AppRepository
@@ -92,23 +93,25 @@ class AppDetailViewModel @Inject constructor(
      *  reflect a join made moments ago, without waiting for the next full scan. */
     fun checkStatusNow() {
         if (checking.value) return
+        checking.value = true
+        checkError.value = null
         viewModelScope.launch {
-            val session = settings.playSession.first() ?: return@launch
-            checking.value = true
-            checkError.value = null
             try {
-                repository.refreshSingleBetaStatus(session, packageName)
-                    .onSuccess { checkError.value = null }
-                    .onFailure { error ->
-                        // Same handling as the scan worker: a dead session is cleared so
-                        // every screen switches to prompting for a fresh sign-in. Only
-                        // NeedsLogin — a StaleSession means another account is signed
-                        // in now, and its session must not be wiped. Every other failure
-                        // is surfaced — the membership on screen may be stale and the
-                        // user must not mistake it for a fresh result.
-                        if (error is DataError.NeedsLogin) settings.clearPlaySession()
-                        checkError.value = checkStatusErrorOf(error)
+                val session = when (val read = settings.readPlaySession()) {
+                    is SessionRead.Present -> read.session
+                    SessionRead.None -> return@launch
+                    SessionRead.Unreadable -> {
+                        checkError.value = CheckStatusError.FAILED
+                        return@launch
                     }
+                }
+                repository.refreshSingleBetaStatus(session, packageName).onFailure { error ->
+                    // Another sign-in may have arrived after the fetch. Expire only its original session.
+                    if (error is DataError.NeedsLogin) settings.expirePlaySession(session)
+                    checkError.value = checkStatusErrorOf(error)
+                }
+            } catch (e: IOException) {
+                checkError.value = CheckStatusError.FAILED
             } finally {
                 checking.value = false
             }

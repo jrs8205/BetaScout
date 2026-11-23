@@ -7,6 +7,7 @@ import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
 import kotlinx.coroutines.flow.Flow
+import org.jarsi.betascout.domain.UserBetaStatusInfo
 
 /** SQLite before 3.32 (Android 8-11) rejects statements with more than 999 host
  *  parameters, so list-bound deletes are chunked well under that limit. */
@@ -123,4 +124,25 @@ interface UserBetaStatusDao {
 
     @Upsert
     suspend fun upsert(status: UserBetaStatusEntity)
+
+    /** Serialize the read with the write so a UI edit also preserves intervening reminders and edits. */
+    @Transaction
+    suspend fun edit(packageName: String, transform: (UserBetaStatusInfo) -> UserBetaStatusInfo) {
+        val current = get(packageName)?.toDomain() ?: UserBetaStatusInfo(packageName)
+        upsert(transform(current).toEntity())
+    }
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertMissing(statuses: List<UserBetaStatusEntity>)
+
+    @Query("UPDATE user_beta_status SET lastRemindedAt = :at WHERE packageName IN (:packages)")
+    suspend fun setReminderTime(packages: List<String>, at: Long)
+
+    @Transaction
+    suspend fun markReminded(packages: List<String>, at: Long) {
+        for (batch in packages.chunked(SQL_VARIABLE_CHUNK)) {
+            insertMissing(batch.map { UserBetaStatusInfo(it).toEntity() })
+            setReminderTime(batch, at)
+        }
+    }
 }

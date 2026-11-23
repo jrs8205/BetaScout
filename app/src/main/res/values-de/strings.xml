@@ -2,6 +2,7 @@
 <resources>
     <!-- App list -->
     <string name="search_hint">Apps durchsuchen</string>
+    <string name="tab_all">Alle</string>
     <string name="tab_not_joined">Nicht beigetreten</string>
     <string name="tab_joined">Beigetreten</string>
     <string name="tab_no_beta">Keine Beta</string>
@@ -43,6 +44,7 @@
     <string name="badge_beta">Beta</string>
     <string name="refresh">Aktualisieren</string>
     <string name="empty_list">Keine App passt zu den Filtern.</string>
+    <string name="empty_all">Keine Apps vorhanden.</string>
     <string name="error_scan">Das Scannen der installierten Apps ist fehlgeschlagen.</string>
     <string name="retry">Erneut versuchen</string>
 
@@ -109,6 +111,7 @@
     <string name="settings_open">Einstellungen</string>
     <string name="search_open">Suche öffnen</string>
     <string name="search_close">Suche schließen</string>
+    <string name="search_clear">Suche leeren</string>
     <string name="account_open">Konto</string>
     <string name="account_hint">Melde dich mit deinem Google-Konto an, damit BetaScout deine eigenen Testseiten lesen und erkennen kann, in welchen Betas du bist und ob sie offen oder voll sind. Es tritt niemals in deinem Namen einer Beta bei.</string>
     <string name="account_signin">Mit Google anmelden</string>
@@ -145,6 +148,8 @@
     <string name="account_relogin">Sitzung abgelaufen — bitte melde dich neu an.</string>
     <string name="account_error">Fehlgeschlagen: %1$s</string>
     <string name="account_scan_in_progress">Es läuft bereits ein Scan — versuche es danach noch einmal.</string>
+    <string name="scan_not_started">Der angeforderte Scan wurde nicht ausgeführt. Versuche es noch einmal.</string>
+    <string name="scan_unrecorded">Der Scan endete mit einem Fehler, und sein Ergebnis konnte nicht gespeichert werden. Versuche es noch einmal.</string>
     <string name="account_scan_blocked">Google drosselt die Abfragen gerade — das Scannen pausiert etwa eine Stunde, um dein Konto zu schützen.</string>
     <string name="detail_check_failed">Die Statusprüfung ist fehlgeschlagen — die angezeigten Infos sind womöglich veraltet. Versuche es gleich noch einmal.</string>
     <string name="account_signed_in">Angemeldet als %1$s</string>
@@ -184,4 +189,6 @@
     <string name="scan_channel_description">Wird angezeigt, während ein manueller Beta-Status-Scan läuft</string>
     <string name="scan_notification_title">Beta-Status werden gescannt…</string>
     <string name="scan_notification_cancel">Abbrechen</string>
+    <string name="account_clear_local_data">Lokale Kontodaten löschen</string>
+    <string name="account_signout_failed">Die Abmeldung ist fehlgeschlagen. Bitte versuche es erneut.</string>
 </resources>

@@ -12,6 +12,7 @@ import androidx.annotation.StringRes
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
+import org.jarsi.betascout.SignInRequestActivity
 
 /**
  * What every BetaScout notification needs before it can be posted: the
@@ -46,6 +47,22 @@ internal class NotificationGate(private val context: Context) {
             context,
             packageName.hashCode(),
             Intent(Intent.ACTION_VIEW, testingUrl.toUri()),
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+        )
+
+    /** Explicit intent to the app's own, non-exported sign-in entry point, which
+     *  raises the request and brings the app forward (see
+     *  [SignInRequestActivity] for why it is not the launcher activity). */
+    fun signInIntent(): Intent =
+        Intent(context, SignInRequestActivity::class.java)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+
+    /** Tap action for the "sign in again" notice. */
+    fun openSignIn(): PendingIntent =
+        PendingIntent.getActivity(
+            context,
+            0,
+            signInIntent(),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
         )
 }

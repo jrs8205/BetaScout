@@ -12,7 +12,8 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class SessionCookieCipher @Inject constructor() {
+class SessionCookieCipher internal constructor(private val keyAlias: String) {
+    @Inject constructor() : this(KEY_ALIAS)
 
     fun isEncrypted(value: String): Boolean = value.startsWith(PREFIX)
 
@@ -41,14 +42,14 @@ class SessionCookieCipher @Inject constructor() {
 
     private fun getOrCreateKey(): SecretKey {
         val keyStore = KeyStore.getInstance(ANDROID_KEYSTORE).apply { load(null) }
-        val existing = keyStore.getEntry(KEY_ALIAS, null) as? KeyStore.SecretKeyEntry
+        val existing = keyStore.getEntry(keyAlias, null) as? KeyStore.SecretKeyEntry
         return existing?.secretKey ?: generateKey()
     }
 
     private fun generateKey(): SecretKey {
         val generator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, ANDROID_KEYSTORE)
         val spec = KeyGenParameterSpec.Builder(
-            KEY_ALIAS,
+            keyAlias,
             KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT,
         )
             .setBlockModes(KeyProperties.BLOCK_MODE_GCM)

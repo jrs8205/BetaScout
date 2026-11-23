@@ -1,5 +1,21 @@
 package org.jarsi.betascout.data.repo
 
+import androidx.datastore.preferences.core.edit
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.resetMain
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.setMain
+import org.jarsi.betascout.data.settings.FlakyStore
+import org.jarsi.betascout.data.settings.SessionCookieCipher
+import org.jarsi.betascout.data.settings.SessionPrefs
+import org.jarsi.betascout.data.settings.SettingsRepository
+import org.jarsi.betascout.ui.appdetail.AppDetailViewModel
+import org.jarsi.betascout.ui.appdetail.CheckStatusError
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
@@ -39,6 +55,7 @@ import org.jarsi.betascout.domain.ScanProgress
 import org.jarsi.betascout.domain.StatusTransition
 import org.jarsi.betascout.domain.UserBetaState
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -119,6 +136,7 @@ private class FakeBetaObservationDao : BetaObservationDao {
 }
 
 private class FakeUserBetaStatusDao : UserBetaStatusDao {
+    var beforeWrite: suspend () -> Unit = {}
     val state = MutableStateFlow<Map<String, UserBetaStatusEntity>>(emptyMap())
 
     override fun observeAll(): Flow<List<UserBetaStatusEntity>> = state.map { it.values.toList() }
@@ -132,7 +150,19 @@ private class FakeUserBetaStatusDao : UserBetaStatusDao {
         state.value[packageName]
 
     override suspend fun upsert(status: UserBetaStatusEntity) {
+        beforeWrite()
         state.value = state.value + (status.packageName to status)
+    }
+
+    override suspend fun insertMissing(statuses: List<UserBetaStatusEntity>) {
+        state.value = statuses.associateBy { it.packageName } + state.value
+    }
+
+    override suspend fun setReminderTime(packages: List<String>, at: Long) {
+        beforeWrite()
+        state.value = state.value.mapValues { (pkg, row) ->
+            if (pkg in packages) row.copy(lastRemindedAt = at) else row
+        }
     }
 }
 
@@ -170,6 +200,9 @@ class DefaultAppRepositoryTest {
     private val currentAccountKey = MutableStateFlow<String?>(ACCOUNT)
     private val session = PlaySession(accountEmail = ACCOUNT, cookieHeader = "SID=abc")
 
+    /** Which sign-in the stored session is ([PlaySession.generation]). */
+    private var signedInGeneration = session.generation
+
     /** HTML the fake testing-page source returns per package (empty page by default). */
     private var pageHtml: (String) -> String = { "<html><body></body></html>" }
 
@@ -185,10 +218,16 @@ class DefaultAppRepositoryTest {
     /** Runs inside every fake page fetch; tests use it to observe scan concurrency. */
     private var onFetch: suspend (String) -> Unit = {}
 
+    /** Scan tickets handed to the repository so far. */
+    private var ticketsIssued = 0L
+
     private fun kotlinx.coroutines.test.TestScope.repository(
         seedJson: () -> String = { """{"programs":[]}""" },
         now: Long = 42L,
         blockedUntil: suspend () -> Long? = { null },
+        ownsSession: suspend (PlaySession) -> Boolean = {
+            it.accountKey == currentAccountKey.value && it.generation == signedInGeneration
+        },
     ) = DefaultAppRepository(
         scanner = scanner,
         installedAppDao = installedDao,
@@ -220,11 +259,102 @@ class DefaultAppRepositoryTest {
             delayFn = {},
         ),
         currentAccountKey = currentAccountKey,
+        sessionIsCurrent = ownsSession,
         io = UnconfinedTestDispatcher(testScheduler),
         clock = { now },
         scanBlockedUntil = blockedUntil,
         setScanBlockedUntil = { savedBlockedUntil = it },
+        scanTicket = { ++ticketsIssued },
     )
+
+    @Test
+    fun `detail recheck reports an expiry write failure and can retry`() = runTest {
+        val store = FlakyStore()
+        pageHtml = { "<input id='identifierId'>" }
+        checkDetail(store) { vm ->
+            store.failingWrites = true
+            vm.checkStatusNow()
+            runCurrent()
+            assertEquals(CheckStatusError.FAILED, vm.uiState.value.checkError)
+            assertTrue(vm.uiState.value.signedIn)
+            assertFalse(vm.uiState.value.checkingStatus)
+
+            store.failingWrites = false
+            vm.checkStatusNow()
+            runCurrent()
+            assertFalse(vm.uiState.value.signedIn)
+            assertNull(vm.uiState.value.checkError)
+        }
+    }
+
+    @Test
+    fun `detail recheck reports an unreadable owner and never fetches with that session`() = runTest {
+        val store = FlakyStore()
+        var fetched = false
+        onFetch = { fetched = true }
+        checkDetail(store, beforeOwnershipRead = { store.failingReads = 1 }) { vm ->
+            vm.checkStatusNow()
+            runCurrent()
+            assertEquals(CheckStatusError.FAILED, vm.uiState.value.checkError)
+            assertTrue(vm.uiState.value.signedIn)
+            assertFalse(fetched)
+        }
+    }
+
+    private suspend fun TestScope.checkDetail(
+        store: FlakyStore,
+        beforeOwnershipRead: () -> Unit = {},
+        check: (AppDetailViewModel) -> Unit,
+    ) {
+        val main = StandardTestDispatcher(testScheduler)
+        store.edit { SessionPrefs.signIn(it, ACCOUNT, "SID=fixture") }
+        val settings = SettingsRepository(store, SessionCookieCipher(), main)
+        val repo = repository(ownsSession = {
+            beforeOwnershipRead()
+            settings.holdsPlaySession(it)
+        })
+        Dispatchers.setMain(main)
+        try {
+            val vm = AppDetailViewModel(SavedStateHandle(mapOf("packageName" to "example.app")), repo, settings)
+            val observer = backgroundScope.launch(UnconfinedTestDispatcher(testScheduler)) { vm.uiState.collect {} }
+            try {
+                runCurrent()
+                check(vm)
+            } finally {
+                observer.cancel()
+                vm.viewModelScope.cancel()
+                runCurrent()
+            }
+        } finally {
+            Dispatchers.resetMain()
+        }
+    }
+
+    @Test
+    fun `detail reports a failed initial session read and releases the recheck button`() = runTest {
+        val store = FlakyStore()
+        var fetched = false
+        onFetch = { fetched = true }
+        checkDetail(store) { vm ->
+            store.failingReads = 1
+            vm.checkStatusNow()
+            runCurrent()
+            assertEquals(CheckStatusError.FAILED, vm.uiState.value.checkError)
+            assertFalse(vm.uiState.value.checkingStatus)
+            assertFalse(fetched)
+        }
+    }
+
+    @Test
+    fun `a batch scan with an unreadable owner returns the retriable session error`() = runTest {
+        var fetched = false
+        onFetch = { fetched = true }
+        val repo = repository(ownsSession = { throw java.io.IOException("disk") })
+        val result = repo.refreshBetaStatus(session)
+        assertTrue(result.exceptionOrNull() is DataError.UnreadableSession)
+        assertFalse(fetched)
+        assertFalse(repo.scanRunning.value)
+    }
 
     @Test
     fun `getApps returns the combined snapshot without collecting the flow`() = runTest {
@@ -975,6 +1105,155 @@ class DefaultAppRepositoryTest {
     }
 
     @Test
+    fun `a scan refused while another runs is placed before that scan's end`() = runTest {
+        // The refused run's caller records "did not run" some time later; the
+        // running scan's caller records "got through" some time later too. Which
+        // came first is settled here, at the lock: the refusal, always — or it
+        // would outlive the very scan that answers it.
+        val repo = repository()
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        var refused: Result<*>? = null
+        onFetch = { refused = repo.refreshBetaStatus(session) }
+
+        val summary = repo.refreshBetaStatus(session).getOrThrow()
+
+        val refusal = refused!!.exceptionOrNull() as DataError.ScanInProgress
+        assertTrue("no ticket for the refusal", refusal.scanTicket > 0)
+        assertTrue(
+            "refused at ${refusal.scanTicket}, ended at ${summary.ticket}",
+            refusal.scanTicket < summary.ticket,
+        )
+    }
+
+    @Test
+    fun `a scan refused after another ended is placed after it`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+
+        val summary = repo.refreshBetaStatus(session).getOrThrow()
+        var refused: Result<*>? = null
+        // Something else holds the lock now (a sign-out, a single re-check).
+        repo.withScanLock { refused = repo.refreshBetaStatus(session) }
+
+        val refusal = refused!!.exceptionOrNull() as DataError.ScanInProgress
+        assertTrue(
+            "ended at ${summary.ticket}, refused at ${refusal.scanTicket}",
+            summary.ticket in 1 until refusal.scanTicket,
+        )
+    }
+
+    @Test
+    fun `a scan refused for the cooldown says when, and a failed one when it ended`() = runTest {
+        val blocked = repository(now = 1_000L, blockedUntil = { 5_000L }).refreshBetaStatus(session)
+        assertTrue((blocked.exceptionOrNull() as DataError.ScanBlocked).scanTicket > 0)
+
+        val repo = repository()
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        onFetch = { throw IllegalStateException("boom") }
+        val failed = repo.refreshBetaStatus(session)
+        val ticket = (failed.exceptionOrNull() as? DataError)?.scanTicket
+        // Either the page failure was absorbed into the summary, or the run
+        // failed as a whole: both say when the lock was let go.
+        assertTrue(
+            "was $failed",
+            failed.getOrNull()?.ticket?.let { it > 0 } ?: (ticket != null && ticket > 0),
+        )
+    }
+
+    @Test
+    fun `a scan aborts inside the scan lock once the account has signed out`() = runTest {
+        // A pull-to-refresh can enqueue its scan after sign-out has cancelled
+        // the scans. That run reads the session while it is still stored and
+        // reaches the scan lock only after the cleanup, which holds the lock,
+        // is through. It must then stop: no fetch with the old cookies, and no
+        // observation written back for the account that has just been wiped.
+        val repo = repository()
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        pageHtml = { """<html><body><form id="leaveForm"></form></body></html>""" }
+        var fetches = 0
+        onFetch = { fetches++ }
+        currentAccountKey.value = null
+
+        val result = repo.refreshBetaStatus(session)
+
+        assertTrue(
+            "expected StaleSession, was ${result.exceptionOrNull()}",
+            result.exceptionOrNull() is DataError.StaleSession,
+        )
+        assertEquals(0, fetches)
+        assertTrue(observationDao.getAll().isEmpty())
+        // The lock is free again for whoever signs in.
+        assertFalse(repo.scanRunning.value)
+        currentAccountKey.value = ACCOUNT
+        assertEquals(1, repo.refreshBetaStatus(session).getOrThrow().checked)
+    }
+
+    @Test
+    fun `a scan for a different signed-in account is refused too`() = runTest {
+        val repo = repository()
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        var fetches = 0
+        onFetch = { fetches++ }
+        currentAccountKey.value = OTHER_ACCOUNT
+
+        val result = repo.refreshBetaStatus(session)
+
+        assertTrue(result.exceptionOrNull() is DataError.StaleSession)
+        assertEquals(0, fetches)
+        assertTrue(observationDao.getAll().isEmpty())
+    }
+
+    @Test
+    fun `a scan made for an earlier sign-in of the same account stops inside the scan lock`() = runTest {
+        // A background run read its session and was on its way to the scan
+        // lock when the user signed in again, as the same account. The account
+        // matches; the session is another one. The run must not fetch with the
+        // old cookies, and must not sit on the lock while the scan started by
+        // the new sign-in is turned away.
+        val repo = repository()
+        scanner.result = { listOf(app("com.a")) }
+        repo.refreshApps()
+        pageHtml = { """<html><body><form id="leaveForm"></form></body></html>""" }
+        var fetches = 0
+        onFetch = { fetches++ }
+        signedInGeneration = session.generation + 1
+
+        val result = repo.refreshBetaStatus(session)
+
+        assertTrue(
+            "expected StaleSession, was ${result.exceptionOrNull() ?: result.getOrNull()}",
+            result.exceptionOrNull() is DataError.StaleSession,
+        )
+        assertEquals(0, fetches)
+        // The lock is free for the new sign-in's own scan.
+        assertFalse(repo.scanRunning.value)
+        val current = session.copy(generation = signedInGeneration)
+        assertEquals(1, repo.refreshBetaStatus(current).getOrThrow().checked)
+    }
+
+    @Test
+    fun `a single re-check made for an earlier sign-in of the same account is refused too`() = runTest {
+        val repo = repository()
+        var fetches = 0
+        onFetch = { fetches++ }
+        signedInGeneration = session.generation + 1
+
+        val result = repo.refreshSingleBetaStatus(session, "com.whatsapp")
+
+        assertTrue(
+            "expected StaleSession, was ${result.exceptionOrNull() ?: result.getOrNull()}",
+            result.exceptionOrNull() is DataError.StaleSession,
+        )
+        assertEquals(0, fetches)
+        assertTrue(observationDao.getAll().isEmpty())
+    }
+
+    @Test
     fun `a single re-check for a different signed-in account is refused too`() = runTest {
         val repo = repository()
         var fetches = 0
@@ -1067,6 +1346,54 @@ class DefaultAppRepositoryTest {
         // second full pass right after the first one finishes.
         assertTrue(periodicResult.exceptionOrNull() is DataError.ScanInProgress)
         assertEquals(1, maxActive)
+    }
+
+    @Test
+    fun `a reminder preserves a note saved while its write is pending`() = runTest {
+        val pkg = "example.app"
+        val repo = repository(now = 900L)
+        repo.setUserNote(pkg, "before").getOrThrow()
+        userDao.beforeWrite = {
+            userDao.beforeWrite = {}
+            repo.setUserNote(pkg, "after").getOrThrow()
+        }
+        repo.markReminded(listOf(pkg)).getOrThrow()
+        assertEquals("after", userDao.get(pkg)?.userNote)
+        assertEquals(900L, userDao.get(pkg)?.lastRemindedAt)
+    }
+
+    @Test
+    fun `competing scan cannot fetch between reading the cooldown and entering the lock`() = runTest {
+        for (batchFirst in listOf(true, false)) {
+            val read = kotlinx.coroutines.CompletableDeferred<Unit>()
+            val proceed = kotlinx.coroutines.CompletableDeferred<Unit>()
+            savedBlockedUntil = null
+            val repo = repository(blockedUntil = {
+                val snapshot = savedBlockedUntil
+                if (!read.isCompleted) {
+                    read.complete(Unit)
+                    proceed.await()
+                }
+                snapshot
+            })
+            val pkg = "example.app"
+            scanner.result = { listOf(app(pkg)) }
+            repo.refreshApps().getOrThrow()
+            rateLimitedPackages += pkg
+            var fetches = 0
+            onFetch = { fetches++ }
+            val first = async {
+                if (batchFirst) repo.refreshBetaStatus(session, force = true)
+                else repo.refreshSingleBetaStatus(session, pkg)
+            }
+            read.await()
+            if (batchFirst) repo.refreshSingleBetaStatus(session, pkg)
+            else repo.refreshBetaStatus(session, force = true)
+            proceed.complete(Unit)
+            first.await()
+            assertEquals(1, fetches)
+            assertTrue(savedBlockedUntil != null)
+        }
     }
 
     @Test

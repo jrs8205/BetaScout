@@ -22,7 +22,6 @@ import androidx.compose.ui.unit.dp
 import java.text.DateFormat
 import java.util.Date
 import org.jarsi.betascout.R
-import org.jarsi.betascout.work.BetaScanWorker
 
 /** Thin progress row for the main screen: visible only while a scan runs, so an
  *  idle front page spends no space on scanning — the controls live in settings. */
@@ -200,25 +199,54 @@ fun ScanStatusCard(
                                 )
                             }
                         }
-                        Button(onClick = onScanNow) {
+                        Button(onClick = onScanNow, enabled = state.canRequestScan()) {
                             Text(stringResource(R.string.scan_card_button))
                         }
                     }
                 }
             }
-            state.error?.let { error ->
+            // A scan that was asked for and did not run, in words that are
+            // true right now: see refusalNotice().
+            state.refusalNotice()?.let { notice ->
                 Text(
-                    text = when (error) {
-                        BetaScanWorker.ERROR_SCAN_IN_PROGRESS ->
-                            stringResource(R.string.account_scan_in_progress)
-                        BetaScanWorker.ERROR_SCAN_BLOCKED ->
-                            stringResource(R.string.account_scan_blocked)
-                        else -> stringResource(R.string.account_error, error)
-                    },
+                    text = scanNoticeText(notice),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.error,
                 )
             }
         }
+    }
+}
+
+/** The words for a [ScanNotice]. Which notice applies, and for how long it stays
+ *  true, is decided where the notice is made. */
+@Composable
+fun scanNoticeText(notice: ScanNotice): String = when (notice) {
+    is ScanNotice.Error -> scanErrorText(notice.code)
+    is ScanNotice.RunFailed -> scanRunFailureText(notice.failure)
+    ScanNotice.NotStarted -> stringResource(R.string.scan_not_started)
+    ScanNotice.OtherScanRunning -> stringResource(R.string.account_scan_in_progress)
+}
+
+/** What to tell the user about a run in which every check failed. Past tense,
+ *  like the settings screen's last-scan card: it reports an outcome. */
+@Composable
+fun scanRunFailureText(failure: ScanRunFailure): String {
+    val reason = failure.reason
+    return if (reason != null) {
+        stringResource(R.string.account_last_scan_failed_reason, failure.failed, reason)
+    } else {
+        stringResource(R.string.account_last_scan_failed, failure.failed)
+    }
+}
+
+/** What to tell the user about a failed manual scan. */
+@Composable
+fun scanErrorText(error: String): String {
+    val dedicated = scanErrorRes(error)
+    return if (dedicated != null) {
+        stringResource(dedicated)
+    } else {
+        stringResource(R.string.account_error, error)
     }
 }

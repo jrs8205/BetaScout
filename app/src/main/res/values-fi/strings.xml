@@ -2,6 +2,7 @@
 <resources>
     <!-- App list -->
     <string name="search_hint">Hae sovelluksia</string>
+    <string name="tab_all">Kaikki</string>
     <string name="tab_not_joined">Ei liittynyt</string>
     <string name="tab_joined">Mukana</string>
     <string name="tab_no_beta">Ei betaa</string>
@@ -43,6 +44,7 @@
     <string name="badge_beta">Beta</string>
     <string name="refresh">Päivitä</string>
     <string name="empty_list">Mikään sovellus ei vastaa suodattimia.</string>
+    <string name="empty_all">Ei näytettäviä sovelluksia.</string>
     <string name="error_scan">Sovellusten skannaus epäonnistui.</string>
     <string name="retry">Yritä uudelleen</string>
 
@@ -109,6 +111,7 @@
     <string name="settings_open">Asetukset</string>
     <string name="search_open">Avaa haku</string>
     <string name="search_close">Sulje haku</string>
+    <string name="search_clear">Tyhjennä haku</string>
     <string name="account_open">Tili</string>
     <string name="account_hint">Kirjaudu Google-tililläsi, jotta BetaScout voi lukea omat testisivusi ja tunnistaa mihin betoihin kuulut ja onko kukin auki vai täynnä. Se ei koskaan liity puolestasi.</string>
     <string name="account_signin">Kirjaudu Googlella</string>
@@ -145,6 +148,8 @@
     <string name="account_relogin">Istunto vanheni — kirjaudu uudelleen.</string>
     <string name="account_error">Epäonnistui: %1$s</string>
     <string name="account_scan_in_progress">Tarkistus on jo käynnissä — yritä uudelleen kun se valmistuu.</string>
+    <string name="scan_not_started">Pyytämääsi skannausta ei ajettu. Yritä uudelleen.</string>
+    <string name="scan_unrecorded">Skannaus päättyi virheeseen, eikä sen tulosta saatu tallennettua. Yritä uudelleen.</string>
     <string name="account_scan_blocked">Google rajoittaa tarkistuksia juuri nyt — skannaus on tauolla noin tunnin tilisi suojaamiseksi.</string>
     <string name="detail_check_failed">Tilan tarkistus epäonnistui — näytetty tieto voi olla vanhentunut. Yritä hetken kuluttua uudelleen.</string>
     <string name="account_signed_in">Kirjautunut: %1$s</string>
@@ -184,4 +189,6 @@
     <string name="scan_channel_description">Näkyy kun käsin käynnistetty beta-tilojen skannaus on käynnissä</string>
     <string name="scan_notification_title">Skannataan beta-tiloja…</string>
     <string name="scan_notification_cancel">Peruuta</string>
+    <string name="account_clear_local_data">Poista tilin paikalliset tiedot</string>
+    <string name="account_signout_failed">Uloskirjautuminen epäonnistui. Yritä uudelleen.</string>
 </resources>

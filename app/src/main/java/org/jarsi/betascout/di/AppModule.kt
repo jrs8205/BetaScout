@@ -90,9 +90,8 @@ object AppModule {
             workManager.cancelUniqueWork(BetaScanScheduler.WORK_NAME).await()
         },
         withScanLock = { repository.withScanLock(it) },
-        clearObservations = { repository.clearAllObservations() },
+        clearObservations = repository::clearAllObservations,
         clearSession = settings::clearPlaySession,
-        clearLastScan = settings::clearLastScan,
         clearWebViewCookies = {
             val cookieManager = CookieManager.getInstance()
             // removeAllCookies is asynchronous; resume only once the cookie store
@@ -198,10 +197,12 @@ object AppModule {
             // distinctUntilChanged avoids re-decrypting the cookie and re-filtering the
             // whole observation list on every unrelated DataStore emission.
             currentAccountKey = settings.playSession.map { it?.accountKey }.distinctUntilChanged(),
+            sessionIsCurrent = settings::holdsPlaySession,
             io = Dispatchers.IO,
             clock = System::currentTimeMillis,
-            scanBlockedUntil = { settings.scanBlockedUntil.first() },
+            scanBlockedUntil = settings::readScanBlockedUntil,
             setScanBlockedUntil = settings::setScanBlockedUntil,
+            scanTicket = settings::scanTicket,
         )
     }
 }

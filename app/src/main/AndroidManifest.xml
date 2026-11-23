@@ -36,6 +36,26 @@
             </intent-filter>
         </activity>
 
+        <!-- Tap target of the "sign in again" notification. Not exported: only this
+             app's own PendingIntent can start it, so another app cannot make the
+             sign-in page open. Invisible, and in a throwaway task kept out of
+             Recents so it never becomes the base of the app's real task. -->
+        <activity
+            android:name=".SignInRequestActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.NoDisplay" />
+
+        <receiver
+            android:name=".work.ReloginNoticeUpgradeReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
         <!-- WorkManager's foreground-service host needs an explicit type on API 34+;
              dataSync matches the manual scan promoted via setForeground(). -->
         <service

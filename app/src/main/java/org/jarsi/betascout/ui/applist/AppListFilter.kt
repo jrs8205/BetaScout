@@ -32,9 +32,45 @@ fun filterApps(rows: List<AppBetaOverview>, filters: AppFilters): List<AppBetaOv
         .toList()
 }
 
-/** Per-tab totals of the already-filtered rows, shown in the tab titles. */
-fun tabCounts(filteredRows: List<AppBetaOverview>): Map<BetaMembership, Int> =
-    filteredRows.groupingBy { it.betaMembership() }.eachCount()
+/** A list tab: every listed app, or the apps of one membership class. */
+enum class AppListTab(val membership: BetaMembership?) {
+    ALL(null),
+    AVAILABLE(BetaMembership.AVAILABLE),
+    JOINED(BetaMembership.JOINED),
+    NONE(BetaMembership.NONE),
+}
+
+/** The rows [tab] lists out of the already-filtered rows, in their order. */
+fun appsForTab(filteredRows: List<AppBetaOverview>, tab: AppListTab): List<AppBetaOverview> {
+    val membership = tab.membership ?: return filteredRows
+    return filteredRows.filter { it.betaMembership() == membership }
+}
+
+/** Whether the search panel is narrowing the list right now. */
+fun AppFilters.isActive(): Boolean = query.isNotBlank() || onlyBeta || onlyWatched || onlySystem
+
+/** The text an empty [tab] shows. The per-tab texts are statements about the
+ *  user's apps ("you have not joined any yet"); when a search or filter emptied
+ *  the tab they would be false, so the filters take the blame instead — and
+ *  only then: an "All" tab that is empty with no filter on (the package read
+ *  failed, say) gets a neutral text, not advice about filters nobody set. */
+fun emptyStateRes(tab: AppListTab, filters: AppFilters): Int = when {
+    filters.isActive() -> R.string.empty_list
+    tab == AppListTab.AVAILABLE -> R.string.empty_not_joined
+    tab == AppListTab.JOINED -> R.string.empty_joined
+    tab == AppListTab.NONE -> R.string.empty_no_beta
+    else -> R.string.empty_all
+}
+
+/** Per-tab totals of the already-filtered rows, shown in the tab titles. Every
+ *  tab has an entry, so an empty tab reads 0 instead of being absent. */
+fun tabCounts(filteredRows: List<AppBetaOverview>): Map<AppListTab, Int> {
+    val byMembership = filteredRows.groupingBy { it.betaMembership() }.eachCount()
+    return AppListTab.entries.associateWith { tab ->
+        val membership = tab.membership
+        if (membership == null) filteredRows.size else byMembership[membership] ?: 0
+    }
+}
 
 /** Row badge for an app's beta state; null = nothing worth badging. */
 enum class StatusBadge(val labelRes: Int) {

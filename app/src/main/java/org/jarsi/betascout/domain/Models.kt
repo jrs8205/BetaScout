@@ -21,6 +21,13 @@ enum class BetaSource { BUNDLED, REMOTE }
 data class PlaySession(
     val accountEmail: String,
     val cookieHeader: String,
+    /** Which sign-in on this device the session came from: a count kept with
+     *  the stored session and raised by every sign-in. It tells one session
+     *  from the next without reading the cookie — a new sign-in of the same
+     *  account, even with the same cookie, is another session. 0 for a session
+     *  that was not read from the store, or was stored before the count was
+     *  kept. */
+    val generation: Long = 0,
 ) {
     val accountKey: String =
         accountEmail.trim().lowercase(Locale.ROOT).ifBlank { "cookie:${cookieHeader.sha256Hex()}" }
@@ -45,6 +52,9 @@ data class ScanSummary(
     val noProgram: Int = 0,
     val failures: Map<String, String> = emptyMap(),
     val transitions: List<StatusTransition> = emptyList(),
+    /** When the run let go of the scan lock, as a scan ticket; 0 if the
+     *  repository hands none out. */
+    val ticket: Long = 0,
 ) {
     val failed: Int get() = failures.size
 

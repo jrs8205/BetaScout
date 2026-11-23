@@ -1,5 +1,6 @@
 package org.jarsi.betascout.data.repo
 
+import java.io.IOException
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
@@ -48,12 +49,18 @@ class DefaultAppRepository(
     private val seeder: BetaSeeder,
     private val scraper: BetaStatusScraper,
     private val currentAccountKey: Flow<String?>,
+    /** Whether a session is still the signed-in one: that very sign-in, not
+     *  only that account (the settings store's check in the app). */
+    private val sessionIsCurrent: suspend (PlaySession) -> Boolean,
     private val io: CoroutineDispatcher,
     private val clock: () -> Long,
     /** Persisted Google-block cooldown (epoch millis), or null when not blocked.
      *  Injected as lambdas so this class stays free of the settings store. */
     private val scanBlockedUntil: suspend () -> Long? = { null },
     private val setScanBlockedUntil: suspend (Long) -> Unit = {},
+    /** Hands out the tickets that put scan events in order (the settings
+     *  store's sequence in the app). */
+    private val scanTicket: () -> Long = { 0L },
 ) : AppRepository {
 
     /** The manual and the periodic worker share this singleton; a single scan lock
@@ -64,8 +71,33 @@ class DefaultAppRepository(
     private val _scanRunning = MutableStateFlow(false)
     override val scanRunning: StateFlow<Boolean> = _scanRunning.asStateFlow()
 
+    /** Makes "the lock was refused" / "the lock was let go", and the ticket
+     *  that says when, one step. Without it a refused run could be told of the
+     *  refusal, and the run that held the lock could finish and take its ticket,
+     *  before the refused one got round to taking its own: the refusal would
+     *  then count as the later event and outlive the scan that answered it. */
+    private val lockOrder = Any()
+
+    /** Takes the scan lock; or, if it is held, returns the ticket of this
+     *  refusal — taken while the lock is still held by the other. */
+    private fun takeScanLock(): Long? = synchronized(lockOrder) {
+        if (scanMutex.tryLock()) null else scanTicket()
+    }
+
+    /** Lets go of the scan lock and returns the ticket of that moment. */
+    private fun releaseScanLock(): Long = synchronized(lockOrder) {
+        scanMutex.unlock()
+        scanTicket()
+    }
+
     override suspend fun withScanLock(block: suspend () -> Unit) {
         scanMutex.withLock { block() }
+    }
+
+    private suspend fun sessionError(session: PlaySession): DataError? = try {
+        if (sessionIsCurrent(session)) null else DataError.StaleSession()
+    } catch (e: IOException) {
+        DataError.UnreadableSession(e)
     }
 
     override fun observeApps(): Flow<List<AppBetaOverview>> = combine(
@@ -137,14 +169,30 @@ class DefaultAppRepository(
         force: Boolean,
         onProgress: suspend (ScanProgress) -> Unit,
     ): Result<ScanSummary> = withContext(io) {
-        checkNotBlocked()?.let { return@withContext Result.failure(it) }
         // tryLock, not lock(): a scan queued behind a long manual run would re-hit
         // Google right after it finishes. The loser is rejected instead — the
         // periodic worker skips its slot and a manual tap gets told in the UI.
-        if (!scanMutex.tryLock()) return@withContext Result.failure(DataError.ScanInProgress())
+        takeScanLock()?.let { refusedAt ->
+            return@withContext Result.failure(DataError.ScanInProgress(refusedAt))
+        }
         _scanRunning.value = true
-        try {
+        var releasedAt = 0L
+        val run = try {
             try {
+                checkNotBlocked()?.let { return@withContext Result.failure(it) }
+                // The caller read its session before reaching the lock. Sign-out
+                // wipes the account inside this lock, and a run enqueued just
+                // after sign-out cancelled the scans (a pull-to-refresh whose
+                // list refresh ended at that moment) gets here only once the
+                // wipe is through. Re-checked before anything is fetched or
+                // written, as the single re-check below does: a superseded
+                // session must not put observations back for an account that
+                // is no longer signed in. The sign-in is checked, not just the
+                // account: a run that read its session before the same account
+                // signed in again would otherwise fetch with the old cookies,
+                // and hold this lock while the scan the new sign-in starts is
+                // turned away.
+                sessionError(session)?.let { return@withContext Result.failure(it) }
                 android.util.Log.d(TAG, "refreshBetaStatus: start force=$force")
                 // One-shot suspend queries, NOT observeAll().first(): a flow's initial
                 // emission can be lost to an invalidation-tracker race, after which
@@ -232,8 +280,16 @@ class DefaultAppRepository(
             }
         } finally {
             _scanRunning.value = false
-            scanMutex.unlock()
+            releasedAt = releaseScanLock()
         }
+        // Whoever records this run is told when it ended: at the release of
+        // the lock, not whenever its caller gets to look.
+        run.fold(
+            onSuccess = { Result.success(it.copy(ticket = releasedAt)) },
+            onFailure = { e ->
+                Result.failure(if (e is DataError.Local) DataError.Local(e.cause ?: e, releasedAt) else e)
+            },
+        )
     }
 
     /** Shares the scan lock with full runs but deliberately does NOT flip
@@ -243,18 +299,17 @@ class DefaultAppRepository(
         session: PlaySession,
         packageName: String,
     ): Result<Unit> = withContext(io) {
-        checkNotBlocked()?.let { return@withContext Result.failure(it) }
         if (!scanMutex.tryLock()) return@withContext Result.failure(DataError.ScanInProgress())
         try {
             try {
+                checkNotBlocked()?.let { return@withContext Result.failure(it) }
                 // The caller read its session before reaching the lock, and sign-out
                 // (which cancels only the WorkManager scans) may have wiped or
                 // replaced the account inside the lock meanwhile. Re-checked here so
                 // a superseded session never fetches Google or writes a membership
-                // row back for an account that is no longer signed in.
-                if (currentAccountKey.first() != session.accountKey) {
-                    return@withContext Result.failure(DataError.StaleSession())
-                }
+                // row back for an account that is no longer signed in. By sign-in,
+                // as in the full scan above.
+                sessionError(session)?.let { return@withContext Result.failure(it) }
                 val outcome = scraper.scrape(listOf(packageName), session) { observation ->
                     betaObservationDao.upsert(observation.toEntity())
                 }
@@ -307,21 +362,14 @@ class DefaultAppRepository(
 
     override suspend fun markReminded(packageNames: List<String>): Result<Unit> =
         runCatchingData(::wrapLocal) {
-            val now = clock()
-            packageNames.forEach { packageName ->
-                val current = userBetaStatusDao.get(packageName)?.toDomain()
-                    ?: UserBetaStatusInfo(packageName = packageName)
-                userBetaStatusDao.upsert(current.copy(lastRemindedAt = now).toEntity())
-            }
+            userBetaStatusDao.markReminded(packageNames, clock())
         }
 
     private suspend fun updateStatus(
         packageName: String,
         transform: (UserBetaStatusInfo) -> UserBetaStatusInfo,
     ): Result<Unit> = runCatchingData(::wrapLocal) {
-        val current = userBetaStatusDao.get(packageName)?.toDomain()
-            ?: UserBetaStatusInfo(packageName = packageName)
-        userBetaStatusDao.upsert(transform(current).toEntity())
+        userBetaStatusDao.edit(packageName, transform)
     }
 
     private fun wrapLocal(cause: Throwable): DataError = DataError.Local(cause)
@@ -345,7 +393,7 @@ class DefaultAppRepository(
     /** Returns the active Google-block error, or null when scanning is allowed. */
     private suspend fun checkNotBlocked(): DataError.ScanBlocked? {
         val until = scanBlockedUntil() ?: return null
-        return if (until > clock()) DataError.ScanBlocked(until) else null
+        return if (until > clock()) DataError.ScanBlocked(until, scanTicket()) else null
     }
 
     private companion object {

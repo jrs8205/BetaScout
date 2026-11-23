@@ -2,6 +2,7 @@
 <resources>
     <!-- App list -->
     <string name="search_hint">Pesquisar apps</string>
+    <string name="tab_all">Todos</string>
     <string name="tab_not_joined">Fora do beta</string>
     <string name="tab_joined">No beta</string>
     <string name="tab_no_beta">Sem beta</string>
@@ -43,6 +44,7 @@
     <string name="badge_beta">Beta</string>
     <string name="refresh">Atualizar</string>
     <string name="empty_list">Nenhum app corresponde aos filtros.</string>
+    <string name="empty_all">Nenhum app para mostrar.</string>
     <string name="error_scan">Falha ao verificar os apps instalados.</string>
     <string name="retry">Tentar novamente</string>
 
@@ -109,6 +111,7 @@
     <string name="settings_open">Configurações</string>
     <string name="search_open">Abrir pesquisa</string>
     <string name="search_close">Fechar pesquisa</string>
+    <string name="search_clear">Limpar pesquisa</string>
     <string name="account_open">Conta</string>
     <string name="account_hint">Faça login com sua conta do Google para que o BetaScout possa ler suas próprias páginas de teste e detectar de quais betas você participa e se cada um está aberto ou lotado. Ele nunca entra em um beta por você.</string>
     <string name="account_signin">Fazer login com o Google</string>
@@ -145,6 +148,8 @@
     <string name="account_relogin">A sessão expirou — faça login novamente.</string>
     <string name="account_error">Falha: %1$s</string>
     <string name="account_scan_in_progress">Já existe uma verificação em andamento — tente de novo quando ela terminar.</string>
+    <string name="scan_not_started">A verificação que você pediu não foi feita. Tente de novo.</string>
+    <string name="scan_unrecorded">A verificação terminou com erro e o resultado não pôde ser salvo. Tente de novo.</string>
     <string name="account_scan_blocked">O Google está limitando as consultas no momento — a verificação ficará pausada por cerca de uma hora para proteger sua conta.</string>
     <string name="detail_check_failed">A verificação do status falhou — a informação exibida pode estar desatualizada. Tente novamente em instantes.</string>
     <string name="account_signed_in">Conectado como %1$s</string>
@@ -184,4 +189,6 @@
     <string name="scan_channel_description">Aparece enquanto uma verificação manual está em andamento</string>
     <string name="scan_notification_title">Verificando status dos betas…</string>
     <string name="scan_notification_cancel">Cancelar</string>
+    <string name="account_clear_local_data">Apagar os dados locais da conta</string>
+    <string name="account_signout_failed">Não foi possível sair da conta. Tente novamente.</string>
 </resources>

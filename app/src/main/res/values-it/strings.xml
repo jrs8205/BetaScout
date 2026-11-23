@@ -2,6 +2,7 @@
 <resources>
     <!-- App list -->
     <string name="search_hint">Cerca app</string>
+    <string name="tab_all">Tutte</string>
     <string name="tab_not_joined">Fuori dalla beta</string>
     <string name="tab_joined">Nella beta</string>
     <string name="tab_no_beta">Senza beta</string>
@@ -43,6 +44,7 @@
     <string name="badge_beta">Beta</string>
     <string name="refresh">Aggiorna</string>
     <string name="empty_list">Nessuna app corrisponde ai filtri.</string>
+    <string name="empty_all">Nessuna app da mostrare.</string>
     <string name="error_scan">Impossibile esaminare le app installate.</string>
     <string name="retry">Riprova</string>
 
@@ -109,6 +111,7 @@
     <string name="settings_open">Impostazioni</string>
     <string name="search_open">Apri la ricerca</string>
     <string name="search_close">Chiudi la ricerca</string>
+    <string name="search_clear">Cancella ricerca</string>
     <string name="account_open">Account</string>
     <string name="account_hint">Accedi con il tuo account Google così BetaScout può leggere le tue pagine di test e rilevare in quali beta sei e se ognuna è aperta o al completo. Non si unisce mai a una beta al posto tuo.</string>
     <string name="account_signin">Accedi con Google</string>
@@ -145,6 +148,8 @@
     <string name="account_relogin">Sessione scaduta — accedi di nuovo.</string>
     <string name="account_error">Errore: %1$s</string>
     <string name="account_scan_in_progress">C\'è già una verifica in corso — riprova quando è terminata.</string>
+    <string name="scan_not_started">La verifica richiesta non è stata eseguita. Riprova.</string>
+    <string name="scan_unrecorded">La verifica è terminata con un errore e il risultato non è stato salvato. Riprova.</string>
     <string name="account_scan_blocked">Google sta limitando le richieste in questo momento — la verifica è in pausa per circa un\'ora per proteggere il tuo account.</string>
     <string name="detail_check_failed">La verifica dello stato non è riuscita — le informazioni mostrate potrebbero non essere aggiornate. Riprova tra un momento.</string>
     <string name="account_signed_in">Accesso effettuato come %1$s</string>
@@ -184,4 +189,6 @@
     <string name="scan_channel_description">Mostrata durante una verifica manuale degli stati beta</string>
     <string name="scan_notification_title">Verifica degli stati beta…</string>
     <string name="scan_notification_cancel">Annulla</string>
+    <string name="account_clear_local_data">Elimina i dati locali dell’account</string>
+    <string name="account_signout_failed">Disconnessione non riuscita. Riprova.</string>
 </resources>
