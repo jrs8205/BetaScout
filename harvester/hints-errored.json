@@ -734,39 +734,39 @@
     },
     {
       "packageName": "com.hypedrop.hypedropapp1",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792919540355
+      "lastErrorAt": 1795532158500
     },
     {
       "packageName": "com.iboalali.sysnotifsnooze",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792919540355
+      "lastErrorAt": 1795532158500
     },
     {
       "packageName": "com.amazon.drive",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792919540355
+      "lastErrorAt": 1795532158500
     },
     {
       "packageName": "com.google.android.apps.gmm.qp",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792919540355
+      "lastErrorAt": 1795532158500
     },
     {
       "packageName": "fr.freebox.network",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792919540355
+      "lastErrorAt": 1795532158500
     },
     {
       "packageName": "fr.freemobile.android.vvm",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1792919540355
+      "lastErrorAt": 1795532158500
     },
     {
       "packageName": "com.cedarworks.standby",
@@ -1190,15 +1190,15 @@
     },
     {
       "packageName": "com.lamina.launcher",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1795445070862
+      "lastErrorAt": 1795532158500
     },
     {
       "packageName": "com.spareroom.locator",
-      "attempts": 2,
+      "attempts": 3,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1795445070862
+      "lastErrorAt": 1795532158500
     }
   ]
 }

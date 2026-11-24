@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1795445070864,
+  "generatedAt": 1795532158502,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2877,7 +2877,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 810308004,
+      "productionVersionCode": 812704204,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -7251,7 +7251,7 @@
       "packageName": "com.duolingo",
       "appName": "Duolingo: Learn Languages",
       "hasBeta": true,
-      "productionVersionCode": 2506,
+      "productionVersionCode": 2508,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -10523,6 +10523,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.happymagenta.spyglass",
+      "appName": "Spyglass",
+      "hasBeta": true,
+      "productionVersionCode": 44,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.harry.stokie",
       "appName": "STOKiE: 4K Stock Wallpapers",
       "hasBeta": true,
@@ -10626,6 +10635,15 @@
       "appName": "Wordfeud",
       "hasBeta": true,
       "productionVersionCode": 4438,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.hcceg.veg.compassionfree",
+      "appName": "HappyCow - Vegan Food Near You",
+      "hasBeta": true,
+      "productionVersionCode": 6444,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -11705,7 +11723,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 386215122,
+      "productionVersionCode": 386314341,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -15932,6 +15950,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.networkoptix.nxwitness",
+      "appName": "Nx Witness Mobile",
+      "hasBeta": true,
+      "productionVersionCode": 43120,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.newrp.game",
       "appName": "NEWRP: RolePlay Life Simulator",
       "hasBeta": true,
@@ -16998,6 +17025,15 @@
       "appName": "Otree.pro | HyperOS updates",
       "hasBeta": true,
       "productionVersionCode": 706,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ottmega.player",
+      "appName": "OTTMEGA Player",
+      "hasBeta": true,
+      "productionVersionCode": 56,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -20795,7 +20831,7 @@
       "packageName": "com.spotify.music",
       "appName": "Spotify: Music and Podcasts",
       "hasBeta": true,
-      "productionVersionCode": 148387875,
+      "productionVersionCode": 148653799,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22388,7 +22424,7 @@
       "packageName": "com.todoist",
       "appName": "Todoist: To Do List & Calendar",
       "hasBeta": true,
-      "productionVersionCode": 12352,
+      "productionVersionCode": 12354,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -22999,7 +23035,7 @@
       "packageName": "com.tumblr",
       "appName": "Tumblr: Social Media & Art",
       "hasBeta": true,
-      "productionVersionCode": 1470200110,
+      "productionVersionCode": 1470300110,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -25066,6 +25102,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.yellowpages.android.ypmobile",
+      "appName": "YP - The Real Yellow Pages",
+      "hasBeta": true,
+      "productionVersionCode": 100801200,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.yelp.android",
       "appName": "Yelp: Food, Delivery & Reviews",
       "hasBeta": true,
@@ -26411,6 +26456,15 @@
       "appName": "AnExplorer X File Explorer",
       "hasBeta": true,
       "productionVersionCode": 60501,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "dev.dworks.apps.anexplorer.pro",
+      "appName": "AnExplorer Pro File Manager",
+      "hasBeta": true,
+      "productionVersionCode": 60901,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -31617,10 +31671,28 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "puzzle.car.loop.party",
+      "appName": "Car Loop Party!",
+      "hasBeta": true,
+      "productionVersionCode": 5,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "puzzle.rotate.rings",
       "appName": "Ring Twist Puzzle!",
       "hasBeta": true,
       "productionVersionCode": 122,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "puzzle.yarn.sort.craze",
+      "appName": "Yarn Sort Craze!",
+      "hasBeta": true,
+      "productionVersionCode": 5,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -31882,6 +31954,15 @@
       "appName": "Auto Redial",
       "hasBeta": true,
       "productionVersionCode": 700,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ru.mail.mailapp",
+      "appName": "Mail: Email, Cloud, Calendar",
+      "hasBeta": true,
+      "productionVersionCode": 152737,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -32619,7 +32700,7 @@
       "packageName": "tv.twitch.android.app",
       "appName": "Twitch: Live Streaming",
       "hasBeta": true,
-      "productionVersionCode": 3201006,
+      "productionVersionCode": 3202006,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
