@@ -212,9 +212,9 @@
     },
     {
       "packageName": "com.google.android.apps.betterbug",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791458720463
+      "lastErrorAt": 1795616935922
     },
     {
       "packageName": "com.andreacioccarelli.vmtweaker",
@@ -368,9 +368,9 @@
     },
     {
       "packageName": "eu.livesport.FlashScore_com",
-      "attempts": 5,
+      "attempts": 6,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1791715946674
+      "lastErrorAt": 1795616935922
     },
     {
       "packageName": "com.urik.keyboard",
@@ -767,12 +767,6 @@
       "attempts": 5,
       "lastError": "AppNotFound: null",
       "lastErrorAt": 1795532158500
-    },
-    {
-      "packageName": "com.cedarworks.standby",
-      "attempts": 4,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793009511467
     },
     {
       "packageName": "com.ancestry.ancestrydna",

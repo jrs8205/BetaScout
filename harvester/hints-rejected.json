@@ -285,22 +285,6 @@
       "rejectedAt": 1795351141373
     },
     {
-      "packageName": "com.colourswift.cssecurity",
-      "rejectedAt": 1793009511467
-    },
-    {
-      "packageName": "com.summoners.kingdom.usagoogle",
-      "rejectedAt": 1793009511467
-    },
-    {
-      "packageName": "com.imo.android.imoim",
-      "rejectedAt": 1793009511467
-    },
-    {
-      "packageName": "com.paget96.batteryguru",
-      "rejectedAt": 1793009511467
-    },
-    {
       "packageName": "app.prolauncher",
       "rejectedAt": 1793094697793
     },
@@ -1079,6 +1063,34 @@
     {
       "packageName": "org.torproject.torbrowser",
       "rejectedAt": 1795532158499
+    },
+    {
+      "packageName": "com.cedarworks.standby",
+      "rejectedAt": 1795616935921
+    },
+    {
+      "packageName": "com.stunt.race.star.game",
+      "rejectedAt": 1795616935921
+    },
+    {
+      "packageName": "com.reedcouk.jobs",
+      "rejectedAt": 1795616935921
+    },
+    {
+      "packageName": "com.tesco.grocery.view",
+      "rejectedAt": 1795616935921
+    },
+    {
+      "packageName": "uk.co.next.android",
+      "rejectedAt": 1795616935921
+    },
+    {
+      "packageName": "uk.co.very.myvery",
+      "rejectedAt": 1795616935921
+    },
+    {
+      "packageName": "com.krafton.bgmilite",
+      "rejectedAt": 1795616935921
     }
   ]
 }

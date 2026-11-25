@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1795532158502,
+  "generatedAt": 1795616935926,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -219,6 +219,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "ai.wajo.mobile",
+      "appName": "Fo by Wajo",
+      "hasBeta": true,
+      "productionVersionCode": 28244041,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "ai.x.grok",
       "appName": "Grok AI",
       "hasBeta": true,
@@ -304,6 +313,15 @@
       "appName": "FocusReader RSS Reader",
       "hasBeta": true,
       "productionVersionCode": 251,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "allthetopbananas.cvlibrary",
+      "appName": "CV-Library Job Search",
+      "hasBeta": true,
+      "productionVersionCode": 1000010,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2877,7 +2895,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 812704204,
+      "productionVersionCode": 812709204,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6015,6 +6033,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.coolmobilesolution.fastscannerfree",
+      "appName": "Fast Scanner - PDF Scan App",
+      "hasBeta": true,
+      "productionVersionCode": 197,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.corefour.edsby",
       "appName": "Edsby",
       "hasBeta": true,
@@ -8652,6 +8679,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.footej.camera2",
+      "appName": "Footej Camera - PRO HD Camera",
+      "hasBeta": true,
+      "productionVersionCode": 100394,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.foragetechnologycorp.forage",
       "appName": "Forage EBT Balance & Rewards",
       "hasBeta": true,
@@ -10076,7 +10112,7 @@
       "packageName": "com.google.android.youtube",
       "appName": "YouTube",
       "hasBeta": true,
-      "productionVersionCode": 1561314006,
+      "productionVersionCode": 1561317016,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11723,7 +11759,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 386314341,
+      "productionVersionCode": 386314297,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -16269,6 +16305,15 @@
       "appName": "NoiseFit: Health & Fitness",
       "hasBeta": true,
       "productionVersionCode": 804,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.nomad88.docscanner",
+      "appName": "PDF, JPG Scanner: Nomad Scan",
+      "hasBeta": true,
+      "productionVersionCode": 125,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -23116,7 +23161,7 @@
       "packageName": "com.twitter.android",
       "appName": "X",
       "hasBeta": true,
-      "productionVersionCode": 312451001,
+      "productionVersionCode": 312461001,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -24382,6 +24427,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.wejoy.weplay.ar",
+      "appName": "WePlay(ويبلاي) - Game & Chat",
+      "hasBeta": true,
+      "productionVersionCode": 61053,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.wejoy.weplay.us",
       "appName": "WePlay - Game and Party",
       "hasBeta": true,
@@ -24448,7 +24502,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp",
       "hasBeta": true,
-      "productionVersionCode": 264509900,
+      "productionVersionCode": 264607600,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -28333,6 +28387,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "ir.esfandune.waveacc",
+      "appName": "حسابداری موج شخصی و ثبت فاکتور",
+      "hasBeta": true,
+      "productionVersionCode": 342,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "it.company.sielte",
       "appName": "MySielteID",
       "hasBeta": true,
@@ -29804,6 +29867,15 @@
       "appName": "Sleepa: Relaxing sounds, Sleep",
       "hasBeta": true,
       "productionVersionCode": 135,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "net.sjava.salesapp",
+      "appName": "AppsOnSale - Apps & games sale",
+      "hasBeta": true,
+      "productionVersionCode": 193,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
