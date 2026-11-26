@@ -979,12 +979,6 @@
       "lastErrorAt": 1795445070862
     },
     {
-      "packageName": "com.jackallalone.dev.vpkeyboard",
-      "attempts": 3,
-      "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793094697794
-    },
-    {
       "packageName": "pl.krzyzvibe.game",
       "attempts": 3,
       "lastError": "AppNotFound: null",

@@ -285,38 +285,6 @@
       "rejectedAt": 1795351141373
     },
     {
-      "packageName": "app.prolauncher",
-      "rejectedAt": 1793094697793
-    },
-    {
-      "packageName": "de.dhl.paket",
-      "rejectedAt": 1793094697793
-    },
-    {
-      "packageName": "com.adpmobile.android",
-      "rejectedAt": 1793094697793
-    },
-    {
-      "packageName": "com.ddt.dotdotbuy",
-      "rejectedAt": 1793094697793
-    },
-    {
-      "packageName": "com.grocerkey.frontendapp.woodmans",
-      "rejectedAt": 1793094697793
-    },
-    {
-      "packageName": "com.homes.homesdotcom",
-      "rejectedAt": 1793094697793
-    },
-    {
-      "packageName": "com.kwiktrip",
-      "rejectedAt": 1793094697793
-    },
-    {
-      "packageName": "vg.real",
-      "rejectedAt": 1793094697793
-    },
-    {
       "packageName": "com.Orqa.FPVSkyDive",
       "rejectedAt": 1793183896661
     },
@@ -1091,6 +1059,26 @@
     {
       "packageName": "com.krafton.bgmilite",
       "rejectedAt": 1795616935921
+    },
+    {
+      "packageName": "com.jackallalone.dev.vpkeyboard",
+      "rejectedAt": 1795701451107
+    },
+    {
+      "packageName": "com.frtam.hf",
+      "rejectedAt": 1795701451107
+    },
+    {
+      "packageName": "com.charge.collect.enjoy.battery",
+      "rejectedAt": 1795701451107
+    },
+    {
+      "packageName": "com.walk.gather.joy.pedometer",
+      "rejectedAt": 1795701451107
+    },
+    {
+      "packageName": "za.co.mweb.app",
+      "rejectedAt": 1795701451107
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1795616935926,
+  "generatedAt": 1795701451110,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -2895,7 +2895,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 812709204,
+      "productionVersionCode": 812704204,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -6810,7 +6810,7 @@
       "packageName": "com.discord",
       "appName": "Discord - Talk, Play, Hang Out",
       "hasBeta": true,
-      "productionVersionCode": 354012,
+      "productionVersionCode": 355010,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -9975,6 +9975,15 @@
       "notes": "Confirmed via Google Play"
     },
     {
+      "packageName": "com.google.android.as",
+      "appName": "Android System Intelligence",
+      "hasBeta": true,
+      "productionVersionCode": 8997612,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.google.android.calculator",
       "appName": "Calculator",
       "hasBeta": true,
@@ -11759,7 +11768,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 386314297,
+      "productionVersionCode": 386314326,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -24502,7 +24511,7 @@
       "packageName": "com.whatsapp",
       "appName": "WhatsApp",
       "hasBeta": true,
-      "productionVersionCode": 264607600,
+      "productionVersionCode": 264608200,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -31266,6 +31275,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "org.transdroid.lite",
+      "appName": "Transdrone",
+      "hasBeta": true,
+      "productionVersionCode": 249,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "org.venkado.relagent",
       "appName": "Relagent",
       "hasBeta": true,
@@ -32161,6 +32179,15 @@
       "appName": "ruff: Notes, Lists & Drafts",
       "hasBeta": true,
       "productionVersionCode": 190,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "sands.mapCoordinates.android",
+      "appName": "Map Coordinates",
+      "hasBeta": true,
+      "productionVersionCode": 368,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
