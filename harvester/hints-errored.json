@@ -980,9 +980,9 @@
     },
     {
       "packageName": "pl.krzyzvibe.game",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793183896663
+      "lastErrorAt": 1795787788946
     },
     {
       "packageName": "com.sol.Runefall",

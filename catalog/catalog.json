@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1795701451110,
+  "generatedAt": 1795787788949,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -1893,6 +1893,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "co.bytemark.nycf",
+      "appName": "NYC Ferry",
+      "hasBeta": true,
+      "productionVersionCode": 1150,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "co.conscioussai.android",
       "appName": "Consciouss: Personal AI Agent",
       "hasBeta": true,
@@ -2895,7 +2904,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 812704204,
+      "productionVersionCode": 812704404,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -11768,7 +11777,7 @@
       "packageName": "com.instagram.android",
       "appName": "Instagram",
       "hasBeta": true,
-      "productionVersionCode": 386314326,
+      "productionVersionCode": 386314341,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -20486,6 +20495,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.simplemobilephotoresizer",
+      "appName": "Photo & Picture Resizer",
+      "hasBeta": true,
+      "productionVersionCode": 375,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.sirius",
       "appName": "SiriusXM: Music, Sports & News",
       "hasBeta": true,
@@ -20676,7 +20694,7 @@
     },
     {
       "packageName": "com.snapchat.android",
-      "appName": "Snapchat",
+      "appName": "Snapchat: Chat with friends",
       "hasBeta": true,
       "productionVersionCode": 329222,
       "liveStatus": "UNKNOWN",

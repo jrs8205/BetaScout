@@ -121,10 +121,6 @@
       "rejectedAt": 1793881571587
     },
     {
-      "packageName": "com.ups.mobile.android",
-      "rejectedAt": 1793183896661
-    },
-    {
       "packageName": "com.booking",
       "rejectedAt": 1794136805793
     },
@@ -283,46 +279,6 @@
     {
       "packageName": "com.app99.driver",
       "rejectedAt": 1795351141373
-    },
-    {
-      "packageName": "com.Orqa.FPVSkyDive",
-      "rejectedAt": 1793183896661
-    },
-    {
-      "packageName": "com.box.android",
-      "rejectedAt": 1793183896661
-    },
-    {
-      "packageName": "com.coolniks.niksgps",
-      "rejectedAt": 1793183896661
-    },
-    {
-      "packageName": "com.google.android.apps.village.boond",
-      "rejectedAt": 1793183896661
-    },
-    {
-      "packageName": "com.sameerasw.canvas",
-      "rejectedAt": 1793183896661
-    },
-    {
-      "packageName": "com.anthropic.aibo",
-      "rejectedAt": 1793183896661
-    },
-    {
-      "packageName": "com.barstoolsports.onebite",
-      "rejectedAt": 1793183896661
-    },
-    {
-      "packageName": "com.camel.corp.universalcopy",
-      "rejectedAt": 1793183896661
-    },
-    {
-      "packageName": "com.novapontocom.casasbahia",
-      "rejectedAt": 1793183896661
-    },
-    {
-      "packageName": "com.roleplay.riorise",
-      "rejectedAt": 1793183896661
     },
     {
       "packageName": "net.flowlauncher",
@@ -1079,6 +1035,30 @@
     {
       "packageName": "za.co.mweb.app",
       "rejectedAt": 1795701451107
+    },
+    {
+      "packageName": "com.dnypnds.short.play.reels.vod",
+      "rejectedAt": 1795787788945
+    },
+    {
+      "packageName": "com.shieldpower.cellshield.coreamp",
+      "rejectedAt": 1795787788945
+    },
+    {
+      "packageName": "com.ceceapp.chargeapp",
+      "rejectedAt": 1795787788945
+    },
+    {
+      "packageName": "com.remindmenow.app",
+      "rejectedAt": 1795787788945
+    },
+    {
+      "packageName": "com.ar.ruler.camera.measure.metter",
+      "rejectedAt": 1795787788945
+    },
+    {
+      "packageName": "com.havenmind.tilesanctuary.zenmj",
+      "rejectedAt": 1795787788945
     }
   ]
 }
