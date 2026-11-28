@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": 1795787788949,
+  "generatedAt": 1795871082192,
   "programs": [
     {
       "packageName": "ad.neko.mithka",
@@ -169,6 +169,15 @@
       "appName": "AI photo editor - AI Enhancer",
       "hasBeta": true,
       "productionVersionCode": 113,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "ai.regainapp",
+      "appName": "Regain: Study Timer for Focus",
+      "hasBeta": true,
+      "productionVersionCode": 2156,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -2904,7 +2913,7 @@
       "packageName": "com.android.chrome",
       "appName": "Google Chrome",
       "hasBeta": true,
-      "productionVersionCode": 812704404,
+      "productionVersionCode": 812709204,
       "liveStatus": "UNKNOWN",
       "source": "GPLAYAPI",
       "notes": "Confirmed via Google Play"
@@ -4881,6 +4890,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.busloop.ksc.gp",
+      "appName": "Bus Loop: Color Puzzle",
+      "hasBeta": true,
+      "productionVersionCode": 21,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.busuu.android.enc",
       "appName": "Busuu: Learn & Speak Languages",
       "hasBeta": true,
@@ -5452,6 +5470,15 @@
       "appName": "Chollometro – Chollos, ofertas",
       "hasBeta": true,
       "productionVersionCode": 81702,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.chrome.canary",
+      "appName": "Chrome Canary (Unstable)",
+      "hasBeta": true,
+      "productionVersionCode": 818900004,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -9768,6 +9795,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.gold.walkapp.gg",
+      "appName": "GoldWalk: Walk & Earn",
+      "hasBeta": true,
+      "productionVersionCode": 1010408,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.goldtouch.ynet",
       "appName": "ynet",
       "hasBeta": true,
@@ -14078,6 +14114,15 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.mangomirror.app.mangomirror",
+      "appName": "Mango Display",
+      "hasBeta": true,
+      "productionVersionCode": 49,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.mapamai.maps.batchgeocode",
       "appName": "Multi-Stop Route Planner",
       "hasBeta": true,
@@ -15369,6 +15414,15 @@
       "appName": "Skrill - Fast, secure payments",
       "hasBeta": true,
       "productionVersionCode": 2026072811,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.moneypilot.bloom",
+      "appName": "MoneyPilot : Class Action",
+      "hasBeta": true,
+      "productionVersionCode": 115,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -18281,6 +18335,24 @@
       "notes": "Reported by users, confirmed via Google Play"
     },
     {
+      "packageName": "com.prismtree.aligned",
+      "appName": "Aligned - Schedule Tracker",
+      "hasBeta": true,
+      "productionVersionCode": 9,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.prismtree.qrscanner",
+      "appName": "Qik - QR Scanner & Generator",
+      "hasBeta": true,
+      "productionVersionCode": 18,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
       "packageName": "com.prismtree.sponge",
       "appName": "Sponge - Gallery Cleaner",
       "hasBeta": true,
@@ -19212,6 +19284,15 @@
       "appName": "DrumKnee 3D Drums - Drum Set",
       "hasBeta": true,
       "productionVersionCode": 347,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.riddonkulous.app",
+      "appName": "Riddonkulous: Word Riddles",
+      "hasBeta": true,
+      "productionVersionCode": 27,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"
@@ -23324,6 +23405,15 @@
       "appName": "UKG Pro",
       "hasBeta": true,
       "productionVersionCode": 507040782,
+      "liveStatus": "UNKNOWN",
+      "source": "CROWD",
+      "notes": "Reported by users, confirmed via Google Play"
+    },
+    {
+      "packageName": "com.ukrainealarm",
+      "appName": "Повітряна тривога",
+      "hasBeta": true,
+      "productionVersionCode": 723753,
       "liveStatus": "UNKNOWN",
       "source": "CROWD",
       "notes": "Reported by users, confirmed via Google Play"

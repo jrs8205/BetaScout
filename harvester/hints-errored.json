@@ -770,21 +770,21 @@
     },
     {
       "packageName": "com.ancestry.ancestrydna",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793271371777
+      "lastErrorAt": 1795871082191
     },
     {
       "packageName": "net.countrymania.jezz",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793271371777
+      "lastErrorAt": 1795871082191
     },
     {
       "packageName": "org.mian.gitnex",
-      "attempts": 4,
+      "attempts": 5,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793271371777
+      "lastErrorAt": 1795871082191
     },
     {
       "packageName": "pl.tvp.stream",
@@ -986,9 +986,9 @@
     },
     {
       "packageName": "com.sol.Runefall",
-      "attempts": 3,
+      "attempts": 4,
       "lastError": "AppNotFound: null",
-      "lastErrorAt": 1793271371777
+      "lastErrorAt": 1795871082191
     },
     {
       "packageName": "com.careerbuilder.SugarDrone",
@@ -1187,6 +1187,24 @@
       "attempts": 3,
       "lastError": "AppNotFound: null",
       "lastErrorAt": 1795532158500
+    },
+    {
+      "packageName": "com.aklova.brightlimit",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1795871082191
+    },
+    {
+      "packageName": "com.clipoverflow",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1795871082191
+    },
+    {
+      "packageName": "com.ronald.atrium",
+      "attempts": 1,
+      "lastError": "AppNotFound: null",
+      "lastErrorAt": 1795871082191
     }
   ]
 }

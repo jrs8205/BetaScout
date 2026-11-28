@@ -194,7 +194,7 @@
     },
     {
       "packageName": "com.appsomniacs.mmc",
-      "rejectedAt": 1793271371776
+      "rejectedAt": 1795871082189
     },
     {
       "packageName": "com.cuvora.carinfo",
@@ -262,7 +262,7 @@
     },
     {
       "packageName": "com.power.wash.simulator.game",
-      "rejectedAt": 1793271371776
+      "rejectedAt": 1795871082189
     },
     {
       "packageName": "air.au.com.ontherun",
@@ -279,34 +279,6 @@
     {
       "packageName": "com.app99.driver",
       "rejectedAt": 1795351141373
-    },
-    {
-      "packageName": "net.flowlauncher",
-      "rejectedAt": 1793271371776
-    },
-    {
-      "packageName": "com.innovacode.launcher",
-      "rejectedAt": 1793271371776
-    },
-    {
-      "packageName": "games.minit.app",
-      "rejectedAt": 1793271371776
-    },
-    {
-      "packageName": "com.noksfluxa.player",
-      "rejectedAt": 1793271371776
-    },
-    {
-      "packageName": "com.verynicegames.hyperlight",
-      "rejectedAt": 1793271371776
-    },
-    {
-      "packageName": "com.nearpieapp.nearpie",
-      "rejectedAt": 1793271371776
-    },
-    {
-      "packageName": "nl.iquality.lpb.banking.de",
-      "rejectedAt": 1793271371776
     },
     {
       "packageName": "com.maximemazzone.aerial",
@@ -1059,6 +1031,14 @@
     {
       "packageName": "com.havenmind.tilesanctuary.zenmj",
       "rejectedAt": 1795787788945
+    },
+    {
+      "packageName": "com.michael.smartrecallv2",
+      "rejectedAt": 1795871082189
+    },
+    {
+      "packageName": "com.Avenza",
+      "rejectedAt": 1795871082189
     }
   ]
 }
